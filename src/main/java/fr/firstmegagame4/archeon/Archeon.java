@@ -5,6 +5,7 @@ import com.mmodding.mmodding_lib.library.config.Config;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import fr.firstmegagame4.archeon.init.ArcheonBlocks;
 import fr.firstmegagame4.archeon.init.ArcheonItems;
+import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 import org.quiltmc.loader.api.ModContainer;
 
@@ -29,5 +30,9 @@ public class Archeon implements MModdingModInitializer {
 	@Override
 	public void onInitialize(ModContainer mod) {
 		MModdingModInitializer.super.onInitialize(mod);
+	}
+
+	public static Identifier newIdentifier(String string) {
+		return new Identifier("archeon", string);
 	}
 }
