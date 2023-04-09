@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:blocks/wet_dirt",
+    "up": "archeon:blocks/wet_grass_block_top",
+    "north": "archeon:blocks/wet_grass_block_side",
+    "east": "archeon:blocks/wet_grass_block_side",
+    "south": "archeon:blocks/wet_grass_block_side",
+    "west": "archeon:blocks/wet_grass_block_side",
+    "particle": "archeon:blocks/wet_dirt"
+  }
+}

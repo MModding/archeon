@@ -1,0 +1,7 @@
+{
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "archeon:blocks/mossy_artemnite_bricks",
+    "particle": "archeon:blocks/mossy_artemnite_bricks"
+  }
+}

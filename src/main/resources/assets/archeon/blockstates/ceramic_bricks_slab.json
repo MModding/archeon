@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/ceramic_bricks_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/ceramic_bricks_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/ceramic_bricks_slab_full"
+    }
+  }
+}

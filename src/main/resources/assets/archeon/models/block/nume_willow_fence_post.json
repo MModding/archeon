@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "archeon:blocks/nume_willow_planks",
+    "particle": "archeon:blocks/nume_willow_planks"
+  }
+}

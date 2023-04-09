@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:blocks/chiseled_southstone",
+    "up": "archeon:blocks/chiseled_southstone",
+    "north": "archeon:blocks/southstone_pillar_bottom",
+    "east": "archeon:blocks/southstone_pillar_bottom",
+    "south": "archeon:blocks/southstone_pillar_bottom",
+    "west": "archeon:blocks/southstone_pillar_bottom",
+    "particle": "archeon:blocks/chiseled_southstone"
+  }
+}

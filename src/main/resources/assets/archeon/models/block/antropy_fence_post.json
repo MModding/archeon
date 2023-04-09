@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "archeon:blocks/neclane_planks",
+    "particle": "archeon:blocks/neclane_planks"
+  }
+}

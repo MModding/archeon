@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "archeon:blocks/roseypia",
+    "particle": "archeon:blocks/roseypia"
+  }
+}

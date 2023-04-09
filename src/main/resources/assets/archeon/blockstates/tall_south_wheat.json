@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "archeon:block/tall_south_wheat"
+    },
+    "half=lower": {
+      "model": "archeon:block/tall_south_wheat_bottom"
+    }
+  }
+}

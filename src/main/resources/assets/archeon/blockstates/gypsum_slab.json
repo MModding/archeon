@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/gypsum_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/gypsum_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/gypsum_slab_full"
+    }
+  }
+}

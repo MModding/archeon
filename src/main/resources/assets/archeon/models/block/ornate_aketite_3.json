@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:blocks/aketite_bricks",
+    "up": "archeon:blocks/aketite_bricks",
+    "north": "archeon:blocks/ornate_aketite_bricks_lines",
+    "east": "archeon:blocks/ornate_aketite_bricks_lines",
+    "south": "archeon:blocks/ornate_aketite_bricks_lines",
+    "west": "archeon:blocks/ornate_aketite_bricks_lines",
+    "particle": "archeon:blocks/aketite_bricks"
+  }
+}

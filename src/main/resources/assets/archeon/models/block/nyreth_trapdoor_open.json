@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_orientable_trapdoor_open",
+  "textures": {
+    "texture": "archeon:blocks/nyreth_trapdoor",
+    "particle": "archeon:blocks/nyreth_trapdoor"
+  }
+}

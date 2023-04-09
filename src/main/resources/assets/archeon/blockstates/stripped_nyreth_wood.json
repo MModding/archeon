@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "archeon:block/stripped_nyreth_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "archeon:block/stripped_nyreth_wood"
+    },
+    "axis=z": {
+      "model": "archeon:block/stripped_nyreth_wood",
+      "x": 90
+    }
+  }
+}

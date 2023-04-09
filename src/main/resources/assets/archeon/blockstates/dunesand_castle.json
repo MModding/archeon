@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "archeon:block/dunesand_castle"
+    },
+    "facing=east": {
+      "model": "archeon:block/dunesand_castle",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "archeon:block/dunesand_castle",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "archeon:block/dunesand_castle",
+      "y": 270
+    }
+  }
+}

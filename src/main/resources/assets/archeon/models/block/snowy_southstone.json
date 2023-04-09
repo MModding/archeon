@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:blocks/southstone",
+    "up": "archeon:blocks/peaks_snow",
+    "north": "archeon:blocks/snowy_southstone",
+    "east": "archeon:blocks/snowy_southstone",
+    "south": "archeon:blocks/snowy_southstone",
+    "west": "archeon:blocks/snowy_southstone",
+    "particle": "archeon:blocks/southstone"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "texture": "archeon:blocks/palm_planks",
+    "particle": "archeon:blocks/palm_planks"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "archeon:blocks/cypress_planks",
+    "top": "archeon:blocks/cypress_planks",
+    "side": "archeon:blocks/cypress_planks"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "archeon:blocks/ceramic",
+    "top": "archeon:blocks/ceramic",
+    "side": "archeon:blocks/ceramic"
+  }
+}

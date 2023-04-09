@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_bottom_rh",
+  "textures": {
+    "bottom": "archeon:blocks/neclane_door_summer_bottom",
+    "top": "archeon:blocks/neclane_door_summer_top"
+  }
+}

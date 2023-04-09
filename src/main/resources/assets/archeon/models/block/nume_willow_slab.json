@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "archeon:blocks/nume_willow_planks",
+    "top": "archeon:blocks/nume_willow_planks",
+    "side": "archeon:blocks/nume_willow_planks"
+  }
+}

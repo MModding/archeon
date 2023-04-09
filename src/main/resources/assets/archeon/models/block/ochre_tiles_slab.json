@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "archeon:blocks/ochre_tiles",
+    "top": "archeon:blocks/ochre_tiles",
+    "side": "archeon:blocks/ochre_tiles"
+  }
+}

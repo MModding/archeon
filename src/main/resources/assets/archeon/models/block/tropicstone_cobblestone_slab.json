@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "archeon:blocks/cobbled_southstone",
+    "top": "archeon:blocks/cobbled_southstone",
+    "side": "archeon:blocks/cobbled_southstone"
+  }
+}

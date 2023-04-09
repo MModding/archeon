@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "archeon:blocks/withered_tall_organdeane_top",
+    "particle": "archeon:blocks/withered_tall_organdeane_top"
+  }
+}

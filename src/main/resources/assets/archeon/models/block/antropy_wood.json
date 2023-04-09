@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:blocks/neclane_log",
+    "particle": "archeon:blocks/neclane_log"
+  }
+}

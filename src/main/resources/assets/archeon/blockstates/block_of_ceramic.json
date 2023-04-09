@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "archeon:block/block_of_ceramic",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "archeon:block/block_of_ceramic"
+    },
+    "axis=z": {
+      "model": "archeon:block/block_of_ceramic",
+      "x": 90
+    }
+  }
+}

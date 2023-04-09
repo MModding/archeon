@@ -1,0 +1,8 @@
+{
+  "parent": "archeon:custom/loot_urn",
+  "textures": {
+    "all": "archeon:blocks/urn",
+    "particle": "archeon:blocks/urn",
+    "1": "archeon:blocks/urn"
+  }
+}

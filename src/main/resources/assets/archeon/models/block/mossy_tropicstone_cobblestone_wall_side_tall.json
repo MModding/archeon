@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_wall_side_tall",
+  "textures": {
+    "wall": "archeon:blocks/mossy_cobbled_southstone",
+    "particle": "archeon:blocks/mossy_cobbled_southstone"
+  }
+}

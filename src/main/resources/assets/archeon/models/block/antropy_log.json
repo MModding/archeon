@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:blocks/neclane_log_top",
+    "up": "archeon:blocks/neclane_log_top",
+    "north": "archeon:blocks/neclane_log",
+    "east": "archeon:blocks/neclane_log",
+    "south": "archeon:blocks/neclane_log",
+    "west": "archeon:blocks/neclane_log",
+    "particle": "archeon:blocks/neclane_log_top"
+  }
+}

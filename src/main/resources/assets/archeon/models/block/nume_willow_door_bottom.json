@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_bottom",
+  "textures": {
+    "bottom": "archeon:blocks/nume_willow_door_bottom",
+    "top": "archeon:blocks/nume_willow_door_top"
+  }
+}

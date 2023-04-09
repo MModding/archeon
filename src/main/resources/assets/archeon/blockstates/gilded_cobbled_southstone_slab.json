@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/gilded_cobbled_southstone_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/gilded_cobbled_southstone_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/gilded_cobbled_southstone_slab_full"
+    }
+  }
+}

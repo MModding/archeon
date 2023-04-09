@@ -1,0 +1,6 @@
+{
+  "parent": "block/template_fence_gate_wall",
+  "textures": {
+    "texture": "archeon:blocks/nume_willow_planks"
+  }
+}

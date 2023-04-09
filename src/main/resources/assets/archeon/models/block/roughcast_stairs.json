@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "archeon:blocks/salt",
+    "top": "archeon:blocks/salt",
+    "side": "archeon:blocks/salt"
+  }
+}

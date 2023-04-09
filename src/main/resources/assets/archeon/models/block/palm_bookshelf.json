@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:blocks/palm_planks",
+    "up": "archeon:blocks/palm_planks",
+    "north": "archeon:blocks/palm_bookshelf",
+    "east": "archeon:blocks/palm_bookshelf",
+    "south": "archeon:blocks/palm_bookshelf",
+    "west": "archeon:blocks/palm_bookshelf",
+    "particle": "archeon:blocks/palm_planks"
+  }
+}

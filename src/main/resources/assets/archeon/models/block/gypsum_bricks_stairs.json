@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "archeon:blocks/gypsum_bricks",
+    "top": "archeon:blocks/gypsum_bricks",
+    "side": "archeon:blocks/gypsum_bricks"
+  }
+}

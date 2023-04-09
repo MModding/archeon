@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:blocks/cypress_log_top",
+    "up": "archeon:blocks/cypress_log_top",
+    "north": "archeon:blocks/cypress_log",
+    "east": "archeon:blocks/cypress_log",
+    "south": "archeon:blocks/cypress_log",
+    "west": "archeon:blocks/cypress_log",
+    "particle": "archeon:blocks/cypress_log_top"
+  }
+}

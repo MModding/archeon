@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:blocks/gilded_cobbled_southstone",
+    "particle": "archeon:blocks/gilded_cobbled_southstone"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "archeon:custom/dune_sand_castle",
+  "textures": {
+    "all": "archeon:blocks/dune_sand",
+    "particle": "archeon:blocks/dune_sand",
+    "0": "archeon:blocks/dune_sand_castle"
+  }
+}

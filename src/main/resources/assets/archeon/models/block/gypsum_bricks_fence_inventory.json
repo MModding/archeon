@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_inventory",
+  "textures": {
+    "texture": "archeon:blocks/gypsum_bricks",
+    "particle": "archeon:blocks/gypsum_bricks"
+  }
+}

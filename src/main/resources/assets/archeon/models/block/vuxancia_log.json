@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:blocks/vuxancia_log_top",
+    "up": "archeon:blocks/vuxancia_log_top",
+    "north": "archeon:blocks/vuxancia_log",
+    "east": "archeon:blocks/vuxancia_log",
+    "south": "archeon:blocks/vuxancia_log",
+    "west": "archeon:blocks/vuxancia_log",
+    "particle": "archeon:blocks/vuxancia_log_top"
+  }
+}

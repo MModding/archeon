@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "archeon:blocks/fancy_artemnite_tiles",
+    "top": "archeon:blocks/fancy_artemnite_tiles",
+    "side": "archeon:blocks/fancy_artemnite_tiles"
+  }
+}

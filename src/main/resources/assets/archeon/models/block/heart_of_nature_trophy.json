@@ -1,0 +1,9 @@
+{
+  "parent": "archeon:custom/heart_of_nature_trophy",
+  "textures": {
+    "all": "archeon:blocks/heart_of_nature_trophy",
+    "particle": "archeon:blocks/heart_of_nature_trophy",
+    "0": "archeon:blocks/heart_of_nature_trophy",
+    "missing": "archeon:blocks/heart_of_nature_trophy"
+  }
+}

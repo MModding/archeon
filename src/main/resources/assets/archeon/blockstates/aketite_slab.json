@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/aketite_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/aketite_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/aketite_slab_full"
+    }
+  }
+}

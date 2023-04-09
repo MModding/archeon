@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:blocks/cracked_southstone_bricks",
+    "particle": "archeon:blocks/cracked_southstone_bricks"
+  }
+}

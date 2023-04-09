@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "archeon:block/spore_rootcap"
+    },
+    "facing=east": {
+      "model": "archeon:block/spore_rootcap",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "archeon:block/spore_rootcap",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "archeon:block/spore_rootcap",
+      "y": 270
+    }
+  }
+}

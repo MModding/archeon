@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:blocks/bush_leaves",
+    "up": "archeon:blocks/bush_leaves",
+    "north": "archeon:blocks/bush_leaves",
+    "east": "archeon:blocks/bush_leaves",
+    "south": "archeon:blocks/bush_leaves",
+    "west": "archeon:blocks/bush_leaves",
+    "particle": "archeon:blocks/bush_leaves"
+  }
+}

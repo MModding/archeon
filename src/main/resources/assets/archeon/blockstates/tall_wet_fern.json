@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "archeon:block/tall_wet_fern"
+    },
+    "half=lower": {
+      "model": "archeon:block/tall_wet_fern_bottom"
+    }
+  }
+}

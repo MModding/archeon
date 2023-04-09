@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:blocks/vuxancia_leaves_orian",
+    "up": "archeon:blocks/vuxancia_leaves_orian",
+    "north": "archeon:blocks/vuxancia_leaves_orian",
+    "east": "archeon:blocks/vuxancia_leaves_orian",
+    "south": "archeon:blocks/vuxancia_leaves_orian",
+    "west": "archeon:blocks/vuxancia_leaves_orian",
+    "particle": "archeon:blocks/vuxancia_leaves_orian"
+  }
+}

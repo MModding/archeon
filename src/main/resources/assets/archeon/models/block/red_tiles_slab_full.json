@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "archeon:blocks/red_tiles",
+    "top": "archeon:blocks/red_tiles",
+    "side": "archeon:blocks/red_tiles"
+  }
+}

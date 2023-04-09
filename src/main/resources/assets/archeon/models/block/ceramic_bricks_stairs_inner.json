@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "archeon:blocks/ceramic_bricks",
+    "top": "archeon:blocks/ceramic_bricks",
+    "side": "archeon:blocks/ceramic_bricks"
+  }
+}

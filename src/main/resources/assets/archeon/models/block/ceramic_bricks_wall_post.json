@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_wall_post",
+  "textures": {
+    "wall": "archeon:blocks/ceramic_bricks",
+    "particle": "archeon:blocks/ceramic_bricks"
+  }
+}

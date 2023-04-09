@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "archeon:blocks/astedibes",
+    "particle": "archeon:blocks/astedibes"
+  }
+}

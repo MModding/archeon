@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:blocks/aketite_bricks",
+    "particle": "archeon:blocks/aketite_bricks"
+  }
+}

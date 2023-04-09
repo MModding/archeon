@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/mossy_tropicstone_cobblestone_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/mossy_tropicstone_cobblestone_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/mossy_tropicstone_cobblestone_slab_full"
+    }
+  }
+}

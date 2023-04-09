@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "archeon:blocks/orange_lycoris",
+    "particle": "archeon:blocks/orange_lycoris"
+  }
+}

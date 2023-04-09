@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "archeon:items/xetulian_sugar_cane"
+  }
+}

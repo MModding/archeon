@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "archeon:block/tall_withered_organdeane"
+    },
+    "half=lower": {
+      "model": "archeon:block/tall_withered_organdeane_bottom"
+    }
+  }
+}

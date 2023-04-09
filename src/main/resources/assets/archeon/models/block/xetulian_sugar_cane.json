@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "archeon:blocks/xetulian_sugar_cane",
+    "particle": "archeon:blocks/xetulian_sugar_cane"
+  }
+}

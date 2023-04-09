@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:blocks/red_tiles",
+    "particle": "archeon:blocks/red_tiles"
+  }
+}

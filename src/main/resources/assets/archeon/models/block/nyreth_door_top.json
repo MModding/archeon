@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_top",
+  "textures": {
+    "bottom": "archeon:blocks/nyreth_door_bottom",
+    "top": "archeon:blocks/nyreth_door_top"
+  }
+}

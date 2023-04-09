@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/vuxancia_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/vuxancia_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/vuxancia_slab_full"
+    }
+  }
+}

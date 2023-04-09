@@ -1,0 +1,175 @@
+{
+  "genesis": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:genesis",
+        "stream": true
+      }
+    ]
+  },
+  "hoxa": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:hoxa",
+        "stream": true
+      }
+    ]
+  },
+  "no_ones_around": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:no_ones_around",
+        "stream": true
+      }
+    ]
+  },
+  "brile": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:brile",
+        "stream": true
+      }
+    ]
+  },
+  "geometric_fall": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "archeon:geometric_fall",
+        "stream": true
+      }
+    ]
+  },
+  "reside": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "archeon:reside",
+        "stream": true
+      }
+    ]
+  },
+  "parallelify": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "archeon:parallelify",
+        "stream": true
+      }
+    ]
+  },
+  "archeon_christmas": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "archeon:archeon_christmas",
+        "stream": true
+      }
+    ]
+  },
+  "catalyst.ambient": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "archeon:catalyst_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "catalyst.hit": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "archeon:catalyst_hit",
+        "stream": false
+      }
+    ]
+  },
+  "sunny": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:sunny",
+        "stream": true
+      }
+    ]
+  },
+  "pe4k": {
+    "category": "record",
+    "subtitle": "subtitles.pe4k",
+    "sounds": [
+      {
+        "name": "archeon:pe4k",
+        "stream": true
+      }
+    ]
+  },
+  "devouring": {
+    "category": "record",
+    "subtitle": "subtitles.devouring",
+    "sounds": [
+      {
+        "name": "archeon:devouring",
+        "stream": true
+      }
+    ]
+  },
+  "dotted_sky": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:dotted_sky",
+        "stream": true
+      }
+    ]
+  },
+  "wild_breath": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:wild_breath",
+        "stream": true
+      }
+    ]
+  },
+  "rising": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "archeon:rising",
+        "stream": true
+      }
+    ]
+  },
+  "heart_of_nature_end": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:heart_of_nature_end",
+        "stream": true
+      }
+    ]
+  },
+  "heart_of_nature": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:heart_of_nature",
+        "stream": true
+      }
+    ]
+  },
+  "glaive": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "archeon:glaive",
+        "stream": true
+      }
+    ]
+  }
+}

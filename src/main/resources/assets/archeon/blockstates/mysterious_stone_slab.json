@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/mysterious_stone_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/mysterious_stone_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/mysterious_stone_slab_full"
+    }
+  }
+}

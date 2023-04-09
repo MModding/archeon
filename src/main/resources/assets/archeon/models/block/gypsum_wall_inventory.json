@@ -1,0 +1,7 @@
+{
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "archeon:blocks/gypsum",
+    "particle": "archeon:blocks/gypsum"
+  }
+}

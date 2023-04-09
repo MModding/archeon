@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:blocks/seashell_dune_sand",
+    "particle": "archeon:blocks/seashell_dune_sand"
+  }
+}

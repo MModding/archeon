@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "archeon:block/hollow_cypress_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "archeon:block/hollow_cypress_log"
+    },
+    "axis=z": {
+      "model": "archeon:block/hollow_cypress_log",
+      "x": 90
+    }
+  }
+}

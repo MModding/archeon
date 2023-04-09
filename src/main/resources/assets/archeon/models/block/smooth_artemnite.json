@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:blocks/smooth_artemnite",
+    "particle": "archeon:blocks/smooth_artemnite"
+  }
+}

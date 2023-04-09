@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "archeon:blocks/nyreth_planks",
+    "top": "archeon:blocks/nyreth_planks",
+    "side": "archeon:blocks/nyreth_planks"
+  }
+}

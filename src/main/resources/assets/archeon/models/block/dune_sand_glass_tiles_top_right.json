@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:blocks/dune_sand_glass_tiles_top_right",
+    "particle": "archeon:blocks/dune_sand_glass_tiles_top_right"
+  }
+}

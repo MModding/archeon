@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/cypress_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/cypress_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/cypress_slab_full"
+    }
+  }
+}

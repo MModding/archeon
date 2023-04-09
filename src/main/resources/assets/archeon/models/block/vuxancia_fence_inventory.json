@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_inventory",
+  "textures": {
+    "texture": "archeon:blocks/vuxancia_planks",
+    "particle": "archeon:blocks/vuxancia_planks"
+  }
+}

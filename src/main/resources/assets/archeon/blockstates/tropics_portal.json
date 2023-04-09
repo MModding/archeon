@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "archeon:block/tropics_portal_ew"
+    },
+    "axis=x": {
+      "model": "archeon:block/tropics_portal_ns"
+    }
+  }
+}

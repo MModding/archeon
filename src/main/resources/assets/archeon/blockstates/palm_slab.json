@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/palm_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/palm_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/palm_slab_full"
+    }
+  }
+}

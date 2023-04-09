@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:blocks/stripped_nyreth_log_top",
+    "up": "archeon:blocks/stripped_nyreth_log_top",
+    "north": "archeon:blocks/stripped_nyreth_log",
+    "east": "archeon:blocks/stripped_nyreth_log",
+    "south": "archeon:blocks/stripped_nyreth_log",
+    "west": "archeon:blocks/stripped_nyreth_log",
+    "particle": "archeon:blocks/stripped_nyreth_log_top"
+  }
+}

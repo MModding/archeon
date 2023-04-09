@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/nyreth_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/nyreth_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/nyreth_slab_full"
+    }
+  }
+}

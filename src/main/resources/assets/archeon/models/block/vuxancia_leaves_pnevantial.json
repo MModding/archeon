@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:blocks/vuxancia_leaves_pnevantial",
+    "up": "archeon:blocks/vuxancia_leaves_pnevantial",
+    "north": "archeon:blocks/vuxancia_leaves_pnevantial",
+    "east": "archeon:blocks/vuxancia_leaves_pnevantial",
+    "south": "archeon:blocks/vuxancia_leaves_pnevantial",
+    "west": "archeon:blocks/vuxancia_leaves_pnevantial",
+    "particle": "archeon:blocks/vuxancia_leaves_pnevantial"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "parent": "archeon:custom/hollow_cypress_log",
+  "textures": {
+    "all": "archeon:blocks/cypress_log_top",
+    "particle": "archeon:blocks/cypress_log_top",
+    "0": "archeon:blocks/cypress_log",
+    "1": "archeon:blocks/cypress_log_top",
+    "2": "archeon:blocks/stripped_cypress_log",
+    "missing": "archeon:blocks/stripped_cypress_log_top"
+  }
+}

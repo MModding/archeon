@@ -1,0 +1,7 @@
+{
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "archeon:blocks/green_tiles",
+    "particle": "archeon:blocks/green_tiles"
+  }
+}

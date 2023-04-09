@@ -1,0 +1,7 @@
+{
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "archeon:blocks/fancy_artemnite_tiles",
+    "particle": "archeon:blocks/fancy_artemnite_tiles"
+  }
+}

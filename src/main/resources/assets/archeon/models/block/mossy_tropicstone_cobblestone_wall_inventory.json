@@ -1,0 +1,7 @@
+{
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "archeon:blocks/mossy_cobbled_southstone",
+    "particle": "archeon:blocks/mossy_cobbled_southstone"
+  }
+}

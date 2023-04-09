@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:blocks/ceramic",
+    "up": "archeon:blocks/ceramic",
+    "north": "archeon:blocks/ceramic",
+    "east": "archeon:blocks/ceramic",
+    "south": "archeon:blocks/ceramic",
+    "west": "archeon:blocks/ceramic",
+    "particle": "archeon:blocks/ceramic"
+  }
+}

@@ -1,0 +1,45 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "fr.firstmegagame4",
+		"id": "archeon",
+		"version": "${version}",
+		"metadata": {
+			"name": "Archeon",
+			"description": "A short description of your mod.",
+			"contributors": {
+				"Aethyus": "Owner",
+				"FirstMegaGame4": "Lead Quilt Developer"
+			},
+			"contact": {
+				"homepage": "https://beta.curseforge.com/archeon-quilt",
+				"issues": "https://github.com/Silent-Winds/Archeon-Quilt/issues",
+				"sources": "https://github.com/Silent-Winds/Archeon-Quilt"
+			},
+			"icon": "assets/archeon/icon.png"
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"entrypoints": {
+			"init": "fr.firstmegagame4.archeon.Archeon"
+		},
+		"depends": [
+			{
+				"id": "quilt_loader",
+				"versions": ">=0.17.0-"
+			},
+			{
+				"id": "quilted_fabric_api",
+				"versions": ">=4.0.0-"
+			},
+			{
+				"id": "minecraft",
+				"versions": ">=1.19.2"
+			},
+			{
+				"id": "mmodding_lib",
+				"versions": ">=0.1.0"
+			}
+		]
+	},
+	"mixin": "archeon.mixins.json"
+}

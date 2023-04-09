@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "archeon:block/ascendia"
+    },
+    "half=lower": {
+      "model": "archeon:block/ascendia_bottom"
+    }
+  }
+}

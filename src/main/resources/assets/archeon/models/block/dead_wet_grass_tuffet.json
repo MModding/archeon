@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "archeon:blocks/dead_wet_grass_tuffet",
+    "particle": "archeon:blocks/dead_wet_grass_tuffet"
+  }
+}
