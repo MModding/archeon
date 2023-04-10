@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/artemnite_bricks_slab",
+  "parent": "archeon:block/artemnite_brick_slab",
   "display": {
     "thirdperson": {
       "rotation": [

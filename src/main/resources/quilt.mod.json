@@ -20,7 +20,8 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "fr.firstmegagame4.archeon.Archeon"
+			"init": "fr.firstmegagame4.archeon.Archeon",
+			"client_init": "fr.firstmegagame4.archeon.client.ArcheonClient"
 		},
 		"depends": [
 			{
@@ -37,7 +38,7 @@
 			},
 			{
 				"id": "mmodding_lib",
-				"versions": ">=0.1.0"
+				"versions": ">=0.1.0-"
 			}
 		]
 	},
