@@ -15,12 +15,37 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final QuiltBlockSettings WOOD_SETTINGS = QuiltBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD);
 	public static final QuiltBlockSettings LEAVES_SETTINGS = QuiltBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS);
 	public static final QuiltBlockSettings METAL_SETTINGS = QuiltBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.METAL);
+	public static final QuiltBlockSettings BONE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.BONE);
 
 	public static final CustomFlowerBlock AEROLIA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
 		StatusEffects.REGENERATION,
 		10,
 		QuiltBlockSettings.of(Material.PLANT),
+		true
+	);
+
+	public static final CustomFlowerBlock ASCENDIA = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.LEVITATION,
+		5,
+		LEAVES_SETTINGS,
+		true
+	);
+
+	public static final CustomFlowerBlock ASTEDIBES = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.WATER_BREATHING,
+		30,
+		LEAVES_SETTINGS,
+		true
+	);
+
+	public static final CustomFlowerBlock BLOOD_ORANGE_BUSH = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.POISON,
+		5,
+		LEAVES_SETTINGS,
 		true
 	);
 
@@ -72,11 +97,31 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomSlabBlock ARTEMNITE_TILES_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
 	public static final CustomWallBlock ARTEMNITE_TILES_WALL = new CustomWallBlock(STONE_SETTINGS, true);
 
+	public static final CustomBlock BLUE_TILES = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomStairsBlock BLUE_TILES_STAIRS = new CustomStairsBlock(BLUE_TILES.getDefaultState(), STONE_SETTINGS, true);
+	public static final CustomSlabBlock BLUE_TILES_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
+	public static final CustomWallBlock BLUE_TILES_WALL = new CustomWallBlock(STONE_SETTINGS, true);
 
+	public static final CustomBlock BUSH_LEAVES = new CustomBlock(LEAVES_SETTINGS, true);
+
+	public static final CustomBlock BLOCK_OF_CERAMIC = new CustomBlock(BONE_SETTINGS, true);
+	public static final CustomButtonBlock.Stone CERAMIC_BUTTON = new CustomButtonBlock.Stone(BONE_SETTINGS, true);
+	public static final CustomFenceBlock CERAMIC_FENCE = new CustomFenceBlock(BONE_SETTINGS, true);
+	public static final CustomPressurePlateBlock CERAMIC_PRESSURE_PLATE = new CustomPressurePlateBlock(PressurePlateBlock.ActivationRule.MOBS, BONE_SETTINGS, true);
+	public static final CustomStairsBlock CERAMIC_STAIRS = new CustomStairsBlock(BLOCK_OF_CERAMIC.getDefaultState(), BONE_SETTINGS, true);
+	public static final CustomSlabBlock CERAMIC_SLAB = new CustomSlabBlock(BONE_SETTINGS, true);
+
+	public static final CustomBlock CERAMIC_BRICKS = new CustomBlock(BONE_SETTINGS, true);
+	public static final CustomStairsBlock CERAMIC_BRICK_STAIRS = new CustomStairsBlock(CERAMIC_BRICKS.getDefaultState(), BONE_SETTINGS, true);
+	public static final CustomSlabBlock CERAMIC_BRICK_SLAB = new CustomSlabBlock(BONE_SETTINGS, true);
+	public static final CustomWallBlock CERAMIC_BRICK_WALL = new CustomWallBlock(BONE_SETTINGS, true);
 
 	@Override
 	public void register() {
 		AEROLIA.register(Archeon.newIdentifier("aerolia"));
+		ASCENDIA.register(Archeon.newIdentifier("ascendia"));
+		ASTEDIBES.register(Archeon.newIdentifier("astedibes"));
+		BLOOD_ORANGE_BUSH.register(Archeon.newIdentifier("blood_orange_bush"));
 		AKETITE_BASEBOARD.register(Archeon.newIdentifier("aketite_baseboard"));
 		AKETITE.register(Archeon.newIdentifier("aketite"));
 		AKETITE_STAIRS.register(Archeon.newIdentifier("aketite_stairs"));
@@ -115,5 +160,20 @@ public class ArcheonBlocks implements ElementsInitializer {
 		ARTEMNITE_TILES_STAIRS.register(Archeon.newIdentifier("artemnite_tiles_stairs"));
 		ARTEMNITE_TILES_SLAB.register(Archeon.newIdentifier("artemnite_tiles_slab"));
 		ARTEMNITE_TILES_WALL.register(Archeon.newIdentifier("artemnite_tiles_wall"));
+		BLUE_TILES.register(Archeon.newIdentifier("blue_tiles"));
+		BLUE_TILES_STAIRS.register(Archeon.newIdentifier("blue_tiles_stairs"));
+		BLUE_TILES_SLAB.register(Archeon.newIdentifier("blue_tiles_slab"));
+		BLUE_TILES_WALL.register(Archeon.newIdentifier("blue_tiles_wall"));
+		BUSH_LEAVES.register(Archeon.newIdentifier("bush_leaves"));
+		BLOCK_OF_CERAMIC.register(Archeon.newIdentifier("block_of_ceramic"));
+		CERAMIC_BUTTON.register(Archeon.newIdentifier("ceramic_button"));
+		CERAMIC_FENCE.register(Archeon.newIdentifier("ceramic_fence"));
+		CERAMIC_PRESSURE_PLATE.register(Archeon.newIdentifier("ceramic_pressure_plate"));
+		CERAMIC_STAIRS.register(Archeon.newIdentifier("ceramic_stairs"));
+		CERAMIC_SLAB.register(Archeon.newIdentifier("ceramic_slab"));
+		CERAMIC_BRICKS.register(Archeon.newIdentifier("ceramic_bricks"));
+		CERAMIC_BRICK_STAIRS.register(Archeon.newIdentifier("ceramic_brick_stairs"));
+		CERAMIC_BRICK_SLAB.register(Archeon.newIdentifier("ceramic_brick_slab"));
+		CERAMIC_BRICK_WALL.register(Archeon.newIdentifier("ceramic_brick_wall"));
 	}
 }
