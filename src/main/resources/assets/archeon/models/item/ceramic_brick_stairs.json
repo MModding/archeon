@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/ceramic_bricks_slab",
+  "parent": "archeon:block/ceramic_brick_stairs",
   "display": {
     "thirdperson": {
       "rotation": [

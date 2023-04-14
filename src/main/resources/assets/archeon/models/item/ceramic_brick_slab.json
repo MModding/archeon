@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/craqueled_tropicstone_bricks",
+  "parent": "archeon:block/ceramic_brick_slab",
   "display": {
     "thirdperson": {
       "rotation": [

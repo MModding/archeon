@@ -25,6 +25,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
+	// Double Plant : Need to Fix This
+
 	public static final CustomFlowerBlock ASCENDIA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
 		StatusEffects.LEVITATION,
@@ -42,6 +44,14 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock BLOOD_ORANGE_BUSH = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.POISON,
+		5,
+		LEAVES_SETTINGS,
+		true
+	);
+
+	public static final CustomFlowerBlock COKIPLANT = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
 		StatusEffects.POISON,
 		5,
@@ -104,17 +114,32 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomBlock BUSH_LEAVES = new CustomBlock(LEAVES_SETTINGS, true);
 
-	public static final CustomBlock BLOCK_OF_CERAMIC = new CustomBlock(BONE_SETTINGS, true);
+	public static final CustomPillarBlock BLOCK_OF_CERAMIC = new CustomPillarBlock(BONE_SETTINGS, true);
 	public static final CustomButtonBlock.Stone CERAMIC_BUTTON = new CustomButtonBlock.Stone(BONE_SETTINGS, true);
 	public static final CustomFenceBlock CERAMIC_FENCE = new CustomFenceBlock(BONE_SETTINGS, true);
 	public static final CustomPressurePlateBlock CERAMIC_PRESSURE_PLATE = new CustomPressurePlateBlock(PressurePlateBlock.ActivationRule.MOBS, BONE_SETTINGS, true);
 	public static final CustomStairsBlock CERAMIC_STAIRS = new CustomStairsBlock(BLOCK_OF_CERAMIC.getDefaultState(), BONE_SETTINGS, true);
 	public static final CustomSlabBlock CERAMIC_SLAB = new CustomSlabBlock(BONE_SETTINGS, true);
 
-	public static final CustomBlock CERAMIC_BRICKS = new CustomBlock(BONE_SETTINGS, true);
+	public static final CustomPillarBlock CERAMIC_BRICKS = new CustomPillarBlock(BONE_SETTINGS, true);
 	public static final CustomStairsBlock CERAMIC_BRICK_STAIRS = new CustomStairsBlock(CERAMIC_BRICKS.getDefaultState(), BONE_SETTINGS, true);
 	public static final CustomSlabBlock CERAMIC_BRICK_SLAB = new CustomSlabBlock(BONE_SETTINGS, true);
 	public static final CustomWallBlock CERAMIC_BRICK_WALL = new CustomWallBlock(BONE_SETTINGS, true);
+
+	public static final CustomBlock CHISELED_AKETITE = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomBlock CHISELED_ARTEMNITE = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomBlock CHISELED_TROPICSTONE = new CustomBlock(STONE_SETTINGS, true);
+
+	public static final CustomBlock CLEMENTIUM_BLOCK = new CustomBlock(METAL_SETTINGS, true);
+
+	public static final CustomBlock CRACKLED_AKETITE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomBlock CRACKLED_ARTEMNITE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomBlock CRACKLED_TROPICSTONE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
+
+	public static final CustomBlock CRIMSON_TILES = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomStairsBlock CRIMSON_TILES_STAIRS = new CustomStairsBlock(CRIMSON_TILES.getDefaultState(), STONE_SETTINGS, true);
+	public static final CustomSlabBlock CRIMSON_TILES_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
+	public static final CustomWallBlock CRIMSON_TILES_WALL = new CustomWallBlock(STONE_SETTINGS, true);
 
 	@Override
 	public void register() {
@@ -122,6 +147,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		ASCENDIA.register(Archeon.newIdentifier("ascendia"));
 		ASTEDIBES.register(Archeon.newIdentifier("astedibes"));
 		BLOOD_ORANGE_BUSH.register(Archeon.newIdentifier("blood_orange_bush"));
+		COKIPLANT.register(Archeon.newIdentifier("cokiplant"));
 		AKETITE_BASEBOARD.register(Archeon.newIdentifier("aketite_baseboard"));
 		AKETITE.register(Archeon.newIdentifier("aketite"));
 		AKETITE_STAIRS.register(Archeon.newIdentifier("aketite_stairs"));
@@ -175,5 +201,16 @@ public class ArcheonBlocks implements ElementsInitializer {
 		CERAMIC_BRICK_STAIRS.register(Archeon.newIdentifier("ceramic_brick_stairs"));
 		CERAMIC_BRICK_SLAB.register(Archeon.newIdentifier("ceramic_brick_slab"));
 		CERAMIC_BRICK_WALL.register(Archeon.newIdentifier("ceramic_brick_wall"));
+		CHISELED_AKETITE.register(Archeon.newIdentifier("chiseled_aketite"));
+		CHISELED_ARTEMNITE.register(Archeon.newIdentifier("chiseled_artemnite"));
+		CHISELED_TROPICSTONE.register(Archeon.newIdentifier("chiseled_tropicstone"));
+		CLEMENTIUM_BLOCK.register(Archeon.newIdentifier("clementium_block"));
+		CRACKLED_AKETITE_BRICKS.register(Archeon.newIdentifier("crackled_aketite_bricks"));
+		CRACKLED_ARTEMNITE_BRICKS.register(Archeon.newIdentifier("crackled_artemnite_bricks"));
+		CRACKLED_TROPICSTONE_BRICKS.register(Archeon.newIdentifier("crackled_tropicstone_bricks"));
+		CRIMSON_TILES.register(Archeon.newIdentifier("crimson_tiles"));
+		CRIMSON_TILES_STAIRS.register(Archeon.newIdentifier("crimson_tiles_stairs"));
+		CRIMSON_TILES_SLAB.register(Archeon.newIdentifier("crimson_tiles_slab"));
+		CRIMSON_TILES_WALL.register(Archeon.newIdentifier("crimson_tiles_wall"));
 	}
 }

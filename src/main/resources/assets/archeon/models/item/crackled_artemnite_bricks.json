@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/ceramic_bricks_stairs",
+  "parent": "archeon:block/crackled_artemnite_bricks",
   "display": {
     "thirdperson": {
       "rotation": [
