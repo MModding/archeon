@@ -12,11 +12,12 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.ASTEDIBES.cutout();
 		ArcheonBlocks.BLOOD_ORANGE_BUSH.cutout();
 		ArcheonBlocks.COKIPLANT.cutout();
-		ArcheonBlocks.ANTROPY_DOOR.cutout();
+		ArcheonBlocks.NECLANE_DOOR.cutout();
 		ArcheonBlocks.BUSH_LEAVES.cutout();
 		ArcheonBlocks.DEAD_WET_GRASS_TUFFET.cutout();
 
-		ArcheonBlocks.ANTROPY_LEAVES.cutout();
+		ArcheonBlocks.NECLANE_LEAVES.cutout();
+		ArcheonBlocks.FLOWERED_NECLANE_LEAVES.cutout();
 		ArcheonBlocks.CYPRESS_LEAVES.cutout();
 
 		ArcheonBlocks.DUNE_SAND_GLASS.cutout();

@@ -4,8 +4,9 @@ import com.mmodding.mmodding_lib.library.blocks.*;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.blocks.DuneSandCastleBlock;
+import fr.firstmegagame4.archeon.blocks.HeartOfNatureTrophyBlock;
 import net.minecraft.block.Material;
-import net.minecraft.block.PressurePlateBlock;
+import net.minecraft.block.PressurePlateBlock.ActivationRule;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.sound.BlockSoundGroup;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
@@ -19,6 +20,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final QuiltBlockSettings BONE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.BONE);
 	public static final QuiltBlockSettings GLASS_SETTINGS = QuiltBlockSettings.of(Material.GLASS).sounds(BlockSoundGroup.GLASS).nonOpaque();
 	public static final QuiltBlockSettings SAND_SETTINGS = QuiltBlockSettings.of(Material.AGGREGATE).sounds(BlockSoundGroup.SAND);
+	public static final QuiltBlockSettings BASALT_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.BASALT);
+	public static final QuiltBlockSettings LODESTONE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.LODESTONE);
 
 	public static final CustomFlowerBlock AEROLIA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
@@ -88,18 +91,19 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomSlabBlock AKETITE_TILES_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
 	public static final CustomWallBlock AKETITE_TILES_WALL = new CustomWallBlock(STONE_SETTINGS, true);
 
-	public static final CustomPillarBlock ANTROPY_LOG = new CustomPillarBlock(WOOD_SETTINGS, true);
-	public static final CustomBlock ANTROPY_LEAVES = new CustomBlock(LEAVES_SETTINGS, true);
-	public static final CustomPillarBlock ANTROPY_WOOD = new CustomPillarBlock(WOOD_SETTINGS, true);
-	public static final CustomBlock ANTROPY_PLANKS = new CustomBlock(WOOD_SETTINGS, true);
-	public static final CustomButtonBlock.Wooden ANTROPY_BUTTON = new CustomButtonBlock.Wooden(WOOD_SETTINGS, true);
-	public static final CustomDoorBlock ANTROPY_DOOR = new CustomDoorBlock(WOOD_SETTINGS, true);
-	public static final CustomPressurePlateBlock ANTROPY_PRESSURE_PLATE = new CustomPressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, WOOD_SETTINGS, true);
-	public static final CustomFenceBlock ANTROPY_FENCE = new CustomFenceBlock(WOOD_SETTINGS, true);
-	public static final CustomFenceGateBlock ANTROPY_FENCE_GATE = new CustomFenceGateBlock(WOOD_SETTINGS, true);
-	public static final CustomStairsBlock ANTROPY_STAIRS = new CustomStairsBlock(ANTROPY_PLANKS.getDefaultState(), WOOD_SETTINGS, true);
-	public static final CustomSlabBlock ANTROPY_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
-	public static final CustomTrapdoorBlock ANTROPY_TRAPDOOR = new CustomTrapdoorBlock(STONE_SETTINGS, true);
+	public static final CustomPillarBlock NECLANE_LOG = new CustomPillarBlock(WOOD_SETTINGS, true);
+	public static final CustomBlock NECLANE_LEAVES = new CustomBlock(LEAVES_SETTINGS, true);
+	public static final CustomBlock FLOWERED_NECLANE_LEAVES = new CustomBlock(LEAVES_SETTINGS, true);
+	public static final CustomPillarBlock NECLANE_WOOD = new CustomPillarBlock(WOOD_SETTINGS, true);
+	public static final CustomBlock NECLANE_PLANKS = new CustomBlock(WOOD_SETTINGS, true);
+	public static final CustomButtonBlock.Wooden NECLANE_BUTTON = new CustomButtonBlock.Wooden(WOOD_SETTINGS, true);
+	public static final CustomDoorBlock NECLANE_DOOR = new CustomDoorBlock(WOOD_SETTINGS, true);
+	public static final CustomPressurePlateBlock NECLANE_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.EVERYTHING, WOOD_SETTINGS, true);
+	public static final CustomFenceBlock NECLANE_FENCE = new CustomFenceBlock(WOOD_SETTINGS, true);
+	public static final CustomFenceGateBlock NECLANE_FENCE_GATE = new CustomFenceGateBlock(WOOD_SETTINGS, true);
+	public static final CustomStairsBlock NECLANE_STAIRS = new CustomStairsBlock(NECLANE_PLANKS.getDefaultState(), WOOD_SETTINGS, true);
+	public static final CustomSlabBlock NECLANE_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
+	public static final CustomTrapdoorBlock NECLANE_TRAPDOOR = new CustomTrapdoorBlock(STONE_SETTINGS, true);
 
 	public static final CustomBlock APAFLORITE_BLOCK = new CustomBlock(METAL_SETTINGS, true);
 	public static final CustomBlock APAFLORITE_ORE = new CustomBlock(STONE_SETTINGS, true);
@@ -128,7 +132,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomPillarBlock BLOCK_OF_CERAMIC = new CustomPillarBlock(BONE_SETTINGS, true);
 	public static final CustomButtonBlock.Stone CERAMIC_BUTTON = new CustomButtonBlock.Stone(BONE_SETTINGS, true);
 	public static final CustomFenceBlock CERAMIC_FENCE = new CustomFenceBlock(BONE_SETTINGS, true);
-	public static final CustomPressurePlateBlock CERAMIC_PRESSURE_PLATE = new CustomPressurePlateBlock(PressurePlateBlock.ActivationRule.MOBS, BONE_SETTINGS, true);
+	public static final CustomPressurePlateBlock CERAMIC_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, BONE_SETTINGS, true);
 	public static final CustomStairsBlock CERAMIC_STAIRS = new CustomStairsBlock(BLOCK_OF_CERAMIC.getDefaultState(), BONE_SETTINGS, true);
 	public static final CustomSlabBlock CERAMIC_SLAB = new CustomSlabBlock(BONE_SETTINGS, true);
 
@@ -158,7 +162,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock CYPRESS_PLANKS = new CustomBlock(WOOD_SETTINGS, true);
 	public static final CustomButtonBlock.Wooden CYPRESS_BUTTON = new CustomButtonBlock.Wooden(WOOD_SETTINGS, true);
 	public static final CustomDoorBlock CYPRESS_DOOR = new CustomDoorBlock(WOOD_SETTINGS, true);
-	public static final CustomPressurePlateBlock CYPRESS_PRESSURE_PLATE = new CustomPressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, WOOD_SETTINGS, true);
+	public static final CustomPressurePlateBlock CYPRESS_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.EVERYTHING, WOOD_SETTINGS, true);
 	public static final CustomFenceBlock CYPRESS_FENCE = new CustomFenceBlock(WOOD_SETTINGS, true);
 	public static final CustomFenceGateBlock CYPRESS_FENCE_GATE = new CustomFenceGateBlock(WOOD_SETTINGS, true);
 	public static final CustomStairsBlock CYPRESS_STAIRS = new CustomStairsBlock(CYPRESS_PLANKS.getDefaultState(), WOOD_SETTINGS, true);
@@ -180,6 +184,51 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomPaneBlock DUNE_SAND_GLASS_PANE_TILES_BOTTOM_RIGHT = new CustomPaneBlock(GLASS_SETTINGS, true);
 
 	public static final DuneSandCastleBlock DUNE_SAND_CASTLE = new DuneSandCastleBlock(SAND_SETTINGS.nonOpaque(), true);
+
+	public static final CustomFallingBlock DUST = new CustomFallingBlock(SAND_SETTINGS, true);
+
+	public static final CustomBlock EXYRIANE_BLOCK = new CustomBlock(METAL_SETTINGS, true);
+	public static final CustomBlock EXYRIANE_ORE = new CustomBlock(STONE_SETTINGS, true);
+
+	public static final CustomBlock FAELITE_BLOCK = new CustomBlock(METAL_SETTINGS, true);
+	public static final CustomBlock FAELITE_ORE = new CustomBlock(STONE_SETTINGS, true);
+
+	public static final CustomBlock FALSE_SOUTHSTONE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomBlock FALSE_CRACKED_SOUTHSTONE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomBlock FALSE_MOSSY_SOUTHSTONE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
+
+	public static final CustomBlock FANCY_ARTEMNITE_TILES = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomStairsBlock FANCY_ARTEMNITE_TILES_STAIRS = new CustomStairsBlock(FANCY_ARTEMNITE_TILES.getDefaultState(), STONE_SETTINGS, true);
+	public static final CustomSlabBlock FANCY_ARTEMNITE_TILES_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
+	public static final CustomWallBlock FANCY_ARTEMNITE_TILES_WALL = new CustomWallBlock(STONE_SETTINGS, true);
+
+	public static final CustomBlock FANCY_CHISELED_ARTEMNITE = new CustomBlock(STONE_SETTINGS, true);
+
+	public static final CustomBlock GILDED_COBBLED_SOUTHSTONE = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomStairsBlock GILDED_COBBLED_SOUTHSTONE_STAIRS = new CustomStairsBlock(GILDED_COBBLED_SOUTHSTONE.getDefaultState(), STONE_SETTINGS, true);
+	public static final CustomSlabBlock GILDED_COBBLED_SOUTHSTONE_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
+	public static final CustomWallBlock GILDED_COBBLED_SOUTHSTONE_WALL = new CustomWallBlock(STONE_SETTINGS, true);
+
+	public static final CustomBlock GOLDEN_SAND = new CustomBlock(SAND_SETTINGS, true);
+
+	public static final CustomBlock GREEN_TILES = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomStairsBlock GREEN_TILES_STAIRS = new CustomStairsBlock(GREEN_TILES.getDefaultState(), STONE_SETTINGS, true);
+	public static final CustomSlabBlock GREEN_TILES_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
+	public static final CustomWallBlock GREEN_TILES_WALL = new CustomWallBlock(STONE_SETTINGS, true);
+
+	public static final CustomBlock GYPSUM = new CustomBlock(BASALT_SETTINGS, true);
+	public static final CustomPressurePlateBlock GYPSUM_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, BASALT_SETTINGS, true);
+	public static final CustomStairsBlock GYPSUM_STAIRS = new CustomStairsBlock(GYPSUM.getDefaultState(), BASALT_SETTINGS, true);
+	public static final CustomSlabBlock GYPSUM_SLAB = new CustomSlabBlock(BASALT_SETTINGS, true);
+	public static final CustomWallBlock GYPSUM_WALL = new CustomWallBlock(BASALT_SETTINGS, true);
+
+	public static final CustomBlock GYPSUM_BRICKS = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomFenceBlock GYPSUM_BRICK_FENCE = new CustomFenceBlock(STONE_SETTINGS, true);
+	public static final CustomStairsBlock GYPSUM_BRICK_STAIRS = new CustomStairsBlock(GYPSUM_BRICKS.getDefaultState(), STONE_SETTINGS, true);
+	public static final CustomSlabBlock GYPSUM_BRICK_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
+	public static final CustomWallBlock GYPSUM_BRICK_WALL = new CustomWallBlock(STONE_SETTINGS, true);
+
+	public static final HeartOfNatureTrophyBlock HEART_OF_NATURE_TROPHY = new HeartOfNatureTrophyBlock(LODESTONE_SETTINGS.nonOpaque(), true);
 
 	@Override
 	public void register() {
@@ -203,18 +252,19 @@ public class ArcheonBlocks implements ElementsInitializer {
 		AKETITE_TILES_STAIRS.register(Archeon.newIdentifier("aketite_tiles_stairs"));
 		AKETITE_TILES_SLAB.register(Archeon.newIdentifier("aketite_tiles_slab"));
 		AKETITE_TILES_WALL.register(Archeon.newIdentifier("aketite_tiles_wall"));
-		ANTROPY_LOG.register(Archeon.newIdentifier("antropy_log"));
-		ANTROPY_LEAVES.register(Archeon.newIdentifier("antropy_leaves"));
-		ANTROPY_WOOD.register(Archeon.newIdentifier("antropy_wood"));
-		ANTROPY_PLANKS.register(Archeon.newIdentifier("antropy_planks"));
-		ANTROPY_BUTTON.register(Archeon.newIdentifier("antropy_button"));
-		ANTROPY_DOOR.register(Archeon.newIdentifier("antropy_door"));
-		ANTROPY_PRESSURE_PLATE.register(Archeon.newIdentifier("antropy_pressure_plate"));
-		ANTROPY_FENCE.register(Archeon.newIdentifier("antropy_fence"));
-		ANTROPY_FENCE_GATE.register(Archeon.newIdentifier("antropy_fence_gate"));
-		ANTROPY_STAIRS.register(Archeon.newIdentifier("antropy_stairs"));
-		ANTROPY_SLAB.register(Archeon.newIdentifier("antropy_slab"));
-		ANTROPY_TRAPDOOR.register(Archeon.newIdentifier("antropy_trapdoor"));
+		NECLANE_LOG.register(Archeon.newIdentifier("neclane_log"));
+		NECLANE_LEAVES.register(Archeon.newIdentifier("neclane_leaves"));
+		FLOWERED_NECLANE_LEAVES.register(Archeon.newIdentifier("flowered_neclane_leaves"));
+		NECLANE_WOOD.register(Archeon.newIdentifier("neclane_wood"));
+		NECLANE_PLANKS.register(Archeon.newIdentifier("neclane_planks"));
+		NECLANE_BUTTON.register(Archeon.newIdentifier("neclane_button"));
+		NECLANE_DOOR.register(Archeon.newIdentifier("neclane_door"));
+		NECLANE_PRESSURE_PLATE.register(Archeon.newIdentifier("neclane_pressure_plate"));
+		NECLANE_FENCE.register(Archeon.newIdentifier("neclane_fence"));
+		NECLANE_FENCE_GATE.register(Archeon.newIdentifier("neclane_fence_gate"));
+		NECLANE_STAIRS.register(Archeon.newIdentifier("neclane_stairs"));
+		NECLANE_SLAB.register(Archeon.newIdentifier("neclane_slab"));
+		NECLANE_TRAPDOOR.register(Archeon.newIdentifier("neclane_trapdoor"));
 		APAFLORITE_BLOCK.register(Archeon.newIdentifier("apaflorite_block"));
 		APAFLORITE_ORE.register(Archeon.newIdentifier("apaflorite_ore"));
 		ARTEMNITE_BASEBOARD.register(Archeon.newIdentifier("artemnite_baseboard"));
@@ -278,5 +328,38 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DUNE_SAND_GLASS_PANE_TILES_BOTTOM_LEFT.register(Archeon.newIdentifier("dune_sand_glass_pane_tiles_bottom_left"));
 		DUNE_SAND_GLASS_PANE_TILES_BOTTOM_RIGHT.register(Archeon.newIdentifier("dune_sand_glass_pane_tiles_bottom_right"));
 		DUNE_SAND_CASTLE.register(Archeon.newIdentifier("dune_sand_castle"));
+		DUST.register(Archeon.newIdentifier("dust"));
+		EXYRIANE_BLOCK.register(Archeon.newIdentifier("exyriane_block"));
+		EXYRIANE_ORE.register(Archeon.newIdentifier("exyriane_ore"));
+		FAELITE_BLOCK.register(Archeon.newIdentifier("faelite_block"));
+		FAELITE_ORE.register(Archeon.newIdentifier("faelite_ore"));
+		FALSE_SOUTHSTONE_BRICKS.register(Archeon.newIdentifier("false_southstone_bricks"));
+		FALSE_CRACKED_SOUTHSTONE_BRICKS.register(Archeon.newIdentifier("false_cracked_southstone_bricks"));
+		FALSE_MOSSY_SOUTHSTONE_BRICKS.register(Archeon.newIdentifier("false_mossy_southstone_bricks"));
+		FANCY_ARTEMNITE_TILES.register(Archeon.newIdentifier("fancy_artemnite_tiles"));
+		FANCY_ARTEMNITE_TILES_STAIRS.register(Archeon.newIdentifier("fancy_artemnite_tiles_stairs"));
+		FANCY_ARTEMNITE_TILES_SLAB.register(Archeon.newIdentifier("fancy_artemnite_tiles_slab"));
+		FANCY_ARTEMNITE_TILES_WALL.register(Archeon.newIdentifier("fancy_artemnite_tiles_wall"));
+		FANCY_CHISELED_ARTEMNITE.register(Archeon.newIdentifier("fancy_chiseled_artemnite"));
+		GILDED_COBBLED_SOUTHSTONE.register(Archeon.newIdentifier("gilded_cobbled_southstone"));
+		GILDED_COBBLED_SOUTHSTONE_STAIRS.register(Archeon.newIdentifier("gilded_cobbled_southstone_stairs"));
+		GILDED_COBBLED_SOUTHSTONE_SLAB.register(Archeon.newIdentifier("gilded_cobbled_southstone_slab"));
+		GILDED_COBBLED_SOUTHSTONE_WALL.register(Archeon.newIdentifier("gilded_cobbled_southstone_wall"));
+		GOLDEN_SAND.register(Archeon.newIdentifier("golden_sand"));
+		GREEN_TILES.register(Archeon.newIdentifier("green_tiles"));
+		GREEN_TILES_STAIRS.register(Archeon.newIdentifier("green_tiles_stairs"));
+		GREEN_TILES_SLAB.register(Archeon.newIdentifier("green_tiles_slab"));
+		GREEN_TILES_WALL.register(Archeon.newIdentifier("green_tiles_wall"));
+		GYPSUM.register(Archeon.newIdentifier("gypsum"));
+		GYPSUM_PRESSURE_PLATE.register(Archeon.newIdentifier("gypsum_pressure_plate"));
+		GYPSUM_STAIRS.register(Archeon.newIdentifier("gypsum_stairs"));
+		GYPSUM_SLAB.register(Archeon.newIdentifier("gypsum_slab"));
+		GYPSUM_WALL.register(Archeon.newIdentifier("gypsum_wall"));
+		GYPSUM_BRICKS.register(Archeon.newIdentifier("gypsum_bricks"));
+		GYPSUM_BRICK_FENCE.register(Archeon.newIdentifier("gypsum_brick_fence"));
+		GYPSUM_BRICK_STAIRS.register(Archeon.newIdentifier("gypsum_brick_stairs"));
+		GYPSUM_BRICK_SLAB.register(Archeon.newIdentifier("gypsum_brick_slab"));
+		GYPSUM_BRICK_WALL.register(Archeon.newIdentifier("gypsum_brick_wall"));
+		HEART_OF_NATURE_TROPHY.register(Archeon.newIdentifier("heart_of_nature_trophy"));
 	}
 }

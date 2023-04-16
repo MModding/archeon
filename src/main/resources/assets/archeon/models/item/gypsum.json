@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/fancy_chiseled_artemnite",
+  "parent": "archeon:block/gypsum",
   "display": {
     "thirdperson": {
       "rotation": [
