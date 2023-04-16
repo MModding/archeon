@@ -3,6 +3,7 @@ package fr.firstmegagame4.archeon.init;
 import com.mmodding.mmodding_lib.library.blocks.*;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import fr.firstmegagame4.archeon.Archeon;
+import fr.firstmegagame4.archeon.blocks.DuneSandCastleBlock;
 import net.minecraft.block.Material;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.entity.effect.StatusEffects;
@@ -13,9 +14,11 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	private static final QuiltBlockSettings STONE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE);
 	public static final QuiltBlockSettings WOOD_SETTINGS = QuiltBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD);
-	public static final QuiltBlockSettings LEAVES_SETTINGS = QuiltBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS);
+	public static final QuiltBlockSettings LEAVES_SETTINGS = QuiltBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque();
 	public static final QuiltBlockSettings METAL_SETTINGS = QuiltBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.METAL);
 	public static final QuiltBlockSettings BONE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.BONE);
+	public static final QuiltBlockSettings GLASS_SETTINGS = QuiltBlockSettings.of(Material.GLASS).sounds(BlockSoundGroup.GLASS).nonOpaque();
+	public static final QuiltBlockSettings SAND_SETTINGS = QuiltBlockSettings.of(Material.AGGREGATE).sounds(BlockSoundGroup.SAND);
 
 	public static final CustomFlowerBlock AEROLIA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
@@ -55,6 +58,14 @@ public class ArcheonBlocks implements ElementsInitializer {
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
 		StatusEffects.POISON,
 		5,
+		LEAVES_SETTINGS,
+		true
+	);
+
+	public static final CustomFlowerBlock DEAD_WET_GRASS_TUFFET = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.DARKNESS,
+		20,
 		LEAVES_SETTINGS,
 		true
 	);
@@ -141,6 +152,35 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomSlabBlock CRIMSON_TILES_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
 	public static final CustomWallBlock CRIMSON_TILES_WALL = new CustomWallBlock(STONE_SETTINGS, true);
 
+	public static final CustomPillarBlock CYPRESS_LOG = new CustomPillarBlock(WOOD_SETTINGS, true);
+	public static final CustomBlock CYPRESS_LEAVES = new CustomBlock(LEAVES_SETTINGS, true);
+	public static final CustomPillarBlock CYPRESS_WOOD = new CustomPillarBlock(WOOD_SETTINGS, true);
+	public static final CustomBlock CYPRESS_PLANKS = new CustomBlock(WOOD_SETTINGS, true);
+	public static final CustomButtonBlock.Wooden CYPRESS_BUTTON = new CustomButtonBlock.Wooden(WOOD_SETTINGS, true);
+	public static final CustomDoorBlock CYPRESS_DOOR = new CustomDoorBlock(WOOD_SETTINGS, true);
+	public static final CustomPressurePlateBlock CYPRESS_PRESSURE_PLATE = new CustomPressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, WOOD_SETTINGS, true);
+	public static final CustomFenceBlock CYPRESS_FENCE = new CustomFenceBlock(WOOD_SETTINGS, true);
+	public static final CustomFenceGateBlock CYPRESS_FENCE_GATE = new CustomFenceGateBlock(WOOD_SETTINGS, true);
+	public static final CustomStairsBlock CYPRESS_STAIRS = new CustomStairsBlock(CYPRESS_PLANKS.getDefaultState(), WOOD_SETTINGS, true);
+	public static final CustomSlabBlock CYPRESS_SLAB = new CustomSlabBlock(WOOD_SETTINGS, true);
+	public static final CustomTrapdoorBlock CYPRESS_TRAPDOOR = new CustomTrapdoorBlock(WOOD_SETTINGS, true);
+
+	public static final CustomBlock DUNE_SAND_GLASS = new CustomBlock(GLASS_SETTINGS, true);
+	public static final CustomBlock DUNE_SAND_GLASS_TILES = new CustomBlock(GLASS_SETTINGS, true);
+	public static final CustomBlock DUNE_SAND_GLASS_TILES_TOP_LEFT = new CustomBlock(GLASS_SETTINGS, true);
+	public static final CustomBlock DUNE_SAND_GLASS_TILES_TOP_RIGHT = new CustomBlock(GLASS_SETTINGS, true);
+	public static final CustomBlock DUNE_SAND_GLASS_TILES_BOTTOM_LEFT = new CustomBlock(GLASS_SETTINGS, true);
+	public static final CustomBlock DUNE_SAND_GLASS_TILES_BOTTOM_RIGHT = new CustomBlock(GLASS_SETTINGS, true);
+
+	public static final CustomPaneBlock DUNE_SAND_GLASS_PANE = new CustomPaneBlock(GLASS_SETTINGS, true);
+	public static final CustomPaneBlock DUNE_SAND_GLASS_PANE_TILES = new CustomPaneBlock(GLASS_SETTINGS, true);
+	public static final CustomPaneBlock DUNE_SAND_GLASS_PANE_TILES_TOP_LEFT = new CustomPaneBlock(GLASS_SETTINGS, true);
+	public static final CustomPaneBlock DUNE_SAND_GLASS_PANE_TILES_TOP_RIGHT = new CustomPaneBlock(GLASS_SETTINGS, true);
+	public static final CustomPaneBlock DUNE_SAND_GLASS_PANE_TILES_BOTTOM_LEFT = new CustomPaneBlock(GLASS_SETTINGS, true);
+	public static final CustomPaneBlock DUNE_SAND_GLASS_PANE_TILES_BOTTOM_RIGHT = new CustomPaneBlock(GLASS_SETTINGS, true);
+
+	public static final DuneSandCastleBlock DUNE_SAND_CASTLE = new DuneSandCastleBlock(SAND_SETTINGS.nonOpaque(), true);
+
 	@Override
 	public void register() {
 		AEROLIA.register(Archeon.newIdentifier("aerolia"));
@@ -148,6 +188,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		ASTEDIBES.register(Archeon.newIdentifier("astedibes"));
 		BLOOD_ORANGE_BUSH.register(Archeon.newIdentifier("blood_orange_bush"));
 		COKIPLANT.register(Archeon.newIdentifier("cokiplant"));
+		DEAD_WET_GRASS_TUFFET.register(Archeon.newIdentifier("dead_wet_grass_tuffet"));
 		AKETITE_BASEBOARD.register(Archeon.newIdentifier("aketite_baseboard"));
 		AKETITE.register(Archeon.newIdentifier("aketite"));
 		AKETITE_STAIRS.register(Archeon.newIdentifier("aketite_stairs"));
@@ -212,5 +253,30 @@ public class ArcheonBlocks implements ElementsInitializer {
 		CRIMSON_TILES_STAIRS.register(Archeon.newIdentifier("crimson_tiles_stairs"));
 		CRIMSON_TILES_SLAB.register(Archeon.newIdentifier("crimson_tiles_slab"));
 		CRIMSON_TILES_WALL.register(Archeon.newIdentifier("crimson_tiles_wall"));
+		CYPRESS_LOG.register(Archeon.newIdentifier("cypress_log"));
+		CYPRESS_LEAVES.register(Archeon.newIdentifier("cypress_leaves"));
+		CYPRESS_WOOD.register(Archeon.newIdentifier("cypress_wood"));
+		CYPRESS_PLANKS.register(Archeon.newIdentifier("cypress_planks"));
+		CYPRESS_BUTTON.register(Archeon.newIdentifier("cypress_button"));
+		CYPRESS_DOOR.register(Archeon.newIdentifier("cypress_door"));
+		CYPRESS_PRESSURE_PLATE.register(Archeon.newIdentifier("cypress_pressure_plate"));
+		CYPRESS_FENCE.register(Archeon.newIdentifier("cypress_fence"));
+		CYPRESS_FENCE_GATE.register(Archeon.newIdentifier("cypress_fence_gate"));
+		CYPRESS_STAIRS.register(Archeon.newIdentifier("cypress_stairs"));
+		CYPRESS_SLAB.register(Archeon.newIdentifier("cypress_slab"));
+		CYPRESS_TRAPDOOR.register(Archeon.newIdentifier("cypress_trapdoor"));
+		DUNE_SAND_GLASS.register(Archeon.newIdentifier("dune_sand_glass"));
+		DUNE_SAND_GLASS_TILES.register(Archeon.newIdentifier("dune_sand_glass_tiles"));
+		DUNE_SAND_GLASS_TILES_TOP_LEFT.register(Archeon.newIdentifier("dune_sand_glass_tiles_top_left"));
+		DUNE_SAND_GLASS_TILES_TOP_RIGHT.register(Archeon.newIdentifier("dune_sand_glass_tiles_top_right"));
+		DUNE_SAND_GLASS_TILES_BOTTOM_LEFT.register(Archeon.newIdentifier("dune_sand_glass_tiles_bottom_left"));
+		DUNE_SAND_GLASS_TILES_BOTTOM_RIGHT.register(Archeon.newIdentifier("dune_sand_glass_tiles_bottom_right"));
+		DUNE_SAND_GLASS_PANE.register(Archeon.newIdentifier("dune_sand_glass_pane"));
+		DUNE_SAND_GLASS_PANE_TILES.register(Archeon.newIdentifier("dune_sand_glass_pane_tiles"));
+		DUNE_SAND_GLASS_PANE_TILES_TOP_LEFT.register(Archeon.newIdentifier("dune_sand_glass_pane_tiles_top_left"));
+		DUNE_SAND_GLASS_PANE_TILES_TOP_RIGHT.register(Archeon.newIdentifier("dune_sand_glass_pane_tiles_top_right"));
+		DUNE_SAND_GLASS_PANE_TILES_BOTTOM_LEFT.register(Archeon.newIdentifier("dune_sand_glass_pane_tiles_bottom_left"));
+		DUNE_SAND_GLASS_PANE_TILES_BOTTOM_RIGHT.register(Archeon.newIdentifier("dune_sand_glass_pane_tiles_bottom_right"));
+		DUNE_SAND_CASTLE.register(Archeon.newIdentifier("dune_sand_castle"));
 	}
 }
