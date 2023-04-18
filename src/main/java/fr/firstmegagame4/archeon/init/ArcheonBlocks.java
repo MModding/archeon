@@ -5,6 +5,7 @@ import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.blocks.DuneSandCastleBlock;
 import fr.firstmegagame4.archeon.blocks.HeartOfNatureTrophyBlock;
+import fr.firstmegagame4.archeon.blocks.HollowCypressLogBlock;
 import net.minecraft.block.Material;
 import net.minecraft.block.PressurePlateBlock.ActivationRule;
 import net.minecraft.entity.effect.StatusEffects;
@@ -230,6 +231,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final HeartOfNatureTrophyBlock HEART_OF_NATURE_TROPHY = new HeartOfNatureTrophyBlock(LODESTONE_SETTINGS.nonOpaque(), true);
 
+	public static final HollowCypressLogBlock HOLLOW_CYPRESS_LOG = new HollowCypressLogBlock(WOOD_SETTINGS.nonOpaque(), true);
+
 	@Override
 	public void register() {
 		AEROLIA.register(Archeon.newIdentifier("aerolia"));
@@ -361,5 +364,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		GYPSUM_BRICK_SLAB.register(Archeon.newIdentifier("gypsum_brick_slab"));
 		GYPSUM_BRICK_WALL.register(Archeon.newIdentifier("gypsum_brick_wall"));
 		HEART_OF_NATURE_TROPHY.register(Archeon.newIdentifier("heart_of_nature_trophy"));
+		HOLLOW_CYPRESS_LOG.register(Archeon.newIdentifier("hollow_cypress_log"));
 	}
 }
