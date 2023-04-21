@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/mossy_tropicstone_bricks_slab",
+  "parent": "archeon:block/mossy_cobbled_southstone_stairs",
   "display": {
     "thirdperson": {
       "rotation": [

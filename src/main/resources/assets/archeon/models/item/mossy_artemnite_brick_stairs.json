@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/crackled_tropicstone_bricks",
+  "parent": "archeon:block/mossy_artemnite_brick_stairs",
   "display": {
     "thirdperson": {
       "rotation": [

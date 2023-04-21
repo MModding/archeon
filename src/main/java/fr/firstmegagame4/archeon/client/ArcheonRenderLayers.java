@@ -15,6 +15,9 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.NECLANE_DOOR.cutout();
 		ArcheonBlocks.BUSH_LEAVES.cutout();
 		ArcheonBlocks.DEAD_WET_GRASS_TUFFET.cutout();
+		ArcheonBlocks.IOPEA.cutout();
+		ArcheonBlocks.LYCORIS_RADIATA.cutout();
+		ArcheonBlocks.LYCORIS_SANGUINEA.cutout();
 
 		ArcheonBlocks.NECLANE_LEAVES.cutout();
 		ArcheonBlocks.FLOWERED_NECLANE_LEAVES.cutout();
@@ -33,5 +36,11 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.DUNE_SAND_GLASS_PANE_TILES_TOP_RIGHT.cutout();
 		ArcheonBlocks.DUNE_SAND_GLASS_PANE_TILES_BOTTOM_LEFT.cutout();
 		ArcheonBlocks.DUNE_SAND_GLASS_PANE_TILES_BOTTOM_RIGHT.cutout();
+
+		ArcheonBlocks.LEAVES_CARPET_ORIAN.cutout();
+		ArcheonBlocks.LEAVES_CARPET_PNEVANTIAL.cutout();
+		ArcheonBlocks.LEAVES_CARPET_STREIAN.cutout();
+		ArcheonBlocks.LEAVES_CARPET_VALE.cutout();
+		ArcheonBlocks.LEAVES_CARPET_ZIAL.cutout();
 	}
 }

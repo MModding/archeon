@@ -6,6 +6,7 @@ import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.blocks.DuneSandCastleBlock;
 import fr.firstmegagame4.archeon.blocks.HeartOfNatureTrophyBlock;
 import fr.firstmegagame4.archeon.blocks.HollowCypressLogBlock;
+import fr.firstmegagame4.archeon.blocks.LeavesCarpetBlock;
 import net.minecraft.block.Material;
 import net.minecraft.block.PressurePlateBlock.ActivationRule;
 import net.minecraft.entity.effect.StatusEffects;
@@ -23,6 +24,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final QuiltBlockSettings SAND_SETTINGS = QuiltBlockSettings.of(Material.AGGREGATE).sounds(BlockSoundGroup.SAND);
 	public static final QuiltBlockSettings BASALT_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.BASALT);
 	public static final QuiltBlockSettings LODESTONE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.LODESTONE);
+	public static final QuiltBlockSettings LEAVES_CARPET = QuiltBlockSettings.of(Material.CARPET).sounds(BlockSoundGroup.GRASS).nonOpaque();
 
 	public static final CustomFlowerBlock AEROLIA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
@@ -69,6 +71,30 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomFlowerBlock DEAD_WET_GRASS_TUFFET = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
 		StatusEffects.DARKNESS,
+		20,
+		LEAVES_SETTINGS,
+		true
+	);
+
+	public static final CustomFlowerBlock IOPEA = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.DOLPHINS_GRACE,
+		10,
+		LEAVES_SETTINGS,
+		true
+	);
+
+	public static final CustomFlowerBlock LYCORIS_RADIATA = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.NAUSEA,
+		10,
+		LEAVES_SETTINGS,
+		true
+	);
+
+	public static final CustomFlowerBlock LYCORIS_SANGUINEA = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.STRENGTH,
 		20,
 		LEAVES_SETTINGS,
 		true
@@ -144,13 +170,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomBlock CHISELED_AKETITE = new CustomBlock(STONE_SETTINGS, true);
 	public static final CustomBlock CHISELED_ARTEMNITE = new CustomBlock(STONE_SETTINGS, true);
-	public static final CustomBlock CHISELED_TROPICSTONE = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomBlock CHISELED_SOUTHSTONE = new CustomBlock(STONE_SETTINGS, true);
 
 	public static final CustomBlock CLEMENTIUM_BLOCK = new CustomBlock(METAL_SETTINGS, true);
 
 	public static final CustomBlock CRACKLED_AKETITE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
 	public static final CustomBlock CRACKLED_ARTEMNITE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
-	public static final CustomBlock CRACKLED_TROPICSTONE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomBlock CRACKLED_SOUTHSTONE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
 
 	public static final CustomBlock CRIMSON_TILES = new CustomBlock(STONE_SETTINGS, true);
 	public static final CustomStairsBlock CRIMSON_TILES_STAIRS = new CustomStairsBlock(CRIMSON_TILES.getDefaultState(), STONE_SETTINGS, true);
@@ -233,6 +259,35 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final HollowCypressLogBlock HOLLOW_CYPRESS_LOG = new HollowCypressLogBlock(WOOD_SETTINGS.nonOpaque(), true);
 
+	public static final LeavesCarpetBlock LEAVES_CARPET_ORIAN = new LeavesCarpetBlock(LEAVES_CARPET, true);
+	public static final LeavesCarpetBlock LEAVES_CARPET_PNEVANTIAL = new LeavesCarpetBlock(LEAVES_CARPET, true);
+	public static final LeavesCarpetBlock LEAVES_CARPET_STREIAN = new LeavesCarpetBlock(LEAVES_CARPET, true);
+	public static final LeavesCarpetBlock LEAVES_CARPET_VALE = new LeavesCarpetBlock(LEAVES_CARPET, true);
+	public static final LeavesCarpetBlock LEAVES_CARPET_ZIAL = new LeavesCarpetBlock(LEAVES_CARPET, true);
+
+	public static final CustomBlock LOOT_URN = new CustomBlock(BONE_SETTINGS.nonOpaque(), true);
+
+	public static final CustomBlock LUSONYTH_BLOCK = new CustomBlock(METAL_SETTINGS, true);
+
+	public static final CustomBlock MOSSY_ARTEMNITE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomStairsBlock MOSSY_ARTEMNITE_BRICK_STAIRS = new CustomStairsBlock(MOSSY_ARTEMNITE_BRICKS.getDefaultState(), STONE_SETTINGS, true);
+	public static final CustomSlabBlock MOSSY_ARTEMNITE_BRICK_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
+	public static final CustomWallBlock MOSSY_ARTEMNITE_BRICK_WALL = new CustomWallBlock(STONE_SETTINGS, true);
+
+	public static final CustomBlock MOSSY_SOUTHSTONE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomStairsBlock MOSSY_SOUTHSTONE_BRICK_STAIRS = new CustomStairsBlock(MOSSY_SOUTHSTONE_BRICKS.getDefaultState(), STONE_SETTINGS, true);
+	public static final CustomSlabBlock MOSSY_SOUTHSTONE_BRICK_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
+	public static final CustomWallBlock MOSSY_SOUTHSTONE_BRICK_WALL = new CustomWallBlock(STONE_SETTINGS, true);
+
+	public static final CustomBlock MOSSY_COBBLED_SOUTHSTONE = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomStairsBlock MOSSY_COBBLED_SOUTHSTONE_STAIRS = new CustomStairsBlock(MOSSY_SOUTHSTONE_BRICKS.getDefaultState(), STONE_SETTINGS, true);
+	public static final CustomSlabBlock MOSSY_COBBLED_SOUTHSTONE_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
+	public static final CustomWallBlock MOSSY_COBBLED_SOUTHSTONE_WALL = new CustomWallBlock(STONE_SETTINGS, true);
+
+	public static final CustomBlock MYSTERIOUS_STONE = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomStairsBlock MYSTERIOUS_STONE_STAIRS = new CustomStairsBlock(MYSTERIOUS_STONE.getDefaultState(), STONE_SETTINGS, true);
+	public static final CustomSlabBlock MYSTERIOUS_STONE_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
+
 	@Override
 	public void register() {
 		AEROLIA.register(Archeon.newIdentifier("aerolia"));
@@ -241,6 +296,9 @@ public class ArcheonBlocks implements ElementsInitializer {
 		BLOOD_ORANGE_BUSH.register(Archeon.newIdentifier("blood_orange_bush"));
 		COKIPLANT.register(Archeon.newIdentifier("cokiplant"));
 		DEAD_WET_GRASS_TUFFET.register(Archeon.newIdentifier("dead_wet_grass_tuffet"));
+		IOPEA.register(Archeon.newIdentifier("iopea"));
+		LYCORIS_RADIATA.register(Archeon.newIdentifier("lycoris_radiata"));
+		LYCORIS_SANGUINEA.register(Archeon.newIdentifier("lycoris_sanguinea"));
 		AKETITE_BASEBOARD.register(Archeon.newIdentifier("aketite_baseboard"));
 		AKETITE.register(Archeon.newIdentifier("aketite"));
 		AKETITE_STAIRS.register(Archeon.newIdentifier("aketite_stairs"));
@@ -297,11 +355,11 @@ public class ArcheonBlocks implements ElementsInitializer {
 		CERAMIC_BRICK_WALL.register(Archeon.newIdentifier("ceramic_brick_wall"));
 		CHISELED_AKETITE.register(Archeon.newIdentifier("chiseled_aketite"));
 		CHISELED_ARTEMNITE.register(Archeon.newIdentifier("chiseled_artemnite"));
-		CHISELED_TROPICSTONE.register(Archeon.newIdentifier("chiseled_tropicstone"));
+		CHISELED_SOUTHSTONE.register(Archeon.newIdentifier("chiseled_southstone"));
 		CLEMENTIUM_BLOCK.register(Archeon.newIdentifier("clementium_block"));
 		CRACKLED_AKETITE_BRICKS.register(Archeon.newIdentifier("crackled_aketite_bricks"));
 		CRACKLED_ARTEMNITE_BRICKS.register(Archeon.newIdentifier("crackled_artemnite_bricks"));
-		CRACKLED_TROPICSTONE_BRICKS.register(Archeon.newIdentifier("crackled_tropicstone_bricks"));
+		CRACKLED_SOUTHSTONE_BRICKS.register(Archeon.newIdentifier("crackled_southstone_bricks"));
 		CRIMSON_TILES.register(Archeon.newIdentifier("crimson_tiles"));
 		CRIMSON_TILES_STAIRS.register(Archeon.newIdentifier("crimson_tiles_stairs"));
 		CRIMSON_TILES_SLAB.register(Archeon.newIdentifier("crimson_tiles_slab"));
@@ -365,5 +423,27 @@ public class ArcheonBlocks implements ElementsInitializer {
 		GYPSUM_BRICK_WALL.register(Archeon.newIdentifier("gypsum_brick_wall"));
 		HEART_OF_NATURE_TROPHY.register(Archeon.newIdentifier("heart_of_nature_trophy"));
 		HOLLOW_CYPRESS_LOG.register(Archeon.newIdentifier("hollow_cypress_log"));
+		LEAVES_CARPET_ORIAN.register(Archeon.newIdentifier("leaves_carpet_orian"));
+		LEAVES_CARPET_PNEVANTIAL.register(Archeon.newIdentifier("leaves_carpet_pnevantial"));
+		LEAVES_CARPET_STREIAN.register(Archeon.newIdentifier("leaves_carpet_streian"));
+		LEAVES_CARPET_VALE.register(Archeon.newIdentifier("leaves_carpet_vale"));
+		LEAVES_CARPET_ZIAL.register(Archeon.newIdentifier("leaves_carpet_zial"));
+		LOOT_URN.register(Archeon.newIdentifier("loot_urn"));
+		LUSONYTH_BLOCK.register(Archeon.newIdentifier("lusonyth_block"));
+		MOSSY_ARTEMNITE_BRICKS.register(Archeon.newIdentifier("mossy_artemnite_bricks"));
+		MOSSY_ARTEMNITE_BRICK_STAIRS.register(Archeon.newIdentifier("mossy_artemnite_brick_stairs"));
+		MOSSY_ARTEMNITE_BRICK_SLAB.register(Archeon.newIdentifier("mossy_artemnite_brick_slab"));
+		MOSSY_ARTEMNITE_BRICK_WALL.register(Archeon.newIdentifier("mossy_artemnite_brick_wall"));
+		MOSSY_SOUTHSTONE_BRICKS.register(Archeon.newIdentifier("mossy_southstone_bricks"));
+		MOSSY_SOUTHSTONE_BRICK_STAIRS.register(Archeon.newIdentifier("mossy_southstone_brick_stairs"));
+		MOSSY_SOUTHSTONE_BRICK_SLAB.register(Archeon.newIdentifier("mossy_southstone_brick_slab"));
+		MOSSY_SOUTHSTONE_BRICK_WALL.register(Archeon.newIdentifier("mossy_southstone_brick_wall"));
+		MOSSY_COBBLED_SOUTHSTONE.register(Archeon.newIdentifier("mossy_cobbled_southstone"));
+		MOSSY_COBBLED_SOUTHSTONE_STAIRS.register(Archeon.newIdentifier("mossy_cobbled_southstone_stairs"));
+		MOSSY_COBBLED_SOUTHSTONE_SLAB.register(Archeon.newIdentifier("mossy_cobbled_southstone_slab"));
+		MOSSY_COBBLED_SOUTHSTONE_WALL.register(Archeon.newIdentifier("mossy_cobbled_southstone_wall"));
+		MYSTERIOUS_STONE.register(Archeon.newIdentifier("mysterious_stone"));
+		MYSTERIOUS_STONE_STAIRS.register(Archeon.newIdentifier("mysterious_stone_stairs"));
+		MYSTERIOUS_STONE_SLAB.register(Archeon.newIdentifier("mysterious_stone_slab"));
 	}
 }
