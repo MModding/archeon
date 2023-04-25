@@ -3,10 +3,7 @@ package fr.firstmegagame4.archeon.init;
 import com.mmodding.mmodding_lib.library.blocks.*;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import fr.firstmegagame4.archeon.Archeon;
-import fr.firstmegagame4.archeon.blocks.DuneSandCastleBlock;
-import fr.firstmegagame4.archeon.blocks.HeartOfNatureTrophyBlock;
-import fr.firstmegagame4.archeon.blocks.HollowCypressLogBlock;
-import fr.firstmegagame4.archeon.blocks.LeavesCarpetBlock;
+import fr.firstmegagame4.archeon.blocks.*;
 import net.minecraft.block.Material;
 import net.minecraft.block.PressurePlateBlock.ActivationRule;
 import net.minecraft.entity.effect.StatusEffects;
@@ -25,6 +22,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final QuiltBlockSettings BASALT_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.BASALT);
 	public static final QuiltBlockSettings LODESTONE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.LODESTONE);
 	public static final QuiltBlockSettings LEAVES_CARPET = QuiltBlockSettings.of(Material.CARPET).sounds(BlockSoundGroup.GRASS).nonOpaque();
+	public static final QuiltBlockSettings NETHERITE_SETTINGS = QuiltBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.NETHERITE);
 
 	public static final CustomFlowerBlock AEROLIA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
@@ -123,6 +121,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock FLOWERED_NECLANE_LEAVES = new CustomBlock(LEAVES_SETTINGS, true);
 	public static final CustomPillarBlock NECLANE_WOOD = new CustomPillarBlock(WOOD_SETTINGS, true);
 	public static final CustomBlock NECLANE_PLANKS = new CustomBlock(WOOD_SETTINGS, true);
+	public static final CustomBlock NECLANE_BOOKSHELF = new CustomBlock(WOOD_SETTINGS, true);
 	public static final CustomButtonBlock.Wooden NECLANE_BUTTON = new CustomButtonBlock.Wooden(WOOD_SETTINGS, true);
 	public static final CustomDoorBlock NECLANE_DOOR = new CustomDoorBlock(WOOD_SETTINGS, true);
 	public static final CustomPressurePlateBlock NECLANE_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.EVERYTHING, WOOD_SETTINGS, true);
@@ -288,6 +287,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomStairsBlock MYSTERIOUS_STONE_STAIRS = new CustomStairsBlock(MYSTERIOUS_STONE.getDefaultState(), STONE_SETTINGS, true);
 	public static final CustomSlabBlock MYSTERIOUS_STONE_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
 
+	public static final NaturiteBlock NATURITE_BLOCK = new NaturiteBlock(NETHERITE_SETTINGS, true);
+
 	@Override
 	public void register() {
 		AEROLIA.register(Archeon.newIdentifier("aerolia"));
@@ -318,6 +319,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		FLOWERED_NECLANE_LEAVES.register(Archeon.newIdentifier("flowered_neclane_leaves"));
 		NECLANE_WOOD.register(Archeon.newIdentifier("neclane_wood"));
 		NECLANE_PLANKS.register(Archeon.newIdentifier("neclane_planks"));
+		NECLANE_BOOKSHELF.register(Archeon.newIdentifier("neclane_bookshelf"));
 		NECLANE_BUTTON.register(Archeon.newIdentifier("neclane_button"));
 		NECLANE_DOOR.register(Archeon.newIdentifier("neclane_door"));
 		NECLANE_PRESSURE_PLATE.register(Archeon.newIdentifier("neclane_pressure_plate"));
@@ -445,5 +447,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		MYSTERIOUS_STONE.register(Archeon.newIdentifier("mysterious_stone"));
 		MYSTERIOUS_STONE_STAIRS.register(Archeon.newIdentifier("mysterious_stone_stairs"));
 		MYSTERIOUS_STONE_SLAB.register(Archeon.newIdentifier("mysterious_stone_slab"));
+		NATURITE_BLOCK.register(Archeon.newIdentifier("naturite"));
 	}
 }
