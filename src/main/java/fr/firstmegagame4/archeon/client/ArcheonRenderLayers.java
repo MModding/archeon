@@ -18,10 +18,23 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.IOPEA.cutout();
 		ArcheonBlocks.LYCORIS_RADIATA.cutout();
 		ArcheonBlocks.LYCORIS_SANGUINEA.cutout();
+		ArcheonBlocks.OEA.cutout();
+		ArcheonBlocks.ORCHID.cutout();
+		ArcheonBlocks.ORGANDEANE_BLOSSOM.cutout();
+		ArcheonBlocks.ORGANDEANE_TALL.cutout();
+
+		ArcheonBlocks.WITHERED_AEROLIA.cutout();
+		ArcheonBlocks.WITHERED_ASCENDIA.cutout();
+		ArcheonBlocks.WITHERED_ASTEDIBES.cutout();
+		ArcheonBlocks.WITHERED_IOPEA.cutout();
+		ArcheonBlocks.WITHERED_OEA.cutout();
+		ArcheonBlocks.WITHERED_ORCHID.cutout();
 
 		ArcheonBlocks.NECLANE_LEAVES.cutout();
 		ArcheonBlocks.FLOWERED_NECLANE_LEAVES.cutout();
 		ArcheonBlocks.CYPRESS_LEAVES.cutout();
+		ArcheonBlocks.NUME_WILLOW_LEAVES.cutout();
+		ArcheonBlocks.NYRETH_LEAVES.cutout();
 
 		ArcheonBlocks.DUNE_SAND_GLASS.cutout();
 		ArcheonBlocks.DUNE_SAND_GLASS_TILES.cutout();
@@ -42,5 +55,8 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.LEAVES_CARPET_STREIAN.cutout();
 		ArcheonBlocks.LEAVES_CARPET_VALE.cutout();
 		ArcheonBlocks.LEAVES_CARPET_ZIAL.cutout();
+
+		ArcheonBlocks.NYRETH_DOOR.cutout();
+		ArcheonBlocks.NYRETH_TRAPDOOR.cutout();
 	}
 }

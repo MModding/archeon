@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": {
-    "archeon:neclane_bookshelf": 1.0
+    "archeon:neclane_bookshelf": 1.0,
+    "archeon:nume_willow_bookshelf": 1.0
   }
 }
