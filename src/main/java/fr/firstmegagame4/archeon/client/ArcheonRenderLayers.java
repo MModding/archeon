@@ -35,6 +35,8 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.CYPRESS_LEAVES.cutout();
 		ArcheonBlocks.NUME_WILLOW_LEAVES.cutout();
 		ArcheonBlocks.NYRETH_LEAVES.cutout();
+		ArcheonBlocks.PALE_NYRETH_LEAVES.cutout();
+		ArcheonBlocks.PALM_LEAVES.cutout();
 
 		ArcheonBlocks.DUNE_SAND_GLASS.cutout();
 		ArcheonBlocks.DUNE_SAND_GLASS_TILES.cutout();
@@ -58,5 +60,8 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 
 		ArcheonBlocks.NYRETH_DOOR.cutout();
 		ArcheonBlocks.NYRETH_TRAPDOOR.cutout();
+
+		ArcheonBlocks.PALM_DOOR.cutout();
+		ArcheonBlocks.PALM_TRAPDOOR.cutout();
 	}
 }

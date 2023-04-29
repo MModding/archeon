@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/ornate_aketite_2",
+  "parent": "archeon:block/ornate_aketite_bricks_lines",
   "display": {
     "thirdperson": {
       "rotation": [

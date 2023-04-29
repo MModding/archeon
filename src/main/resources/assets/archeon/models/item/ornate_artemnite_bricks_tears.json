@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/ornate_artemnite_1",
+  "parent": "archeon:block/ornate_artemnite_bricks_tears",
   "display": {
     "thirdperson": {
       "rotation": [

@@ -378,6 +378,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomPillarBlock NYRETH_LOG = new CustomPillarBlock(WOOD_SETTINGS, true);
 	public static final CustomBlock NYRETH_LEAVES = new CustomBlock(LEAVES_SETTINGS, true);
+	public static final CustomBlock PALE_NYRETH_LEAVES = new CustomBlock(LEAVES_SETTINGS, true);
 	public static final CustomPillarBlock NYRETH_WOOD = new CustomPillarBlock(WOOD_SETTINGS, true);
 	public static final CustomBlock NYRETH_PLANKS = new CustomBlock(WOOD_SETTINGS, true);
 	public static final CustomBlock NYRETH_BOOKSHELF = new CustomBlock(WOOD_SETTINGS, true);
@@ -395,7 +396,27 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomSlabBlock OCHRE_TILES_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
 	public static final CustomWallBlock OCHRE_TILES_WALL = new CustomWallBlock(STONE_SETTINGS, true);
 
+	public static final CustomBlock ORNATE_CHISELED_AKETITE = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomBlock ORNATE_AKETITE_BRICKS_LINES = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomBlock ORNATE_AKETITE_BRICKS_TEARS = new CustomBlock(STONE_SETTINGS, true);
 
+	public static final CustomBlock ORNATE_ARTEMNITE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomBlock ORNATE_ARTEMNITE_BRICKS_LINES = new CustomBlock(STONE_SETTINGS, true);
+	public static final CustomBlock ORNATE_ARTEMNITE_BRICKS_TEARS = new CustomBlock(STONE_SETTINGS, true);
+
+	public static final CustomPillarBlock PALM_LOG = new CustomPillarBlock(WOOD_SETTINGS, true);
+	public static final CustomBlock PALM_LEAVES = new CustomBlock(LEAVES_SETTINGS, true);
+	public static final CustomPillarBlock PALM_WOOD = new CustomPillarBlock(WOOD_SETTINGS, true);
+	public static final CustomBlock PALM_PLANKS = new CustomBlock(WOOD_SETTINGS, true);
+	public static final CustomBlock PALM_BOOKSHELF = new CustomBlock(WOOD_SETTINGS, true);
+	public static final CustomButtonBlock.Wooden PALM_BUTTON = new CustomButtonBlock.Wooden(WOOD_SETTINGS, true);
+	public static final CustomDoorBlock PALM_DOOR = new CustomDoorBlock(WOOD_SETTINGS, true);
+	public static final CustomPressurePlateBlock PALM_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.EVERYTHING, WOOD_SETTINGS, true);
+	public static final CustomFenceBlock PALM_FENCE = new CustomFenceBlock(WOOD_SETTINGS, true);
+	public static final CustomFenceGateBlock PALM_FENCE_GATE = new CustomFenceGateBlock(WOOD_SETTINGS, true);
+	public static final CustomStairsBlock PALM_STAIRS = new CustomStairsBlock(PALM_PLANKS.getDefaultState(), WOOD_SETTINGS, true);
+	public static final CustomSlabBlock PALM_SLAB = new CustomSlabBlock(WOOD_SETTINGS, true);
+	public static final CustomTrapdoorBlock PALM_TRAPDOOR = new CustomTrapdoorBlock(WOOD_SETTINGS, true);
 
 	@Override
 	public void register() {
@@ -581,6 +602,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		NUME_WILLOW_TRAPDOOR.register(Archeon.newIdentifier("nume_willow_trapdoor"));
 		NYRETH_LOG.register(Archeon.newIdentifier("nyreth_log"));
 		NYRETH_LEAVES.register(Archeon.newIdentifier("nyreth_leaves"));
+		PALE_NYRETH_LEAVES.register(Archeon.newIdentifier("pale_nyreth_leaves"));
 		NYRETH_WOOD.register(Archeon.newIdentifier("nyreth_wood"));
 		NYRETH_PLANKS.register(Archeon.newIdentifier("nyreth_planks"));
 		NYRETH_BOOKSHELF.register(Archeon.newIdentifier("nyreth_bookshelf"));
@@ -596,5 +618,24 @@ public class ArcheonBlocks implements ElementsInitializer {
 		OCHRE_TILES_STAIRS.register(Archeon.newIdentifier("ochre_tiles_stairs"));
 		OCHRE_TILES_SLAB.register(Archeon.newIdentifier("ochre_tiles_slab"));
 		OCHRE_TILES_WALL.register(Archeon.newIdentifier("ochre_tiles_wall"));
+		ORNATE_CHISELED_AKETITE.register(Archeon.newIdentifier("ornate_chiseled_aketite"));
+		ORNATE_AKETITE_BRICKS_LINES.register(Archeon.newIdentifier("ornate_aketite_bricks_lines"));
+		ORNATE_AKETITE_BRICKS_TEARS.register(Archeon.newIdentifier("ornate_aketite_bricks_tears"));
+		ORNATE_ARTEMNITE_BRICKS.register(Archeon.newIdentifier("ornate_artemnite_bricks"));
+		ORNATE_ARTEMNITE_BRICKS_LINES.register(Archeon.newIdentifier("ornate_artemnite_bricks_lines"));
+		ORNATE_ARTEMNITE_BRICKS_TEARS.register(Archeon.newIdentifier("ornate_artemnite_bricks_tears"));
+		PALM_LOG.register(Archeon.newIdentifier("palm_log"));
+		PALM_LEAVES.register(Archeon.newIdentifier("palm_leaves"));
+		PALM_WOOD.register(Archeon.newIdentifier("palm_wood"));
+		PALM_PLANKS.register(Archeon.newIdentifier("palm_planks"));
+		PALM_BOOKSHELF.register(Archeon.newIdentifier("palm_bookshelf"));
+		PALM_BUTTON.register(Archeon.newIdentifier("palm_button"));
+		PALM_DOOR.register(Archeon.newIdentifier("palm_door"));
+		PALM_PRESSURE_PLATE.register(Archeon.newIdentifier("palm_pressure_plate"));
+		PALM_FENCE.register(Archeon.newIdentifier("palm_fence"));
+		PALM_FENCE_GATE.register(Archeon.newIdentifier("palm_fence_gate"));
+		PALM_STAIRS.register(Archeon.newIdentifier("palm_stairs"));
+		PALM_SLAB.register(Archeon.newIdentifier("palm_slab"));
+		PALM_TRAPDOOR.register(Archeon.newIdentifier("palm_trapdoor"));
 	}
 }
