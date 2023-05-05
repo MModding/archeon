@@ -7,5 +7,5 @@ import net.minecraft.util.registry.Registry;
 
 public class ArcheonTags {
 
-	public static final TagKey<Block> ARCHEON_DIRT = TagKey.of(Registry.BLOCK_KEY, Archeon.newIdentifier("archeon_dirt"));
+	public static final TagKey<Block> ARCHEON_DIRT = TagKey.of(Registry.BLOCK_KEY, Archeon.createId("archeon_dirt"));
 }

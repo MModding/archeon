@@ -22,6 +22,9 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.ORCHID.cutout();
 		ArcheonBlocks.ORGANDEANE_BLOSSOM.cutout();
 		ArcheonBlocks.ORGANDEANE_TALL.cutout();
+		ArcheonBlocks.RED_LYCORIS.cutout();
+		ArcheonBlocks.ROSEYPIA.cutout();
+		ArcheonBlocks.SEPTICEOLIA.cutout();
 
 		ArcheonBlocks.WITHERED_AEROLIA.cutout();
 		ArcheonBlocks.WITHERED_ASCENDIA.cutout();

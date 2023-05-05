@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/peaks_snow_layer_7",
+  "parent": "archeon:block/peaks_snow_block",
   "display": {
     "thirdperson": {
       "rotation": [

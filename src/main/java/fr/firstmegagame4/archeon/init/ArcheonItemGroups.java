@@ -10,20 +10,20 @@ import org.quiltmc.qsl.item.group.api.QuiltItemGroup;
 
 public class ArcheonItemGroups implements ElementsInitializer {
 
-	public static final ItemGroup BLOCKS = QuiltItemGroup.builder(Archeon.newIdentifier("blocks"))
+	public static final ItemGroup BLOCKS = QuiltItemGroup.builder(Archeon.createId("blocks"))
 		.appendItems(itemStacks -> Registry.BLOCK.stream().filter(block -> block.toString()
 				.split(":")[0]
 				.contains("archeon") && !(block instanceof CustomFlowerBlock))
 			.forEach(block -> itemStacks.add(new ItemStack(block))))
 		.build();
-	public static final ItemGroup COMBAT_AND_TOOLS = QuiltItemGroup.create(Archeon.newIdentifier("combat_and_tools"));
-	public static final ItemGroup FAUNA = QuiltItemGroup.builder(Archeon.newIdentifier("fauna"))
+	public static final ItemGroup COMBAT_AND_TOOLS = QuiltItemGroup.create(Archeon.createId("combat_and_tools"));
+	public static final ItemGroup FAUNA = QuiltItemGroup.builder(Archeon.createId("fauna"))
 		.appendItems(itemStacks -> Registry.BLOCK.stream().filter(block -> block.toString()
 				.split(":")[0]
 				.contains("archeon") && (block instanceof CustomFlowerBlock))
 			.forEach(block -> itemStacks.add(new ItemStack(block))))
 		.build();
-	public static final ItemGroup MISCELLANEOUS = QuiltItemGroup.create(Archeon.newIdentifier("miscellaneous"));
+	public static final ItemGroup MISCELLANEOUS = QuiltItemGroup.create(Archeon.createId("miscellaneous"));
 
 	@Override
 	public void register() {}

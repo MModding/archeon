@@ -1,8 +1,0 @@
-{
-  "parent": "archeon:custom/peaks_snow_layer2",
-  "textures": {
-    "all": "archeon:blocks/peaks_snow",
-    "particle": "archeon:blocks/peaks_snow",
-    "0": "archeon:blocks/peaks_snow"
-  }
-}

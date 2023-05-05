@@ -34,7 +34,11 @@ public class Archeon implements MModdingModInitializer {
 		MModdingModInitializer.super.onInitialize(mod);
 	}
 
-	public static Identifier newIdentifier(String string) {
-		return new Identifier("archeon", string);
+	public static String id() {
+		return "archeon";
+	}
+
+	public static Identifier createId(String string) {
+		return new Identifier(Archeon.id(), string);
 	}
 }

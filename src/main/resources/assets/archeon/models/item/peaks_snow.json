@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/peaks_snow",
+  "parent": "archeon:block/peaks_snow_height2",
   "display": {
     "thirdperson": {
       "rotation": [
