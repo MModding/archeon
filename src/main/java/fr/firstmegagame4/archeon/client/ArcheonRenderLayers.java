@@ -16,6 +16,7 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.BUSH_LEAVES.cutout();
 		ArcheonBlocks.DEAD_WET_GRASS_TUFFET.cutout();
 		ArcheonBlocks.IOPEA.cutout();
+		ArcheonBlocks.TALL_IOPEA.cutout();
 		ArcheonBlocks.LYCORIS_RADIATA.cutout();
 		ArcheonBlocks.LYCORIS_SANGUINEA.cutout();
 		ArcheonBlocks.OEA.cutout();
@@ -25,13 +26,26 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.RED_LYCORIS.cutout();
 		ArcheonBlocks.ROSEYPIA.cutout();
 		ArcheonBlocks.SEPTICEOLIA.cutout();
+		ArcheonBlocks.WET_GRASS_TUFFET.cutout();
+		ArcheonBlocks.SNOWY_GRASS_TUFFET.cutout();
+		ArcheonBlocks.SOUTH_WHEAT.cutout();
+		ArcheonBlocks.TALL_SOUTH_WHEAT.cutout();
+		ArcheonBlocks.WET_GRASS.cutout();
+		ArcheonBlocks.TALL_WET_GRASS.cutout();
+		ArcheonBlocks.WET_FERN.cutout();
+		ArcheonBlocks.TALL_WET_FERN.cutout();
+		ArcheonBlocks.TWILIGHT_ROSE.cutout();
+		ArcheonBlocks.VINE.cutout();
 
 		ArcheonBlocks.WITHERED_AEROLIA.cutout();
 		ArcheonBlocks.WITHERED_ASCENDIA.cutout();
 		ArcheonBlocks.WITHERED_ASTEDIBES.cutout();
 		ArcheonBlocks.WITHERED_IOPEA.cutout();
+		ArcheonBlocks.TALL_WITHERED_IOPEA.cutout();
 		ArcheonBlocks.WITHERED_OEA.cutout();
 		ArcheonBlocks.WITHERED_ORCHID.cutout();
+		ArcheonBlocks.TALL_WITHERED_ORGANDEANE.cutout();
+		ArcheonBlocks.WITHERED_SEPTICEOLIA.cutout();
 
 		ArcheonBlocks.NECLANE_LEAVES.cutout();
 		ArcheonBlocks.FLOWERED_NECLANE_LEAVES.cutout();
@@ -66,5 +80,30 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 
 		ArcheonBlocks.PALM_DOOR.cutout();
 		ArcheonBlocks.PALM_TRAPDOOR.cutout();
+
+		ArcheonBlocks.SPORE_ROOTCAP.cutout();
+
+		ArcheonBlocks.SUMMER_NECLANE_DOOR.cutout();
+		ArcheonBlocks.SUMMER_NECLANE_TRAPDOOR.cutout();
+
+		ArcheonBlocks.VUXANCIA_LEAVES_ORIAN.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_ORIAN_HANGING_BOTTOM.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_ORIAN_HANGING_MIDDLE.cutout();
+
+		ArcheonBlocks.VUXANCIA_LEAVES_PNEVANTIAL.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_PNEVANTIAL_HANGING_BOTTOM.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_PNEVANTIAL_HANGING_MIDDLE.cutout();
+
+		ArcheonBlocks.VUXANCIA_LEAVES_STREIAN.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_STREIAN_HANGING_BOTTOM.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_STREIAN_HANGING_MIDDLE.cutout();
+
+		ArcheonBlocks.VUXANCIA_LEAVES_VALE.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_VALE_HANGING_BOTTOM.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_VALE_HANGING_MIDDLE.cutout();
+
+		ArcheonBlocks.VUXANCIA_LEAVES_ZIAL.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_ZIAL_HANGING_BOTTOM.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_ZIAL_HANGING_MIDDLE.cutout();
 	}
 }

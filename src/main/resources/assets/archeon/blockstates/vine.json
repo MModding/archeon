@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "archeon:block/vine"
+    "has_grapes=false": {
+      "model": "archeon:block/vine_without_grapes"
+    },
+    "has_grapes=true": {
+      "model": "archeon:block/vine_with_grapes"
     }
   }
 }

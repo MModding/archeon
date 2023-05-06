@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "archeon:blocks/vine_without_grapes",
+    "particle": "archeon:blocks/vine_without_grapes"
+  }
+}
