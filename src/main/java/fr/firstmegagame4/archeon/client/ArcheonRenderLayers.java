@@ -10,6 +10,8 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.AEROLIA.cutout();
 		ArcheonBlocks.ASCENDIA.cutout();
 		ArcheonBlocks.ASTEDIBES.cutout();
+		ArcheonBlocks.BUSH.cutout();
+		ArcheonBlocks.VINE.cutout();
 		ArcheonBlocks.BLOOD_ORANGE_BUSH.cutout();
 		ArcheonBlocks.COKIPLANT.cutout();
 		ArcheonBlocks.NECLANE_DOOR.cutout();
@@ -35,7 +37,6 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.WET_FERN.cutout();
 		ArcheonBlocks.TALL_WET_FERN.cutout();
 		ArcheonBlocks.TWILIGHT_ROSE.cutout();
-		ArcheonBlocks.VINE.cutout();
 
 		ArcheonBlocks.WITHERED_AEROLIA.cutout();
 		ArcheonBlocks.WITHERED_ASCENDIA.cutout();

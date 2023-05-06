@@ -4,6 +4,7 @@ import com.mmodding.mmodding_lib.library.blocks.*;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.blocks.*;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Material;
 import net.minecraft.block.PressurePlateBlock.ActivationRule;
 import net.minecraft.entity.effect.StatusEffects;
@@ -16,7 +17,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final QuiltBlockSettings WOOD_SETTINGS = QuiltBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD);
 	public static final QuiltBlockSettings DIRT_SETTINGS = QuiltBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.GRAVEL);
 	public static final QuiltBlockSettings GRASS_SETTINGS = QuiltBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.GRASS);
-	public static final QuiltBlockSettings PLANT_SETTINGS = QuiltBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).collidable(false);
+	public static final QuiltBlockSettings PLANT_SETTINGS = QuiltBlockSettings.of(Material.PLANT).sounds(BlockSoundGroup.GRASS).noCollision();
+	public static final QuiltBlockSettings REPLACEABLE_PLANT_SETTINGS = QuiltBlockSettings.of(Material.REPLACEABLE_PLANT).sounds(BlockSoundGroup.GRASS).noCollision();
 	public static final QuiltBlockSettings LEAVES_SETTINGS = QuiltBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque();
 	public static final QuiltBlockSettings SNOW_SETTINGS = QuiltBlockSettings.of(Material.SNOW_LAYER).sounds(BlockSoundGroup.SNOW).nonOpaque();
 	public static final QuiltBlockSettings SNOW_BLOCK_SETTINGS = QuiltBlockSettings.of(Material.SNOW_BLOCK).sounds(BlockSoundGroup.SNOW);
@@ -52,10 +54,20 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomFlowerBlock BLOOD_ORANGE_BUSH = new CustomFlowerBlock(
+	public static final CustomPlantBlock VINE = new CustomPlantBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.POISON,
-		5,
+		PLANT_SETTINGS,
+		true
+	);
+
+	public static final CustomPlantBlock BUSH = new CustomPlantBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		PLANT_SETTINGS,
+		true
+	);
+
+	public static final CustomPlantBlock BLOOD_ORANGE_BUSH = new CustomPlantBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
 		PLANT_SETTINGS,
 		true
 	);
@@ -162,13 +174,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomPlantBlock WET_GRASS_TUFFET = new CustomPlantBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		PLANT_SETTINGS,
+		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
 	public static final CustomPlantBlock SNOWY_GRASS_TUFFET = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		PLANT_SETTINGS,
+		floor -> floor.isOf(ArcheonBlocks.PEAKS_SNOW_BLOCK),
+		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
@@ -184,27 +196,27 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomPlantBlock WET_GRASS = new CustomPlantBlock(
+	public static final CustomFernBlock WET_GRASS = new CustomFernBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		PLANT_SETTINGS,
+		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
 	public static final CustomTallPlantBlock TALL_WET_GRASS = new CustomTallPlantBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		PLANT_SETTINGS,
+		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
 
-	public static final CustomPlantBlock WET_FERN = new CustomPlantBlock(
+	public static final CustomFernBlock WET_FERN = new CustomFernBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		PLANT_SETTINGS,
+		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
 	public static final CustomTallPlantBlock TALL_WET_FERN = new CustomTallPlantBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		PLANT_SETTINGS,
+		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
 
@@ -212,12 +224,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
 		StatusEffects.REGENERATION,
 		60,
-		PLANT_SETTINGS,
-		true
-	);
-
-	public static final VineBlock VINE = new VineBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
 		PLANT_SETTINGS,
 		true
 	);
@@ -656,6 +662,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 		AEROLIA.register(Archeon.createId("aerolia"));
 		ASCENDIA.register(Archeon.createId("ascendia"));
 		ASTEDIBES.register(Archeon.createId("astedibes"));
+		BUSH.register(Archeon.createId("bush"));
+		VINE.register(Archeon.createId("vine"));
 		BLOOD_ORANGE_BUSH.register(Archeon.createId("blood_orange_bush"));
 		COKIPLANT.register(Archeon.createId("cokiplant"));
 		DEAD_WET_GRASS_TUFFET.register(Archeon.createId("dead_wet_grass_tuffet"));
@@ -679,7 +687,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		WET_FERN.register(Archeon.createId("wet_fern"));
 		TALL_WET_FERN.register(Archeon.createId("tall_wet_fern"));
 		TWILIGHT_ROSE.register(Archeon.createId("twilight_rose"));
-		VINE.register(Archeon.createId("vine"));
 		WITHERED_AEROLIA.register(Archeon.createId("withered_aerolia"));
 		WITHERED_ASCENDIA.register(Archeon.createId("withered_ascendia"));
 		WITHERED_ASTEDIBES.register(Archeon.createId("withered_astedibes"));
