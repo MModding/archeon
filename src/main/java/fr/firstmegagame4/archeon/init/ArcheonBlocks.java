@@ -14,24 +14,24 @@ import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class ArcheonBlocks implements ElementsInitializer {
 
-	private static final QuiltBlockSettings STONE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE);
-	public static final QuiltBlockSettings WOOD_SETTINGS = QuiltBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD);
-	public static final QuiltBlockSettings DIRT_SETTINGS = QuiltBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.GRAVEL);
-	public static final QuiltBlockSettings GRASS_SETTINGS = QuiltBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.GRASS);
-	public static final QuiltBlockSettings PLANT_SETTINGS = QuiltBlockSettings.of(Material.PLANT).sounds(BlockSoundGroup.GRASS).noCollision();
-	public static final QuiltBlockSettings REPLACEABLE_PLANT_SETTINGS = QuiltBlockSettings.of(Material.REPLACEABLE_PLANT).sounds(BlockSoundGroup.GRASS).noCollision();
-	public static final QuiltBlockSettings LEAVES_SETTINGS = QuiltBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque();
-	public static final QuiltBlockSettings SNOW_SETTINGS = QuiltBlockSettings.of(Material.SNOW_LAYER).sounds(BlockSoundGroup.SNOW).nonOpaque();
-	public static final QuiltBlockSettings SNOW_BLOCK_SETTINGS = QuiltBlockSettings.of(Material.SNOW_BLOCK).sounds(BlockSoundGroup.SNOW);
-	public static final QuiltBlockSettings METAL_SETTINGS = QuiltBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.METAL);
-	public static final QuiltBlockSettings BONE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.BONE);
-	public static final QuiltBlockSettings GLASS_SETTINGS = QuiltBlockSettings.of(Material.GLASS).sounds(BlockSoundGroup.GLASS).nonOpaque();
-	public static final QuiltBlockSettings SAND_SETTINGS = QuiltBlockSettings.of(Material.AGGREGATE).sounds(BlockSoundGroup.SAND);
-	public static final QuiltBlockSettings CLAY_SETTINGS = QuiltBlockSettings.of(Material.ORGANIC_PRODUCT).sounds(BlockSoundGroup.SAND);
-	public static final QuiltBlockSettings BASALT_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.BASALT);
+	private static final QuiltBlockSettings STONE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).hardness(1.5f).resistance(6.0f).requiresTool();
+	public static final QuiltBlockSettings WOOD_SETTINGS = QuiltBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).strength(2.0f);
+	public static final QuiltBlockSettings DIRT_SETTINGS = QuiltBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.GRAVEL).strength(0.5f);
+	public static final QuiltBlockSettings GRASS_SETTINGS = QuiltBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.GRASS).strength(0.6f);
+	public static final QuiltBlockSettings PLANT_SETTINGS = QuiltBlockSettings.of(Material.PLANT).sounds(BlockSoundGroup.GRASS).noCollision().breakInstantly();
+	public static final QuiltBlockSettings REPLACEABLE_PLANT_SETTINGS = QuiltBlockSettings.of(Material.REPLACEABLE_PLANT).sounds(BlockSoundGroup.GRASS).noCollision().breakInstantly();
+	public static final QuiltBlockSettings LEAVES_SETTINGS = QuiltBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque().strength(0.2f);
+	public static final QuiltBlockSettings SNOW_SETTINGS = QuiltBlockSettings.of(Material.SNOW_LAYER).sounds(BlockSoundGroup.SNOW).nonOpaque().strength(0.1f);
+	public static final QuiltBlockSettings SNOW_BLOCK_SETTINGS = QuiltBlockSettings.of(Material.SNOW_BLOCK).sounds(BlockSoundGroup.SNOW).strength(0.1f);
+	public static final QuiltBlockSettings METAL_SETTINGS = QuiltBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.METAL).strength(5.0f, 6.0f);
+	public static final QuiltBlockSettings BONE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.BONE).strength(2.0f);
+	public static final QuiltBlockSettings GLASS_SETTINGS = QuiltBlockSettings.of(Material.GLASS).sounds(BlockSoundGroup.GLASS).nonOpaque().strength(0.3f);
+	public static final QuiltBlockSettings SAND_SETTINGS = QuiltBlockSettings.of(Material.AGGREGATE).sounds(BlockSoundGroup.SAND).strength(0.5f);
+	public static final QuiltBlockSettings CLAY_SETTINGS = QuiltBlockSettings.of(Material.ORGANIC_PRODUCT).sounds(BlockSoundGroup.SAND).strength(0.6f);
+	public static final QuiltBlockSettings BASALT_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.BASALT).strength(1.25f, 4.2f);
 	public static final QuiltBlockSettings LODESTONE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.LODESTONE);
-	public static final QuiltBlockSettings LEAVES_CARPET = QuiltBlockSettings.of(Material.CARPET).sounds(BlockSoundGroup.GRASS).nonOpaque();
-	public static final QuiltBlockSettings NETHERITE_SETTINGS = QuiltBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.NETHERITE);
+	public static final QuiltBlockSettings LEAVES_CARPET = QuiltBlockSettings.of(Material.CARPET).sounds(BlockSoundGroup.GRASS).nonOpaque().strength(0.2f);
+	public static final QuiltBlockSettings NETHERITE_SETTINGS = QuiltBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.NETHERITE).strength(50.0f, 1200.0f);
 
 	public static final CustomFlowerBlock SUNSET_ORCHID = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
@@ -401,15 +401,15 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomSlabBlock SOUTHSTONE_BRICK_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
 	public static final CustomWallBlock SOUTHSTONE_BRICK_WALL = new CustomWallBlock(STONE_SETTINGS, true);
 
-	public static final CustomBlock COBBLED_SOUTHSTONE = new CustomBlock(STONE_SETTINGS, true);
-	public static final CustomStairsBlock COBBLED_SOUTHSTONE_STAIRS = new CustomStairsBlock(COBBLED_SOUTHSTONE.getDefaultState(), STONE_SETTINGS, true);
-	public static final CustomSlabBlock COBBLED_SOUTHSTONE_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
-	public static final CustomWallBlock COBBLED_SOUTHSTONE_WALL = new CustomWallBlock(STONE_SETTINGS, true);
+	public static final CustomBlock COBBLED_SOUTHSTONE = new CustomBlock(STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomStairsBlock COBBLED_SOUTHSTONE_STAIRS = new CustomStairsBlock(COBBLED_SOUTHSTONE.getDefaultState(), STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomSlabBlock COBBLED_SOUTHSTONE_SLAB = new CustomSlabBlock(STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomWallBlock COBBLED_SOUTHSTONE_WALL = new CustomWallBlock(STONE_SETTINGS.hardness(2.0f), true);
 
-	public static final CustomBlock GILDED_COBBLED_SOUTHSTONE = new CustomBlock(STONE_SETTINGS, true);
-	public static final CustomStairsBlock GILDED_COBBLED_SOUTHSTONE_STAIRS = new CustomStairsBlock(GILDED_COBBLED_SOUTHSTONE.getDefaultState(), STONE_SETTINGS, true);
-	public static final CustomSlabBlock GILDED_COBBLED_SOUTHSTONE_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
-	public static final CustomWallBlock GILDED_COBBLED_SOUTHSTONE_WALL = new CustomWallBlock(STONE_SETTINGS, true);
+	public static final CustomBlock GILDED_COBBLED_SOUTHSTONE = new CustomBlock(STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomStairsBlock GILDED_COBBLED_SOUTHSTONE_STAIRS = new CustomStairsBlock(GILDED_COBBLED_SOUTHSTONE.getDefaultState(), STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomSlabBlock GILDED_COBBLED_SOUTHSTONE_SLAB = new CustomSlabBlock(STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomWallBlock GILDED_COBBLED_SOUTHSTONE_WALL = new CustomWallBlock(STONE_SETTINGS.hardness(2.0f), true);
 
 	public static final CustomPillarBlock SOUTHSTONE_PILLAR_TOP = new CustomPillarBlock(STONE_SETTINGS, true);
 	public static final CustomPillarBlock SOUTHSTONE_PILLAR = new CustomPillarBlock(STONE_SETTINGS, true);
@@ -431,10 +431,10 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomSlabBlock MOSSY_SOUTHSTONE_BRICK_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
 	public static final CustomWallBlock MOSSY_SOUTHSTONE_BRICK_WALL = new CustomWallBlock(STONE_SETTINGS, true);
 
-	public static final CustomBlock MOSSY_COBBLED_SOUTHSTONE = new CustomBlock(STONE_SETTINGS, true);
-	public static final CustomStairsBlock MOSSY_COBBLED_SOUTHSTONE_STAIRS = new CustomStairsBlock(MOSSY_COBBLED_SOUTHSTONE.getDefaultState(), STONE_SETTINGS, true);
-	public static final CustomSlabBlock MOSSY_COBBLED_SOUTHSTONE_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
-	public static final CustomWallBlock MOSSY_COBBLED_SOUTHSTONE_WALL = new CustomWallBlock(STONE_SETTINGS, true);
+	public static final CustomBlock MOSSY_COBBLED_SOUTHSTONE = new CustomBlock(STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomStairsBlock MOSSY_COBBLED_SOUTHSTONE_STAIRS = new CustomStairsBlock(MOSSY_COBBLED_SOUTHSTONE.getDefaultState(), STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomSlabBlock MOSSY_COBBLED_SOUTHSTONE_SLAB = new CustomSlabBlock(STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomWallBlock MOSSY_COBBLED_SOUTHSTONE_WALL = new CustomWallBlock(STONE_SETTINGS.hardness(2.0f), true);
 
 	public static final CustomBlock FALSE_SOUTHSTONE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
 	public static final CustomBlock FALSE_CRACKED_SOUTHSTONE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
@@ -448,7 +448,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock FAELITE_ORE = new CustomBlock(STONE_SETTINGS, true);
 
 	public static final CustomBlock APAFLORITE_BLOCK = new CustomBlock(METAL_SETTINGS, true);
-	public static final CustomBlock EXYRIANE_BLOCK = new CustomBlock(METAL_SETTINGS, true);
+	public static final CustomBlock EXYRIANE_BLOCK = new CustomBlock(METAL_SETTINGS.strength(4.0f), true);
 	public static final CustomBlock FAELITE_BLOCK = new CustomBlock(METAL_SETTINGS, true);
 	/* public static final CustomBlock LUSONYTH_BLOCK = new CustomBlock(METAL_SETTINGS, true);
 	public static final CustomBlock CLEMENTIUM_BLOCK = new CustomBlock(METAL_SETTINGS, true); */
@@ -515,7 +515,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomBlock ARTEMNITE_BASEBOARD = new CustomBlock(STONE_SETTINGS, true);
 	public static final CustomBlock POWER_KEYSTONE = new CustomBlock(STONE_SETTINGS, true);
-	public static final NaturiteBlock NATURITE_BLOCK = new NaturiteBlock(NETHERITE_SETTINGS, true);
+	public static final NaturiteBlock NATURITE = new NaturiteBlock(NETHERITE_SETTINGS, true);
 
 	public static final CustomPillarBlock STRIPPED_PALM_WOOD = new CustomPillarBlock(WOOD_SETTINGS, true);
 	public static final CustomPillarBlock STRIPPED_PALM_LOG = new CustomPillarBlock(WOOD_SETTINGS, true);
@@ -551,15 +551,15 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock NYRETH_LEAVES = new CustomBlock(LEAVES_SETTINGS, true);
 	public static final CustomBlock PALE_NYRETH_LEAVES = new CustomBlock(LEAVES_SETTINGS, true); */
 
-	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_PNEVANTIAL_HANGING = new CustomGrowsDownPlantBlock(LEAVES_SETTINGS, false,
+	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_PNEVANTIAL_HANGING = new CustomGrowsDownPlantBlock(PLANT_SETTINGS, false,
 		0.1f, 1, BlockState::isAir, true);
-	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_STREIAN_HANGING = new CustomGrowsDownPlantBlock(LEAVES_SETTINGS, false,
+	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_STREIAN_HANGING = new CustomGrowsDownPlantBlock(PLANT_SETTINGS, false,
 		0.1f, 1, BlockState::isAir, true);
-	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_ORIAN_HANGING = new CustomGrowsDownPlantBlock(LEAVES_SETTINGS, false,
+	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_ORIAN_HANGING = new CustomGrowsDownPlantBlock(PLANT_SETTINGS, false,
 		0.1f, 1, BlockState::isAir, true);
-	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_VALE_HANGING = new CustomGrowsDownPlantBlock(LEAVES_SETTINGS, false,
+	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_VALE_HANGING = new CustomGrowsDownPlantBlock(PLANT_SETTINGS, false,
 		0.1f, 1, BlockState::isAir, true);
-	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_ZIAL_HANGING = new CustomGrowsDownPlantBlock(LEAVES_SETTINGS, false,
+	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_ZIAL_HANGING = new CustomGrowsDownPlantBlock(PLANT_SETTINGS, false,
 		0.1f, 1, BlockState::isAir, true);
 
 	public static final LeavesCarpetBlock LEAVES_CARPET_ORIAN = new LeavesCarpetBlock(LEAVES_CARPET, true);
@@ -655,9 +655,9 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomSlabBlock GREEN_TILES_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
 	public static final CustomWallBlock GREEN_TILES_WALL = new CustomWallBlock(STONE_SETTINGS, true);
 
-	public static final DuneSandCastleBlock DUNE_SAND_CASTLE = new DuneSandCastleBlock(SAND_SETTINGS.nonOpaque(), true);
-	public static final CustomBlock LOOT_URN = new CustomBlock(BONE_SETTINGS.nonOpaque(), true);
-	public static final HeartOfNatureTrophyBlock HEART_OF_NATURE_TROPHY = new HeartOfNatureTrophyBlock(LODESTONE_SETTINGS.nonOpaque(), true);
+	public static final DuneSandCastleBlock DUNE_SAND_CASTLE = new DuneSandCastleBlock(SAND_SETTINGS.nonOpaque().strength(0.7f, 0.0f), true);
+	public static final CustomBlock LOOT_URN = new CustomBlock(BONE_SETTINGS.nonOpaque().strength(0.8f, 2.0f), true);
+	public static final HeartOfNatureTrophyBlock HEART_OF_NATURE_TROPHY = new HeartOfNatureTrophyBlock(LODESTONE_SETTINGS.nonOpaque().strength(1.0f, 6.0f), true);
 
 	@Override
 	public void register() {
@@ -874,7 +874,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		CRACKLED_ARTEMNITE_BRICKS.register(Archeon.createId("crackled_artemnite_bricks"));
 		ARTEMNITE_BASEBOARD.register(Archeon.createId("artemnite_baseboard"));
 		POWER_KEYSTONE.register(Archeon.createId("power_keystone"));
-		NATURITE_BLOCK.register(Archeon.createId("naturite"));
+		NATURITE.register(Archeon.createId("naturite"));
 		STRIPPED_PALM_WOOD.register(Archeon.createId("stripped_palm_wood"));
 		STRIPPED_PALM_LOG.register(Archeon.createId("stripped_palm_log"));
 		STRIPPED_NECLANE_WOOD.register(Archeon.createId("stripped_neclane_wood"));

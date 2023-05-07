@@ -8,11 +8,17 @@
 			"name": "Archeon",
 			"description": "This is the Official Quilt Port of Archeon. Archeon is a brand new dimension, full of new blocks, mobs and more! All you need to get there is a portal made of Mysterious Stone, filled with a magical energy made by the Wand of Nature!",
 			"contributors": {
-				"Aethyus": "Owner",
-				"FirstMegaGame4": "Lead Quilt Developer"
+				"Silent Winds Team": "Owner",
+				"Aethyus": "Author, Game Designer",
+				"FirstMegaGame4": "Lead Quilt Developer",
+				"Aeramisu": "Game Designer, Music Composer",
+				"Aerod": "Game Designer",
+				"Tim Rurkowski": "Music Composer",
+				"Rotch Gwylt": "Music Composer",
+				"Scarecrowman": "Music Composer"
 			},
 			"contact": {
-				"homepage": "https://beta.curseforge.com/archeon-quilt",
+				"homepage": "https://modrinth/mod/quilted-archeon",
 				"issues": "https://github.com/Silent-Winds/Archeon-Quilt/issues",
 				"sources": "https://github.com/Silent-Winds/Archeon-Quilt"
 			},
