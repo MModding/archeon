@@ -1,17 +1,20 @@
-# Archeon
-![](https://media.discordapp.net/attachments/938106904129986590/1065303612634447994/image.png?width=886&height=498)
+# Archeon (Quilt Edition)
+![](https://media.discordapp.net/attachments/1094695512256548944/1104548840633270282/image.png?width=1709&height=935)
 
 ## 🏷️ Welcome to Archeon: Rebirth of History
 
-The Silent Winds team presents the Archeon mod! Archeon is a brand new dimension, full of new blocks, mobs and more! All you need to get there is a portal made of Mysterious Stone, filled with a magical energy made by the Wand of Nature! The Archeon mod is still in heavy development, but we just released the Rebirth of History update a few days ago! Go check it out on CurseForge: https://www.curseforge.com/minecraft/mc-mods/archeon-quilt/files - Some newer versions might also be released in a few days to fix some bugs!
+The Silent Winds team presents the Archeon mod! Archeon is a brand new dimension, full of new blocks, mobs and more! All you need to get there is a portal made of Mysterious Stone, filled with a magical energy made by the Wand of Nature! The Archeon mod is still in heavy development, but we just released the Rebirth of History update a few days ago! Go check it out on CurseForge: https://www.curseforge.com/minecraft/mc-mods/archeon-quilt/files - Some newer versions might also be released in a few days to fix some bugs! This version of Archeon is only for Quilt, meaning it is not compatible with the Forge version.
 <a class="github-button" href="https://discord.gg/hhGPj8sMzT
 " data-icon="octicon-comment-discussion" aria-label="Chat on Discord"> 💬 Chat on Discord</a>
 
 ## 🧱 Team
 
-Aethyus, main developer, game designer.
+Aethyus, Forge developer, game designer.
 <a class="github-button" href="https://twitter.com/ArcheonAethyus
 " data-icon="octicon-comment-discussion" aria-label="Follow Aethyus on Twitter"> Follow Aethyus on Twitter</a>;
+FirstMegaGame4, Quilt developer.
+<a class="github-button" href="https://twitter.com/FirstMegaGame4
+" data-icon="octicon-comment-discussion" aria-label="Follow FirstMegaGame4 on Twitter"> Follow FirstMegaGame4 on Twitter</a>.
 Aeramisu/Tiramisu, game designer, lorist, musician.
 <a class="github-button" href="https://soundcloud.com/aeramisu
 " data-icon="octicon-comment-discussion" aria-label="Listen to Aeramisu's Music"> Listen to Aeramisu's Music</a>;
