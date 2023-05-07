@@ -32,6 +32,30 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final QuiltBlockSettings LEAVES_CARPET = QuiltBlockSettings.of(Material.CARPET).sounds(BlockSoundGroup.GRASS).nonOpaque();
 	public static final QuiltBlockSettings NETHERITE_SETTINGS = QuiltBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.NETHERITE);
 
+	public static final CustomFlowerBlock SUNSET_ORCHID = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.RESISTANCE,
+		10,
+		PLANT_SETTINGS,
+		true
+	);
+
+	public static final CustomFlowerBlock WITHERED_SUNSET_ORCHID = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.WITHER,
+		10,
+		PLANT_SETTINGS,
+		true
+	);
+
+	public static final CustomFlowerBlock ROSEYPIA = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.UNLUCK,
+		10,
+		PLANT_SETTINGS,
+		true
+	);
+
 	public static final CustomFlowerBlock AEROLIA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
 		StatusEffects.REGENERATION,
@@ -40,8 +64,10 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomTallFlowerBlock ASCENDIA = new CustomTallFlowerBlock(
+	public static final CustomFlowerBlock WITHERED_AEROLIA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.WITHER,
+		10,
 		PLANT_SETTINGS,
 		true
 	);
@@ -54,36 +80,70 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomPlantBlock VINE = new CustomPlantBlock(
+	public static final CustomFlowerBlock WITHERED_ASTEDIBES = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.WITHER,
+		10,
 		PLANT_SETTINGS,
 		true
 	);
 
-	public static final CustomPlantBlock BUSH = new CustomPlantBlock(
+	public static final CustomFlowerBlock TWILIGHT_ROSE = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.REGENERATION,
+		60,
 		PLANT_SETTINGS,
 		true
 	);
 
-	public static final CustomPlantBlock BLOOD_ORANGE_BUSH = new CustomPlantBlock(
+	public static final CustomFlowerBlock LYCORIS_RADIATA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.NAUSEA,
+		10,
 		PLANT_SETTINGS,
 		true
 	);
 
-	public static final CustomFlowerBlock COKIPLANT = new CustomFlowerBlock(
+	public static final CustomFlowerBlock RED_LYCORIS = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.POISON,
-		5,
+		StatusEffects.SPEED,
+		30,
 		PLANT_SETTINGS,
 		true
 	);
 
-	public static final CustomFlowerBlock DEAD_WET_GRASS_TUFFET = new CustomFlowerBlock(
+	public static final CustomFlowerBlock LYCORIS_SANGUINEA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.DARKNESS,
+		StatusEffects.STRENGTH,
 		20,
+		PLANT_SETTINGS,
+		true
+	);
+
+	public static final CustomTallFlowerBlock ASCENDIA = new CustomTallFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		PLANT_SETTINGS,
+		true
+	);
+
+	public static final CustomTallFlowerBlock WITHERED_ASCENDIA = new CustomTallFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		PLANT_SETTINGS,
+		true
+	);
+
+	public static final CustomFlowerBlock OEA = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.NIGHT_VISION,
+		30,
+		PLANT_SETTINGS,
+		true
+	);
+
+	public static final CustomFlowerBlock WITHERED_OEA = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.WITHER,
+		10,
 		PLANT_SETTINGS,
 		true
 	);
@@ -102,34 +162,16 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomFlowerBlock LYCORIS_RADIATA = new CustomFlowerBlock(
+	public static final CustomFlowerBlock WITHERED_IOPEA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.NAUSEA,
+		StatusEffects.WITHER,
 		10,
 		PLANT_SETTINGS,
 		true
 	);
 
-	public static final CustomFlowerBlock LYCORIS_SANGUINEA = new CustomFlowerBlock(
+	public static final CustomTallFlowerBlock TALL_WITHERED_IOPEA = new CustomTallFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.STRENGTH,
-		20,
-		PLANT_SETTINGS,
-		true
-	);
-
-	public static final CustomFlowerBlock OEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.NIGHT_VISION,
-		30,
-		PLANT_SETTINGS,
-		true
-	);
-
-	public static final CustomFlowerBlock ORCHID = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.RESISTANCE,
-		10,
 		PLANT_SETTINGS,
 		true
 	);
@@ -148,18 +190,16 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomFlowerBlock RED_LYCORIS = new CustomFlowerBlock(
+	public static final CustomFlowerBlock WITHERED_ORGANDEANE_BLOSSOM = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.SPEED,
-		30,
+		StatusEffects.WITHER,
+		10,
 		PLANT_SETTINGS,
 		true
 	);
 
-	public static final CustomFlowerBlock ROSEYPIA = new CustomFlowerBlock(
+	public static final CustomTallFlowerBlock TALL_WITHERED_ORGANDEANE = new CustomTallFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.UNLUCK,
-		10,
 		PLANT_SETTINGS,
 		true
 	);
@@ -172,26 +212,10 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomPlantBlock WET_GRASS_TUFFET = new CustomPlantBlock(
+	public static final CustomFlowerBlock WITHERED_SEPTICEOLIA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
-		true
-	);
-
-	public static final CustomPlantBlock SNOWY_GRASS_TUFFET = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
-		true
-	);
-
-	public static final CustomTallPlantBlock SOUTH_WHEAT = new CustomTallPlantBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		PLANT_SETTINGS,
-		true
-	);
-
-	public static final CustomTallPlantBlock TALL_SOUTH_WHEAT = new CustomTallPlantBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.WITHER,
+		10,
 		PLANT_SETTINGS,
 		true
 	);
@@ -220,83 +244,65 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomFlowerBlock TWILIGHT_ROSE = new CustomFlowerBlock(
+	public static final CustomPlantBlock WET_GRASS_TUFFET = new CustomPlantBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.REGENERATION,
-		60,
-		PLANT_SETTINGS,
+		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
-	public static final CustomFlowerBlock WITHERED_AEROLIA = new CustomFlowerBlock(
+	public static final CustomPlantBlock DEAD_WET_GRASS_TUFFET = new CustomPlantBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.WITHER,
-		10,
-		PLANT_SETTINGS,
+		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
-	public static final CustomTallFlowerBlock WITHERED_ASCENDIA = new CustomTallFlowerBlock(
+	public static final CustomPlantBlock SNOWY_GRASS_TUFFET = new CustomPlantBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		PLANT_SETTINGS,
+		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
-	public static final CustomFlowerBlock WITHERED_ASTEDIBES = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.WITHER,
-		10,
-		PLANT_SETTINGS,
-		true
-	);
-
-	public static final CustomFlowerBlock WITHERED_IOPEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.WITHER,
-		10,
-		PLANT_SETTINGS,
-		true
-	);
-
-	public static final CustomTallFlowerBlock TALL_WITHERED_IOPEA = new CustomTallFlowerBlock(
+	public static final CustomTallPlantBlock SOUTH_WHEAT = new CustomTallPlantBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
 		PLANT_SETTINGS,
 		true
 	);
 
-	public static final CustomFlowerBlock WITHERED_OEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.WITHER,
-		10,
-		PLANT_SETTINGS,
-		true
-	);
-
-	public static final CustomFlowerBlock WITHERED_ORCHID = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.WITHER,
-		10,
-		PLANT_SETTINGS,
-		true
-	);
-
-	public static final CustomTallFlowerBlock TALL_WITHERED_ORGANDEANE = new CustomTallFlowerBlock(
+	public static final CustomTallPlantBlock TALL_SOUTH_WHEAT = new CustomTallPlantBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
 		PLANT_SETTINGS,
 		true
 	);
 
-	public static final CustomFlowerBlock WITHERED_SEPTICEOLIA = new CustomFlowerBlock(
+	public static final CustomPlantBlock BUSH = new CustomPlantBlock(
 		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
-		StatusEffects.WITHER,
-		10,
 		PLANT_SETTINGS,
 		true
 	);
 
-	public static final SporeRootcapBlock SPORE_ROOTCAP = new SporeRootcapBlock(PLANT_SETTINGS, true);
+	public static final CustomPlantBlock VINE = new CustomPlantBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		PLANT_SETTINGS,
+		true
+	);
+
+	public static final CustomPlantBlock BLOOD_ORANGE_BUSH = new CustomPlantBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		PLANT_SETTINGS,
+		true
+	);
+
+	public static final CustomFlowerBlock COKIPLANT = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		StatusEffects.POISON,
+		5,
+		PLANT_SETTINGS,
+		true
+	);
 
 	public static final CustomSugarCaneBlock XETULIAN_SUGAR_CANE = new CustomSugarCaneBlock(PLANT_SETTINGS, true);
+
+	public static final SporeRootcapBlock SPORE_ROOTCAP = new SporeRootcapBlock(PLANT_SETTINGS, true);
 
 	// public static final TowerSpawn : Later (WorldGen)
 
@@ -306,7 +312,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomFallingBlock DUNE_SAND = new CustomFallingBlock(SAND_SETTINGS, true);
 	public static final CustomFallingBlock SHELLSAND = new CustomFallingBlock(SAND_SETTINGS, true);
 	public static final CustomFallingBlock SALT_BLOCK = new CustomFallingBlock(SAND_SETTINGS, true);
-	public static final CustomFallingBlock CAVE_SAND = new CustomFallingBlock(SAND_SETTINGS, true);
+	public static final CustomFallingBlock GOLDEN_SAND = new CustomFallingBlock(SAND_SETTINGS, true);
 	public static final CustomFallingBlock SANDY_SOIL = new CustomFallingBlock(CLAY_SETTINGS, true);
 	public static final CustomFallingBlock DUST = new CustomFallingBlock(SAND_SETTINGS, true);
 
@@ -416,8 +422,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock CHISELED_SOUTHSTONE = new CustomBlock(STONE_SETTINGS, true);
 	public static final CustomBlock CRACKLED_SOUTHSTONE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
 
-	public static final CustomButtonBlock.Stone SOUTHSTONE_BUTTON = new CustomButtonBlock.Stone(STONE_SETTINGS, true);
 	public static final CustomPressurePlateBlock SOUTHSTONE_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, STONE_SETTINGS, true);
+	public static final CustomButtonBlock.Stone SOUTHSTONE_BUTTON = new CustomButtonBlock.Stone(STONE_SETTINGS, true);
 
 	public static final CustomBlock MOSSY_SOUTHSTONE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
 	public static final CustomStairsBlock MOSSY_SOUTHSTONE_BRICK_STAIRS = new CustomStairsBlock(MOSSY_SOUTHSTONE_BRICKS.getDefaultState(), STONE_SETTINGS, true);
@@ -655,51 +661,52 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	@Override
 	public void register() {
+		SUNSET_ORCHID.register(Archeon.createId("orchid"));
+		WITHERED_SUNSET_ORCHID.register(Archeon.createId("withered_orchid"));
+		ROSEYPIA.register(Archeon.createId("roseypia"));
 		AEROLIA.register(Archeon.createId("aerolia"));
-		ASCENDIA.register(Archeon.createId("ascendia"));
+		WITHERED_AEROLIA.register(Archeon.createId("withered_aerolia"));
 		ASTEDIBES.register(Archeon.createId("astedibes"));
-		BUSH.register(Archeon.createId("bush"));
-		VINE.register(Archeon.createId("vine"));
-		BLOOD_ORANGE_BUSH.register(Archeon.createId("blood_orange_bush"));
-		COKIPLANT.register(Archeon.createId("cokiplant"));
-		DEAD_WET_GRASS_TUFFET.register(Archeon.createId("dead_wet_grass_tuffet"));
+		WITHERED_ASTEDIBES.register(Archeon.createId("withered_astedibes"));
+		TWILIGHT_ROSE.register(Archeon.createId("twilight_rose"));
+		LYCORIS_RADIATA.register(Archeon.createId("lycoris_radiata"));
+		RED_LYCORIS.register(Archeon.createId("red_lycoris"));
+		LYCORIS_SANGUINEA.register(Archeon.createId("lycoris_sanguinea"));
+		ASCENDIA.register(Archeon.createId("ascendia"));
+		WITHERED_ASCENDIA.register(Archeon.createId("withered_ascendia"));
+		OEA.register(Archeon.createId("oea"));
+		WITHERED_OEA.register(Archeon.createId("withered_oea"));
 		IOPEA.register(Archeon.createId("iopea"));
 		TALL_IOPEA.register(Archeon.createId("tall_iopea"));
-		LYCORIS_RADIATA.register(Archeon.createId("lycoris_radiata"));
-		LYCORIS_SANGUINEA.register(Archeon.createId("lycoris_sanguinea"));
-		OEA.register(Archeon.createId("oea"));
-		ORCHID.register(Archeon.createId("orchid"));
+		WITHERED_IOPEA.register(Archeon.createId("withered_iopea"));
+		TALL_WITHERED_IOPEA.register(Archeon.createId("tall_withered_iopea"));
 		ORGANDEANE_BLOSSOM.register(Archeon.createId("organdeane_blossom"));
 		ORGANDEANE_TALL.register(Archeon.createId("organdeane_tall"));
-		RED_LYCORIS.register(Archeon.createId("red_lycoris"));
-		ROSEYPIA.register(Archeon.createId("roseypia"));
+		WITHERED_ORGANDEANE_BLOSSOM.register(Archeon.createId("withered_organdeane_blossom"));
+		TALL_WITHERED_ORGANDEANE.register(Archeon.createId("tall_withered_organdeane"));
 		SEPTICEOLIA.register(Archeon.createId("septiceolia"));
-		WET_GRASS_TUFFET.register(Archeon.createId("wet_grass_tuffet"));
-		SNOWY_GRASS_TUFFET.register(Archeon.createId("snowy_grass_tuffet"));
-		SOUTH_WHEAT.register(Archeon.createId("south_wheat"));
-		TALL_SOUTH_WHEAT.register(Archeon.createId("tall_south_wheat"));
+		WITHERED_SEPTICEOLIA.register(Archeon.createId("withered_septiceolia"));
 		WET_GRASS.register(Archeon.createId("wet_grass"));
 		TALL_WET_GRASS.register(Archeon.createId("tall_wet_grass"));
 		WET_FERN.register(Archeon.createId("wet_fern"));
 		TALL_WET_FERN.register(Archeon.createId("tall_wet_fern"));
-		TWILIGHT_ROSE.register(Archeon.createId("twilight_rose"));
-		WITHERED_AEROLIA.register(Archeon.createId("withered_aerolia"));
-		WITHERED_ASCENDIA.register(Archeon.createId("withered_ascendia"));
-		WITHERED_ASTEDIBES.register(Archeon.createId("withered_astedibes"));
-		WITHERED_IOPEA.register(Archeon.createId("withered_iopea"));
-		TALL_WITHERED_IOPEA.register(Archeon.createId("tall_withered_iopea"));
-		WITHERED_OEA.register(Archeon.createId("withered_oea"));
-		WITHERED_ORCHID.register(Archeon.createId("withered_orchid"));
-		TALL_WITHERED_ORGANDEANE.register(Archeon.createId("tall_withered_organdeane"));
-		WITHERED_SEPTICEOLIA.register(Archeon.createId("withered_septiceolia"));
-		SPORE_ROOTCAP.register(Archeon.createId("spore_rootcap"));
+		WET_GRASS_TUFFET.register(Archeon.createId("wet_grass_tuffet"));
+		DEAD_WET_GRASS_TUFFET.register(Archeon.createId("dead_wet_grass_tuffet"));
+		SNOWY_GRASS_TUFFET.register(Archeon.createId("snowy_grass_tuffet"));
+		SOUTH_WHEAT.register(Archeon.createId("south_wheat"));
+		TALL_SOUTH_WHEAT.register(Archeon.createId("tall_south_wheat"));
+		BUSH.register(Archeon.createId("bush"));
+		VINE.register(Archeon.createId("vine"));
+		BLOOD_ORANGE_BUSH.register(Archeon.createId("blood_orange_bush"));
+		COKIPLANT.register(Archeon.createId("cokiplant"));
 		XETULIAN_SUGAR_CANE.register(Archeon.createId("xetulian_sugar_cane"));
+		SPORE_ROOTCAP.register(Archeon.createId("spore_rootcap"));
 		WET_GRASS_BLOCK.register(Archeon.createId("wet_grass_block"));
 		WET_DIRT.register(Archeon.createId("wet_dirt"));
 		DUNE_SAND.register(Archeon.createId("dune_sand"));
 		SHELLSAND.register(Archeon.createId("shellsand"));
 		SALT_BLOCK.register(Archeon.createId("salt_block"));
-		CAVE_SAND.register(Archeon.createId("cave_sand"));
+		GOLDEN_SAND.register(Archeon.createId("golden_sand"));
 		SANDY_SOIL.register(Archeon.createId("sandy_soil"));
 		DUST.register(Archeon.createId("dust"));
 		PALM_WOOD.register(Archeon.createId("palm_wood"));
@@ -795,8 +802,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 		SMOOTH_SOUTHSTONE_SLAB.register(Archeon.createId("smooth_southstone_slab"));
 		CHISELED_SOUTHSTONE.register(Archeon.createId("chiseled_southstone"));
 		CRACKLED_SOUTHSTONE_BRICKS.register(Archeon.createId("crackled_southstone_bricks"));
-		SOUTHSTONE_BUTTON.register(Archeon.createId("southstone_button"));
 		SOUTHSTONE_PRESSURE_PLATE.register(Archeon.createId("southstone_pressure_plate"));
+		SOUTHSTONE_BUTTON.register(Archeon.createId("southstone_button"));
 		MOSSY_SOUTHSTONE_BRICKS.register(Archeon.createId("mossy_southstone_bricks"));
 		MOSSY_SOUTHSTONE_BRICK_STAIRS.register(Archeon.createId("mossy_southstone_brick_stairs"));
 		MOSSY_SOUTHSTONE_BRICK_SLAB.register(Archeon.createId("mossy_southstone_brick_slab"));

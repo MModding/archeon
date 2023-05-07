@@ -7,47 +7,46 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 
 	@Override
 	public void registerClient() {
+		ArcheonBlocks.SUNSET_ORCHID.cutout();
+		ArcheonBlocks.WITHERED_SUNSET_ORCHID.cutout();
+		ArcheonBlocks.ROSEYPIA.cutout();
 		ArcheonBlocks.AEROLIA.cutout();
-		ArcheonBlocks.ASCENDIA.cutout();
+		ArcheonBlocks.WITHERED_AEROLIA.cutout();
 		ArcheonBlocks.ASTEDIBES.cutout();
-		ArcheonBlocks.BUSH.cutout();
-		ArcheonBlocks.VINE.cutout();
-		ArcheonBlocks.BLOOD_ORANGE_BUSH.cutout();
-		ArcheonBlocks.COKIPLANT.cutout();
-		ArcheonBlocks.BUSH_LEAVES.cutout();
-		ArcheonBlocks.DEAD_WET_GRASS_TUFFET.cutout();
+		ArcheonBlocks.WITHERED_ASTEDIBES.cutout();
+		ArcheonBlocks.TWILIGHT_ROSE.cutout();
+		ArcheonBlocks.LYCORIS_RADIATA.cutout();
+		ArcheonBlocks.RED_LYCORIS.cutout();
+		ArcheonBlocks.LYCORIS_SANGUINEA.cutout();
+		ArcheonBlocks.ASCENDIA.cutout();
+		ArcheonBlocks.WITHERED_ASCENDIA.cutout();
+		ArcheonBlocks.OEA.cutout();
+		ArcheonBlocks.WITHERED_OEA.cutout();
 		ArcheonBlocks.IOPEA.cutout();
 		ArcheonBlocks.TALL_IOPEA.cutout();
-		ArcheonBlocks.LYCORIS_RADIATA.cutout();
-		ArcheonBlocks.LYCORIS_SANGUINEA.cutout();
-		ArcheonBlocks.OEA.cutout();
-		ArcheonBlocks.ORCHID.cutout();
+		ArcheonBlocks.WITHERED_IOPEA.cutout();
+		ArcheonBlocks.TALL_WITHERED_IOPEA.cutout();
 		ArcheonBlocks.ORGANDEANE_BLOSSOM.cutout();
 		ArcheonBlocks.ORGANDEANE_TALL.cutout();
-		ArcheonBlocks.RED_LYCORIS.cutout();
-		ArcheonBlocks.ROSEYPIA.cutout();
+		ArcheonBlocks.WITHERED_ORGANDEANE_BLOSSOM.cutout();
+		ArcheonBlocks.TALL_WITHERED_ORGANDEANE.cutout();
 		ArcheonBlocks.SEPTICEOLIA.cutout();
-		ArcheonBlocks.WET_GRASS_TUFFET.cutout();
-		ArcheonBlocks.SNOWY_GRASS_TUFFET.cutout();
-		ArcheonBlocks.SOUTH_WHEAT.cutout();
-		ArcheonBlocks.TALL_SOUTH_WHEAT.cutout();
+		ArcheonBlocks.WITHERED_SEPTICEOLIA.cutout();
 		ArcheonBlocks.WET_GRASS.cutout();
 		ArcheonBlocks.TALL_WET_GRASS.cutout();
 		ArcheonBlocks.WET_FERN.cutout();
 		ArcheonBlocks.TALL_WET_FERN.cutout();
-		ArcheonBlocks.TWILIGHT_ROSE.cutout();
-
-		ArcheonBlocks.WITHERED_AEROLIA.cutout();
-		ArcheonBlocks.WITHERED_ASCENDIA.cutout();
-		ArcheonBlocks.WITHERED_ASTEDIBES.cutout();
-		ArcheonBlocks.WITHERED_IOPEA.cutout();
-		ArcheonBlocks.TALL_WITHERED_IOPEA.cutout();
-		ArcheonBlocks.WITHERED_OEA.cutout();
-		ArcheonBlocks.WITHERED_ORCHID.cutout();
-		ArcheonBlocks.TALL_WITHERED_ORGANDEANE.cutout();
-		ArcheonBlocks.WITHERED_SEPTICEOLIA.cutout();
-		ArcheonBlocks.SPORE_ROOTCAP.cutout();
+		ArcheonBlocks.WET_GRASS_TUFFET.cutout();
+		ArcheonBlocks.DEAD_WET_GRASS_TUFFET.cutout();
+		ArcheonBlocks.SNOWY_GRASS_TUFFET.cutout();
+		ArcheonBlocks.SOUTH_WHEAT.cutout();
+		ArcheonBlocks.TALL_SOUTH_WHEAT.cutout();
+		ArcheonBlocks.BUSH.cutout();
+		ArcheonBlocks.VINE.cutout();
+		ArcheonBlocks.BLOOD_ORANGE_BUSH.cutout();
+		ArcheonBlocks.COKIPLANT.cutout();
 		ArcheonBlocks.XETULIAN_SUGAR_CANE.cutout();
+		ArcheonBlocks.SPORE_ROOTCAP.cutout();
 
 		ArcheonBlocks.PALM_DOOR.cutout();
 		ArcheonBlocks.PALM_TRAPDOOR.cutout();
@@ -59,6 +58,7 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		/* ArcheonBlocks.NYRETH_DOOR.cutout();
 		ArcheonBlocks.NYRETH_TRAPDOOR.cutout(); */
 
+		ArcheonBlocks.BUSH_LEAVES.cutout();
 		ArcheonBlocks.NECLANE_LEAVES.cutout();
 		ArcheonBlocks.FLOWERED_NECLANE_LEAVES.cutout();
 		ArcheonBlocks.CYPRESS_LEAVES.cutout();

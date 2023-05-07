@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/cave_sand",
+  "parent": "archeon:block/golden_sand",
   "display": {
     "thirdperson": {
       "rotation": [
