@@ -5,6 +5,7 @@ import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.blocks.*;
 import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.block.PressurePlateBlock.ActivationRule;
 import net.minecraft.entity.effect.StatusEffects;
@@ -325,8 +326,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomFenceGateBlock PALM_FENCE_GATE = new CustomFenceGateBlock(WOOD_SETTINGS, true);
 	public static final CustomPressurePlateBlock PALM_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.EVERYTHING, WOOD_SETTINGS, true);
 	public static final CustomButtonBlock.Wooden PALM_BUTTON = new CustomButtonBlock.Wooden(WOOD_SETTINGS, true);
-	public static final CustomDoorBlock PALM_DOOR = new CustomDoorBlock(WOOD_SETTINGS, true);
-	public static final CustomTrapdoorBlock PALM_TRAPDOOR = new CustomTrapdoorBlock(WOOD_SETTINGS, true);
+	public static final CustomDoorBlock PALM_DOOR = new CustomDoorBlock(WOOD_SETTINGS.nonOpaque(), true);
+	public static final CustomTrapdoorBlock PALM_TRAPDOOR = new CustomTrapdoorBlock(WOOD_SETTINGS.nonOpaque(), true);
 
 	public static final CustomPillarBlock NECLANE_WOOD = new CustomPillarBlock(WOOD_SETTINGS, true);
 	public static final CustomPillarBlock NECLANE_LOG = new CustomPillarBlock(WOOD_SETTINGS, true);
@@ -337,10 +338,10 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomFenceGateBlock NECLANE_FENCE_GATE = new CustomFenceGateBlock(WOOD_SETTINGS, true);
 	public static final CustomPressurePlateBlock NECLANE_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.EVERYTHING, WOOD_SETTINGS, true);
 	public static final CustomButtonBlock.Wooden NECLANE_BUTTON = new CustomButtonBlock.Wooden(WOOD_SETTINGS, true);
-	public static final CustomDoorBlock NECLANE_DOOR = new CustomDoorBlock(WOOD_SETTINGS, true);
-	public static final CustomDoorBlock SUMMER_NECLANE_DOOR = new CustomDoorBlock(WOOD_SETTINGS, true);
+	public static final CustomDoorBlock NECLANE_DOOR = new CustomDoorBlock(WOOD_SETTINGS.nonOpaque(), true);
+	public static final CustomDoorBlock SUMMER_NECLANE_DOOR = new CustomDoorBlock(WOOD_SETTINGS.nonOpaque(), true);
 	public static final CustomTrapdoorBlock NECLANE_TRAPDOOR = new CustomTrapdoorBlock(WOOD_SETTINGS, true);
-	public static final CustomTrapdoorBlock SUMMER_NECLANE_TRAPDOOR = new CustomTrapdoorBlock(WOOD_SETTINGS, true);
+	public static final CustomTrapdoorBlock SUMMER_NECLANE_TRAPDOOR = new CustomTrapdoorBlock(WOOD_SETTINGS.nonOpaque(), true);
 
 	public static final CustomPillarBlock CYPRESS_WOOD = new CustomPillarBlock(WOOD_SETTINGS, true);
 	public static final CustomPillarBlock CYPRESS_LOG = new CustomPillarBlock(WOOD_SETTINGS, true);
@@ -550,17 +551,16 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock NYRETH_LEAVES = new CustomBlock(LEAVES_SETTINGS, true);
 	public static final CustomBlock PALE_NYRETH_LEAVES = new CustomBlock(LEAVES_SETTINGS, true); */
 
-	public static final CustomBlock VUXANCIA_LEAVES_PNEVANTIAL_HANGING_MIDDLE = new CustomBlock(LEAVES_SETTINGS, true);
-	public static final CustomBlock VUXANCIA_LEAVES_STREIAN_HANGING_MIDDLE = new CustomBlock(LEAVES_SETTINGS, true);
-	public static final CustomBlock VUXANCIA_LEAVES_ORIAN_HANGING_MIDDLE = new CustomBlock(LEAVES_SETTINGS, true);
-	public static final CustomBlock VUXANCIA_LEAVES_VALE_HANGING_MIDDLE = new CustomBlock(LEAVES_SETTINGS, true);
-	public static final CustomBlock VUXANCIA_LEAVES_ZIAL_HANGING_MIDDLE = new CustomBlock(LEAVES_SETTINGS, true);
-
-	public static final CustomBlock VUXANCIA_LEAVES_PNEVANTIAL_HANGING_BOTTOM = new CustomBlock(LEAVES_SETTINGS, true);
-	public static final CustomBlock VUXANCIA_LEAVES_STREIAN_HANGING_BOTTOM = new CustomBlock(LEAVES_SETTINGS, true);
-	public static final CustomBlock VUXANCIA_LEAVES_ORIAN_HANGING_BOTTOM = new CustomBlock(LEAVES_SETTINGS, true);
-	public static final CustomBlock VUXANCIA_LEAVES_VALE_HANGING_BOTTOM = new CustomBlock(LEAVES_SETTINGS, true);
-	public static final CustomBlock VUXANCIA_LEAVES_ZIAL_HANGING_BOTTOM = new CustomBlock(LEAVES_SETTINGS, true);
+	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_PNEVANTIAL_HANGING = new CustomGrowsDownPlantBlock(LEAVES_SETTINGS, false,
+		0.1f, 1, BlockState::isAir, true);
+	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_STREIAN_HANGING = new CustomGrowsDownPlantBlock(LEAVES_SETTINGS, false,
+		0.1f, 1, BlockState::isAir, true);
+	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_ORIAN_HANGING = new CustomGrowsDownPlantBlock(LEAVES_SETTINGS, false,
+		0.1f, 1, BlockState::isAir, true);
+	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_VALE_HANGING = new CustomGrowsDownPlantBlock(LEAVES_SETTINGS, false,
+		0.1f, 1, BlockState::isAir, true);
+	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_ZIAL_HANGING = new CustomGrowsDownPlantBlock(LEAVES_SETTINGS, false,
+		0.1f, 1, BlockState::isAir, true);
 
 	public static final LeavesCarpetBlock LEAVES_CARPET_ORIAN = new LeavesCarpetBlock(LEAVES_CARPET, true);
 	public static final LeavesCarpetBlock LEAVES_CARPET_PNEVANTIAL = new LeavesCarpetBlock(LEAVES_CARPET, true);
@@ -900,16 +900,11 @@ public class ArcheonBlocks implements ElementsInitializer {
 		/* NUME_WILLOW_LEAVES.register(Archeon.createId("nume_willow_leaves")); */
 		/* NYRETH_LEAVES.register(Archeon.createId("nyreth_leaves"));
 		PALE_NYRETH_LEAVES.register(Archeon.createId("pale_nyreth_leaves")); */
-		VUXANCIA_LEAVES_PNEVANTIAL_HANGING_MIDDLE.register(Archeon.createId("vuxancia_leaves_pnevantial_hanging_middle"));
-		VUXANCIA_LEAVES_STREIAN_HANGING_MIDDLE.register(Archeon.createId("vuxancia_leaves_streian_hanging_middle"));
-		VUXANCIA_LEAVES_ORIAN_HANGING_MIDDLE.register(Archeon.createId("vuxancia_leaves_orian_hanging_middle"));
-		VUXANCIA_LEAVES_VALE_HANGING_MIDDLE.register(Archeon.createId("vuxancia_leaves_vale_hanging_middle"));
-		VUXANCIA_LEAVES_ZIAL_HANGING_MIDDLE.register(Archeon.createId("vuxancia_leaves_zial_hanging_middle"));
-		VUXANCIA_LEAVES_PNEVANTIAL_HANGING_BOTTOM.register(Archeon.createId("vuxancia_leaves_pnevantial_hanging_bottom"));
-		VUXANCIA_LEAVES_STREIAN_HANGING_BOTTOM.register(Archeon.createId("vuxancia_leaves_streian_hanging_bottom"));
-		VUXANCIA_LEAVES_ORIAN_HANGING_BOTTOM.register(Archeon.createId("vuxancia_leaves_orian_hanging_bottom"));
-		VUXANCIA_LEAVES_VALE_HANGING_BOTTOM.register(Archeon.createId("vuxancia_leaves_vale_hanging_bottom"));
-		VUXANCIA_LEAVES_ZIAL_HANGING_BOTTOM.register(Archeon.createId("vuxancia_leaves_zial_hanging_bottom"));
+		VUXANCIA_LEAVES_PNEVANTIAL_HANGING.register(Archeon.createId("vuxancia_leaves_pnevantial_hanging"));
+		VUXANCIA_LEAVES_STREIAN_HANGING.register(Archeon.createId("vuxancia_leaves_streian_hanging"));
+		VUXANCIA_LEAVES_ORIAN_HANGING.register(Archeon.createId("vuxancia_leaves_orian_hanging"));
+		VUXANCIA_LEAVES_VALE_HANGING.register(Archeon.createId("vuxancia_leaves_vale_hanging"));
+		VUXANCIA_LEAVES_ZIAL_HANGING.register(Archeon.createId("vuxancia_leaves_zial_hanging"));
 		LEAVES_CARPET_PNEVANTIAL.register(Archeon.createId("leaves_carpet_pnevantial"));
 		LEAVES_CARPET_STREIAN.register(Archeon.createId("leaves_carpet_streian"));
 		LEAVES_CARPET_ORIAN.register(Archeon.createId("leaves_carpet_orian"));

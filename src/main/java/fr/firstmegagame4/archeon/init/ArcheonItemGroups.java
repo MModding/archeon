@@ -24,11 +24,18 @@ public class ArcheonItemGroups implements ElementsInitializer {
 		(block instanceof CustomSugarCaneBlock) ||
 		(block instanceof SporeRootcapBlock);
 
+	public static final Predicate<Block> HAS_ITEM = block -> {
+		if (block instanceof BlockWithItem blockWithItem) {
+			return blockWithItem.getItem() != null;
+		}
+		else return block instanceof CustomGrowsDownPlantBlock.Head;
+	};
+
 	public static final ItemGroup BLOCKS = QuiltItemGroup.builder(Archeon.createId("blocks"))
 		.icon(ArcheonBlocks.WET_GRASS_BLOCK.getItem()::getDefaultStack)
 		.appendItems(itemStacks -> Registry.BLOCK.stream().filter(block -> block.toString()
 				.split(":")[0]
-				.contains("archeon") && !IS_FAUNA.test(block))
+				.contains("archeon") && !IS_FAUNA.test(block) && HAS_ITEM.test(block))
 			.forEach(block -> itemStacks.add(new ItemStack(block))))
 		.build();
 
@@ -38,7 +45,7 @@ public class ArcheonItemGroups implements ElementsInitializer {
 		.icon(ArcheonBlocks.RED_LYCORIS.getItem()::getDefaultStack)
 		.appendItems(itemStacks -> Registry.BLOCK.stream().filter(block -> block.toString()
 				.split(":")[0]
-				.contains("archeon") && IS_FAUNA.test(block))
+				.contains("archeon") && IS_FAUNA.test(block) && HAS_ITEM.test(block))
 			.forEach(block -> itemStacks.add(new ItemStack(block))))
 		.build();
 

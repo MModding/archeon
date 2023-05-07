@@ -74,17 +74,11 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.PALE_NYRETH_LEAVES.cutout();
 		ArcheonBlocks.PALM_LEAVES.cutout(); */
 
-		ArcheonBlocks.VUXANCIA_LEAVES_PNEVANTIAL_HANGING_MIDDLE.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_STREIAN_HANGING_MIDDLE.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_ORIAN_HANGING_MIDDLE.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_VALE_HANGING_MIDDLE.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_ZIAL_HANGING_MIDDLE.cutout();
-
-		ArcheonBlocks.VUXANCIA_LEAVES_PNEVANTIAL_HANGING_BOTTOM.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_STREIAN_HANGING_BOTTOM.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_ORIAN_HANGING_BOTTOM.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_VALE_HANGING_BOTTOM.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_ZIAL_HANGING_BOTTOM.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_PNEVANTIAL_HANGING.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_STREIAN_HANGING.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_ORIAN_HANGING.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_VALE_HANGING.cutout();
+		ArcheonBlocks.VUXANCIA_LEAVES_ZIAL_HANGING.cutout();
 
 		ArcheonBlocks.LEAVES_CARPET_ORIAN.cutout();
 		ArcheonBlocks.LEAVES_CARPET_PNEVANTIAL.cutout();
