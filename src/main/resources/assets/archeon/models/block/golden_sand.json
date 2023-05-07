@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "archeon:blocks/golden_sand",
-    "particle": "archeon:blocks/golden_sand"
-  }
-}

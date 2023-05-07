@@ -3,7 +3,9 @@ package fr.firstmegagame4.archeon.init;
 import com.mmodding.mmodding_lib.library.blocks.*;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import fr.firstmegagame4.archeon.Archeon;
+import fr.firstmegagame4.archeon.blocks.SporeRootcapBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.SugarCaneBlock;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.registry.Registry;
@@ -18,7 +20,9 @@ public class ArcheonItemGroups implements ElementsInitializer {
 		(block instanceof CustomTallFlowerBlock) ||
 		(block instanceof CustomPlantBlock) ||
 		(block instanceof CustomTallPlantBlock) ||
-		(block instanceof CustomFernBlock);
+		(block instanceof CustomFernBlock) ||
+		(block instanceof CustomSugarCaneBlock) ||
+		(block instanceof SporeRootcapBlock);
 
 	public static final ItemGroup BLOCKS = QuiltItemGroup.builder(Archeon.createId("blocks"))
 		.icon(ArcheonBlocks.WET_GRASS_BLOCK.getItem()::getDefaultStack)

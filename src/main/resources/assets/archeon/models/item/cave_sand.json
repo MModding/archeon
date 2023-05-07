@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/aketite_tile",
+  "parent": "archeon:block/cave_sand",
   "display": {
     "thirdperson": {
       "rotation": [

@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/golden_sand",
+  "parent": "archeon:block/smooth_aketite",
   "display": {
     "thirdperson": {
       "rotation": [
