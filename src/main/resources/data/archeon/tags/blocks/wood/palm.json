@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:palm_wood",
+    "archeon:palm_log",
+    "archeon:palm_planks",
+    "archeon:palm_stairs",
+    "archeon:palm_slab",
+    "archeon:palm_fence",
+    "archeon:palm_fence_gate",
+    "archeon:palm_pressure_plate",
+    "archeon:palm_button",
+    "archeon:palm_door",
+    "archeon:palm_trapdoor",
+    "archeon:stripped_palm_wood",
+    "archeon:stripped_palm_log",
+    "archeon:palm_bookshelf"
+  ]
+}

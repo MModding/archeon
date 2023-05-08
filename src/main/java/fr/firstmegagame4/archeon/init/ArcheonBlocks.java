@@ -34,7 +34,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final QuiltBlockSettings NETHERITE_SETTINGS = QuiltBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.NETHERITE).strength(50.0f, 1200.0f);
 
 	public static final CustomFlowerBlock SUNSET_ORCHID = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.RESISTANCE,
 		10,
 		PLANT_SETTINGS,
@@ -42,7 +42,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock WITHERED_SUNSET_ORCHID = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.WITHER,
 		10,
 		PLANT_SETTINGS,
@@ -50,7 +50,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock ROSEYPIA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.UNLUCK,
 		10,
 		PLANT_SETTINGS,
@@ -58,7 +58,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock AEROLIA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.REGENERATION,
 		10,
 		PLANT_SETTINGS,
@@ -66,7 +66,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock WITHERED_AEROLIA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.WITHER,
 		10,
 		PLANT_SETTINGS,
@@ -74,7 +74,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock ASTEDIBES = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.WATER_BREATHING,
 		30,
 		PLANT_SETTINGS,
@@ -82,7 +82,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock WITHERED_ASTEDIBES = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.WITHER,
 		10,
 		PLANT_SETTINGS,
@@ -90,7 +90,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock TWILIGHT_ROSE = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.REGENERATION,
 		60,
 		PLANT_SETTINGS,
@@ -98,7 +98,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock LYCORIS_RADIATA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.NAUSEA,
 		10,
 		PLANT_SETTINGS,
@@ -106,7 +106,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock RED_LYCORIS = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.SPEED,
 		30,
 		PLANT_SETTINGS,
@@ -114,7 +114,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock LYCORIS_SANGUINEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.STRENGTH,
 		20,
 		PLANT_SETTINGS,
@@ -122,19 +122,19 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomTallFlowerBlock ASCENDIA = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		PLANT_SETTINGS,
 		true
 	);
 
 	public static final CustomTallFlowerBlock WITHERED_ASCENDIA = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		PLANT_SETTINGS,
 		true
 	);
 
 	public static final CustomFlowerBlock OEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.NIGHT_VISION,
 		30,
 		PLANT_SETTINGS,
@@ -142,7 +142,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock WITHERED_OEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.WITHER,
 		10,
 		PLANT_SETTINGS,
@@ -150,7 +150,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock IOPEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.DOLPHINS_GRACE,
 		10,
 		PLANT_SETTINGS,
@@ -158,13 +158,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomTallFlowerBlock TALL_IOPEA = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		PLANT_SETTINGS,
 		true
 	);
 
 	public static final CustomFlowerBlock WITHERED_IOPEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.WITHER,
 		10,
 		PLANT_SETTINGS,
@@ -172,13 +172,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomTallFlowerBlock TALL_WITHERED_IOPEA = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		PLANT_SETTINGS,
 		true
 	);
 
 	public static final CustomFlowerBlock ORGANDEANE_BLOSSOM = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.JUMP_BOOST,
 		10,
 		PLANT_SETTINGS,
@@ -186,13 +186,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomTallFlowerBlock ORGANDEANE_TALL = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		PLANT_SETTINGS,
 		true
 	);
 
 	public static final CustomFlowerBlock WITHERED_ORGANDEANE_BLOSSOM = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.WITHER,
 		10,
 		PLANT_SETTINGS,
@@ -200,13 +200,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomTallFlowerBlock TALL_WITHERED_ORGANDEANE = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		PLANT_SETTINGS,
 		true
 	);
 
 	public static final CustomFlowerBlock SEPTICEOLIA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.DARKNESS,
 		10,
 		PLANT_SETTINGS,
@@ -214,7 +214,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock WITHERED_SEPTICEOLIA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.WITHER,
 		10,
 		PLANT_SETTINGS,
@@ -222,79 +222,79 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFernBlock WET_GRASS = new CustomFernBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
 	public static final CustomTallPlantBlock TALL_WET_GRASS = new CustomTallPlantBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
 
 	public static final CustomFernBlock WET_FERN = new CustomFernBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
 	public static final CustomTallPlantBlock TALL_WET_FERN = new CustomTallPlantBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
 
 	public static final CustomPlantBlock WET_GRASS_TUFFET = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
 	public static final CustomPlantBlock DEAD_WET_GRASS_TUFFET = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
 	public static final CustomPlantBlock SNOWY_GRASS_TUFFET = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
 	public static final CustomTallPlantBlock SOUTH_WHEAT = new CustomTallPlantBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		PLANT_SETTINGS,
 		true
 	);
 
 	public static final CustomTallPlantBlock TALL_SOUTH_WHEAT = new CustomTallPlantBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		PLANT_SETTINGS,
 		true
 	);
 
 	public static final CustomPlantBlock BUSH = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		PLANT_SETTINGS,
 		true
 	);
 
 	public static final CustomPlantBlock VINE = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		PLANT_SETTINGS,
 		true
 	);
 
 	public static final CustomPlantBlock BLOOD_ORANGE_BUSH = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		PLANT_SETTINGS,
 		true
 	);
 
 	public static final CustomFlowerBlock COKIPLANT = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.ARCHEON_DIRT),
+		floor -> floor.isIn(ArcheonTags.SOIL),
 		StatusEffects.POISON,
 		5,
 		PLANT_SETTINGS,

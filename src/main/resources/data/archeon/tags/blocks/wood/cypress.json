@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:cypress_wood",
+    "archeon:cypress_log",
+    "archeon:hollow_cypress_log",
+    "archeon:cypress_planks",
+    "archeon:cypress_slab",
+    "archeon:cypress_fence",
+    "archeon:cypress_fence_gate",
+    "archeon:cypress_pressure_plate",
+    "archeon:cypress_button",
+    "archeon:cypress_door",
+    "archeon:cypress_trapdoor",
+    "archeon:stripped_cypress_wood",
+    "archeon:stripped_cypress_log",
+    "archeon:cypress_bookshelf"
+  ]
+}

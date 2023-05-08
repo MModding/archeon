@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:roughcast",
+    "archeon:roughcast_stairs",
+    "archeon:roughcast_slab",
+    "archeon:roughcast_wall"
+  ]
+}

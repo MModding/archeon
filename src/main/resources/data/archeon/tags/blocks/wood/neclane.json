@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:neclane_wood",
+    "archeon:neclane_log",
+    "archeon:neclane_planks",
+    "archeon:neclane_stairs",
+    "archeon:neclane_slab",
+    "archeon:neclane_fence",
+    "archeon:neclane_fence_gate",
+    "archeon:neclane_pressure_plate",
+    "archeon:neclane_button",
+    "archeon:neclane_door",
+    "archeon:summer_neclane_door",
+    "archeon:neclane_trapdoor",
+    "archeon:summer_neclane_trapdoor",
+    "archeon:stripped_neclane_wood",
+    "archeon:stripped_neclane_log",
+    "archeon:neclane_bookshelf"
+  ]
+}

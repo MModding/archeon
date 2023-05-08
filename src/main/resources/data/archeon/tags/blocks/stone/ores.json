@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:apaflorite_ore",
+    "archeon:exyriane_ore",
+    "archeon:southstone_emerald_ore",
+    "archeon:southstone_gold_ore",
+    "archeon:southstone_coal_ore",
+    "archeon:faelite_ore"
+  ]
+}

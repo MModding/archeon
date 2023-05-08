@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:vuxancia_wood",
+    "archeon:vuxancia_log",
+    "archeon:vuxancia_planks",
+    "archeon:vuxancia_stairs",
+    "archeon:vuxancia_slab",
+    "archeon:vuxancia_fence",
+    "archeon:vuxancia_fence_gate",
+    "archeon:vuxancia_pressure_plate",
+    "archeon:vuxancia_button",
+    "archeon:vuxancia_door",
+    "archeon:vuxancia_trapdoor",
+    "archeon:stripped_vuxancia_wood",
+    "archeon:stripped_vuxancia_log",
+    "archeon:vuxancia_bookshelf"
+  ]
+}

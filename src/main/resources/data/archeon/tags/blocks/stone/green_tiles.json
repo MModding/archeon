@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:green_tiles",
+    "archeon:green_tiles_stairs",
+    "archeon:green_tiles_slab",
+    "archeon:green_tiles_wall"
+  ]
+}
