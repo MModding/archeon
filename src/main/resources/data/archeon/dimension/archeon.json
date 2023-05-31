@@ -7,6 +7,30 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
+          "biome": "archeon:dune_ocean",
+          "parameters": {
+            "temperature": 0.5,
+            "humidity": 1,
+            "continentalness": 0.5,
+            "erosion": 2,
+            "weirdness": 0,
+            "depth": 0.2,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "archeon:magical_vuxancia_forest",
+          "parameters": {
+            "temperature": 0.4,
+            "humidity": 0.3,
+            "continentalness": 2,
+            "erosion": 0.5,
+            "weirdness": 1,
+            "depth": 0.3,
+            "offset": 0.1
+          }
+        },
+        {
           "biome": "archeon:neclane_grove",
           "parameters": {
             "temperature": 0.7,
@@ -15,6 +39,42 @@
             "erosion": 1,
             "weirdness": 0,
             "depth": 0.2,
+            "offset": 0.1
+          }
+        },
+        {
+          "biome": "archeon:rocky_fields",
+          "parameters": {
+            "temperature": 0.4,
+            "humidity": 0.0,
+            "continentalness": 2,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0.3,
+            "offset": 0.1
+          }
+        },
+        {
+          "biome": "archeon:south_meadows",
+          "parameters": {
+            "temperature": 0.7,
+            "humidity": 1,
+            "continentalness": 2,
+            "erosion": 0.5,
+            "weirdness": 0,
+            "depth": 0.3,
+            "offset": 0.1
+          }
+        },
+        {
+          "biome": "archeon:vuxancia_forest",
+          "parameters": {
+            "temperature": 0.4,
+            "humidity": 0.2,
+            "continentalness": 2,
+            "erosion": 0.8,
+            "weirdness": 0,
+            "depth": 0.3,
             "offset": 0.1
           }
         }

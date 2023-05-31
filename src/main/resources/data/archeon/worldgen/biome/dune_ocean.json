@@ -1,0 +1,23 @@
+{
+  "temperature": 0.5,
+  "downfall": 0.1,
+  "precipitation": "rain",
+  "effects": {
+    "sky_color": 7972607,
+    "fog_color": 12638463,
+    "water_color": 4892886,
+    "water_fog_color": 329011,
+    "grass_color": 9399763,
+    "foliage_color": 9399763,
+    "mood_sound": {
+      "sound": "archeon:brile",
+      "tick_delay": 3600,
+      "block_search_extent": 8,
+      "offset": 2
+    }
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {},
+  "features": []
+}
