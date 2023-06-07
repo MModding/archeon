@@ -12,7 +12,7 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 	@Override
 	public RegistryKey<Biome>[][] offCoastBiomes() {
 		return new RegistryKey[][] {
-			{ArcheonBiomes.DUNE_OCEAN, ArcheonBiomes.DUNE_OCEAN, ArcheonBiomes.DUNE_OCEAN, ArcheonBiomes.DUNE_OCEAN, ArcheonBiomes.DUNE_OCEAN}
+			{ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE}
 		};
 	}
 
@@ -130,9 +130,9 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
 			this.fullRange(),
 			this.fullRange(),
-			MultiNoiseUtil.ParameterRange.of(0.8f, 1.0f),
 			this.fullRange(),
-			MultiNoiseUtil.ParameterRange.of(0.2f, 0.9f),
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(0.2f, 0.7f),
 			this.fullRange(),
 			0.0f
 		), ArcheonBiomes.UNDERGROUND_CAVES));
@@ -140,8 +140,8 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 			this.fullRange(),
 			this.fullRange(),
 			this.fullRange(),
-			MultiNoiseUtil.ParameterRange.combine(this.erosions()[0], this.erosions()[1]),
-			MultiNoiseUtil.ParameterRange.of(1.1f),
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(0.7f, 1.1f),
 			this.fullRange(),
 			0.0f
 		), ArcheonBiomes.ABYSS_CAVES));

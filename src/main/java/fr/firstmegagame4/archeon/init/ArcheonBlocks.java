@@ -14,7 +14,8 @@ import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class ArcheonBlocks implements ElementsInitializer {
 
-	private static final QuiltBlockSettings STONE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).hardness(1.5f).resistance(6.0f).requiresTool();
+	private static final QuiltBlockSettings STONE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f).requiresTool();
+	public static final QuiltBlockSettings DEEPSLATE_SETTINGS = QuiltBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 6.0f).requiresTool();
 	public static final QuiltBlockSettings WOOD_SETTINGS = QuiltBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).strength(2.0f);
 	public static final QuiltBlockSettings DIRT_SETTINGS = QuiltBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.GRAVEL).strength(0.5f);
 	public static final QuiltBlockSettings GRASS_SETTINGS = QuiltBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.GRASS).strength(0.6f);
@@ -458,6 +459,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomSlabBlock AKETITE_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
 	public static final CustomWallBlock AKETITE_WALL = new CustomWallBlock(STONE_SETTINGS, true);
 
+	public static final CustomBlock DEPTHS_AKETITE = new CustomBlock(DEEPSLATE_SETTINGS, true);
+
 	public static final CustomBlock AKETITE_BRICKS = new CustomBlock(STONE_SETTINGS, true);
 	public static final CustomStairsBlock AKETITE_BRICK_STAIRS = new CustomStairsBlock(AKETITE_BRICKS.getDefaultState(), STONE_SETTINGS, true);
 	public static final CustomSlabBlock AKETITE_BRICK_SLAB = new CustomSlabBlock(STONE_SETTINGS, true);
@@ -830,6 +833,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		AKETITE_STAIRS.register(Archeon.createId("aketite_stairs"));
 		AKETITE_SLAB.register(Archeon.createId("aketite_slab"));
 		AKETITE_WALL.register(Archeon.createId("aketite_wall"));
+		DEPTHS_AKETITE.register(Archeon.createId("depths_aketite"));
 		AKETITE_BRICKS.register(Archeon.createId("aketite_bricks"));
 		AKETITE_BRICK_STAIRS.register(Archeon.createId("aketite_brick_stairs"));
 		AKETITE_BRICK_SLAB.register(Archeon.createId("aketite_brick_slab"));
