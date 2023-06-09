@@ -623,10 +623,10 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomPaneBlock DUNE_SAND_GLASS_PANE_TILES_BOTTOM_LEFT = new CustomPaneBlock(GLASS_SETTINGS, true);
 	public static final CustomPaneBlock DUNE_SAND_GLASS_PANE_TILES_BOTTOM_RIGHT = new CustomPaneBlock(GLASS_SETTINGS, true);
 
-	/* public static final CustomBlock PEAKS_GRASS_BLOCK = new CustomBlock(GRASS_SETTINGS, true);
+	public static final CustomBlock PEAKS_GRASS_BLOCK = new CustomBlock(GRASS_SETTINGS, true);
 	public static final CustomBlock SNOWY_SOUTHSTONE = new CustomBlock(STONE_SETTINGS, true);
 	public static final CustomSnowBlock PEAKS_SNOW = new CustomSnowBlock(SNOW_SETTINGS, true);
-	public static final CustomSnowBlock PEAKS_SNOW_BLOCK = new CustomSnowBlock(SNOW_BLOCK_SETTINGS, true); */
+	public static final CustomSnowBlock PEAKS_SNOW_BLOCK = new CustomSnowBlock(SNOW_BLOCK_SETTINGS, true);
 
 	public static final CustomBlock WARPED_TILES = new CustomBlock(STONE_SETTINGS, true);
 	public static final CustomStairsBlock WARPED_TILES_STAIRS = new CustomStairsBlock(WARPED_TILES.getDefaultState(), STONE_SETTINGS, true);
@@ -957,10 +957,10 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DUNE_SAND_GLASS_PANE_TILES_TOP_RIGHT.register(Archeon.createId("dune_sand_glass_pane_tiles_top_right"));
 		DUNE_SAND_GLASS_PANE_TILES_BOTTOM_LEFT.register(Archeon.createId("dune_sand_glass_pane_tiles_bottom_left"));
 		DUNE_SAND_GLASS_PANE_TILES_BOTTOM_RIGHT.register(Archeon.createId("dune_sand_glass_pane_tiles_bottom_right"));
-		/* PEAKS_GRASS_BLOCK.register(Archeon.createId("peaks_grass_block"));
+		PEAKS_GRASS_BLOCK.register(Archeon.createId("peaks_grass_block"));
 		SNOWY_SOUTHSTONE.register(Archeon.createId("snowy_southstone"));
 		PEAKS_SNOW.register(Archeon.createId("peaks_snow"));
-		PEAKS_SNOW_BLOCK.register(Archeon.createId("peaks_snow_block")); */
+		PEAKS_SNOW_BLOCK.register(Archeon.createId("peaks_snow_block"));
 		WARPED_TILES.register(Archeon.createId("warped_tiles"));
 		WARPED_TILES_STAIRS.register(Archeon.createId("warped_tiles_stairs"));
 		WARPED_TILES_SLAB.register(Archeon.createId("warped_tiles_slab"));

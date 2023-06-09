@@ -3,10 +3,7 @@ package fr.firstmegagame4.archeon;
 import com.mmodding.mmodding_lib.library.base.MModdingModInitializer;
 import com.mmodding.mmodding_lib.library.config.Config;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
-import fr.firstmegagame4.archeon.init.ArcheonBlocks;
-import fr.firstmegagame4.archeon.init.ArcheonItemGroups;
-import fr.firstmegagame4.archeon.init.ArcheonItems;
-import fr.firstmegagame4.archeon.worldgen.ArcheonBiomes;
+import fr.firstmegagame4.archeon.init.*;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 import org.quiltmc.loader.api.ModContainer;
@@ -28,6 +25,7 @@ public class Archeon implements MModdingModInitializer {
 		elementsInitializers.add(new ArcheonItems());
 		elementsInitializers.add(new ArcheonItemGroups());
 		elementsInitializers.add(new ArcheonBiomes());
+		elementsInitializers.add(new ArcheonFeatures());
 		return elementsInitializers;
 	}
 

@@ -1,9 +1,10 @@
-package fr.firstmegagame4.archeon.worldgen;
+package fr.firstmegagame4.archeon.init;
 
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.utils.BiomeSourceUtils;
 import com.mmodding.mmodding_lib.library.utils.BiomeUtils;
 import fr.firstmegagame4.archeon.Archeon;
+import fr.firstmegagame4.archeon.worldgen.biomes.ArcheonBiomesProvider;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 

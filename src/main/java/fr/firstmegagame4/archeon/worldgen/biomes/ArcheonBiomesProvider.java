@@ -1,7 +1,8 @@
-package fr.firstmegagame4.archeon.worldgen;
+package fr.firstmegagame4.archeon.worldgen.biomes;
 
 import com.mmodding.mmodding_lib.library.worldgen.AdvancedBiomeProvider;
 import com.mojang.datafixers.util.Pair;
+import fr.firstmegagame4.archeon.init.ArcheonBiomes;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;
