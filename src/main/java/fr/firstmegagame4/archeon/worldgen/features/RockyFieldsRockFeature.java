@@ -6,6 +6,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import fr.firstmegagame4.archeon.init.ArcheonBlocks;
 import fr.firstmegagame4.archeon.init.ArcheonFeatures;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Holder;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.random.RandomGenerator;
@@ -40,7 +41,7 @@ public class RockyFieldsRockFeature extends CustomFeature<RockyFieldsRockFeature
 	public PlacedFeature getDefaultPlaced() {
 
 		List<PlacementModifier> placementModifiers = new ArrayList<>();
-		placementModifiers.add(CountPlacementModifier.create(4));
+		placementModifiers.add(CountPlacementModifier.create(2));
 		placementModifiers.add(InSquarePlacementModifier.getInstance());
 		placementModifiers.add(PlacedFeatureUtil.MOTION_BLOCKING_HEIGHTMAP);
 		placementModifiers.add(BiomePlacementModifier.getInstance());
@@ -56,6 +57,8 @@ public class RockyFieldsRockFeature extends CustomFeature<RockyFieldsRockFeature
 		StructureWorldAccess structureWorldAccess = context.getWorld();
 		RandomGenerator random = context.getRandom();
 		RockyFieldsRockFeature.Config config = context.getConfig();
+
+		if (structureWorldAccess.getBlockState(basePos).isOf(Blocks.WATER)) return false;
 
 		if (originPos.getY() > structureWorldAccess.getBottomY() + 4) {
 
@@ -79,7 +82,7 @@ public class RockyFieldsRockFeature extends CustomFeature<RockyFieldsRockFeature
 				if (random.nextFloat() <= probability) {
 					structureWorldAccess.setBlockState(pos, config.rockBlock().getBlockState(random, pos), Block.NOTIFY_LISTENERS);
 
-					int highSize = random.nextInt(3);
+					int highSize = random.nextInt(2) + random.nextInt(2);
 
 					if (highSize != 0) {
 						BlockPos.iterate(pos.up(), pos.up(highSize)).forEach(highPos -> {

@@ -1,0 +1,44 @@
+{
+  "temperature": 0.2,
+  "downfall": 0.1,
+  "precipitation": "snow",
+  "effects": {
+    "sky_color": 7972607,
+    "fog_color": 12638463,
+    "water_color": 4892886,
+    "water_fog_color": 329011,
+    "grass_color": 650825,
+    "foliage_color": 650825,
+    "mood_sound": {
+      "sound": "archeon:no_ones_around",
+      "tick_delay": 3600,
+      "block_search_extent": 8,
+      "offset": 2
+    }
+  },
+  "spawners": {
+    "ambient": [
+      {
+        "type": "archeon:heifer",
+        "weight": 3,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "archeon:snail",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "minecraft:goat",
+        "weight": 5,
+        "minCount": 2,
+        "maxCount": 3
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": []
+}

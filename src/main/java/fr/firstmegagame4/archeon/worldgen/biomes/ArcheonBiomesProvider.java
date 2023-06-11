@@ -1,5 +1,6 @@
 package fr.firstmegagame4.archeon.worldgen.biomes;
 
+import com.mmodding.mmodding_lib.library.utils.BiomeSourceUtils;
 import com.mmodding.mmodding_lib.library.worldgen.AdvancedBiomeProvider;
 import com.mojang.datafixers.util.Pair;
 import fr.firstmegagame4.archeon.init.ArcheonBiomes;
@@ -10,6 +11,7 @@ import net.minecraft.world.biome.source.util.MultiNoiseUtil;
 import java.util.function.Consumer;
 
 public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
+
 	@Override
 	public RegistryKey<Biome>[][] offCoastBiomes() {
 		return new RegistryKey[][] {
@@ -60,8 +62,8 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 	@Override
 	public RegistryKey<Biome>[][] peakBiomes() {
 		return new RegistryKey[][] {
-			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS},
-			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS},
+			{ArcheonBiomes.SOUTH_SNOWY_PEAKS, ArcheonBiomes.SOUTH_SNOWY_PEAKS, ArcheonBiomes.SOUTH_SNOWY_PEAKS, ArcheonBiomes.SOUTH_SNOWY_PEAKS, ArcheonBiomes.SOUTH_SNOWY_PEAKS},
+			{ArcheonBiomes.SOUTH_SNOWY_PEAKS, ArcheonBiomes.SOUTH_SNOWY_PEAKS, ArcheonBiomes.SOUTH_SNOWY_PEAKS, ArcheonBiomes.SOUTH_SNOWY_PEAKS, ArcheonBiomes.SOUTH_SNOWY_PEAKS},
 			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS},
 			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS},
 			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS}
@@ -104,8 +106,8 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 	@Override
 	public RegistryKey<Biome>[][] slopeBiomes() {
 		return new RegistryKey[][] {
-			{ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST},
-			{ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST},
+			{ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES},
+			{ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES},
 			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS}
 		};
 	}
@@ -146,5 +148,31 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 			this.fullRange(),
 			0.0f
 		), ArcheonBiomes.ABYSS_CAVES));
+	}
+
+	@Override
+	public void provideValleys(Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> parameters, MultiNoiseUtil.ParameterRange weirdness) {
+		BiomeSourceUtils.addSurfaceBiomeTo(
+			parameters, this.fullRange(), this.fullRange(), this.coastContinentalness(),
+			MultiNoiseUtil.ParameterRange.combine(this.erosions()[0], this.erosions()[1]),
+			weirdness, 0.0F, weirdness.max() < 0L ? ArcheonBiomes.ROCKY_FIELDS : ArcheonBiomes.DUNE_OCEAN
+		);
+		BiomeSourceUtils.addSurfaceBiomeTo(
+			parameters, this.fullRange(), this.fullRange(), this.nearInlandContinentalness(),
+			MultiNoiseUtil.ParameterRange.combine(this.erosions()[0], this.erosions()[1]),
+			weirdness, 0.0F, ArcheonBiomes.DUNE_OCEAN
+		);
+		BiomeSourceUtils.addSurfaceBiomeTo(
+			parameters, this.fullRange(), this.fullRange(),
+			MultiNoiseUtil.ParameterRange.combine(this.coastContinentalness(), this.farInlandContinentalness()),
+			MultiNoiseUtil.ParameterRange.combine(this.erosions()[2], this.erosions()[5]),
+			weirdness, 0.0F, ArcheonBiomes.DUNE_OCEAN
+		);
+		BiomeSourceUtils.addSurfaceBiomeTo(
+			parameters, this.fullRange(), this.fullRange(),
+			this.coastContinentalness(), this.erosions()[6],
+			weirdness, 0.0F, ArcheonBiomes.DUNE_OCEAN
+		);
+		AdvancedBiomeProvider.super.provideValleys(parameters, weirdness);
 	}
 }

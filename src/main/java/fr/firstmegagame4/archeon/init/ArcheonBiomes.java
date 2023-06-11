@@ -18,6 +18,8 @@ public class ArcheonBiomes implements ElementsInitializer {
 	public static final RegistryKey<Biome> NECLANE_GROVE = BiomeUtils.getBiomeKey(Archeon.createId("neclane_grove"));
 	public static final RegistryKey<Biome> ROCKY_FIELDS = BiomeUtils.getBiomeKey(Archeon.createId("rocky_fields"));
 	public static final RegistryKey<Biome> SOUTH_MEADOWS = BiomeUtils.getBiomeKey(Archeon.createId("south_meadows"));
+	public static final RegistryKey<Biome> SOUTH_SNOWY_PEAKS = BiomeUtils.getBiomeKey(Archeon.createId("south_snowy_peaks"));
+	public static final RegistryKey<Biome> SOUTH_SNOWY_SLOPES = BiomeUtils.getBiomeKey(Archeon.createId("south_snowy_slopes"));
 	public static final RegistryKey<Biome> UNDERGROUND_CAVES = BiomeUtils.getBiomeKey(Archeon.createId("underground_caves"));
 	public static final RegistryKey<Biome> VUXANCIA_FOREST = BiomeUtils.getBiomeKey(Archeon.createId("vuxancia_forest"));
 
