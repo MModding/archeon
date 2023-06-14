@@ -84,7 +84,7 @@ public class RockyFieldsRockFeature extends CustomFeature<RockyFieldsRockFeature
 
 					int highSize = random.nextInt(2) + random.nextInt(2);
 
-					if (highSize != 0) {
+					if (highSize != 0 && random.nextFloat() <= probability) {
 						BlockPos.iterate(pos.up(), pos.up(highSize)).forEach(highPos -> {
 							boolean isSlab = random.nextBoolean();
 							boolean isTop = highPos.getY() == pos.getY() + highSize;

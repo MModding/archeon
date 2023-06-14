@@ -469,7 +469,9 @@
                         "invert": {
                           "type": "minecraft:biome",
                           "biome_is": [
-                            "archeon:dune_ocean"
+                            "archeon:dune_ocean",
+                            "archeon:south_snowy_peaks",
+                            "archeon:south_snowy_slopes"
                           ]
                         }
                       },
