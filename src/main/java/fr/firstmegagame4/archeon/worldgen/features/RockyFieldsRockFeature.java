@@ -1,6 +1,6 @@
 package fr.firstmegagame4.archeon.worldgen.features;
 
-import com.mmodding.mmodding_lib.library.worldgen.features.CustomFeature;
+import com.mmodding.mmodding_lib.library.worldgen.features.AdvancedFeature;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import fr.firstmegagame4.archeon.init.ArcheonBlocks;
@@ -23,14 +23,14 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RockyFieldsRockFeature extends CustomFeature<RockyFieldsRockFeature.Config> {
+public class RockyFieldsRockFeature extends AdvancedFeature<RockyFieldsRockFeature.Config> {
 
 	public RockyFieldsRockFeature(Codec<Config> configCodec) {
 		super(configCodec);
 	}
 
 	@Override
-	public ConfiguredFeature<Config, CustomFeature<Config>> getDefaultConfigured() {
+	public ConfiguredFeature<Config, AdvancedFeature<Config>> getDefaultConfigured() {
 		return new ConfiguredFeature<>(ArcheonFeatures.ROCKY_FIELDS_ROCK, new Config(
 			BlockStateProvider.of(ArcheonBlocks.COBBLED_SOUTHSTONE),
 			BlockStateProvider.of(ArcheonBlocks.COBBLED_SOUTHSTONE_SLAB)
