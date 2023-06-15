@@ -43,10 +43,10 @@ public class SporeRootcapBlock extends CustomHorizontalFacingBlock {
 				createCuboidShape(0, 0, 0, 16, 16, 5)
 			).offset(offSet.getX(), offSet.getY(), offSet.getZ());
 			case WEST -> VoxelShapes.union(
-				createCuboidShape(0, 0, 0, 5, 16, 16)
+				createCuboidShape(11, 0, 0, 16, 16, 16)
 			).offset(offSet.getX(), offSet.getY(), offSet.getZ());
 			case EAST -> VoxelShapes.union(
-				createCuboidShape(11, 0, 0, 16, 16, 16)
+				createCuboidShape(0, 0, 0, 5, 16, 16)
 			).offset(offSet.getX(), offSet.getY(), offSet.getZ());
 			default -> null;
 		};

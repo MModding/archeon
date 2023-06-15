@@ -415,15 +415,21 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomWallBlock MOSSY_COBBLED_SOUTHSTONE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
 
 	public static final CustomBlock FALSE_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomBlock FALSE_CRACKED_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock FALSE_CRACKLED_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock FALSE_MOSSY_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomBlock SOUTHSTONE_EMERALD_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomBlock SOUTHSTONE_GOLD_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomBlock SOUTHSTONE_COAL_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock FAELITE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock SOUTHSTONE_COAL_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock SOUTHSTONE_GOLD_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock SOUTHSTONE_EMERALD_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+
+	public static final CustomBlock DEPTHS_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
+	public static final CustomBlock DEPTHS_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
+	public static final CustomBlock DEPTHS_FAELITE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
+	public static final CustomBlock DEPTHS_AKETITE_GOLD_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
+	public static final CustomBlock DEPTHS_AKETITE_EMERALD_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 
 	public static final CustomBlock APAFLORITE_BLOCK = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS, true);
 	public static final CustomBlock EXYRIANE_BLOCK = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS.strength(4.0f), true);
@@ -603,7 +609,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock PEAKS_GRASS_BLOCK = new CustomBlock(DefaultBlockSettings.GRASS_SETTINGS, true);
 	public static final CustomBlock SNOWY_SOUTHSTONE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomSnowBlock PEAKS_SNOW = new CustomSnowBlock(DefaultBlockSettings.SNOW_SETTINGS, true);
-	public static final CustomSnowBlock PEAKS_SNOW_BLOCK = new CustomSnowBlock(DefaultBlockSettings.SNOW_BLOCK_SETTINGS, true);
+	public static final CustomBlock PEAKS_SNOW_BLOCK = new CustomBlock(DefaultBlockSettings.SNOW_BLOCK_SETTINGS, true);
 
 	public static final CustomBlock WARPED_TILES = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock WARPED_TILES_STAIRS = new CustomStairsBlock(WARPED_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
@@ -793,14 +799,19 @@ public class ArcheonBlocks implements ElementsInitializer {
 		MOSSY_COBBLED_SOUTHSTONE_SLAB.register(Archeon.createId("mossy_cobbled_southstone_slab"));
 		MOSSY_COBBLED_SOUTHSTONE_WALL.register(Archeon.createId("mossy_cobbled_southstone_wall"));
 		FALSE_SOUTHSTONE_BRICKS.register(Archeon.createId("false_southstone_bricks"));
-		FALSE_CRACKED_SOUTHSTONE_BRICKS.register(Archeon.createId("false_cracked_southstone_bricks"));
+		FALSE_CRACKLED_SOUTHSTONE_BRICKS.register(Archeon.createId("false_crackled_southstone_bricks"));
 		FALSE_MOSSY_SOUTHSTONE_BRICKS.register(Archeon.createId("false_mossy_southstone_bricks"));
 		APAFLORITE_ORE.register(Archeon.createId("apaflorite_ore"));
 		EXYRIANE_ORE.register(Archeon.createId("exyriane_ore"));
-		SOUTHSTONE_EMERALD_ORE.register(Archeon.createId("southstone_emerald_ore"));
-		SOUTHSTONE_GOLD_ORE.register(Archeon.createId("southstone_gold_ore"));
-		SOUTHSTONE_COAL_ORE.register(Archeon.createId("southstone_coal_ore"));
 		FAELITE_ORE.register(Archeon.createId("faelite_ore"));
+		SOUTHSTONE_COAL_ORE.register(Archeon.createId("southstone_coal_ore"));
+		SOUTHSTONE_GOLD_ORE.register(Archeon.createId("southstone_gold_ore"));
+		SOUTHSTONE_EMERALD_ORE.register(Archeon.createId("southstone_emerald_ore"));
+		DEPTHS_APAFLORITE_ORE.register(Archeon.createId("depths_apaflorite_ore"));
+		DEPTHS_EXYRIANE_ORE.register(Archeon.createId("depths_exyriane_ore"));
+		DEPTHS_FAELITE_ORE.register(Archeon.createId("depths_faelite_ore"));
+		DEPTHS_AKETITE_GOLD_ORE.register(Archeon.createId("depths_aketite_gold_ore"));
+		DEPTHS_AKETITE_EMERALD_ORE.register(Archeon.createId("depths_aketite_emerald_ore"));
 		APAFLORITE_BLOCK.register(Archeon.createId("apaflorite_block"));
 		EXYRIANE_BLOCK.register(Archeon.createId("exyriane_block"));
 		FAELITE_BLOCK.register(Archeon.createId("faelite_block"));

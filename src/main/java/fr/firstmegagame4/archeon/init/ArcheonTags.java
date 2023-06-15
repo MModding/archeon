@@ -13,6 +13,7 @@ public class ArcheonTags {
 	public static final TagKey<Block> WOOD = TagKey.of(Registry.BLOCK_KEY, Archeon.createId("equivalents/wood"));
 
 	public static final TagKey<Block> SOUTHSTONE_ORES_REPLACEABLES = TagKey.of(Registry.BLOCK_KEY, Archeon.createId("replaceables/southstone_ore"));
+	public static final TagKey<Block> DEPTHS_AKETITE_ORES_REPLACEABLES = TagKey.of(Registry.BLOCK_KEY, Archeon.createId("replaceables/depths_aketite_ore"));
 
 	public static final TagKey<Block> SOUTHSTONE = TagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/southstone"));
 	public static final TagKey<Block> ORES = TagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/ores"));

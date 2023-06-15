@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:blocks/depths_apaflorite_ore",
+    "particle": "archeon:blocks/depths_apaflorite_ore"
+  }
+}

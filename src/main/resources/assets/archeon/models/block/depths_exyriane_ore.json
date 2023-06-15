@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:blocks/depths_exyriane_ore",
+    "up": "archeon:blocks/depths_exyriane_ore",
+    "north": "archeon:blocks/depths_exyriane_ore",
+    "east": "archeon:blocks/depths_exyriane_ore",
+    "south": "archeon:blocks/depths_exyriane_ore",
+    "west": "archeon:blocks/depths_exyriane_ore",
+    "particle": "archeon:blocks/depths_exyriane_ore"
+  }
+}
