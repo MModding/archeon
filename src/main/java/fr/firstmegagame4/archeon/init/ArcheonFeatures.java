@@ -43,6 +43,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomRandomPatchFeature PATCH_TALL_SOUTH_WHEAT = new CustomRandomPatchFeature(30, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.TALL_SOUTH_WHEAT)))).setCount(5);
 
+	public static final CustomRandomPatchFeature PATCH_SNOWY_GRASS_TUFFET = new CustomRandomPatchFeature(20, 7, 3,
+		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.SNOWY_GRASS_TUFFET)))).setCount(7);
+
 	public static final CustomFlowerFeature ORCHID_FEATURE = new CustomFlowerFeature(64, 7, 3,
 		ArcheonBlocks.SUNSET_ORCHID).setCount(5);
 	public static final CustomFlowerFeature ROSEYPIA_FEATURE = new CustomFlowerFeature(8, 7, 3,
@@ -114,6 +117,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_TALL_WET_FERN.register(Archeon.createId("patch_tall_wet_fern"));
 		PATCH_SOUTH_WHEAT.register(Archeon.createId("patch_south_wheat"));
 		PATCH_TALL_SOUTH_WHEAT.register(Archeon.createId("patch_tall_south_wheat"));
+		PATCH_SNOWY_GRASS_TUFFET.register(Archeon.createId("patch_snowy_grass_tuffet"));
 		ORCHID_FEATURE.register(Archeon.createId("orchid_feature"));
 		ROSEYPIA_FEATURE.register(Archeon.createId("roseypia_feature"));
 		AEROLIA_FEATURE.register(Archeon.createId("aerolia_feature"));
@@ -161,6 +165,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_TALL_WET_FERN.addToBiomes(randomPatchPredicate);
 		PATCH_SOUTH_WHEAT.addToBiomes(randomPatchPredicate);
 		PATCH_TALL_SOUTH_WHEAT.addToBiomes(randomPatchPredicate);
+
+		PATCH_SNOWY_GRASS_TUFFET.addToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES));
 
 		ORCHID_FEATURE.addToBiomes(randomPatchPredicate);
 		ROSEYPIA_FEATURE.addToBiomes(randomPatchPredicate);
