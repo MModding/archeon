@@ -1,14 +1,27 @@
 package fr.firstmegagame4.archeon.init;
 
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
+import com.mmodding.mmodding_lib.library.utils.RegistrationUtils;
 import com.mmodding.mmodding_lib.library.worldgen.features.AdvancedFeature;
 import com.mmodding.mmodding_lib.library.worldgen.features.defaults.CustomFlowerFeature;
 import com.mmodding.mmodding_lib.library.worldgen.features.defaults.CustomOreFeature;
 import com.mmodding.mmodding_lib.library.worldgen.features.defaults.CustomRandomPatchFeature;
 import com.mmodding.mmodding_lib.library.worldgen.features.defaults.CustomTreeFeature;
+import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomFoliagePlacer;
+import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomTreeDecorator;
+import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomTrunkPlacer;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.worldgen.features.MenhirFeature;
 import fr.firstmegagame4.archeon.worldgen.features.RockyFieldsRockFeature;
+import fr.firstmegagame4.archeon.worldgen.features.trees.decorators.HangingLeavesTreeDecorator;
+import fr.firstmegagame4.archeon.worldgen.features.trees.decorators.SporeRootcapTreeDecorator;
+import fr.firstmegagame4.archeon.worldgen.features.trees.foliage.CypressFoliagePlacer;
+import fr.firstmegagame4.archeon.worldgen.features.trees.foliage.NeclaneFoliagePlacer;
+import fr.firstmegagame4.archeon.worldgen.features.trees.foliage.PalmFoliagePlacer;
+import fr.firstmegagame4.archeon.worldgen.features.trees.foliage.VuxanciaFoliagePlacer;
+import fr.firstmegagame4.archeon.worldgen.features.trees.trunk.NeclaneTrunkPlacer;
+import fr.firstmegagame4.archeon.worldgen.features.trees.trunk.PalmTrunkPlacer;
+import fr.firstmegagame4.archeon.worldgen.features.trees.trunk.VuxanciaTrunkPlacer;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Pair;
@@ -20,9 +33,11 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.SimpleBlockFeatureConfig;
 import net.minecraft.world.gen.feature.util.PlacedFeatureUtil;
-import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.foliage.FoliagePlacerType;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
+import net.minecraft.world.gen.trunk.TrunkPlacerType;
 import org.quiltmc.qsl.worldgen.biome.api.BiomeModifications;
 import org.quiltmc.qsl.worldgen.biome.api.BiomeSelectionContext;
 
@@ -31,14 +46,26 @@ import java.util.function.Predicate;
 
 public class ArcheonFeatures implements ElementsInitializer {
 
+	public static final TrunkPlacerType<NeclaneTrunkPlacer> NECLANE_TRUNK_PLACER = CustomTrunkPlacer.createType(NeclaneTrunkPlacer.CODEC);
+	public static final TrunkPlacerType<PalmTrunkPlacer> PALM_TRUNK_PLACER = CustomTrunkPlacer.createType(PalmTrunkPlacer.CODEC);
+	public static final TrunkPlacerType<VuxanciaTrunkPlacer> VUXANCIA_TRUNK_PLACER = CustomTrunkPlacer.createType(VuxanciaTrunkPlacer.CODEC);
+
+	public static final FoliagePlacerType<NeclaneFoliagePlacer> NECLANE_FOLIAGE_PLACER = CustomFoliagePlacer.createType(NeclaneFoliagePlacer.CODEC);
+	public static final FoliagePlacerType<CypressFoliagePlacer> CYPRESS_FOLIAGE_PLACER = CustomFoliagePlacer.createType(CypressFoliagePlacer.CODEC);
+	public static final FoliagePlacerType<PalmFoliagePlacer> PALM_FOLIAGE_PLACER = CustomFoliagePlacer.createType(PalmFoliagePlacer.CODEC);
+	public static final FoliagePlacerType<VuxanciaFoliagePlacer> VUXANCIA_FOLIAGE_PLACER = CustomFoliagePlacer.createType(VuxanciaFoliagePlacer.CODEC);
+
+	public static final TreeDecoratorType<HangingLeavesTreeDecorator> HANGING_LEAVES_TREE_DECORATOR = CustomTreeDecorator.createType(HangingLeavesTreeDecorator.CODEC);
+	public static final TreeDecoratorType<SporeRootcapTreeDecorator> SPORE_ROOTCAP_TREE_DECORATOR = CustomTreeDecorator.createType(SporeRootcapTreeDecorator.CODEC);
+
 	public static final AdvancedFeature<RockyFieldsRockFeature.Config> ROCKY_FIELDS_ROCK = new RockyFieldsRockFeature(RockyFieldsRockFeature.Config.CODEC);
 	public static final AdvancedFeature<MenhirFeature.Config> MENHIR = new MenhirFeature(MenhirFeature.Config.CODEC);
 
 	public static final CustomTreeFeature NECLANE_TREE = new CustomTreeFeature(
 		ArcheonBlocks.NECLANE_LOG,
-		new StraightTrunkPlacer(4, 2, 0),
+		new NeclaneTrunkPlacer(4, 2, 0),
 		ArcheonBlocks.NECLANE_LEAVES,
-		new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+		new NeclaneFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(0, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
@@ -52,7 +79,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.CYPRESS_LOG,
 		new StraightTrunkPlacer(4, 2, 0),
 		ArcheonBlocks.CYPRESS_LEAVES,
-		new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+		new CypressFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
@@ -60,53 +87,53 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 	public static final CustomTreeFeature VUXANCIA_TREE_PNEVANTIAL = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
-		new StraightTrunkPlacer(4, 2, 0),
+		new VuxanciaTrunkPlacer(4, 2, 0),
 		ArcheonBlocks.VUXANCIA_LEAVES_PNEVANTIAL,
-		new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(new HangingLeavesTreeDecorator(), new SporeRootcapTreeDecorator()).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
 	public static final CustomTreeFeature VUXANCIA_TREE_STREIAN = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
-		new StraightTrunkPlacer(4, 2, 0),
+		new VuxanciaTrunkPlacer(4, 2, 0),
 		ArcheonBlocks.VUXANCIA_LEAVES_STREIAN,
-		new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(new HangingLeavesTreeDecorator(), new SporeRootcapTreeDecorator()).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
 	public static final CustomTreeFeature VUXANCIA_TREE_ORIAN = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
-		new StraightTrunkPlacer(4, 2, 0),
+		new VuxanciaTrunkPlacer(4, 2, 0),
 		ArcheonBlocks.VUXANCIA_LEAVES_ORIAN,
-		new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(new HangingLeavesTreeDecorator(), new SporeRootcapTreeDecorator()).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
 	public static final CustomTreeFeature VUXANCIA_TREE_VALE = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
-		new StraightTrunkPlacer(4, 2, 0),
+		new VuxanciaTrunkPlacer(4, 2, 0),
 		ArcheonBlocks.VUXANCIA_LEAVES_VALE,
-		new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(new HangingLeavesTreeDecorator(), new SporeRootcapTreeDecorator()).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
 	public static final CustomTreeFeature VUXANCIA_TREE_ZIAL = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
-		new StraightTrunkPlacer(4, 2, 0),
+		new VuxanciaTrunkPlacer(4, 2, 0),
 		ArcheonBlocks.VUXANCIA_LEAVES_ZIAL,
-		new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(new HangingLeavesTreeDecorator(), new SporeRootcapTreeDecorator()).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
 	public static final CustomRandomPatchFeature PATCH_WET_GRASS = new CustomRandomPatchFeature(50, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.WET_GRASS)))).setCount(10);
@@ -187,6 +214,16 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 	@Override
 	public void register() {
+		RegistrationUtils.registerTrunkPlacerType(Archeon.createId("neclane_trunk_placer"), NECLANE_TRUNK_PLACER);
+		RegistrationUtils.registerTrunkPlacerType(Archeon.createId("palm_trunk_placer"), PALM_TRUNK_PLACER);
+		RegistrationUtils.registerTrunkPlacerType(Archeon.createId("vuxancia_trunk_placer"), VUXANCIA_TRUNK_PLACER);
+		RegistrationUtils.registerFoliagePlacerType(Archeon.createId("neclane_foliage_placer"), NECLANE_FOLIAGE_PLACER);
+		RegistrationUtils.registerFoliagePlacerType(Archeon.createId("cypress_foliage_placer"), CYPRESS_FOLIAGE_PLACER);
+		RegistrationUtils.registerFoliagePlacerType(Archeon.createId("palm_foliage_placer"), PALM_FOLIAGE_PLACER);
+		RegistrationUtils.registerFoliagePlacerType(Archeon.createId("vuxancia_foliage_placer"), VUXANCIA_FOLIAGE_PLACER);
+		RegistrationUtils.registerTreeDecoratorType(Archeon.createId("hanging_leaves_tree_decorator"), HANGING_LEAVES_TREE_DECORATOR);
+		RegistrationUtils.registerTreeDecoratorType(Archeon.createId("spore_rootcap_tree_decorator"), SPORE_ROOTCAP_TREE_DECORATOR);
+
 		ROCKY_FIELDS_ROCK.register(Archeon.createId("rocky_fields_rock"));
 		MENHIR.register(Archeon.createId("menhir"));
 		NECLANE_TREE.register(Archeon.createId("neclane_tree"));
