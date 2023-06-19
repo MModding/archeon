@@ -243,13 +243,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomTallPlantBlock SOUTH_WHEAT = new CustomTallPlantBlock(
 		floor -> floor.isIn(ArcheonTags.SOIL),
-		DefaultBlockSettings.PLANT_SETTINGS,
+		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS,
 		true
 	);
 
 	public static final CustomTallPlantBlock TALL_SOUTH_WHEAT = new CustomTallPlantBlock(
 		floor -> floor.isIn(ArcheonTags.SOIL),
-		DefaultBlockSettings.PLANT_SETTINGS,
+		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS,
 		true
 	);
 

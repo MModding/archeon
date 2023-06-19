@@ -32,7 +32,7 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 		return new RegistryKey[][] {
 			{ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE},
 			{ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST},
-			{ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.VUXANCIA_FOREST},
+			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.VUXANCIA_FOREST},
 			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST},
 			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS}
 		};
@@ -84,7 +84,7 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 	@Override
 	public RegistryKey<Biome>[][] plateauBiomes() {
 		return new RegistryKey[][] {
-			{ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE},
+			{ArcheonBiomes.SOUTH_MEADOWS, ArcheonBiomes.SOUTH_MEADOWS, ArcheonBiomes.SOUTH_MEADOWS, ArcheonBiomes.SOUTH_MEADOWS, ArcheonBiomes.SOUTH_MEADOWS},
 			{ArcheonBiomes.SOUTH_MEADOWS, ArcheonBiomes.SOUTH_MEADOWS, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST},
 			{ArcheonBiomes.SOUTH_MEADOWS, ArcheonBiomes.SOUTH_MEADOWS, ArcheonBiomes.SOUTH_MEADOWS, ArcheonBiomes.SOUTH_MEADOWS, ArcheonBiomes.VUXANCIA_FOREST},
 			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST},
