@@ -1,5 +1,6 @@
 package fr.firstmegagame4.archeon.worldgen.features.trees.trunk;
 
+import com.google.common.collect.ImmutableList;
 import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomTrunkPlacer;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -32,6 +33,6 @@ public class PalmTrunkPlacer extends CustomTrunkPlacer {
 
 	@Override
 	public List<FoliagePlacer.TreeNode> generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, RandomGenerator random, int height, BlockPos startPos, TreeFeatureConfig config) {
-		return null;
+		return ImmutableList.of(new FoliagePlacer.TreeNode(startPos, 0, false));
 	}
 }

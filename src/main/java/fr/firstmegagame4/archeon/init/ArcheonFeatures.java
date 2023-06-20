@@ -67,7 +67,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.NECLANE_LEAVES,
 		new NeclaneFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
-		PlacedFeatureUtil.createCountExtraModifier(0, 0.1f, 1),
+		PlacedFeatureUtil.createCountExtraModifier(2, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).setGroundBlock(ArcheonBlocks.WET_DIRT).addPlacedFeature(
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
@@ -93,7 +93,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).addTreeDecorators(new HangingLeavesTreeDecorator(), new SporeRootcapTreeDecorator()).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
 	public static final CustomTreeFeature VUXANCIA_TREE_STREIAN = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
@@ -103,7 +103,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).addTreeDecorators(new HangingLeavesTreeDecorator(), new SporeRootcapTreeDecorator()).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
 	public static final CustomTreeFeature VUXANCIA_TREE_ORIAN = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
@@ -113,7 +113,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).addTreeDecorators(new HangingLeavesTreeDecorator(), new SporeRootcapTreeDecorator()).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
 	public static final CustomTreeFeature VUXANCIA_TREE_VALE = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
@@ -123,7 +123,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).addTreeDecorators(new HangingLeavesTreeDecorator(), new SporeRootcapTreeDecorator()).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
 	public static final CustomTreeFeature VUXANCIA_TREE_ZIAL = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
@@ -133,7 +133,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).addTreeDecorators(new HangingLeavesTreeDecorator(), new SporeRootcapTreeDecorator()).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
 	public static final CustomRandomPatchFeature PATCH_WET_GRASS = new CustomRandomPatchFeature(50, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.WET_GRASS)))).setCount(10);
