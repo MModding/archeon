@@ -39,7 +39,7 @@ public class SnailEntity extends AnimalEntity {
 		return MobEntity.createMobAttributes()
 			.add(EntityAttributes.GENERIC_MAX_HEALTH, 7.0f)
 			.add(EntityAttributes.GENERIC_ARMOR, 1.0f)
-			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1.5f)
+			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.15f)
 			.build();
 	}
 
