@@ -1,7 +1,7 @@
 {
   "type": "archeon:archeon_type",
   "generator": {
-    "type": "mmodding_lib:biome_based",
+    "type": "mmodding:biome_based",
     "settings": "archeon:generator_settings",
     "biome_source": {
       "type": "minecraft:multi_noise",

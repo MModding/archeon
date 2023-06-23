@@ -17,7 +17,7 @@
     }
   },
   "spawners": {
-    "ambient": [
+    "creature": [
       {
         "type": "archeon:heifer",
         "weight": 3,

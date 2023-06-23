@@ -27,6 +27,7 @@ public class Archeon implements MModdingModInitializer {
 		elementsInitializers.add(new ArcheonChunkGeneratorSettings());
 		elementsInitializers.add(new ArcheonBiomes());
 		elementsInitializers.add(new ArcheonFeatures());
+		elementsInitializers.add(new ArcheonEntities());
 		return elementsInitializers;
 	}
 
@@ -39,7 +40,7 @@ public class Archeon implements MModdingModInitializer {
 		return "archeon";
 	}
 
-	public static Identifier createId(String string) {
-		return new Identifier(Archeon.id(), string);
+	public static Identifier createId(String path) {
+		return new Identifier(Archeon.id(), path);
 	}
 }

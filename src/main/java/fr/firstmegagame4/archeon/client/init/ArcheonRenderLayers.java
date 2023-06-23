@@ -1,4 +1,4 @@
-package fr.firstmegagame4.archeon.client;
+package fr.firstmegagame4.archeon.client.init;
 
 import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
 import fr.firstmegagame4.archeon.init.ArcheonBlocks;

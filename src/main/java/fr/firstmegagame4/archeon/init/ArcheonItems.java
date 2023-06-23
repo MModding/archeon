@@ -19,7 +19,6 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.sound.SoundEvent;
@@ -67,7 +66,8 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomItem EXYRIANE_CRYSTAL = new CustomItem(new AdvancedItemSettings());
 	public static final CustomFishingRodItem EXYRIANE_FISHING_ROD = new CustomFishingRodItem(new AdvancedItemSettings());
 
-	public static final CustomItem FAELITE_INGOT = new CustomItem(new Item.Settings());
+	public static final CustomItem RAW_FAELITE = new CustomItem(new AdvancedItemSettings());
+	public static final CustomItem FAELITE_INGOT = new CustomItem(new AdvancedItemSettings());
 
 	public static final CustomArmorItem FAELITE_HELMET = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.HEAD, new AdvancedItemSettings());
 	public static final CustomArmorItem FAELITE_CHESTPLATE = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.CHEST, new AdvancedItemSettings());
@@ -271,6 +271,7 @@ public class ArcheonItems implements ElementsInitializer {
 		DEVOURING.register(Archeon.createId("devouring"));
 		EXYRIANE_CRYSTAL.register(Archeon.createId("exyriane_crystal"));
 		EXYRIANE_FISHING_ROD.register(Archeon.createId("exyriane_fishing_rod"));
+		RAW_FAELITE.register(Archeon.createId("raw_faelite"));
 		FAELITE_INGOT.register(Archeon.createId("faelite_ingot"));
 		FAELITE_HELMET.register(Archeon.createId("faelite_helmet"));
 		FAELITE_CHESTPLATE.register(Archeon.createId("faelite_chestplate"));
