@@ -6,7 +6,6 @@ import com.mmodding.mmodding_lib.library.items.*;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.blocks.SporeRootcapBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.SugarCaneBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -28,6 +27,7 @@ public class ArcheonItemGroups implements ElementsInitializer {
 		(block instanceof SporeRootcapBlock);
 
 	public static final Predicate<Item> IS_EQUIPMENT = item ->
+		(Registry.ITEM.getId(item).equals(Archeon.createId("power_key"))) ||
 		(item instanceof CustomArmorItem) ||
 		(item instanceof CustomSwordItem) ||
 		(item instanceof CustomPickaxeItem) ||
