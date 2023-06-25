@@ -6,8 +6,11 @@ import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.blocks.*;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Material;
 import net.minecraft.block.PressurePlateBlock.ActivationRule;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.sound.BlockSoundGroup;
+import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class ArcheonBlocks implements ElementsInitializer {
 
@@ -468,6 +471,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomStairsBlock MYSTERIOUS_STONE_STAIRS = new CustomStairsBlock(MYSTERIOUS_STONE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomSlabBlock MYSTERIOUS_STONE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
+	public static final CustomSquaredPortalBlock ARCHEON_PORTAL = new CustomSquaredPortalBlock(MYSTERIOUS_STONE, QuiltBlockSettings.of(Material.PORTAL).noCollision().strength(-1.0F).luminance(11).sounds(BlockSoundGroup.GLASS));
+
 	public static final CustomBlock ARTEMNITE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock ARTEMNITE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
@@ -840,6 +845,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		MYSTERIOUS_STONE.register(Archeon.createId("mysterious_stone"));
 		MYSTERIOUS_STONE_STAIRS.register(Archeon.createId("mysterious_stone_stairs"));
 		MYSTERIOUS_STONE_SLAB.register(Archeon.createId("mysterious_stone_slab"));
+		ARCHEON_PORTAL.register(Archeon.createId("archeon_portal"));
 		ARTEMNITE.register(Archeon.createId("artemnite"));
 		ARTEMNITE_BRICKS.register(Archeon.createId("artemnite_bricks"));
 		ARTEMNITE_BRICK_STAIRS.register(Archeon.createId("artemnite_brick_stairs"));
@@ -976,5 +982,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DUNE_SAND_CASTLE.register(Archeon.createId("dune_sand_castle"));
 		LOOT_URN.register(Archeon.createId("loot_urn"));
 		HEART_OF_NATURE_TROPHY.register(Archeon.createId("heart_of_nature_trophy"));
+		ARCHEON_PORTAL.registerPortal(Archeon.createId("portal"));
 	}
 }
