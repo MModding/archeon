@@ -4,6 +4,7 @@ import fr.firstmegagame4.archeon.init.ArcheonEntities;
 import fr.firstmegagame4.archeon.init.ArcheonItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.control.FlightMoveControl;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.ai.pathing.BirdNavigation;
 import net.minecraft.entity.ai.pathing.EntityNavigation;
@@ -25,6 +26,7 @@ public class SunstradiverEntity extends AnimalEntity {
 
 	public SunstradiverEntity(EntityType<? extends SunstradiverEntity> entityType, World world) {
 		super(entityType, world);
+		this.moveControl = new FlightMoveControl(this, 10, false);
 	}
 
 	@Override
@@ -41,6 +43,7 @@ public class SunstradiverEntity extends AnimalEntity {
 		return MobEntity.createMobAttributes()
 			.add(EntityAttributes.GENERIC_MAX_HEALTH, 12.0f)
 			.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3.0f)
+			.add(EntityAttributes.GENERIC_FLYING_SPEED, 0.5f)
 			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3f)
 			.build();
 	}
@@ -52,6 +55,11 @@ public class SunstradiverEntity extends AnimalEntity {
 		birdNavigation.setCanSwim(true);
 		birdNavigation.setCanEnterOpenDoors(true);
 		return birdNavigation;
+	}
+
+	@Override
+	protected void addFlapEffects() {
+		this.playSound(SoundEvents.ENTITY_PARROT_FLY, 0.15f, 1.0f);
 	}
 
 	@Nullable
@@ -74,7 +82,7 @@ public class SunstradiverEntity extends AnimalEntity {
 
 	@Override
 	protected void playStepSound(BlockPos pos, BlockState state) {
-		this.playSound(SoundEvents.ENTITY_PARROT_FLY, 0.15f, 1.0f);
+		this.playSound(SoundEvents.ENTITY_PARROT_STEP, 0.15f, 1.0f);
 	}
 
 	@Override
