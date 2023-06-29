@@ -40,8 +40,23 @@ public class NeclaneFoliagePlacer extends CustomFoliagePlacer {
 
 		BlockPos centerPos = node.getCenter();
 
+		this.placeNeclaneFoliage(world, replacer, random, config, centerPos);
+
 		for (Direction direction : Direction.values()) {
 			this.generateCrossAtDirection(world, replacer, random, config, centerPos, direction);
+			if (node.isGiantTrunk()) {
+				this.generateCrossAtDirection(world, replacer, random, config, centerPos.offset(direction), direction);
+			}
+		}
+
+		if (node.isGiantTrunk()) {
+			for (int i = 0; i < 2; i++) {
+				for (int j = 0; j < 2; j++) {
+					for (int k = 0; k < 2; k++) {
+						this.placeNeclaneFoliage(world, replacer, random, config, centerPos.add(i == 0 ? i - 1 : i, j == 0 ? j - 1 : j, k == 0 ? k - 1 : k));
+					}
+				}
+			}
 		}
 	}
 

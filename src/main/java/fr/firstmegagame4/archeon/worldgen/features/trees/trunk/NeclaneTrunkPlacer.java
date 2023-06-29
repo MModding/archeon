@@ -53,8 +53,9 @@ public class NeclaneTrunkPlacer extends CustomTrunkPlacer {
 
 		for (int y = 0; y < 2; y++) {
 			this.method_35375(world, replacer, random, pos.up(y), config);
-			if (height <= 5) nodes.add(new FoliagePlacer.TreeNode(pos.up(y), 0, false));
 		}
+
+		nodes.add(new FoliagePlacer.TreeNode(pos.up(1), 0, height == 5));
 
 		if (random.nextBoolean()) {
 			Direction littleBranchDirection = secondDirection.getOpposite();
@@ -75,11 +76,11 @@ public class NeclaneTrunkPlacer extends CustomTrunkPlacer {
 					for (int horizontal = 0 ; horizontal < (isNormalBranch ? 2 : 1); horizontal++) {
 						this.setTrunkBlockWithAxis(world, replacer, random, highPos.offset(actualDirection, horizontal + 1), actualAxis, config);
 					}
-					nodes.add(new FoliagePlacer.TreeNode(highPos.up().offset(actualDirection, isNormalBranch ? 2 : 1), 0, false));
+					nodes.add(new FoliagePlacer.TreeNode(highPos.up().offset(actualDirection, isNormalBranch ? 2 : 1), 0, true));
 					numberBranch--;
 				}
 				else {
-					nodes.add(new FoliagePlacer.TreeNode(highPos.down().offset(actualDirection), 0, false));
+					nodes.add(new FoliagePlacer.TreeNode(highPos.down().offset(actualDirection), 0, true));
 				}
 			}
 		}
