@@ -4,6 +4,7 @@ import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.items.*;
 import com.mmodding.mmodding_lib.library.items.settings.AdvancedItemSettings;
 import com.mmodding.mmodding_lib.library.items.settings.ItemFinishUsing;
+import com.mmodding.mmodding_lib.library.portals.CustomSquaredPortalKeyItem;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.items.PouchItem;
 import fr.firstmegagame4.archeon.materials.armor.ApafloriteArmor;
@@ -23,6 +24,7 @@ import net.minecraft.item.FoodComponent;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
@@ -30,8 +32,7 @@ import net.minecraft.world.explosion.Explosion;
 
 public class ArcheonItems implements ElementsInitializer {
 
-	// TODO : Make the Portal Functional (Mysterious Stone)
-	public static final CustomItem WAND_OF_NATURE = new CustomItem(new AdvancedItemSettings());
+	public static final CustomSquaredPortalKeyItem WAND_OF_NATURE = new CustomSquaredPortalKeyItem(new AdvancedItemSettings(), Archeon.createId("portal"), SoundEvents.ITEM_FLINTANDSTEEL_USE);
 
 	public static final CustomPickaxeItem QOLM_PICK = new CustomPickaxeItem(QolmTool.INSTANCE, 1, -2.5f, new AdvancedItemSettings().fireproof());
 
