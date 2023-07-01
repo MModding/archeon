@@ -3,6 +3,7 @@ package fr.firstmegagame4.archeon.init;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.utils.BiomeSourceUtils;
 import com.mmodding.mmodding_lib.library.utils.BiomeUtils;
+import com.mmodding.mmodding_lib.library.utils.WorldUtils;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.worldgen.biomes.ArcheonBiomesProvider;
 import net.minecraft.util.registry.RegistryKey;
@@ -25,6 +26,7 @@ public class ArcheonBiomes implements ElementsInitializer {
 
 	@Override
 	public void register() {
+		WorldUtils.addDifferedSeed(Archeon.createId("archeon"));
 		BiomeSourceUtils.createMultiNoisePreset(Archeon.createId("biome_provider"), ARCHEON_BIOMES_PROVIDER);
 	}
 }
