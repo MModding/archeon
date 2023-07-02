@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "archeon": {
+      "conditions": {
+        "to": "archeon:archeon"
+      },
+      "trigger": "minecraft:changed_dimension"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "archeon:textures/blocks/southstone.png",
+    "description": {
+      "translate": "advancements.archeon.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:wand_of_nature"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.archeon.title"
+    }
+  },
+  "requirements": [
+    [
+      "archeon"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:its_marked",
+  "criteria": {
+    "pots": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:jam_pot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.pots.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:jam_pot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.pots.title"
+    }
+  },
+  "requirements": [
+    [
+      "pots"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

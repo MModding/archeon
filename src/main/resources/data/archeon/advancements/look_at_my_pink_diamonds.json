@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:like_a_blue_amber",
+  "criteria": {
+    "look_at_my_pink_diamonds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:apaflorite_gemstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.look_at_my_pink_diamonds.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:apaflorite_gemstone"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.look_at_my_pink_diamonds.title"
+    }
+  },
+  "requirements": [
+    [
+      "look_at_my_pink_diamonds"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

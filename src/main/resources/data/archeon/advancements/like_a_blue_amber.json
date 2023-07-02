@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:the_other_side",
+  "criteria": {
+    "like_a_blue_amber": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:exyriane_crystal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.like_a_blue_amber.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:exyriane_crystal"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.like_a_blue_amber.title"
+    }
+  },
+  "requirements": [
+    [
+      "like_a_blue_amber"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

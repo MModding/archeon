@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:flower_advancement_roseypia",
+  "criteria": {
+    "flower_advancement_astedibes": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:astedibes"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.flower_advancement_astedibes.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:astedibes"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.flower_advancement_astedibes.title"
+    }
+  },
+  "requirements": [
+    [
+      "flower_advancement_astedibes"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

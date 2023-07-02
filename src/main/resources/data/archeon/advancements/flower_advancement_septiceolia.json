@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:flower_advancement_organdeane",
+  "criteria": {
+    "flower_advancement_septiceolia": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:septiceolia"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.flower_advancement_septiceolia.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:septiceolia"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.flower_advancement_septiceolia.title"
+    }
+  },
+  "requirements": [
+    [
+      "flower_advancement_septiceolia"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

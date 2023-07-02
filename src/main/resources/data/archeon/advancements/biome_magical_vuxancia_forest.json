@@ -1,0 +1,42 @@
+{
+  "parent": "archeon:archeon",
+  "criteria": {
+    "biome_magical_vuxancia_forest": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "archeon:magical_vuxancia_forest"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.biome_magical_vuxancia_forest.descr"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:vuxancia_leaves_vale_hanging"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.biome_magical_vuxancia_forest.title"
+    }
+  },
+  "requirements": [
+    [
+      "biome_magical_vuxancia_forest"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

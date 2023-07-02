@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:flower_advancement_red_lycoris",
+  "criteria": {
+    "flower_advancement_orange_lycoris": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:lycoris_sanguinea"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.flower_advancement_orange_lycoris.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:lycoris_sanguinea"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.flower_advancement_orange_lycoris.title"
+    }
+  },
+  "requirements": [
+    [
+      "flower_advancement_orange_lycoris"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:raw_clementine",
+  "criteria": {
+    "orange_and_orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:faelite_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.orange_and_orange.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:faelite_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.orange_and_orange.title"
+    }
+  },
+  "requirements": [
+    [
+      "orange_and_orange"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

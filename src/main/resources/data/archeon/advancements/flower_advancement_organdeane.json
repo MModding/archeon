@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:flower_advancement_iopea",
+  "criteria": {
+    "flower_advancement_organdeane": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:organdeane_blossom"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.flower_advancement_organdeane.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:organdeane_blossom"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.flower_advancement_organdeane.title"
+    }
+  },
+  "requirements": [
+    [
+      "flower_advancement_organdeane"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

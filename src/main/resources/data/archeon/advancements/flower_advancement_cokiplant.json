@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:flower_advancement_aerolia",
+  "criteria": {
+    "flower_advancement_cokiplant": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:cokiplant"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.flower_advancement_cokiplant.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:cokiplant"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.flower_advancement_cokiplant.title"
+    }
+  },
+  "requirements": [
+    [
+      "flower_advancement_cokiplant"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:archeon",
+  "criteria": {
+    "stone_confection": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:southstone_column"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.stone_confection.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:southstone_column"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.stone_confection.title"
+    }
+  },
+  "requirements": [
+    [
+      "stone_confection"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

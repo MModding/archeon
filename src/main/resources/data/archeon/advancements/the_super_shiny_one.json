@@ -1,0 +1,42 @@
+{
+  "parent": "archeon:archeon",
+  "criteria": {
+    "the_super_shiny_one": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:faelite_block"
+            ],
+            "count": {
+              "min": 64,
+              "max": 10000
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.the_super_shiny_one.descr"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:faelite_block"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.the_super_shiny_one.title"
+    }
+  },
+  "requirements": [
+    [
+      "the_super_shiny_one"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

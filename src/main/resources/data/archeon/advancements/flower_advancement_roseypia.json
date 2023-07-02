@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:flower_advancement_aerolia",
+  "criteria": {
+    "flower_advancement_roseypia": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:roseypia"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.flower_advancement_roseypia.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:roseypia"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.flower_advancement_roseypia.title"
+    }
+  },
+  "requirements": [
+    [
+      "flower_advancement_roseypia"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

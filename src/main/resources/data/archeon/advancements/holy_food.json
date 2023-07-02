@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:yummy_and_greasy",
+  "criteria": {
+    "holy_food": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:golden_grape"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.holy_food.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:golden_grape"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.holy_food.title"
+    }
+  },
+  "requirements": [
+    [
+      "holy_food"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:flower_advancement_oea",
+  "criteria": {
+    "flower_advancement_iopea": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:iopea"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.flower_advancement_iopea.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:iopea"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.flower_advancement_iopea.title"
+    }
+  },
+  "requirements": [
+    [
+      "flower_advancement_iopea"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

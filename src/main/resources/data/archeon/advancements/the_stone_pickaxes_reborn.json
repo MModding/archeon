@@ -1,0 +1,39 @@
+{
+  "parent": "archeon:the_other_side",
+  "criteria": {
+    "the_stone_pickaxes_reborn": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:southstone_pickaxe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.the_stone_pickaxes_reborn.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:southstone_pickaxe",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.the_stone_pickaxes_reborn.title"
+    }
+  },
+  "requirements": [
+    [
+      "the_stone_pickaxes_reborn"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

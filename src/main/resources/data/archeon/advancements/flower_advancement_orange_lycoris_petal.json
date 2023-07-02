@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:flower_advancement_orange_lycoris",
+  "criteria": {
+    "flower_advancement_orange_lycoris_petal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:orange_lycoris_petal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.flower_advancement_orange_lycoris_petal.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:orange_lycoris_petal"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.flower_advancement_orange_lycoris_petal.title"
+    }
+  },
+  "requirements": [
+    [
+      "flower_advancement_orange_lycoris_petal"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

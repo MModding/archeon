@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:flower_advancement_pink_lycoris",
+  "criteria": {
+    "flower_advancement_red_lycoris": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:red_lycoris"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.flower_advancement_red_lycoris.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:red_lycoris"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.flower_advancement_red_lycoris.title"
+    }
+  },
+  "requirements": [
+    [
+      "flower_advancement_red_lycoris"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

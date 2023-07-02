@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:flower_advancement_roseypia",
+  "criteria": {
+    "hidden_in_the_dark": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:twilight_rose"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.hidden_in_the_dark.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:twilight_rose"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.hidden_in_the_dark.title"
+    }
+  },
+  "requirements": [
+    [
+      "hidden_in_the_dark"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

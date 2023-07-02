@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:ladder"
+    },
+    "title": {
+      "translate": "advancements.fungustairs.title"
+    },
+    "description": {
+      "translate": "advancements.fungustairs.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "fungustairs": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "item": {
+          "item": "archeon:spore_rootcap"
+        }
+      }
+    }
+  },
+  "parent": "archeon:pots"
+}

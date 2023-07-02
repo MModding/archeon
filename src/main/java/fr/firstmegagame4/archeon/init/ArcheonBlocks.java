@@ -285,7 +285,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomSugarCaneBlock XETULIAN_SUGAR_CANE = new CustomSugarCaneBlock(DefaultBlockSettings.PLANT_SETTINGS, true);
 
-	public static final SporeRootcapBlock SPORE_ROOTCAP = new SporeRootcapBlock(DefaultBlockSettings.PLANT_SETTINGS, true);
+	public static final SporeRootcapBlock SPORE_ROOTCAP = new SporeRootcapBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
 	// public static final TowerSpawn : Later (WorldGen)
 

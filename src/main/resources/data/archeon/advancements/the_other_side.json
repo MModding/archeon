@@ -1,0 +1,42 @@
+{
+  "parent": "archeon:archeon",
+  "criteria": {
+    "the_other_side": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "archeon:rocky_fields"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.the_other_side.descr"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:wet_grass_block"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.the_other_side.title"
+    }
+  },
+  "requirements": [
+    [
+      "the_other_side"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

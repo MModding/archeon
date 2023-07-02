@@ -1,0 +1,38 @@
+{
+  "parent": "archeon:orange_and_orange",
+  "criteria": {
+    "adib_style": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:clothes_chestplate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.adib_style.descr"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:clothes_chestplate"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.adib_style.title"
+    }
+  },
+  "requirements": [
+    [
+      "adib_style"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
