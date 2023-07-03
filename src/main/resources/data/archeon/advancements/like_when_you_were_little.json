@@ -1,31 +1,38 @@
 {
+  "parent": "archeon:pots",
+  "criteria": {
+    "like_when_you_were_little": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:dune_sand_castle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
   "display": {
-    "icon": {
-      "item": "archeon:dune_sand_castle"
-    },
-    "title": {
-      "translate": "advancements.like_when_you_were_little.title"
-    },
+    "announce_to_chat": true,
     "description": {
       "translate": "advancements.like_when_you_were_little.descr"
     },
     "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:dune_sand_castle"
+    },
     "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "criteria": {
-    "like_when_you_were_little": {
-      "trigger": "minecraft:placed_block",
-      "conditions": {
-        "item": {
-          "item": "archeon:dune_sand_castle"
-        }
-      }
+    "title": {
+      "translate": "advancements.like_when_you_were_little.title"
     }
   },
-  "rewards": {
-    "experience": 1
-  },
-  "parent": "archeon:pots"
+  "requirements": [
+    [
+      "like_when_you_were_little"
+    ]
+  ],
+  "sends_telemetry_event": true
 }

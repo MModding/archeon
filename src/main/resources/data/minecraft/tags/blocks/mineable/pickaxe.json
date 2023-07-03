@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "#archeon:equivalents/stone",
+    "#archeon:equivalents/metals",
     "archeon:power_keystone",
     "archeon:naturite"
   ]

@@ -1,6 +1,11 @@
 {
   "replace": false,
   "values": [
+    "archeon:gypsum",
+    "archeon:gypsum_stairs",
+    "archeon:gypsum_slab",
+    "archeon:gypsum_wall",
+    "archeon:gypsum_pressure_plate",
     "archeon:gypsum_bricks",
     "archeon:gypsum_brick_stairs",
     "archeon:gypsum_brick_slab",

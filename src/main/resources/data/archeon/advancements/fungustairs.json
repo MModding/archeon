@@ -1,28 +1,38 @@
 {
+  "parent": "archeon:pots",
+  "criteria": {
+    "fungustairs": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:spore_rootcap"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
   "display": {
-    "icon": {
-      "item": "minecraft:ladder"
-    },
-    "title": {
-      "translate": "advancements.fungustairs.title"
-    },
+    "announce_to_chat": true,
     "description": {
       "translate": "advancements.fungustairs.descr"
     },
     "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "archeon:spore_rootcap"
+    },
     "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "criteria": {
-    "fungustairs": {
-      "trigger": "minecraft:placed_block",
-      "conditions": {
-        "item": {
-          "item": "archeon:spore_rootcap"
-        }
-      }
+    "title": {
+      "translate": "advancements.fungustairs.title"
     }
   },
-  "parent": "archeon:pots"
+  "requirements": [
+    [
+      "fungustairs"
+    ]
+  ],
+  "sends_telemetry_event": true
 }

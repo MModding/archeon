@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "archeon:depths_aketite"
+    "archeon:depths_aketite",
+    "archeon:aketite"
   ]
 }

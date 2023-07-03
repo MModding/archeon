@@ -580,11 +580,11 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomPressurePlateBlock CERAMIC_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.BONE_SETTINGS, true);
 	public static final CustomButtonBlock.Stone CERAMIC_BUTTON = new CustomButtonBlock.Stone(DefaultBlockSettings.BONE_SETTINGS, true);
 
-	public static final CustomBlock GYPSUM = new CustomBlock(DefaultBlockSettings.BASALT_SETTINGS, true);
-	public static final CustomStairsBlock GYPSUM_STAIRS = new CustomStairsBlock(GYPSUM.getDefaultState(), DefaultBlockSettings.BASALT_SETTINGS, true);
-	public static final CustomSlabBlock GYPSUM_SLAB = new CustomSlabBlock(DefaultBlockSettings.BASALT_SETTINGS, true);
-	public static final CustomWallBlock GYPSUM_WALL = new CustomWallBlock(DefaultBlockSettings.BASALT_SETTINGS, true);
-	public static final CustomPressurePlateBlock GYPSUM_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.BASALT_SETTINGS, true);
+	public static final CustomBlock GYPSUM = new CustomBlock(DefaultBlockSettings.BASALT_SETTINGS.requiresTool(), true);
+	public static final CustomStairsBlock GYPSUM_STAIRS = new CustomStairsBlock(GYPSUM.getDefaultState(), DefaultBlockSettings.BASALT_SETTINGS.requiresTool(), true);
+	public static final CustomSlabBlock GYPSUM_SLAB = new CustomSlabBlock(DefaultBlockSettings.BASALT_SETTINGS.requiresTool(), true);
+	public static final CustomWallBlock GYPSUM_WALL = new CustomWallBlock(DefaultBlockSettings.BASALT_SETTINGS.requiresTool(), true);
+	public static final CustomPressurePlateBlock GYPSUM_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.BASALT_SETTINGS.requiresTool(), true);
 
 	public static final CustomBlock GYPSUM_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock GYPSUM_BRICK_STAIRS = new CustomStairsBlock(GYPSUM_BRICKS.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
