@@ -249,6 +249,8 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomItem SNAIL_SHELL = new CustomItem(new AdvancedItemSettings());
 
+	public static final CustomItem AURORA_CRYSTAL = new CustomItem(new AdvancedItemSettings());
+
 	public static final CustomSpawnEggItem SNAIL_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.SNAIL, 7578818, 1982583, new AdvancedItemSettings());
 	public static final CustomSpawnEggItem SUNSTRADIVER_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.SUNSTRADIVER, 52429, 13210, new AdvancedItemSettings());
 	public static final CustomSpawnEggItem HEIFER_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.HEIFER, 4478842, 3097203, new AdvancedItemSettings());
@@ -344,6 +346,7 @@ public class ArcheonItems implements ElementsInitializer {
 		POUCH.register(Archeon.createId("pouch"));
 		SUNSTRADIVER_FEATHER.register(Archeon.createId("sunstradiver_feather"));
 		SNAIL_SHELL.register(Archeon.createId("snail_shell"));
+		AURORA_CRYSTAL.register(Archeon.createId("aurora_crystal"));
 		SNAIL_SPAWN_EGG.register(Archeon.createId("snail_spawn_egg"));
 		SUNSTRADIVER_SPAWN_EGG.register(Archeon.createId("sunstradiver_spawn_egg"));
 		HEIFER_SPAWN_EGG.register(Archeon.createId("heifer_spawn_egg"));

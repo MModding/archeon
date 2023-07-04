@@ -506,7 +506,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock CRACKLED_ARTEMNITE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock ARTEMNITE_BASEBOARD = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomBlock POWER_KEYSTONE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock POWER_KEYSTONE = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS.strength(-1, 3600000.0f), true);
 	public static final NaturiteBlock NATURITE = new NaturiteBlock(DefaultBlockSettings.NETHERITE_SETTINGS, true);
 
 	public static final CustomPillarBlock STRIPPED_PALM_WOOD = new CustomPillarBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
