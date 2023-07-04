@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " M ",
+    "GOG",
+    "OOO"
+  ],
+  "key": {
+    "M": {
+      "item": "archeon:manuscript"
+    },
+    "G": {
+      "item": "archeon:apaflorite_gemstone"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "minecraft:enchanting_table",
+    "count": 1
+  }
+}

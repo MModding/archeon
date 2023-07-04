@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:palm_wood"
+    }
+  ],
+  "result": {
+    "item": "archeon:palm_planks",
+    "count": 4
+  }
+}

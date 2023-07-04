@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:jam_pot"
+    },
+    {
+      "item": "archeon:red_lycoris_petal"
+    },
+    {
+      "item": "archeon:red_lycoris_petal"
+    },
+    {
+      "item": "archeon:red_lycoris_petal"
+    }
+  ],
+  "result": {
+    "item": "archeon:red_lycoris_jam_pot",
+    "count": 1
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BB"
+  ],
+  "key": {
+    "B": {
+      "item": "archeon:block_of_ceramic"
+    }
+  },
+  "result": {
+    "item": "archeon:ceramic_pressure_plate",
+    "count": 1
+  }
+}

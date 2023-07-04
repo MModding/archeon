@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "G  ",
+    "GG ",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "archeon:dune_sand_glass_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:dune_sand_glass_tiles_bottom_left",
+    "count": 6
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PP",
+    "PS",
+    " S"
+  ],
+  "key": {
+    "P": {
+      "item": "archeon:vuxancia_planks"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "archeon:vuxancia_axe",
+    "count": 1
+  }
+}

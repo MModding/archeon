@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    "BAB",
+    " B "
+  ],
+  "key": {
+    "B": {
+      "item": "archeon:aketite_bricks"
+    },
+    "A": {
+      "item": "archeon:aketite_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:chiseled_aketite",
+    "count": 5
+  }
+}

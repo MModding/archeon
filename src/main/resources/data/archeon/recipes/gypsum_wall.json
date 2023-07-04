@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "archeon:gypsum"
+    }
+  },
+  "result": {
+    "item": "archeon:gypsum_wall",
+    "count": 6
+  }
+}

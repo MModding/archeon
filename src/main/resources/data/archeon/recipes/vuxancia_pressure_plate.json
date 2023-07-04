@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PP"
+  ],
+  "key": {
+    "P": {
+      "item": "archeon:vuxancia_planks"
+    }
+  },
+  "result": {
+    "item": "archeon:vuxancia_pressure_plate",
+    "count": 2
+  }
+}

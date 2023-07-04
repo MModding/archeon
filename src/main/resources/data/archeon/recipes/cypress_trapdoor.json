@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "archeon:cypress_planks"
+    }
+  },
+  "result": {
+    "item": "archeon:cypress_trapdoor",
+    "count": 2
+  }
+}

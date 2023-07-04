@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LL",
+    "LL"
+  ],
+  "key": {
+    "L": {
+      "item": "archeon:cypress_log"
+    }
+  },
+  "result": {
+    "item": "archeon:cypress_wood",
+    "count": 3
+  }
+}

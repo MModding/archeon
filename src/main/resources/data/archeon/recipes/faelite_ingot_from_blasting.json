@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "archeon:raw_faelite"
+  },
+  "result": "archeon:faelite_ingot"
+}

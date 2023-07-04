@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CS",
+    "SC"
+  ],
+  "key": {
+    "C": {
+      "item": "archeon:exyriane_crystal"
+    },
+    "S": {
+      "item": "archeon:southstone"
+    }
+  },
+  "result": {
+    "item": "archeon:mysterious_stone",
+    "count": 1
+  }
+}

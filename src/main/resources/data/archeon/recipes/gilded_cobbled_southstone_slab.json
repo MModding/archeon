@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "archeon:gilded_cobbled_southstone"
+    }
+  },
+  "result": {
+    "item": "archeon:gilded_cobbled_southstone_slab",
+    "count": 6
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:vuxancia_planks"
+    }
+  ],
+  "result": {
+    "item": "archeon:vuxancia_button",
+    "count": 1
+  }
+}

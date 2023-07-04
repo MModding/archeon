@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I I",
+    "O O"
+  ],
+  "key": {
+    "I": {
+      "item": "archeon:faelite_ingot"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "archeon:faelite_boots",
+    "count": 1
+  }
+}

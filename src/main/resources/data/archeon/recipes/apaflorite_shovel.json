@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "G",
+    "S",
+    "S"
+  ],
+  "key": {
+    "G": {
+      "item": "archeon:apaflorite_gemstone"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "archeon:apaflorite_shovel",
+    "count": 1
+  }
+}

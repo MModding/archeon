@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MM",
+    "PP"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:paper"
+    },
+    "P": {
+      "tag": "archeon:planks"
+    }
+  },
+  "result": {
+    "item": "minecraft:cartography_table",
+    "count": 1
+  }
+}

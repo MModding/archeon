@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "archeon:artemnite"
+    }
+  },
+  "result": {
+    "item": "archeon:artemnite_wall",
+    "count": 6
+  }
+}

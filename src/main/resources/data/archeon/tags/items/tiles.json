@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:warped_tiles",
+    "archeon:crimson_tiles",
+    "archeon:red_tiles",
+    "archeon:ochre_tiles",
+    "archeon:blue_tiles",
+    "archeon:green_tiles"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:block_of_ceramic"
+    }
+  ],
+  "result": {
+    "item": "archeon:ceramic_button",
+    "count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:moss_ball"
+    },
+    {
+      "item": "archeon:red_lycoris"
+    },
+    {
+      "item": "archeon:red_lycoris"
+    }
+  ],
+  "result": {
+    "item": "archeon:red_lycoris_petal",
+    "count": 2
+  }
+}

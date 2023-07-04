@@ -475,6 +475,9 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomSquaredPortalBlock ARCHEON_PORTAL = new CustomSquaredPortalBlock(MYSTERIOUS_STONE, Archeon.createId("archeon"), QuiltBlockSettings.of(Material.PORTAL).noCollision().strength(-1.0F).luminance(11).sounds(BlockSoundGroup.GLASS));
 
 	public static final CustomBlock ARTEMNITE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock ARTEMNITE_STAIRS = new CustomStairsBlock(ARTEMNITE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock ARTEMNITE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock ARTEMNITE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock ARTEMNITE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock ARTEMNITE_BRICK_STAIRS = new CustomStairsBlock(ARTEMNITE_BRICKS.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
@@ -848,6 +851,9 @@ public class ArcheonBlocks implements ElementsInitializer {
 		MYSTERIOUS_STONE_SLAB.register(Archeon.createId("mysterious_stone_slab"));
 		ARCHEON_PORTAL.register(Archeon.createId("archeon_portal"));
 		ARTEMNITE.register(Archeon.createId("artemnite"));
+		ARTEMNITE_STAIRS.register(Archeon.createId("artemnite_stairs"));
+		ARTEMNITE_SLAB.register(Archeon.createId("artemnite_slab"));
+		ARTEMNITE_WALL.register(Archeon.createId("artemnite_wall"));
 		ARTEMNITE_BRICKS.register(Archeon.createId("artemnite_bricks"));
 		ARTEMNITE_BRICK_STAIRS.register(Archeon.createId("artemnite_brick_stairs"));
 		ARTEMNITE_BRICK_SLAB.register(Archeon.createId("artemnite_brick_slab"));

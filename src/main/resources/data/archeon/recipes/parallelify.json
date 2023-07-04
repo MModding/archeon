@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "archeon:geometric_fall"
+  },
+  "addition": {
+    "item": "archeon:exyriane_block"
+  },
+  "result": {
+    "item": "archeon:parallelify"
+  }
+}

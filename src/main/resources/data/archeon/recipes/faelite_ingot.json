@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:faelite_block"
+    }
+  ],
+  "result": {
+    "item": "archeon:faelite_ingot",
+    "count": 9
+  }
+}

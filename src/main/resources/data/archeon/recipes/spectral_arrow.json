@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "S",
+    "F"
+  ],
+  "key": {
+    "C": {
+      "item": "archeon:exyriane_crystal"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "F": {
+      "item": "archeon:sunstradiver_feather"
+    }
+  },
+  "result": {
+    "item": "minecraft:spectral_arrow",
+    "count": 2
+  }
+}

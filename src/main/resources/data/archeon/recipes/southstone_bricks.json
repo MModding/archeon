@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "archeon:southstone"
+    }
+  },
+  "result": {
+    "item": "archeon:southstone_bricks",
+    "count": 4
+  }
+}

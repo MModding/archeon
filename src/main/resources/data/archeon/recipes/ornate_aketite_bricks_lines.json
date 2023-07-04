@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "archeon:aketite_bricks"
+  },
+  "result": "archeon:ornate_aketite_bricks_lines"
+}

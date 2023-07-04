@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "archeon:artemnite_bricks"
+    }
+  },
+  "result": {
+    "item": "archeon:artemnite_brick_wall",
+    "count": 6
+  }
+}

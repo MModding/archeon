@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:summer_neclane_trapdoor"
+    }
+  ],
+  "result": {
+    "item": "archeon:neclane_trapdoor",
+    "count": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "archeon:block_of_ceramic"
+    }
+  },
+  "result": {
+    "item": "archeon:ceramic_fence",
+    "count": 3
+  }
+}

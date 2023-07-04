@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NGN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:gold_nugget"
+    },
+    "G": {
+      "item": "archeon:grape"
+    }
+  },
+  "result": {
+    "item": "archeon:golden_grape",
+    "count": 1
+  }
+}

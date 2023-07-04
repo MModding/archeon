@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:plant_fiber"
+    },
+    {
+      "item": "archeon:manuscript"
+    },
+    {
+      "item": "archeon:plant_fiber"
+    }
+  ],
+  "result": {
+    "item": "minecraft:leather",
+    "count": 2
+  }
+}

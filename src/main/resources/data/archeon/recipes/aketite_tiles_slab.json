@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "archeon:aketite_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:aketite_tiles_slab",
+    "count": 6
+  }
+}

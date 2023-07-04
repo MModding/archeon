@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "P  ",
+    "PP ",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "archeon:neclane_planks"
+    }
+  },
+  "result": {
+    "item": "archeon:neclane_stairs",
+    "count": 4
+  }
+}

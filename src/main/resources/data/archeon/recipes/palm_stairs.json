@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "P  ",
+    "PP ",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "archeon:palm_planks"
+    }
+  },
+  "result": {
+    "item": "archeon:palm_stairs",
+    "count": 4
+  }
+}

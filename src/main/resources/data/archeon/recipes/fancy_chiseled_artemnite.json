@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B",
+    "C",
+    "B"
+  ],
+  "key": {
+    "B": {
+      "item": "archeon:artemnite_brick_slab"
+    },
+    "C": {
+      "item": "archeon:chiseled_artemnite"
+    }
+  },
+  "result": {
+    "item": "archeon:fancy_chiseled_artemnite",
+    "count": 2
+  }
+}

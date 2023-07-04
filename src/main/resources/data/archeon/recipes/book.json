@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:manuscript"
+    },
+    {
+      "item": "archeon:plant_fiber"
+    },
+    {
+      "item": "archeon:manuscript"
+    },
+    {
+      "item": "archeon:manuscript"
+    }
+  ],
+  "result": {
+    "item": "minecraft:book",
+    "count": 1
+  }
+}

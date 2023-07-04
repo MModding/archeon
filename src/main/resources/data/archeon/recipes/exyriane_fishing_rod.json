@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  C",
+    " CS",
+    "C S"
+  ],
+  "key": {
+    "C": {
+      "item": "archeon:exyriane_crystal"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "archeon:exyriane_fishing_rod",
+    "count": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YMY",
+    "MTM",
+    "YMY"
+  ],
+  "key": {
+    "M": {
+      "item": "archeon:moss_ball"
+    },
+    "Y": {
+      "item": "archeon:yellow_shell"
+    },
+    "T": {
+      "tag": "archeon:tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:green_tiles",
+    "count": 5
+  }
+}

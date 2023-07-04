@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S S",
+    " B "
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "B": {
+      "item": "archeon:moss_ball"
+    }
+  },
+  "result": {
+    "item": "archeon:goblet",
+    "count": 2
+  }
+}

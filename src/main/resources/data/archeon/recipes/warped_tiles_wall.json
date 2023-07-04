@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TTT",
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "archeon:warped_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:warped_tiles_wall",
+    "count": 6
+  }
+}

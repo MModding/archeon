@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " F ",
+    "SCS",
+    "PSP"
+  ],
+  "key": {
+    "F": {
+      "item": "archeon:sunstradiver_feather"
+    },
+    "S": {
+      "item": "minecraft:string"
+    },
+    "C": {
+      "item": "minecraft:chest"
+    },
+    "P": {
+      "item": "archeon:plant_fiber"
+    }
+  },
+  "result": {
+    "item": "archeon:pouch",
+    "count": 1
+  }
+}

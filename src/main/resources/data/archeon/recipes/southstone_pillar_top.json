@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CC",
+    "SS"
+  ],
+  "key": {
+    "C": {
+      "item": "archeon:chiseled_southstone"
+    },
+    "S": {
+      "item": "archeon:southstone_column"
+    }
+  },
+  "result": {
+    "item": "archeon:southstone_pillar_top",
+    "count": 4
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "archeon:aketite"
+    }
+  },
+  "result": {
+    "item": "archeon:aketite_wall",
+    "count": 6
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " P ",
+    "PTP",
+    " P "
+  ],
+  "key": {
+    "P": {
+      "item": "archeon:red_lycoris_petal"
+    },
+    "T": {
+      "tag": "archeon:tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:red_tiles",
+    "count": 5
+  }
+}

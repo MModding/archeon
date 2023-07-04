@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B B",
+    " B "
+  ],
+  "key": {
+    "B": {
+      "item": "archeon:block_of_ceramic"
+    }
+  },
+  "result": {
+    "item": "minecraft:flower_pot",
+    "count": 4
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "archeon:faelite_ingot"
+    }
+  },
+  "result": {
+    "item": "archeon:faelite_block",
+    "count": 1
+  }
+}

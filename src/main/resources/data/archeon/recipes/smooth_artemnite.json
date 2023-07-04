@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B",
+    "B"
+  ],
+  "key": {
+    "B": {
+      "item": "archeon:artemnite_slab"
+    }
+  },
+  "result": {
+    "item": "archeon:smooth_artemnite",
+    "count": 1
+  }
+}

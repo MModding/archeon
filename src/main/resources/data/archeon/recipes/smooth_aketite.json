@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": {
+      "item": "archeon:aketite_slab"
+    }
+  },
+  "result": {
+    "item": "archeon:smooth_aketite",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "archeon:apaflorite_gemstone"
+  },
+  "addition": {
+    "item": "archeon:manuscript"
+  },
+  "result": {
+    "item": "minecraft:iron_ingot"
+  }
+}

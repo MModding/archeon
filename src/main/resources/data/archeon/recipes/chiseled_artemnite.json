@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    "BAB",
+    " B "
+  ],
+  "key": {
+    "B": {
+      "item": "archeon:artemnite_bricks"
+    },
+    "A": {
+      "item": "archeon:artemnite_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:chiseled_artemnite",
+    "count": 5
+  }
+}

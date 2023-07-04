@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "item": "archeon:cobbled_southstone"
+    }
+  },
+  "result": {
+    "item": "archeon:cobbled_southstone_slab",
+    "count": 6
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "P  ",
+    "PP ",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "archeon:vuxancia_planks"
+    }
+  },
+  "result": {
+    "item": "archeon:vuxancia_stairs",
+    "count": 4
+  }
+}

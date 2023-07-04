@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "archeon:exyriane_crystal"
+  },
+  "addition": {
+    "item": "archeon:salt"
+  },
+  "result": {
+    "item": "minecraft:coal"
+  }
+}

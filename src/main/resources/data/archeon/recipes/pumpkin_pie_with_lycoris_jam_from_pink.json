@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:pink_lycoris_jam_pot"
+    },
+    {
+      "item": "minecraft:pumpkin_pie"
+    }
+  ],
+  "result": {
+    "item": "archeon:pumpkin_pie_with_lycoris_jam",
+    "count": 1
+  }
+}

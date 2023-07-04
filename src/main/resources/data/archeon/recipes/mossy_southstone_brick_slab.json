@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "archeon:mossy_southstone_bricks"
+    }
+  },
+  "result": {
+    "item": "archeon:mossy_southstone_brick_slab",
+    "count": 6
+  }
+}

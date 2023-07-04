@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AC",
+    "CA"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:andesite"
+    },
+    "C": {
+      "item": "minecraft:prismarine_crystals"
+    }
+  },
+  "result": {
+    "item": "archeon:mysterious_stone",
+    "count": 2
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:cobbled_southstone"
+    },
+    {
+      "tag": "archeon:leaves"
+    }
+  ],
+  "result": {
+    "item": "archeon:mossy_cobbled_southstone",
+    "count": 1
+  }
+}

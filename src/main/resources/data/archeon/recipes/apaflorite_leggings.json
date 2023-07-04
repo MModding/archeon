@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "G G",
+    "G G"
+  ],
+  "key": {
+    "G": {
+      "item": "archeon:apaflorite_gemstone"
+    }
+  },
+  "result": {
+    "item": "archeon:apaflorite_leggings",
+    "count": 1
+  }
+}

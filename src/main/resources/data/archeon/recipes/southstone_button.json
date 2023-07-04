@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:southstone"
+    }
+  ],
+  "result": {
+    "item": "archeon:southstone_button",
+    "count": 1
+  }
+}

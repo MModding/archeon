@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CC",
+    "BB"
+  ],
+  "key": {
+    "C": {
+      "item": "archeon:exyriane_crystal"
+    },
+    "B": {
+      "item": "archeon:block_of_ceramic"
+    }
+  },
+  "result": {
+    "item": "minecraft:smithing_table",
+    "count": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "T",
+    "T"
+  ],
+  "key": {
+    "T": {
+      "item": "archeon:artemnite_tiles_slab"
+    }
+  },
+  "result": {
+    "item": "archeon:fancy_artemnite_tiles",
+    "count": 1
+  }
+}

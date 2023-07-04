@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  P",
+    " PP",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "archeon:dune_sand_glass_pane_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:dune_sand_glass_pane_tiles_bottom_right",
+    "count": 6
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SBS",
+    "BSB",
+    "SBS"
+  ],
+  "key": {
+    "S": {
+      "item": "archeon:pink_shell"
+    },
+    "B": {
+      "item": "archeon:ceramic_bricks"
+    }
+  },
+  "result": {
+    "item": "archeon:crimson_tiles",
+    "count": 9
+  }
+}

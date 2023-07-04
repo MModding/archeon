@@ -2,12 +2,17 @@ package fr.firstmegagame4.archeon.init;
 
 import fr.firstmegagame4.archeon.Archeon;
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.registry.Registry;
 import org.quiltmc.qsl.tag.api.QuiltTagKey;
 import org.quiltmc.qsl.tag.api.TagType;
 
 public class ArcheonTags {
+
+	public static final TagKey<Item> ITEM_LEAVES = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("leaves"), TagType.NORMAL);
+	public static final TagKey<Item> ITEM_PLANKS = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("planks"), TagType.NORMAL);
+	public static final TagKey<Item> ITEM_TILES = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("tiles"), TagType.NORMAL);
 
 	public static final TagKey<Block> SOIL = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("equivalents/soil"), TagType.NORMAL);
 	public static final TagKey<Block> STONE = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("equivalents/stone"), TagType.NORMAL);

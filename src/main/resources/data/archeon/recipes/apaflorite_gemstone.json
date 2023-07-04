@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:apaflorite_block"
+    }
+  ],
+  "result": {
+    "item": "archeon:apaflorite_gemstone",
+    "count": 9
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FFF",
+    "FFF",
+    "FFF"
+  ],
+  "key": {
+    "F": {
+      "item": "archeon:record_fragment"
+    }
+  },
+  "result": {
+    "item": "archeon:pe_4k",
+    "count": 1
+  }
+}

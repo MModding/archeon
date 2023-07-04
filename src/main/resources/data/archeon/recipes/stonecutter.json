@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " G ",
+    "BBB"
+  ],
+  "key": {
+    "G": {
+      "item": "archeon:gear"
+    },
+    "B": {
+      "item": "archeon:southstone_bricks"
+    }
+  },
+  "result": {
+    "item": "minecraft:stonecutter",
+    "count": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TTT",
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "archeon:artemnite_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:artemnite_tiles_wall",
+    "count": 6
+  }
+}

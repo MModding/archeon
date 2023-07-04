@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:stripped_neclane_log"
+    }
+  ],
+  "result": {
+    "item": "archeon:neclane_planks",
+    "count": 4
+  }
+}

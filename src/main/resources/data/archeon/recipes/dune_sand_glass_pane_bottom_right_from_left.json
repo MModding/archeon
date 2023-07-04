@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:dune_sand_glass_pane_tiles_bottom_left"
+    }
+  ],
+  "result": {
+    "item": "archeon:dune_sand_glass_pane_tiles_bottom_right",
+    "count": 1
+  }
+}

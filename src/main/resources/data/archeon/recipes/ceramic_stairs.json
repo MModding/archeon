@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B  ",
+    "BB ",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "archeon:block_of_ceramic"
+    }
+  },
+  "result": {
+    "item": "archeon:ceramic_stairs",
+    "count": 4
+  }
+}

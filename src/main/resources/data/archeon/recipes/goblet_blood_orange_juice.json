@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:blood_orange"
+    },
+    {
+      "item": "archeon:goblet_water"
+    }
+  ],
+  "result": {
+    "item": "archeon:goblet_blood_orange_juice",
+    "count": 1
+  }
+}

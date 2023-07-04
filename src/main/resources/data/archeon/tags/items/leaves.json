@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:bush_leaves",
+    "archeon:palm_leaves",
+    "archeon:neclane_leaves",
+    "archeon:flowered_neclane_leaves",
+    "archeon:cypress_leaves",
+    "archeon:vuxancia_leaves_pnevantial",
+    "archeon:vuxancia_leaves_streian",
+    "archeon:vuxancia_leaves_orian",
+    "archeon:vuxancia_leaves_vale",
+    "archeon:vuxancia_leaves_zial",
+    "archeon:leaves_carpet_orian",
+    "archeon:leaves_carpet_pnevantial",
+    "archeon:leaves_carpet_streian",
+    "archeon:leaves_carpet_vale",
+    "archeon:leaves_carpet_zial"
+  ]
+}

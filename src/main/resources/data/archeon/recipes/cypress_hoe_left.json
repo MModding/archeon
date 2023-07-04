@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PP",
+    " S",
+    " S"
+  ],
+  "key": {
+    "P": {
+      "item": "archeon:cypress_planks"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "archeon:cypress_hoe",
+    "count": 1
+  }
+}
