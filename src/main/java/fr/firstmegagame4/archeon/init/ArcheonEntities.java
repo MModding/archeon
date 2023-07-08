@@ -20,7 +20,7 @@ public class ArcheonEntities implements ElementsInitializer {
 		.build();
 
 	public static final EntityType<SunstradiverEntity> SUNSTRADIVER = QuiltEntityTypeBuilder.create(SpawnGroup.CREATURE, SunstradiverEntity::new)
-		.setDimensions(EntityDimensions.fixed(0.4f, 0.3f))
+		.setDimensions(EntityDimensions.fixed(0.5f, 0.9f))
 		.maxChunkTrackingRange(8)
 		.build();
 

@@ -429,11 +429,17 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock SOUTHSTONE_GOLD_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock SOUTHSTONE_EMERALD_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
+	public static final CustomBlock CONDENSED_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock CONDENSED_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+
 	public static final CustomBlock DEPTHS_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomBlock DEPTHS_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomBlock DEPTHS_FAELITE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomBlock DEPTHS_AKETITE_GOLD_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomBlock DEPTHS_AKETITE_EMERALD_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
+
+	public static final CustomBlock CONDENSED_DEPTHS_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
+	public static final CustomBlock CONDENSED_DEPTHS_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 
 	public static final CustomBlock APAFLORITE_BLOCK = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS, true);
 	public static final CustomBlock EXYRIANE_BLOCK = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS.strength(4.0f), true);
@@ -816,11 +822,15 @@ public class ArcheonBlocks implements ElementsInitializer {
 		SOUTHSTONE_COAL_ORE.register(Archeon.createId("southstone_coal_ore"));
 		SOUTHSTONE_GOLD_ORE.register(Archeon.createId("southstone_gold_ore"));
 		SOUTHSTONE_EMERALD_ORE.register(Archeon.createId("southstone_emerald_ore"));
+		CONDENSED_APAFLORITE_ORE.register(Archeon.createId("condensed_apaflorite_ore"));
+		CONDENSED_EXYRIANE_ORE.register(Archeon.createId("condensed_exyriane_ore"));
 		DEPTHS_APAFLORITE_ORE.register(Archeon.createId("depths_apaflorite_ore"));
 		DEPTHS_EXYRIANE_ORE.register(Archeon.createId("depths_exyriane_ore"));
 		DEPTHS_FAELITE_ORE.register(Archeon.createId("depths_faelite_ore"));
 		DEPTHS_AKETITE_GOLD_ORE.register(Archeon.createId("depths_aketite_gold_ore"));
 		DEPTHS_AKETITE_EMERALD_ORE.register(Archeon.createId("depths_aketite_emerald_ore"));
+		CONDENSED_DEPTHS_APAFLORITE_ORE.register(Archeon.createId("condensed_depths_apaflorite_ore"));
+		CONDENSED_DEPTHS_EXYRIANE_ORE.register(Archeon.createId("condensed_depths_exyriane_ore"));
 		APAFLORITE_BLOCK.register(Archeon.createId("apaflorite_block"));
 		EXYRIANE_BLOCK.register(Archeon.createId("exyriane_block"));
 		FAELITE_BLOCK.register(Archeon.createId("faelite_block"));

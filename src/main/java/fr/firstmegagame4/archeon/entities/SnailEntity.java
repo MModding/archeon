@@ -11,6 +11,7 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
@@ -30,7 +31,7 @@ public class SnailEntity extends AnimalEntity {
 		this.goalSelector.add(0, new SwimGoal(this));
 		this.goalSelector.add(1, new EscapeDangerGoal(this, 2.0));
 		this.goalSelector.add(2, new AnimalMateGoal(this, 1.0));
-		this.goalSelector.add(3, new TemptGoal(this, 1.25, Ingredient.ofItems(ArcheonItems.GRAPE), false));
+		this.goalSelector.add(3, new TemptGoal(this, 1.25, Ingredient.ofItems(ArcheonItems.MOSS_BALL), false));
 		this.goalSelector.add(4, new FollowParentGoal(this, 1.25));
 		this.goalSelector.add(5, new WanderAroundFarGoal(this, 1.0));
 	}
@@ -63,6 +64,11 @@ public class SnailEntity extends AnimalEntity {
 	@Override
 	protected float getSoundVolume() {
 		return 2.0f;
+	}
+
+	@Override
+	public boolean isBreedingItem(ItemStack stack) {
+		return stack.isOf(ArcheonItems.MOSS_BALL);
 	}
 
 	@Nullable

@@ -70,7 +70,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PlacedFeatureUtil.createCountExtraModifier(2, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).setGroundBlock(ArcheonBlocks.WET_DIRT).addPlacedFeature(
-		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
+		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS,
 		"_rocky_fields"
 	);
@@ -81,7 +81,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.CYPRESS_LEAVES,
 		new CypressFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
-		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
+		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).setGroundBlock(ArcheonBlocks.WET_DIRT);
 

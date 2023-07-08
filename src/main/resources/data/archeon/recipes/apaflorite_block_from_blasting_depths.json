@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "archeon:condensed_depths_apaflorite_ore"
+  },
+  "result": "archeon:apaflorite_block"
+}

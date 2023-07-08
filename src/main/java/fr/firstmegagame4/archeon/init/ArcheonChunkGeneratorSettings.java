@@ -80,12 +80,12 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 		WorldUtils.addCustomVeinTypes(GENERATOR_SETTINGS_IDENTIFIER,
 			new CustomVeinType(5, 45,
 				VeinStateGroup.single(ArcheonBlocks.EXYRIANE_ORE),
-				VeinStateGroup.single(ArcheonBlocks.EXYRIANE_BLOCK),
+				VeinStateGroup.single(ArcheonBlocks.CONDENSED_EXYRIANE_ORE),
 				VeinStateGroup.create(ArcheonBlocks.ARTEMNITE, ArcheonBlocks.GYPSUM)
 			).setMinRichness(0.05f).setMaxRichness(0.15f),
 			new CustomVeinType(-45, -5,
 				VeinStateGroup.single(ArcheonBlocks.DEPTHS_APAFLORITE_ORE),
-				VeinStateGroup.single(ArcheonBlocks.APAFLORITE_BLOCK),
+				VeinStateGroup.single(ArcheonBlocks.CONDENSED_DEPTHS_APAFLORITE_ORE),
 				VeinStateGroup.single(ArcheonBlocks.AKETITE)
 			)
 		);

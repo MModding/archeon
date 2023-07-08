@@ -10,7 +10,7 @@
     "grass_color": 583510,
     "foliage_color": 650825,
     "mood_sound": {
-      "sound": "archeon:geometric_fall",
+      "sound": "archeon:fallen_from_high_ambient",
       "tick_delay": 3600,
       "block_search_extent": 8,
       "offset": 2

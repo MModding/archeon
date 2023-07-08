@@ -1,5 +1,6 @@
 package fr.firstmegagame4.archeon.mixin;
 
+import fr.firstmegagame4.archeon.init.ArcheonItemGroups;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.registry.Registry;
@@ -14,7 +15,7 @@ public class ItemMixin {
 	@Inject(method = "isInGroup", at = @At("TAIL"), cancellable = true)
 	private void isInGroup(ItemGroup group, CallbackInfoReturnable<Boolean> cir) {
 		if (Registry.ITEM.getId((Item) (Object) this).getNamespace().equals("archeon")) {
-			cir.setReturnValue(group == ItemGroup.SEARCH);
+			cir.setReturnValue(ArcheonItemGroups.IS_IN_CREATIVE_TAB.test((Item) (Object) this) && group == ItemGroup.SEARCH);
 		}
 	}
 }
