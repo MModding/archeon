@@ -173,7 +173,7 @@ public class SunstradiverEntityModel extends EntityModel<SunstradiverEntity> {
 			default:
 				float pivotAgeBased = ageInTicks * 0.3F;
 				this.head.pivotY = -3.0f + pivotAgeBased;
-				this.tail.pitch = 1.015f + MathHelper.cos(limbSwing * 0.6662f) * 0.3f * limbSwingAmount;
+				this.tail.pitch = 0.0f + MathHelper.cos(limbSwing * 0.6662f) * 0.3f * limbSwingAmount;
 				this.tail.pivotY = 1.1f + pivotAgeBased;
 				this.body.pivotY = -2.5f + pivotAgeBased;
 				this.leftWing.roll = -0.0873f - ageInTicks;
@@ -187,11 +187,11 @@ public class SunstradiverEntityModel extends EntityModel<SunstradiverEntity> {
 
 	@Override
 	public void animateModel(SunstradiverEntity entity, float limbAngle, float limbDistance, float tickDelta) {
-		this.feather.pitch = -0.2214f;
-		this.body.pitch = 0.4937f;
-		this.leftWing.pitch = -0.6981f;
+		this.feather.pitch = -0.2618f;
+		this.body.pitch = 0.0f;
+		this.leftWing.pitch = -0.6981f * 2;
 		this.leftWing.yaw = (float) -Math.PI;
-		this.rightWing.pitch = -0.6981f;
+		this.rightWing.pitch = -0.6981f * 2;
 		this.rightWing.yaw = (float) -Math.PI;
 		this.leftLeg.pitch = -0.0299f;
 		this.rightLeg.pitch = -0.0299f;
@@ -199,7 +199,7 @@ public class SunstradiverEntityModel extends EntityModel<SunstradiverEntity> {
 		this.rightLeg.pivotY = 2.0f;
 		this.leftLeg.roll = 0.0f;
 		this.rightLeg.roll = 0.0f;
-		if (!entity.isOnGround()) {
+		if (entity.isInAir()) {
 			this.leftLeg.pitch += (float) (Math.PI * 2.0 / 9.0);
 			this.rightLeg.pitch += (float) (Math.PI * 2.0 / 9.0);
 		}
@@ -207,6 +207,6 @@ public class SunstradiverEntityModel extends EntityModel<SunstradiverEntity> {
 
 	@Override
 	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-		bone.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
+		this.bone.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
 	}
 }
