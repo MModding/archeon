@@ -71,20 +71,20 @@
       }
     ]
   },
-  "catalyst.ambient": {
+  "aurora_catalyst.ambient": {
     "category": "neutral",
     "sounds": [
       {
-        "name": "archeon:catalyst_ambient",
+        "name": "archeon:aurora_catalyst_ambient",
         "stream": false
       }
     ]
   },
-  "catalyst.hit": {
+  "aurora_catalyst.hit": {
     "category": "neutral",
     "sounds": [
       {
-        "name": "archeon:catalyst_hit",
+        "name": "archeon:aurora_catalyst_hit",
         "stream": false
       }
     ]

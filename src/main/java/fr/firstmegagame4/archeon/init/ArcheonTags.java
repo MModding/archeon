@@ -5,14 +5,14 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
 import org.quiltmc.qsl.tag.api.QuiltTagKey;
 import org.quiltmc.qsl.tag.api.TagType;
 
 public class ArcheonTags {
 
-	public static final TagKey<Item> ITEM_LEAVES = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("leaves"), TagType.NORMAL);
-	public static final TagKey<Item> ITEM_PLANKS = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("planks"), TagType.NORMAL);
-	public static final TagKey<Item> ITEM_TILES = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("tiles"), TagType.NORMAL);
+	public static final TagKey<Biome> SURFACE_BIOMES = QuiltTagKey.of(Registry.BIOME_KEY, Archeon.createId("surface_biomes"), TagType.NORMAL);
+	public static final TagKey<Biome> CAVE_BIOMES = QuiltTagKey.of(Registry.BIOME_KEY, Archeon.createId("cave_biomes"), TagType.NORMAL);
 
 	public static final TagKey<Block> SOIL = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("equivalents/soil"), TagType.NORMAL);
 	public static final TagKey<Block> STONE = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("equivalents/stone"), TagType.NORMAL);
@@ -41,4 +41,8 @@ public class ArcheonTags {
 	public static final TagKey<Block> NECLANE = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("wood/neclane"), TagType.NORMAL);
 	public static final TagKey<Block> CYPRESS = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("wood/cypress"), TagType.NORMAL);
 	public static final TagKey<Block> VUXANCIA = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("wood/vuxancia"), TagType.NORMAL);
+
+	public static final TagKey<Item> ITEM_LEAVES = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("leaves"), TagType.NORMAL);
+	public static final TagKey<Item> ITEM_PLANKS = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("planks"), TagType.NORMAL);
+	public static final TagKey<Item> ITEM_TILES = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("tiles"), TagType.NORMAL);
 }

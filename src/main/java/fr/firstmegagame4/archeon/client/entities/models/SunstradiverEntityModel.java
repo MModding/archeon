@@ -56,12 +56,14 @@ public class SunstradiverEntityModel extends EntityModel<SunstradiverEntity> {
 			ModelTransform.pivot(0.0F, -3.0F, -1.5F)
 		);
 
-		ModelPartData feather = head.addChild("feather",
+		ModelPartData feather = head.addChild(
+			"feather",
 			ModelPartBuilder.create(),
 			ModelTransform.of(0.0F, -2.5F, -1.0F, -0.2618F, 0.0F, 0.0F)
 		);
 
-		feather.addChild("feather_r1",
+		feather.addChild(
+			"feather_r1",
 			ModelPartBuilder.create()
 				.uv(0, 12)
 				.cuboid(0.0F, -13.0F, -0.5F, 0.0F, 4.0F, 4.0F, new Dilation(0.0F)),

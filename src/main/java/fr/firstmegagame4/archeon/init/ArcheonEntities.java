@@ -3,6 +3,7 @@ package fr.firstmegagame4.archeon.init;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.utils.RegistrationUtils;
 import fr.firstmegagame4.archeon.Archeon;
+import fr.firstmegagame4.archeon.entities.AuroraCatalystEntity;
 import fr.firstmegagame4.archeon.entities.HeiferEntity;
 import fr.firstmegagame4.archeon.entities.SnailEntity;
 import fr.firstmegagame4.archeon.entities.SunstradiverEntity;
@@ -13,6 +14,21 @@ import net.minecraft.entity.attribute.DefaultAttributeRegistry;
 import org.quiltmc.qsl.entity.api.QuiltEntityTypeBuilder;
 
 public class ArcheonEntities implements ElementsInitializer {
+
+	public static final EntityType<AuroraCatalystEntity> AURORA_CATALYST = QuiltEntityTypeBuilder.create(SpawnGroup.MONSTER, AuroraCatalystEntity::new)
+		.setDimensions(EntityDimensions.fixed(0.6f, 1.8f))
+		.maxChunkTrackingRange(8)
+		.build();
+
+	public static final EntityType<AuroraCatalystEntity> POISONOUS_AURORA_CATALYST = QuiltEntityTypeBuilder.create(SpawnGroup.MONSTER, AuroraCatalystEntity::new)
+		.setDimensions(EntityDimensions.fixed(0.6f, 1.8f))
+		.maxChunkTrackingRange(8)
+		.build();
+
+	public static final EntityType<AuroraCatalystEntity> EXPLOSIVE_AURORA_CATALYST = QuiltEntityTypeBuilder.create(SpawnGroup.MONSTER, AuroraCatalystEntity::new)
+		.setDimensions(EntityDimensions.fixed(0.6f, 1.8f))
+		.maxChunkTrackingRange(8)
+		.build();
 
 	public static final EntityType<SnailEntity> SNAIL = QuiltEntityTypeBuilder.create(SpawnGroup.CREATURE, SnailEntity::new)
 		.setDimensions(EntityDimensions.fixed(0.6f, 1.8f))
@@ -31,6 +47,12 @@ public class ArcheonEntities implements ElementsInitializer {
 
 	@Override
 	public void register() {
+		RegistrationUtils.registerEntityType(Archeon.createId("aurora_catalyst"), AURORA_CATALYST);
+		DefaultAttributeRegistry.DEFAULT_ATTRIBUTE_REGISTRY.put(AURORA_CATALYST, AuroraCatalystEntity.createAuroraCatalystAttributes());
+		RegistrationUtils.registerEntityType(Archeon.createId("poisonous_aurora_catalyst"), POISONOUS_AURORA_CATALYST);
+		DefaultAttributeRegistry.DEFAULT_ATTRIBUTE_REGISTRY.put(POISONOUS_AURORA_CATALYST, AuroraCatalystEntity.createAuroraCatalystAttributes());
+		RegistrationUtils.registerEntityType(Archeon.createId("explosive_aurora_catalyst"), EXPLOSIVE_AURORA_CATALYST);
+		DefaultAttributeRegistry.DEFAULT_ATTRIBUTE_REGISTRY.put(EXPLOSIVE_AURORA_CATALYST, AuroraCatalystEntity.createAuroraCatalystAttributes());
 		RegistrationUtils.registerEntityType(Archeon.createId("snail"), SNAIL);
 		DefaultAttributeRegistry.DEFAULT_ATTRIBUTE_REGISTRY.put(SNAIL, SnailEntity.createSnailAttributes());
 		RegistrationUtils.registerEntityType(Archeon.createId("sunstradiver"), SUNSTRADIVER);
