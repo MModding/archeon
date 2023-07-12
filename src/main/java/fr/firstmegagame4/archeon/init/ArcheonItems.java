@@ -6,6 +6,7 @@ import com.mmodding.mmodding_lib.library.items.settings.AdvancedItemSettings;
 import com.mmodding.mmodding_lib.library.items.settings.ItemFinishUsing;
 import com.mmodding.mmodding_lib.library.portals.CustomSquaredPortalKeyItem;
 import fr.firstmegagame4.archeon.Archeon;
+import fr.firstmegagame4.archeon.entities.NatureCoreEntity;
 import fr.firstmegagame4.archeon.items.PouchItem;
 import fr.firstmegagame4.archeon.materials.armor.ApafloriteArmor;
 import fr.firstmegagame4.archeon.materials.armor.ClothesTunic;
@@ -48,8 +49,15 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomItem POWER_KEY = new CustomItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE).itemUseOnBlock(context -> {
 		BlockState state = context.getWorld().getBlockState(context.getBlockPos());
-		if (state.isOf(ArcheonBlocks.POWER_KEYSTONE)) {
-			// TODO : Nature Core Spawn
+		if (state.isOf(ArcheonBlocks.POWER_KEYSTONE) && context.getPlayer() != null) {
+			NatureCoreEntity natureCoreEntity = new NatureCoreEntity(ArcheonEntities.NATURE_CORE, context.getWorld());
+			float x = context.getBlockPos().getX() + 0.5f;
+			float y = context.getBlockPos().getY() + 2.5f;
+			float z = context.getBlockPos().getZ() + 0.5f;
+			natureCoreEntity.setPosition(x, y, z);
+			natureCoreEntity.onSummoned();
+			context.getWorld().spawnEntity(natureCoreEntity);
+			if(!context.getPlayer().isCreative()) context.getPlayer().getInventory().removeOne(context.getPlayer().getStackInHand(context.getHand()));
 		}
 	}));
 

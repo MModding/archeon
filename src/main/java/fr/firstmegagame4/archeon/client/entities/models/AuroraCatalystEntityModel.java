@@ -10,13 +10,13 @@ import net.minecraft.client.util.math.MatrixStack;
 // Made with Blockbench 4.7.4
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
-public class AuroraCatalystModel extends EntityModel<AuroraCatalystEntity> {
+public class AuroraCatalystEntityModel extends EntityModel<AuroraCatalystEntity> {
 
 	private final ModelPart bone;
 	private final ModelPart upper_shields;
 	private final ModelPart bottom_shields;
 
-	public AuroraCatalystModel(ModelPart root) {
+	public AuroraCatalystEntityModel(ModelPart root) {
 		this.bone = root.getChild(EntityModelPartNames.BONE);
 		this.upper_shields = this.bone.getChild("upper_shields");
 		this.bottom_shields = this.bone.getChild("bottom_shields");
