@@ -1,6 +1,6 @@
 package fr.firstmegagame4.archeon.entities;
 
-import com.mmodding.mmodding_lib.library.DamageSources;
+import com.mmodding.mmodding_lib.library.MModdingDamageSources;
 import com.mmodding.mmodding_lib.library.entities.goals.FlyingAroundFarGoal;
 import fr.firstmegagame4.archeon.init.ArcheonEntities;
 import fr.firstmegagame4.archeon.init.ArcheonSoundEvents;
@@ -120,7 +120,7 @@ public class AuroraCatalystEntity extends HostileEntity {
 
 					switch (this.type) {
 						case EXPLOSIVE -> {
-							Explosion explosion = new Explosion(this.world, this, DamageSources.PUSH, null, this.getPos().x, this.getPos().y, this.getPos().z, i, true, Explosion.DestructionType.NONE);
+							Explosion explosion = new Explosion(this.world, this, MModdingDamageSources.PUSH, null, this.getPos().x, this.getPos().y, this.getPos().z, i, true, Explosion.DestructionType.NONE);
 							explosion.collectBlocksAndDamageEntities();
 							explosion.affectWorld(true);
 							entity.setOnFireFor(3);

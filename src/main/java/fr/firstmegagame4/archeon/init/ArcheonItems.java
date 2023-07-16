@@ -1,5 +1,6 @@
 package fr.firstmegagame4.archeon.init;
 
+import com.mmodding.mmodding_lib.library.containers.DefaultContainer;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.items.*;
 import com.mmodding.mmodding_lib.library.items.settings.AdvancedItemSettings;
@@ -240,18 +241,17 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomItem HERBICIDE = new CustomItem(new AdvancedItemSettings().maxCount(1).eatable()
 		.descriptionLines(Text.of("§7Don't use this.")).itemDropped((stack, world, user, droppedItem) -> world.createExplosion(
-				droppedItem,
-				droppedItem.getX(),
-				droppedItem.getY(),
-				droppedItem.getZ(),
-				3,
-				Explosion.DestructionType.NONE
+			droppedItem,
+			droppedItem.getX(),
+			droppedItem.getY(),
+			droppedItem.getZ(),
+			3,
+			Explosion.DestructionType.NONE
 		)));
 
 	public static final CustomItem INK_BOTTLE = new CustomItem(new AdvancedItemSettings().maxCount(16));
 
-	// TODO : Pouch GUI
-	public static final PouchItem POUCH = new PouchItem(new AdvancedItemSettings());
+	public static final PouchItem POUCH = new PouchItem(new AdvancedItemSettings(), DefaultContainer.DEFAULT_9X3);
 
 	public static final CustomItem SUNSTRADIVER_FEATHER = new CustomItem(new AdvancedItemSettings());
 
@@ -259,9 +259,12 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomItem AURORA_CRYSTAL = new CustomItem(new AdvancedItemSettings());
 
-	public static final CustomSpawnEggItem SNAIL_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.SNAIL, 7578818, 1982583, new AdvancedItemSettings());
-	public static final CustomSpawnEggItem SUNSTRADIVER_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.SUNSTRADIVER, 52429, 13210, new AdvancedItemSettings());
-	public static final CustomSpawnEggItem HEIFER_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.HEIFER, 4478842, 3097203, new AdvancedItemSettings());
+	public static final CustomSpawnEggItem AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.AURORA_CATALYST, 4380648, 3876673, new AdvancedItemSettings());
+	public static final CustomSpawnEggItem POISONOUS_AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.POISONOUS_AURORA_CATALYST, 517623, 6633076, new AdvancedItemSettings());
+	public static final CustomSpawnEggItem EXPLOSIVE_AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.EXPLOSIVE_AURORA_CATALYST, 12279738, 6967084, new AdvancedItemSettings());
+	public static final CustomSpawnEggItem SNAIL_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.SNAIL, 9198398, 14794633, new AdvancedItemSettings());
+	public static final CustomSpawnEggItem SUNSTRADIVER_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.SUNSTRADIVER, 16724787, 16764006, new AdvancedItemSettings());
+	public static final CustomSpawnEggItem HEIFER_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.HEIFER, 2298374, 3680013, new AdvancedItemSettings());
 
 	@Override
 	public void register() {
@@ -355,6 +358,9 @@ public class ArcheonItems implements ElementsInitializer {
 		SUNSTRADIVER_FEATHER.register(Archeon.createId("sunstradiver_feather"));
 		SNAIL_SHELL.register(Archeon.createId("snail_shell"));
 		AURORA_CRYSTAL.register(Archeon.createId("aurora_crystal"));
+		AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("aurora_catalyst_spawn_egg"));
+		POISONOUS_AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("poisonous_aurora_catalyst_spawn_egg"));
+		EXPLOSIVE_AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("explosive_aurora_catalyst_spawn_egg"));
 		SNAIL_SPAWN_EGG.register(Archeon.createId("snail_spawn_egg"));
 		SUNSTRADIVER_SPAWN_EGG.register(Archeon.createId("sunstradiver_spawn_egg"));
 		HEIFER_SPAWN_EGG.register(Archeon.createId("heifer_spawn_egg"));

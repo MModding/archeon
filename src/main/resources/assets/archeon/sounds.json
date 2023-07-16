@@ -8,6 +8,15 @@
       }
     ]
   },
+  "fallen_from_high_ambient": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:fallen_from_high_ambient",
+        "stream": true
+      }
+    ]
+  },
   "hoxa": {
     "category": "music",
     "sounds": [

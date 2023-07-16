@@ -283,7 +283,9 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomSugarCaneBlock XETULIAN_SUGAR_CANE = new CustomSugarCaneBlock(DefaultBlockSettings.PLANT_SETTINGS, true);
+	public static final CustomSugarCaneBlock XETULIAN_SUGAR_CANE = new CustomSugarCaneBlock(
+		(floorState -> floorState.isIn(ArcheonTags.SOIL) || floorState.isOf(ArcheonBlocks.DUNE_SAND)), null, DefaultBlockSettings.PLANT_SETTINGS, true
+	);
 
 	public static final SporeRootcapBlock SPORE_ROOTCAP = new SporeRootcapBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
@@ -473,6 +475,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock CRACKLED_AKETITE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock AKETITE_BASEBOARD = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+
+	public static final CustomBlock INNERMOST_ROCK = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS.strength(-1, 3600000.0f), true);
 
 	public static final CustomBlock MYSTERIOUS_STONE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock MYSTERIOUS_STONE_STAIRS = new CustomStairsBlock(MYSTERIOUS_STONE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
@@ -856,6 +860,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		CHISELED_AKETITE.register(Archeon.createId("chiseled_aketite"));
 		CRACKLED_AKETITE_BRICKS.register(Archeon.createId("crackled_aketite_bricks"));
 		AKETITE_BASEBOARD.register(Archeon.createId("aketite_baseboard"));
+		INNERMOST_ROCK.register(Archeon.createId("innermost_rock"));
 		MYSTERIOUS_STONE.register(Archeon.createId("mysterious_stone"));
 		MYSTERIOUS_STONE_STAIRS.register(Archeon.createId("mysterious_stone_stairs"));
 		MYSTERIOUS_STONE_SLAB.register(Archeon.createId("mysterious_stone_slab"));

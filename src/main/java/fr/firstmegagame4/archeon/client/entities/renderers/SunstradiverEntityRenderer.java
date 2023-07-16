@@ -21,8 +21,8 @@ public class SunstradiverEntityRenderer extends MobEntityRenderer<SunstradiverEn
 	}
 
 	public float getAnimationProgress(SunstradiverEntity parrotEntity, float f) {
-		float flapProgress = MathHelper.lerp(f, (float) parrotEntity.prevFlapProgress().get(), (float) parrotEntity.flapProgress().get());
-		float wingDeviation = MathHelper.lerp(f, (float) parrotEntity.prevMaxWingDeviation().get(), (float) parrotEntity.maxWingDeviation().get());
+		float flapProgress = MathHelper.lerp(f, parrotEntity.prevFlapProgress().getValue(), parrotEntity.flapProgress().getValue());
+		float wingDeviation = MathHelper.lerp(f, parrotEntity.prevMaxWingDeviation().getValue(), parrotEntity.maxWingDeviation().getValue());
 		return (MathHelper.sin(flapProgress) + 1.0F) * wingDeviation;
 	}
 }

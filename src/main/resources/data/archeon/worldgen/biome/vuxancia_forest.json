@@ -3,12 +3,10 @@
   "downfall": 0.1,
   "precipitation": "rain",
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 7907327,
     "fog_color": 12638463,
-    "water_color": 4892886,
+    "water_color": 4159204,
     "water_fog_color": 329011,
-    "grass_color": 583510,
-    "foliage_color": 8608956,
     "mood_sound": {
       "sound": "archeon:hoxa",
       "tick_delay": 3600,

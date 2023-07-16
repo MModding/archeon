@@ -23,6 +23,7 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.PickaxeItem;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -64,6 +65,23 @@ public class NatureCoreEntity extends HostileEntity {
 		this.dataTracker.startTracking(NatureCoreEntity.PHASE, 0);
 	}
 
+	@Override
+	public void writeCustomDataToNbt(NbtCompound nbt) {
+		super.writeCustomDataToNbt(nbt);
+		nbt.putInt("Phase", this.getPhaseIndex());
+		nbt.putBoolean("HasShield", this.hasShield.get());
+	}
+
+	@Override
+	public void readCustomDataFromNbt(NbtCompound nbt) {
+		super.readCustomDataFromNbt(nbt);
+		this.dataTracker.set(PHASE, MathHelper.clamp(nbt.getInt("Phase"), 0, 4));
+		this.hasShield.set(nbt.getBoolean("HasShield"));;
+		if (this.hasCustomName()) {
+			this.bossBar.setName(this.getDisplayName());
+		}
+	}
+
 	public void onSummoned() {
 		this.bossBar.setPercent(0.0f);
 	}
@@ -91,16 +109,20 @@ public class NatureCoreEntity extends HostileEntity {
 	public boolean switchPhase() {
 		if (this.getPhase() != Phase.DEFEATED) {
 			this.dataTracker.set(NatureCoreEntity.PHASE, MathHelper.clamp(this.getPhaseIndex() + 1, 0, 4));
-			this.bossBar.setColor(switch (this.getPhase()) {
-				case PETRIFIED -> BossBar.Color.WHITE;
-				case NORMAL -> BossBar.Color.BLUE;
-				case POISONOUS -> BossBar.Color.GREEN;
-				case EXPLOSIVE -> BossBar.Color.RED;
-				case DEFEATED -> BossBar.Color.PURPLE;
-			});
+			this.updateBossBar();
 			return true;
 		}
 		return false;
+	}
+
+	public void updateBossBar() {
+		this.bossBar.setColor(switch (this.getPhase()) {
+			case PETRIFIED -> BossBar.Color.WHITE;
+			case NORMAL -> BossBar.Color.BLUE;
+			case POISONOUS -> BossBar.Color.GREEN;
+			case EXPLOSIVE -> BossBar.Color.RED;
+			case DEFEATED -> BossBar.Color.PURPLE;
+		});
 	}
 
 	@Override
@@ -113,7 +135,7 @@ public class NatureCoreEntity extends HostileEntity {
 
 		if (this.getPhase().equals(Phase.DEFEATED)) {
 			this.addVelocity(0.0, (0.3 - this.getVelocity().y) * 0.3, 0.0);
-			this.setHealth(this.getHealth() - 1.0f);
+			this.setHealth(this.getHealth() - 0.5f);
 		}
 
 		if (this.isDead()) {
