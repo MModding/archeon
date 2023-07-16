@@ -462,9 +462,9 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomWallBlock AKETITE_BRICK_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock AKETITE_TILES = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock AKETITE_TILES_STAIRS = new CustomStairsBlock(AKETITE_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock AKETITE_TILES_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomWallBlock AKETITE_TILES_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock AKETITE_TILE_STAIRS = new CustomStairsBlock(AKETITE_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock AKETITE_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock AKETITE_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock ORNATE_CHISELED_AKETITE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock ORNATE_AKETITE_BRICKS_TEARS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
@@ -495,9 +495,9 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomWallBlock ARTEMNITE_BRICK_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock ARTEMNITE_TILES = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock ARTEMNITE_TILES_STAIRS = new CustomStairsBlock(ARTEMNITE_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock ARTEMNITE_TILES_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomWallBlock ARTEMNITE_TILES_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock ARTEMNITE_TILE_STAIRS = new CustomStairsBlock(ARTEMNITE_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock ARTEMNITE_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock ARTEMNITE_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock MOSSY_ARTEMNITE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock MOSSY_ARTEMNITE_BRICK_STAIRS = new CustomStairsBlock(MOSSY_ARTEMNITE_BRICKS.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
@@ -506,9 +506,9 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomBlock FANCY_CHISELED_ARTEMNITE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock FANCY_ARTEMNITE_TILES = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock FANCY_ARTEMNITE_TILES_STAIRS = new CustomStairsBlock(FANCY_ARTEMNITE_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock FANCY_ARTEMNITE_TILES_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomWallBlock FANCY_ARTEMNITE_TILES_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock FANCY_ARTEMNITE_TILE_STAIRS = new CustomStairsBlock(FANCY_ARTEMNITE_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock FANCY_ARTEMNITE_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock FANCY_ARTEMNITE_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock ORNATE_ARTEMNITE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock ORNATE_ARTEMNITE_BRICKS_TEARS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
@@ -631,34 +631,34 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock PEAKS_SNOW_BLOCK = new CustomBlock(DefaultBlockSettings.SNOW_BLOCK_SETTINGS, true);
 
 	public static final CustomBlock WARPED_TILES = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock WARPED_TILES_STAIRS = new CustomStairsBlock(WARPED_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock WARPED_TILES_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomWallBlock WARPED_TILES_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock WARPED_TILE_STAIRS = new CustomStairsBlock(WARPED_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock WARPED_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock WARPED_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock CRIMSON_TILES = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock CRIMSON_TILES_STAIRS = new CustomStairsBlock(CRIMSON_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock CRIMSON_TILES_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomWallBlock CRIMSON_TILES_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock CRIMSON_TILE_STAIRS = new CustomStairsBlock(CRIMSON_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock CRIMSON_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock CRIMSON_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock RED_TILES = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock RED_TILES_STAIRS = new CustomStairsBlock(RED_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock RED_TILES_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomWallBlock RED_TILES_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock RED_TILE_STAIRS = new CustomStairsBlock(RED_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock RED_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock RED_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock OCHRE_TILES = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock OCHRE_TILES_STAIRS = new CustomStairsBlock(OCHRE_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock OCHRE_TILES_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomWallBlock OCHRE_TILES_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock OCHRE_TILE_STAIRS = new CustomStairsBlock(OCHRE_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock OCHRE_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock OCHRE_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock BLUE_TILES = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock BLUE_TILES_STAIRS = new CustomStairsBlock(BLUE_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock BLUE_TILES_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomWallBlock BLUE_TILES_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock BLUE_TILE_STAIRS = new CustomStairsBlock(BLUE_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock BLUE_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock BLUE_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock GREEN_TILES = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock GREEN_TILES_STAIRS = new CustomStairsBlock(GREEN_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock GREEN_TILES_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomWallBlock GREEN_TILES_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock GREEN_TILE_STAIRS = new CustomStairsBlock(GREEN_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock GREEN_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock GREEN_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final DuneSandCastleBlock DUNE_SAND_CASTLE = new DuneSandCastleBlock(DefaultBlockSettings.SAND_SETTINGS.nonOpaque().strength(0.7f, 0.0f), true);
 	public static final CustomBlock LOOT_URN = new CustomBlock(DefaultBlockSettings.BONE_SETTINGS.nonOpaque().strength(0.8f, 2.0f), true);
@@ -850,9 +850,9 @@ public class ArcheonBlocks implements ElementsInitializer {
 		AKETITE_BRICK_SLAB.register(Archeon.createId("aketite_brick_slab"));
 		AKETITE_BRICK_WALL.register(Archeon.createId("aketite_brick_wall"));
 		AKETITE_TILES.register(Archeon.createId("aketite_tiles"));
-		AKETITE_TILES_STAIRS.register(Archeon.createId("aketite_tiles_stairs"));
-		AKETITE_TILES_SLAB.register(Archeon.createId("aketite_tiles_slab"));
-		AKETITE_TILES_WALL.register(Archeon.createId("aketite_tiles_wall"));
+		AKETITE_TILE_STAIRS.register(Archeon.createId("aketite_tile_stairs"));
+		AKETITE_TILE_SLAB.register(Archeon.createId("aketite_tile_slab"));
+		AKETITE_TILE_WALL.register(Archeon.createId("aketite_tile_wall"));
 		ORNATE_CHISELED_AKETITE.register(Archeon.createId("ornate_chiseled_aketite"));
 		ORNATE_AKETITE_BRICKS_TEARS.register(Archeon.createId("ornate_aketite_bricks_tears"));
 		ORNATE_AKETITE_BRICKS_LINES.register(Archeon.createId("ornate_aketite_bricks_lines"));
@@ -874,18 +874,18 @@ public class ArcheonBlocks implements ElementsInitializer {
 		ARTEMNITE_BRICK_SLAB.register(Archeon.createId("artemnite_brick_slab"));
 		ARTEMNITE_BRICK_WALL.register(Archeon.createId("artemnite_brick_wall"));
 		ARTEMNITE_TILES.register(Archeon.createId("artemnite_tiles"));
-		ARTEMNITE_TILES_STAIRS.register(Archeon.createId("artemnite_tiles_stairs"));
-		ARTEMNITE_TILES_SLAB.register(Archeon.createId("artemnite_tiles_slab"));
-		ARTEMNITE_TILES_WALL.register(Archeon.createId("artemnite_tiles_wall"));
+		ARTEMNITE_TILE_STAIRS.register(Archeon.createId("artemnite_tile_stairs"));
+		ARTEMNITE_TILE_SLAB.register(Archeon.createId("artemnite_tile_slab"));
+		ARTEMNITE_TILE_WALL.register(Archeon.createId("artemnite_tile_wall"));
 		MOSSY_ARTEMNITE_BRICKS.register(Archeon.createId("mossy_artemnite_bricks"));
 		MOSSY_ARTEMNITE_BRICK_STAIRS.register(Archeon.createId("mossy_artemnite_brick_stairs"));
 		MOSSY_ARTEMNITE_BRICK_SLAB.register(Archeon.createId("mossy_artemnite_brick_slab"));
 		MOSSY_ARTEMNITE_BRICK_WALL.register(Archeon.createId("mossy_artemnite_brick_wall"));
 		FANCY_CHISELED_ARTEMNITE.register(Archeon.createId("fancy_chiseled_artemnite"));
 		FANCY_ARTEMNITE_TILES.register(Archeon.createId("fancy_artemnite_tiles"));
-		FANCY_ARTEMNITE_TILES_STAIRS.register(Archeon.createId("fancy_artemnite_tiles_stairs"));
-		FANCY_ARTEMNITE_TILES_SLAB.register(Archeon.createId("fancy_artemnite_tiles_slab"));
-		FANCY_ARTEMNITE_TILES_WALL.register(Archeon.createId("fancy_artemnite_tiles_wall"));
+		FANCY_ARTEMNITE_TILE_STAIRS.register(Archeon.createId("fancy_artemnite_tile_stairs"));
+		FANCY_ARTEMNITE_TILE_SLAB.register(Archeon.createId("fancy_artemnite_tile_slab"));
+		FANCY_ARTEMNITE_TILE_WALL.register(Archeon.createId("fancy_artemnite_tile_wall"));
 		ORNATE_ARTEMNITE_BRICKS.register(Archeon.createId("ornate_artemnite_bricks"));
 		ORNATE_ARTEMNITE_BRICKS_TEARS.register(Archeon.createId("ornate_artemnite_bricks_tears"));
 		ORNATE_ARTEMNITE_BRICKS_LINES.register(Archeon.createId("ornate_artemnite_bricks_lines"));
@@ -978,29 +978,29 @@ public class ArcheonBlocks implements ElementsInitializer {
 		PEAKS_SNOW.register(Archeon.createId("peaks_snow"));
 		PEAKS_SNOW_BLOCK.register(Archeon.createId("peaks_snow_block"));
 		WARPED_TILES.register(Archeon.createId("warped_tiles"));
-		WARPED_TILES_STAIRS.register(Archeon.createId("warped_tiles_stairs"));
-		WARPED_TILES_SLAB.register(Archeon.createId("warped_tiles_slab"));
-		WARPED_TILES_WALL.register(Archeon.createId("warped_tiles_wall"));
+		WARPED_TILE_STAIRS.register(Archeon.createId("warped_tile_stairs"));
+		WARPED_TILE_SLAB.register(Archeon.createId("warped_tile_slab"));
+		WARPED_TILE_WALL.register(Archeon.createId("warped_tile_wall"));
 		CRIMSON_TILES.register(Archeon.createId("crimson_tiles"));
-		CRIMSON_TILES_STAIRS.register(Archeon.createId("crimson_tiles_stairs"));
-		CRIMSON_TILES_SLAB.register(Archeon.createId("crimson_tiles_slab"));
-		CRIMSON_TILES_WALL.register(Archeon.createId("crimson_tiles_wall"));
+		CRIMSON_TILE_STAIRS.register(Archeon.createId("crimson_tile_stairs"));
+		CRIMSON_TILE_SLAB.register(Archeon.createId("crimson_tile_slab"));
+		CRIMSON_TILE_WALL.register(Archeon.createId("crimson_tile_wall"));
 		RED_TILES.register(Archeon.createId("red_tiles"));
-		RED_TILES_STAIRS.register(Archeon.createId("red_tiles_stairs"));
-		RED_TILES_SLAB.register(Archeon.createId("red_tiles_slab"));
-		RED_TILES_WALL.register(Archeon.createId("red_tiles_wall"));
+		RED_TILE_STAIRS.register(Archeon.createId("red_tile_stairs"));
+		RED_TILE_SLAB.register(Archeon.createId("red_tile_slab"));
+		RED_TILE_WALL.register(Archeon.createId("red_tile_wall"));
 		OCHRE_TILES.register(Archeon.createId("ochre_tiles"));
-		OCHRE_TILES_STAIRS.register(Archeon.createId("ochre_tiles_stairs"));
-		OCHRE_TILES_SLAB.register(Archeon.createId("ochre_tiles_slab"));
-		OCHRE_TILES_WALL.register(Archeon.createId("ochre_tiles_wall"));
+		OCHRE_TILE_STAIRS.register(Archeon.createId("ochre_tile_stairs"));
+		OCHRE_TILE_SLAB.register(Archeon.createId("ochre_tile_slab"));
+		OCHRE_TILE_WALL.register(Archeon.createId("ochre_tile_wall"));
 		BLUE_TILES.register(Archeon.createId("blue_tiles"));
-		BLUE_TILES_STAIRS.register(Archeon.createId("blue_tiles_stairs"));
-		BLUE_TILES_SLAB.register(Archeon.createId("blue_tiles_slab"));
-		BLUE_TILES_WALL.register(Archeon.createId("blue_tiles_wall"));
+		BLUE_TILE_STAIRS.register(Archeon.createId("blue_tile_stairs"));
+		BLUE_TILE_SLAB.register(Archeon.createId("blue_tile_slab"));
+		BLUE_TILE_WALL.register(Archeon.createId("blue_tile_wall"));
 		GREEN_TILES.register(Archeon.createId("green_tiles"));
-		GREEN_TILES_STAIRS.register(Archeon.createId("green_tiles_stairs"));
-		GREEN_TILES_SLAB.register(Archeon.createId("green_tiles_slab"));
-		GREEN_TILES_WALL.register(Archeon.createId("green_tiles_wall"));
+		GREEN_TILE_STAIRS.register(Archeon.createId("green_tile_stairs"));
+		GREEN_TILE_SLAB.register(Archeon.createId("green_tile_slab"));
+		GREEN_TILE_WALL.register(Archeon.createId("green_tile_wall"));
 		DUNE_SAND_CASTLE.register(Archeon.createId("dune_sand_castle"));
 		LOOT_URN.register(Archeon.createId("loot_urn"));
 		HEART_OF_NATURE_TROPHY.register(Archeon.createId("heart_of_nature_trophy"));

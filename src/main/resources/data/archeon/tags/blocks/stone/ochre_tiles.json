@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "archeon:ochre_tiles",
-    "archeon:ochre_tiles_stairs",
-    "archeon:ochre_tiles_slab",
-    "archeon:ochre_tiles_wall"
+    "archeon:ochre_tile_stairs",
+    "archeon:ochre_tile_slab",
+    "archeon:ochre_tile_wall"
   ]
 }

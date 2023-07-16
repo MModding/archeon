@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/fancy_artemnite_tile_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/fancy_artemnite_tile_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/fancy_artemnite_tile_slab_full"
+    }
+  }
+}

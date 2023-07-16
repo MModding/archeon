@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "archeon:crimson_tiles",
-    "archeon:crimson_tiles_stairs",
-    "archeon:crimson_tiles_slab",
-    "archeon:crimson_tiles_wall"
+    "archeon:crimson_tile_stairs",
+    "archeon:crimson_tile_slab",
+    "archeon:crimson_tile_wall"
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TTT",
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "archeon:crimson_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:crimson_tile_wall",
+    "count": 6
+  }
+}

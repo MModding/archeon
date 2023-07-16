@@ -76,7 +76,7 @@ public class NatureCoreEntity extends HostileEntity {
 	public void readCustomDataFromNbt(NbtCompound nbt) {
 		super.readCustomDataFromNbt(nbt);
 		this.dataTracker.set(PHASE, MathHelper.clamp(nbt.getInt("Phase"), 0, 4));
-		this.hasShield.set(nbt.getBoolean("HasShield"));;
+		this.hasShield.set(nbt.getBoolean("HasShield"));
 		if (this.hasCustomName()) {
 			this.bossBar.setName(this.getDisplayName());
 		}

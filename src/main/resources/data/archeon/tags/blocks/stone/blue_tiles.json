@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "archeon:blue_tiles",
-    "archeon:blue_tiles_stairs",
-    "archeon:blue_tiles_slab",
-    "archeon:blue_tiles_wall"
+    "archeon:blue_tile_stairs",
+    "archeon:blue_tile_slab",
+    "archeon:blue_tile_wall"
   ]
 }

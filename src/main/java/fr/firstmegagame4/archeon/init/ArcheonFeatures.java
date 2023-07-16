@@ -61,6 +61,16 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final AdvancedFeature<RockyFieldsRockFeature.Config> ROCKY_FIELDS_ROCK = new RockyFieldsRockFeature(RockyFieldsRockFeature.Config.CODEC);
 	public static final AdvancedFeature<MenhirFeature.Config> MENHIR = new MenhirFeature(MenhirFeature.Config.CODEC);
 
+	public static final CustomTreeFeature PALM_TREE = new CustomTreeFeature(
+		ArcheonBlocks.PALM_LOG,
+		new PalmTrunkPlacer(4, 2, 0),
+		ArcheonBlocks.PALM_LEAVES,
+		new PalmFoliagePlacer(ConstantIntProvider.create(6), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
+		1, 0, 1,
+		PlacedFeatureUtil.createCountExtraModifier(1, 0.1f, 1),
+		ArcheonBlocks.DUNE_SAND
+	);
+
 	public static final CustomTreeFeature NECLANE_TREE = new CustomTreeFeature(
 		ArcheonBlocks.NECLANE_LOG,
 		new NeclaneTrunkPlacer(4, 2, 0),
@@ -226,6 +236,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 		ROCKY_FIELDS_ROCK.register(Archeon.createId("rocky_fields_rock"));
 		MENHIR.register(Archeon.createId("menhir"));
+		PALM_TREE.register(Archeon.createId("palm_tree"));
 		NECLANE_TREE.register(Archeon.createId("neclane_tree"));
 		CYPRESS_TREE.register(Archeon.createId("cypress_tree"));
 		VUXANCIA_TREE_PNEVANTIAL.register(Archeon.createId("vuxancia_tree_pnevantial"));
@@ -281,6 +292,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 			RegistryKey.of(Registry.PLACED_FEATURE_KEY, Archeon.createId("menhir"))
 		);
 
+		PALM_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN));
 		NECLANE_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.NECLANE_GROVE));
 		NECLANE_TREE.addAdditionalToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS), "_rocky_fields");
 		CYPRESS_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS));
