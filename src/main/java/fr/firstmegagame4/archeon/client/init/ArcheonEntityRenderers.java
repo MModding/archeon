@@ -13,7 +13,7 @@ public class ArcheonEntityRenderers implements ClientElementsInitializer {
 		EntityRendererRegistry.register(ArcheonEntities.AURORA_CATALYST, ctx -> new AuroraCatalystEntityRenderer(ctx, AuroraCatalystEntity.Type.NORMAL));
 		EntityRendererRegistry.register(ArcheonEntities.POISONOUS_AURORA_CATALYST, ctx -> new AuroraCatalystEntityRenderer(ctx, AuroraCatalystEntity.Type.POISONOUS));
 		EntityRendererRegistry.register(ArcheonEntities.EXPLOSIVE_AURORA_CATALYST, ctx -> new AuroraCatalystEntityRenderer(ctx, AuroraCatalystEntity.Type.EXPLOSIVE));
-		EntityRendererRegistry.register(ArcheonEntities.NATURE_CORE, NatureCoreEntityRenderer::new);
+		EntityRendererRegistry.register(ArcheonEntities.HEART_OF_NATURE, HeartOfNatureEntityRenderer::new);
 		EntityRendererRegistry.register(ArcheonEntities.SNAIL, SnailEntityRenderer::new);
 		EntityRendererRegistry.register(ArcheonEntities.SUNSTRADIVER, SunstradiverEntityRenderer::new);
 		EntityRendererRegistry.register(ArcheonEntities.HEIFER, HeiferEntityRenderer::new);

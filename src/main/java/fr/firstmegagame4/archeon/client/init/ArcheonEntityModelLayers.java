@@ -9,7 +9,7 @@ import net.minecraft.client.render.entity.model.EntityModelLayer;
 public class ArcheonEntityModelLayers implements ClientElementsInitializer {
 
 	public static final EntityModelLayer AURORA_CATALYST = new EntityModelLayer(Archeon.createId("aurora_catalyst"), "main");
-	public static final EntityModelLayer NATURE_CORE = new EntityModelLayer(Archeon.createId("nature_core"), "main");
+	public static final EntityModelLayer HEART_OF_NATURE = new EntityModelLayer(Archeon.createId("heart_of_nature"), "main");
 	public static final EntityModelLayer SNAIL = new EntityModelLayer(Archeon.createId("snail"), "main");
 	public static final EntityModelLayer SUNSTRADIVER = new EntityModelLayer(Archeon.createId("sunstradiver"), "main");
 	public static final EntityModelLayer HEIFER = new EntityModelLayer(Archeon.createId("heifer"), "main");
@@ -17,7 +17,7 @@ public class ArcheonEntityModelLayers implements ClientElementsInitializer {
 	@Override
 	public void registerClient() {
 		EntityModelLayerRegistry.registerModelLayer(AURORA_CATALYST, AuroraCatalystEntityModel::getTexturedModelData);
-		EntityModelLayerRegistry.registerModelLayer(NATURE_CORE, NatureCoreEntityModel::getTexturedModelData);
+		EntityModelLayerRegistry.registerModelLayer(HEART_OF_NATURE, HeartOfNatureEntityModel::getTexturedModelData);
 		EntityModelLayerRegistry.registerModelLayer(SNAIL, SnailEntityModel::getTexturedModelData);
 		EntityModelLayerRegistry.registerModelLayer(SUNSTRADIVER, SunstradiverEntityModel::getTexturedModelData);
 		EntityModelLayerRegistry.registerModelLayer(HEIFER, HeiferEntityModel::getTexturedModelData);

@@ -1,6 +1,16 @@
 {
   "replace": false,
   "values": [
-    "archeon:spore_rootcap"
+    "archeon:spore_rootcap",
+    "archeon:vuxancia_leaves_pnevantial_hanging",
+    "archeon:vuxancia_leaves_streian_hanging",
+    "archeon:vuxancia_leaves_orian_hanging",
+    "archeon:vuxancia_leaves_vale_hanging",
+    "archeon:vuxancia_leaves_zial_hanging",
+    "archeon:vuxancia_leaves_pnevantial_hanging_head",
+    "archeon:vuxancia_leaves_streian_hanging_head",
+    "archeon:vuxancia_leaves_orian_hanging_head",
+    "archeon:vuxancia_leaves_vale_hanging_head",
+    "archeon:vuxancia_leaves_zial_hanging_head"
   ]
 }

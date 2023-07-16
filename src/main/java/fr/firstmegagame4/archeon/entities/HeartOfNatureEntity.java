@@ -39,15 +39,16 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class NatureCoreEntity extends HostileEntity {
+public class HeartOfNatureEntity extends HostileEntity {
 
-	// TODO : Save The Phase Into An NBT
-	private static final TrackedData<Integer> PHASE = DataTracker.registerData(NatureCoreEntity.class, TrackedDataHandlerRegistry.INTEGER);
+	private static final TrackedData<Integer> PHASE = DataTracker.registerData(HeartOfNatureEntity.class, TrackedDataHandlerRegistry.INTEGER);
 
 	private final AtomicBoolean hasShield = new AtomicBoolean();
 	private final ServerBossBar bossBar = new ServerBossBar(this.getDisplayName(), BossBar.Color.WHITE, BossBar.Style.PROGRESS);
 
-	public NatureCoreEntity(EntityType<? extends NatureCoreEntity> entityType, World world) {
+	private boolean reloaded = false;
+
+	public HeartOfNatureEntity(EntityType<? extends HeartOfNatureEntity> entityType, World world) {
 		super(entityType, world);
 		this.moveControl = new FlightMoveControl(this, 10, false);
 	}
@@ -62,7 +63,7 @@ public class NatureCoreEntity extends HostileEntity {
 	@Override
 	protected void initDataTracker() {
 		super.initDataTracker();
-		this.dataTracker.startTracking(NatureCoreEntity.PHASE, 0);
+		this.dataTracker.startTracking(HeartOfNatureEntity.PHASE, 0);
 	}
 
 	@Override
@@ -99,7 +100,7 @@ public class NatureCoreEntity extends HostileEntity {
 	}
 
 	private int getPhaseIndex() {
-		return MathHelper.clamp(this.dataTracker.get(NatureCoreEntity.PHASE), 0, 4);
+		return MathHelper.clamp(this.dataTracker.get(HeartOfNatureEntity.PHASE), 0, 4);
 	}
 
 	public Phase getPhase() {
@@ -108,7 +109,7 @@ public class NatureCoreEntity extends HostileEntity {
 
 	public boolean switchPhase() {
 		if (this.getPhase() != Phase.DEFEATED) {
-			this.dataTracker.set(NatureCoreEntity.PHASE, MathHelper.clamp(this.getPhaseIndex() + 1, 0, 4));
+			this.dataTracker.set(HeartOfNatureEntity.PHASE, MathHelper.clamp(this.getPhaseIndex() + 1, 0, 4));
 			this.updateBossBar();
 			return true;
 		}
@@ -128,6 +129,11 @@ public class NatureCoreEntity extends HostileEntity {
 	@Override
 	protected void mobTick() {
 		super.mobTick();
+
+		if (!this.reloaded) {
+			this.updateBossBar();
+			this.reloaded = true;
+		}
 
 		if (this.getPhase().equals(Phase.PETRIFIED)) {
 			this.setVelocity(Vec3d.ZERO);
@@ -182,7 +188,7 @@ public class NatureCoreEntity extends HostileEntity {
 		}
 	}
 
-	public static DefaultAttributeContainer createNatureCoreAttributes() {
+	public static DefaultAttributeContainer createHeartOfNatureAttributes() {
 		return MobEntity.createMobAttributes()
 			.add(EntityAttributes.GENERIC_MAX_HEALTH, 50.0f)
 			.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 5.0f)
@@ -280,11 +286,11 @@ public class NatureCoreEntity extends HostileEntity {
 
 	public static class NatureCoreAttackGoal extends MeleeAttackGoal {
 
-		public NatureCoreEntity natureCore() {
-			return (NatureCoreEntity) this.mob;
+		public HeartOfNatureEntity natureCore() {
+			return (HeartOfNatureEntity) this.mob;
 		}
 
-		public NatureCoreAttackGoal(NatureCoreEntity pathAwareEntity, double speed, boolean pauseWhenMobIdle) {
+		public NatureCoreAttackGoal(HeartOfNatureEntity pathAwareEntity, double speed, boolean pauseWhenMobIdle) {
 			super(pathAwareEntity, speed, pauseWhenMobIdle);
 		}
 
@@ -301,11 +307,11 @@ public class NatureCoreEntity extends HostileEntity {
 
 	public static class NatureCoreFlyingAround extends FlyingAroundFarGoal {
 
-		public NatureCoreEntity natureCore() {
-			return (NatureCoreEntity) this.mob;
+		public HeartOfNatureEntity natureCore() {
+			return (HeartOfNatureEntity) this.mob;
 		}
 
-		public NatureCoreFlyingAround(NatureCoreEntity pathAwareEntity, double speed) {
+		public NatureCoreFlyingAround(HeartOfNatureEntity pathAwareEntity, double speed) {
 			super(pathAwareEntity, speed);
 		}
 

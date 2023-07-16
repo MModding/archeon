@@ -30,7 +30,7 @@ public class ArcheonEntities implements ElementsInitializer {
 		.maxChunkTrackingRange(8)
 		.build();
 
-	public static final EntityType<NatureCoreEntity> NATURE_CORE = QuiltEntityTypeBuilder.create(SpawnGroup.MONSTER, NatureCoreEntity::new)
+	public static final EntityType<HeartOfNatureEntity> HEART_OF_NATURE = QuiltEntityTypeBuilder.create(SpawnGroup.MONSTER, HeartOfNatureEntity::new)
 		.setDimensions(EntityDimensions.fixed(0.6f, 2.0f))
 		.makeFireImmune()
 		.maxChunkTrackingRange(8)
@@ -59,8 +59,8 @@ public class ArcheonEntities implements ElementsInitializer {
 		DefaultAttributeRegistry.DEFAULT_ATTRIBUTE_REGISTRY.put(POISONOUS_AURORA_CATALYST, AuroraCatalystEntity.createAuroraCatalystAttributes());
 		RegistrationUtils.registerEntityType(Archeon.createId("explosive_aurora_catalyst"), EXPLOSIVE_AURORA_CATALYST);
 		DefaultAttributeRegistry.DEFAULT_ATTRIBUTE_REGISTRY.put(EXPLOSIVE_AURORA_CATALYST, AuroraCatalystEntity.createAuroraCatalystAttributes());
-		RegistrationUtils.registerEntityType(Archeon.createId("nature_core"), NATURE_CORE);
-		DefaultAttributeRegistry.DEFAULT_ATTRIBUTE_REGISTRY.put(NATURE_CORE, NatureCoreEntity.createNatureCoreAttributes());
+		RegistrationUtils.registerEntityType(Archeon.createId("heart_of_nature"), HEART_OF_NATURE);
+		DefaultAttributeRegistry.DEFAULT_ATTRIBUTE_REGISTRY.put(HEART_OF_NATURE, HeartOfNatureEntity.createHeartOfNatureAttributes());
 		RegistrationUtils.registerEntityType(Archeon.createId("snail"), SNAIL);
 		DefaultAttributeRegistry.DEFAULT_ATTRIBUTE_REGISTRY.put(SNAIL, SnailEntity.createSnailAttributes());
 		RegistrationUtils.registerEntityType(Archeon.createId("sunstradiver"), SUNSTRADIVER);

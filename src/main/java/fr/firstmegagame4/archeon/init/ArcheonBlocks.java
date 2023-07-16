@@ -449,10 +449,10 @@ public class ArcheonBlocks implements ElementsInitializer {
 	/* public static final CustomBlock LUSONYTH_BLOCK = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS, true);
 	public static final CustomBlock CLEMENTIUM_BLOCK = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS, true); */
 
-	public static final CustomBlock AKETITE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock AKETITE_STAIRS = new CustomStairsBlock(AKETITE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock AKETITE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomWallBlock AKETITE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock AKETITE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.sounds(BlockSoundGroup.TUFF), true);
+	public static final CustomStairsBlock AKETITE_STAIRS = new CustomStairsBlock(AKETITE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS.sounds(BlockSoundGroup.TUFF), true);
+	public static final CustomSlabBlock AKETITE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS.sounds(BlockSoundGroup.TUFF), true);
+	public static final CustomWallBlock AKETITE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS.sounds(BlockSoundGroup.TUFF), true);
 
 	public static final CustomBlock DEPTHS_AKETITE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 
@@ -476,7 +476,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomBlock AKETITE_BASEBOARD = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
-	public static final CustomBlock INNERMOST_ROCK = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS.strength(-1, 3600000.0f), true);
+	public static final CustomBlock INNERMOST_ROCK = new CustomBlock(DefaultBlockSettings.DEEP_BEDROCK_SETTINGS);
 
 	public static final CustomBlock MYSTERIOUS_STONE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock MYSTERIOUS_STONE_STAIRS = new CustomStairsBlock(MYSTERIOUS_STONE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
@@ -484,10 +484,10 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomSquaredPortalBlock ARCHEON_PORTAL = new CustomSquaredPortalBlock(MYSTERIOUS_STONE, Archeon.createId("archeon"), QuiltBlockSettings.of(Material.PORTAL).noCollision().strength(-1.0F).luminance(11).sounds(BlockSoundGroup.GLASS));
 
-	public static final CustomBlock ARTEMNITE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock ARTEMNITE_STAIRS = new CustomStairsBlock(ARTEMNITE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock ARTEMNITE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomWallBlock ARTEMNITE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock ARTEMNITE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.sounds(BlockSoundGroup.NETHERRACK), true);
+	public static final CustomStairsBlock ARTEMNITE_STAIRS = new CustomStairsBlock(ARTEMNITE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS.sounds(BlockSoundGroup.NETHERRACK), true);
+	public static final CustomSlabBlock ARTEMNITE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS.sounds(BlockSoundGroup.NETHERRACK), true);
+	public static final CustomWallBlock ARTEMNITE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS.sounds(BlockSoundGroup.NETHERRACK), true);
 
 	public static final CustomBlock ARTEMNITE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock ARTEMNITE_BRICK_STAIRS = new CustomStairsBlock(ARTEMNITE_BRICKS.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);

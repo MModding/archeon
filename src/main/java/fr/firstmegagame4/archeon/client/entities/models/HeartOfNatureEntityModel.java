@@ -1,7 +1,7 @@
 package fr.firstmegagame4.archeon.client.entities.models;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import fr.firstmegagame4.archeon.entities.NatureCoreEntity;
+import fr.firstmegagame4.archeon.entities.HeartOfNatureEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
@@ -10,7 +10,28 @@ import net.minecraft.client.util.math.MatrixStack;
 // Made with Blockbench 4.7.4
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
-public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
+public class HeartOfNatureEntityModel extends EntityModel<HeartOfNatureEntity> {
+
+	private static final int BIG_COVER_UVX = 0;
+	private static final int BIG_COVER_UVZ = 0;
+
+	private static final int MIDDLE_COVER_UVX = 0;
+	private static final int MIDDLE_COVER_UVZ = 32;
+
+	private static final int LOW_COVER_UVX = 46;
+	private static final int LOW_COVER_UVZ = 50;
+
+	private static final int OUTER_CORE_UVX = 42;
+	private static final int OUTER_CORE_UVZ = 32;
+
+	private static final int INNER_CORE_UVX = 0;
+	private static final int INNER_CORE_UVZ = 0;
+
+	private static final int PILLAR_SHIELDS_UVX = 0;
+	private static final int PILLAR_SHIELDS_UVZ = 32;
+
+	private static final int SLOPED_SHIELDS_UVX = 0;
+	private static final int SLOPED_SHIELDS_UVZ = 8;
 
 	private final ModelPart bone;
 	private final ModelPart big_cover;
@@ -19,7 +40,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 	private final ModelPart core;
 	private final ModelPart shields;
 
-	public NatureCoreEntityModel(ModelPart root) {
+	public HeartOfNatureEntityModel(ModelPart root) {
 		this.bone = root.getChild(EntityModelPartNames.BONE);
 		this.big_cover = this.bone.getChild("big_cover");
 		this.middle_cover = this.bone.getChild("middle_cover");
@@ -42,7 +63,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		bone.addChild(
 			"big_cover",
 			ModelPartBuilder.create()
-				.uv(0, 48)
+				.uv(BIG_COVER_UVX, BIG_COVER_UVZ)
 				.cuboid(-8.0F, -7.7276F, -8.0F, 16.0F, 16.0F, 16.0F, new Dilation(0.0F)),
 			ModelTransform.of(0F, 0.7276F, 0F, 0.3381F, -0.3498F, -0.2349F)
 		);
@@ -50,7 +71,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		bone.addChild(
 			"middle_cover",
 			ModelPartBuilder.create()
-				.uv(0, 0)
+				.uv(MIDDLE_COVER_UVX, MIDDLE_COVER_UVZ)
 				.cuboid(-7.0F, -6.2609F, -7.0F, 14.0F, 14.0F, 14.0F, new Dilation(0.0F)),
 			ModelTransform.of(0F, 0.2609F, 0F, -0.3361F, 0.4821F, -0.5072F)
 		);
@@ -58,7 +79,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		bone.addChild(
 			"low_cover",
 			ModelPartBuilder.create()
-				.uv(0, 28)
+				.uv(LOW_COVER_UVX, LOW_COVER_UVZ)
 				.cuboid(-5.0F, -4.036F, -5.0F, 10.0F, 10.0F, 10.0F, new Dilation(0.0F)),
 			ModelTransform.of(0F, 0.036F, 0F, -0.1462F, 0.0967F, -0.5604F)
 		);
@@ -66,10 +87,10 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		bone.addChild(
 			"core",
 			ModelPartBuilder.create()
-				.uv(40, 40)
-				.cuboid(-2.0F, -2.0F, -2.0F, 4.0F, 4.0F, 4.0F, new Dilation(0.0F))
-				.uv(40, 28)
-				.cuboid(-3.0F, -3.0F, -3.0F, 6.0F, 6.0F, 6.0F, new Dilation(0.0F)),
+				.uv(OUTER_CORE_UVX, OUTER_CORE_UVZ)
+				.cuboid(-3.0F, -3.0F, -3.0F, 6.0F, 6.0F, 6.0F, new Dilation(0.0F))
+				.uv(INNER_CORE_UVX, INNER_CORE_UVZ)
+				.cuboid(-2.0F, -2.0F, -2.0F, 4.0F, 4.0F, 4.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.7854F, -0.7854F, -0.7854F)
 		);
 
@@ -82,7 +103,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields1 = shields.addChild(
 			"shields1",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F)
 		);
@@ -90,7 +111,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields1.addChild(
 			"cube_r1",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -98,7 +119,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields5 = shields.addChild(
 			"shields5",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -1.3526F, 0.0F)
 		);
@@ -106,7 +127,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields5.addChild(
 			"cube_r5",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -114,7 +135,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields4 = shields.addChild(
 			"shields4",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -1.0036F, 0.0F)
 		);
@@ -122,7 +143,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields4.addChild(
 			"cube_r6",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -130,7 +151,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields3 = shields.addChild(
 			"shields3",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -0.3054F, 0.0F)
 		);
@@ -138,7 +159,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields3.addChild(
 			"cube_r7",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -146,7 +167,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields6 = shields.addChild(
 			"shields6",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -1.7017F, 0.0F)
 		);
@@ -154,7 +175,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields6.addChild(
 			"cube_r8",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -162,7 +183,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields7 = shields.addChild(
 			"shields7",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -2.0508F, 0.0F)
 		);
@@ -170,7 +191,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields7.addChild(
 			"cube_r9",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -178,7 +199,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields8 = shields.addChild(
 			"shields8",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -2.3998F, 0.0F)
 		);
@@ -186,7 +207,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields8.addChild(
 			"cube_r10",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -194,7 +215,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields9 = shields.addChild(
 			"shields9",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -2.7925F, 0.0F)
 		);
@@ -202,7 +223,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields9.addChild(
 			"cube_r11",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -210,7 +231,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields10 = shields.addChild(
 			"shields10",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 3.1416F, 0.0F)
 		);
@@ -218,7 +239,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields10.addChild(
 			"cube_r12",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -226,7 +247,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields2 = shields.addChild(
 			"shields2",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -0.6545F, 0.0F)
 		);
@@ -234,7 +255,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields2.addChild(
 			"cube_r13",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -242,7 +263,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields13 = shields2.addChild(
 			"shields13",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 2.0944F, 0.0F)
 		);
@@ -250,7 +271,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields13.addChild(
 			"cube_r14",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -258,7 +279,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields12 = shields2.addChild(
 			"shields12",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 2.4435F, 0.0F)
 		);
@@ -266,7 +287,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields12.addChild(
 			"cube_r15",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -274,7 +295,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields14 = shields2.addChild(
 			"shields14",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 1.7453F, 0.0F)
 		);
@@ -282,7 +303,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields14.addChild(
 			"cube_r16",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -290,7 +311,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields11 = shields2.addChild(
 			"shields11",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 2.7925F, 0.0F)
 		);
@@ -298,7 +319,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields11.addChild(
 			"cube_r17",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -306,7 +327,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields16 = shields2.addChild(
 			"shields16",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 1.0472F, 0.0F)
 		);
@@ -314,7 +335,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields16.addChild(
 			"cube_r18",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -328,7 +349,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields18 = shields2.addChild(
 			"shields18",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 0.3491F, 0.0F)
 		);
@@ -336,7 +357,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields18.addChild(
 			"cube_r19",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -344,7 +365,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields15 = shields2.addChild(
 			"shields15",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 1.3963F, 0.0F)
 		);
@@ -352,7 +373,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields15.addChild(
 			"cube_r20",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -360,7 +381,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields19 = shields2.addChild(
 			"shields19",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 3.1416F, 0.0F)
 		);
@@ -368,7 +389,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields19.addChild(
 			"cube_r21",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -376,7 +397,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		ModelPartData shields20 = shields2.addChild(
 			"shields20",
 			ModelPartBuilder.create()
-				.uv(0, 2)
+				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
 				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -2.7925F, 0.0F)
 		);
@@ -384,7 +405,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 		shields20.addChild(
 			"cube_r22",
 			ModelPartBuilder.create()
-				.uv(0, 5)
+				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
 				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
@@ -393,7 +414,7 @@ public class NatureCoreEntityModel extends EntityModel<NatureCoreEntity> {
 	}
 
 	@Override
-	public void setAngles(NatureCoreEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setAngles(HeartOfNatureEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.big_cover.yaw = ageInTicks / -20.0f;
 		this.big_cover.pitch = ageInTicks / -80.0f;
 		this.middle_cover.yaw = ageInTicks / 15.0f;

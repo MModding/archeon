@@ -13,7 +13,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.world.biome.source.util.OverworldBiomeParameters;
-import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
 import net.minecraft.world.gen.surfacebuilder.SurfaceRules;
 
@@ -39,7 +38,7 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 
 	public static SurfaceRules.MaterialRule getArcheonRules() {
 		return SurfaceRules.sequence(SurfaceRuleUtils.createBuilder(
-			SurfaceRuleUtils.getFloor("innermost_rock_floor", ArcheonBlocks.INNERMOST_ROCK),
+			SurfaceRuleUtils.getFloor("archeon:innermost_rock_floor", ArcheonBlocks.INNERMOST_ROCK),
 			SurfaceRules.condition(SurfaceRules.abovePreliminarySurface(), SurfaceRules.sequence(
 				SurfaceRules.condition(SurfaceRuleUtils.onFloor(), SurfaceRules.condition(
 					SurfaceRuleUtils.underWater(), SurfaceRules.sequence(
@@ -63,14 +62,7 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 							ArcheonBiomes.SOUTH_SNOWY_PEAKS
 						)), SurfaceRuleUtils.getBlock(ArcheonBlocks.WET_DIRT))
 					))
-				)),
-				SurfaceRules.condition(SurfaceRules.aboveY(YOffset.fixed(33), 0),
-					SurfaceRules.condition(SurfaceRules.not(SurfaceRules.aboveY(YOffset.fixed(62), 0)),
-						SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.DUNE_OCEAN),
-							SurfaceRules.condition(SurfaceRuleUtils.water(), SurfaceRuleUtils.getBlock(ArcheonBlocks.DUNE_SAND))
-						)
-					)
-				)
+				))
 			)),
 			SurfaceRuleUtils.getDeep("archeon:depths_aketite", ArcheonBlocks.DEPTHS_AKETITE)
 		).build().toArray(SurfaceRules.MaterialRule[]::new));
