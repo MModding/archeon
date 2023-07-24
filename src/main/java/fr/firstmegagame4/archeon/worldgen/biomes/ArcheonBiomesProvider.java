@@ -133,16 +133,25 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
 			this.fullRange(),
 			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(-1.0f, 0.5f),
 			this.fullRange(),
-			this.fullRange(),
-			MultiNoiseUtil.ParameterRange.of(0.2f, 0.7f),
+			MultiNoiseUtil.ParameterRange.of(0.3f, 0.7f),
 			this.fullRange(),
 			0.0f
 		), ArcheonBiomes.UNDERGROUND_CAVES));
 		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
 			this.fullRange(),
 			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(0.5f, 1.0f),
 			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(0.3f, 1.1f),
+			this.fullRange(),
+			0.0f
+		), ArcheonBiomes.GYPSUM_VALLEYS));
+		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
+			this.fullRange(),
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(-1.0f, 0.5f),
 			this.fullRange(),
 			MultiNoiseUtil.ParameterRange.of(0.7f, 1.1f),
 			this.fullRange(),

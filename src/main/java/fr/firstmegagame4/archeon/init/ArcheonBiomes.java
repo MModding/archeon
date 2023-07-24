@@ -15,6 +15,7 @@ public class ArcheonBiomes implements ElementsInitializer {
 
 	public static final RegistryKey<Biome> ABYSS_CAVES = BiomeUtils.getBiomeKey(Archeon.createId("abyss_caves"));
 	public static final RegistryKey<Biome> DUNE_OCEAN = BiomeUtils.getBiomeKey(Archeon.createId("dune_ocean"));
+	public static final RegistryKey<Biome> GYPSUM_VALLEYS = BiomeUtils.getBiomeKey(Archeon.createId("gypsum_valleys"));
 	public static final RegistryKey<Biome> MAGICAL_VUXANCIA_FOREST = BiomeUtils.getBiomeKey(Archeon.createId("magical_vuxancia_forest"));
 	public static final RegistryKey<Biome> NECLANE_GROVE = BiomeUtils.getBiomeKey(Archeon.createId("neclane_grove"));
 	public static final RegistryKey<Biome> ROCKY_FIELDS = BiomeUtils.getBiomeKey(Archeon.createId("rocky_fields"));

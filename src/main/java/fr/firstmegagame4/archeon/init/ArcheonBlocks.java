@@ -476,7 +476,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomBlock AKETITE_BASEBOARD = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
-	public static final CustomBlock INNERMOST_ROCK = new CustomBlock(DefaultBlockSettings.DEEP_BEDROCK_SETTINGS);
+	public static final CustomBlock INNERMOST_ROCK = new CustomBlock(DefaultBlockSettings.DEEP_BEDROCK_SETTINGS, true);
 
 	public static final CustomBlock MYSTERIOUS_STONE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock MYSTERIOUS_STONE_STAIRS = new CustomStairsBlock(MYSTERIOUS_STONE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
@@ -593,11 +593,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomPressurePlateBlock CERAMIC_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.BONE_SETTINGS, true);
 	public static final CustomButtonBlock.Stone CERAMIC_BUTTON = new CustomButtonBlock.Stone(DefaultBlockSettings.BONE_SETTINGS, true);
 
-	public static final CustomBlock GYPSUM = new CustomBlock(DefaultBlockSettings.BASALT_SETTINGS.requiresTool(), true);
-	public static final CustomStairsBlock GYPSUM_STAIRS = new CustomStairsBlock(GYPSUM.getDefaultState(), DefaultBlockSettings.BASALT_SETTINGS.requiresTool(), true);
-	public static final CustomSlabBlock GYPSUM_SLAB = new CustomSlabBlock(DefaultBlockSettings.BASALT_SETTINGS.requiresTool(), true);
-	public static final CustomWallBlock GYPSUM_WALL = new CustomWallBlock(DefaultBlockSettings.BASALT_SETTINGS.requiresTool(), true);
-	public static final CustomPressurePlateBlock GYPSUM_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.BASALT_SETTINGS.requiresTool(), true);
+	public static final CustomPointedDripstoneBlock POINTED_GYPSUM = new CustomPointedDripstoneBlock(ArcheonBlocks.GYPSUM, QuiltBlockSettings.copyOf(DefaultBlockSettings.BASALT_SETTINGS).requiresTool().dynamicBounds().offsetType(AbstractBlock.OffsetType.XZ), true);
+
+	public static final CustomBlock GYPSUM = new CustomBlock(QuiltBlockSettings.copyOf(DefaultBlockSettings.BASALT_SETTINGS).requiresTool(), true);
+	public static final CustomStairsBlock GYPSUM_STAIRS = new CustomStairsBlock(GYPSUM.getDefaultState(), QuiltBlockSettings.copyOf(DefaultBlockSettings.BASALT_SETTINGS).requiresTool(), true);
+	public static final CustomSlabBlock GYPSUM_SLAB = new CustomSlabBlock(QuiltBlockSettings.copyOf(DefaultBlockSettings.BASALT_SETTINGS).requiresTool(), true);
+	public static final CustomWallBlock GYPSUM_WALL = new CustomWallBlock(QuiltBlockSettings.copyOf(DefaultBlockSettings.BASALT_SETTINGS).requiresTool(), true);
+	public static final CustomPressurePlateBlock GYPSUM_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, QuiltBlockSettings.copyOf(DefaultBlockSettings.BASALT_SETTINGS).requiresTool(), true);
 
 	public static final CustomBlock GYPSUM_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock GYPSUM_BRICK_STAIRS = new CustomStairsBlock(GYPSUM_BRICKS.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
@@ -946,6 +948,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		CERAMIC_FENCE.register(Archeon.createId("ceramic_fence"));
 		CERAMIC_PRESSURE_PLATE.register(Archeon.createId("ceramic_pressure_plate"));
 		CERAMIC_BUTTON.register(Archeon.createId("ceramic_button"));
+		POINTED_GYPSUM.register(Archeon.createId("pointed_gypsum"));
 		GYPSUM.register(Archeon.createId("gypsum"));
 		GYPSUM_STAIRS.register(Archeon.createId("gypsum_stairs"));
 		GYPSUM_SLAB.register(Archeon.createId("gypsum_slab"));

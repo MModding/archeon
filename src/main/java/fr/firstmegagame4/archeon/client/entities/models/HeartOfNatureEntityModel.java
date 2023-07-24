@@ -410,7 +410,7 @@ public class HeartOfNatureEntityModel extends EntityModel<HeartOfNatureEntity> {
 			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
 		);
 
-		return TexturedModelData.of(modelData, 128, 128);
+		return TexturedModelData.of(modelData, 96, 80);
 	}
 
 	@Override

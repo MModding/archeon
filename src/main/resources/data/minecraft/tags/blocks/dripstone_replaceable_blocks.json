@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#archeon:replaceables/southstone_ore",
+    "#archeon:replaceables/depths_aketite_ore"
+  ]
+}

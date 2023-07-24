@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "archeon:pointed_gypsum",
     "archeon:gypsum",
     "archeon:gypsum_stairs",
     "archeon:gypsum_slab",

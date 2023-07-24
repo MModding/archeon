@@ -88,6 +88,8 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.LEAVES_CARPET_VALE.cutout();
 		ArcheonBlocks.LEAVES_CARPET_ZIAL.cutout();
 
+		ArcheonBlocks.POINTED_GYPSUM.cutout();
+
 		ArcheonBlocks.DUNE_SAND_GLASS.cutout();
 		ArcheonBlocks.DUNE_SAND_GLASS_TILES.cutout();
 		ArcheonBlocks.DUNE_SAND_GLASS_TILES_TOP_LEFT.cutout();

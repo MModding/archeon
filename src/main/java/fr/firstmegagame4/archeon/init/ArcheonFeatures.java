@@ -3,10 +3,7 @@ package fr.firstmegagame4.archeon.init;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.utils.RegistrationUtils;
 import com.mmodding.mmodding_lib.library.worldgen.features.AdvancedFeature;
-import com.mmodding.mmodding_lib.library.worldgen.features.defaults.CustomFlowerFeature;
-import com.mmodding.mmodding_lib.library.worldgen.features.defaults.CustomOreFeature;
-import com.mmodding.mmodding_lib.library.worldgen.features.defaults.CustomRandomPatchFeature;
-import com.mmodding.mmodding_lib.library.worldgen.features.defaults.CustomTreeFeature;
+import com.mmodding.mmodding_lib.library.worldgen.features.defaults.*;
 import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomFoliagePlacer;
 import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomTreeDecorator;
 import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomTrunkPlacer;
@@ -25,7 +22,11 @@ import fr.firstmegagame4.archeon.worldgen.features.trees.trunk.VuxanciaTrunkPlac
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Pair;
+import net.minecraft.util.math.floatprovider.ClampedNormalFloatProvider;
+import net.minecraft.util.math.floatprovider.UniformFloatProvider;
+import net.minecraft.util.math.intprovider.ClampedNormalIntProvider;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.gen.GenerationStep;
@@ -222,6 +223,50 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomOreFeature SOUTHSTONE_GOLD_ORE_FEATURE = new CustomOreFeature(6, 3, -60, 30, ARCHEON_GOLD_ORE_TARGETS);
 	public static final CustomOreFeature SOUTHSTONE_EMERALD_ORE_FEATURE = new CustomOreFeature(3, 4, -60, 40, ARCHEON_EMERALD_ORE_TARGETS);
 
+	public static final CustomDripstoneClusterFeature GYPSUM_CLUSTER = new CustomDripstoneClusterFeature(
+		ArcheonBlocks.POINTED_GYPSUM,
+		ArcheonBlocks.GYPSUM,
+		UniformIntProvider.create(48, 96),
+		12,
+		UniformIntProvider.create(3, 6),
+		UniformIntProvider.create(2, 8),
+		1,
+		3,
+		UniformIntProvider.create(2, 4),
+		UniformFloatProvider.create(0.3f, 0.7f),
+		ClampedNormalFloatProvider.create(0.1f, 0.3f, 0.1f, 0.9f),
+		0.1f,
+		3,
+		8
+	);
+
+	public static final CustomLargeDripstoneFeature LARGE_GYPSUM = new CustomLargeDripstoneFeature(
+		ArcheonBlocks.GYPSUM,
+		UniformIntProvider.create(10, 48),
+		30,
+		UniformIntProvider.create(3, 19),
+		UniformFloatProvider.create(0.4f, 2.0f),
+		0.33f,
+		UniformFloatProvider.create(0.3f, 0.9f),
+		UniformFloatProvider.create(0.4f, 1.0f),
+		UniformFloatProvider.create(0.0f, 0.3f),
+		4,
+		0.6f
+	);
+
+	public static final CustomPointedDripstoneFeature POINTED_GYPSUM = new CustomPointedDripstoneFeature(
+		ArcheonBlocks.POINTED_GYPSUM,
+		ArcheonBlocks.GYPSUM,
+		UniformIntProvider.create(192, 256),
+		UniformIntProvider.create(1, 5),
+		ClampedNormalIntProvider.create(0.0f, 3.0f, -10, 10),
+		ClampedNormalIntProvider.create(0.0f, 0.6f, -2, 2),
+		0.2F,
+		0.7F,
+		0.5F,
+		0.5F
+	);
+
 	@Override
 	public void register() {
 		RegistrationUtils.registerTrunkPlacerType(Archeon.createId("neclane_trunk_placer"), NECLANE_TRUNK_PLACER);
@@ -271,6 +316,10 @@ public class ArcheonFeatures implements ElementsInitializer {
 		SOUTHSTONE_COAL_ORE_FEATURE.register(Archeon.createId("southstone_coal_ore_feature"));
 		FAELITE_ORE_FEATURE.register(Archeon.createId("faelite_ore_feature"));
 
+		GYPSUM_CLUSTER.register(Archeon.createId("gypsum_cluster"));
+		LARGE_GYPSUM.register(Archeon.createId("large_gypsum"));
+		POINTED_GYPSUM.register(Archeon.createId("pointed_gypsum"));
+
 		Predicate<BiomeSelectionContext> randomPatchPredicate = ctx -> !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) ||
 			!ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES) ||
 			!ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_PEAKS) ||
@@ -278,6 +327,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 			!ctx.getBiomeKey().equals(ArcheonBiomes.ABYSS_CAVES);
 
 		Predicate<BiomeSelectionContext> inArcheonPredicate = ctx -> ctx.canGenerateIn(RegistryKey.of(Registry.DIMENSION_KEY, Archeon.createId("archeon")));
+
+		Predicate<BiomeSelectionContext> gypsumPredicate = ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.GYPSUM_VALLEYS);
 
 		BiomeModifications.addFeature(
 			ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS) ||
@@ -331,5 +382,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 		SOUTHSTONE_COAL_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 		SOUTHSTONE_GOLD_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 		SOUTHSTONE_EMERALD_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
+
+		GYPSUM_CLUSTER.addDefaultToBiomes(gypsumPredicate);
+		LARGE_GYPSUM.addDefaultToBiomes(gypsumPredicate);
+		POINTED_GYPSUM.addDefaultToBiomes(gypsumPredicate);
 	}
 }

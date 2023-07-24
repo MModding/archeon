@@ -13,6 +13,7 @@ public class ArcheonTags {
 
 	public static final TagKey<Biome> SURFACE_BIOMES = QuiltTagKey.of(Registry.BIOME_KEY, Archeon.createId("surface_biomes"), TagType.NORMAL);
 	public static final TagKey<Biome> CAVE_BIOMES = QuiltTagKey.of(Registry.BIOME_KEY, Archeon.createId("cave_biomes"), TagType.NORMAL);
+	public static final TagKey<Biome> TERRAIN_BIOMES = QuiltTagKey.of(Registry.BIOME_KEY, Archeon.createId("terrain_biomes"), TagType.NORMAL);
 
 	public static final TagKey<Block> SOIL = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("equivalents/soil"), TagType.NORMAL);
 	public static final TagKey<Block> STONE = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("equivalents/stone"), TagType.NORMAL);
