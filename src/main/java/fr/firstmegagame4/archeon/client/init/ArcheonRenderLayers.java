@@ -2,6 +2,7 @@ package fr.firstmegagame4.archeon.client.init;
 
 import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
 import fr.firstmegagame4.archeon.init.ArcheonBlocks;
+import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 
 public class ArcheonRenderLayers implements ClientElementsInitializer {
 
@@ -89,6 +90,13 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.LEAVES_CARPET_ZIAL.cutout();
 
 		ArcheonBlocks.POINTED_GYPSUM.cutout();
+		ArcheonBlocks.POINTED_ANHYDRITE.cutout();
+
+		ArcheonBlocks.ANHYDRITE.translucent();
+		ArcheonBlocks.ANHYDRITE_STAIRS.translucent();
+		ArcheonBlocks.ANHYDRITE_SLAB.translucent();
+		ArcheonBlocks.ANHYDRITE_WALL.translucent();
+		ArcheonBlocks.ANHYDRITE_PRESSURE_PLATE.translucent();
 
 		ArcheonBlocks.DUNE_SAND_GLASS.cutout();
 		ArcheonBlocks.DUNE_SAND_GLASS_TILES.cutout();
@@ -103,5 +111,11 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.DUNE_SAND_GLASS_PANE_TILES_TOP_RIGHT.cutout();
 		ArcheonBlocks.DUNE_SAND_GLASS_PANE_TILES_BOTTOM_LEFT.cutout();
 		ArcheonBlocks.DUNE_SAND_GLASS_PANE_TILES_BOTTOM_RIGHT.cutout();
+
+		FluidRenderHandlerRegistry.INSTANCE.setBlockTransparency(ArcheonBlocks.ANHYDRITE, true);
+		FluidRenderHandlerRegistry.INSTANCE.setBlockTransparency(ArcheonBlocks.ANHYDRITE_STAIRS, true);
+		FluidRenderHandlerRegistry.INSTANCE.setBlockTransparency(ArcheonBlocks.ANHYDRITE_SLAB, true);
+		FluidRenderHandlerRegistry.INSTANCE.setBlockTransparency(ArcheonBlocks.ANHYDRITE_WALL, true);
+		FluidRenderHandlerRegistry.INSTANCE.setBlockTransparency(ArcheonBlocks.ANHYDRITE_PRESSURE_PLATE, true);
 	}
 }

@@ -261,10 +261,54 @@ public class ArcheonFeatures implements ElementsInitializer {
 		UniformIntProvider.create(1, 5),
 		ClampedNormalIntProvider.create(0.0f, 3.0f, -10, 10),
 		ClampedNormalIntProvider.create(0.0f, 0.6f, -2, 2),
-		0.2F,
-		0.7F,
-		0.5F,
-		0.5F
+		0.2f,
+		0.7f,
+		0.5f,
+		0.5f
+	);
+
+	public static final CustomDripstoneClusterFeature ANHYDRITE_CLUSTER = new CustomDripstoneClusterFeature(
+		ArcheonBlocks.POINTED_ANHYDRITE,
+		ArcheonBlocks.ANHYDRITE,
+		UniformIntProvider.create(48, 96),
+		12,
+		UniformIntProvider.create(3, 6),
+		UniformIntProvider.create(2, 8),
+		1,
+		3,
+		UniformIntProvider.create(2, 4),
+		UniformFloatProvider.create(0.3f, 0.7f),
+		ClampedNormalFloatProvider.create(0.1f, 0.3f, 0.1f, 0.9f),
+		0.1f,
+		3,
+		8
+	);
+
+	public static final CustomLargeDripstoneFeature LARGE_ANHYDRITE = new CustomLargeDripstoneFeature(
+		ArcheonBlocks.ANHYDRITE,
+		UniformIntProvider.create(10, 48),
+		30,
+		UniformIntProvider.create(3, 19),
+		UniformFloatProvider.create(0.4f, 2.0f),
+		0.33f,
+		UniformFloatProvider.create(0.3f, 0.9f),
+		UniformFloatProvider.create(0.4f, 1.0f),
+		UniformFloatProvider.create(0.0f, 0.3f),
+		4,
+		0.6f
+	);
+
+	public static final CustomPointedDripstoneFeature POINTED_ANHYDRITE = new CustomPointedDripstoneFeature(
+		ArcheonBlocks.POINTED_ANHYDRITE,
+		ArcheonBlocks.ANHYDRITE,
+		UniformIntProvider.create(192, 256),
+		UniformIntProvider.create(1, 5),
+		ClampedNormalIntProvider.create(0.0f, 3.0f, -10, 10),
+		ClampedNormalIntProvider.create(0.0f, 0.6f, -2, 2),
+		0.2f,
+		0.7f,
+		0.5f,
+		0.5f
 	);
 
 	@Override
@@ -315,10 +359,12 @@ public class ArcheonFeatures implements ElementsInitializer {
 		SOUTHSTONE_GOLD_ORE_FEATURE.register(Archeon.createId("southstone_gold_ore_feature"));
 		SOUTHSTONE_COAL_ORE_FEATURE.register(Archeon.createId("southstone_coal_ore_feature"));
 		FAELITE_ORE_FEATURE.register(Archeon.createId("faelite_ore_feature"));
-
 		GYPSUM_CLUSTER.register(Archeon.createId("gypsum_cluster"));
 		LARGE_GYPSUM.register(Archeon.createId("large_gypsum"));
 		POINTED_GYPSUM.register(Archeon.createId("pointed_gypsum"));
+		ANHYDRITE_CLUSTER.register(Archeon.createId("anhydrite_cluster"));
+		LARGE_ANHYDRITE.register(Archeon.createId("large_anhydrite"));
+		POINTED_ANHYDRITE.register(Archeon.createId("pointed_anhydrite"));
 
 		Predicate<BiomeSelectionContext> randomPatchPredicate = ctx -> !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) ||
 			!ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES) ||
@@ -329,6 +375,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 		Predicate<BiomeSelectionContext> inArcheonPredicate = ctx -> ctx.canGenerateIn(RegistryKey.of(Registry.DIMENSION_KEY, Archeon.createId("archeon")));
 
 		Predicate<BiomeSelectionContext> gypsumPredicate = ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.GYPSUM_VALLEYS);
+
+		Predicate<BiomeSelectionContext> anhydritePredicate = ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ANHYDRITE_VALLEYS);
 
 		BiomeModifications.addFeature(
 			ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS) ||
@@ -386,5 +434,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 		GYPSUM_CLUSTER.addDefaultToBiomes(gypsumPredicate);
 		LARGE_GYPSUM.addDefaultToBiomes(gypsumPredicate);
 		POINTED_GYPSUM.addDefaultToBiomes(gypsumPredicate);
+
+		ANHYDRITE_CLUSTER.addDefaultToBiomes(anhydritePredicate);
+		LARGE_ANHYDRITE.addDefaultToBiomes(anhydritePredicate);
+		POINTED_ANHYDRITE.addDefaultToBiomes(anhydritePredicate);
 	}
 }

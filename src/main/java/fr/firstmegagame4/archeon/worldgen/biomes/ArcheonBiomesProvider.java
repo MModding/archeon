@@ -144,7 +144,7 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 			this.fullRange(),
 			MultiNoiseUtil.ParameterRange.of(0.5f, 1.0f),
 			this.fullRange(),
-			MultiNoiseUtil.ParameterRange.of(0.3f, 1.1f),
+			MultiNoiseUtil.ParameterRange.of(0.3f, 0.7f),
 			this.fullRange(),
 			0.0f
 		), ArcheonBiomes.GYPSUM_VALLEYS));
@@ -157,6 +157,15 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 			this.fullRange(),
 			0.0f
 		), ArcheonBiomes.ABYSS_CAVES));
+		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
+			this.fullRange(),
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(0.5f, 1.0f),
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(0.7f, 1.1f),
+			this.fullRange(),
+			0.0f
+		), ArcheonBiomes.ANHYDRITE_VALLEYS));
 	}
 
 	@Override

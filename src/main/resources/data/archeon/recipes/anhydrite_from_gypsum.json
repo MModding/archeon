@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:exyriane_crystal"
+    },
+    {
+      "item": "archeon:exyriane_crystal"
+    },
+    {
+      "item": "archeon:depths_aketite"
+    },
+    {
+      "item": "archeon:gypsum"
+    },
+    {
+      "item": "archeon:gypsum"
+    }
+  ],
+  "result": {
+    "item": "archeon:anhydrite",
+    "count": 1
+  }
+}

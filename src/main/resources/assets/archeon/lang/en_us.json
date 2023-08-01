@@ -1,4 +1,12 @@
 {
+  "config.archeon.defaultDoesSunstradiversAttackSnails": "Does Sunstradivers Attack Snails By Default",
+  "config.archeon.defaultIsHeartOfNatureDifficultyScaled": "Is Heart Of Nature Difficulty Scaled By Default",
+  "block.archeon.pointed_anhydrite": "Pointed Anhydrite",
+  "block.archeon.anhydrite": "Anhydrite",
+  "block.archeon.anhydrite_stairs": "Anhydrite Stairs",
+  "block.archeon.anhydrite_slab": "Anhydrite Slab",
+  "block.archeon.anhydrite_wall": "Anhydrite Wall",
+  "block.archeon.anhydrite_pressure_plate": "Anhydrite Pressure Plate",
   "block.archeon.palm_slab": "Palm Slab",
   "item.archeon.clementium_ring": "Clementium Ring",
   "advancements.look_at_my_pink_diamonds.descr": "Obtain an apaflorite gemstone.",

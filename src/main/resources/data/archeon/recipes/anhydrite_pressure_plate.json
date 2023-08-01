@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AA"
+  ],
+  "key": {
+    "A": {
+      "item": "archeon:anhydrite"
+    }
+  },
+  "result": {
+    "item": "archeon:anhydrite_pressure_plate",
+    "count": 1
+  }
+}

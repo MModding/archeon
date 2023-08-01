@@ -38,7 +38,7 @@ public class SunstradiverEntity extends WingedAnimalEntity implements Flutterer 
 	protected void initGoals() {
 		this.goalSelector.add(1, new EscapeDangerGoal(this, 2.0));
 		this.goalSelector.add(0, new SwimGoal(this));
-		this.goalSelector.add(2, new TargetGoal<>(this, HeiferEntity.class, true));
+		this.goalSelector.add(2, new TargetGoal<>(this, SnailEntity.class, true));
 		this.goalSelector.add(3, new MeleeAttackGoal(this, 1.0f, false));
 		this.goalSelector.add(4, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
 		this.goalSelector.add(5, new AnimalMateGoal(this, 1.0));
@@ -56,7 +56,7 @@ public class SunstradiverEntity extends WingedAnimalEntity implements Flutterer 
 
 	@Override
 	public void setTarget(@Nullable LivingEntity target) {
-		if (target instanceof HeiferEntity) {
+		if (target instanceof SnailEntity) {
 			super.setTarget(target);
 		}
 	}

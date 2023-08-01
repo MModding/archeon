@@ -39,8 +39,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class HeartOfNatureEntity extends HostileEntity implements ConditionalOverlayOwner {
 
-	private static final TrackedData<Boolean> SHIELD = DataTracker.registerData(HeartOfNatureEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 	private static final TrackedData<Integer> PHASE = DataTracker.registerData(HeartOfNatureEntity.class, TrackedDataHandlerRegistry.INTEGER);
+	private static final TrackedData<Boolean> SHIELD = DataTracker.registerData(HeartOfNatureEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
 	private final ServerBossBar bossBar = new ServerBossBar(this.getDisplayName(), BossBar.Color.WHITE, BossBar.Style.PROGRESS);
 
@@ -61,8 +61,8 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 	@Override
 	protected void initDataTracker() {
 		super.initDataTracker();
-		this.dataTracker.startTracking(HeartOfNatureEntity.SHIELD, false);
 		this.dataTracker.startTracking(HeartOfNatureEntity.PHASE, 0);
+		this.dataTracker.startTracking(HeartOfNatureEntity.SHIELD, false);
 	}
 
 	@Override
@@ -98,20 +98,20 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		this.bossBar.removePlayer(player);
 	}
 
-	public boolean isShieldDeployed() {
-		return this.dataTracker.get(HeartOfNatureEntity.SHIELD);
-	}
-
-	public void shieldDeployment(boolean deployed) {
-		this.dataTracker.set(HeartOfNatureEntity.SHIELD, deployed);
-	}
-
 	private int getPhaseIndex() {
 		return MathHelper.clamp(this.dataTracker.get(HeartOfNatureEntity.PHASE), 0, 4);
 	}
 
 	public Phase getPhase() {
 		return Phase.values()[this.getPhaseIndex()];
+	}
+
+	public boolean isShieldDeployed() {
+		return this.dataTracker.get(HeartOfNatureEntity.SHIELD);
+	}
+
+	public void shieldDeployment(boolean deployed) {
+		this.dataTracker.set(HeartOfNatureEntity.SHIELD, deployed);
 	}
 
 	public boolean switchPhase() {
@@ -227,7 +227,10 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 
 	@Override
 	public boolean damage(DamageSource source, float amount) {
-		if (this.getPhase().equals(Phase.PETRIFIED)) {
+		if (this.getPhase().equals(Phase.DEFEATED)) {
+			return false;
+		}
+		else if (this.getPhase().equals(Phase.PETRIFIED)) {
 			if (source.getAttacker() instanceof PlayerEntity entity) {
 				if (entity.getMainHandStack().getItem() instanceof PickaxeItem) {
 					this.switchPhase();
@@ -239,7 +242,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 			if (!this.isShieldDeployed()) {
 				if (this.getHealth() - amount <= 0.0f) {
 					if (this.switchPhase()) {
-						this.shieldDeployment(true);
+						this.shieldDeployment(!this.getPhase().equals(Phase.DEFEATED));
 						this.setHealth(this.getPhase().equals(Phase.DEFEATED) ? 50.0f : 0.1f);
 						if (!this.getPhase().equals(Phase.DEFEATED)) {
 							WorldUtils.repeatSyncedTaskUntil(this.world, 50, () -> this.heal(1.0f));

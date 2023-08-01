@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/anhydrite_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/anhydrite_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/anhydrite_slab_full"
+    }
+  }
+}

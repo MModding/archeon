@@ -29,7 +29,8 @@ public class ArcheonTags {
 	public static final TagKey<Block> AKETITE = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/aketite"), TagType.NORMAL);
 	public static final TagKey<Block> MYSTERIOUS_STONE = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/mysterious_stone"), TagType.NORMAL);
 	public static final TagKey<Block> ARTEMNITE = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/artemnite"), TagType.NORMAL);
-	public static final TagKey<Block> GYPSUM_BRICKS = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/gypsum_bricks"), TagType.NORMAL);
+	public static final TagKey<Block> GYPSUM = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/gypsum"), TagType.NORMAL);
+	public static final TagKey<Block> ANHYDRITE = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/anhydrite"), TagType.NORMAL);
 	public static final TagKey<Block> ROUGHCAST = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/roughcast"), TagType.NORMAL);
 	public static final TagKey<Block> WARPED_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/warped_tiles"), TagType.NORMAL);
 	public static final TagKey<Block> CRIMSON_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/crimson_tiles"), TagType.NORMAL);

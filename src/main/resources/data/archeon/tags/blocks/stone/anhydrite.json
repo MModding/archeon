@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:pointed_anhydrite",
+    "archeon:anhydrite",
+    "archeon:anhydrite_stairs",
+    "archeon:anhydrite_slab",
+    "archeon:anhydrite_wall",
+    "archeon:anhydrite_pressure_plate"
+  ]
+}

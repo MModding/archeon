@@ -1,4 +1,12 @@
 {
+  "config.archeon.defaultDoesSunstradiversAttackSnails": "Les Sunstradivers Attaquent les Escargots Par Défault",
+  "config.archeon.defaultIsHeartOfNatureDifficultyScaled": "La Difficulté du Coeur de la Nature est basée sur la Difficulté Par Défault",
+  "block.archeon.pointed_anhydrite": "Anhydrite pointue",
+  "block.archeon.anhydrite": "Anhydrite",
+  "block.archeon.anhydrite_stairs": "Escalier d\u0027anhydrite",
+  "block.archeon.anhydrite_slab": "Dalle d\u0027anhydrite",
+  "block.archeon.anhydrite_wall": "Muret d\u0027anhydrite",
+  "block.archeon.anhydrite_pressure_plate": "Plaque de pression en anhydrite",
   "block.archeon.palm_slab": "Dalle de palmier",
   "item.archeon.clementium_ring": "Anneau en clémentium",
   "advancements.look_at_my_pink_diamonds.descr": "Obtenez une gemme d\u0027apaflorite.",

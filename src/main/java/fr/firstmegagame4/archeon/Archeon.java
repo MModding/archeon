@@ -15,7 +15,7 @@ public class Archeon implements MModdingModInitializer {
 
 	@Override
 	public @Nullable Config getConfig() {
-		return null;
+		return new ArcheonConfig();
 	}
 
 	@Override
