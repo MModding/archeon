@@ -81,15 +81,14 @@ public class AuroraCatalystEntity extends HostileEntity {
 		}
 	}
 
-	public static DefaultAttributeContainer createAuroraCatalystAttributes() {
+	public static DefaultAttributeContainer.Builder createAuroraCatalystAttributes() {
 		return MobEntity.createMobAttributes()
 			.add(EntityAttributes.GENERIC_MAX_HEALTH, 9.0f)
 			.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 5.0f)
 			.add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 0.1f)
 			.add(EntityAttributes.GENERIC_FLYING_SPEED, 0.5f)
 			.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 16)
-			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3f)
-			.build();
+			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3f);
 	}
 
 	@Override

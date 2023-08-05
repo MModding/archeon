@@ -195,15 +195,14 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		}
 	}
 
-	public static DefaultAttributeContainer createHeartOfNatureAttributes() {
+	public static DefaultAttributeContainer.Builder createHeartOfNatureAttributes() {
 		return MobEntity.createMobAttributes()
 			.add(EntityAttributes.GENERIC_MAX_HEALTH, 50.0f)
 			.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 5.0f)
 			.add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 0.1f)
 			.add(EntityAttributes.GENERIC_FLYING_SPEED, 0.5f)
 			.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 16)
-			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3f)
-			.build();
+			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3f);
 	}
 
 	@Override

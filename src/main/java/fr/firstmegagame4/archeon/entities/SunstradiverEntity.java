@@ -61,14 +61,13 @@ public class SunstradiverEntity extends WingedAnimalEntity implements Flutterer 
 		}
 	}
 
-	public static DefaultAttributeContainer createSunstradiverAttributes() {
+	public static DefaultAttributeContainer.Builder createSunstradiverAttributes() {
 		return MobEntity.createMobAttributes()
 			.add(EntityAttributes.GENERIC_MAX_HEALTH, 12.0f)
 			.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3.0f)
 			.add(EntityAttributes.GENERIC_FLYING_SPEED, 0.5f)
 			.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 16)
-			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3f)
-			.build();
+			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3f);
 	}
 
 	@Override

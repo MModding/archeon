@@ -14,8 +14,8 @@ public class HeiferEntity extends CowEntity {
 		super(entityType, world);
 	}
 
-	public static DefaultAttributeContainer createHeiferAttributes() {
-		return CowEntity.createCowAttributes().build();
+	public static DefaultAttributeContainer.Builder createHeiferAttributes() {
+		return CowEntity.createCowAttributes();
 	}
 
 	@Override

@@ -36,12 +36,11 @@ public class SnailEntity extends AnimalEntity {
 		this.goalSelector.add(5, new WanderAroundFarGoal(this, 1.0));
 	}
 
-	public static DefaultAttributeContainer createSnailAttributes() {
+	public static DefaultAttributeContainer.Builder createSnailAttributes() {
 		return MobEntity.createMobAttributes()
 			.add(EntityAttributes.GENERIC_MAX_HEALTH, 7.0f)
 			.add(EntityAttributes.GENERIC_ARMOR, 1.0f)
-			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.15f)
-			.build();
+			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.15f);
 	}
 
 	@Nullable
