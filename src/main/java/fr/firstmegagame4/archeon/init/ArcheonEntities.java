@@ -6,12 +6,11 @@ import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.entities.*;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.SpawnGroup;
-import org.quiltmc.qsl.entity.api.QuiltEntityTypeBuilder;
 
 public class ArcheonEntities implements ElementsInitializer {
 
-	public static final CustomEntityType<AuroraCatalystEntity> AURORA_CATALYST = CustomEntityType.create(
-		QuiltEntityTypeBuilder.createMob()
+	public static final CustomEntityType<AuroraCatalystEntity> AURORA_CATALYST = CustomEntityType.createMob(
+		builder -> builder
 			.entityFactory(AuroraCatalystEntity::new)
 			.spawnGroup(SpawnGroup.MONSTER)
 			.defaultAttributes(AuroraCatalystEntity.createAuroraCatalystAttributes())
@@ -20,8 +19,8 @@ public class ArcheonEntities implements ElementsInitializer {
 			.maxChunkTrackingRange(8)
 	);
 
-	public static final CustomEntityType<AuroraCatalystEntity> POISONOUS_AURORA_CATALYST = CustomEntityType.create(
-		QuiltEntityTypeBuilder.createMob()
+	public static final CustomEntityType<AuroraCatalystEntity> POISONOUS_AURORA_CATALYST = CustomEntityType.createMob(
+		builder -> builder
 			.entityFactory(AuroraCatalystEntity::new)
 			.spawnGroup(SpawnGroup.MONSTER)
 			.defaultAttributes(AuroraCatalystEntity.createAuroraCatalystAttributes())
@@ -30,8 +29,8 @@ public class ArcheonEntities implements ElementsInitializer {
 			.maxChunkTrackingRange(8)
 	);
 
-	public static final CustomEntityType<AuroraCatalystEntity> EXPLOSIVE_AURORA_CATALYST = CustomEntityType.create(
-		QuiltEntityTypeBuilder.createMob()
+	public static final CustomEntityType<AuroraCatalystEntity> EXPLOSIVE_AURORA_CATALYST = CustomEntityType.createMob(
+		builder -> builder
 			.entityFactory(AuroraCatalystEntity::new)
 			.spawnGroup(SpawnGroup.MONSTER)
 			.defaultAttributes(AuroraCatalystEntity.createAuroraCatalystAttributes())
@@ -40,8 +39,8 @@ public class ArcheonEntities implements ElementsInitializer {
 			.maxChunkTrackingRange(8)
 	);
 
-	public static final CustomEntityType<HeartOfNatureEntity> HEART_OF_NATURE = CustomEntityType.create(
-		QuiltEntityTypeBuilder.createMob()
+	public static final CustomEntityType<HeartOfNatureEntity> HEART_OF_NATURE = CustomEntityType.createMob(
+		builder -> builder
 			.entityFactory(HeartOfNatureEntity::new)
 			.spawnGroup(SpawnGroup.MONSTER)
 			.defaultAttributes(HeartOfNatureEntity.createHeartOfNatureAttributes())
@@ -50,8 +49,8 @@ public class ArcheonEntities implements ElementsInitializer {
 			.maxChunkTrackingRange(8)
 	);
 
-	public static final CustomEntityType<SnailEntity> SNAIL = CustomEntityType.create(
-		QuiltEntityTypeBuilder.createMob()
+	public static final CustomEntityType<SnailEntity> SNAIL = CustomEntityType.createMob(
+		builder -> builder
 			.entityFactory(SnailEntity::new)
 			.spawnGroup(SpawnGroup.CREATURE)
 			.defaultAttributes(SnailEntity.createSnailAttributes())
@@ -59,8 +58,8 @@ public class ArcheonEntities implements ElementsInitializer {
 			.maxChunkTrackingRange(8)
 	);
 
-	public static final CustomEntityType<SunstradiverEntity> SUNSTRADIVER = CustomEntityType.create(
-		QuiltEntityTypeBuilder.createMob()
+	public static final CustomEntityType<SunstradiverEntity> SUNSTRADIVER = CustomEntityType.createMob(
+		builder -> builder
 			.entityFactory(SunstradiverEntity::new)
 			.spawnGroup(SpawnGroup.CREATURE)
 			.defaultAttributes(SunstradiverEntity.createSunstradiverAttributes())
@@ -68,8 +67,8 @@ public class ArcheonEntities implements ElementsInitializer {
 			.maxChunkTrackingRange(8)
 	);
 
-	public static final CustomEntityType<HeiferEntity> HEIFER = CustomEntityType.create(
-		QuiltEntityTypeBuilder.createMob()
+	public static final CustomEntityType<HeiferEntity> HEIFER = CustomEntityType.createMob(
+		builder -> builder
 			.entityFactory(HeiferEntity::new)
 			.spawnGroup(SpawnGroup.CREATURE)
 			.defaultAttributes(HeiferEntity.createHeiferAttributes())
