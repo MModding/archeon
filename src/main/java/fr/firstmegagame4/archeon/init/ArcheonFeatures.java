@@ -64,13 +64,13 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 	public static final CustomTreeFeature PALM_TREE = new CustomTreeFeature(
 		ArcheonBlocks.PALM_LOG,
-		new PalmTrunkPlacer(4, 2, 0),
+		new PalmTrunkPlacer(6, 3, 0),
 		ArcheonBlocks.PALM_LEAVES,
 		new PalmFoliagePlacer(ConstantIntProvider.create(6), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(1, 0.1f, 1),
-		ArcheonBlocks.DUNE_SAND
-	);
+		ArcheonBlocks.COKIPLANT
+	).setGroundBlock(ArcheonBlocks.DUNE_SAND);
 
 	public static final CustomTreeFeature NECLANE_TREE = new CustomTreeFeature(
 		ArcheonBlocks.NECLANE_LOG,

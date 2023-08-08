@@ -62,6 +62,7 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.ARCHEON_PORTAL.translucent();
 
 		ArcheonBlocks.BUSH_LEAVES.cutout();
+		ArcheonBlocks.PALM_LEAVES.cutout();
 		ArcheonBlocks.NECLANE_LEAVES.cutout();
 		ArcheonBlocks.FLOWERED_NECLANE_LEAVES.cutout();
 		ArcheonBlocks.CYPRESS_LEAVES.cutout();

@@ -278,7 +278,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock COKIPLANT = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isOf(ArcheonBlocks.DUNE_SAND),
 		StatusEffects.POISON,
 		5,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
