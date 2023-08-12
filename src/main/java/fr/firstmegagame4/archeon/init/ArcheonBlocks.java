@@ -4,7 +4,7 @@ import com.mmodding.mmodding_lib.library.blocks.*;
 import com.mmodding.mmodding_lib.library.blocks.settings.BlockSettingsModifiers;
 import com.mmodding.mmodding_lib.library.blocks.settings.DefaultBlockSettings;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
-import com.mmodding.mmodding_lib.library.portals.CustomSquaredPortalBlock;
+import com.mmodding.mmodding_lib.library.portals.squared.CustomSquaredPortalBlock;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.blocks.*;
 import net.minecraft.block.AbstractBlock;
@@ -12,6 +12,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.block.PressurePlateBlock.ActivationRule;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
@@ -407,7 +408,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomSlabBlock SMOOTH_SOUTHSTONE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
 	public static final CustomBlock CHISELED_SOUTHSTONE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomBlock CRACKLED_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomBlock CRACKED_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
 	public static final CustomPressurePlateBlock SOUTHSTONE_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomButtonBlock.Stone SOUTHSTONE_BUTTON = new CustomButtonBlock.Stone(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
@@ -423,7 +424,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomWallBlock MOSSY_COBBLED_SOUTHSTONE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS).hardness(2.0f), true);
 
 	public static final CustomBlock FALSE_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomBlock FALSE_CRACKLED_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomBlock FALSE_CRACKED_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomBlock FALSE_MOSSY_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
 	public static final CustomBlock APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
@@ -474,7 +475,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomBlock SMOOTH_AKETITE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomBlock CHISELED_AKETITE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomBlock CRACKLED_AKETITE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomBlock CRACKED_AKETITE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
 	public static final CustomBlock AKETITE_BASEBOARD = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
@@ -484,7 +485,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomStairsBlock MYSTERIOUS_STONE_STAIRS = new CustomStairsBlock(MYSTERIOUS_STONE.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomSlabBlock MYSTERIOUS_STONE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
-	public static final CustomSquaredPortalBlock ARCHEON_PORTAL = new CustomSquaredPortalBlock(MYSTERIOUS_STONE, Archeon.createId("archeon"), QuiltBlockSettings.of(Material.PORTAL).noCollision().strength(-1.0F).luminance(11).sounds(BlockSoundGroup.GLASS));
+	public static final CustomSquaredPortalBlock ARCHEON_PORTAL = new CustomSquaredPortalBlock(ParticleTypes.ENCHANT, QuiltBlockSettings.of(Material.PORTAL).noCollision().strength(-1.0F).luminance(11).sounds(BlockSoundGroup.GLASS));
 
 	public static final CustomBlock ARTEMNITE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS).sounds(BlockSoundGroup.NETHERRACK), true);
 	public static final CustomStairsBlock ARTEMNITE_STAIRS = new CustomStairsBlock(ARTEMNITE.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS).sounds(BlockSoundGroup.NETHERRACK), true);
@@ -518,7 +519,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomBlock SMOOTH_ARTEMNITE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomBlock CHISELED_ARTEMNITE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomBlock CRACKLED_ARTEMNITE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomBlock CRACKED_ARTEMNITE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
 	public static final CustomBlock ARTEMNITE_BASEBOARD = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomBlock POWER_KEYSTONE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.METAL_SETTINGS).strength(-1, 3600000.0f), true);
@@ -893,7 +894,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		SMOOTH_SOUTHSTONE_STAIRS.register(Archeon.createId("smooth_southstone_stairs"));
 		SMOOTH_SOUTHSTONE_SLAB.register(Archeon.createId("smooth_southstone_slab"));
 		CHISELED_SOUTHSTONE.register(Archeon.createId("chiseled_southstone"));
-		CRACKLED_SOUTHSTONE_BRICKS.register(Archeon.createId("crackled_southstone_bricks"));
+		CRACKED_SOUTHSTONE_BRICKS.register(Archeon.createId("cracked_southstone_bricks"));
 		SOUTHSTONE_PRESSURE_PLATE.register(Archeon.createId("southstone_pressure_plate"));
 		SOUTHSTONE_BUTTON.register(Archeon.createId("southstone_button"));
 		MOSSY_SOUTHSTONE_BRICKS.register(Archeon.createId("mossy_southstone_bricks"));
@@ -905,7 +906,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		MOSSY_COBBLED_SOUTHSTONE_SLAB.register(Archeon.createId("mossy_cobbled_southstone_slab"));
 		MOSSY_COBBLED_SOUTHSTONE_WALL.register(Archeon.createId("mossy_cobbled_southstone_wall"));
 		FALSE_SOUTHSTONE_BRICKS.register(Archeon.createId("false_southstone_bricks"));
-		FALSE_CRACKLED_SOUTHSTONE_BRICKS.register(Archeon.createId("false_crackled_southstone_bricks"));
+		FALSE_CRACKED_SOUTHSTONE_BRICKS.register(Archeon.createId("false_cracked_southstone_bricks"));
 		FALSE_MOSSY_SOUTHSTONE_BRICKS.register(Archeon.createId("false_mossy_southstone_bricks"));
 		APAFLORITE_ORE.register(Archeon.createId("apaflorite_ore"));
 		EXYRIANE_ORE.register(Archeon.createId("exyriane_ore"));
@@ -945,7 +946,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		ORNATE_AKETITE_BRICKS_LINES.register(Archeon.createId("ornate_aketite_bricks_lines"));
 		SMOOTH_AKETITE.register(Archeon.createId("smooth_aketite"));
 		CHISELED_AKETITE.register(Archeon.createId("chiseled_aketite"));
-		CRACKLED_AKETITE_BRICKS.register(Archeon.createId("crackled_aketite_bricks"));
+		CRACKED_AKETITE_BRICKS.register(Archeon.createId("cracked_aketite_bricks"));
 		AKETITE_BASEBOARD.register(Archeon.createId("aketite_baseboard"));
 		INNERMOST_ROCK.register(Archeon.createId("innermost_rock"));
 		MYSTERIOUS_STONE.register(Archeon.createId("mysterious_stone"));
@@ -978,7 +979,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		ORNATE_ARTEMNITE_BRICKS_LINES.register(Archeon.createId("ornate_artemnite_bricks_lines"));
 		SMOOTH_ARTEMNITE.register(Archeon.createId("smooth_artemnite"));
 		CHISELED_ARTEMNITE.register(Archeon.createId("chiseled_artemnite"));
-		CRACKLED_ARTEMNITE_BRICKS.register(Archeon.createId("crackled_artemnite_bricks"));
+		CRACKED_ARTEMNITE_BRICKS.register(Archeon.createId("cracked_artemnite_bricks"));
 		ARTEMNITE_BASEBOARD.register(Archeon.createId("artemnite_baseboard"));
 		POWER_KEYSTONE.register(Archeon.createId("power_keystone"));
 		NATURITE.register(Archeon.createId("naturite"));
@@ -1098,6 +1099,5 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DUNE_SAND_CASTLE.register(Archeon.createId("dune_sand_castle"));
 		LOOT_URN.register(Archeon.createId("loot_urn"));
 		HEART_OF_NATURE_TROPHY.register(Archeon.createId("heart_of_nature_trophy"));
-		ARCHEON_PORTAL.registerPortal(Archeon.createId("portal"));
 	}
 }

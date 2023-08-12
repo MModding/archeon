@@ -1,11 +1,12 @@
 package fr.firstmegagame4.archeon.init;
 
+import com.mmodding.mmodding_lib.library.glint.DefaultGlintPacks;
 import com.mmodding.mmodding_lib.library.containers.DefaultContainer;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.items.*;
 import com.mmodding.mmodding_lib.library.items.settings.AdvancedItemSettings;
 import com.mmodding.mmodding_lib.library.items.settings.ItemFinishUsing;
-import com.mmodding.mmodding_lib.library.portals.CustomSquaredPortalKeyItem;
+import com.mmodding.mmodding_lib.library.portals.CustomPortalKeyItem;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.entities.HeartOfNatureEntity;
 import fr.firstmegagame4.archeon.items.PouchItem;
@@ -30,21 +31,22 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldEvents;
 import net.minecraft.world.explosion.Explosion;
 
 public class ArcheonItems implements ElementsInitializer {
 
-	public static final CustomSquaredPortalKeyItem WAND_OF_NATURE = new CustomSquaredPortalKeyItem(new AdvancedItemSettings(), Archeon.createId("portal"), SoundEvents.ITEM_FLINTANDSTEEL_USE);
+	public static final CustomPortalKeyItem WAND_OF_NATURE = new CustomPortalKeyItem(new AdvancedItemSettings(), SoundEvents.ITEM_FLINTANDSTEEL_USE);
 
-	public static final CustomPickaxeItem QOLM_PICK = new CustomPickaxeItem(QolmTool.INSTANCE, 1, -2.5f, new AdvancedItemSettings().fireproof());
+	public static final CustomPickaxeItem QOLM_PICK = new CustomPickaxeItem(QolmTool.INSTANCE, 1, -2.5f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.GREEN).fireproof());
 
 	public static final CustomSwordItem MASSACRE_DAGGER = new CustomSwordItem(MassacreDaggerTool.INSTANCE, 3, -0.5f,
-		new AdvancedItemSettings().fireproof().itemPostHit((stack, target, attacker) -> {
+		new AdvancedItemSettings().glintPack(DefaultGlintPacks.RED).fireproof().itemPostHit((stack, target, attacker) -> {
 			World world = target.getWorld();
-			world.syncWorldEvent(2001, target.getBlockPos(), Block.getRawIdFromState(Blocks.FIRE_CORAL_BLOCK.getDefaultState()));
+			world.syncWorldEvent(WorldEvents.BLOCK_BROKEN, target.getBlockPos(), Block.getRawIdFromState(Blocks.FIRE_CORAL_BLOCK.getDefaultState()));
 			target.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 60));
 			target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 60));
-			world.syncWorldEvent(2001, target.getBlockPos(), Block.getRawIdFromState(Blocks.FIRE_CORAL_BLOCK.getDefaultState()));
+			world.syncWorldEvent(WorldEvents.BLOCK_BROKEN, target.getBlockPos(), Block.getRawIdFromState(Blocks.FIRE_CORAL_BLOCK.getDefaultState()));
 		})
 	);
 
@@ -86,27 +88,27 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomShovelItem SOUTHSTONE_SHOVEL = new CustomShovelItem(ToolMaterials.STONE, 1.5f, -3.0f, new AdvancedItemSettings());
 	public static final CustomHoeItem SOUTHSTONE_HOE = new CustomHoeItem(ToolMaterials.STONE, -1, -2.0f, new AdvancedItemSettings());
 
-	public static final CustomSwordItem APAFLORITE_SABER = new CustomSwordItem(ApafloriteTool.INSTANCE, 5, -0.8f, new AdvancedItemSettings());
-	public static final CustomPickaxeItem APAFLORITE_PICKAXE = new CustomPickaxeItem(ApafloriteTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings());
-	public static final CustomAxeItem APAFLORITE_AXE = new CustomAxeItem(ApafloriteTool.INSTANCE, 6, -3.1f, new AdvancedItemSettings());
-	public static final CustomShovelItem APAFLORITE_SHOVEL = new CustomShovelItem(ApafloriteTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings());
-	public static final CustomHoeItem APAFLORITE_HOE = new CustomHoeItem(ApafloriteTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings());
+	public static final CustomSwordItem APAFLORITE_SABER = new CustomSwordItem(ApafloriteTool.INSTANCE, 5, -0.8f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
+	public static final CustomPickaxeItem APAFLORITE_PICKAXE = new CustomPickaxeItem(ApafloriteTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
+	public static final CustomAxeItem APAFLORITE_AXE = new CustomAxeItem(ApafloriteTool.INSTANCE, 6, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
+	public static final CustomShovelItem APAFLORITE_SHOVEL = new CustomShovelItem(ApafloriteTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
+	public static final CustomHoeItem APAFLORITE_HOE = new CustomHoeItem(ApafloriteTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
 
-	public static final CustomArmorItem APAFLORITE_HELMET = new CustomArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.HEAD, new AdvancedItemSettings());
-	public static final CustomArmorItem APAFLORITE_CHESTPLATE = new CustomArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.CHEST, new AdvancedItemSettings());
-	public static final CustomArmorItem APAFLORITE_LEGGINGS = new CustomArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.LEGS, new AdvancedItemSettings());
-	public static final CustomArmorItem APAFLORITE_BOOTS = new CustomArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.FEET, new AdvancedItemSettings());
+	public static final CustomArmorItem APAFLORITE_HELMET = new CustomArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.HEAD, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
+	public static final CustomArmorItem APAFLORITE_CHESTPLATE = new CustomArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.CHEST, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
+	public static final CustomArmorItem APAFLORITE_LEGGINGS = new CustomArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.LEGS, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
+	public static final CustomArmorItem APAFLORITE_BOOTS = new CustomArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.FEET, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
 
-	public static final CustomSwordItem FAELITE_SWORD = new CustomSwordItem(FaeliteTool.INSTANCE, 7, -2.4f, new AdvancedItemSettings());
-	public static final CustomPickaxeItem FAELITE_PICKAXE = new CustomPickaxeItem(FaeliteTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings());
-	public static final CustomAxeItem FAELITE_AXE = new CustomAxeItem(FaeliteTool.INSTANCE, 8, -3.1f, new AdvancedItemSettings());
-	public static final CustomShovelItem FAELITE_SHOVEL = new CustomShovelItem(FaeliteTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings());
-	public static final CustomHoeItem FAELITE_HOE = new CustomHoeItem(FaeliteTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings());
+	public static final CustomSwordItem FAELITE_SWORD = new CustomSwordItem(FaeliteTool.INSTANCE, 7, -2.4f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
+	public static final CustomPickaxeItem FAELITE_PICKAXE = new CustomPickaxeItem(FaeliteTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
+	public static final CustomAxeItem FAELITE_AXE = new CustomAxeItem(FaeliteTool.INSTANCE, 8, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
+	public static final CustomShovelItem FAELITE_SHOVEL = new CustomShovelItem(FaeliteTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
+	public static final CustomHoeItem FAELITE_HOE = new CustomHoeItem(FaeliteTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
 
-	public static final CustomArmorItem FAELITE_HELMET = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.HEAD, new AdvancedItemSettings());
-	public static final CustomArmorItem FAELITE_CHESTPLATE = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.CHEST, new AdvancedItemSettings());
-	public static final CustomArmorItem FAELITE_LEGGINGS = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.LEGS, new AdvancedItemSettings());
-	public static final CustomArmorItem FAELITE_BOOTS = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.FEET, new AdvancedItemSettings());
+	public static final CustomArmorItem FAELITE_HELMET = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.HEAD, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
+	public static final CustomArmorItem FAELITE_CHESTPLATE = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.CHEST, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
+	public static final CustomArmorItem FAELITE_LEGGINGS = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.LEGS, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
+	public static final CustomArmorItem FAELITE_BOOTS = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.FEET, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
 
 	public static final CustomFishingRodItem EXYRIANE_FISHING_ROD = new CustomFishingRodItem(new AdvancedItemSettings());
 
@@ -247,7 +249,8 @@ public class ArcheonItems implements ElementsInitializer {
 			droppedItem.getZ(),
 			3,
 			Explosion.DestructionType.NONE
-		)));
+		))
+	);
 
 	public static final CustomItem INK_BOTTLE = new CustomItem(new AdvancedItemSettings().maxCount(16));
 

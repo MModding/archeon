@@ -1,5 +1,5 @@
 {
-  "parent": "archeon:block/crackled_southstone_bricks",
+  "parent": "archeon:block/cracked_artemnite_bricks",
   "display": {
     "thirdperson": {
       "rotation": [

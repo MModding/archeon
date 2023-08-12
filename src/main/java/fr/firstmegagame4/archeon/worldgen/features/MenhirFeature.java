@@ -12,7 +12,6 @@ import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.block.enums.BlockHalf;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Holder;
-import net.minecraft.util.Pair;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.random.RandomGenerator;
@@ -29,7 +28,6 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 
 public class MenhirFeature extends AdvancedFeature<MenhirFeature.Config> {
 
@@ -46,7 +44,7 @@ public class MenhirFeature extends AdvancedFeature<MenhirFeature.Config> {
 			BlockStateProvider.of(ArcheonBlocks.SOUTHSTONE_BRICK_STAIRS),
 			BlockStateProvider.of(ArcheonBlocks.SOUTHSTONE_BRICK_SLAB),
 			BlockStateProvider.of(ArcheonBlocks.SOUTHSTONE_BRICK_WALL),
-			BlockStateProvider.of(ArcheonBlocks.CRACKLED_SOUTHSTONE_BRICKS)
+			BlockStateProvider.of(ArcheonBlocks.CRACKED_SOUTHSTONE_BRICKS)
 		));
 	}
 
@@ -61,48 +59,54 @@ public class MenhirFeature extends AdvancedFeature<MenhirFeature.Config> {
 		return new PlacedFeature(Holder.createDirect(this.getDefaultConfigured()), placementModifiers);
 	}
 
+	public BlockState pickBlock(int maxHeight, BlockPos blockPickedPos, FeatureContext<Config> context) {
+
+		BlockPos originPos = context.getOrigin();
+		BlockPos basePos = originPos.down();
+		StructureWorldAccess world = context.getWorld();
+		RandomGenerator random = context.getRandom();
+		MenhirFeature.Config config = context.getConfig();
+
+		int subtractHeight = blockPickedPos.subtract(basePos).getY();
+		boolean isCenter = (blockPickedPos.subtract(basePos).getX() == 0) && (blockPickedPos.subtract(basePos).getZ() == 0);
+
+		BlockState wall = config.rockBrickWall.getBlockState(random, blockPickedPos);
+
+		boolean stairsHalfDefault = random.nextBoolean() || world.getBlockState(blockPickedPos.down()).isOf(wall.getBlock());
+		BlockState stairs = config.rockBrickStairs.getBlockState(random, blockPickedPos)
+			.with(HorizontalFacingBlock.FACING, Direction.Type.HORIZONTAL.random(random))
+			.with(Properties.BLOCK_HALF, stairsHalfDefault ? BlockHalf.BOTTOM : BlockHalf.TOP);
+
+		boolean hasBottomStairsBelow = false;
+		if (world.getBlockState(blockPickedPos.down()).isOf(stairs.getBlock())) {
+			hasBottomStairsBelow = world.getBlockState(blockPickedPos.down()).get(Properties.BLOCK_HALF).equals(BlockHalf.BOTTOM);
+		}
+
+		List<BlockState> pickableBlocks = new ArrayList<>();
+		pickableBlocks.add(config.rock.getBlockState(random, blockPickedPos));
+		pickableBlocks.add(config.chiseledRock.getBlockState(random, blockPickedPos));
+		pickableBlocks.add(config.rockBricks.getBlockState(random, blockPickedPos));
+		if (!isCenter) pickableBlocks.add(stairs);
+		if (subtractHeight == maxHeight) pickableBlocks.add(config.rockBrickSlab.getBlockState(random, blockPickedPos));
+		if (subtractHeight >= maxHeight - 1 && !hasBottomStairsBelow) pickableBlocks.add(wall);
+		pickableBlocks.add(config.crackedRockBricks.getBlockState(random, blockPickedPos));
+
+		return pickableBlocks.get(random.nextInt(pickableBlocks.size()));
+	}
+
 	@Override
 	public boolean place(FeatureContext<Config> context) {
 
 		BlockPos originPos = context.getOrigin();
 		BlockPos basePos = originPos.down();
-		StructureWorldAccess structureWorldAccess = context.getWorld();
+		StructureWorldAccess world = context.getWorld();
 		RandomGenerator random = context.getRandom();
-		MenhirFeature.Config config = context.getConfig();
 
-		Function<Pair<Integer, BlockPos>, BlockState> pickBlock = pair -> {
-			int maxHeight = pair.getLeft();
-			BlockPos blockPickedPos = pair.getRight();
-			int subtractHeight = blockPickedPos.subtract(basePos).getY();
-			boolean isCenter = (blockPickedPos.subtract(basePos).getX() == 0) && (blockPickedPos.subtract(basePos).getZ() == 0);
+		if (world.getBlockState(basePos).isOf(Blocks.WATER)) {
+			return false;
+		}
 
-			BlockState wall = config.rockBrickWall.getBlockState(random, blockPickedPos);
-
-			boolean stairsHalfDefault = random.nextBoolean() || structureWorldAccess.getBlockState(blockPickedPos.down()).isOf(wall.getBlock());
-			BlockState stairs = config.rockBrickStairs.getBlockState(random, blockPickedPos)
-				.with(HorizontalFacingBlock.FACING, Direction.Type.HORIZONTAL.random(random))
-				.with(Properties.BLOCK_HALF, stairsHalfDefault ? BlockHalf.BOTTOM : BlockHalf.TOP);
-
-			boolean hasBottomStairsBelow = false;
-			if (structureWorldAccess.getBlockState(blockPickedPos.down()).isOf(stairs.getBlock())) {
-				hasBottomStairsBelow = structureWorldAccess.getBlockState(blockPickedPos.down()).get(Properties.BLOCK_HALF).equals(BlockHalf.BOTTOM);
-			}
-
-			List<BlockState> pickableBlocks = new ArrayList<>();
-			pickableBlocks.add(config.rock.getBlockState(random, blockPickedPos));
-			pickableBlocks.add(config.chiseledRock.getBlockState(random, blockPickedPos));
-			pickableBlocks.add(config.rockBricks.getBlockState(random, blockPickedPos));
-			if (!isCenter) pickableBlocks.add(stairs);
-			if (subtractHeight == maxHeight) pickableBlocks.add(config.rockBrickSlab.getBlockState(random, blockPickedPos));
-			if (subtractHeight >= maxHeight - 1 && !hasBottomStairsBelow) pickableBlocks.add(wall);
-			pickableBlocks.add(config.crackledRockBricks.getBlockState(random, blockPickedPos));
-
-			return pickableBlocks.get(random.nextInt(pickableBlocks.size()));
-		};
-
-		if (structureWorldAccess.getBlockState(basePos).isOf(Blocks.WATER)) return false;
-
-		if (originPos.getY() > structureWorldAccess.getBottomY() + 4) {
+		if (originPos.getY() > world.getBottomY() + 4) {
 
 			boolean has2SidePillars = random.nextBoolean();
 
@@ -130,10 +134,9 @@ public class MenhirFeature extends AdvancedFeature<MenhirFeature.Config> {
 			blockPosList.forEach(blockPos -> {
 				int height = blockPos.equals(basePos) ? 4 : random.nextInt(4) + 1;
 
-				BlockPos.iterate(blockPos, blockPos.up(height)).forEach(heightPos -> {
-					Pair<Integer, BlockPos> pair = new Pair<>(height, heightPos);
-					structureWorldAccess.setBlockState(heightPos, pickBlock.apply(pair), Block.NOTIFY_LISTENERS);
-				});
+				BlockPos.iterate(blockPos, blockPos.up(height)).forEach(heightPos -> world.setBlockState(
+					heightPos, this.pickBlock(height, heightPos, context), Block.NOTIFY_LISTENERS
+				));
 			});
 
 			return true;
@@ -142,7 +145,7 @@ public class MenhirFeature extends AdvancedFeature<MenhirFeature.Config> {
 		return false;
 	}
 
-	public record Config(BlockStateProvider rock, BlockStateProvider chiseledRock, BlockStateProvider rockBricks, BlockStateProvider rockBrickStairs, BlockStateProvider rockBrickSlab, BlockStateProvider rockBrickWall, BlockStateProvider crackledRockBricks) implements FeatureConfig {
+	public record Config(BlockStateProvider rock, BlockStateProvider chiseledRock, BlockStateProvider rockBricks, BlockStateProvider rockBrickStairs, BlockStateProvider rockBrickSlab, BlockStateProvider rockBrickWall, BlockStateProvider crackedRockBricks) implements FeatureConfig {
 
 		public static final Codec<Config> CODEC = RecordCodecBuilder.create(instance ->
 			instance.group(
@@ -152,7 +155,7 @@ public class MenhirFeature extends AdvancedFeature<MenhirFeature.Config> {
 				BlockStateProvider.TYPE_CODEC.fieldOf("rockBrickStairs").forGetter(Config::rockBrickStairs),
 				BlockStateProvider.TYPE_CODEC.fieldOf("rockBrickSlab").forGetter(Config::rockBrickSlab),
 				BlockStateProvider.TYPE_CODEC.fieldOf("rockBrickWall").forGetter(Config::rockBrickWall),
-				BlockStateProvider.TYPE_CODEC.fieldOf("crackledRockBricks").forGetter(Config::crackledRockBricks)
+				BlockStateProvider.TYPE_CODEC.fieldOf("crackedRockBricks").forGetter(Config::crackedRockBricks)
 			).apply(instance, Config::new)
 		);
 	}

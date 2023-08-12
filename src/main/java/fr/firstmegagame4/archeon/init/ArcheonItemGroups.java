@@ -3,7 +3,7 @@ package fr.firstmegagame4.archeon.init;
 import com.mmodding.mmodding_lib.library.blocks.*;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.items.*;
-import com.mmodding.mmodding_lib.library.portals.CustomSquaredPortalKeyItem;
+import com.mmodding.mmodding_lib.library.portals.CustomPortalKeyItem;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.blocks.SporeRootcapBlock;
 import net.minecraft.block.Block;
@@ -53,7 +53,7 @@ public class ArcheonItemGroups implements ElementsInitializer {
 
 	public static final Predicate<Item> IS_EQUIPMENT = item ->
 		(Registry.ITEM.getId(item).equals(Archeon.createId("power_key"))) ||
-		(item instanceof CustomSquaredPortalKeyItem) ||
+		(item instanceof CustomPortalKeyItem) ||
 		(item instanceof CustomArmorItem) ||
 		(item instanceof CustomSwordItem) ||
 		(item instanceof CustomPickaxeItem) ||

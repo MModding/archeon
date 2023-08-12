@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "archeon:crackled_southstone_bricks"
+          "name": "archeon:false_cracked_southstone_bricks"
         }
       ],
       "rolls": 1.0

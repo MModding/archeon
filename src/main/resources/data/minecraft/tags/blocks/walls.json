@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:southstone_brick_wall",
+    "archeon:cobbled_southstone_wall",
+    "archeon:gilded_cobbled_southstone_wall",
+    "archeon:mossy_southstone_brick_wall",
+    "archeon:mossy_cobbled_southstone_wall",
+    "archeon:aketite_wall",
+    "archeon:aketite_brick_wall",
+    "archeon:aketite_tile_wall",
+    "archeon:artemnite_wall",
+    "archeon:artemnite_brick_wall",
+    "archeon:artemnite_tile_wall",
+    "archeon:mossy_artemnite_brick_wall",
+    "archeon:fancy_artemnite_tile_wall",
+    "archeon:ceramic_brick_wall",
+    "archeon:gypsum_wall",
+    "archeon:gypsum_brick_wall",
+    "archeon:roughcast_wall",
+    "archeon:anhydrite_wall",
+    "archeon:warped_tile_wall",
+    "archeon:crimson_tile_wall",
+    "archeon:red_tile_wall",
+    "archeon:ochre_tile_wall",
+    "archeon:blue_tile_wall",
+    "archeon:green_tile_wall"
+  ]
+}
