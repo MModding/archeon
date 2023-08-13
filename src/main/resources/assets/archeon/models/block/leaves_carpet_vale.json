@@ -1,8 +1,8 @@
 {
   "parent": "archeon:custom/leaves_carpet_vale",
   "textures": {
-    "all": "archeon:blocks/vuxancia_leaves_vale",
-    "particle": "archeon:blocks/vuxancia_leaves_vale",
-    "0": "archeon:blocks/vuxancia_leaves_vale"
+    "all": "archeon:block/vuxancia_leaves_vale",
+    "particle": "archeon:block/vuxancia_leaves_vale",
+    "0": "archeon:block/vuxancia_leaves_vale"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/pointed_dripstone",
   "textures": {
-    "cross": "archeon:blocks/pointed_gypsum_down_base"
+    "cross": "archeon:block/pointed_gypsum_down_base"
   }
 }

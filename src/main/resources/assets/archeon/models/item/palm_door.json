@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/palm_door"
+    "layer0": "archeon:item/palm_door"
   }
 }

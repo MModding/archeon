@@ -1,6 +1,6 @@
 {
   "parent": "block/template_fence_gate_wall",
   "textures": {
-    "texture": "archeon:blocks/palm_planks"
+    "texture": "archeon:block/palm_planks"
   }
 }

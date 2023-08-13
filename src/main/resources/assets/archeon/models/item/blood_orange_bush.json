@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:blocks/blood_orange_bush"
+    "layer0": "archeon:block/blood_orange_bush"
   }
 }

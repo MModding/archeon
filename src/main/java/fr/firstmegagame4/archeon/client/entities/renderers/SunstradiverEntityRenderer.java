@@ -17,7 +17,7 @@ public class SunstradiverEntityRenderer extends MobEntityRenderer<SunstradiverEn
 
 	@Override
 	public Identifier getTexture(SunstradiverEntity entity) {
-		return Archeon.createId("textures/entities/sunstradiver.png");
+		return Archeon.createId("textures/entity/sunstradiver.png");
 	}
 
 	public float getAnimationProgress(SunstradiverEntity parrotEntity, float f) {

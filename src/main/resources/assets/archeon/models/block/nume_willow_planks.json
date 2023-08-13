@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/nume_willow_planks",
-    "particle": "archeon:blocks/nume_willow_planks"
+    "all": "archeon:block/nume_willow_planks",
+    "particle": "archeon:block/nume_willow_planks"
   }
 }

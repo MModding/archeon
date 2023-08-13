@@ -1,6 +1,6 @@
 {
   "parent": "block/pressure_plate_down",
   "textures": {
-    "texture": "archeon:blocks/gypsum"
+    "texture": "archeon:block/gypsum"
   }
 }

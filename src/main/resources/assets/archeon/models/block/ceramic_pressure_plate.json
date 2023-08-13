@@ -1,6 +1,6 @@
 {
   "parent": "block/pressure_plate_up",
   "textures": {
-    "texture": "archeon:blocks/ceramic"
+    "texture": "archeon:block/ceramic"
   }
 }

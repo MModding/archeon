@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/pumpkin_pie_with_lycoris_jam"
+    "layer0": "archeon:item/pumpkin_pie_with_lycoris_jam"
   }
 }

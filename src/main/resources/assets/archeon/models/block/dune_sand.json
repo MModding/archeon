@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/dune_sand",
-    "particle": "archeon:blocks/dune_sand"
+    "all": "archeon:block/dune_sand",
+    "particle": "archeon:block/dune_sand"
   }
 }

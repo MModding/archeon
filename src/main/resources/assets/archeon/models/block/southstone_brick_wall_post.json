@@ -1,7 +1,7 @@
 {
   "parent": "block/template_wall_post",
   "textures": {
-    "wall": "archeon:blocks/southstone_bricks",
-    "particle": "archeon:blocks/southstone_bricks"
+    "wall": "archeon:block/southstone_bricks",
+    "particle": "archeon:block/southstone_bricks"
   }
 }

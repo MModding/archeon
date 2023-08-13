@@ -1,8 +1,8 @@
 {
   "parent": "block/slab",
   "textures": {
-    "bottom": "archeon:blocks/mossy_southstone_bricks",
-    "top": "archeon:blocks/mossy_southstone_bricks",
-    "side": "archeon:blocks/mossy_southstone_bricks"
+    "bottom": "archeon:block/mossy_southstone_bricks",
+    "top": "archeon:block/mossy_southstone_bricks",
+    "side": "archeon:block/mossy_southstone_bricks"
   }
 }

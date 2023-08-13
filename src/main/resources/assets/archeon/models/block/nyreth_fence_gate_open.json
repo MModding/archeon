@@ -1,6 +1,6 @@
 {
   "parent": "block/template_fence_gate_open",
   "textures": {
-    "texture": "archeon:blocks/nyreth_planks"
+    "texture": "archeon:block/nyreth_planks"
   }
 }

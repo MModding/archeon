@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/palm_planks",
-    "particle": "archeon:blocks/palm_planks"
+    "all": "archeon:block/palm_planks",
+    "particle": "archeon:block/palm_planks"
   }
 }

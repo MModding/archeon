@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/depths_aketite_gold_ore",
-    "particle": "archeon:blocks/depths_aketite_gold_ore"
+    "all": "archeon:block/depths_aketite_gold_ore",
+    "particle": "archeon:block/depths_aketite_gold_ore"
   }
 }

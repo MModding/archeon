@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "archeon:blocks/ascendia_bottom",
-    "particle": "archeon:blocks/ascendia_bottom"
+    "cross": "archeon:block/ascendia_bottom",
+    "particle": "archeon:block/ascendia_bottom"
   }
 }

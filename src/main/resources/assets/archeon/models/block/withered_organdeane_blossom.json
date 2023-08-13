@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "archeon:blocks/withered_organdeane",
-    "particle": "archeon:blocks/withered_organdeane"
+    "cross": "archeon:block/withered_organdeane",
+    "particle": "archeon:block/withered_organdeane"
   }
 }

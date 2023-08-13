@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/smooth_aketite",
-    "particle": "archeon:blocks/smooth_aketite"
+    "all": "archeon:block/smooth_aketite",
+    "particle": "archeon:block/smooth_aketite"
   }
 }

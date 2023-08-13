@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "archeon:items/power_key"
+    "layer0": "archeon:item/power_key"
   }
 }

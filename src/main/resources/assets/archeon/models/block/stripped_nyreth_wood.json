@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/stripped_nyreth_log",
-    "particle": "archeon:blocks/stripped_nyreth_log"
+    "all": "archeon:block/stripped_nyreth_log",
+    "particle": "archeon:block/stripped_nyreth_log"
   }
 }

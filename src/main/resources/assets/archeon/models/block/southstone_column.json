@@ -1,9 +1,9 @@
 {
   "parent": "archeon:custom/southstone_column",
   "textures": {
-    "all": "archeon:blocks/southstone_column_top",
-    "particle": "archeon:blocks/southstone_column_top",
-    "2": "archeon:blocks/southstone_column_top",
-    "3": "archeon:blocks/southstone_column"
+    "all": "archeon:block/southstone_column_top",
+    "particle": "archeon:block/southstone_column_top",
+    "2": "archeon:block/southstone_column_top",
+    "3": "archeon:block/southstone_column"
   }
 }

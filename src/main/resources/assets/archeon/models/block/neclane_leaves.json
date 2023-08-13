@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "archeon:blocks/neclane_leaves",
-    "up": "archeon:blocks/neclane_leaves",
-    "north": "archeon:blocks/neclane_leaves",
-    "east": "archeon:blocks/neclane_leaves",
-    "south": "archeon:blocks/neclane_leaves",
-    "west": "archeon:blocks/neclane_leaves",
-    "particle": "archeon:blocks/neclane_leaves"
+    "down": "archeon:block/neclane_leaves",
+    "up": "archeon:block/neclane_leaves",
+    "north": "archeon:block/neclane_leaves",
+    "east": "archeon:block/neclane_leaves",
+    "south": "archeon:block/neclane_leaves",
+    "west": "archeon:block/neclane_leaves",
+    "particle": "archeon:block/neclane_leaves"
   }
 }

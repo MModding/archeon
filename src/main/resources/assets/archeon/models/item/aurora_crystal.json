@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/aurora_crystal"
+    "layer0": "archeon:item/aurora_crystal"
   }
 }

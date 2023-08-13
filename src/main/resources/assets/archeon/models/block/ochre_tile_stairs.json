@@ -1,8 +1,8 @@
 {
   "parent": "block/stairs",
   "textures": {
-    "bottom": "archeon:blocks/ochre_tiles",
-    "top": "archeon:blocks/ochre_tiles",
-    "side": "archeon:blocks/ochre_tiles"
+    "bottom": "archeon:block/ochre_tiles",
+    "top": "archeon:block/ochre_tiles",
+    "side": "archeon:block/ochre_tiles"
   }
 }

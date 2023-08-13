@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld_rod",
   "textures": {
-    "layer0": "archeon:items/exyriane_fishing_rod"
+    "layer0": "archeon:item/exyriane_fishing_rod"
   }
 }

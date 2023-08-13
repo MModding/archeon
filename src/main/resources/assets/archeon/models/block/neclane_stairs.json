@@ -1,8 +1,8 @@
 {
   "parent": "block/stairs",
   "textures": {
-    "bottom": "archeon:blocks/neclane_planks",
-    "top": "archeon:blocks/neclane_planks",
-    "side": "archeon:blocks/neclane_planks"
+    "bottom": "archeon:block/neclane_planks",
+    "top": "archeon:block/neclane_planks",
+    "side": "archeon:block/neclane_planks"
   }
 }

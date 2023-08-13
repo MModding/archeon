@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "archeon:blocks/vuxancia_planks",
-    "up": "archeon:blocks/vuxancia_planks",
-    "north": "archeon:blocks/vuxancia_bookshelf",
-    "east": "archeon:blocks/vuxancia_bookshelf",
-    "south": "archeon:blocks/vuxancia_bookshelf",
-    "west": "archeon:blocks/vuxancia_bookshelf",
-    "particle": "archeon:blocks/vuxancia_planks"
+    "down": "archeon:block/vuxancia_planks",
+    "up": "archeon:block/vuxancia_planks",
+    "north": "archeon:block/vuxancia_bookshelf",
+    "east": "archeon:block/vuxancia_bookshelf",
+    "south": "archeon:block/vuxancia_bookshelf",
+    "west": "archeon:block/vuxancia_bookshelf",
+    "particle": "archeon:block/vuxancia_planks"
   }
 }

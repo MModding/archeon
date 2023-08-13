@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/anhydrite",
-    "particle": "archeon:blocks/anhydrite"
+    "all": "archeon:block/anhydrite",
+    "particle": "archeon:block/anhydrite"
   }
 }

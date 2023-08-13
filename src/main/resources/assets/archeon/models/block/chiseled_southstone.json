@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/chiseled_southstone",
-    "particle": "archeon:blocks/chiseled_southstone"
+    "all": "archeon:block/chiseled_southstone",
+    "particle": "archeon:block/chiseled_southstone"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "block/pressure_plate_up",
   "textures": {
-    "texture": "archeon:blocks/nume_willow_planks"
+    "texture": "archeon:block/nume_willow_planks"
   }
 }

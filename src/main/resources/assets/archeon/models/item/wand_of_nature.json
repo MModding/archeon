@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/nature_wand"
+    "layer0": "archeon:item/nature_wand"
   }
 }

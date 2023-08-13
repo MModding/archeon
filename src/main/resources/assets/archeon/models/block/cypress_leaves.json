@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/cypress_leaves",
-    "particle": "archeon:blocks/cypress_leaves"
+    "all": "archeon:block/cypress_leaves",
+    "particle": "archeon:block/cypress_leaves"
   }
 }

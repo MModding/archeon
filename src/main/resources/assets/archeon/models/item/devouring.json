@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/broken_disc"
+    "layer0": "archeon:item/broken_disc"
   }
 }

@@ -576,6 +576,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final LeavesCarpetBlock LEAVES_CARPET_VALE = new LeavesCarpetBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_CARPET), true);
 	public static final LeavesCarpetBlock LEAVES_CARPET_ZIAL = new LeavesCarpetBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_CARPET), true);
 
+	public static final CustomCraftingTableBlock PALM_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
+	public static final CustomCraftingTableBlock NECLANE_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
+	public static final CustomCraftingTableBlock CYPRESS_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
+	public static final CustomCraftingTableBlock VUXANCIA_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
+	/* public static final CustomCraftingTableBlock NUME_WILLOW_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
+	public static final CustomCraftingTableBlock NYRETH_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true); */
+
 	public static final CustomBlock PALM_BOOKSHELF = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomBlock NECLANE_BOOKSHELF = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomBlock CYPRESS_BOOKSHELF = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
@@ -610,6 +617,16 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomWallBlock GYPSUM_BRICK_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomFenceBlock GYPSUM_BRICK_FENCE = new CustomFenceBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomPressurePlateBlock GYPSUM_BRICK_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+
+	public static final CustomBlock GYPSUM_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomStairsBlock GYPSUM_TILE_STAIRS = new CustomStairsBlock(GYPSUM_BRICKS.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomSlabBlock GYPSUM_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomWallBlock GYPSUM_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomFenceBlock GYPSUM_TILE_FENCE = new CustomFenceBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomPressurePlateBlock GYPSUM_TILE_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+
+	public static final CustomPillarBlock GYPSUM_PILLAR = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomBlock CHISELED_GYPSUM = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
 	public static final CustomBlock ROUGHCAST = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomStairsBlock ROUGHCAST_STAIRS = new CustomStairsBlock(ROUGHCAST.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
@@ -1018,6 +1035,12 @@ public class ArcheonBlocks implements ElementsInitializer {
 		LEAVES_CARPET_ORIAN.register(Archeon.createId("leaves_carpet_orian"));
 		LEAVES_CARPET_VALE.register(Archeon.createId("leaves_carpet_vale"));
 		LEAVES_CARPET_ZIAL.register(Archeon.createId("leaves_carpet_zial"));
+		PALM_CRAFTING_TABLE.register(Archeon.createId("palm_crafting_table"));
+		NECLANE_CRAFTING_TABLE.register(Archeon.createId("neclane_crafting_table"));
+		CYPRESS_CRAFTING_TABLE.register(Archeon.createId("cypress_crafting_table"));
+		VUXANCIA_CRAFTING_TABLE.register(Archeon.createId("vuxancia_crafting_table"));
+		/* NUME_WILLOW_CRAFTING_TABLE.register(Archeon.createId("nume_willow_crafting_table")); */
+		/* NYRETH_CRAFTING_TABLE.register(Archeon.createId("nyreth_crafting_table")); */
 		PALM_BOOKSHELF.register(Archeon.createId("palm_bookshelf"));
 		NECLANE_BOOKSHELF.register(Archeon.createId("neclane_bookshelf"));
 		CYPRESS_BOOKSHELF.register(Archeon.createId("cypress_bookshelf"));
@@ -1046,6 +1069,14 @@ public class ArcheonBlocks implements ElementsInitializer {
 		GYPSUM_BRICK_WALL.register(Archeon.createId("gypsum_brick_wall"));
 		GYPSUM_BRICK_FENCE.register(Archeon.createId("gypsum_brick_fence"));
 		GYPSUM_BRICK_PRESSURE_PLATE.register(Archeon.createId("gypsum_brick_pressure_plate"));
+		GYPSUM_TILES.register(Archeon.createId("gypsum_tiles"));
+		GYPSUM_TILE_STAIRS.register(Archeon.createId("gypsum_tile_stairs"));
+		GYPSUM_TILE_SLAB.register(Archeon.createId("gypsum_tile_slab"));
+		GYPSUM_TILE_WALL.register(Archeon.createId("gypsum_tile_wall"));
+		GYPSUM_TILE_FENCE.register(Archeon.createId("gypsum_tile_fence"));
+		GYPSUM_TILE_PRESSURE_PLATE.register(Archeon.createId("gypsum_tile_pressure_plate"));
+		GYPSUM_PILLAR.register(Archeon.createId("gypsum_pillar"));
+		CHISELED_GYPSUM.register(Archeon.createId("chiseled_gypsum"));
 		ROUGHCAST.register(Archeon.createId("roughcast"));
 		ROUGHCAST_STAIRS.register(Archeon.createId("roughcast_stairs"));
 		ROUGHCAST_SLAB.register(Archeon.createId("roughcast_slab"));

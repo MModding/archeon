@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:blocks/pink_lycoris"
+    "layer0": "archeon:block/pink_lycoris"
   }
 }

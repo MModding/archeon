@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/stripped_nume_willow_log",
-    "particle": "archeon:blocks/stripped_nume_willow_log"
+    "all": "archeon:block/stripped_nume_willow_log",
+    "particle": "archeon:block/stripped_nume_willow_log"
   }
 }

@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "archeon:blocks/artemnite_bricks",
-    "up": "archeon:blocks/artemnite_bricks",
-    "north": "archeon:blocks/ornate_artemnite_bricks_lines",
-    "east": "archeon:blocks/ornate_artemnite_bricks_lines",
-    "south": "archeon:blocks/ornate_artemnite_bricks_lines",
-    "west": "archeon:blocks/ornate_artemnite_bricks_lines",
-    "particle": "archeon:blocks/artemnite_bricks"
+    "down": "archeon:block/artemnite_bricks",
+    "up": "archeon:block/artemnite_bricks",
+    "north": "archeon:block/ornate_artemnite_bricks_lines",
+    "east": "archeon:block/ornate_artemnite_bricks_lines",
+    "south": "archeon:block/ornate_artemnite_bricks_lines",
+    "west": "archeon:block/ornate_artemnite_bricks_lines",
+    "particle": "archeon:block/artemnite_bricks"
   }
 }

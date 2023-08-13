@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/nyreth_door"
+    "layer0": "archeon:item/nyreth_door"
   }
 }

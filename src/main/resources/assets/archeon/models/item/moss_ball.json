@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/perfectly_spheric_moss_ball"
+    "layer0": "archeon:item/perfectly_spheric_moss_ball"
   }
 }

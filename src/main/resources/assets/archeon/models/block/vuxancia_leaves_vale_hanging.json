@@ -1,8 +1,8 @@
 {
   "parent": "archeon:custom/hanging_leaves7",
   "textures": {
-    "all": "archeon:blocks/vuxancia_leaves_vale_hanging_middle",
-    "particle": "archeon:blocks/vuxancia_leaves_vale_hanging_middle",
-    "0": "archeon:blocks/vuxancia_leaves_vale_hanging_middle"
+    "all": "archeon:block/vuxancia_leaves_vale_hanging_middle",
+    "particle": "archeon:block/vuxancia_leaves_vale_hanging_middle",
+    "0": "archeon:block/vuxancia_leaves_vale_hanging_middle"
   }
 }

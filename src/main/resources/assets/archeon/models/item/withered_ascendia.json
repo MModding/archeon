@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:blocks/withered_ascendia_top"
+    "layer0": "archeon:block/withered_ascendia_top"
   }
 }

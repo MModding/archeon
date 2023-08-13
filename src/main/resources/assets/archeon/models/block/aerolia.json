@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "archeon:blocks/aerolia",
-    "particle": "archeon:blocks/aerolia"
+    "cross": "archeon:block/aerolia",
+    "particle": "archeon:block/aerolia"
   }
 }

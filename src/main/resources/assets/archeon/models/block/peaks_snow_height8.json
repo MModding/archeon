@@ -1,7 +1,7 @@
 {
   "parent": "block/snow_height8",
   "textures": {
-    "particle": "archeon:blocks/peaks_snow",
-    "texture": "archeon:blocks/peaks_snow"
+    "particle": "archeon:block/peaks_snow",
+    "texture": "archeon:block/peaks_snow"
   }
 }

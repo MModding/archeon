@@ -1,7 +1,7 @@
 {
   "parent": "block/template_wall_side_tall",
   "textures": {
-    "wall": "archeon:blocks/fancy_artemnite_tiles",
-    "particle": "archeon:blocks/fancy_artemnite_tiles"
+    "wall": "archeon:block/fancy_artemnite_tiles",
+    "particle": "archeon:block/fancy_artemnite_tiles"
   }
 }

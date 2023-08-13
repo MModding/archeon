@@ -1,7 +1,7 @@
 {
   "parent": "block/template_wall_post",
   "textures": {
-    "wall": "archeon:blocks/red_tiles",
-    "particle": "archeon:blocks/red_tiles"
+    "wall": "archeon:block/red_tiles",
+    "particle": "archeon:block/red_tiles"
   }
 }

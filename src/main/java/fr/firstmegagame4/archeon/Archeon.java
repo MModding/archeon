@@ -1,5 +1,6 @@
 package fr.firstmegagame4.archeon;
 
+import com.mmodding.mmodding_lib.library.base.AdvancedModContainer;
 import com.mmodding.mmodding_lib.library.base.MModdingModInitializer;
 import com.mmodding.mmodding_lib.library.config.Config;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
@@ -10,7 +11,6 @@ import com.mmodding.mmodding_lib.library.portals.squared.CustomSquaredPortal;
 import fr.firstmegagame4.archeon.init.*;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
-import org.quiltmc.loader.api.ModContainer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +21,9 @@ public class Archeon implements MModdingModInitializer {
 		ArcheonBlocks.MYSTERIOUS_STONE, ArcheonBlocks.ARCHEON_PORTAL, Ignition.ofKey(ArcheonItems.WAND_OF_NATURE)
 	).applyLink(CustomPortalLink.create(Archeon.createId("archeon")));
 
+	@Nullable
 	@Override
-	public @Nullable Config getConfig() {
+	public Config getConfig() {
 		return new ArcheonConfig();
 	}
 
@@ -41,9 +42,7 @@ public class Archeon implements MModdingModInitializer {
 	}
 
 	@Override
-	public void onInitialize(ModContainer mod) {
-		MModdingModInitializer.super.onInitialize(mod);
-
+	public void onInitialize(AdvancedModContainer mod) {
 		ARCHEON_PORTAL.register(Archeon.createId("portal"));
 	}
 

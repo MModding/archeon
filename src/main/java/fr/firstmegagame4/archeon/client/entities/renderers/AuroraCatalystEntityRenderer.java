@@ -20,9 +20,9 @@ public class AuroraCatalystEntityRenderer extends MobEntityRenderer<AuroraCataly
 	@Override
 	public Identifier getTexture(AuroraCatalystEntity entity) {
 		return switch (this.type) {
-			case NORMAL -> Archeon.createId("textures/entities/aurora_catalyst.png");
-			case POISONOUS -> Archeon.createId("textures/entities/poisonous_aurora_catalyst.png");
-			case EXPLOSIVE -> Archeon.createId("textures/entities/explosive_aurora_catalyst.png");
+			case NORMAL -> Archeon.createId("textures/entity/aurora_catalyst.png");
+			case POISONOUS -> Archeon.createId("textures/entity/poisonous_aurora_catalyst.png");
+			case EXPLOSIVE -> Archeon.createId("textures/entity/explosive_aurora_catalyst.png");
 		};
 	}
 }

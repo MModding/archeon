@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/stripped_vuxancia_log",
-    "particle": "archeon:blocks/stripped_vuxancia_log"
+    "all": "archeon:block/stripped_vuxancia_log",
+    "particle": "archeon:block/stripped_vuxancia_log"
   }
 }

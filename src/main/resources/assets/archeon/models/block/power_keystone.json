@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "archeon:blocks/fancy_chiseled_artemnite",
-    "up": "archeon:blocks/power_keystone",
-    "north": "archeon:blocks/ornate_artemnite_bricks_tears",
-    "east": "archeon:blocks/ornate_artemnite_bricks_tears",
-    "south": "archeon:blocks/ornate_artemnite_bricks_tears",
-    "west": "archeon:blocks/ornate_artemnite_bricks_tears",
-    "particle": "archeon:blocks/fancy_chiseled_artemnite"
+    "down": "archeon:block/fancy_chiseled_artemnite",
+    "up": "archeon:block/power_keystone",
+    "north": "archeon:block/ornate_artemnite_bricks_tears",
+    "east": "archeon:block/ornate_artemnite_bricks_tears",
+    "south": "archeon:block/ornate_artemnite_bricks_tears",
+    "west": "archeon:block/ornate_artemnite_bricks_tears",
+    "particle": "archeon:block/fancy_chiseled_artemnite"
   }
 }

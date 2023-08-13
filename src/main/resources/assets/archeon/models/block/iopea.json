@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "archeon:blocks/iopea",
-    "particle": "archeon:blocks/iopea"
+    "cross": "archeon:block/iopea",
+    "particle": "archeon:block/iopea"
   }
 }

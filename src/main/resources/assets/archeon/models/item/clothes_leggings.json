@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/beige_trousers"
+    "layer0": "archeon:item/beige_trousers"
   }
 }

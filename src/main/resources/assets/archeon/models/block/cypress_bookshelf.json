@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "archeon:blocks/cypress_planks",
-    "up": "archeon:blocks/cypress_planks",
-    "north": "archeon:blocks/cypress_bookshelf",
-    "east": "archeon:blocks/cypress_bookshelf",
-    "south": "archeon:blocks/cypress_bookshelf",
-    "west": "archeon:blocks/cypress_bookshelf",
-    "particle": "archeon:blocks/cypress_planks"
+    "down": "archeon:block/cypress_planks",
+    "up": "archeon:block/cypress_planks",
+    "north": "archeon:block/cypress_bookshelf",
+    "east": "archeon:block/cypress_bookshelf",
+    "south": "archeon:block/cypress_bookshelf",
+    "west": "archeon:block/cypress_bookshelf",
+    "particle": "archeon:block/cypress_planks"
   }
 }

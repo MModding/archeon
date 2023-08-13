@@ -1,7 +1,7 @@
 {
   "textures": {
-    "particle": "archeon:blocks/archeon_portal",
-    "portal": "archeon:blocks/archeon_portal"
+    "particle": "archeon:block/archeon_portal",
+    "portal": "archeon:block/archeon_portal"
   },
   "elements": [
     {

@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "archeon:items/neclane_hoe"
+    "layer0": "archeon:item/neclane_hoe"
   }
 }

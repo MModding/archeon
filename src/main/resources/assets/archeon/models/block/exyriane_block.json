@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/exyriane_block",
-    "particle": "archeon:blocks/exyriane_block"
+    "all": "archeon:block/exyriane_block",
+    "particle": "archeon:block/exyriane_block"
   }
 }

@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/smooth_southstone",
-    "particle": "archeon:blocks/smooth_southstone"
+    "all": "archeon:block/smooth_southstone",
+    "particle": "archeon:block/smooth_southstone"
   }
 }

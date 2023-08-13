@@ -1,7 +1,7 @@
 {
   "parent": "block/template_wall_side_tall",
   "textures": {
-    "wall": "archeon:blocks/warped_tiles",
-    "particle": "archeon:blocks/warped_tiles"
+    "wall": "archeon:block/warped_tiles",
+    "particle": "archeon:block/warped_tiles"
   }
 }

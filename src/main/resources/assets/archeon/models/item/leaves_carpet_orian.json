@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/vuxancia_leaves_orian"
+    "layer0": "archeon:item/vuxancia_leaves_orian"
   }
 }

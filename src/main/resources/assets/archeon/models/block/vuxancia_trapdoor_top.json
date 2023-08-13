@@ -1,7 +1,7 @@
 {
   "parent": "block/template_orientable_trapdoor_top",
   "textures": {
-    "texture": "archeon:blocks/vuxancia_trapdoor",
-    "particle": "archeon:blocks/vuxancia_trapdoor"
+    "texture": "archeon:block/vuxancia_trapdoor",
+    "particle": "archeon:block/vuxancia_trapdoor"
   }
 }

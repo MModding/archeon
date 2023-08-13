@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/vuxancia_planks",
-    "particle": "archeon:blocks/vuxancia_planks"
+    "all": "archeon:block/vuxancia_planks",
+    "particle": "archeon:block/vuxancia_planks"
   }
 }

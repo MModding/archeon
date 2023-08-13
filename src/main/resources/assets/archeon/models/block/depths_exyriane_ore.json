@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/depths_exyriane_ore",
-    "particle": "archeon:blocks/depths_exyriane_ore"
+    "all": "archeon:block/depths_exyriane_ore",
+    "particle": "archeon:block/depths_exyriane_ore"
   }
 }

@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "archeon:blocks/wet_dirt",
-    "up": "archeon:blocks/peaks_snow",
-    "north": "archeon:blocks/snowy_wet_grass_block",
-    "east": "archeon:blocks/snowy_wet_grass_block",
-    "south": "archeon:blocks/snowy_wet_grass_block",
-    "west": "archeon:blocks/snowy_wet_grass_block",
-    "particle": "archeon:blocks/wet_dirt"
+    "down": "archeon:block/wet_dirt",
+    "up": "archeon:block/peaks_snow",
+    "north": "archeon:block/snowy_wet_grass_block",
+    "east": "archeon:block/snowy_wet_grass_block",
+    "south": "archeon:block/snowy_wet_grass_block",
+    "west": "archeon:block/snowy_wet_grass_block",
+    "particle": "archeon:block/wet_dirt"
   }
 }

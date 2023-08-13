@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/wet_dirt",
-    "particle": "archeon:blocks/wet_dirt"
+    "all": "archeon:block/wet_dirt",
+    "particle": "archeon:block/wet_dirt"
   }
 }

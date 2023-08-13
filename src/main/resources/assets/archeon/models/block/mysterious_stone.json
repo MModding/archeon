@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/mysterious_stone",
-    "particle": "archeon:blocks/mysterious_stone"
+    "all": "archeon:block/mysterious_stone",
+    "particle": "archeon:block/mysterious_stone"
   }
 }

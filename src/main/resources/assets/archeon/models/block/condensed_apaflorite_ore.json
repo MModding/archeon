@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/condensed_apaflorite_ore",
-    "particle": "archeon:blocks/condensed_apaflorite_ore"
+    "all": "archeon:block/condensed_apaflorite_ore",
+    "particle": "archeon:block/condensed_apaflorite_ore"
   }
 }

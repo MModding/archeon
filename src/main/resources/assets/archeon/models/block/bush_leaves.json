@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "archeon:blocks/bush_leaves",
-    "up": "archeon:blocks/bush_leaves",
-    "north": "archeon:blocks/bush_leaves",
-    "east": "archeon:blocks/bush_leaves",
-    "south": "archeon:blocks/bush_leaves",
-    "west": "archeon:blocks/bush_leaves",
-    "particle": "archeon:blocks/bush_leaves"
+    "down": "archeon:block/bush_leaves",
+    "up": "archeon:block/bush_leaves",
+    "north": "archeon:block/bush_leaves",
+    "east": "archeon:block/bush_leaves",
+    "south": "archeon:block/bush_leaves",
+    "west": "archeon:block/bush_leaves",
+    "particle": "archeon:block/bush_leaves"
   }
 }

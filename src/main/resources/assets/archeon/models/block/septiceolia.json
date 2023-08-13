@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "archeon:blocks/septiceolia",
-    "particle": "archeon:blocks/septiceolia"
+    "cross": "archeon:block/septiceolia",
+    "particle": "archeon:block/septiceolia"
   }
 }

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "archeon:items/pointed_gypsum"
+    "layer0": "archeon:item/pointed_gypsum"
   },
   "display": {
     "thirdperson_righthand": {

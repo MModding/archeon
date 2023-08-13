@@ -2,7 +2,7 @@ newmtl m_0
 Ka 0.0 0.0 0.0
 Kd 0.0 0.0 0.0
 Ks 0.0 0.0 0.0
-map_Kd archeon:blocks/southstone_new
+map_Kd archeon:block/southstone_new
 Ns 100.0
 d 1.0
 newmtl none

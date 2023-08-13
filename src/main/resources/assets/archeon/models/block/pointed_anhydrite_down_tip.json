@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/pointed_dripstone",
   "textures": {
-    "cross": "archeon:blocks/pointed_anhydrite_down_tip"
+    "cross": "archeon:block/pointed_anhydrite_down_tip"
   }
 }

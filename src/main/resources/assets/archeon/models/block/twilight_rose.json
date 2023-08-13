@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "archeon:blocks/twilight_rose",
-    "particle": "archeon:blocks/twilight_rose"
+    "cross": "archeon:block/twilight_rose",
+    "particle": "archeon:block/twilight_rose"
   }
 }

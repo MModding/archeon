@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/clementium_ingot"
+    "layer0": "archeon:item/clementium_ingot"
   }
 }

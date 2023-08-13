@@ -1,7 +1,7 @@
 {
   "parent": "block/template_wall_post",
   "textures": {
-    "wall": "archeon:blocks/artemnite_bricks",
-    "particle": "archeon:blocks/artemnite_bricks"
+    "wall": "archeon:block/artemnite_bricks",
+    "particle": "archeon:block/artemnite_bricks"
   }
 }

@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "archeon:blocks/vuxancia_log_top",
-    "up": "archeon:blocks/vuxancia_log_top",
-    "north": "archeon:blocks/vuxancia_log",
-    "east": "archeon:blocks/vuxancia_log",
-    "south": "archeon:blocks/vuxancia_log",
-    "west": "archeon:blocks/vuxancia_log",
-    "particle": "archeon:blocks/vuxancia_log_top"
+    "down": "archeon:block/vuxancia_log_top",
+    "up": "archeon:block/vuxancia_log_top",
+    "north": "archeon:block/vuxancia_log",
+    "east": "archeon:block/vuxancia_log",
+    "south": "archeon:block/vuxancia_log",
+    "west": "archeon:block/vuxancia_log",
+    "particle": "archeon:block/vuxancia_log_top"
   }
 }

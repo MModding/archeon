@@ -1,7 +1,7 @@
 {
   "parent": "block/template_wall_side_tall",
   "textures": {
-    "wall": "archeon:blocks/gypsum",
-    "particle": "archeon:blocks/gypsum"
+    "wall": "archeon:block/gypsum",
+    "particle": "archeon:block/gypsum"
   }
 }

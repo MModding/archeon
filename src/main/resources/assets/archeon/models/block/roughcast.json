@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/salt",
-    "particle": "archeon:blocks/salt"
+    "all": "archeon:block/salt",
+    "particle": "archeon:block/salt"
   }
 }

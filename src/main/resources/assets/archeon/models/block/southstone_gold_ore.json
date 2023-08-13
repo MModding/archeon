@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/southstone_gold_ore",
-    "particle": "archeon:blocks/southstone_gold_ore"
+    "all": "archeon:block/southstone_gold_ore",
+    "particle": "archeon:block/southstone_gold_ore"
   }
 }

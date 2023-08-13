@@ -1,7 +1,7 @@
 {
   "parent": "block/template_wall_side_tall",
   "textures": {
-    "wall": "archeon:blocks/gilded_cobbled_southstone",
-    "particle": "archeon:blocks/gilded_cobbled_southstone"
+    "wall": "archeon:block/gilded_cobbled_southstone",
+    "particle": "archeon:block/gilded_cobbled_southstone"
   }
 }

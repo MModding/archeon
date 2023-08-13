@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "archeon:items/clementium_shovel"
+    "layer0": "archeon:item/clementium_shovel"
   }
 }

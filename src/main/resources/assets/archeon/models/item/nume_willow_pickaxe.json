@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "archeon:items/nume_willow_pickaxe"
+    "layer0": "archeon:item/nume_willow_pickaxe"
   }
 }

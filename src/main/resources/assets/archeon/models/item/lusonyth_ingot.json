@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/lusonyth_ingot"
+    "layer0": "archeon:item/lusonyth_ingot"
   }
 }

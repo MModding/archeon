@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "archeon:blocks/palm_leaves",
-    "up": "archeon:blocks/palm_leaves",
-    "north": "archeon:blocks/palm_leaves",
-    "east": "archeon:blocks/palm_leaves",
-    "south": "archeon:blocks/palm_leaves",
-    "west": "archeon:blocks/palm_leaves",
-    "particle": "archeon:blocks/palm_leaves"
+    "down": "archeon:block/palm_leaves",
+    "up": "archeon:block/palm_leaves",
+    "north": "archeon:block/palm_leaves",
+    "east": "archeon:block/palm_leaves",
+    "south": "archeon:block/palm_leaves",
+    "west": "archeon:block/palm_leaves",
+    "particle": "archeon:block/palm_leaves"
   }
 }

@@ -1,7 +1,7 @@
 {
   "parent": "block/door_top_left",
   "textures": {
-    "bottom": "archeon:blocks/neclane_door_bottom",
-    "top": "archeon:blocks/neclane_door_top"
+    "bottom": "archeon:block/neclane_door_bottom",
+    "top": "archeon:block/neclane_door_top"
   }
 }

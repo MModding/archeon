@@ -1,7 +1,7 @@
 {
   "parent": "block/fence_side",
   "textures": {
-    "texture": "archeon:blocks/gypsum_bricks",
-    "particle": "archeon:blocks/gypsum_bricks"
+    "texture": "archeon:block/gypsum_bricks",
+    "particle": "archeon:block/gypsum_bricks"
   }
 }

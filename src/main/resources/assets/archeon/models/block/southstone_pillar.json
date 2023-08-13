@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "archeon:blocks/chiseled_southstone",
-    "up": "archeon:blocks/chiseled_southstone",
-    "north": "archeon:blocks/southstone_pillar",
-    "east": "archeon:blocks/southstone_pillar",
-    "south": "archeon:blocks/southstone_pillar",
-    "west": "archeon:blocks/southstone_pillar",
-    "particle": "archeon:blocks/chiseled_southstone"
+    "down": "archeon:block/chiseled_southstone",
+    "up": "archeon:block/chiseled_southstone",
+    "north": "archeon:block/southstone_pillar",
+    "east": "archeon:block/southstone_pillar",
+    "south": "archeon:block/southstone_pillar",
+    "west": "archeon:block/southstone_pillar",
+    "particle": "archeon:block/chiseled_southstone"
   }
 }

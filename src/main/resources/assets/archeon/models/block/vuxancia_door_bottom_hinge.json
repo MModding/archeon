@@ -1,7 +1,7 @@
 {
   "parent": "block/door_bottom_left_open",
   "textures": {
-    "bottom": "archeon:blocks/vuxancia_door_bottom",
-    "top": "archeon:blocks/vuxancia_door_top"
+    "bottom": "archeon:block/vuxancia_door_bottom",
+    "top": "archeon:block/vuxancia_door_top"
   }
 }

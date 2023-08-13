@@ -1,7 +1,7 @@
 {
   "parent": "block/template_wall_post",
   "textures": {
-    "wall": "archeon:blocks/aketite",
-    "particle": "archeon:blocks/aketite"
+    "wall": "archeon:block/aketite",
+    "particle": "archeon:block/aketite"
   }
 }

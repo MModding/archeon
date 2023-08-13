@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/southstone_emerald_ore",
-    "particle": "archeon:blocks/southstone_emerald_ore"
+    "all": "archeon:block/southstone_emerald_ore",
+    "particle": "archeon:block/southstone_emerald_ore"
   }
 }

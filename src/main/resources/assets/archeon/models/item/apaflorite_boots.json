@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/apaflorite_boots"
+    "layer0": "archeon:item/apaflorite_boots"
   }
 }

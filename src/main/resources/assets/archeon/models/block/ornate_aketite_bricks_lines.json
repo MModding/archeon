@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "archeon:blocks/aketite_bricks",
-    "up": "archeon:blocks/aketite_bricks",
-    "north": "archeon:blocks/ornate_aketite_bricks_lines",
-    "east": "archeon:blocks/ornate_aketite_bricks_lines",
-    "south": "archeon:blocks/ornate_aketite_bricks_lines",
-    "west": "archeon:blocks/ornate_aketite_bricks_lines",
-    "particle": "archeon:blocks/aketite_bricks"
+    "down": "archeon:block/aketite_bricks",
+    "up": "archeon:block/aketite_bricks",
+    "north": "archeon:block/ornate_aketite_bricks_lines",
+    "east": "archeon:block/ornate_aketite_bricks_lines",
+    "south": "archeon:block/ornate_aketite_bricks_lines",
+    "west": "archeon:block/ornate_aketite_bricks_lines",
+    "particle": "archeon:block/aketite_bricks"
   }
 }

@@ -1,7 +1,7 @@
 {
   "parent": "block/template_glass_pane_side",
   "textures": {
-    "edge": "archeon:blocks/dune_sand_glass_pane_top",
-    "pane": "archeon:blocks/dune_sand_glass_tiles"
+    "edge": "archeon:block/dune_sand_glass_pane_top",
+    "pane": "archeon:block/dune_sand_glass_tiles"
   }
 }

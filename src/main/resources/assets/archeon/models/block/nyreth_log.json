@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "archeon:blocks/nyreth_log_top",
-    "up": "archeon:blocks/nyreth_log_top",
-    "north": "archeon:blocks/nyreth_log",
-    "east": "archeon:blocks/nyreth_log",
-    "south": "archeon:blocks/nyreth_log",
-    "west": "archeon:blocks/nyreth_log",
-    "particle": "archeon:blocks/nyreth_log_top"
+    "down": "archeon:block/nyreth_log_top",
+    "up": "archeon:block/nyreth_log_top",
+    "north": "archeon:block/nyreth_log",
+    "east": "archeon:block/nyreth_log",
+    "south": "archeon:block/nyreth_log",
+    "west": "archeon:block/nyreth_log",
+    "particle": "archeon:block/nyreth_log_top"
   }
 }

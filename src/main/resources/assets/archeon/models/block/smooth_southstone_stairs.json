@@ -1,8 +1,8 @@
 {
   "parent": "block/stairs",
   "textures": {
-    "bottom": "archeon:blocks/smooth_southstone",
-    "top": "archeon:blocks/smooth_southstone",
-    "side": "archeon:blocks/smooth_southstone"
+    "bottom": "archeon:block/smooth_southstone",
+    "top": "archeon:block/smooth_southstone",
+    "side": "archeon:block/smooth_southstone"
   }
 }

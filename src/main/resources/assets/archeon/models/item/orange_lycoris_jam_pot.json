@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/orange_lycoris_jam"
+    "layer0": "archeon:item/orange_lycoris_jam"
   }
 }

@@ -23,11 +23,11 @@ public class HeartOfNatureEntityRenderer extends MobEntityRenderer<HeartOfNature
 	@Override
 	public Identifier getTexture(HeartOfNatureEntity entity) {
 		return switch (entity.getPhase()) {
-			case PETRIFIED -> Archeon.createId("textures/entities/petrified_heart_of_nature.png");
-			case NORMAL -> Archeon.createId("textures/entities/heart_of_nature.png");
-			case POISONOUS -> Archeon.createId("textures/entities/poisonous_heart_of_nature.png");
-			case EXPLOSIVE -> Archeon.createId("textures/entities/explosive_heart_of_nature.png");
-			case DEFEATED -> Archeon.createId("textures/entities/defeated_heart_of_nature.png");
+			case PETRIFIED -> Archeon.createId("textures/entity/heart_of_nature/petrified_heart_of_nature.png");
+			case NORMAL -> Archeon.createId("textures/entity/heart_of_nature/heart_of_nature.png");
+			case POISONOUS -> Archeon.createId("textures/entity/heart_of_nature/poisonous_heart_of_nature.png");
+			case EXPLOSIVE -> Archeon.createId("textures/entity/heart_of_nature/explosive_heart_of_nature.png");
+			case DEFEATED -> Archeon.createId("textures/entity/heart_of_nature/defeated_heart_of_nature.png");
 		};
 	}
 
@@ -47,7 +47,7 @@ public class HeartOfNatureEntityRenderer extends MobEntityRenderer<HeartOfNature
 
 		@Override
 		protected Identifier getEnergySwirlTexture() {
-			return Archeon.createId("textures/entities/heart_of_nature_shield.png");
+			return Archeon.createId("textures/entity/heart_of_nature/heart_of_nature_shield.png");
 		}
 
 		@Override

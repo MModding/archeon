@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "archeon:blocks/tall_iopea_bottom",
-    "particle": "archeon:blocks/tall_iopea_bottom"
+    "cross": "archeon:block/tall_iopea_bottom",
+    "particle": "archeon:block/tall_iopea_bottom"
   }
 }

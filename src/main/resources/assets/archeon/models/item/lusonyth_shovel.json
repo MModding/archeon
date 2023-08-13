@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "archeon:items/lusonyth_shovel"
+    "layer0": "archeon:item/lusonyth_shovel"
   }
 }

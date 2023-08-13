@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/peaks_snow",
-    "particle": "archeon:blocks/peaks_snow"
+    "all": "archeon:block/peaks_snow",
+    "particle": "archeon:block/peaks_snow"
   }
 }

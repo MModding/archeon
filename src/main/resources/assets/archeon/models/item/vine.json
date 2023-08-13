@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:blocks/vine"
+    "layer0": "archeon:block/vine"
   }
 }

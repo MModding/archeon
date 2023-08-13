@@ -16,6 +16,6 @@ public class SnailEntityRenderer extends MobEntityRenderer<SnailEntity, SnailEnt
 
 	@Override
 	public Identifier getTexture(SnailEntity entity) {
-		return Archeon.createId("textures/entities/snail.png");
+		return Archeon.createId("textures/entity/snail.png");
 	}
 }

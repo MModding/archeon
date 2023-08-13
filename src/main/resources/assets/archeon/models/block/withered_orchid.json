@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "archeon:blocks/withered_sunset_orchid",
-    "particle": "archeon:blocks/withered_sunset_orchid"
+    "cross": "archeon:block/withered_sunset_orchid",
+    "particle": "archeon:block/withered_sunset_orchid"
   }
 }

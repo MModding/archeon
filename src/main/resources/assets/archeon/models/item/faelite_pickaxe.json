@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "archeon:items/faelite_pickaxe"
+    "layer0": "archeon:item/faelite_pickaxe"
   }
 }

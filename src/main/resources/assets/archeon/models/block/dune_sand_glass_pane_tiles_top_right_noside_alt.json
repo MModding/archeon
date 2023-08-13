@@ -1,6 +1,6 @@
 {
   "parent": "block/template_glass_pane_noside_alt",
   "textures": {
-    "pane": "archeon:blocks/dune_sand_glass_tiles_top_right"
+    "pane": "archeon:block/dune_sand_glass_tiles_top_right"
   }
 }

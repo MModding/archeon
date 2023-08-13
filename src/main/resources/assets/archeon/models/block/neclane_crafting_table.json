@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "archeon:block/neclane_crafting_table_bottom",
+    "east": "archeon:block/neclane_crafting_table_side",
+    "north": "archeon:block/neclane_crafting_table_front",
+    "particle": "archeon:block/neclane_crafting_table_front",
+    "south": "archeon:block/neclane_crafting_table_side",
+    "up": "archeon:block/neclane_crafting_table_top",
+    "west": "archeon:block/neclane_crafting_table_front"
+  }
+}

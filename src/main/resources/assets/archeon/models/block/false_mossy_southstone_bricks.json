@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/mossy_southstone_bricks",
-    "particle": "archeon:blocks/mossy_southstone_bricks"
+    "all": "archeon:block/mossy_southstone_bricks",
+    "particle": "archeon:block/mossy_southstone_bricks"
   }
 }

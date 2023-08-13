@@ -1,6 +1,6 @@
 {
   "parent": "block/pressure_plate_up",
   "textures": {
-    "texture": "archeon:blocks/nyreth_planks"
+    "texture": "archeon:block/nyreth_planks"
   }
 }

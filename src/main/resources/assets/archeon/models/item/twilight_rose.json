@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:blocks/twilight_rose"
+    "layer0": "archeon:block/twilight_rose"
   }
 }

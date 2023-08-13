@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "archeon:items/neclane_sword_new_texture"
+    "layer0": "archeon:item/neclane_sword_new_texture"
   }
 }

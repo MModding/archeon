@@ -1,13 +1,13 @@
 {
   "parent": "archeon:custom/spore_rootcap",
   "textures": {
-    "all": "archeon:blocks/fungus_middle_2",
-    "particle": "archeon:blocks/fungus_middle_2",
-    "3": "archeon:blocks/fungus_middle_2",
-    "4": "archeon:blocks/fungus_middle_2_top",
-    "5": "archeon:blocks/fungus_bottom",
-    "6": "archeon:blocks/fungus_middle_1",
-    "7": "archeon:blocks/fungus_middle_1_top",
-    "8": "archeon:blocks/fungus_top"
+    "all": "archeon:block/fungus_middle_2",
+    "particle": "archeon:block/fungus_middle_2",
+    "3": "archeon:block/fungus_middle_2",
+    "4": "archeon:block/fungus_middle_2_top",
+    "5": "archeon:block/fungus_bottom",
+    "6": "archeon:block/fungus_middle_1",
+    "7": "archeon:block/fungus_middle_1_top",
+    "8": "archeon:block/fungus_top"
   }
 }

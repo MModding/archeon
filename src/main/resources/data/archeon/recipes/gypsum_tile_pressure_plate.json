@@ -1,16 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "PP",
-    "PP"
+    "TT"
   ],
   "key": {
-    "P": {
-      "tag": "archeon:planks"
+    "T": {
+      "item": "archeon:gypsum_tiles"
     }
   },
   "result": {
-    "item": "minecraft:crafting_table",
+    "item": "archeon:gypsum_tile_pressure_plate",
     "count": 1
   }
 }

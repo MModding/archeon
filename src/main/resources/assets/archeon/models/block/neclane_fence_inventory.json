@@ -1,7 +1,7 @@
 {
   "parent": "block/fence_inventory",
   "textures": {
-    "texture": "archeon:blocks/neclane_planks",
-    "particle": "archeon:blocks/neclane_planks"
+    "texture": "archeon:block/neclane_planks",
+    "particle": "archeon:block/neclane_planks"
   }
 }

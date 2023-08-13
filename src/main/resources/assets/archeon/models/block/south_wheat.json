@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "archeon:blocks/south_wheat_stage3_top",
-    "particle": "archeon:blocks/south_wheat_stage3_top"
+    "cross": "archeon:block/south_wheat_stage3_top",
+    "particle": "archeon:block/south_wheat_stage3_top"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "archeon:items/qolm_pick"
+    "layer0": "archeon:item/qolm_pick"
   }
 }

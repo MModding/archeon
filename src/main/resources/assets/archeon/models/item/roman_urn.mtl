@@ -2,63 +2,63 @@ newmtl m_0
 Ka 0.0 0.0 0.0
 Kd 0.0 0.0 0.0
 Ks 0.0 0.0 0.0
-map_Kd archeon:blocks/archeonite_block
+map_Kd archeon:block/archeonite_block
 Ns 100.0
 d 1.0
 newmtl m_1
 Ka 0.0 0.0 0.0
 Kd 0.0 0.0 0.0
 Ks 0.0 0.0 0.0
-map_Kd archeon:blocks/apaflorite_block
+map_Kd archeon:block/apaflorite_block
 Ns 100.0
 d 1.0
 newmtl m_2
 Ka 0.0 0.0 0.0
 Kd 0.0 0.0 0.0
 Ks 0.0 0.0 0.0
-map_Kd archeon:blocks/chiseled_aketite
+map_Kd archeon:block/chiseled_aketite
 Ns 100.0
 d 1.0
 newmtl m_3
 Ka 0.0 0.0 0.0
 Kd 0.0 0.0 0.0
 Ks 0.0 0.0 0.0
-map_Kd archeon:blocks/palm_log_face
+map_Kd archeon:block/palm_log_face
 Ns 100.0
 d 1.0
 newmtl m_4
 Ka 0.0 0.0 0.0
 Kd 0.0 0.0 0.0
 Ks 0.0 0.0 0.0
-map_Kd archeon:blocks/wood3
+map_Kd archeon:block/wood3
 Ns 100.0
 d 1.0
 newmtl m_5
 Ka 0.0 0.0 0.0
 Kd 0.0 0.0 0.0
 Ks 0.0 0.0 0.0
-map_Kd archeon:blocks/artemnite_bricks
+map_Kd archeon:block/artemnite_bricks
 Ns 100.0
 d 1.0
 newmtl m_6
 Ka 0.0 0.0 0.0
 Kd 0.0 0.0 0.0
 Ks 0.0 0.0 0.0
-map_Kd archeon:blocks/exyriane_block
+map_Kd archeon:block/exyriane_block
 Ns 100.0
 d 1.0
 newmtl m_7
 Ka 0.0 0.0 0.0
 Kd 0.0 0.0 0.0
 Ks 0.0 0.0 0.0
-map_Kd archeon:blocks/sand
+map_Kd archeon:block/sand
 Ns 100.0
 d 1.0
 newmtl m_8
 Ka 0.0 0.0 0.0
 Kd 0.0 0.0 0.0
 Ks 0.0 0.0 0.0
-map_Kd archeon:blocks/grass_block_top
+map_Kd archeon:block/grass_block_top
 Ns 100.0
 d 1.0
 newmtl none

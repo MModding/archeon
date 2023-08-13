@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:blocks/dune_sand_glass_tiles_bottom_right"
+    "layer0": "archeon:block/dune_sand_glass_tiles_bottom_right"
   }
 }

@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/ornate_chiseled_aketite",
-    "particle": "archeon:blocks/ornate_chiseled_aketite"
+    "all": "archeon:block/ornate_chiseled_aketite",
+    "particle": "archeon:block/ornate_chiseled_aketite"
   }
 }

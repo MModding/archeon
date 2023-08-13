@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/red_lycoris_petal"
+    "layer0": "archeon:item/red_lycoris_petal"
   }
 }

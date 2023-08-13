@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "archeon:blocks/blood_orange_bush",
-    "particle": "archeon:blocks/blood_orange_bush"
+    "cross": "archeon:block/blood_orange_bush",
+    "particle": "archeon:block/blood_orange_bush"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "block/button",
   "textures": {
-    "texture": "archeon:blocks/neclane_planks"
+    "texture": "archeon:block/neclane_planks"
   }
 }

@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "archeon:blocks/pink_lycoris",
-    "particle": "archeon:blocks/pink_lycoris"
+    "cross": "archeon:block/pink_lycoris",
+    "particle": "archeon:block/pink_lycoris"
   }
 }

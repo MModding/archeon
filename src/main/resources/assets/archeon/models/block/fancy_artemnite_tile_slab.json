@@ -1,8 +1,8 @@
 {
   "parent": "block/slab",
   "textures": {
-    "bottom": "archeon:blocks/fancy_artemnite_tiles",
-    "top": "archeon:blocks/fancy_artemnite_tiles",
-    "side": "archeon:blocks/fancy_artemnite_tiles"
+    "bottom": "archeon:block/fancy_artemnite_tiles",
+    "top": "archeon:block/fancy_artemnite_tiles",
+    "side": "archeon:block/fancy_artemnite_tiles"
   }
 }

@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "archeon:blocks/vuxancia_leaves_zial",
-    "up": "archeon:blocks/vuxancia_leaves_zial",
-    "north": "archeon:blocks/vuxancia_leaves_zial",
-    "east": "archeon:blocks/vuxancia_leaves_zial",
-    "south": "archeon:blocks/vuxancia_leaves_zial",
-    "west": "archeon:blocks/vuxancia_leaves_zial",
-    "particle": "archeon:blocks/vuxancia_leaves_zial"
+    "down": "archeon:block/vuxancia_leaves_zial",
+    "up": "archeon:block/vuxancia_leaves_zial",
+    "north": "archeon:block/vuxancia_leaves_zial",
+    "east": "archeon:block/vuxancia_leaves_zial",
+    "south": "archeon:block/vuxancia_leaves_zial",
+    "west": "archeon:block/vuxancia_leaves_zial",
+    "particle": "archeon:block/vuxancia_leaves_zial"
   }
 }

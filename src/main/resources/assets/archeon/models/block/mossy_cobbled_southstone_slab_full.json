@@ -1,8 +1,8 @@
 {
   "parent": "block/cube_bottom_top",
   "textures": {
-    "bottom": "archeon:blocks/mossy_cobbled_southstone",
-    "top": "archeon:blocks/mossy_cobbled_southstone",
-    "side": "archeon:blocks/mossy_cobbled_southstone"
+    "bottom": "archeon:block/mossy_cobbled_southstone",
+    "top": "archeon:block/mossy_cobbled_southstone",
+    "side": "archeon:block/mossy_cobbled_southstone"
   }
 }

@@ -1,7 +1,7 @@
 {
   "parent": "block/fence_post",
   "textures": {
-    "texture": "archeon:blocks/nyreth_planks",
-    "particle": "archeon:blocks/nyreth_planks"
+    "texture": "archeon:block/nyreth_planks",
+    "particle": "archeon:block/nyreth_planks"
   }
 }

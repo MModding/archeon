@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "archeon:blocks/neclane_planks",
-    "up": "archeon:blocks/neclane_planks",
-    "north": "archeon:blocks/neclane_bookshelf",
-    "east": "archeon:blocks/neclane_bookshelf",
-    "south": "archeon:blocks/neclane_bookshelf",
-    "west": "archeon:blocks/neclane_bookshelf",
-    "particle": "archeon:blocks/neclane_planks"
+    "down": "archeon:block/neclane_planks",
+    "up": "archeon:block/neclane_planks",
+    "north": "archeon:block/neclane_bookshelf",
+    "east": "archeon:block/neclane_bookshelf",
+    "south": "archeon:block/neclane_bookshelf",
+    "west": "archeon:block/neclane_bookshelf",
+    "particle": "archeon:block/neclane_planks"
   }
 }

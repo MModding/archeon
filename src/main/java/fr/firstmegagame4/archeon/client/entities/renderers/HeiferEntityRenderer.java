@@ -16,6 +16,6 @@ public class HeiferEntityRenderer extends MobEntityRenderer<HeiferEntity, Heifer
 
 	@Override
 	public Identifier getTexture(HeiferEntity entity) {
-		return Archeon.createId("textures/entities/heifer.png");
+		return Archeon.createId("textures/entity/heifer.png");
 	}
 }

@@ -1,6 +1,6 @@
 {
   "parent": "block/pressure_plate_down",
   "textures": {
-    "texture": "archeon:blocks/palm_planks"
+    "texture": "archeon:block/palm_planks"
   }
 }

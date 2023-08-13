@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "archeon:blocks/lusonyth_block",
-    "particle": "archeon:blocks/lusonyth_block"
+    "all": "archeon:block/lusonyth_block",
+    "particle": "archeon:block/lusonyth_block"
   }
 }

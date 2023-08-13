@@ -1,7 +1,7 @@
 {
   "parent": "block/template_orientable_trapdoor_top",
   "textures": {
-    "texture": "archeon:blocks/palm_trapdoor",
-    "particle": "archeon:blocks/palm_trapdoor"
+    "texture": "archeon:block/palm_trapdoor",
+    "particle": "archeon:block/palm_trapdoor"
   }
 }

@@ -1,7 +1,7 @@
 {
   "parent": "block/template_wall_side",
   "textures": {
-    "wall": "archeon:blocks/salt",
-    "particle": "archeon:blocks/salt"
+    "wall": "archeon:block/salt",
+    "particle": "archeon:block/salt"
   }
 }

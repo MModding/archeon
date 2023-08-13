@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "archeon:items/pointed_anhydrite"
+    "layer0": "archeon:item/pointed_anhydrite"
   },
   "display": {
     "thirdperson_righthand": {

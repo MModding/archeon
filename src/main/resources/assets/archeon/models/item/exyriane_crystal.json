@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:items/exyriane_shard"
+    "layer0": "archeon:item/exyriane_shard"
   }
 }
