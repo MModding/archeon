@@ -1,7 +1,6 @@
 package fr.firstmegagame4.archeon.init;
 
 import com.mmodding.mmodding_lib.library.glint.DefaultGlintPacks;
-import com.mmodding.mmodding_lib.library.containers.DefaultContainer;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.items.*;
 import com.mmodding.mmodding_lib.library.items.settings.AdvancedItemSettings;
@@ -254,7 +253,7 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomItem INK_BOTTLE = new CustomItem(new AdvancedItemSettings().maxCount(16));
 
-	public static final PouchItem POUCH = new PouchItem(new AdvancedItemSettings(), DefaultContainer.DEFAULT_9X3);
+	public static final PouchItem POUCH = new PouchItem(new AdvancedItemSettings().maxCount(1));
 
 	public static final CustomItem SUNSTRADIVER_FEATHER = new CustomItem(new AdvancedItemSettings());
 

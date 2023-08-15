@@ -1,0 +1,8 @@
+{
+  "parent": "archeon:custom/zial_vuxancia_leaves_carpet",
+  "textures": {
+    "all": "archeon:block/zial_vuxancia_leaves",
+    "particle": "archeon:block/zial_vuxancia_leaves",
+    "0": "archeon:block/zial_vuxancia_leaves"
+  }
+}

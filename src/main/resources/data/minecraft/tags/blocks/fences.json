@@ -7,6 +7,7 @@
     "archeon:vuxancia_fence",
     "archeon:ceramic_fence",
     "archeon:gypsum_brick_fence",
-    "archeon:gypsum_tile_fence"
+    "archeon:gypsum_tile_fence",
+    "archeon:polished_gypsum_fence"
   ]
 }

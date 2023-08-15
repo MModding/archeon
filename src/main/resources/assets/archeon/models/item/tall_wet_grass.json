@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:block/wet_tall_grass_top"
+    "layer0": "archeon:block/tall_wet_grass_top"
   }
 }

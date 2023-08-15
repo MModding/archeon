@@ -7,6 +7,7 @@ import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
 import fr.firstmegagame4.archeon.client.init.ArcheonEntityModelLayers;
 import fr.firstmegagame4.archeon.client.init.ArcheonEntityRenderers;
 import fr.firstmegagame4.archeon.client.init.ArcheonRenderLayers;
+import fr.firstmegagame4.archeon.client.init.ArcheonScreens;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ public class ArcheonClient implements MModdingClientModInitializer {
 		clientElementsInitializers.add(new ArcheonRenderLayers());
 		clientElementsInitializers.add(new ArcheonEntityModelLayers());
 		clientElementsInitializers.add(new ArcheonEntityRenderers());
+		clientElementsInitializers.add(new ArcheonScreens());
 		return clientElementsInitializers;
 	}
 

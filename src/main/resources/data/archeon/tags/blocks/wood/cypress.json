@@ -14,6 +14,7 @@
     "archeon:cypress_trapdoor",
     "archeon:stripped_cypress_wood",
     "archeon:stripped_cypress_log",
-    "archeon:cypress_bookshelf"
+    "archeon:cypress_bookshelf",
+    "archeon:cypress_crafting_table"
   ]
 }

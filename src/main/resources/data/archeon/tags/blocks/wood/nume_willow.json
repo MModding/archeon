@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:nume_willow_wood",
+    "archeon:nume_willow_log",
+    "archeon:nume_willow_planks",
+    "archeon:nume_willow_stairs",
+    "archeon:nume_willow_slab",
+    "archeon:nume_willow_fence",
+    "archeon:nume_willow_fence_gate",
+    "archeon:nume_willow_pressure_plate",
+    "archeon:nume_willow_button",
+    "archeon:nume_willow_door",
+    "archeon:nume_willow_trapdoor",
+    "archeon:stripped_nume_willow_wood",
+    "archeon:stripped_nume_willow_log",
+    "archeon:nume_willow_bookshelf",
+    "archeon:nume_willow_crafting_table"
+  ]
+}

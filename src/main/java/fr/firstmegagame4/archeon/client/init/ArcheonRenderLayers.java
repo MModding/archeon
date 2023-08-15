@@ -2,7 +2,6 @@ package fr.firstmegagame4.archeon.client.init;
 
 import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
 import fr.firstmegagame4.archeon.init.ArcheonBlocks;
-import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 
 public class ArcheonRenderLayers implements ClientElementsInitializer {
 
@@ -35,6 +34,8 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.WITHERED_SEPTICEOLIA.cutout();
 		ArcheonBlocks.WET_GRASS.cutout();
 		ArcheonBlocks.TALL_WET_GRASS.cutout();
+		ArcheonBlocks.FLOWERED_WET_GRASS.cutout();
+		ArcheonBlocks.FLOWERED_TALL_WET_GRASS.cutout();
 		ArcheonBlocks.WET_FERN.cutout();
 		ArcheonBlocks.TALL_WET_FERN.cutout();
 		ArcheonBlocks.WET_GRASS_TUFFET.cutout();
@@ -56,8 +57,8 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.SUMMER_NECLANE_DOOR.cutout();
 		ArcheonBlocks.SUMMER_NECLANE_TRAPDOOR.cutout();
 
-		/* ArcheonBlocks.NYRETH_DOOR.cutout();
-		ArcheonBlocks.NYRETH_TRAPDOOR.cutout(); */
+		ArcheonBlocks.NYRETH_DOOR.cutout();
+		ArcheonBlocks.NYRETH_TRAPDOOR.cutout();
 
 		ArcheonBlocks.ARCHEON_PORTAL.translucent();
 
@@ -66,29 +67,35 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.NECLANE_LEAVES.cutout();
 		ArcheonBlocks.FLOWERED_NECLANE_LEAVES.cutout();
 		ArcheonBlocks.CYPRESS_LEAVES.cutout();
-
-		ArcheonBlocks.VUXANCIA_LEAVES_PNEVANTIAL.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_STREIAN.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_ORIAN.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_VALE.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_ZIAL.cutout();
-
-		/* ArcheonBlocks.NUME_WILLOW_LEAVES.cutout();
+		ArcheonBlocks.PNEVANTIAL_VUXANCIA_LEAVES.cutout();
+		ArcheonBlocks.STREIAN_VUXANCIA_LEAVES.cutout();
+		ArcheonBlocks.ORIAN_VUXANCIA_LEAVES.cutout();
+		ArcheonBlocks.VALE_VUXANCIA_LEAVES.cutout();
+		ArcheonBlocks.ZIAL_VUXANCIA_LEAVES.cutout();
+		ArcheonBlocks.NUME_WILLOW_LEAVES.cutout();
 		ArcheonBlocks.NYRETH_LEAVES.cutout();
 		ArcheonBlocks.PALE_NYRETH_LEAVES.cutout();
-		ArcheonBlocks.PALM_LEAVES.cutout(); */
 
-		ArcheonBlocks.VUXANCIA_LEAVES_PNEVANTIAL_HANGING.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_STREIAN_HANGING.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_ORIAN_HANGING.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_VALE_HANGING.cutout();
-		ArcheonBlocks.VUXANCIA_LEAVES_ZIAL_HANGING.cutout();
+		ArcheonBlocks.HANGING_PNEVANTIAL_VUXANCIA_LEAVES.cutout();
+		ArcheonBlocks.HANGING_STREIAN_VUXANCIA_LEAVES.cutout();
+		ArcheonBlocks.HANGING_ORIAN_VUXANCIA_LEAVES.cutout();
+		ArcheonBlocks.HANGING_VALE_VUXANCIA_LEAVES.cutout();
+		ArcheonBlocks.HANGING_ZIAL_VUXANCIA_LEAVES.cutout();
 
-		ArcheonBlocks.LEAVES_CARPET_ORIAN.cutout();
-		ArcheonBlocks.LEAVES_CARPET_PNEVANTIAL.cutout();
-		ArcheonBlocks.LEAVES_CARPET_STREIAN.cutout();
-		ArcheonBlocks.LEAVES_CARPET_VALE.cutout();
-		ArcheonBlocks.LEAVES_CARPET_ZIAL.cutout();
+		ArcheonBlocks.ORIAN_VUXANCIA_LEAVES_CARPET.cutout();
+		ArcheonBlocks.PNEVANTIAL_VUXANCIA_LEAVES_CARPET.cutout();
+		ArcheonBlocks.STREIAN_VUXANCIA_LEAVES_CARPET.cutout();
+		ArcheonBlocks.VALE_VUXANCIA_LEAVES_CARPET.cutout();
+		ArcheonBlocks.ZIAL_VUXANCIA_LEAVES_CARPET.cutout();
+
+		ArcheonBlocks.PALM_SAPLING.cutout();
+		ArcheonBlocks.NECLANE_SAPLING.cutout();
+		ArcheonBlocks.CYPRESS_SAPLING.cutout();
+		ArcheonBlocks.PNEVANTIAL_VUXANCIA_SAPLING.cutout();
+		ArcheonBlocks.STREIAN_VUXANCIA_SAPLING.cutout();
+		ArcheonBlocks.ORIAN_VUXANCIA_SAPLING.cutout();
+		ArcheonBlocks.VALE_VUXANCIA_SAPLING.cutout();
+		ArcheonBlocks.ZIAL_VUXANCIA_SAPLING.cutout();
 
 		ArcheonBlocks.POINTED_GYPSUM.cutout();
 		ArcheonBlocks.POINTED_ANHYDRITE.cutout();
@@ -113,10 +120,10 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.DUNE_SAND_GLASS_PANE_TILES_BOTTOM_LEFT.cutout();
 		ArcheonBlocks.DUNE_SAND_GLASS_PANE_TILES_BOTTOM_RIGHT.cutout();
 
-		FluidRenderHandlerRegistry.INSTANCE.setBlockTransparency(ArcheonBlocks.ANHYDRITE, true);
-		FluidRenderHandlerRegistry.INSTANCE.setBlockTransparency(ArcheonBlocks.ANHYDRITE_STAIRS, true);
-		FluidRenderHandlerRegistry.INSTANCE.setBlockTransparency(ArcheonBlocks.ANHYDRITE_SLAB, true);
-		FluidRenderHandlerRegistry.INSTANCE.setBlockTransparency(ArcheonBlocks.ANHYDRITE_WALL, true);
-		FluidRenderHandlerRegistry.INSTANCE.setBlockTransparency(ArcheonBlocks.ANHYDRITE_PRESSURE_PLATE, true);
+		ArcheonBlocks.ANHYDRITE.transparent();
+		ArcheonBlocks.ANHYDRITE_STAIRS.transparent();
+		ArcheonBlocks.ANHYDRITE_SLAB.transparent();
+		ArcheonBlocks.ANHYDRITE_WALL.transparent();
+		ArcheonBlocks.ANHYDRITE_PRESSURE_PLATE.transparent();
 	}
 }

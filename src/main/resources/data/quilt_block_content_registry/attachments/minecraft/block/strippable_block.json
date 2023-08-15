@@ -8,6 +8,10 @@
     "archeon:cypress_wood": "archeon:stripped_cypress_wood",
     "archeon:cypress_log": "archeon:stripped_cypress_log",
     "archeon:vuxancia_wood": "archeon:stripped_vuxancia_wood",
-    "archeon:vuxancia_log": "archeon:stripped_vuxancia_log"
+    "archeon:vuxancia_log": "archeon:stripped_vuxancia_log",
+    "archeon:nume_willow_wood": "archeon:stripped_nume_willow_wood",
+    "archeon:nume_willow_log": "archeon:stripped_nume_willow_log",
+    "archeon:nyreth_wood": "archeon:stripped_nyreth_wood",
+    "archeon:nyreth_log": "archeon:stripped_nyreth_log"
   }
 }

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/polished_gypsum_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/polished_gypsum_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/polished_gypsum_slab_full"
+    }
+  }
+}

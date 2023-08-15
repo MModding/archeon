@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:nyreth_wood",
+    "archeon:nyreth_log",
+    "archeon:nyreth_planks",
+    "archeon:nyreth_stairs",
+    "archeon:nyreth_slab",
+    "archeon:nyreth_fence",
+    "archeon:nyreth_fence_gate",
+    "archeon:nyreth_pressure_plate",
+    "archeon:nyreth_button",
+    "archeon:nyreth_door",
+    "archeon:nyreth_trapdoor",
+    "archeon:stripped_nyreth_wood",
+    "archeon:stripped_nyreth_log",
+    "archeon:nyreth_bookshelf",
+    "archeon:nyreth_crafting_table"
+  ]
+}

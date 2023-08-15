@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "archeon:block/polished_gypsum",
+    "particle": "archeon:block/polished_gypsum"
+  }
+}

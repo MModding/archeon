@@ -1,0 +1,8 @@
+{
+  "parent": "archeon:custom/pnevantial_vuxancia_leaves_carpet",
+  "textures": {
+    "all": "archeon:block/pnevantial_vuxancia_leaves",
+    "particle": "archeon:block/pnevantial_vuxancia_leaves",
+    "0": "archeon:block/pnevantial_vuxancia_leaves"
+  }
+}

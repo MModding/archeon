@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "archeon:block/flowered_tall_wet_grass"
+    },
+    "half=lower": {
+      "model": "archeon:block/flowered_tall_wet_grass_bottom"
+    }
+  }
+}

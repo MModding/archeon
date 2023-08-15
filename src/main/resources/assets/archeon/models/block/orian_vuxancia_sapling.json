@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "archeon:block/orian_vuxancia_sapling"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "archeon:block/nume_willow_sapling"
+  }
+}

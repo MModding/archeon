@@ -5,6 +5,7 @@ import com.mmodding.mmodding_lib.library.blocks.settings.BlockSettingsModifiers;
 import com.mmodding.mmodding_lib.library.blocks.settings.DefaultBlockSettings;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.portals.squared.CustomSquaredPortalBlock;
+import com.mmodding.mmodding_lib.library.utils.SaplingGeneratorUtils;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.blocks.*;
 import net.minecraft.block.AbstractBlock;
@@ -19,7 +20,7 @@ import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomFlowerBlock SUNSET_ORCHID = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.RESISTANCE,
 		10,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -27,7 +28,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock WITHERED_SUNSET_ORCHID = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.WITHER,
 		10,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -35,7 +36,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock ROSEYPIA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.UNLUCK,
 		10,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -43,7 +44,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock AEROLIA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.REGENERATION,
 		10,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -51,7 +52,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock WITHERED_AEROLIA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.WITHER,
 		10,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -59,7 +60,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock ASTEDIBES = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.WATER_BREATHING,
 		30,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -67,7 +68,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock WITHERED_ASTEDIBES = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.WITHER,
 		10,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -75,7 +76,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock TWILIGHT_ROSE = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.REGENERATION,
 		60,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -83,7 +84,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock LYCORIS_RADIATA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.NAUSEA,
 		10,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -91,7 +92,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock RED_LYCORIS = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.SPEED,
 		30,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -99,7 +100,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock LYCORIS_SANGUINEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.STRENGTH,
 		20,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -107,19 +108,19 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomTallFlowerBlock ASCENDIA = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
 		true
 	);
 
 	public static final CustomTallFlowerBlock WITHERED_ASCENDIA = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
 		true
 	);
 
 	public static final CustomFlowerBlock OEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.NIGHT_VISION,
 		30,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -127,7 +128,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock WITHERED_OEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.WITHER,
 		10,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -135,7 +136,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock IOPEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.DOLPHINS_GRACE,
 		10,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -143,13 +144,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomTallFlowerBlock TALL_IOPEA = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
 		true
 	);
 
 	public static final CustomFlowerBlock WITHERED_IOPEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.WITHER,
 		10,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -157,13 +158,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomTallFlowerBlock TALL_WITHERED_IOPEA = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
 		true
 	);
 
 	public static final CustomFlowerBlock ORGANDEANE_BLOSSOM = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.JUMP_BOOST,
 		10,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -171,13 +172,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomTallFlowerBlock ORGANDEANE_TALL = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
 		true
 	);
 
 	public static final CustomFlowerBlock WITHERED_ORGANDEANE_BLOSSOM = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.WITHER,
 		10,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -185,13 +186,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomTallFlowerBlock TALL_WITHERED_ORGANDEANE = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
 		true
 	);
 
 	public static final CustomFlowerBlock SEPTICEOLIA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.DARKNESS,
 		10,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -199,7 +200,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFlowerBlock WITHERED_SEPTICEOLIA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.WITHER,
 		10,
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
@@ -207,37 +208,49 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFernBlock WET_GRASS = new CustomFernBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS).offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
 	public static final CustomTallPlantBlock TALL_WET_GRASS = new CustomTallPlantBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		DefaultBlockSettings.ofDefault(DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS).offsetType(AbstractBlock.OffsetType.XZ),
+		true
+	);
+
+	public static final CustomFernBlock FLOWERED_WET_GRASS = new CustomFernBlock(
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		DefaultBlockSettings.ofDefault(DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS).offsetType(AbstractBlock.OffsetType.XYZ),
+		true
+	);
+
+	public static final CustomTallPlantBlock FLOWERED_TALL_WET_GRASS = new CustomTallPlantBlock(
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS).offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
 
 	public static final CustomFernBlock WET_FERN = new CustomFernBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS).offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
 	public static final CustomTallPlantBlock TALL_WET_FERN = new CustomTallPlantBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS).offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
 
 	public static final CustomPlantBlock WET_GRASS_TUFFET = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS).offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
 
 	public static final CustomPlantBlock DEAD_WET_GRASS_TUFFET = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS).offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
@@ -249,31 +262,31 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomTallPlantBlock SOUTH_WHEAT = new CustomTallPlantBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS),
 		true
 	);
 
 	public static final CustomTallPlantBlock TALL_SOUTH_WHEAT = new CustomTallPlantBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS),
 		true
 	);
 
 	public static final CustomPlantBlock BUSH = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
 		true
 	);
 
 	public static final CustomPlantBlock VINE = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
 		true
 	);
 
 	public static final CustomPlantBlock BLOOD_ORANGE_BUSH = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
 		true
 	);
@@ -287,7 +300,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomSugarCaneBlock XETULIAN_SUGAR_CANE = new CustomSugarCaneBlock(
-		(floorState -> floorState.isIn(ArcheonTags.SOIL) || floorState.isOf(ArcheonBlocks.DUNE_SAND)), null, DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS), true
+		(floorState -> floorState.isIn(ArcheonTags.Blocks.SOIL) || floorState.isOf(ArcheonBlocks.DUNE_SAND)), null, DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS), true
 	);
 
 	public static final SporeRootcapBlock SPORE_ROOTCAP = new SporeRootcapBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
@@ -355,7 +368,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomDoorBlock VUXANCIA_DOOR = new CustomDoorBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomTrapdoorBlock VUXANCIA_TRAPDOOR = new CustomTrapdoorBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 
-	/* public static final CustomPillarBlock NUME_WILLOW_WOOD = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
+	public static final CustomPillarBlock NUME_WILLOW_WOOD = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomPillarBlock NUME_WILLOW_LOG = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomBlock NUME_WILLOW_PLANKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomStairsBlock NUME_WILLOW_STAIRS = new CustomStairsBlock(NUME_WILLOW_PLANKS.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
@@ -365,9 +378,9 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomPressurePlateBlock NUME_WILLOW_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.EVERYTHING, DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomButtonBlock.Wooden NUME_WILLOW_BUTTON = new CustomButtonBlock.Wooden(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomDoorBlock NUME_WILLOW_DOOR = new CustomDoorBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
-	public static final CustomTrapdoorBlock NUME_WILLOW_TRAPDOOR = new CustomTrapdoorBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true); */
+	public static final CustomTrapdoorBlock NUME_WILLOW_TRAPDOOR = new CustomTrapdoorBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 
-	/* public static final CustomPillarBlock NYRETH_WOOD = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
+	public static final CustomPillarBlock NYRETH_WOOD = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomPillarBlock NYRETH_LOG = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomBlock NYRETH_PLANKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomStairsBlock NYRETH_STAIRS = new CustomStairsBlock(NYRETH_PLANKS.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
@@ -377,7 +390,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomPressurePlateBlock NYRETH_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.EVERYTHING, DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomButtonBlock.Wooden NYRETH_BUTTON = new CustomButtonBlock.Wooden(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomDoorBlock NYRETH_DOOR = new CustomDoorBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
-	public static final CustomTrapdoorBlock NYRETH_TRAPDOOR = new CustomTrapdoorBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true); */
+	public static final CustomTrapdoorBlock NYRETH_TRAPDOOR = new CustomTrapdoorBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 
 	public static final CustomBlock SOUTHSTONE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomStairsBlock SOUTHSTONE_STAIRS = new CustomStairsBlock(SOUTHSTONE.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
@@ -449,8 +462,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock APAFLORITE_BLOCK = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.METAL_SETTINGS), true);
 	public static final CustomBlock EXYRIANE_BLOCK = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.METAL_SETTINGS).strength(4.0f), true);
 	public static final CustomBlock FAELITE_BLOCK = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.METAL_SETTINGS), true);
-	/* public static final CustomBlock LUSONYTH_BLOCK = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.METAL_SETTINGS), true);
-	public static final CustomBlock CLEMENTIUM_BLOCK = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.METAL_SETTINGS), true); */
+	public static final CustomBlock CLEMENTIUM_BLOCK = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.METAL_SETTINGS), true);
+	public static final CustomBlock LUSONYTH_BLOCK = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.METAL_SETTINGS), true);
 
 	public static final CustomBlock AKETITE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS).sounds(BlockSoundGroup.TUFF), true);
 	public static final CustomStairsBlock AKETITE_STAIRS = new CustomStairsBlock(AKETITE.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS).sounds(BlockSoundGroup.TUFF), true);
@@ -537,11 +550,11 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomPillarBlock STRIPPED_VUXANCIA_WOOD = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomPillarBlock STRIPPED_VUXANCIA_LOG = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 
-	/* public static final CustomPillarBlock STRIPPED_NUME_WILLOW_WOOD = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
-	public static final CustomPillarBlock STRIPPED_NUME_WILLOW_LOG = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true); */
+	public static final CustomPillarBlock STRIPPED_NUME_WILLOW_WOOD = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
+	public static final CustomPillarBlock STRIPPED_NUME_WILLOW_LOG = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 
-	/* public static final CustomPillarBlock STRIPPED_NYRETH_WOOD = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
-	public static final CustomPillarBlock STRIPPED_NYRETH_LOG = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true); */
+	public static final CustomPillarBlock STRIPPED_NYRETH_WOOD = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
+	public static final CustomPillarBlock STRIPPED_NYRETH_LOG = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 
 	public static final CustomBlock BUSH_LEAVES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
 	public static final CustomBlock PALM_LEAVES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
@@ -549,46 +562,102 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock FLOWERED_NECLANE_LEAVES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
 	public static final CustomBlock CYPRESS_LEAVES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
 
-	public static final CustomBlock VUXANCIA_LEAVES_PNEVANTIAL = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
-	public static final CustomBlock VUXANCIA_LEAVES_STREIAN = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
-	public static final CustomBlock VUXANCIA_LEAVES_ORIAN = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
-	public static final CustomBlock VUXANCIA_LEAVES_VALE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
-	public static final CustomBlock VUXANCIA_LEAVES_ZIAL = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
+	public static final CustomBlock PNEVANTIAL_VUXANCIA_LEAVES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
+	public static final CustomBlock STREIAN_VUXANCIA_LEAVES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
+	public static final CustomBlock ORIAN_VUXANCIA_LEAVES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
+	public static final CustomBlock VALE_VUXANCIA_LEAVES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
+	public static final CustomBlock ZIAL_VUXANCIA_LEAVES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
 
-	/* public static final CustomBlock NUME_WILLOW_LEAVES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
+	public static final CustomBlock NUME_WILLOW_LEAVES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
 	public static final CustomBlock NYRETH_LEAVES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
-	public static final CustomBlock PALE_NYRETH_LEAVES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true); */
+	public static final CustomBlock PALE_NYRETH_LEAVES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
 
-	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_PNEVANTIAL_HANGING = new CustomGrowsDownPlantBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
+	public static final CustomGrowsDownPlantBlock HANGING_PNEVANTIAL_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
 		false, 0.1f, 1, BlockState::isAir, true);
-	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_STREIAN_HANGING = new CustomGrowsDownPlantBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
+	public static final CustomGrowsDownPlantBlock HANGING_STREIAN_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
 		false, 0.1f, 1, BlockState::isAir, true);
-	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_ORIAN_HANGING = new CustomGrowsDownPlantBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
+	public static final CustomGrowsDownPlantBlock HANGING_ORIAN_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
 		false, 0.1f, 1, BlockState::isAir, true);
-	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_VALE_HANGING = new CustomGrowsDownPlantBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
+	public static final CustomGrowsDownPlantBlock HANGING_VALE_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
 		false, 0.1f, 1, BlockState::isAir, true);
-	public static final CustomGrowsDownPlantBlock VUXANCIA_LEAVES_ZIAL_HANGING = new CustomGrowsDownPlantBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
+	public static final CustomGrowsDownPlantBlock HANGING_ZIAL_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS),
 		false, 0.1f, 1, BlockState::isAir, true);
 
-	public static final LeavesCarpetBlock LEAVES_CARPET_ORIAN = new LeavesCarpetBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_CARPET), true);
-	public static final LeavesCarpetBlock LEAVES_CARPET_PNEVANTIAL = new LeavesCarpetBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_CARPET), true);
-	public static final LeavesCarpetBlock LEAVES_CARPET_STREIAN = new LeavesCarpetBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_CARPET), true);
-	public static final LeavesCarpetBlock LEAVES_CARPET_VALE = new LeavesCarpetBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_CARPET), true);
-	public static final LeavesCarpetBlock LEAVES_CARPET_ZIAL = new LeavesCarpetBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_CARPET), true);
+	public static final LeavesCarpetBlock ORIAN_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_CARPET), true);
+	public static final LeavesCarpetBlock PNEVANTIAL_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_CARPET), true);
+	public static final LeavesCarpetBlock STREIAN_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_CARPET), true);
+	public static final LeavesCarpetBlock VALE_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_CARPET), true);
+	public static final LeavesCarpetBlock ZIAL_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_CARPET), true);
 
 	public static final CustomCraftingTableBlock PALM_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomCraftingTableBlock NECLANE_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomCraftingTableBlock CYPRESS_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomCraftingTableBlock VUXANCIA_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
-	/* public static final CustomCraftingTableBlock NUME_WILLOW_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
-	public static final CustomCraftingTableBlock NYRETH_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true); */
+	public static final CustomCraftingTableBlock NUME_WILLOW_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
+	public static final CustomCraftingTableBlock NYRETH_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 
 	public static final CustomBlock PALM_BOOKSHELF = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomBlock NECLANE_BOOKSHELF = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomBlock CYPRESS_BOOKSHELF = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
 	public static final CustomBlock VUXANCIA_BOOKSHELF = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
-	/* public static final CustomBlock NUME_WILLOW_BOOKSHELF = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
-	public static final CustomBlock NYRETH_BOOKSHELF = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true); */
+	public static final CustomBlock NUME_WILLOW_BOOKSHELF = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
+	public static final CustomBlock NYRETH_BOOKSHELF = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.WOOD_SETTINGS), true);
+
+	public static final CustomSaplingBlock PALM_SAPLING = new CustomSaplingBlock(
+		SaplingGeneratorUtils.of(() -> ArcheonFeatures.PALM_TREE),
+		floor -> floor.isOf(ArcheonBlocks.DUNE_SAND),
+		DefaultBlockSettings.ofDefault(DefaultBlockSettings.SAPLING_SETTINGS),
+		true
+	);
+
+	public static final CustomSaplingBlock NECLANE_SAPLING = new CustomSaplingBlock(
+		SaplingGeneratorUtils.of(() -> ArcheonFeatures.NECLANE_TREE),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		DefaultBlockSettings.ofDefault(DefaultBlockSettings.SAPLING_SETTINGS),
+		true
+	);
+
+	public static final CustomSaplingBlock CYPRESS_SAPLING = new CustomSaplingBlock(
+		SaplingGeneratorUtils.of(() -> ArcheonFeatures.CYPRESS_TREE),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		DefaultBlockSettings.ofDefault(DefaultBlockSettings.SAPLING_SETTINGS),
+		true
+	);
+
+	public static final CustomSaplingBlock PNEVANTIAL_VUXANCIA_SAPLING = new CustomSaplingBlock(
+		SaplingGeneratorUtils.of(() -> ArcheonFeatures.PNEVANTIAL_VUXANCIA_TREE),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		DefaultBlockSettings.ofDefault(DefaultBlockSettings.SAPLING_SETTINGS),
+		true
+	);
+
+	public static final CustomSaplingBlock STREIAN_VUXANCIA_SAPLING = new CustomSaplingBlock(
+		SaplingGeneratorUtils.of(() -> ArcheonFeatures.STREIAN_VUXANCIA_TREE),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		DefaultBlockSettings.ofDefault(DefaultBlockSettings.SAPLING_SETTINGS),
+		true
+	);
+
+	public static final CustomSaplingBlock ORIAN_VUXANCIA_SAPLING = new CustomSaplingBlock(
+		SaplingGeneratorUtils.of(() -> ArcheonFeatures.ORIAN_VUXANCIA_TREE),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		DefaultBlockSettings.ofDefault(DefaultBlockSettings.SAPLING_SETTINGS),
+		true
+	);
+
+	public static final CustomSaplingBlock VALE_VUXANCIA_SAPLING = new CustomSaplingBlock(
+		SaplingGeneratorUtils.of(() -> ArcheonFeatures.VALE_VUXANCIA_TREE),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		DefaultBlockSettings.ofDefault(DefaultBlockSettings.SAPLING_SETTINGS),
+		true
+	);
+
+	public static final CustomSaplingBlock ZIAL_VUXANCIA_SAPLING = new CustomSaplingBlock(
+		SaplingGeneratorUtils.of(() -> ArcheonFeatures.ZIAL_VUXANCIA_TREE),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		DefaultBlockSettings.ofDefault(DefaultBlockSettings.SAPLING_SETTINGS),
+		true
+	);
 
 	public static final CustomPillarBlock BLOCK_OF_CERAMIC = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.BONE_SETTINGS), true);
 	public static final CustomStairsBlock CERAMIC_STAIRS = new CustomStairsBlock(BLOCK_OF_CERAMIC.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.BONE_SETTINGS), true);
@@ -619,11 +688,18 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomPressurePlateBlock GYPSUM_BRICK_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
 	public static final CustomBlock GYPSUM_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomStairsBlock GYPSUM_TILE_STAIRS = new CustomStairsBlock(GYPSUM_BRICKS.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomStairsBlock GYPSUM_TILE_STAIRS = new CustomStairsBlock(GYPSUM_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomSlabBlock GYPSUM_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomWallBlock GYPSUM_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomFenceBlock GYPSUM_TILE_FENCE = new CustomFenceBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomPressurePlateBlock GYPSUM_TILE_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+
+	public static final CustomBlock POLISHED_GYPSUM = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomStairsBlock POLISHED_GYPSUM_STAIRS = new CustomStairsBlock(POLISHED_GYPSUM.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomSlabBlock POLISHED_GYPSUM_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomWallBlock POLISHED_GYPSUM_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomFenceBlock POLISHED_GYPSUM_FENCE = new CustomFenceBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomPressurePlateBlock POLISHED_GYPSUM_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
 	public static final CustomPillarBlock GYPSUM_PILLAR = new CustomPillarBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomBlock CHISELED_GYPSUM = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
@@ -798,6 +874,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 		WITHERED_SEPTICEOLIA.register(Archeon.createId("withered_septiceolia"));
 		WET_GRASS.register(Archeon.createId("wet_grass"));
 		TALL_WET_GRASS.register(Archeon.createId("tall_wet_grass"));
+		FLOWERED_WET_GRASS.register(Archeon.createId("flowered_wet_grass"));
+		FLOWERED_TALL_WET_GRASS.register(Archeon.createId("flowered_tall_wet_grass"));
 		WET_FERN.register(Archeon.createId("wet_fern"));
 		TALL_WET_FERN.register(Archeon.createId("tall_wet_fern"));
 		WET_GRASS_TUFFET.register(Archeon.createId("wet_grass_tuffet"));
@@ -866,7 +944,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		VUXANCIA_BUTTON.register(Archeon.createId("vuxancia_button"));
 		VUXANCIA_DOOR.register(Archeon.createId("vuxancia_door"));
 		VUXANCIA_TRAPDOOR.register(Archeon.createId("vuxancia_trapdoor"));
-		/* NUME_WILLOW_WOOD.register(Archeon.createId("nume_willow_wood"));
+		NUME_WILLOW_WOOD.register(Archeon.createId("nume_willow_wood"));
 		NUME_WILLOW_LOG.register(Archeon.createId("nume_willow_log"));
 		NUME_WILLOW_PLANKS.register(Archeon.createId("nume_willow_planks"));
 		NUME_WILLOW_STAIRS.register(Archeon.createId("nume_willow_stairs"));
@@ -876,8 +954,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 		NUME_WILLOW_PRESSURE_PLATE.register(Archeon.createId("nume_willow_pressure_plate"));
 		NUME_WILLOW_BUTTON.register(Archeon.createId("nume_willow_button"));
 		NUME_WILLOW_DOOR.register(Archeon.createId("nume_willow_door"));
-		NUME_WILLOW_TRAPDOOR.register(Archeon.createId("nume_willow_trapdoor")); */
-		/* NYRETH_WOOD.register(Archeon.createId("nyreth_wood"));
+		NUME_WILLOW_TRAPDOOR.register(Archeon.createId("nume_willow_trapdoor"));
+		NYRETH_WOOD.register(Archeon.createId("nyreth_wood"));
 		NYRETH_LOG.register(Archeon.createId("nyreth_log"));
 		NYRETH_PLANKS.register(Archeon.createId("nyreth_planks"));
 		NYRETH_STAIRS.register(Archeon.createId("nyreth_stairs"));
@@ -887,7 +965,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		NYRETH_PRESSURE_PLATE.register(Archeon.createId("nyreth_pressure_plate"));
 		NYRETH_BUTTON.register(Archeon.createId("nyreth_button"));
 		NYRETH_DOOR.register(Archeon.createId("nyreth_door"));
-		NYRETH_TRAPDOOR.register(Archeon.createId("nyreth_trapdoor")); */
+		NYRETH_TRAPDOOR.register(Archeon.createId("nyreth_trapdoor"));
 		SOUTHSTONE.register(Archeon.createId("southstone"));
 		SOUTHSTONE_STAIRS.register(Archeon.createId("southstone_stairs"));
 		SOUTHSTONE_SLAB.register(Archeon.createId("southstone_slab"));
@@ -943,8 +1021,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 		APAFLORITE_BLOCK.register(Archeon.createId("apaflorite_block"));
 		EXYRIANE_BLOCK.register(Archeon.createId("exyriane_block"));
 		FAELITE_BLOCK.register(Archeon.createId("faelite_block"));
-		/* LUSONYTH_BLOCK.register(Archeon.createId("lusonyth_block")); */
-		/* CLEMENTIUM_BLOCK.register(Archeon.createId("clementium_block")); */
+		CLEMENTIUM_BLOCK.register(Archeon.createId("clementium_block"));
+		LUSONYTH_BLOCK.register(Archeon.createId("lusonyth_block"));
 		AKETITE.register(Archeon.createId("aketite"));
 		AKETITE_STAIRS.register(Archeon.createId("aketite_stairs"));
 		AKETITE_SLAB.register(Archeon.createId("aketite_slab"));
@@ -1008,45 +1086,53 @@ public class ArcheonBlocks implements ElementsInitializer {
 		STRIPPED_CYPRESS_LOG.register(Archeon.createId("stripped_cypress_log"));
 		STRIPPED_VUXANCIA_WOOD.register(Archeon.createId("stripped_vuxancia_wood"));
 		STRIPPED_VUXANCIA_LOG.register(Archeon.createId("stripped_vuxancia_log"));
-		/* STRIPPED_NUME_WILLOW_WOOD.register(Archeon.createId("stripped_nume_willow_wood"));
-		STRIPPED_NUME_WILLOW_LOG.register(Archeon.createId("stripped_nume_willow_log")); */
-		/* STRIPPED_NYRETH_WOOD.register(Archeon.createId("stripped_nyreth_wood"));
-		STRIPPED_NYRETH_LOG.register(Archeon.createId("stripped_nyreth_log"));*/
+		STRIPPED_NUME_WILLOW_WOOD.register(Archeon.createId("stripped_nume_willow_wood"));
+		STRIPPED_NUME_WILLOW_LOG.register(Archeon.createId("stripped_nume_willow_log"));
+		STRIPPED_NYRETH_WOOD.register(Archeon.createId("stripped_nyreth_wood"));
+		STRIPPED_NYRETH_LOG.register(Archeon.createId("stripped_nyreth_log"));
 		BUSH_LEAVES.register(Archeon.createId("bush_leaves"));
 		PALM_LEAVES.register(Archeon.createId("palm_leaves"));
 		NECLANE_LEAVES.register(Archeon.createId("neclane_leaves"));
 		FLOWERED_NECLANE_LEAVES.register(Archeon.createId("flowered_neclane_leaves"));
 		CYPRESS_LEAVES.register(Archeon.createId("cypress_leaves"));
-		VUXANCIA_LEAVES_PNEVANTIAL.register(Archeon.createId("vuxancia_leaves_pnevantial"));
-		VUXANCIA_LEAVES_STREIAN.register(Archeon.createId("vuxancia_leaves_streian"));
-		VUXANCIA_LEAVES_ORIAN.register(Archeon.createId("vuxancia_leaves_orian"));
-		VUXANCIA_LEAVES_VALE.register(Archeon.createId("vuxancia_leaves_vale"));
-		VUXANCIA_LEAVES_ZIAL.register(Archeon.createId("vuxancia_leaves_zial"));
-		/* NUME_WILLOW_LEAVES.register(Archeon.createId("nume_willow_leaves")); */
-		/* NYRETH_LEAVES.register(Archeon.createId("nyreth_leaves"));
-		PALE_NYRETH_LEAVES.register(Archeon.createId("pale_nyreth_leaves")); */
-		VUXANCIA_LEAVES_PNEVANTIAL_HANGING.register(Archeon.createId("vuxancia_leaves_pnevantial_hanging"));
-		VUXANCIA_LEAVES_STREIAN_HANGING.register(Archeon.createId("vuxancia_leaves_streian_hanging"));
-		VUXANCIA_LEAVES_ORIAN_HANGING.register(Archeon.createId("vuxancia_leaves_orian_hanging"));
-		VUXANCIA_LEAVES_VALE_HANGING.register(Archeon.createId("vuxancia_leaves_vale_hanging"));
-		VUXANCIA_LEAVES_ZIAL_HANGING.register(Archeon.createId("vuxancia_leaves_zial_hanging"));
-		LEAVES_CARPET_PNEVANTIAL.register(Archeon.createId("leaves_carpet_pnevantial"));
-		LEAVES_CARPET_STREIAN.register(Archeon.createId("leaves_carpet_streian"));
-		LEAVES_CARPET_ORIAN.register(Archeon.createId("leaves_carpet_orian"));
-		LEAVES_CARPET_VALE.register(Archeon.createId("leaves_carpet_vale"));
-		LEAVES_CARPET_ZIAL.register(Archeon.createId("leaves_carpet_zial"));
+		PNEVANTIAL_VUXANCIA_LEAVES.register(Archeon.createId("pnevantial_vuxancia_leaves"));
+		STREIAN_VUXANCIA_LEAVES.register(Archeon.createId("streian_vuxancia_leaves"));
+		ORIAN_VUXANCIA_LEAVES.register(Archeon.createId("orian_vuxancia_leaves"));
+		VALE_VUXANCIA_LEAVES.register(Archeon.createId("vale_vuxancia_leaves"));
+		ZIAL_VUXANCIA_LEAVES.register(Archeon.createId("zial_vuxancia_leaves"));
+		NUME_WILLOW_LEAVES.register(Archeon.createId("nume_willow_leaves"));
+		NYRETH_LEAVES.register(Archeon.createId("nyreth_leaves"));
+		PALE_NYRETH_LEAVES.register(Archeon.createId("pale_nyreth_leaves"));
+		HANGING_PNEVANTIAL_VUXANCIA_LEAVES.register(Archeon.createId("hanging_pnevantial_vuxancia_leaves"));
+		HANGING_STREIAN_VUXANCIA_LEAVES.register(Archeon.createId("hanging_streian_vuxancia_leaves"));
+		HANGING_ORIAN_VUXANCIA_LEAVES.register(Archeon.createId("hanging_orian_vuxancia_leaves"));
+		HANGING_VALE_VUXANCIA_LEAVES.register(Archeon.createId("hanging_vale_vuxancia_leaves"));
+		HANGING_ZIAL_VUXANCIA_LEAVES.register(Archeon.createId("hanging_zial_vuxancia_leaves"));
+		PNEVANTIAL_VUXANCIA_LEAVES_CARPET.register(Archeon.createId("pnevantial_vuxancia_leaves_carpet"));
+		STREIAN_VUXANCIA_LEAVES_CARPET.register(Archeon.createId("streian_vuxancia_leaves_carpet"));
+		ORIAN_VUXANCIA_LEAVES_CARPET.register(Archeon.createId("orian_vuxancia_leaves_carpet"));
+		VALE_VUXANCIA_LEAVES_CARPET.register(Archeon.createId("vale_vuxancia_leaves_carpet"));
+		ZIAL_VUXANCIA_LEAVES_CARPET.register(Archeon.createId("zial_vuxancia_leaves_carpet"));
 		PALM_CRAFTING_TABLE.register(Archeon.createId("palm_crafting_table"));
 		NECLANE_CRAFTING_TABLE.register(Archeon.createId("neclane_crafting_table"));
 		CYPRESS_CRAFTING_TABLE.register(Archeon.createId("cypress_crafting_table"));
 		VUXANCIA_CRAFTING_TABLE.register(Archeon.createId("vuxancia_crafting_table"));
-		/* NUME_WILLOW_CRAFTING_TABLE.register(Archeon.createId("nume_willow_crafting_table")); */
-		/* NYRETH_CRAFTING_TABLE.register(Archeon.createId("nyreth_crafting_table")); */
+		NUME_WILLOW_CRAFTING_TABLE.register(Archeon.createId("nume_willow_crafting_table"));
+		NYRETH_CRAFTING_TABLE.register(Archeon.createId("nyreth_crafting_table"));
 		PALM_BOOKSHELF.register(Archeon.createId("palm_bookshelf"));
 		NECLANE_BOOKSHELF.register(Archeon.createId("neclane_bookshelf"));
 		CYPRESS_BOOKSHELF.register(Archeon.createId("cypress_bookshelf"));
 		VUXANCIA_BOOKSHELF.register(Archeon.createId("vuxancia_bookshelf"));
-		/* NUME_WILLOW_BOOKSHELF.register(Archeon.createId("nume_willow_bookshelf")); */
-		/* NYRETH_BOOKSHELF.register(Archeon.createId("nyreth_bookshelf")); */
+		NUME_WILLOW_BOOKSHELF.register(Archeon.createId("nume_willow_bookshelf"));
+		NYRETH_BOOKSHELF.register(Archeon.createId("nyreth_bookshelf"));
+		PALM_SAPLING.register(Archeon.createId("palm_sapling"));
+		NECLANE_SAPLING.register(Archeon.createId("neclane_sapling"));
+		CYPRESS_SAPLING.register(Archeon.createId("cypress_sapling"));
+		PNEVANTIAL_VUXANCIA_SAPLING.register(Archeon.createId("pnevantial_vuxancia_sapling"));
+		STREIAN_VUXANCIA_SAPLING.register(Archeon.createId("streian_vuxancia_sapling"));
+		ORIAN_VUXANCIA_SAPLING.register(Archeon.createId("orian_vuxancia_sapling"));
+		VALE_VUXANCIA_SAPLING.register(Archeon.createId("vale_vuxancia_sapling"));
+		ZIAL_VUXANCIA_SAPLING.register(Archeon.createId("zial_vuxancia_sapling"));
 		BLOCK_OF_CERAMIC.register(Archeon.createId("block_of_ceramic"));
 		CERAMIC_STAIRS.register(Archeon.createId("ceramic_stairs"));
 		CERAMIC_SLAB.register(Archeon.createId("ceramic_slab"));
@@ -1075,6 +1161,12 @@ public class ArcheonBlocks implements ElementsInitializer {
 		GYPSUM_TILE_WALL.register(Archeon.createId("gypsum_tile_wall"));
 		GYPSUM_TILE_FENCE.register(Archeon.createId("gypsum_tile_fence"));
 		GYPSUM_TILE_PRESSURE_PLATE.register(Archeon.createId("gypsum_tile_pressure_plate"));
+		POLISHED_GYPSUM.register(Archeon.createId("polished_gypsum"));
+		POLISHED_GYPSUM_STAIRS.register(Archeon.createId("polished_gypsum_stairs"));
+		POLISHED_GYPSUM_SLAB.register(Archeon.createId("polished_gypsum_slab"));
+		POLISHED_GYPSUM_WALL.register(Archeon.createId("polished_gypsum_wall"));
+		POLISHED_GYPSUM_FENCE.register(Archeon.createId("polished_gypsum_fence"));
+		POLISHED_GYPSUM_PRESSURE_PLATE.register(Archeon.createId("polished_gypsum_pressure_plate"));
 		GYPSUM_PILLAR.register(Archeon.createId("gypsum_pillar"));
 		CHISELED_GYPSUM.register(Archeon.createId("chiseled_gypsum"));
 		ROUGHCAST.register(Archeon.createId("roughcast"));

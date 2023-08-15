@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "archeon:block/wet_tall_fern_top",
-    "particle": "archeon:block/wet_tall_fern_top"
+    "cross": "archeon:block/tall_wet_fern_top",
+    "particle": "archeon:block/tall_wet_fern_top"
   }
 }

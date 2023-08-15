@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "archeon:block/nyreth_crafting_table_bottom",
+    "east": "archeon:block/nyreth_crafting_table_side",
+    "north": "archeon:block/nyreth_crafting_table_front",
+    "particle": "archeon:block/nyreth_crafting_table_front",
+    "south": "archeon:block/nyreth_crafting_table_side",
+    "up": "archeon:block/nyreth_crafting_table_top",
+    "west": "archeon:block/nyreth_crafting_table_front"
+  }
+}

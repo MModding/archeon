@@ -3,6 +3,8 @@
   "values": [
     "archeon:apaflorite_block",
     "archeon:exyriane_block",
-    "archeon:faelite_block"
+    "archeon:faelite_block",
+    "archeon:clementium_block",
+    "archeon:lusonyth_block"
   ]
 }

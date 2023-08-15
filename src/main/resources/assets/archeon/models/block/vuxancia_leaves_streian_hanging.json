@@ -1,8 +1,0 @@
-{
-  "parent": "archeon:custom/hanging_leaves5",
-  "textures": {
-    "all": "archeon:block/vuxancia_leaves_streian_hanging_middle",
-    "particle": "archeon:block/vuxancia_leaves_streian_hanging_middle",
-    "0": "archeon:block/vuxancia_leaves_streian_hanging_middle"
-  }
-}

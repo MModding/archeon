@@ -19,6 +19,12 @@
     "archeon:gypsum_tile_wall",
     "archeon:gypsum_tile_fence",
     "archeon:gypsum_tile_pressure_plate",
+    "archeon:polished_gypsum",
+    "archeon:polished_gypsum_stairs",
+    "archeon:polished_gypsum_slab",
+    "archeon:polished_gypsum_wall",
+    "archeon:polished_gypsum_fence",
+    "archeon:polished_gypsum_pressure_plate",
     "archeon:gypsum_pillar",
     "archeon:chiseled_gypsum"
   ]

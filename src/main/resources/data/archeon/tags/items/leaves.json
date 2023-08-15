@@ -6,15 +6,18 @@
     "archeon:neclane_leaves",
     "archeon:flowered_neclane_leaves",
     "archeon:cypress_leaves",
-    "archeon:vuxancia_leaves_pnevantial",
-    "archeon:vuxancia_leaves_streian",
-    "archeon:vuxancia_leaves_orian",
-    "archeon:vuxancia_leaves_vale",
-    "archeon:vuxancia_leaves_zial",
-    "archeon:leaves_carpet_orian",
-    "archeon:leaves_carpet_pnevantial",
-    "archeon:leaves_carpet_streian",
-    "archeon:leaves_carpet_vale",
-    "archeon:leaves_carpet_zial"
+    "archeon:pnevantial_vuxancia_leaves",
+    "archeon:streian_vuxancia_leaves",
+    "archeon:orian_vuxancia_leaves",
+    "archeon:vale_vuxancia_leaves",
+    "archeon:zial_vuxancia_leaves",
+    "archeon:orian_vuxancia_leaves_carpet",
+    "archeon:pnevantial_vuxancia_leaves_carpet",
+    "archeon:streian_vuxancia_leaves_carpet",
+    "archeon:vale_vuxancia_leaves_carpet",
+    "archeon:zial_vuxancia_leaves_carpet",
+    "archeon:nume_willow_leaves",
+    "archeon:nyreth_leaves",
+    "archeon:pale_nyreth_leaves"
   ]
 }

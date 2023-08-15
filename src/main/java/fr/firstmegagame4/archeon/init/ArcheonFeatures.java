@@ -96,50 +96,50 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.WET_GRASS
 	).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
-	public static final CustomTreeFeature VUXANCIA_TREE_PNEVANTIAL = new CustomTreeFeature(
+	public static final CustomTreeFeature PNEVANTIAL_VUXANCIA_TREE = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
 		new VuxanciaTrunkPlacer(4, 2, 0),
-		ArcheonBlocks.VUXANCIA_LEAVES_PNEVANTIAL,
+		ArcheonBlocks.PNEVANTIAL_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
-	public static final CustomTreeFeature VUXANCIA_TREE_STREIAN = new CustomTreeFeature(
+	public static final CustomTreeFeature STREIAN_VUXANCIA_TREE = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
 		new VuxanciaTrunkPlacer(4, 2, 0),
-		ArcheonBlocks.VUXANCIA_LEAVES_STREIAN,
+		ArcheonBlocks.STREIAN_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
-	public static final CustomTreeFeature VUXANCIA_TREE_ORIAN = new CustomTreeFeature(
+	public static final CustomTreeFeature ORIAN_VUXANCIA_TREE = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
 		new VuxanciaTrunkPlacer(4, 2, 0),
-		ArcheonBlocks.VUXANCIA_LEAVES_ORIAN,
+		ArcheonBlocks.ORIAN_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
-	public static final CustomTreeFeature VUXANCIA_TREE_VALE = new CustomTreeFeature(
+	public static final CustomTreeFeature VALE_VUXANCIA_TREE = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
 		new VuxanciaTrunkPlacer(4, 2, 0),
-		ArcheonBlocks.VUXANCIA_LEAVES_VALE,
+		ArcheonBlocks.VALE_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
-	public static final CustomTreeFeature VUXANCIA_TREE_ZIAL = new CustomTreeFeature(
+	public static final CustomTreeFeature ZIAL_VUXANCIA_TREE = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
 		new VuxanciaTrunkPlacer(4, 2, 0),
-		ArcheonBlocks.VUXANCIA_LEAVES_ZIAL,
+		ArcheonBlocks.ZIAL_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
@@ -189,8 +189,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomFlowerFeature SEPTICEOLIA_FEATURE = new CustomFlowerFeature(8, 7, 3,
 		ArcheonBlocks.SEPTICEOLIA).setRarity(2);
 
-	public static final RuleTest SOUTHSTONE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.SOUTHSTONE_ORES_REPLACEABLES);
-	public static final RuleTest DEPTHS_AKETITE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.DEPTHS_AKETITE_ORES_REPLACEABLES);
+	public static final RuleTest SOUTHSTONE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.SOUTHSTONE_ORES_REPLACEABLES);
+	public static final RuleTest DEPTHS_AKETITE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.DEPTHS_AKETITE_ORES_REPLACEABLES);
 
 	public static final List<OreFeatureConfig.Target> APAFLORITE_ORE_TARGETS = List.of(
 		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.APAFLORITE_ORE.getDefaultState()),
@@ -328,11 +328,11 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PALM_TREE.register(Archeon.createId("palm_tree"));
 		NECLANE_TREE.register(Archeon.createId("neclane_tree"));
 		CYPRESS_TREE.register(Archeon.createId("cypress_tree"));
-		VUXANCIA_TREE_PNEVANTIAL.register(Archeon.createId("vuxancia_tree_pnevantial"));
-		VUXANCIA_TREE_STREIAN.register(Archeon.createId("vuxancia_tree_streian"));
-		VUXANCIA_TREE_ORIAN.register(Archeon.createId("vuxancia_tree_orian"));
-		VUXANCIA_TREE_VALE.register(Archeon.createId("vuxancia_tree_vale"));
-		VUXANCIA_TREE_ZIAL.register(Archeon.createId("vuxancia_tree_zial"));
+		PNEVANTIAL_VUXANCIA_TREE.register(Archeon.createId("pnevantial_vuxancia_tree"));
+		STREIAN_VUXANCIA_TREE.register(Archeon.createId("streian_vuxancia_tree"));
+		ORIAN_VUXANCIA_TREE.register(Archeon.createId("orian_vuxancia_tree"));
+		VALE_VUXANCIA_TREE.register(Archeon.createId("vale_vuxancia_tree"));
+		ZIAL_VUXANCIA_TREE.register(Archeon.createId("zial_vuxancia_tree"));
 		PATCH_WET_GRASS.register(Archeon.createId("patch_wet_grass"));
 		PATCH_TALL_WET_GRASS.register(Archeon.createId("patch_tall_wet_grass"));
 		PATCH_WET_FERN.register(Archeon.createId("path_wet_fern"));
@@ -395,11 +395,11 @@ public class ArcheonFeatures implements ElementsInitializer {
 		NECLANE_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.NECLANE_GROVE));
 		NECLANE_TREE.addAdditionalToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS), "_rocky_fields");
 		CYPRESS_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS));
-		VUXANCIA_TREE_PNEVANTIAL.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
-		VUXANCIA_TREE_STREIAN.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
-		VUXANCIA_TREE_ORIAN.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
-		VUXANCIA_TREE_VALE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
-		VUXANCIA_TREE_ZIAL.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
+		PNEVANTIAL_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
+		STREIAN_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
+		ORIAN_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
+		VALE_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
+		ZIAL_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
 
 		PATCH_WET_GRASS.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_TALL_WET_GRASS.addDefaultToBiomes(randomPatchPredicate);

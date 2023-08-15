@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "archeon:block/wet_tall_grass_bottom",
-    "particle": "archeon:block/wet_tall_grass_bottom"
+    "cross": "archeon:block/tall_wet_grass_bottom",
+    "particle": "archeon:block/tall_wet_grass_bottom"
   }
 }
