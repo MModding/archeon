@@ -8,7 +8,7 @@ The Silent Winds team presents the Archeon mod for QuiltMC! Archeon is a brand n
 ![](https://images-ext-1.discordapp.net/external/C4wyZ13RlzR4IJhfToIcFVoQtBxGpb2kH6VixvMA0_Q/%3Fraw%3Dtrue/https/github.com/intergrav/devins-badges/blob/v3/assets/cozy/requires/quilt-standard-libraries_64h.png?width=545&height=112)
 <a class="github-button" href=
   "https://modrinth.com/mod/qsl" data-icon="octicon-comment-discussion" aria-label="Quilt Standard Libraries Page"> 💬 Quilt Standard Libraries' Page</a>
-![](https://images-ext-2.discordapp.net/external/Ar1hwg0pJMoY8H9bRiZOHTUQpumjyulU3GTWyQXx5nM/%3Fraw%3Dtrue/https/github.com/MModding/mmodding.github.io/blob/main/assets/requires_library.png?width=1403&height=112)
+![](https://media.discordapp.net/attachments/996761326212874271/1141111196972503041/image.png?width=701&height=194)
 <a class="github-button" href="https://modrinth.com/mod/mmodding-library" data-icon="octicon-comment-discussion" aria-label="MModding Library Page"> 💬 MModding Library's Page</a>
 
 <a class="github-button" href="https://discord.gg/hhGPj8sMzT
