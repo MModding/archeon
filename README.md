@@ -16,21 +16,27 @@ The Silent Winds team presents the Archeon mod for QuiltMC! Archeon is a brand n
 Aethyus (Project Manager, Art Director, Lead Forge Developer)
 <a class="github-button" href="https://twitter.com/ArcheonAethyus
 " data-icon="octicon-comment-discussion" aria-label="Follow Aethyus on Twitter"> Follow Aethyus on Twitter</a>;
+
 FirstMegaGame4 (Lead Developer)
 <a class="github-button" href="https://twitter.com/FirstMegaGame4
-" data-icon="octicon-comment-discussion" aria-label="Follow FirstMegaGame4 on Twitter"> Follow FirstMegaGame4 on Twitter</a>.
-Aeramisu (Project Manager, Art Director, Composer, Concept Artist, Sound Designer).
+" data-icon="octicon-comment-discussion" aria-label="Follow FirstMegaGame4 on Twitter"> Follow FirstMegaGame4 on Twitter</a>;
+
+Aeramisu (Project Manager, Art Director, Composer, Concept Artist, Sound Designer)
 <a class="github-button" href="https://soundcloud.com/aeramisu
 " data-icon="octicon-comment-discussion" aria-label="Listen to Aeramisu's Music"> Listen to Aeramisu's Music</a>;
+
 Scarecrowman (Composer)
 <a class="github-button" href="https://soundcloud.com/scarecr0wman
 " data-icon="octicon-comment-discussion" aria-label="Listen to Scarecrowman's Music"> Listen to Scarecrowman's Music</a>;
+
 Tim Rurkowski (Composer)
 <a class="github-button" href="https://timrurkowski.bandcamp.com/
 " data-icon="octicon-comment-discussion" aria-label="Listen to Tim Rurkowski's Music"> Listen to Tim Rurkowski's Music</a>;
+
 Rotch Gwylt (Composer)
 <a class="github-button" href="https://soundcloud.com/rotch-gwylt
-" data-icon="octicon-comment-discussion" aria-label="Listen to Rotch Gwylt's Music"> Listen to Rotch Gwylt's Music</a>.
+" data-icon="octicon-comment-discussion" aria-label="Listen to Rotch Gwylt's Music"> Listen to Rotch Gwylt's Music</a>;
+
 Tenkite (Additional Art)
 
 Special thanks to Aerod (Additonal Art) and Mystoxi (Additional Forge Development) 
