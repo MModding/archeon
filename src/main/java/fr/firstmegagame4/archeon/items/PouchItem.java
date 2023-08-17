@@ -6,10 +6,27 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.OptionalInt;
+
 public class PouchItem extends CustomItemWithInventory {
 
 	public PouchItem(Settings settings) {
-		super(settings, 27, PouchScreenHandler::new);
+		super(PouchScreenHandler::new, 27, settings);
+	}
+
+	@Override
+	public TooltipMode getTooltipMode() {
+		return TooltipMode.ALL_SLOTS_OVERVIEW;
+	}
+
+	@Override
+	public OptionalInt getOptionalColumns() {
+		return OptionalInt.of(9);
+	}
+
+	@Override
+	public OptionalInt getOptionalRows() {
+		return OptionalInt.of(3);
 	}
 
 	@Override
