@@ -7,9 +7,9 @@ import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.util.math.MatrixStack;
 
-// Made with Blockbench 4.7.4
-// Exported for Minecraft version 1.17+ for Yarn
-// Paste this class into your mod and generate all required imports
+import java.util.stream.IntStream;
+
+// Originally Made with Blockbench 4.7.4
 public class HeartOfNatureEntityModel extends EntityModel<HeartOfNatureEntity> {
 
 	private static final int BIG_COVER_UVX = 0;
@@ -49,6 +49,24 @@ public class HeartOfNatureEntityModel extends EntityModel<HeartOfNatureEntity> {
 		this.shields = root.getChild("shields");
 	}
 
+	private static void createShieldParts(ModelPartData shields) {
+		IntStream.range(-9, 9).forEach(index ->
+			shields.addChild(
+				"pillar_shield_" + index,
+				ModelPartBuilder.create()
+					.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
+					.cuboid(-1.0f, -18.0f, -17.0f, 2.0f, 11.0f, 1.0f, new Dilation(0.0f)),
+				ModelTransform.of(0.0f, 0.0f, 0.0f, 0.0f, (float) (index * Math.PI / 9.0f), 0.0f)
+			).addChild(
+				"sloped_shield_" + index,
+				ModelPartBuilder.create()
+					.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
+					.cuboid(-1.0f, -6.0f, 0.0f, 2.0f, 6.0f, 1.0f, new Dilation(0.0f)),
+				ModelTransform.of(0.0f, -7.0f, -17.0f, 0.4363f, 0.0f, 0.0f)
+			)
+		);
+	}
+
 	public static TexturedModelData getTexturedModelData() {
 
 		ModelData modelData = new ModelData();
@@ -57,358 +75,50 @@ public class HeartOfNatureEntityModel extends EntityModel<HeartOfNatureEntity> {
 		ModelPartData bone = modelPartData.addChild(
 			EntityModelPartNames.BONE,
 			ModelPartBuilder.create(),
-			ModelTransform.pivot(0.0F, 8.0F, 0.0F)
+			ModelTransform.pivot(0.0f, 8.0f, 0.0f)
 		);
 
 		bone.addChild(
 			"big_cover",
 			ModelPartBuilder.create()
 				.uv(BIG_COVER_UVX, BIG_COVER_UVZ)
-				.cuboid(-8.0F, -7.7276F, -8.0F, 16.0F, 16.0F, 16.0F, new Dilation(0.0F)),
-			ModelTransform.of(0F, 0.7276F, 0F, 0.3381F, -0.3498F, -0.2349F)
+				.cuboid(-8.0f, -7.7276f, -8.0f, 16.0f, 16.0f, 16.0f, new Dilation(0.0f)),
+			ModelTransform.of(0f, 0.7276f, 0f, 0.3381f, -0.3498f, -0.2349f)
 		);
 
 		bone.addChild(
 			"middle_cover",
 			ModelPartBuilder.create()
 				.uv(MIDDLE_COVER_UVX, MIDDLE_COVER_UVZ)
-				.cuboid(-7.0F, -6.2609F, -7.0F, 14.0F, 14.0F, 14.0F, new Dilation(0.0F)),
-			ModelTransform.of(0F, 0.2609F, 0F, -0.3361F, 0.4821F, -0.5072F)
+				.cuboid(-7.0f, -6.2609f, -7.0f, 14.0f, 14.0f, 14.0f, new Dilation(0.0f)),
+			ModelTransform.of(0f, 0.2609f, 0f, -0.3361f, 0.4821f, -0.5072f)
 		);
 
 		bone.addChild(
 			"low_cover",
 			ModelPartBuilder.create()
 				.uv(LOW_COVER_UVX, LOW_COVER_UVZ)
-				.cuboid(-5.0F, -4.036F, -5.0F, 10.0F, 10.0F, 10.0F, new Dilation(0.0F)),
-			ModelTransform.of(0F, 0.036F, 0F, -0.1462F, 0.0967F, -0.5604F)
+				.cuboid(-5.0f, -4.036f, -5.0f, 10.0f, 10.0f, 10.0f, new Dilation(0.0f)),
+			ModelTransform.of(0f, 0.036f, 0f, -0.1462f, 0.0967f, -0.5604f)
 		);
 
 		bone.addChild(
 			"core",
 			ModelPartBuilder.create()
 				.uv(OUTER_CORE_UVX, OUTER_CORE_UVZ)
-				.cuboid(-3.0F, -3.0F, -3.0F, 6.0F, 6.0F, 6.0F, new Dilation(0.0F))
+				.cuboid(-3.0f, -3.0f, -3.0f, 6.0f, 6.0f, 6.0f, new Dilation(0.0f))
 				.uv(INNER_CORE_UVX, INNER_CORE_UVZ)
-				.cuboid(-2.0F, -2.0F, -2.0F, 4.0F, 4.0F, 4.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.7854F, -0.7854F, -0.7854F)
+				.cuboid(-2.0f, -2.0f, -2.0f, 4.0f, 4.0f, 4.0f, new Dilation(0.0f)),
+			ModelTransform.of(0.0f, 0.0f, 0.0f, 0.7854f, -0.7854f, -0.7854f)
 		);
 
 		ModelPartData shields = modelPartData.addChild(
 			"shields",
 			ModelPartBuilder.create(),
-			ModelTransform.pivot(0.0F, 24.0F, 0.0F)
+			ModelTransform.pivot(0.0f, 24.0f, 0.0f)
 		);
 
-		ModelPartData shields1 = shields.addChild(
-			"shields1",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F)
-		);
-
-		shields1.addChild(
-			"cube_r1",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields5 = shields.addChild(
-			"shields5",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -1.3526F, 0.0F)
-		);
-
-		shields5.addChild(
-			"cube_r5",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields4 = shields.addChild(
-			"shields4",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -1.0036F, 0.0F)
-		);
-
-		shields4.addChild(
-			"cube_r6",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields3 = shields.addChild(
-			"shields3",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -0.3054F, 0.0F)
-		);
-
-		shields3.addChild(
-			"cube_r7",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields6 = shields.addChild(
-			"shields6",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -1.7017F, 0.0F)
-		);
-
-		shields6.addChild(
-			"cube_r8",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields7 = shields.addChild(
-			"shields7",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -2.0508F, 0.0F)
-		);
-
-		shields7.addChild(
-			"cube_r9",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields8 = shields.addChild(
-			"shields8",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -2.3998F, 0.0F)
-		);
-
-		shields8.addChild(
-			"cube_r10",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields9 = shields.addChild(
-			"shields9",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -2.7925F, 0.0F)
-		);
-
-		shields9.addChild(
-			"cube_r11",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields10 = shields.addChild(
-			"shields10",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 3.1416F, 0.0F)
-		);
-
-		shields10.addChild(
-			"cube_r12",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields2 = shields.addChild(
-			"shields2",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -0.6545F, 0.0F)
-		);
-
-		shields2.addChild(
-			"cube_r13",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields13 = shields2.addChild(
-			"shields13",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 2.0944F, 0.0F)
-		);
-
-		shields13.addChild(
-			"cube_r14",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields12 = shields2.addChild(
-			"shields12",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 2.4435F, 0.0F)
-		);
-
-		shields12.addChild(
-			"cube_r15",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields14 = shields2.addChild(
-			"shields14",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 1.7453F, 0.0F)
-		);
-
-		shields14.addChild(
-			"cube_r16",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields11 = shields2.addChild(
-			"shields11",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 2.7925F, 0.0F)
-		);
-
-		shields11.addChild(
-			"cube_r17",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields16 = shields2.addChild(
-			"shields16",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 1.0472F, 0.0F)
-		);
-
-		shields16.addChild(
-			"cube_r18",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		shields2.addChild(
-			"shields17",
-			ModelPartBuilder.create(),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 0.6981F, 0.0F)
-		);
-
-		ModelPartData shields18 = shields2.addChild(
-			"shields18",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 0.3491F, 0.0F)
-		);
-
-		shields18.addChild(
-			"cube_r19",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields15 = shields2.addChild(
-			"shields15",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 1.3963F, 0.0F)
-		);
-
-		shields15.addChild(
-			"cube_r20",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields19 = shields2.addChild(
-			"shields19",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 3.1416F, 0.0F)
-		);
-
-		shields19.addChild(
-			"cube_r21",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
-
-		ModelPartData shields20 = shields2.addChild(
-			"shields20",
-			ModelPartBuilder.create()
-				.uv(PILLAR_SHIELDS_UVX, PILLAR_SHIELDS_UVZ)
-				.cuboid(-1.0F, -18.0F, -17.0F, 2.0F, 11.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -2.7925F, 0.0F)
-		);
-
-		shields20.addChild(
-			"cube_r22",
-			ModelPartBuilder.create()
-				.uv(SLOPED_SHIELDS_UVX, SLOPED_SHIELDS_UVZ)
-				.cuboid(-1.0F, -6.0F, 0.0F, 2.0F, 6.0F, 1.0F, new Dilation(0.0F)),
-			ModelTransform.of(0.0F, -7.0F, -17.0F, 0.4363F, 0.0F, 0.0F)
-		);
+		HeartOfNatureEntityModel.createShieldParts(shields);
 
 		return TexturedModelData.of(modelData, 96, 80);
 	}
