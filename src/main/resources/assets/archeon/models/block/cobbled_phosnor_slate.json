@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:block/cobbled_phosnor_slate",
+    "particle": "archeon:block/cobbled_phosnor_slate"
+  }
+}

@@ -1,7 +1,0 @@
-{
-  "parent": "block/wall_inventory",
-  "textures": {
-    "wall": "archeon:block/warped_tiles",
-    "particle": "archeon:block/warped_tiles"
-  }
-}

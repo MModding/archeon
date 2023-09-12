@@ -2,6 +2,7 @@ package fr.firstmegagame4.archeon.client.init;
 
 import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
 import fr.firstmegagame4.archeon.init.ArcheonBlocks;
+import fr.firstmegagame4.archeon.init.ArcheonFluids;
 
 public class ArcheonRenderLayers implements ClientElementsInitializer {
 
@@ -60,8 +61,6 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.NYRETH_DOOR.cutout();
 		ArcheonBlocks.NYRETH_TRAPDOOR.cutout();
 
-		ArcheonBlocks.ARCHEON_PORTAL.translucent();
-
 		ArcheonBlocks.BUSH_LEAVES.cutout();
 		ArcheonBlocks.PALM_LEAVES.cutout();
 		ArcheonBlocks.NECLANE_LEAVES.cutout();
@@ -100,12 +99,6 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.POINTED_GYPSUM.cutout();
 		ArcheonBlocks.POINTED_ANHYDRITE.cutout();
 
-		ArcheonBlocks.ANHYDRITE.translucent();
-		ArcheonBlocks.ANHYDRITE_STAIRS.translucent();
-		ArcheonBlocks.ANHYDRITE_SLAB.translucent();
-		ArcheonBlocks.ANHYDRITE_WALL.translucent();
-		ArcheonBlocks.ANHYDRITE_PRESSURE_PLATE.translucent();
-
 		ArcheonBlocks.DUNE_SAND_GLASS.cutout();
 		ArcheonBlocks.DUNE_SAND_GLASS_TILES.cutout();
 		ArcheonBlocks.DUNE_SAND_GLASS_TILES_TOP_LEFT.cutout();
@@ -120,10 +113,66 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.DUNE_SAND_GLASS_PANE_TILES_BOTTOM_LEFT.cutout();
 		ArcheonBlocks.DUNE_SAND_GLASS_PANE_TILES_BOTTOM_RIGHT.cutout();
 
+		ArcheonBlocks.ARCHEON_PORTAL.translucent();
+
+		ArcheonBlocks.ANHYDRITE.translucent();
+		ArcheonBlocks.ANHYDRITE_STAIRS.translucent();
+		ArcheonBlocks.ANHYDRITE_SLAB.translucent();
+		ArcheonBlocks.ANHYDRITE_WALL.translucent();
+		ArcheonBlocks.ANHYDRITE_PRESSURE_PLATE.translucent();
+
+		ArcheonBlocks.ANHYDRITE_BRICKS.translucent();
+		ArcheonBlocks.ANHYDRITE_BRICK_STAIRS.translucent();
+		ArcheonBlocks.ANHYDRITE_BRICK_SLAB.translucent();
+		ArcheonBlocks.ANHYDRITE_BRICK_WALL.translucent();
+		ArcheonBlocks.ANHYDRITE_BRICK_PRESSURE_PLATE.translucent();
+
+		ArcheonBlocks.ANHYDRITE_TILES.translucent();
+		ArcheonBlocks.ANHYDRITE_TILE_STAIRS.translucent();
+		ArcheonBlocks.ANHYDRITE_TILE_SLAB.translucent();
+		ArcheonBlocks.ANHYDRITE_TILE_WALL.translucent();
+		ArcheonBlocks.ANHYDRITE_TILE_PRESSURE_PLATE.translucent();
+
+		ArcheonBlocks.POLISHED_ANHYDRITE.translucent();
+		ArcheonBlocks.POLISHED_ANHYDRITE_STAIRS.translucent();
+		ArcheonBlocks.POLISHED_ANHYDRITE_SLAB.translucent();
+		ArcheonBlocks.POLISHED_ANHYDRITE_WALL.translucent();
+		ArcheonBlocks.POLISHED_ANHYDRITE_PRESSURE_PLATE.translucent();
+
+		ArcheonBlocks.ANHYDRITE_PILLAR.translucent();
+		ArcheonBlocks.CHISELED_ANHYDRITE.translucent();
+
 		ArcheonBlocks.ANHYDRITE.transparent();
 		ArcheonBlocks.ANHYDRITE_STAIRS.transparent();
 		ArcheonBlocks.ANHYDRITE_SLAB.transparent();
 		ArcheonBlocks.ANHYDRITE_WALL.transparent();
 		ArcheonBlocks.ANHYDRITE_PRESSURE_PLATE.transparent();
+
+		ArcheonBlocks.ANHYDRITE_BRICKS.transparent();
+		ArcheonBlocks.ANHYDRITE_BRICK_STAIRS.transparent();
+		ArcheonBlocks.ANHYDRITE_BRICK_SLAB.transparent();
+		ArcheonBlocks.ANHYDRITE_BRICK_WALL.transparent();
+		ArcheonBlocks.ANHYDRITE_BRICK_PRESSURE_PLATE.transparent();
+
+		ArcheonBlocks.ANHYDRITE_TILES.transparent();
+		ArcheonBlocks.ANHYDRITE_TILE_STAIRS.transparent();
+		ArcheonBlocks.ANHYDRITE_TILE_SLAB.transparent();
+		ArcheonBlocks.ANHYDRITE_TILE_WALL.transparent();
+		ArcheonBlocks.ANHYDRITE_TILE_PRESSURE_PLATE.transparent();
+
+		ArcheonBlocks.POLISHED_ANHYDRITE.transparent();
+		ArcheonBlocks.POLISHED_ANHYDRITE_STAIRS.transparent();
+		ArcheonBlocks.POLISHED_ANHYDRITE_SLAB.transparent();
+		ArcheonBlocks.POLISHED_ANHYDRITE_WALL.transparent();
+		ArcheonBlocks.POLISHED_ANHYDRITE_PRESSURE_PLATE.transparent();
+
+		ArcheonBlocks.ANHYDRITE_PILLAR.transparent();
+		ArcheonBlocks.CHISELED_ANHYDRITE.transparent();
+
+		ArcheonFluids.HOT_SPRING_WATER.getStill().translucent();
+		ArcheonFluids.HOT_SPRING_WATER.getFlowing().translucent();
+
+		ArcheonFluids.GLOWING_WATER.getStill().translucent();
+		ArcheonFluids.GLOWING_WATER.getFlowing().translucent();
 	}
 }

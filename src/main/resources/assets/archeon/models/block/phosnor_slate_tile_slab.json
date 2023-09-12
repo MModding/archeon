@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "archeon:block/phosnor_slate_tiles",
+    "top": "archeon:block/phosnor_slate_tiles",
+    "side": "archeon:block/phosnor_slate_tiles"
+  }
+}

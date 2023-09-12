@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:block/condensed_phosnor_slate_exyriane_ore",
+    "particle": "archeon:block/condensed_phosnor_slate_exyriane_ore"
+  }
+}

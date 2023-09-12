@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:phosnor_slate",
+    "archeon:phosnor_slate_stairs",
+    "archeon:phosnor_slate_slab",
+    "archeon:phosnor_slate_wall",
+    "archeon:phosnor_slate_bricks",
+    "archeon:phosnor_slate_brick_stairs",
+    "archeon:phosnor_slate_brick_slab",
+    "archeon:phosnor_slate_brick_wall",
+    "archeon:phosnor_slate_tiles",
+    "archeon:phosnor_slate_tile_stairs",
+    "archeon:phosnor_slate_tile_slab",
+    "archeon:phosnor_slate_tile_wall",
+    "archeon:cobbled_phosnor_slate",
+    "archeon:cobbled_phosnor_slate_stairs",
+    "archeon:cobbled_phosnor_slate_slab",
+    "archeon:cobbled_phosnor_slate_wall",
+    "archeon:polished_phosnor_slate",
+    "archeon:polished_phosnor_slate_stairs",
+    "archeon:polished_phosnor_slate_slab",
+    "archeon:polished_phosnor_slate_wall",
+    "archeon:chiseled_phosnor_slate"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "archeon:block/dark_green_tiles",
+    "top": "archeon:block/dark_green_tiles",
+    "side": "archeon:block/dark_green_tiles"
+  }
+}

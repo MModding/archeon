@@ -1,11 +1,17 @@
 {
   "replace": false,
   "values": [
-    "archeon:warped_tiles",
-    "archeon:crimson_tiles",
-    "archeon:red_tiles",
-    "archeon:ochre_tiles",
+    "archeon:dark_green_tiles",
+    "archeon:green_tiles",
+    "archeon:lime_tiles",
+    "archeon:turquoise_tiles",
+    "archeon:light_blue_tiles",
     "archeon:blue_tiles",
-    "archeon:green_tiles"
+    "archeon:dark_blue_tiles",
+    "archeon:purple_tiles",
+    "archeon:pink_tiles",
+    "archeon:red_tiles",
+    "archeon:ceramic_tiles",
+    "archeon:ochre_tiles"
   ]
 }

@@ -83,7 +83,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 	).setGroundBlock(ArcheonBlocks.WET_DIRT).addPlacedFeature(
 		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS,
-		"_rocky_fields"
+		"rocky_fields"
 	);
 
 	public static final CustomTreeFeature CYPRESS_TREE = new CustomTreeFeature(
@@ -190,38 +190,34 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.SEPTICEOLIA).setRarity(2);
 
 	public static final RuleTest SOUTHSTONE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.SOUTHSTONE_ORES_REPLACEABLES);
-	public static final RuleTest DEPTHS_AKETITE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.DEPTHS_AKETITE_ORES_REPLACEABLES);
+	public static final RuleTest PHOSNOR_SLATE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.PHOSNOR_SLATE_ORES_REPLACEABLES);
 
 	public static final List<OreFeatureConfig.Target> APAFLORITE_ORE_TARGETS = List.of(
 		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.APAFLORITE_ORE.getDefaultState()),
-		OreFeatureConfig.createTarget(DEPTHS_AKETITE_ORES_REPLACEABLES, ArcheonBlocks.DEPTHS_APAFLORITE_ORE.getDefaultState())
+		OreFeatureConfig.createTarget(PHOSNOR_SLATE_ORES_REPLACEABLES, ArcheonBlocks.PHOSNOR_SLATE_APAFLORITE_ORE.getDefaultState())
 	);
 	public static final List<OreFeatureConfig.Target> EXYRIANE_ORE_TARGETS = List.of(
 		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.EXYRIANE_ORE.getDefaultState()),
-		OreFeatureConfig.createTarget(DEPTHS_AKETITE_ORES_REPLACEABLES, ArcheonBlocks.DEPTHS_EXYRIANE_ORE.getDefaultState())
+		OreFeatureConfig.createTarget(PHOSNOR_SLATE_ORES_REPLACEABLES, ArcheonBlocks.PHOSNOR_SLATE_EXYRIANE_ORE.getDefaultState())
 	);
 	public static final List<OreFeatureConfig.Target> FAELITE_ORE_TARGETS = List.of(
 		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.FAELITE_ORE.getDefaultState()),
-		OreFeatureConfig.createTarget(DEPTHS_AKETITE_ORES_REPLACEABLES, ArcheonBlocks.DEPTHS_FAELITE_ORE.getDefaultState())
+		OreFeatureConfig.createTarget(PHOSNOR_SLATE_ORES_REPLACEABLES, ArcheonBlocks.PHOSNOR_SLATE_FAELITE_ORE.getDefaultState())
+	);
+	public static final List<OreFeatureConfig.Target> LUSONYTH_ORE_TARGETS = List.of(
+		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.LUSONYTH_ORE.getDefaultState()),
+		OreFeatureConfig.createTarget(PHOSNOR_SLATE_ORES_REPLACEABLES, ArcheonBlocks.PHOSNOR_SLATE_LUSONYTH_ORE.getDefaultState())
 	);
 	public static final List<OreFeatureConfig.Target> ARCHEON_COAL_ORE_TARGETS = List.of(
-		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.SOUTHSTONE_COAL_ORE.getDefaultState())
-	);
-	public static final List<OreFeatureConfig.Target> ARCHEON_GOLD_ORE_TARGETS = List.of(
-		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.SOUTHSTONE_GOLD_ORE.getDefaultState()),
-		OreFeatureConfig.createTarget(DEPTHS_AKETITE_ORES_REPLACEABLES, ArcheonBlocks.DEPTHS_AKETITE_GOLD_ORE.getDefaultState())
-	);
-	public static final List<OreFeatureConfig.Target> ARCHEON_EMERALD_ORE_TARGETS = List.of(
-		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.SOUTHSTONE_EMERALD_ORE.getDefaultState()),
-		OreFeatureConfig.createTarget(DEPTHS_AKETITE_ORES_REPLACEABLES, ArcheonBlocks.DEPTHS_AKETITE_EMERALD_ORE.getDefaultState())
+		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.SOUTHSTONE_COAL_ORE.getDefaultState()),
+		OreFeatureConfig.createTarget(PHOSNOR_SLATE_ORES_REPLACEABLES, ArcheonBlocks.PHOSNOR_SLATE_COAL_ORE.getDefaultState())
 	);
 
 	public static final CustomOreFeature APAFLORITE_ORE_FEATURE = new CustomOreFeature(6, 5, -60, 45, APAFLORITE_ORE_TARGETS);
-	public static final CustomOreFeature FAELITE_ORE_FEATURE = new CustomOreFeature(6, 5, -60, 45, FAELITE_ORE_TARGETS);
 	public static final CustomOreFeature EXYRIANE_ORE_FEATURE = new CustomOreFeature(8, 7, -60, 45, EXYRIANE_ORE_TARGETS);
-	public static final CustomOreFeature SOUTHSTONE_COAL_ORE_FEATURE = new CustomOreFeature(13, 7, -60, 80, ARCHEON_COAL_ORE_TARGETS);
-	public static final CustomOreFeature SOUTHSTONE_GOLD_ORE_FEATURE = new CustomOreFeature(6, 3, -60, 30, ARCHEON_GOLD_ORE_TARGETS);
-	public static final CustomOreFeature SOUTHSTONE_EMERALD_ORE_FEATURE = new CustomOreFeature(3, 4, -60, 40, ARCHEON_EMERALD_ORE_TARGETS);
+	public static final CustomOreFeature FAELITE_ORE_FEATURE = new CustomOreFeature(6, 5, -60, 45, FAELITE_ORE_TARGETS);
+	public static final CustomOreFeature LUSONYTH_ORE_FEATURE = new CustomOreFeature(6, 3, -60, 0, LUSONYTH_ORE_TARGETS, 0.75f);
+	public static final CustomOreFeature COAL_ORE_FEATURE = new CustomOreFeature(13, 7, -60, 80, ARCHEON_COAL_ORE_TARGETS);
 
 	public static final CustomDripstoneClusterFeature GYPSUM_CLUSTER = new CustomDripstoneClusterFeature(
 		ArcheonBlocks.POINTED_GYPSUM,
@@ -355,10 +351,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 		SEPTICEOLIA_FEATURE.register(Archeon.createId("septiceolia_feature"));
 		APAFLORITE_ORE_FEATURE.register(Archeon.createId("apaflorite_ore_feature"));
 		EXYRIANE_ORE_FEATURE.register(Archeon.createId("exyriane_ore_feature"));
-		SOUTHSTONE_EMERALD_ORE_FEATURE.register(Archeon.createId("southstone_emerald_ore_feature"));
-		SOUTHSTONE_GOLD_ORE_FEATURE.register(Archeon.createId("southstone_gold_ore_feature"));
-		SOUTHSTONE_COAL_ORE_FEATURE.register(Archeon.createId("southstone_coal_ore_feature"));
 		FAELITE_ORE_FEATURE.register(Archeon.createId("faelite_ore_feature"));
+		LUSONYTH_ORE_FEATURE.register(Archeon.createId("lusonyth_ore_feature"));
+		COAL_ORE_FEATURE.register(Archeon.createId("coal_ore_feature"));
 		GYPSUM_CLUSTER.register(Archeon.createId("gypsum_cluster"));
 		LARGE_GYPSUM.register(Archeon.createId("large_gypsum"));
 		POINTED_GYPSUM.register(Archeon.createId("pointed_gypsum"));
@@ -393,7 +388,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 		PALM_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN));
 		NECLANE_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.NECLANE_GROVE));
-		NECLANE_TREE.addAdditionalToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS), "_rocky_fields");
+		NECLANE_TREE.addAdditionalToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS), "rocky_fields");
 		CYPRESS_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS));
 		PNEVANTIAL_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
 		STREIAN_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
@@ -427,9 +422,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 		APAFLORITE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 		EXYRIANE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 		FAELITE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
-		SOUTHSTONE_COAL_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
-		SOUTHSTONE_GOLD_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
-		SOUTHSTONE_EMERALD_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
+		LUSONYTH_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
+		COAL_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 
 		GYPSUM_CLUSTER.addDefaultToBiomes(gypsumPredicate);
 		LARGE_GYPSUM.addDefaultToBiomes(gypsumPredicate);

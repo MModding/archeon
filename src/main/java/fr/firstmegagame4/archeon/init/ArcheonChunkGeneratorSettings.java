@@ -64,7 +64,7 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 					))
 				))
 			)),
-			SurfaceRuleUtils.getDeep("archeon:depths_aketite", ArcheonBlocks.DEPTHS_AKETITE)
+			SurfaceRuleUtils.getDeep("archeon:phosnor_slate", ArcheonBlocks.PHOSNOR_SLATE)
 		).build().toArray(SurfaceRules.MaterialRule[]::new));
 	}
 
@@ -78,8 +78,8 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 				VeinStateGroup.create(ArcheonBlocks.ARTEMNITE, ArcheonBlocks.GYPSUM)
 			).setMinRichness(0.05f).setMaxRichness(0.15f),
 			new CustomVeinType(-45, -5,
-				VeinStateGroup.single(ArcheonBlocks.DEPTHS_APAFLORITE_ORE),
-				VeinStateGroup.single(ArcheonBlocks.CONDENSED_DEPTHS_APAFLORITE_ORE),
+				VeinStateGroup.single(ArcheonBlocks.PHOSNOR_SLATE_APAFLORITE_ORE),
+				VeinStateGroup.single(ArcheonBlocks.CONDENSED_PHOSNOR_SLATE_APAFLORITE_ORE),
 				VeinStateGroup.single(ArcheonBlocks.AKETITE)
 			)
 		);

@@ -1,20 +1,19 @@
 {
   "replace": false,
   "values": [
+    "archeon:southstone_coal_ore",
     "archeon:apaflorite_ore",
     "archeon:exyriane_ore",
-    "archeon:southstone_emerald_ore",
-    "archeon:southstone_gold_ore",
-    "archeon:southstone_coal_ore",
     "archeon:faelite_ore",
+    "archeon:lusonyth_ore",
     "archeon:condensed_apaflorite_ore",
     "archeon:condensed_exyriane_ore",
-    "archeon:depths_apaflorite_ore",
-    "archeon:depths_exyriane_ore",
-    "archeon:depths_aketite_emerald_ore",
-    "archeon:depths_aketite_gold_ore",
-    "archeon:depths_faelite_ore",
-    "archeon:condensed_depths_apaflorite_ore",
-    "archeon:condensed_depths_exyriane_ore"
+    "archeon:phosnor_slate_coal_ore",
+    "archeon:phosnor_slate_apaflorite_ore",
+    "archeon:phosnor_slate_exyriane_ore",
+    "archeon:phosnor_slate_faelite_ore",
+    "archeon:phosnor_slate_lusonyth_ore",
+    "archeon:condensed_phosnor_slate_apaflorite_ore",
+    "archeon:condensed_phosnor_slate_exyriane_ore"
   ]
 }

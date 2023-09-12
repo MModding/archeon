@@ -1,5 +1,6 @@
 package fr.firstmegagame4.archeon.client.entities.renderers;
 
+import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.client.entities.models.HeartOfNatureEntityModel;
 import fr.firstmegagame4.archeon.client.init.ArcheonEntityModelLayers;
@@ -23,11 +24,11 @@ public class HeartOfNatureEntityRenderer extends MobEntityRenderer<HeartOfNature
 	@Override
 	public Identifier getTexture(HeartOfNatureEntity entity) {
 		return switch (entity.getPhase()) {
-			case PETRIFIED -> Archeon.createId("textures/entity/heart_of_nature/petrified_heart_of_nature.png");
-			case NORMAL -> Archeon.createId("textures/entity/heart_of_nature/heart_of_nature.png");
-			case POISONOUS -> Archeon.createId("textures/entity/heart_of_nature/poisonous_heart_of_nature.png");
-			case EXPLOSIVE -> Archeon.createId("textures/entity/heart_of_nature/explosive_heart_of_nature.png");
-			case DEFEATED -> Archeon.createId("textures/entity/heart_of_nature/defeated_heart_of_nature.png");
+			case PETRIFIED -> new TextureLocation(Archeon.id(), "entity/heart_of_nature/petrified_heart_of_nature");
+			case NORMAL -> new TextureLocation(Archeon.id(), "entity/heart_of_nature/heart_of_nature");
+			case POISONOUS -> new TextureLocation(Archeon.id(), "entity/heart_of_nature/poisonous_heart_of_nature");
+			case EXPLOSIVE -> new TextureLocation(Archeon.id(), "entity/heart_of_nature/explosive_heart_of_nature");
+			case DEFEATED -> new TextureLocation(Archeon.id(), "entity/heart_of_nature/defeated_heart_of_nature");
 		};
 	}
 
@@ -47,7 +48,7 @@ public class HeartOfNatureEntityRenderer extends MobEntityRenderer<HeartOfNature
 
 		@Override
 		protected Identifier getEnergySwirlTexture() {
-			return Archeon.createId("textures/entity/heart_of_nature/heart_of_nature_shield.png");
+			return new TextureLocation(Archeon.id(), "entity/heart_of_nature/heart_of_nature_shield");
 		}
 
 		@Override

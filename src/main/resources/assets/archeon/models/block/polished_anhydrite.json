@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:block/polished_anhydrite",
+    "particle": "archeon:block/polished_anhydrite"
+  }
+}

@@ -8,8 +8,10 @@ import com.mmodding.mmodding_lib.library.portals.squared.CustomSquaredPortalBloc
 import com.mmodding.mmodding_lib.library.utils.SaplingGeneratorUtils;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.blocks.*;
+import fr.firstmegagame4.archeon.bootstrap.init.ArcheonCauldronBehaviors;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.PressurePlateBlock.ActivationRule;
 import net.minecraft.entity.effect.StatusEffects;
@@ -18,6 +20,18 @@ import net.minecraft.sound.BlockSoundGroup;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class ArcheonBlocks implements ElementsInitializer {
+
+	public static final CustomCauldronBlock HOT_SPRING_WATER_CAULDRON = new CustomCauldronBlock(
+		QuiltBlockSettings.copyOf(Blocks.CAULDRON),
+		null,
+		ArcheonCauldronBehaviors.HOT_SPRING_WATER_BEHAVIOR
+	);
+
+	public static final CustomCauldronBlock GLOWING_WATER_CAULDRON = new CustomCauldronBlock(
+		QuiltBlockSettings.copyOf(Blocks.CAULDRON),
+		null,
+		ArcheonCauldronBehaviors.GLOWING_WATER_BEHAVIOR
+	);
 
 	public static final CustomFlowerBlock SUNSET_ORCHID = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
@@ -300,12 +314,12 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomSugarCaneBlock XETULIAN_SUGAR_CANE = new CustomSugarCaneBlock(
-		(floorState -> floorState.isIn(ArcheonTags.Blocks.SOIL) || floorState.isOf(ArcheonBlocks.DUNE_SAND)), null, DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS), true
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.DUNE_SAND),
+		null,
+		DefaultBlockSettings.ofDefault(DefaultBlockSettings.PLANT_SETTINGS), true
 	);
 
 	public static final SporeRootcapBlock SPORE_ROOTCAP = new SporeRootcapBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.LEAVES_SETTINGS), true);
-
-	// public static final TowerSpawn : Later (WorldGen)
 
 	public static final CustomBlock WET_GRASS_BLOCK = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.GRASS_SETTINGS), true);
 	public static final CustomBlock WET_DIRT = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DIRT_SETTINGS), true);
@@ -395,6 +409,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock SOUTHSTONE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomStairsBlock SOUTHSTONE_STAIRS = new CustomStairsBlock(SOUTHSTONE.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomSlabBlock SOUTHSTONE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomWallBlock SOUTHSTONE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
 	public static final CustomBlock SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomStairsBlock SOUTHSTONE_BRICK_STAIRS = new CustomStairsBlock(SOUTHSTONE_BRICKS.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
@@ -440,24 +455,50 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock FALSE_CRACKED_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomBlock FALSE_MOSSY_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
+	public static final CustomBlock PHOSNOR_SLATE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomStairsBlock PHOSNOR_SLATE_STAIRS = new CustomStairsBlock(PHOSNOR_SLATE.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomSlabBlock PHOSNOR_SLATE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomWallBlock PHOSNOR_SLATE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+
+	public static final CustomBlock PHOSNOR_SLATE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomStairsBlock PHOSNOR_SLATE_BRICK_STAIRS = new CustomStairsBlock(PHOSNOR_SLATE_BRICKS.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomSlabBlock PHOSNOR_SLATE_BRICK_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomWallBlock PHOSNOR_SLATE_BRICK_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+
+	public static final CustomBlock PHOSNOR_SLATE_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomStairsBlock PHOSNOR_SLATE_TILE_STAIRS = new CustomStairsBlock(PHOSNOR_SLATE_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomSlabBlock PHOSNOR_SLATE_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomWallBlock PHOSNOR_SLATE_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+
+	public static final CustomBlock COBBLED_PHOSNOR_SLATE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomStairsBlock COBBLED_PHOSNOR_SLATE_STAIRS = new CustomStairsBlock(COBBLED_PHOSNOR_SLATE.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomSlabBlock COBBLED_PHOSNOR_SLATE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomWallBlock COBBLED_PHOSNOR_SLATE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+
+	public static final CustomBlock POLISHED_PHOSNOR_SLATE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomStairsBlock POLISHED_PHOSNOR_SLATE_STAIRS = new CustomStairsBlock(POLISHED_PHOSNOR_SLATE.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomSlabBlock POLISHED_PHOSNOR_SLATE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomWallBlock POLISHED_PHOSNOR_SLATE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+
+	public static final CustomBlock CHISELED_PHOSNOR_SLATE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+
 	public static final CustomBlock APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomBlock EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomBlock FAELITE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomBlock LUSONYTH_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomBlock SOUTHSTONE_COAL_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomBlock SOUTHSTONE_GOLD_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomBlock SOUTHSTONE_EMERALD_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
 	public static final CustomBlock CONDENSED_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomBlock CONDENSED_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
-	public static final CustomBlock DEPTHS_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
-	public static final CustomBlock DEPTHS_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
-	public static final CustomBlock DEPTHS_FAELITE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
-	public static final CustomBlock DEPTHS_AKETITE_GOLD_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
-	public static final CustomBlock DEPTHS_AKETITE_EMERALD_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomBlock PHOSNOR_SLATE_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomBlock PHOSNOR_SLATE_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomBlock PHOSNOR_SLATE_FAELITE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomBlock PHOSNOR_SLATE_LUSONYTH_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomBlock PHOSNOR_SLATE_COAL_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
 
-	public static final CustomBlock CONDENSED_DEPTHS_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
-	public static final CustomBlock CONDENSED_DEPTHS_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomBlock CONDENSED_PHOSNOR_SLATE_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
+	public static final CustomBlock CONDENSED_PHOSNOR_SLATE_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
 
 	public static final CustomBlock APAFLORITE_BLOCK = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.METAL_SETTINGS), true);
 	public static final CustomBlock EXYRIANE_BLOCK = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.METAL_SETTINGS).strength(4.0f), true);
@@ -469,8 +510,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomStairsBlock AKETITE_STAIRS = new CustomStairsBlock(AKETITE.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS).sounds(BlockSoundGroup.TUFF), true);
 	public static final CustomSlabBlock AKETITE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS).sounds(BlockSoundGroup.TUFF), true);
 	public static final CustomWallBlock AKETITE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS).sounds(BlockSoundGroup.TUFF), true);
-
-	public static final CustomBlock DEPTHS_AKETITE = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.DEEPSLATE_SETTINGS), true);
 
 	public static final CustomBlock AKETITE_BRICKS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomStairsBlock AKETITE_BRICK_STAIRS = new CustomStairsBlock(AKETITE_BRICKS.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
@@ -792,6 +831,233 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
+	public static final CustomBlock ANHYDRITE_BRICKS = new CustomBlock(
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomStairsBlock ANHYDRITE_BRICK_STAIRS = new CustomStairsBlock(
+		ANHYDRITE_BRICKS.getDefaultState(),
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomSlabBlock ANHYDRITE_BRICK_SLAB = new CustomSlabBlock(
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomWallBlock ANHYDRITE_BRICK_WALL = new CustomWallBlock(
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomPressurePlateBlock ANHYDRITE_BRICK_PRESSURE_PLATE = new CustomPressurePlateBlock(
+		ActivationRule.MOBS,
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomBlock ANHYDRITE_TILES = new CustomBlock(
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomStairsBlock ANHYDRITE_TILE_STAIRS = new CustomStairsBlock(
+		ANHYDRITE_TILES.getDefaultState(),
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomSlabBlock ANHYDRITE_TILE_SLAB = new CustomSlabBlock(
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomWallBlock ANHYDRITE_TILE_WALL = new CustomWallBlock(
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomPressurePlateBlock ANHYDRITE_TILE_PRESSURE_PLATE = new CustomPressurePlateBlock(
+		ActivationRule.MOBS,
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomBlock POLISHED_ANHYDRITE = new CustomBlock(
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomStairsBlock POLISHED_ANHYDRITE_STAIRS = new CustomStairsBlock(
+		POLISHED_ANHYDRITE.getDefaultState(),
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomSlabBlock POLISHED_ANHYDRITE_SLAB = new CustomSlabBlock(
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomWallBlock POLISHED_ANHYDRITE_WALL = new CustomWallBlock(
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomPressurePlateBlock POLISHED_ANHYDRITE_PRESSURE_PLATE = new CustomPressurePlateBlock(
+		ActivationRule.MOBS,
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomPillarBlock ANHYDRITE_PILLAR = new CustomPillarBlock(
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
+	public static final CustomBlock CHISELED_ANHYDRITE = new CustomBlock(
+		DefaultBlockSettings.ofDefaultForModifiers(DefaultBlockSettings.AMETHYST_SETTINGS)
+			.translucent()
+			.invisibleSides()
+			.toSettings()
+			.nonOpaque()
+			.material(Material.GLASS)
+			.blockVision(BlockSettingsModifiers::never)
+			.luminance(3)
+			.emissiveLighting(BlockSettingsModifiers::always),
+		true
+	);
+
 	public static final CustomBlock DUNE_SAND_GLASS = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.GLASS_SETTINGS), true);
 	public static final CustomBlock DUNE_SAND_GLASS_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.GLASS_SETTINGS), true);
 	public static final CustomBlock DUNE_SAND_GLASS_TILES_TOP_LEFT = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.GLASS_SETTINGS), true);
@@ -811,35 +1077,65 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomSnowBlock PEAKS_SNOW = new CustomSnowBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.SNOW_SETTINGS), true);
 	public static final CustomBlock PEAKS_SNOW_BLOCK = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.SNOW_BLOCK_SETTINGS), true);
 
-	public static final CustomBlock WARPED_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomStairsBlock WARPED_TILE_STAIRS = new CustomStairsBlock(WARPED_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomSlabBlock WARPED_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomWallBlock WARPED_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomBlock DARK_GREEN_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomStairsBlock DARK_GREEN_TILE_STAIRS = new CustomStairsBlock(DARK_GREEN_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomSlabBlock DARK_GREEN_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomWallBlock DARK_GREEN_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
-	public static final CustomBlock CRIMSON_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomStairsBlock CRIMSON_TILE_STAIRS = new CustomStairsBlock(CRIMSON_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomSlabBlock CRIMSON_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomWallBlock CRIMSON_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomBlock GREEN_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomStairsBlock GREEN_TILE_STAIRS = new CustomStairsBlock(GREEN_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomSlabBlock GREEN_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomWallBlock GREEN_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
-	public static final CustomBlock RED_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomStairsBlock RED_TILE_STAIRS = new CustomStairsBlock(RED_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomSlabBlock RED_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomWallBlock RED_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomBlock LIME_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomStairsBlock LIME_TILE_STAIRS = new CustomStairsBlock(LIME_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomSlabBlock LIME_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomWallBlock LIME_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
-	public static final CustomBlock OCHRE_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomStairsBlock OCHRE_TILE_STAIRS = new CustomStairsBlock(OCHRE_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomSlabBlock OCHRE_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomWallBlock OCHRE_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomBlock TURQUOISE_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomStairsBlock TURQUOISE_TILE_STAIRS = new CustomStairsBlock(TURQUOISE_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomSlabBlock TURQUOISE_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomWallBlock TURQUOISE_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+
+	public static final CustomBlock LIGHT_BLUE_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomStairsBlock LIGHT_BLUE_TILE_STAIRS = new CustomStairsBlock(LIGHT_BLUE_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomSlabBlock LIGHT_BLUE_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomWallBlock LIGHT_BLUE_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
 	public static final CustomBlock BLUE_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomStairsBlock BLUE_TILE_STAIRS = new CustomStairsBlock(BLUE_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomSlabBlock BLUE_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 	public static final CustomWallBlock BLUE_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
-	public static final CustomBlock GREEN_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomStairsBlock GREEN_TILE_STAIRS = new CustomStairsBlock(GREEN_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomSlabBlock GREEN_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
-	public static final CustomWallBlock GREEN_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomBlock DARK_BLUE_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomStairsBlock DARK_BLUE_TILE_STAIRS = new CustomStairsBlock(DARK_BLUE_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomSlabBlock DARK_BLUE_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomWallBlock DARK_BLUE_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+
+	public static final CustomBlock PURPLE_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomStairsBlock PURPLE_TILE_STAIRS = new CustomStairsBlock(PURPLE_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomSlabBlock PURPLE_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomWallBlock PURPLE_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+
+	public static final CustomBlock PINK_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomStairsBlock PINK_TILE_STAIRS = new CustomStairsBlock(PINK_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomSlabBlock PINK_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomWallBlock PINK_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+
+	public static final CustomBlock RED_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomStairsBlock RED_TILE_STAIRS = new CustomStairsBlock(RED_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomSlabBlock RED_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomWallBlock RED_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+
+	public static final CustomBlock CERAMIC_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomStairsBlock CERAMIC_TILE_STAIRS = new CustomStairsBlock(CERAMIC_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomSlabBlock CERAMIC_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomWallBlock CERAMIC_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+
+	public static final CustomBlock OCHRE_TILES = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomStairsBlock OCHRE_TILE_STAIRS = new CustomStairsBlock(OCHRE_TILES.getDefaultState(), DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomSlabBlock OCHRE_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
+	public static final CustomWallBlock OCHRE_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.STONE_SETTINGS), true);
 
 	public static final DuneSandCastleBlock DUNE_SAND_CASTLE = new DuneSandCastleBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.SAND_SETTINGS).nonOpaque().strength(0.7f, 0.0f), true);
 	public static final CustomBlock LOOT_URN = new CustomBlock(DefaultBlockSettings.ofDefault(DefaultBlockSettings.BONE_SETTINGS).nonOpaque().strength(0.8f, 2.0f), true);
@@ -847,6 +1143,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	@Override
 	public void register() {
+		HOT_SPRING_WATER_CAULDRON.register(Archeon.createId("hot_spring_water_cauldron"));
+		GLOWING_WATER_CAULDRON.register(Archeon.createId("glowing_water_cauldron"));
 		SUNSET_ORCHID.register(Archeon.createId("orchid"));
 		WITHERED_SUNSET_ORCHID.register(Archeon.createId("withered_orchid"));
 		ROSEYPIA.register(Archeon.createId("roseypia"));
@@ -969,6 +1267,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		SOUTHSTONE.register(Archeon.createId("southstone"));
 		SOUTHSTONE_STAIRS.register(Archeon.createId("southstone_stairs"));
 		SOUTHSTONE_SLAB.register(Archeon.createId("southstone_slab"));
+		SOUTHSTONE_WALL.register(Archeon.createId("southstone_wall"));
 		SOUTHSTONE_BRICKS.register(Archeon.createId("southstone_bricks"));
 		SOUTHSTONE_BRICK_STAIRS.register(Archeon.createId("southstone_brick_stairs"));
 		SOUTHSTONE_BRICK_SLAB.register(Archeon.createId("southstone_brick_slab"));
@@ -1003,21 +1302,41 @@ public class ArcheonBlocks implements ElementsInitializer {
 		FALSE_SOUTHSTONE_BRICKS.register(Archeon.createId("false_southstone_bricks"));
 		FALSE_CRACKED_SOUTHSTONE_BRICKS.register(Archeon.createId("false_cracked_southstone_bricks"));
 		FALSE_MOSSY_SOUTHSTONE_BRICKS.register(Archeon.createId("false_mossy_southstone_bricks"));
+		PHOSNOR_SLATE.register(Archeon.createId("phosnor_slate"));
+		PHOSNOR_SLATE_STAIRS.register(Archeon.createId("phosnor_slate_stairs"));
+		PHOSNOR_SLATE_SLAB.register(Archeon.createId("phosnor_slate_slab"));
+		PHOSNOR_SLATE_WALL.register(Archeon.createId("phosnor_slate_wall"));
+		PHOSNOR_SLATE_BRICKS.register(Archeon.createId("phosnor_slate_bricks"));
+		PHOSNOR_SLATE_BRICK_STAIRS.register(Archeon.createId("phosnor_slate_brick_stairs"));
+		PHOSNOR_SLATE_BRICK_SLAB.register(Archeon.createId("phosnor_slate_brick_slab"));
+		PHOSNOR_SLATE_BRICK_WALL.register(Archeon.createId("phosnor_slate_brick_wall"));
+		PHOSNOR_SLATE_TILES.register(Archeon.createId("phosnor_slate_tiles"));
+		PHOSNOR_SLATE_TILE_STAIRS.register(Archeon.createId("phosnor_slate_tile_stairs"));
+		PHOSNOR_SLATE_TILE_SLAB.register(Archeon.createId("phosnor_slate_tile_slab"));
+		PHOSNOR_SLATE_TILE_WALL.register(Archeon.createId("phosnor_slate_tile_wall"));
+		COBBLED_PHOSNOR_SLATE.register(Archeon.createId("cobbled_phosnor_slate"));
+		COBBLED_PHOSNOR_SLATE_STAIRS.register(Archeon.createId("cobbled_phosnor_slate_stairs"));
+		COBBLED_PHOSNOR_SLATE_SLAB.register(Archeon.createId("cobbled_phosnor_slate_slab"));
+		COBBLED_PHOSNOR_SLATE_WALL.register(Archeon.createId("cobbled_phosnor_slate_wall"));
+		POLISHED_PHOSNOR_SLATE.register(Archeon.createId("polished_phosnor_slate"));
+		POLISHED_PHOSNOR_SLATE_STAIRS.register(Archeon.createId("polished_phosnor_slate_stairs"));
+		POLISHED_PHOSNOR_SLATE_SLAB.register(Archeon.createId("polished_phosnor_slate_slab"));
+		POLISHED_PHOSNOR_SLATE_WALL.register(Archeon.createId("polished_phosnor_slate_wall"));
+		CHISELED_PHOSNOR_SLATE.register(Archeon.createId("chiseled_phosnor_slate"));
 		APAFLORITE_ORE.register(Archeon.createId("apaflorite_ore"));
 		EXYRIANE_ORE.register(Archeon.createId("exyriane_ore"));
 		FAELITE_ORE.register(Archeon.createId("faelite_ore"));
+		LUSONYTH_ORE.register(Archeon.createId("lusonyth_ore"));
 		SOUTHSTONE_COAL_ORE.register(Archeon.createId("southstone_coal_ore"));
-		SOUTHSTONE_GOLD_ORE.register(Archeon.createId("southstone_gold_ore"));
-		SOUTHSTONE_EMERALD_ORE.register(Archeon.createId("southstone_emerald_ore"));
 		CONDENSED_APAFLORITE_ORE.register(Archeon.createId("condensed_apaflorite_ore"));
 		CONDENSED_EXYRIANE_ORE.register(Archeon.createId("condensed_exyriane_ore"));
-		DEPTHS_APAFLORITE_ORE.register(Archeon.createId("depths_apaflorite_ore"));
-		DEPTHS_EXYRIANE_ORE.register(Archeon.createId("depths_exyriane_ore"));
-		DEPTHS_FAELITE_ORE.register(Archeon.createId("depths_faelite_ore"));
-		DEPTHS_AKETITE_GOLD_ORE.register(Archeon.createId("depths_aketite_gold_ore"));
-		DEPTHS_AKETITE_EMERALD_ORE.register(Archeon.createId("depths_aketite_emerald_ore"));
-		CONDENSED_DEPTHS_APAFLORITE_ORE.register(Archeon.createId("condensed_depths_apaflorite_ore"));
-		CONDENSED_DEPTHS_EXYRIANE_ORE.register(Archeon.createId("condensed_depths_exyriane_ore"));
+		PHOSNOR_SLATE_APAFLORITE_ORE.register(Archeon.createId("phosnor_slate_apaflorite_ore"));
+		PHOSNOR_SLATE_EXYRIANE_ORE.register(Archeon.createId("phosnor_slate_exyriane_ore"));
+		PHOSNOR_SLATE_FAELITE_ORE.register(Archeon.createId("phosnor_slate_faelite_ore"));
+		PHOSNOR_SLATE_LUSONYTH_ORE.register(Archeon.createId("phosnor_slate_lusonyth_ore"));
+		PHOSNOR_SLATE_COAL_ORE.register(Archeon.createId("phosnor_slate_coal_ore"));
+		CONDENSED_PHOSNOR_SLATE_APAFLORITE_ORE.register(Archeon.createId("condensed_phosnor_slate_apaflorite_ore"));
+		CONDENSED_PHOSNOR_SLATE_EXYRIANE_ORE.register(Archeon.createId("condensed_phosnor_slate_exyriane_ore"));
 		APAFLORITE_BLOCK.register(Archeon.createId("apaflorite_block"));
 		EXYRIANE_BLOCK.register(Archeon.createId("exyriane_block"));
 		FAELITE_BLOCK.register(Archeon.createId("faelite_block"));
@@ -1027,7 +1346,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		AKETITE_STAIRS.register(Archeon.createId("aketite_stairs"));
 		AKETITE_SLAB.register(Archeon.createId("aketite_slab"));
 		AKETITE_WALL.register(Archeon.createId("aketite_wall"));
-		DEPTHS_AKETITE.register(Archeon.createId("depths_aketite"));
 		AKETITE_BRICKS.register(Archeon.createId("aketite_bricks"));
 		AKETITE_BRICK_STAIRS.register(Archeon.createId("aketite_brick_stairs"));
 		AKETITE_BRICK_SLAB.register(Archeon.createId("aketite_brick_slab"));
@@ -1179,6 +1497,23 @@ public class ArcheonBlocks implements ElementsInitializer {
 		ANHYDRITE_SLAB.register(Archeon.createId("anhydrite_slab"));
 		ANHYDRITE_WALL.register(Archeon.createId("anhydrite_wall"));
 		ANHYDRITE_PRESSURE_PLATE.register(Archeon.createId("anhydrite_pressure_plate"));
+		ANHYDRITE_BRICKS.register(Archeon.createId("anhydrite_bricks"));
+		ANHYDRITE_BRICK_STAIRS.register(Archeon.createId("anhydrite_brick_stairs"));
+		ANHYDRITE_BRICK_SLAB.register(Archeon.createId("anhydrite_brick_slab"));
+		ANHYDRITE_BRICK_WALL.register(Archeon.createId("anhydrite_brick_wall"));
+		ANHYDRITE_BRICK_PRESSURE_PLATE.register(Archeon.createId("anhydrite_brick_pressure_plate"));
+		ANHYDRITE_TILES.register(Archeon.createId("anhydrite_tiles"));
+		ANHYDRITE_TILE_STAIRS.register(Archeon.createId("anhydrite_tile_stairs"));
+		ANHYDRITE_TILE_SLAB.register(Archeon.createId("anhydrite_tile_slab"));
+		ANHYDRITE_TILE_WALL.register(Archeon.createId("anhydrite_tile_wall"));
+		ANHYDRITE_TILE_PRESSURE_PLATE.register(Archeon.createId("anhydrite_tile_pressure_plate"));
+		POLISHED_ANHYDRITE.register(Archeon.createId("polished_anhydrite"));
+		POLISHED_ANHYDRITE_STAIRS.register(Archeon.createId("polished_anhydrite_stairs"));
+		POLISHED_ANHYDRITE_SLAB.register(Archeon.createId("polished_anhydrite_slab"));
+		POLISHED_ANHYDRITE_WALL.register(Archeon.createId("polished_anhydrite_wall"));
+		POLISHED_ANHYDRITE_PRESSURE_PLATE.register(Archeon.createId("polished_anhydrite_pressure_plate"));
+		ANHYDRITE_PILLAR.register(Archeon.createId("anhydrite_pillar"));
+		CHISELED_ANHYDRITE.register(Archeon.createId("chiseled_anhydrite"));
 		DUNE_SAND_GLASS.register(Archeon.createId("dune_sand_glass"));
 		DUNE_SAND_GLASS_TILES.register(Archeon.createId("dune_sand_glass_tiles"));
 		DUNE_SAND_GLASS_TILES_TOP_LEFT.register(Archeon.createId("dune_sand_glass_tiles_top_left"));
@@ -1195,30 +1530,54 @@ public class ArcheonBlocks implements ElementsInitializer {
 		SNOWY_SOUTHSTONE.register(Archeon.createId("snowy_southstone"));
 		PEAKS_SNOW.register(Archeon.createId("peaks_snow"));
 		PEAKS_SNOW_BLOCK.register(Archeon.createId("peaks_snow_block"));
-		WARPED_TILES.register(Archeon.createId("warped_tiles"));
-		WARPED_TILE_STAIRS.register(Archeon.createId("warped_tile_stairs"));
-		WARPED_TILE_SLAB.register(Archeon.createId("warped_tile_slab"));
-		WARPED_TILE_WALL.register(Archeon.createId("warped_tile_wall"));
-		CRIMSON_TILES.register(Archeon.createId("crimson_tiles"));
-		CRIMSON_TILE_STAIRS.register(Archeon.createId("crimson_tile_stairs"));
-		CRIMSON_TILE_SLAB.register(Archeon.createId("crimson_tile_slab"));
-		CRIMSON_TILE_WALL.register(Archeon.createId("crimson_tile_wall"));
-		RED_TILES.register(Archeon.createId("red_tiles"));
-		RED_TILE_STAIRS.register(Archeon.createId("red_tile_stairs"));
-		RED_TILE_SLAB.register(Archeon.createId("red_tile_slab"));
-		RED_TILE_WALL.register(Archeon.createId("red_tile_wall"));
-		OCHRE_TILES.register(Archeon.createId("ochre_tiles"));
-		OCHRE_TILE_STAIRS.register(Archeon.createId("ochre_tile_stairs"));
-		OCHRE_TILE_SLAB.register(Archeon.createId("ochre_tile_slab"));
-		OCHRE_TILE_WALL.register(Archeon.createId("ochre_tile_wall"));
-		BLUE_TILES.register(Archeon.createId("blue_tiles"));
-		BLUE_TILE_STAIRS.register(Archeon.createId("blue_tile_stairs"));
-		BLUE_TILE_SLAB.register(Archeon.createId("blue_tile_slab"));
-		BLUE_TILE_WALL.register(Archeon.createId("blue_tile_wall"));
+		DARK_GREEN_TILES.register(Archeon.createId("dark_green_tiles"));
+		DARK_GREEN_TILE_STAIRS.register(Archeon.createId("dark_green_tile_stairs"));
+		DARK_GREEN_TILE_SLAB.register(Archeon.createId("dark_green_tile_slab"));
+		DARK_GREEN_TILE_WALL.register(Archeon.createId("dark_green_tile_wall"));
 		GREEN_TILES.register(Archeon.createId("green_tiles"));
 		GREEN_TILE_STAIRS.register(Archeon.createId("green_tile_stairs"));
 		GREEN_TILE_SLAB.register(Archeon.createId("green_tile_slab"));
 		GREEN_TILE_WALL.register(Archeon.createId("green_tile_wall"));
+		LIME_TILES.register(Archeon.createId("lime_tiles"));
+		LIME_TILE_STAIRS.register(Archeon.createId("lime_tile_stairs"));
+		LIME_TILE_SLAB.register(Archeon.createId("lime_tile_slab"));
+		LIME_TILE_WALL.register(Archeon.createId("lime_tile_wall"));
+		TURQUOISE_TILES.register(Archeon.createId("turquoise_tiles"));
+		TURQUOISE_TILE_STAIRS.register(Archeon.createId("turquoise_tile_stairs"));
+		TURQUOISE_TILE_SLAB.register(Archeon.createId("turquoise_tile_slab"));
+		TURQUOISE_TILE_WALL.register(Archeon.createId("turquoise_tile_wall"));
+		LIGHT_BLUE_TILES.register(Archeon.createId("light_blue_tiles"));
+		LIGHT_BLUE_TILE_STAIRS.register(Archeon.createId("light_blue_tile_stairs"));
+		LIGHT_BLUE_TILE_SLAB.register(Archeon.createId("light_blue_tile_slab"));
+		LIGHT_BLUE_TILE_WALL.register(Archeon.createId("light_blue_tile_wall"));
+		BLUE_TILES.register(Archeon.createId("blue_tiles"));
+		BLUE_TILE_STAIRS.register(Archeon.createId("blue_tile_stairs"));
+		BLUE_TILE_SLAB.register(Archeon.createId("blue_tile_slab"));
+		BLUE_TILE_WALL.register(Archeon.createId("blue_tile_wall"));
+		DARK_BLUE_TILES.register(Archeon.createId("dark_blue_tiles"));
+		DARK_BLUE_TILE_STAIRS.register(Archeon.createId("dark_blue_tile_stairs"));
+		DARK_BLUE_TILE_SLAB.register(Archeon.createId("dark_blue_tile_slab"));
+		DARK_BLUE_TILE_WALL.register(Archeon.createId("dark_blue_tile_wall"));
+		PURPLE_TILES.register(Archeon.createId("purple_tiles"));
+		PURPLE_TILE_STAIRS.register(Archeon.createId("purple_tile_stairs"));
+		PURPLE_TILE_SLAB.register(Archeon.createId("purple_tile_slab"));
+		PURPLE_TILE_WALL.register(Archeon.createId("purple_tile_wall"));
+		PINK_TILES.register(Archeon.createId("pink_tiles"));
+		PINK_TILE_STAIRS.register(Archeon.createId("pink_tile_stairs"));
+		PINK_TILE_SLAB.register(Archeon.createId("pink_tile_slab"));
+		PINK_TILE_WALL.register(Archeon.createId("pink_tile_wall"));
+		RED_TILES.register(Archeon.createId("red_tiles"));
+		RED_TILE_STAIRS.register(Archeon.createId("red_tile_stairs"));
+		RED_TILE_SLAB.register(Archeon.createId("red_tile_slab"));
+		RED_TILE_WALL.register(Archeon.createId("red_tile_wall"));
+		CERAMIC_TILES.register(Archeon.createId("ceramic_tiles"));
+		CERAMIC_TILE_STAIRS.register(Archeon.createId("ceramic_tile_stairs"));
+		CERAMIC_TILE_SLAB.register(Archeon.createId("ceramic_tile_slab"));
+		CERAMIC_TILE_WALL.register(Archeon.createId("ceramic_tile_wall"));
+		OCHRE_TILES.register(Archeon.createId("ochre_tiles"));
+		OCHRE_TILE_STAIRS.register(Archeon.createId("ochre_tile_stairs"));
+		OCHRE_TILE_SLAB.register(Archeon.createId("ochre_tile_slab"));
+		OCHRE_TILE_WALL.register(Archeon.createId("ochre_tile_wall"));
 		DUNE_SAND_CASTLE.register(Archeon.createId("dune_sand_castle"));
 		LOOT_URN.register(Archeon.createId("loot_urn"));
 		HEART_OF_NATURE_TROPHY.register(Archeon.createId("heart_of_nature_trophy"));

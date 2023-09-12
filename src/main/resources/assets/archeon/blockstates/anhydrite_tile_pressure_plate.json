@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "archeon:block/anhydrite_tile_pressure_plate"
+    },
+    "powered=true": {
+      "model": "archeon:block/anhydrite_tile_pressure_plate_down"
+    }
+  }
+}

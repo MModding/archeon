@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "archeon:block/lime_tiles",
+    "top": "archeon:block/lime_tiles",
+    "side": "archeon:block/lime_tiles"
+  }
+}

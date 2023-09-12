@@ -6,10 +6,10 @@
 		"version": "${version}",
 		"metadata": {
 			"name": "Archeon",
-			"description": "This is the Official Quilt Port of Archeon. Archeon is a brand new dimension, full of new blocks, mobs and more! All you need to get there is a portal made of Mysterious Stone, filled with a magical energy made by the Wand of Nature!",
+			"description": "This is the Official Version of Archeon. Archeon is a brand new dimension, full of new blocks, mobs and more! All you need to get there is a portal made of Mysterious Stone, filled with a magical energy made by the Wand of Nature!",
 			"contributors": {
 				"Silent Winds Team": "Owner, Author",
-				"Aethyus": "Project Manager, Art Director, Lead Forge Developer",
+				"Aethyus": "Project Manager, Art Director, Former Lead Forge Developer",
 				"Aeramisu": "Project Manager, Art Director, Composer, Concept Artist, Sound Designer",
 				"FirstMegaGame4": "Lead Quilt Developer",
 				"Aerod": "Additional Art",
@@ -17,7 +17,7 @@
 				"Tim Rurkowski": "Composer",
 				"Rotch Gwylt": "Composer",
 				"Scarecrowman": "Composer",
-				"Mystoxi": "Additional Forge Development"
+				"Mystoxi": "Additional Old Forge Development"
 			},
 			"contact": {
 				"homepage": "https://modrinth/mod/quilted-archeon",
@@ -29,7 +29,8 @@
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
 			"init": "fr.firstmegagame4.archeon.Archeon",
-			"client_init": "fr.firstmegagame4.archeon.client.ArcheonClient"
+			"client_init": "fr.firstmegagame4.archeon.client.ArcheonClient",
+			"mmodding_bootstrap_init": "fr.firstmegagame4.archeon.bootstrap.ArcheonBootstrap"
 		},
 		"depends": [
 			{

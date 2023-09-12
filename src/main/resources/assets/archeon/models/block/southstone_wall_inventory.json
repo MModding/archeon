@@ -1,0 +1,7 @@
+{
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "archeon:block/southstone",
+    "particle": "archeon:block/southstone"
+  }
+}

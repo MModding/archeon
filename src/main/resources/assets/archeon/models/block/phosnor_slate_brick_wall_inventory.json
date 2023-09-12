@@ -1,0 +1,7 @@
+{
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "archeon:block/phosnor_slate_bricks",
+    "particle": "archeon:block/phosnor_slate_bricks"
+  }
+}

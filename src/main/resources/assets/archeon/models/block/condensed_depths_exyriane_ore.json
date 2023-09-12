@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "archeon:block/condensed_depths_exyriane_ore",
-    "particle": "archeon:block/condensed_depths_exyriane_ore"
-  }
-}

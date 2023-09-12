@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_wall_side",
+  "textures": {
+    "wall": "archeon:block/polished_phosnor_slate",
+    "particle": "archeon:block/polished_phosnor_slate"
+  }
+}

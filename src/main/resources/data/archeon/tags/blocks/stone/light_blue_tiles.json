@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:light_blue_tiles",
+    "archeon:light_blue_tile_stairs",
+    "archeon:light_blue_tile_slab",
+    "archeon:light_blue_tile_wall"
+  ]
+}

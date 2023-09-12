@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:ceramic_tiles",
+    "archeon:ceramic_tile_stairs",
+    "archeon:ceramic_tile_slab",
+    "archeon:ceramic_tile_wall"
+  ]
+}

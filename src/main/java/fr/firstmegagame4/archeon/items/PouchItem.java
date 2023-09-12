@@ -1,11 +1,14 @@
 package fr.firstmegagame4.archeon.items;
 
 import com.mmodding.mmodding_lib.library.items.CustomItemWithInventory;
+import com.mmodding.mmodding_lib.library.utils.TextureLocation;
+import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.screenhandlers.PouchScreenHandler;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Optional;
 import java.util.OptionalInt;
 
 public class PouchItem extends CustomItemWithInventory {
@@ -17,6 +20,11 @@ public class PouchItem extends CustomItemWithInventory {
 	@Override
 	public TooltipMode getTooltipMode() {
 		return TooltipMode.ALL_SLOTS_OVERVIEW;
+	}
+
+	@Override
+	public Optional<TextureLocation> getOptionalTexture() {
+		return Optional.of(new TextureLocation(Archeon.id(), "gui/tooltip/pouch"));
 	}
 
 	@Override

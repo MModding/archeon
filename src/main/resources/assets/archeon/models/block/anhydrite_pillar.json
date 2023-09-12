@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:block/anhydrite_pillar_top",
+    "up": "archeon:block/anhydrite_pillar_top",
+    "north": "archeon:block/anhydrite_pillar",
+    "east": "archeon:block/anhydrite_pillar",
+    "south": "archeon:block/anhydrite_pillar",
+    "west": "archeon:block/anhydrite_pillar",
+    "particle": "archeon:block/anhydrite_pillar_top"
+  }
+}

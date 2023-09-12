@@ -3,9 +3,10 @@
 
 ## 🏷️ Welcome to Archeon and the Echo of the Worlds
 
-The Silent Winds team presents the Archeon mod for QuiltMC! Archeon is a brand new dimension, full of new blocks, mobs and more! All you need to get there is a portal made of Mysterious Stone, filled with a magical energy provided by the Wand of Nature! The Archeon mod is still in heavy development, but the release "Rebirth of History" (last version of the mod for Forge) is out on CurseForge! Go check it out: https://www.curseforge.com/minecraft/mc-mods/archeon/files - Note that the Forge version is the mod is now discontinued, and led tis place to the QUILT version, currently in development for the new update of Archeon, called Archeon and the Echo of the Worlds! 
+The Silent Winds team presents the Archeon mod for QuiltMC! Archeon is a brand new dimension, full of new blocks, mobs and more! All you need to get there is a portal made of Mysterious Stone, filled with a magical energy provided by the Wand of Nature! The Archeon mod is still in heavy development, but the release "Rebirth of History" (last version of the mod for Forge) is out on CurseForge! Go check it out: https://www.curseforge.com/minecraft/mc-mods/archeon/files - Note that the Forge version is the mod is now discontinued, and led tis place to the QUILT version, currently in development for the new update of Archeon, called Archeon and the Echo of the Worlds!
 
 <a href="https://modrinth.com/mod/mmodding-library"><img src="https://raw.githubusercontent.com/MModding/mmodding.github.io/main/assets/requires_library.png" width="300"></img></a>
+<br>
 <a href="https://modrinth.com/mod/qsl"><img src="https://github.com/intergrav/devins-badges/blob/v3/assets/cozy/requires/quilt-standard-libraries_64h.png?raw=true" width="300"></img></a>
 
 <a class="github-button" href="https://discord.gg/hhGPj8sMzT
@@ -39,10 +40,10 @@ Rotch Gwylt (Composer)
 
 Tenkite (Additional Art)
 
-Special thanks to Aerod (Additonal Art) and Mystoxi (Additional Forge Development) 
+Special thanks to Aerod (Additonal Art) and Mystoxi (Additional Old Forge Development)
 
 ### In Collaboration with the MModding Team
-![](https://images-ext-1.discordapp.net/external/DM6zrO-S-26xaPO9si9xOofAvCHNReWFIgppge-xLmc/%3Fraw%3Dtrue/https/github.com/MModding/mmodding.github.io/blob/main/assets/mmodding_dark_banner.png?width=1919&height=294)
+[![MModding Banner](https://images-ext-1.discordapp.net/external/DM6zrO-S-26xaPO9si9xOofAvCHNReWFIgppge-xLmc/%3Fraw%3Dtrue/https/github.com/MModding/mmodding.github.io/blob/main/assets/mmodding_dark_banner.png?width=1919&height=294)](https://mmodding.github.io/discord-link)
 
 ## 💎 Found an Issue?
 

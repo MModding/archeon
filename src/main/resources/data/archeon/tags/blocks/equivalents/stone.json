@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "#archeon:stone/southstone",
+    "#archeon:stone/phosnor_slate",
     "#archeon:stone/ores",
     "#archeon:stone/aketite",
     "#archeon:stone/mysterious_stone",
@@ -9,11 +10,17 @@
     "#archeon:stone/gypsum",
     "#archeon:stone/anhydrite",
     "#archeon:stone/roughcast",
-    "#archeon:stone/warped_tiles",
-    "#archeon:stone/crimson_tiles",
-    "#archeon:stone/red_tiles",
-    "#archeon:stone/ochre_tiles",
+    "#archeon:stone/dark_green_tiles",
+    "#archeon:stone/green_tiles",
+    "#archeon:stone/lime_tiles",
+    "#archeon:stone/turquoise_tiles",
+    "#archeon:stone/light_blue_tiles",
     "#archeon:stone/blue_tiles",
-    "#archeon:stone/green_tiles"
+    "#archeon:stone/dark_blue_tiles",
+    "#archeon:stone/purple_tiles",
+    "#archeon:stone/pink_tiles",
+    "#archeon:stone/red_tiles",
+    "#archeon:stone/ceramic_tiles",
+    "#archeon:stone/ochre_tiles"
   ]
 }

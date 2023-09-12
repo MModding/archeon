@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:block/phosnor_slate_tiles",
+    "particle": "archeon:block/phosnor_slate_tiles"
+  }
+}

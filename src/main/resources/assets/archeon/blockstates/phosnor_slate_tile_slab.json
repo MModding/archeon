@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/phosnor_slate_tile_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/phosnor_slate_tile_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/phosnor_slate_tile_slab_full"
+    }
+  }
+}

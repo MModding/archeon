@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_wall_post",
+  "textures": {
+    "wall": "archeon:block/dark_green_tiles",
+    "particle": "archeon:block/dark_green_tiles"
+  }
+}

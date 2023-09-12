@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "archeon:block/warped_tiles",
-    "top": "archeon:block/warped_tiles",
-    "side": "archeon:block/warped_tiles"
-  }
-}

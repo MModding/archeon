@@ -1,7 +1,7 @@
 package fr.firstmegagame4.archeon.client.screens;
 
-
 import com.mmodding.mmodding_lib.library.utils.Colors;
+import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import com.mojang.blaze3d.systems.RenderSystem;
 import fr.firstmegagame4.archeon.Archeon;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
@@ -28,7 +28,7 @@ public class PouchScreen extends HandledScreen<ScreenHandler> {
 	protected void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY) {
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
-		RenderSystem.setShaderTexture(0, Archeon.createId("textures/gui/pouch.png"));
+		RenderSystem.setShaderTexture(0, new TextureLocation(Archeon.id(), "gui/container/pouch"));
 		int x = (this.width - this.backgroundWidth) / 2 - 8;
 		int y = (this.height - this.backgroundHeight) / 2 - 9;
 		this.drawTexture(matrices, x, y, 0, 0, this.backgroundWidth, this.backgroundHeight);

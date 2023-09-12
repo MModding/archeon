@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "archeon:warped_tiles",
-    "archeon:warped_tile_stairs",
-    "archeon:warped_tile_slab",
-    "archeon:warped_tile_wall"
-  ]
-}

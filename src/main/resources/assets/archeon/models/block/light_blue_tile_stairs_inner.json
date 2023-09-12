@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "archeon:block/light_blue_tiles",
+    "top": "archeon:block/light_blue_tiles",
+    "side": "archeon:block/light_blue_tiles"
+  }
+}

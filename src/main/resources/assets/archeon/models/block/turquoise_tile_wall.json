@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_wall_side",
+  "textures": {
+    "wall": "archeon:block/turquoise_tiles",
+    "particle": "archeon:block/turquoise_tiles"
+  }
+}

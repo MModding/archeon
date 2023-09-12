@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:block/chiseled_phosnor_slate",
+    "particle": "archeon:block/chiseled_phosnor_slate"
+  }
+}

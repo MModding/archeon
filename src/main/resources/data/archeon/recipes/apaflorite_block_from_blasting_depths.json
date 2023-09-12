@@ -3,7 +3,7 @@
   "experience": 1,
   "cookingtime": 100,
   "ingredient": {
-    "item": "archeon:condensed_depths_apaflorite_ore"
+    "item": "archeon:condensed_phosnor_slate_apaflorite_ore"
   },
   "result": "archeon:apaflorite_block"
 }

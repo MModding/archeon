@@ -1,5 +1,6 @@
 package fr.firstmegagame4.archeon.client.entities.renderers;
 
+import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.client.entities.models.HeiferEntityModel;
 import fr.firstmegagame4.archeon.client.init.ArcheonEntityModelLayers;
@@ -16,6 +17,6 @@ public class HeiferEntityRenderer extends MobEntityRenderer<HeiferEntity, Heifer
 
 	@Override
 	public Identifier getTexture(HeiferEntity entity) {
-		return Archeon.createId("textures/entity/heifer.png");
+		return new TextureLocation(Archeon.id(), "entity/heifer");
 	}
 }

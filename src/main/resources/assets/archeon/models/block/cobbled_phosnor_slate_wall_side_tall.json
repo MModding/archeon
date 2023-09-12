@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_wall_side_tall",
+  "textures": {
+    "wall": "archeon:block/cobbled_phosnor_slate",
+    "particle": "archeon:block/cobbled_phosnor_slate"
+  }
+}

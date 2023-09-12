@@ -1,5 +1,6 @@
 package fr.firstmegagame4.archeon.client.entities.renderers;
 
+import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.client.entities.models.SunstradiverEntityModel;
 import fr.firstmegagame4.archeon.client.init.ArcheonEntityModelLayers;
@@ -17,7 +18,7 @@ public class SunstradiverEntityRenderer extends MobEntityRenderer<SunstradiverEn
 
 	@Override
 	public Identifier getTexture(SunstradiverEntity entity) {
-		return Archeon.createId("textures/entity/sunstradiver.png");
+		return new TextureLocation(Archeon.id(), "entity/sunstradiver");
 	}
 
 	public float getAnimationProgress(SunstradiverEntity parrotEntity, float f) {

@@ -10,6 +10,7 @@ import net.minecraft.world.biome.source.util.MultiNoiseUtil;
 
 import java.util.function.Consumer;
 
+@SuppressWarnings("unchecked")
 public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 
 	@Override

@@ -1,5 +1,6 @@
 package fr.firstmegagame4.archeon.client.entities.renderers;
 
+import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.client.entities.models.AuroraCatalystEntityModel;
 import fr.firstmegagame4.archeon.client.init.ArcheonEntityModelLayers;
@@ -20,9 +21,9 @@ public class AuroraCatalystEntityRenderer extends MobEntityRenderer<AuroraCataly
 	@Override
 	public Identifier getTexture(AuroraCatalystEntity entity) {
 		return switch (this.type) {
-			case NORMAL -> Archeon.createId("textures/entity/aurora_catalyst.png");
-			case POISONOUS -> Archeon.createId("textures/entity/poisonous_aurora_catalyst.png");
-			case EXPLOSIVE -> Archeon.createId("textures/entity/explosive_aurora_catalyst.png");
+			case NORMAL -> new TextureLocation(Archeon.id(), "entity/aurora_catalyst");
+			case POISONOUS -> new TextureLocation(Archeon.id(), "entity/poisonous_aurora_catalyst");
+			case EXPLOSIVE -> new TextureLocation(Archeon.id(), "entity/explosive_aurora_catalyst");
 		};
 	}
 }

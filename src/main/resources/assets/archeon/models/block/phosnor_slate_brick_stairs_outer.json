@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "archeon:block/phosnor_slate_bricks",
+    "top": "archeon:block/phosnor_slate_bricks",
+    "side": "archeon:block/phosnor_slate_bricks"
+  }
+}

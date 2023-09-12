@@ -6,6 +6,21 @@
     "archeon:anhydrite_stairs",
     "archeon:anhydrite_slab",
     "archeon:anhydrite_wall",
-    "archeon:anhydrite_pressure_plate"
+    "archeon:anhydrite_pressure_plate",
+    "archeon:anhydrite_bricks",
+    "archeon:anhydrite_brick_stairs",
+    "archeon:anhydrite_brick_slab",
+    "archeon:anhydrite_brick_wall",
+    "archeon:anhydrite_brick_pressure_plate",
+    "archeon:anhydrite_tiles",
+    "archeon:anhydrite_tile_stairs",
+    "archeon:anhydrite_tile_slab",
+    "archeon:anhydrite_tile_wall",
+    "archeon:anhydrite_tile_pressure_plate",
+    "archeon:polished_anhydrite",
+    "archeon:polished_anhydrite_stairs",
+    "archeon:polished_anhydrite_slab",
+    "archeon:polished_anhydrite_wall",
+    "archeon:polished_anhydrite_pressure_plate"
   ]
 }

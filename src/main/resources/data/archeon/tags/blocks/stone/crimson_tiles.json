@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "archeon:crimson_tiles",
-    "archeon:crimson_tile_stairs",
-    "archeon:crimson_tile_slab",
-    "archeon:crimson_tile_wall"
-  ]
-}

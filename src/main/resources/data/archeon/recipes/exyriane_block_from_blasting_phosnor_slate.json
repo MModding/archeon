@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "archeon:condensed_phosnor_slate_exyriane_ore"
+  },
+  "result": "archeon:exyriane_block"
+}
