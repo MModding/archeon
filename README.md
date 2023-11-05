@@ -14,7 +14,7 @@ The Silent Winds team presents the Archeon mod for QuiltMC! Archeon is a brand n
 
 ## 🧱 Team
 
-Aethyus (Project Manager, Art Director, Lead Forge Developer)
+Aethyus (Project Manager, Art Director, Former Developer, Lorist)
 <a class="github-button" href="https://twitter.com/ArcheonAethyus
 " data-icon="octicon-comment-discussion" aria-label="Follow Aethyus on Twitter"> Follow Aethyus on Twitter</a>;
 
@@ -22,7 +22,7 @@ FirstMegaGame4 (Lead Developer)
 <a class="github-button" href="https://twitter.com/FirstMegaGame4
 " data-icon="octicon-comment-discussion" aria-label="Follow FirstMegaGame4 on Twitter"> Follow FirstMegaGame4 on Twitter</a>;
 
-Aeramisu (Project Manager, Art Director, Composer, Concept Artist, Sound Designer)
+Aeramisu (Project Manager, Art Director, Composer, Concept Artist, Sound Designer, Lorist)
 <a class="github-button" href="https://soundcloud.com/aeramisu
 " data-icon="octicon-comment-discussion" aria-label="Listen to Aeramisu's Music"> Listen to Aeramisu's Music</a>;
 
@@ -38,9 +38,7 @@ Rotch Gwylt (Composer)
 <a class="github-button" href="https://soundcloud.com/rotch-gwylt
 " data-icon="octicon-comment-discussion" aria-label="Listen to Rotch Gwylt's Music"> Listen to Rotch Gwylt's Music</a>;
 
-Tenkite (Additional Art)
-
-Special thanks to Aerod (Additonal Art) and Mystoxi (Additional Old Forge Development)
+Special thanks to Aerod (Additonal Art), Tenkite (Additonal Art) and Mystoxi (Additional Old Forge Development)
 
 ### In Collaboration with the MModding Team
 [![MModding Banner](https://images-ext-1.discordapp.net/external/DM6zrO-S-26xaPO9si9xOofAvCHNReWFIgppge-xLmc/%3Fraw%3Dtrue/https/github.com/MModding/mmodding.github.io/blob/main/assets/mmodding_dark_banner.png?width=1919&height=294)](https://mmodding.github.io/discord-link)
