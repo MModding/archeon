@@ -17,5 +17,6 @@ public class ArcheonEntityRenderers implements ClientElementsInitializer {
 		EntityRendererRegistry.register(ArcheonEntities.SNAIL, SnailEntityRenderer::new);
 		EntityRendererRegistry.register(ArcheonEntities.SUNSTRADIVER, SunstradiverEntityRenderer::new);
 		EntityRendererRegistry.register(ArcheonEntities.HEIFER, HeiferEntityRenderer::new);
+		EntityRendererRegistry.register(ArcheonEntities.LUSONYTH_ARROW, LusonythArrowEntityRenderer::new);
 	}
 }

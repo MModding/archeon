@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "archeon:block/small_hot_spring_lily_pad"
+      },
+      {
+        "model": "archeon:block/small_hot_spring_lily_pad",
+        "y": 90
+      },
+      {
+        "model": "archeon:block/small_hot_spring_lily_pad",
+        "y": 180
+      },
+      {
+        "model": "archeon:block/small_hot_spring_lily_pad",
+        "y": 270
+      }
+    ]
+  }
+}

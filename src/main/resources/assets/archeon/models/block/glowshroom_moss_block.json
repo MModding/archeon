@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:block/glowshroom_moss",
+    "particle": "archeon:block/glowshroom_moss"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "part=origin,facing=north": {
+      "model": "archeon:block/giant_lily"
+    },
+    "part=origin,facing=east": {
+      "model": "archeon:block/giant_lily",
+      "y": 90
+    },
+    "part=origin,facing=south": {
+      "model": "archeon:block/giant_lily",
+      "y": 180
+    },
+    "part=origin,facing=west": {
+      "model": "archeon:block/giant_lily",
+      "y": 270
+    },
+    "part=sub_part_0": {
+      "model": "archeon:block/giant_lily_void"
+    },
+    "part=sub_part_1": {
+      "model": "archeon:block/giant_lily_void"
+    },
+    "part=sub_part_2": {
+      "model": "archeon:block/giant_lily_void"
+    }
+  }
+}

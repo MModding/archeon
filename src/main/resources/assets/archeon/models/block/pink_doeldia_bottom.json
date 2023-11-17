@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "archeon:block/pink_doeldia_bottom",
+    "particle": "archeon:block/pink_doeldia_bottom"
+  }
+}

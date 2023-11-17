@@ -34,12 +34,18 @@ public class ArcheonTags {
 		public static final TagKey<Block> GYPSUM = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/gypsum"), TagType.NORMAL);
 		public static final TagKey<Block> ANHYDRITE = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/anhydrite"), TagType.NORMAL);
 		public static final TagKey<Block> ROUGHCAST = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/roughcast"), TagType.NORMAL);
-		public static final TagKey<Block> WARPED_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/warped_tiles"), TagType.NORMAL);
-		public static final TagKey<Block> CRIMSON_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/crimson_tiles"), TagType.NORMAL);
-		public static final TagKey<Block> RED_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/red_tiles"), TagType.NORMAL);
-		public static final TagKey<Block> OCHRE_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/ochre_tiles"), TagType.NORMAL);
-		public static final TagKey<Block> BLUE_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/blue_tiles"), TagType.NORMAL);
+		public static final TagKey<Block> DARK_GREEN_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/dark_green_tiles"), TagType.NORMAL);
 		public static final TagKey<Block> GREEN_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/green_tiles"), TagType.NORMAL);
+		public static final TagKey<Block> LIME_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/lime_tiles"), TagType.NORMAL);
+		public static final TagKey<Block> TURQUOISE_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/turquoise_tiles"), TagType.NORMAL);
+		public static final TagKey<Block> LIGHT_BLUE_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/light_blue_tiles"), TagType.NORMAL);
+		public static final TagKey<Block> BLUE_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/blue_tiles"), TagType.NORMAL);
+		public static final TagKey<Block> DARK_BLUE_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/dark_blue_tiles"), TagType.NORMAL);
+		public static final TagKey<Block> PURPLE_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/purple_tiles"), TagType.NORMAL);
+		public static final TagKey<Block> PINK_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/pink_tiles"), TagType.NORMAL);
+		public static final TagKey<Block> RED_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/red_tiles"), TagType.NORMAL);
+		public static final TagKey<Block> CERAMIC_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/ceramic_tiles"), TagType.NORMAL);
+		public static final TagKey<Block> OCHRE_TILES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/ochre_tiles"), TagType.NORMAL);
 
 		public static final TagKey<Block> PALM = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("wood/palm"), TagType.NORMAL);
 		public static final TagKey<Block> NECLANE = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("wood/neclane"), TagType.NORMAL);

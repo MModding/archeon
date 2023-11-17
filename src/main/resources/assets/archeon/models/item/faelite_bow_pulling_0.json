@@ -1,0 +1,6 @@
+{
+  "parent": "item/bow",
+  "textures": {
+    "layer0": "archeon:item/faelite_bow_pulling_0"
+  }
+}

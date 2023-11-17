@@ -1,6 +1,7 @@
 package fr.firstmegagame4.archeon.init;
 
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
+import com.mmodding.mmodding_lib.library.utils.BiList;
 import com.mmodding.mmodding_lib.library.utils.RegistrationUtils;
 import com.mmodding.mmodding_lib.library.worldgen.features.AdvancedFeature;
 import com.mmodding.mmodding_lib.library.worldgen.features.defaults.*;
@@ -21,7 +22,6 @@ import fr.firstmegagame4.archeon.worldgen.features.trees.trunk.PalmTrunkPlacer;
 import fr.firstmegagame4.archeon.worldgen.features.trees.trunk.VuxanciaTrunkPlacer;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
-import net.minecraft.util.Pair;
 import net.minecraft.util.math.floatprovider.ClampedNormalFloatProvider;
 import net.minecraft.util.math.floatprovider.UniformFloatProvider;
 import net.minecraft.util.math.intprovider.ClampedNormalIntProvider;
@@ -183,9 +183,11 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomFlowerFeature OEA_FEATURE = new CustomFlowerFeature(8, 7, 3,
 		ArcheonBlocks.OEA).setRarity(2);
 	public static final CustomFlowerFeature IOPEA_FEATURE = new CustomFlowerFeature(8, 12, 6,
-		List.of(new Pair<>(ArcheonBlocks.IOPEA, 3), new Pair<>(ArcheonBlocks.TALL_IOPEA, 1))).setRarity(2);
+		BiList.of(ArcheonBlocks.IOPEA, 3, ArcheonBlocks.TALL_IOPEA, 1)
+	).setRarity(2);
 	public static final CustomFlowerFeature ORGANDEANE_FEATURE = new CustomFlowerFeature(8, 12, 6,
-		List.of(new Pair<>(ArcheonBlocks.ORGANDEANE_BLOSSOM, 3), new Pair<>(ArcheonBlocks.ORGANDEANE_TALL, 1))).setRarity(2);
+		BiList.of(ArcheonBlocks.ORGANDEANE_BLOSSOM, 3, ArcheonBlocks.ORGANDEANE_TALL, 1)
+	).setRarity(2);
 	public static final CustomFlowerFeature SEPTICEOLIA_FEATURE = new CustomFlowerFeature(8, 7, 3,
 		ArcheonBlocks.SEPTICEOLIA).setRarity(2);
 

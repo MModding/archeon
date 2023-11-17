@@ -7,65 +7,35 @@
         {
           "type": "minecraft:item",
           "weight": 1,
-          "name": "archeon:faelite_axe",
+          "name": "archeon:lycoris_jam_pie",
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
-                "min": 0,
-                "max": 1
-              }
-            },
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 0,
+                "min": 1,
                 "max": 2
-              },
-              "treasure": true
+              }
             }
           ]
         },
         {
           "type": "minecraft:item",
           "weight": 1,
-          "name": "archeon:faelite_pickaxe",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 0,
-                "max": 1
-              }
-            },
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 0,
-                "max": 2
-              },
-              "treasure": true
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:faelite_ingot",
+          "name": "archeon:manuscript",
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 2,
-                "max": 4
+                "max": 6
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:geometric_fall",
+          "weight": 2,
+          "name": "archeon:qolm_pick",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -73,20 +43,14 @@
                 "min": 1,
                 "max": 1
               }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:pink_lycoris_petal",
-          "functions": [
+            },
             {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "min": 0,
                 "max": 3
-              }
+              },
+              "treasure": true
             }
           ]
         },
@@ -99,6 +63,48 @@
               "function": "minecraft:set_count",
               "count": {
                 "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "archeon:exyriane_crystal",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 4,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "archeon:plant_fiber",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "archeon:blue_shell",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2,
                 "max": 5
               }
             }
@@ -106,29 +112,23 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:rising",
+          "weight": 4,
+          "name": "archeon:massacre_dagger",
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
-                "min": 1,
+                "min": 0,
                 "max": 1
               }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:pouch",
-          "functions": [
+            },
             {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "min": 0,
+                "max": 3
+              },
+              "treasure": true
             }
           ]
         }

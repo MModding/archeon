@@ -1,17 +1,26 @@
 package fr.firstmegagame4.archeon.init;
 
+import com.mmodding.mmodding_lib.library.blockentities.BlockEntityTypeBlockSupportCallback;
 import com.mmodding.mmodding_lib.library.events.VanillaFluidCollisionEvents;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import fr.firstmegagame4.archeon.Archeon;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
+import java.util.List;
+
 public class ArcheonEvents implements ElementsInitializer {
+
+	private static void furnaceBlockEntityTypeCallback(List<Block> supportedBlocks) {
+		supportedBlocks.add(ArcheonBlocks.SOUTHSTONE_FURNACE);
+		supportedBlocks.add(ArcheonBlocks.PHOSNOR_SLATE_FURNACE);
+	}
 
 	private static BlockState stoneGenerationCallback(WorldAccess access, BlockPos pos, BlockState blockState, Direction direction, FluidState fluidState) {
 		if (access instanceof World world) {
@@ -45,6 +54,7 @@ public class ArcheonEvents implements ElementsInitializer {
 
 	@Override
 	public void register() {
+		BlockEntityTypeBlockSupportCallback.blockEntityType(BlockEntityType.FURNACE).register(ArcheonEvents::furnaceBlockEntityTypeCallback);
 		VanillaFluidCollisionEvents.STONE_GENERATION_CALLBACK.register(ArcheonEvents::stoneGenerationCallback);
 		VanillaFluidCollisionEvents.COBBLESTONE_GENERATION_CALLBACK.register(ArcheonEvents::cobblestoneGenerationCallback);
 		VanillaFluidCollisionEvents.OBSIDIAN_GENERATION_CALLBACK.register(ArcheonEvents::obsidianGenerationCallback);

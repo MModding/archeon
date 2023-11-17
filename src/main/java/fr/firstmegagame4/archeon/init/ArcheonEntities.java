@@ -4,6 +4,7 @@ import com.mmodding.mmodding_lib.library.entities.CustomEntityType;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.entities.*;
+import fr.firstmegagame4.archeon.entities.projectiles.LusonythArrowEntity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.SpawnGroup;
 
@@ -76,6 +77,15 @@ public class ArcheonEntities implements ElementsInitializer {
 			.maxChunkTrackingRange(8)
 	);
 
+	public static final CustomEntityType<LusonythArrowEntity> LUSONYTH_ARROW = CustomEntityType.create(
+		builder -> builder
+			.entityFactory(LusonythArrowEntity::new)
+			.spawnGroup(SpawnGroup.MISC)
+			.setDimensions(EntityDimensions.fixed(0.5f, 0.5f))
+			.maxChunkTrackingRange(4)
+			.trackingTickInterval(20)
+	);
+
 	@Override
 	public void register() {
 		AURORA_CATALYST.register(Archeon.createId("aurora_catalyst"));
@@ -85,5 +95,6 @@ public class ArcheonEntities implements ElementsInitializer {
 		SNAIL.register(Archeon.createId("snail"));
 		SUNSTRADIVER.register(Archeon.createId("sunstradiver"));
 		HEIFER.register(Archeon.createId("heifer"));
+		LUSONYTH_ARROW.register(Archeon.createId("lusonyth_arrow"));
 	}
 }

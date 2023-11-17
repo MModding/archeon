@@ -1,0 +1,8 @@
+{
+  "parent": "archeon:custom/giant_lily",
+  "textures": {
+    "all": "archeon:block/giant_lily",
+    "particle": "archeon:block/giant_lily",
+    "0": "archeon:block/giant_lily"
+  }
+}

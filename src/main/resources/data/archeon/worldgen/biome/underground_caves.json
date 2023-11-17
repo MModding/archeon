@@ -14,28 +14,7 @@
       "offset": 2
     }
   },
-  "spawners": {
-    "monster": [
-      {
-        "type": "minecraft:spider",
-        "weight": 100,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:zombie",
-        "weight": 95,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:skeleton",
-        "weight": 100,
-        "minCount": 4,
-        "maxCount": 4
-      }
-    ]
-  },
+  "spawners": {},
   "spawn_costs": {},
   "carvers": {},
   "features": []

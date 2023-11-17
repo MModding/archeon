@@ -1,7 +1,11 @@
 package fr.firstmegagame4.archeon.entities;
 
-import com.mmodding.mmodding_lib.library.entities.goals.FlyingAroundFarGoal;
+import com.mmodding.mmodding_lib.library.entities.data.MModdingTrackedDataHandlers;
+import com.mmodding.mmodding_lib.library.entities.data.syncable.SyncableData;
+import com.mmodding.mmodding_lib.library.entities.goals.MoveToSpecificPosGoal;
 import com.mmodding.mmodding_lib.library.utils.WorldUtils;
+import fr.firstmegagame4.archeon.Archeon;
+import fr.firstmegagame4.archeon.init.ArcheonEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.render.entity.feature.ConditionalOverlayOwner;
 import net.minecraft.entity.Entity;
@@ -25,9 +29,13 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
+import net.minecraft.nbt.NbtList;
+import net.minecraft.nbt.NbtString;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -37,14 +45,28 @@ import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
 public class HeartOfNatureEntity extends HostileEntity implements ConditionalOverlayOwner {
 
 	private static final TrackedData<Integer> PHASE = DataTracker.registerData(HeartOfNatureEntity.class, TrackedDataHandlerRegistry.INTEGER);
 	private static final TrackedData<Boolean> SHIELD = DataTracker.registerData(HeartOfNatureEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+	private static final TrackedData<List<UUID>> SOLDIERS = DataTracker.registerData(HeartOfNatureEntity.class, MModdingTrackedDataHandlers.UUID_LIST);
+
+	private final SyncableData<Boolean> originalPosRecoveringState = new SyncableData<>(
+		Boolean.FALSE,
+		this,
+		Archeon.createId("original_pos_recovering_state"),
+		TrackedDataHandlerRegistry.BOOLEAN
+	);
 
 	private final ServerBossBar bossBar = new ServerBossBar(this.getDisplayName(), BossBar.Color.WHITE, BossBar.Style.PROGRESS);
 
 	private boolean reloaded = false;
+
+	private Vec3d originalPos = Vec3d.ZERO;
 
 	public HeartOfNatureEntity(EntityType<? extends HeartOfNatureEntity> entityType, World world) {
 		super(entityType, world);
@@ -53,9 +75,9 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 
 	@Override
 	protected void initGoals() {
-		this.goalSelector.add(0, new TargetGoal<>(this, PlayerEntity.class, true));
-		this.goalSelector.add(1, new NatureCoreAttackGoal(this, 2.0f, false));
-		this.goalSelector.add(2, new NatureCoreFlyingAround(this, 1.0));
+		this.goalSelector.add(0, new MoveToSpecificPosGoal(this, 2.0, 16, 16, this::isRecoveringOriginalPos, this::getOriginalPos, this::posRecoveredPostProcess));
+		this.goalSelector.add(1, new HeartOfNatureAttackGoal(this, 1.0, false));
+		this.targetSelector.add(0, new TargetGoal<>(this, PlayerEntity.class, true).setMaxTimeWithoutVisibility(300));
 	}
 
 	@Override
@@ -63,6 +85,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		super.initDataTracker();
 		this.dataTracker.startTracking(HeartOfNatureEntity.PHASE, 0);
 		this.dataTracker.startTracking(HeartOfNatureEntity.SHIELD, false);
+		this.dataTracker.startTracking(HeartOfNatureEntity.SOLDIERS, new ArrayList<>());
 	}
 
 	@Override
@@ -70,6 +93,14 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		super.writeCustomDataToNbt(nbt);
 		nbt.putInt("Phase", this.getPhaseIndex());
 		nbt.putBoolean("ShieldDeployed", this.isShieldDeployed());
+		NbtList soldiers = new NbtList();
+		this.getSoldiers().forEach(soldier -> soldiers.add(NbtString.of(soldier.toString())));
+		nbt.put("Soldiers", soldiers);
+		NbtCompound originalPos = new NbtCompound();
+		originalPos.putDouble("X", this.originalPos.x);
+		originalPos.putDouble("Y", this.originalPos.y);
+		originalPos.putDouble("Z", this.originalPos.z);
+		nbt.put("OriginalPos", originalPos);
 	}
 
 	@Override
@@ -77,12 +108,23 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		super.readCustomDataFromNbt(nbt);
 		this.dataTracker.set(PHASE, MathHelper.clamp(nbt.getInt("Phase"), 0, 4));
 		this.shieldDeployment(nbt.getBoolean("ShieldDeployed"));
+		NbtList soldiers = nbt.getList("Soldiers", NbtElement.STRING_TYPE);
+		for (int i = 0; i < soldiers.size(); i++) {
+			this.addSoldier(UUID.fromString(soldiers.getString(i)));
+		}
+		NbtCompound originalPos = nbt.getCompound("OriginalPos");
+		this.originalPos = new Vec3d(
+			originalPos.getDouble("X"),
+			originalPos.getDouble("Y"),
+			originalPos.getDouble("Z")
+		);
 		if (this.hasCustomName()) {
 			this.bossBar.setName(this.getDisplayName());
 		}
 	}
 
-	public void onSummoned() {
+	public void onSummonedByPowerKey(Vec3d originalPos) {
+		this.originalPos = originalPos;
 		this.bossBar.setPercent(0.0f);
 	}
 
@@ -114,6 +156,38 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		this.dataTracker.set(HeartOfNatureEntity.SHIELD, deployed);
 	}
 
+	public List<UUID> getSoldiers() {
+		return this.dataTracker.get(HeartOfNatureEntity.SOLDIERS);
+	}
+
+	public void setSoldiers(List<UUID> soldiers) {
+		this.dataTracker.set(HeartOfNatureEntity.SOLDIERS, soldiers);
+	}
+
+	public void addSoldier(UUID uuid) {
+		List<UUID> soldiers = this.getSoldiers();
+		soldiers.add(uuid);
+		this.setSoldiers(soldiers);
+	}
+
+	public void removeSoldier(UUID uuid) {
+		List<UUID> soldiers = this.getSoldiers();
+		soldiers.remove(uuid);
+		this.setSoldiers(soldiers);
+	}
+
+	public void openProtections() {
+		this.shieldDeployment(false);
+		if (this.world instanceof ServerWorld serverWorld) {
+			WorldUtils.doTaskAfter(serverWorld, 30 * 20, () -> {
+				if (!this.isDead()) {
+					this.shieldDeployment(true);
+					this.nowRecoveringOriginalPos();
+				}
+			});
+		}
+	}
+
 	public boolean switchPhase() {
 		if (this.getPhase() != Phase.DEFEATED) {
 			this.dataTracker.set(HeartOfNatureEntity.PHASE, MathHelper.clamp(this.getPhaseIndex() + 1, 0, 4));
@@ -121,6 +195,15 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 			return true;
 		}
 		return false;
+	}
+
+	public void newPhaseProcess() {
+		this.shieldDeployment(!this.getPhase().equals(Phase.DEFEATED));
+		this.setHealth(this.getPhase().equals(Phase.DEFEATED) ? 50.0f : 0.1f);
+		if (!this.getPhase().equals(Phase.DEFEATED)) {
+			WorldUtils.repeatSyncedTaskUntil(this.world, 50, () -> this.heal(1.0f));
+			this.nowRecoveringOriginalPos();
+		}
 	}
 
 	public void updateBossBar() {
@@ -133,6 +216,54 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		});
 	}
 
+	private boolean isRecoveringOriginalPos() {
+		return this.originalPosRecoveringState.get();
+	}
+
+	private Vec3d getOriginalPos() {
+		return this.originalPos;
+	}
+
+	private void nowRecoveringOriginalPos() {
+		this.originalPosRecoveringState.set(true);
+		this.originalPosRecoveringState.synchronize();
+	}
+
+	private void posRecoveredPostProcess() {
+		this.originalPosRecoveringState.set(false);
+		this.originalPosRecoveringState.synchronize();
+		this.teleport(this.originalPos.x, this.originalPos.y, this.originalPos.z);
+		this.invokeSoldiers();
+	}
+
+	private void invokeSoldiers() {
+		for (int i = 0; i < (this.getPhase() == Phase.NORMAL ? 10 : this.getPhase() == Phase.POISONOUS ? 15 : 20); i++) {
+			if (this.world instanceof ServerWorld serverWorld) {
+				WorldUtils.doTaskAfter(serverWorld, i * 20, () -> {
+					EntityType<AuroraCatalystEntity> type;
+					switch (this.getPhase()) {
+						default -> type = ArcheonEntities.AURORA_CATALYST;
+						case POISONOUS -> type = this.random.nextInt(2) == 1 ? ArcheonEntities.POISONOUS_AURORA_CATALYST : ArcheonEntities.AURORA_CATALYST;
+						case EXPLOSIVE -> type = switch (this.random.nextInt(3)) {
+							default -> ArcheonEntities.AURORA_CATALYST;
+							case 1 -> ArcheonEntities.POISONOUS_AURORA_CATALYST;
+							case 2 -> ArcheonEntities.EXPLOSIVE_AURORA_CATALYST;
+						};
+					}
+					AuroraCatalystEntity auroraCatalystEntity = new AuroraCatalystEntity(type, this.world);
+					auroraCatalystEntity.onInvokedByMaster(this.getUuid());
+					auroraCatalystEntity.teleport(
+						this.getX() - 6 + this.random.nextInt(13),
+						this.getY() + 3.5f,
+						this.getZ() - 6 + this.random.nextInt(13)
+					);
+					serverWorld.spawnEntity(auroraCatalystEntity);
+					this.addSoldier(auroraCatalystEntity.getUuid());
+				});
+			}
+		}
+	}
+
 	@Override
 	protected void mobTick() {
 		super.mobTick();
@@ -142,7 +273,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 			this.reloaded = true;
 		}
 
-		if (this.getPhase().equals(Phase.PETRIFIED)) {
+		if (this.getPhase().equals(Phase.PETRIFIED) || (this.isShieldDeployed() && !this.isRecoveringOriginalPos())) {
 			this.setVelocity(Vec3d.ZERO);
 		}
 
@@ -176,7 +307,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		};
 
 		for (int i = 0; i < 2; i++) {
-			world.addParticle(
+			this.world.addParticle(
 				particleType,
 				this.getX() + this.random.nextFloat() - 0.5f,
 				this.getY() + this.random.nextFloat() - 0.0f,
@@ -190,7 +321,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 
 	@Override
 	public void setTarget(@Nullable LivingEntity target) {
-		if (target instanceof PlayerEntity) {
+		if (target instanceof PlayerEntity && !this.isShieldDeployed()) {
 			super.setTarget(target);
 		}
 	}
@@ -232,7 +363,9 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		else if (this.getPhase().equals(Phase.PETRIFIED)) {
 			if (source.getAttacker() instanceof PlayerEntity entity) {
 				if (entity.getMainHandStack().getItem() instanceof PickaxeItem) {
-					this.switchPhase();
+					if (this.switchPhase()) {
+						this.newPhaseProcess();
+					}
 					return true;
 				}
 			}
@@ -241,16 +374,23 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 			if (!this.isShieldDeployed()) {
 				if (this.getHealth() - amount <= 0.0f) {
 					if (this.switchPhase()) {
-						this.shieldDeployment(!this.getPhase().equals(Phase.DEFEATED));
-						this.setHealth(this.getPhase().equals(Phase.DEFEATED) ? 50.0f : 0.1f);
-						if (!this.getPhase().equals(Phase.DEFEATED)) {
-							WorldUtils.repeatSyncedTaskUntil(this.world, 50, () -> this.heal(1.0f));
-							WorldUtils.doSyncedTaskAfter(this.world, 50, () -> this.shieldDeployment(false));
-						}
+						this.newPhaseProcess();
 						return true;
 					}
 				}
 				else {
+					EntityType<? extends AuroraCatalystEntity> type = switch (this.getPhase()) {
+						default -> ArcheonEntities.AURORA_CATALYST;
+						case POISONOUS -> ArcheonEntities.POISONOUS_AURORA_CATALYST;
+						case EXPLOSIVE -> ArcheonEntities.EXPLOSIVE_AURORA_CATALYST;
+					};
+					AuroraCatalystEntity auroraCatalystEntity = new AuroraCatalystEntity(type, this.world);
+					auroraCatalystEntity.teleport(
+						this.getX() - 6 + this.random.nextInt(13),
+						this.getY() + 3.5f,
+						this.getZ() - 6 + this.random.nextInt(13)
+					);
+					this.world.spawnEntity(auroraCatalystEntity);
 					return super.damage(source, amount);
 				}
 			}
@@ -298,45 +438,24 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		DEFEATED
 	}
 
-	public static class NatureCoreAttackGoal extends MeleeAttackGoal {
+	public static class HeartOfNatureAttackGoal extends MeleeAttackGoal {
 
 		public HeartOfNatureEntity natureCore() {
 			return (HeartOfNatureEntity) this.mob;
 		}
 
-		public NatureCoreAttackGoal(HeartOfNatureEntity pathAwareEntity, double speed, boolean pauseWhenMobIdle) {
+		public HeartOfNatureAttackGoal(HeartOfNatureEntity pathAwareEntity, double speed, boolean pauseWhenMobIdle) {
 			super(pathAwareEntity, speed, pauseWhenMobIdle);
 		}
 
 		@Override
 		public boolean canStart() {
-			return this.natureCore().getPhase() != Phase.PETRIFIED && this.natureCore().getPhase() != Phase.DEFEATED;
+			return this.natureCore().getPhase() != Phase.PETRIFIED && this.natureCore().getPhase() != Phase.DEFEATED && super.canStart();
 		}
 
 		@Override
 		public boolean shouldContinue() {
-			return this.natureCore().getPhase() != Phase.PETRIFIED && this.natureCore().getPhase() != Phase.DEFEATED;
-		}
-	}
-
-	public static class NatureCoreFlyingAround extends FlyingAroundFarGoal {
-
-		public HeartOfNatureEntity natureCore() {
-			return (HeartOfNatureEntity) this.mob;
-		}
-
-		public NatureCoreFlyingAround(HeartOfNatureEntity pathAwareEntity, double speed) {
-			super(pathAwareEntity, speed);
-		}
-
-		@Override
-		public boolean canStart() {
-			return this.natureCore().getPhase() != Phase.PETRIFIED && this.natureCore().getPhase() != Phase.DEFEATED;
-		}
-
-		@Override
-		public boolean shouldContinue() {
-			return this.natureCore().getPhase() != Phase.PETRIFIED && this.natureCore().getPhase() != Phase.DEFEATED;
+			return this.natureCore().getPhase() != Phase.PETRIFIED && this.natureCore().getPhase() != Phase.DEFEATED && super.shouldContinue();
 		}
 	}
 }

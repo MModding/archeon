@@ -1,10 +1,12 @@
 package fr.firstmegagame4.archeon.client.entities.renderers;
 
+import com.mmodding.mmodding_lib.library.client.render.entity.feature.GlowingFeatureRenderer;
 import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.client.entities.models.HeartOfNatureEntityModel;
 import fr.firstmegagame4.archeon.client.init.ArcheonEntityModelLayers;
 import fr.firstmegagame4.archeon.entities.HeartOfNatureEntity;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.render.entity.feature.EnergySwirlOverlayFeatureRenderer;
@@ -18,6 +20,7 @@ public class HeartOfNatureEntityRenderer extends MobEntityRenderer<HeartOfNature
 
 	public HeartOfNatureEntityRenderer(EntityRendererFactory.Context context) {
 		super(context, new HeartOfNatureEntityModel(context.getPart(ArcheonEntityModelLayers.HEART_OF_NATURE)), 0.5f);
+		this.addFeature(new HeartOfNatureGlowingFeatureRenderer(this));
 		this.addFeature(new HeartOfNatureShieldFeatureRenderer(this, context.getModelLoader()));
 	}
 
@@ -30,6 +33,18 @@ public class HeartOfNatureEntityRenderer extends MobEntityRenderer<HeartOfNature
 			case EXPLOSIVE -> new TextureLocation(Archeon.id(), "entity/heart_of_nature/explosive_heart_of_nature");
 			case DEFEATED -> new TextureLocation(Archeon.id(), "entity/heart_of_nature/defeated_heart_of_nature");
 		};
+	}
+
+	public static class HeartOfNatureGlowingFeatureRenderer extends GlowingFeatureRenderer<HeartOfNatureEntity, HeartOfNatureEntityModel> {
+
+		public HeartOfNatureGlowingFeatureRenderer(FeatureRendererContext<HeartOfNatureEntity, HeartOfNatureEntityModel> context) {
+			super(context);
+		}
+
+		@Override
+		public RenderLayer getGlowingLayer(HeartOfNatureEntity entity) {
+			return RenderLayer.getEyes(this.getTexture(entity));
+		}
 	}
 
 	public static class HeartOfNatureShieldFeatureRenderer extends EnergySwirlOverlayFeatureRenderer<HeartOfNatureEntity, HeartOfNatureEntityModel> {

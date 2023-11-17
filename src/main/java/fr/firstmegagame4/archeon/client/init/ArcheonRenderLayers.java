@@ -33,6 +33,15 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.TALL_WITHERED_ORGANDEANE.cutout();
 		ArcheonBlocks.SEPTICEOLIA.cutout();
 		ArcheonBlocks.WITHERED_SEPTICEOLIA.cutout();
+		ArcheonBlocks.BLUE_DOELDIA.cutout();
+		ArcheonBlocks.WHITE_DOELDIA.cutout();
+		ArcheonBlocks.PINK_DOELDIA.cutout();
+		ArcheonBlocks.YELLOW_DOELDIA.cutout();
+
+		ArcheonBlocks.SMALL_HOT_SPRING_LILY_PAD.cutout();
+		ArcheonBlocks.HOT_SPRING_LILY_PAD.cutout();
+		ArcheonBlocks.GIANT_LILY.cutout();
+
 		ArcheonBlocks.WET_GRASS.cutout();
 		ArcheonBlocks.TALL_WET_GRASS.cutout();
 		ArcheonBlocks.FLOWERED_WET_GRASS.cutout();
@@ -50,6 +59,10 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.COKIPLANT.cutout();
 		ArcheonBlocks.XETULIAN_SUGAR_CANE.cutout();
 		ArcheonBlocks.SPORE_ROOTCAP.cutout();
+
+		ArcheonBlocks.GLOWSPROUTS.cutout();
+		ArcheonBlocks.GLOWSHROOMS.cutout();
+		ArcheonBlocks.GLOWSHROOM_PARASITES.cutout();
 
 		ArcheonBlocks.PALM_DOOR.cutout();
 		ArcheonBlocks.PALM_TRAPDOOR.cutout();
@@ -172,7 +185,7 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonFluids.HOT_SPRING_WATER.getStill().translucent();
 		ArcheonFluids.HOT_SPRING_WATER.getFlowing().translucent();
 
-		ArcheonFluids.GLOWING_WATER.getStill().translucent();
-		ArcheonFluids.GLOWING_WATER.getFlowing().translucent();
+		ArcheonFluids.DASCIUM.getStill().translucent();
+		ArcheonFluids.DASCIUM.getFlowing().translucent();
 	}
 }

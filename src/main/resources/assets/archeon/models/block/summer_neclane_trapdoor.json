@@ -1,7 +1,7 @@
 {
   "parent": "block/template_orientable_trapdoor_bottom",
   "textures": {
-    "texture": "archeon:block/neclane_trapdoor_summer",
-    "particle": "archeon:block/neclane_trapdoor_summer"
+    "texture": "archeon:block/summer_neclane_trapdoor",
+    "particle": "archeon:block/summer_neclane_trapdoor"
   }
 }

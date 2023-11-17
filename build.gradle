@@ -14,7 +14,9 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	maven { url 'https://jitpack.io' }
-	maven { url = "https://maven.terraformersmc.com" }
+	maven { url 'https://maven.terraformersmc.com' }
+	maven { url 'https://maven.willbl.dev/releases' }
+	maven { url 'https://maven.ladysnake.org/releases' }
 }
 
 // All the dependencies are declared at gradle/libs.version.toml and referenced with "libs.<id>"
@@ -36,6 +38,14 @@ dependencies {
 
 	// MModding Library
 	modImplementation libs.mmodding.lib
+
+	// Double Jump Attribute
+	modImplementation libs.double.jump.attribute
+
+	// Trinkets
+	modImplementation libs.trinkets
+
+	include libs.double.jump.attribute
 }
 
 processResources {

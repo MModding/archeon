@@ -1,5 +1,6 @@
 {
 	"schema_version": 1,
+	"fluidlogged": "archeon.fluidlogged.json",
 	"quilt_loader": {
 		"group": "fr.firstmegagame4",
 		"id": "archeon",
@@ -8,8 +9,8 @@
 			"name": "Archeon",
 			"description": "This is the Official Version of Archeon. Archeon is a brand new dimension, full of new blocks, mobs and more! All you need to get there is a portal made of Mysterious Stone, filled with a magical energy made by the Wand of Nature!",
 			"contributors": {
-				"Silent Winds Team": "Owner, Author",
-				"Aethyus": "Project Manager, Art Director, Former Lead Forge Developer",
+				"Silent Winds Team": "Owner",
+				"Aethyus": "Author, Project Manager, Art Director, Former Lead Forge Developer",
 				"Aeramisu": "Project Manager, Art Director, Composer, Concept Artist, Sound Designer",
 				"FirstMegaGame4": "Lead Quilt Developer",
 				"Aerod": "Additional Art",
@@ -48,6 +49,12 @@
 			{
 				"id": "mmodding_lib",
 				"versions": ">=0.1.0-"
+			}
+		],
+		"suggests": [
+			{
+				"id": "trinkets",
+				"versions": ">=3.4.1-"
 			}
 		]
 	},

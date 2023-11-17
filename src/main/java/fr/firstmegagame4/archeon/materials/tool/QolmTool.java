@@ -14,7 +14,7 @@ public class QolmTool implements ToolMaterial {
 
 	@Override
 	public float getMiningSpeedMultiplier() {
-		return 4.0f;
+		return 3.5f;
 	}
 
 	@Override

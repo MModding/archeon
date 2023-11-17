@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "archeon:block/white_doeldia"
+    },
+    "half=lower": {
+      "model": "archeon:block/white_doeldia_bottom"
+    }
+  }
+}

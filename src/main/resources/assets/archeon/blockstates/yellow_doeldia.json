@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "archeon:block/yellow_doeldia"
+    },
+    "half=lower": {
+      "model": "archeon:block/yellow_doeldia_bottom"
+    }
+  }
+}

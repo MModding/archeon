@@ -1,5 +1,7 @@
 package fr.firstmegagame4.archeon.init;
 
+import com.mmodding.mmodding_lib.library.fluids.buckets.CustomBucketItem;
+import com.mmodding.mmodding_lib.library.fluids.buckets.CustomMilkBucketItem;
 import com.mmodding.mmodding_lib.library.glint.DefaultGlintPacks;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.items.*;
@@ -7,8 +9,10 @@ import com.mmodding.mmodding_lib.library.items.settings.AdvancedItemSettings;
 import com.mmodding.mmodding_lib.library.items.settings.ItemFinishUsing;
 import com.mmodding.mmodding_lib.library.portals.CustomPortalKeyItem;
 import fr.firstmegagame4.archeon.Archeon;
+import fr.firstmegagame4.archeon.buckets.CeramicBucketManager;
+import fr.firstmegagame4.archeon.buckets.WoodenBucketManager;
 import fr.firstmegagame4.archeon.entities.HeartOfNatureEntity;
-import fr.firstmegagame4.archeon.items.PouchItem;
+import fr.firstmegagame4.archeon.items.*;
 import fr.firstmegagame4.archeon.materials.armor.ApafloriteArmor;
 import fr.firstmegagame4.archeon.materials.armor.ClothesTunic;
 import fr.firstmegagame4.archeon.materials.armor.FaeliteArmor;
@@ -22,11 +26,13 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Rarity;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
 import net.minecraft.world.explosion.Explosion;
@@ -51,11 +57,9 @@ public class ArcheonItems implements ElementsInitializer {
 		BlockState state = context.getWorld().getBlockState(context.getBlockPos());
 		if (state.isOf(ArcheonBlocks.POWER_KEYSTONE) && context.getPlayer() != null) {
 			HeartOfNatureEntity heartOfNatureEntity = new HeartOfNatureEntity(ArcheonEntities.HEART_OF_NATURE, context.getWorld());
-			float x = context.getBlockPos().getX() + 0.5f;
-			float y = context.getBlockPos().getY() + 2.5f;
-			float z = context.getBlockPos().getZ() + 0.5f;
-			heartOfNatureEntity.setPosition(x, y, z);
-			heartOfNatureEntity.onSummoned();
+			Vec3d originalPos = new Vec3d(context.getBlockPos().getX() + 0.5f, context.getBlockPos().getY() + 2.5f, context.getBlockPos().getZ() + 0.5f);
+			heartOfNatureEntity.setPosition(originalPos);
+			heartOfNatureEntity.onSummonedByPowerKey(originalPos);
 			context.getWorld().spawnEntity(heartOfNatureEntity);
 			if(!context.getPlayer().isCreative()) context.getPlayer().getInventory().removeOne(context.getPlayer().getStackInHand(context.getHand()));
 		}
@@ -107,10 +111,21 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomArmorItem FAELITE_LEGGINGS = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.LEGS, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
 	public static final CustomArmorItem FAELITE_BOOTS = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.FEET, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
 
+	public static final FaeliteBowItem FAELITE_BOW = new FaeliteBowItem(new AdvancedItemSettings().maxCount(1));
+	public static final CustomArrowItem LUSONYTH_ARROW = new LusonythArrowItem(new AdvancedItemSettings());
+
 	public static final CustomFishingRodItem EXYRIANE_FISHING_ROD = new CustomFishingRodItem(new AdvancedItemSettings());
 
 	public static final CustomArmorItem CLOTHES_CHESTPLATE = new CustomArmorItem(ClothesTunic.INSTANCE, EquipmentSlot.CHEST, new AdvancedItemSettings());
 	public static final CustomArmorItem CLOTHES_LEGGINGS = new CustomArmorItem(ClothesTunic.INSTANCE, EquipmentSlot.LEGS, new AdvancedItemSettings());
+
+	public static final RingItem APAFLORITE_RING = new RingItem(RingItem::apafloriteRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
+	public static final RingItem FAELITE_RING = new RingItem(RingItem::faeliteRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
+	public static final RingItem CLEMENTIUM_RING = new RingItem(RingItem::clementiumRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
+	public static final RingItem LUSONYTH_RING = new RingItem(RingItem::lusonythRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
+	public static final RingItem RING_OF_EDEN = new RingItem(RingItem::ringOfEdenModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE));
+	public static final RingItem RING_OF_WAHVEN = new RingItem(RingItem::ringOfWahvenModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE));
+	public static final RingItem AMULET_OF_NATURE = new AmuletOfNature(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC));
 
 	public static final CustomItem MANUSCRIPT = new CustomItem(new AdvancedItemSettings());
 
@@ -128,6 +143,46 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomItem BLUE_SHELL = new CustomItem(new AdvancedItemSettings());
 	public static final CustomItem PINK_SHELL = new CustomItem(new AdvancedItemSettings());
 	public static final CustomItem YELLOW_SHELL = new CustomItem(new AdvancedItemSettings());
+
+	public static final CustomBucketItem WOODEN_BUCKET = new CustomBucketItem(
+		Fluids.EMPTY, WoodenBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(16)
+	);
+
+	public static final CustomBucketItem WOODEN_WATER_BUCKET = new CustomBucketItem(
+		Fluids.WATER, WoodenBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	);
+
+	public static final CustomMilkBucketItem WOODEN_MILK_BUCKET = new CustomMilkBucketItem(
+		WoodenBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	);
+
+	public static final CustomBucketItem WOODEN_HOT_SPRING_WATER_BUCKET = new CustomBucketItem(
+		ArcheonFluids.HOT_SPRING_WATER.getStill(), WoodenBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	);
+
+	public static final CustomBucketItem WOODEN_DASCIUM_BUCKET = new CustomBucketItem(
+		ArcheonFluids.DASCIUM.getStill(), WoodenBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	);
+
+	public static final CustomBucketItem CERAMIC_BUCKET = new CustomBucketItem(
+		Fluids.EMPTY, CeramicBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(16)
+	);
+
+	public static final CustomBucketItem CERAMIC_WATER_BUCKET = new CustomBucketItem(
+		Fluids.WATER, CeramicBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	);
+
+	public static final CustomBucketItem CERAMIC_LAVA_BUCKET = new CustomBucketItem(
+		Fluids.LAVA, CeramicBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	);
+
+	public static final CustomBucketItem CERAMIC_HOT_SPRING_WATER_BUCKET = new CustomBucketItem(
+		ArcheonFluids.HOT_SPRING_WATER.getStill(), CeramicBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	);
+
+	public static final CustomBucketItem CERAMIC_DASCIUM_BUCKET = new CustomBucketItem(
+		ArcheonFluids.DASCIUM.getStill(), CeramicBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	);
 
 	public static final CustomItem GOBLET = new CustomItem(new AdvancedItemSettings());
 
@@ -219,7 +274,7 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomItem RAW_SUNSTRADIVER_CHOP = new CustomItem(new AdvancedItemSettings().food(2, 0.3f, true));
 	public static final CustomItem COOKED_SUNSTRADIVER_CHOP = new CustomItem(new AdvancedItemSettings().food(7, 1.0f, true));
 
-	public static final CustomItem PUMPKIN_PIE_WITH_LYCORIS_JAM = new CustomItem(new AdvancedItemSettings().maxCount(1).food(20, 20.0f));
+	public static final CustomItem LYCORIS_JAM_PIE = new CustomItem(new AdvancedItemSettings().maxCount(1).food(20, 20.0f));
 
 	public static final CustomItem BLOOD_ORANGE = new CustomItem(new AdvancedItemSettings());
 
@@ -310,9 +365,18 @@ public class ArcheonItems implements ElementsInitializer {
 		FAELITE_CHESTPLATE.register(Archeon.createId("faelite_chestplate"));
 		FAELITE_LEGGINGS.register(Archeon.createId("faelite_leggings"));
 		FAELITE_BOOTS.register(Archeon.createId("faelite_boots"));
+		FAELITE_BOW.register(Archeon.createId("faelite_bow"));
+		LUSONYTH_ARROW.register(Archeon.createId("lusonyth_arrow"));
 		EXYRIANE_FISHING_ROD.register(Archeon.createId("exyriane_fishing_rod"));
 		CLOTHES_CHESTPLATE.register(Archeon.createId("clothes_chestplate"));
 		CLOTHES_LEGGINGS.register(Archeon.createId("clothes_leggings"));
+		APAFLORITE_RING.register(Archeon.createId("apaflorite_ring"));
+		FAELITE_RING.register(Archeon.createId("faelite_ring"));
+		CLEMENTIUM_RING.register(Archeon.createId("clementium_ring"));
+		LUSONYTH_RING.register(Archeon.createId("lusonyth_ring"));
+		RING_OF_EDEN.register(Archeon.createId("ring_of_eden"));
+		RING_OF_WAHVEN.register(Archeon.createId("ring_of_wahven"));
+		AMULET_OF_NATURE.register(Archeon.createId("amulet_of_nature"));
 		MANUSCRIPT.register(Archeon.createId("manuscript"));
 		APAFLORITE_GEMSTONE.register(Archeon.createId("apaflorite_gemstone"));
 		EXYRIANE_CRYSTAL.register(Archeon.createId("exyriane_crystal"));
@@ -323,6 +387,16 @@ public class ArcheonItems implements ElementsInitializer {
 		BLUE_SHELL.register(Archeon.createId("blue_shell"));
 		PINK_SHELL.register(Archeon.createId("pink_shell"));
 		YELLOW_SHELL.register(Archeon.createId("yellow_shell"));
+		WOODEN_BUCKET.register(Archeon.createId("wooden_bucket"));
+		WOODEN_WATER_BUCKET.register(Archeon.createId("wooden_water_bucket"));
+		WOODEN_MILK_BUCKET.register(Archeon.createId("wooden_milk_bucket"));
+		WOODEN_HOT_SPRING_WATER_BUCKET.register(Archeon.createId("wooden_hot_spring_water_bucket"));
+		WOODEN_DASCIUM_BUCKET.register(Archeon.createId("wooden_dascium_bucket"));
+		CERAMIC_BUCKET.register(Archeon.createId("ceramic_bucket"));
+		CERAMIC_WATER_BUCKET.register(Archeon.createId("ceramic_water_bucket"));
+		CERAMIC_LAVA_BUCKET.register(Archeon.createId("ceramic_lava_bucket"));
+		CERAMIC_HOT_SPRING_WATER_BUCKET.register(Archeon.createId("ceramic_hot_spring_water_bucket"));
+		CERAMIC_DASCIUM_BUCKET.register(Archeon.createId("ceramic_dascium_bucket"));
 		GOBLET.register(Archeon.createId("goblet"));
 		GOBLET_WATER.register(Archeon.createId("goblet_water"));
 		GOBLET_COCONUT_MILK.register(Archeon.createId("goblet_coconut_milk"));
@@ -347,7 +421,7 @@ public class ArcheonItems implements ElementsInitializer {
 		COOKED_HEIFER.register(Archeon.createId("cooked_heifer"));
 		RAW_SUNSTRADIVER_CHOP.register(Archeon.createId("raw_sunstradiver_chop"));
 		COOKED_SUNSTRADIVER_CHOP.register(Archeon.createId("cooked_sunstradiver_chop"));
-		PUMPKIN_PIE_WITH_LYCORIS_JAM.register(Archeon.createId("pumpkin_pie_with_lycoris_jam"));
+		LYCORIS_JAM_PIE.register(Archeon.createId("lycoris_jam_pie"));
 		BLOOD_ORANGE.register(Archeon.createId("blood_orange"));
 		GRAPE.register(Archeon.createId("grape"));
 		GOLDEN_GRAPE.register(Archeon.createId("golden_grape"));

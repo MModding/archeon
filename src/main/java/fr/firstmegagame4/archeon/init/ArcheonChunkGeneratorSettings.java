@@ -14,15 +14,18 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.world.biome.source.util.OverworldBiomeParameters;
 import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
+import net.minecraft.world.gen.chunk.GenerationShapeConfig;
 import net.minecraft.world.gen.surfacebuilder.SurfaceRules;
 
 public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 
 	public static final Identifier GENERATOR_SETTINGS_IDENTIFIER = Archeon.createId("generator_settings");
 
+	public static final GenerationShapeConfig ARCHEON_GENERATION_SHAPE = GenerationShapeConfig.create(-64, 416, 1, 2);
+
 	public static ChunkGeneratorSettings createArcheonSettings() {
 		return new ChunkGeneratorSettings(
-			DefaultGenerationShapes.OVERWORLD,
+			ArcheonChunkGeneratorSettings.ARCHEON_GENERATION_SHAPE,
 			ArcheonBlocks.SOUTHSTONE.getDefaultState(),
 			Blocks.WATER.getDefaultState(),
 			CustomNoiseRouters.getSmallBiomes(BuiltinRegistries.DENSITY_FUNCTION),

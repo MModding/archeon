@@ -52,12 +52,7 @@ public class HotSpringWaterFluid extends CustomFluid {
 	@ClientOnly
 	@Override
 	public FluidRenderHandler getRenderHandler() {
-		return new SimpleFluidRenderHandler(
-			SimpleFluidRenderHandler.WATER_STILL,
-			SimpleFluidRenderHandler.WATER_FLOWING,
-			SimpleFluidRenderHandler.WATER_OVERLAY,
-			HotSpringWaterFluid.TINT_COLOR.toDecimal()
-		);
+		return SimpleFluidRenderHandler.coloredWater(HotSpringWaterFluid.TINT_COLOR.toDecimal());
 	}
 
 	@ClientOnly

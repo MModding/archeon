@@ -3,9 +3,8 @@ package fr.firstmegagame4.archeon.client;
 import com.mmodding.mmodding_lib.library.base.AdvancedModContainer;
 import com.mmodding.mmodding_lib.library.base.MModdingClientModInitializer;
 import com.mmodding.mmodding_lib.library.config.Config;
-import com.mmodding.mmodding_lib.library.glint.client.GlintPack;
 import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
-import com.mmodding.mmodding_lib.library.stellar.StellarObject;
+import com.mmodding.mmodding_lib.library.stellar.client.StellarObject;
 import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.client.init.*;
@@ -25,6 +24,8 @@ public class ArcheonClient implements MModdingClientModInitializer {
 	@Override
 	public List<ClientElementsInitializer> getClientElementsInitializers() {
 		List<ClientElementsInitializer> clientElementsInitializers = new ArrayList<>();
+		clientElementsInitializers.add(new ArcheonModelPredicates());
+		clientElementsInitializers.add(new ArcheonSprites());
 		clientElementsInitializers.add(new ArcheonColorProviders());
 		clientElementsInitializers.add(new ArcheonRenderLayers());
 		clientElementsInitializers.add(new ArcheonEntityModelLayers());

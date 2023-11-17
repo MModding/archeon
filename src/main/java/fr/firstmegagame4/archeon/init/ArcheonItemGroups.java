@@ -6,6 +6,7 @@ import com.mmodding.mmodding_lib.library.items.*;
 import com.mmodding.mmodding_lib.library.portals.CustomPortalKeyItem;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.blocks.SporeRootcapBlock;
+import fr.firstmegagame4.archeon.items.RingItem;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -21,7 +22,9 @@ public class ArcheonItemGroups implements ElementsInitializer {
 
 	private static final List<Item> NOT_IN_CREATIVE_TAB = List.of(
 		ArcheonItems.CLOTHES_CHESTPLATE,
-		ArcheonItems.CLOTHES_LEGGINGS
+		ArcheonItems.CLOTHES_LEGGINGS,
+		ArcheonEnchantments.MASSACRE.getEnchantedBook(),
+		ArcheonEnchantments.QOLM.getEnchantedBook()
 	);
 
 	public static final Predicate<Block> HAS_ITEM = block -> {
@@ -49,7 +52,9 @@ public class ArcheonItemGroups implements ElementsInitializer {
 		(block instanceof CustomTallPlantBlock) ||
 		(block instanceof CustomFernBlock) ||
 		(block instanceof CustomSugarCaneBlock) ||
-		(block instanceof SporeRootcapBlock);
+		(block instanceof SporeRootcapBlock) ||
+		(block == ArcheonBlocks.GLOWSHROOM_MOSS) ||
+		(block == ArcheonBlocks.GLOWSHROOM_MOSS_BLOCK);
 
 	public static final Predicate<Item> IS_EQUIPMENT = item ->
 		(Registry.ITEM.getId(item).equals(Archeon.createId("power_key"))) ||
@@ -60,7 +65,8 @@ public class ArcheonItemGroups implements ElementsInitializer {
 		(item instanceof CustomAxeItem) ||
 		(item instanceof CustomShovelItem) ||
 		(item instanceof CustomHoeItem) ||
-		(item instanceof CustomFishingRodItem);
+		(item instanceof CustomFishingRodItem) ||
+		(item instanceof RingItem);
 
 	public static final ItemGroup BLOCKS = QuiltItemGroup.builder(Archeon.createId("blocks"))
 		.icon(ArcheonBlocks.WET_GRASS_BLOCK.getItem()::getDefaultStack)

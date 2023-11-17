@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "archeon:block/southstone_furnace_top_on",
+    "front": "archeon:block/southstone_furnace_front_on",
+    "side": "archeon:block/southstone_furnace_side"
+  }
+}

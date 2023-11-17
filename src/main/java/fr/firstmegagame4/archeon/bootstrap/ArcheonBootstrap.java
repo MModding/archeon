@@ -13,7 +13,7 @@ public class ArcheonBootstrap implements MModdingBootstrapInitializer {
 	@Override
 	public List<BootstrapElementsInitializer> getBootstrapElementsInitializers() {
 		List<BootstrapElementsInitializer> bootstrapElementsInitializers = new ArrayList<>();
-		bootstrapElementsInitializers.add(new ArcheonCauldronBehaviors());
+		ArcheonCauldronBehaviors.provideInitializers(bootstrapElementsInitializers);
 		return bootstrapElementsInitializers;
 	}
 
