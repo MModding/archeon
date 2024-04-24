@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:block/slightly_condensed_phosnor_slate_apaflorite_ore",
+    "particle": "archeon:block/slightly_condensed_phosnor_slate_apaflorite_ore"
+  }
+}

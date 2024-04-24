@@ -45,6 +45,11 @@ public class HeartOfNatureEntityRenderer extends MobEntityRenderer<HeartOfNature
 		public RenderLayer getGlowingLayer(HeartOfNatureEntity entity) {
 			return RenderLayer.getEyes(this.getTexture(entity));
 		}
+
+		@Override
+		public int getLight(HeartOfNatureEntity entity) {
+			return 15728;
+		}
 	}
 
 	public static class HeartOfNatureShieldFeatureRenderer extends EnergySwirlOverlayFeatureRenderer<HeartOfNatureEntity, HeartOfNatureEntityModel> {

@@ -13,13 +13,8 @@ import fr.firstmegagame4.archeon.buckets.CeramicBucketManager;
 import fr.firstmegagame4.archeon.buckets.WoodenBucketManager;
 import fr.firstmegagame4.archeon.entities.HeartOfNatureEntity;
 import fr.firstmegagame4.archeon.items.*;
-import fr.firstmegagame4.archeon.materials.armor.ApafloriteArmor;
-import fr.firstmegagame4.archeon.materials.armor.ClothesTunic;
-import fr.firstmegagame4.archeon.materials.armor.FaeliteArmor;
-import fr.firstmegagame4.archeon.materials.tool.ApafloriteTool;
-import fr.firstmegagame4.archeon.materials.tool.FaeliteTool;
-import fr.firstmegagame4.archeon.materials.tool.MassacreDaggerTool;
-import fr.firstmegagame4.archeon.materials.tool.QolmTool;
+import fr.firstmegagame4.archeon.materials.armor.*;
+import fr.firstmegagame4.archeon.materials.tool.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -31,6 +26,7 @@ import net.minecraft.item.*;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -111,6 +107,23 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomArmorItem FAELITE_LEGGINGS = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.LEGS, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
 	public static final CustomArmorItem FAELITE_BOOTS = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.FEET, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
 
+	public static final CustomSwordItem LUSONYTH_SWORD = new CustomSwordItem(LusonythTool.INSTANCE, 7, -2.4f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
+	public static final CustomPickaxeItem LUSONYTH_PICKAXE = new CustomPickaxeItem(LusonythTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
+	public static final CustomAxeItem LUSONYTH_AXE = new CustomAxeItem(LusonythTool.INSTANCE, 8, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
+	public static final CustomShovelItem LUSONYTH_SHOVEL = new CustomShovelItem(LusonythTool.INSTANCE, 1,-3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
+	public static final CustomHoeItem LUSONYTH_HOE = new CustomHoeItem(LusonythTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
+
+	public static final CustomArmorItem LUSONYTH_HELMET = new CustomArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.HEAD, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
+	public static final CustomArmorItem LUSONYTH_CHESTPLATE = new CustomArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.CHEST, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
+	public static final CustomArmorItem LUSONYTH_LEGGINGS = new CustomArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.LEGS, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
+	public static final CustomArmorItem LUSONYTH_BOOTS = new CustomArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.FEET, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
+
+	public static final CustomSwordItem CLEMENTIUM_SWORD = new CustomSwordItem(ClementiumTool.INSTANCE, 7, -2.4f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final CustomPickaxeItem CLEMENTIUM_PICKAXE = new CustomPickaxeItem(ClementiumTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final CustomAxeItem CLEMENTIUM_AXE = new CustomAxeItem(ClementiumTool.INSTANCE, 8, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final CustomShovelItem CLEMENTIUM_SHOVEL = new CustomShovelItem(ClementiumTool.INSTANCE, 1,-3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final CustomHoeItem CLEMENTIUM_HOE = new CustomHoeItem(ClementiumTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+
 	public static final FaeliteBowItem FAELITE_BOW = new FaeliteBowItem(new AdvancedItemSettings().maxCount(1));
 	public static final CustomArrowItem LUSONYTH_ARROW = new LusonythArrowItem(new AdvancedItemSettings());
 
@@ -121,11 +134,12 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final RingItem APAFLORITE_RING = new RingItem(RingItem::apafloriteRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
 	public static final RingItem FAELITE_RING = new RingItem(RingItem::faeliteRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
-	public static final RingItem CLEMENTIUM_RING = new RingItem(RingItem::clementiumRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
 	public static final RingItem LUSONYTH_RING = new RingItem(RingItem::lusonythRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
+	public static final RingItem CLEMENTIUM_RING = new RingItem(RingItem::clementiumRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
 	public static final RingItem RING_OF_EDEN = new RingItem(RingItem::ringOfEdenModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE));
 	public static final RingItem RING_OF_WAHVEN = new RingItem(RingItem::ringOfWahvenModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE));
-	public static final RingItem AMULET_OF_NATURE = new AmuletOfNature(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC));
+
+	public static final AmuletOfNature AMULET_OF_NATURE = new AmuletOfNature(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC));
 
 	public static final CustomItem MANUSCRIPT = new CustomItem(new AdvancedItemSettings());
 
@@ -135,6 +149,9 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomItem RAW_FAELITE = new CustomItem(new AdvancedItemSettings());
 	public static final CustomItem FAELITE_INGOT = new CustomItem(new AdvancedItemSettings());
+
+	public static final CustomItem RAW_LUSONYTH = new CustomItem(new AdvancedItemSettings());
+	public static final CustomItem LUSONYTH_INGOT = new CustomItem(new AdvancedItemSettings());
 
 	public static final CustomItem PLANT_FIBER = new CustomItem(new AdvancedItemSettings());
 
@@ -237,11 +254,13 @@ public class ArcheonItems implements ElementsInitializer {
 			.build()
 	).drinkable().itemFinishUsing(JAM_POT_USE));
 
-	public static final CustomItem ORANGE_LYCORIS_PETAL = new CustomItem(new AdvancedItemSettings().food(3, 0.2f));
-
 	public static final CustomItem RED_LYCORIS_PETAL = new CustomItem(new AdvancedItemSettings().food(3, 0.2f));
 
 	public static final CustomItem PINK_LYCORIS_PETAL = new CustomItem(new AdvancedItemSettings().food(3, 0.2f));
+
+	public static final CustomItem ORANGE_LYCORIS_PETAL = new CustomItem(new AdvancedItemSettings().food(3, 0.2f));
+
+	public static final LoreScrapItem LORE_SCRAP = new LoreScrapItem(new AdvancedItemSettings());
 
 	public static final CustomMusicDiscItem PE_4K = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
 		new SoundEvent(Archeon.createId("pe_4k")), 0, 116);
@@ -274,6 +293,9 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomItem RAW_SUNSTRADIVER_CHOP = new CustomItem(new AdvancedItemSettings().food(2, 0.3f, true));
 	public static final CustomItem COOKED_SUNSTRADIVER_CHOP = new CustomItem(new AdvancedItemSettings().food(7, 1.0f, true));
 
+	public static final CustomItem RAW_DEER = new CustomItem(new AdvancedItemSettings().food(3, 0.3f, true));
+	public static final CustomItem COOKED_DEER = new CustomItem(new AdvancedItemSettings().food(9, 1.0f, true));
+
 	public static final CustomItem LYCORIS_JAM_PIE = new CustomItem(new AdvancedItemSettings().maxCount(1).food(20, 20.0f));
 
 	public static final CustomItem BLOOD_ORANGE = new CustomItem(new AdvancedItemSettings());
@@ -290,6 +312,10 @@ public class ArcheonItems implements ElementsInitializer {
 			.statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 160, 1), 1.0f)
 			.build()
 	));
+
+	public static final CustomItem GROWING_NEAVE_BERRIES = new CustomItem(new AdvancedItemSettings().food(1, 0.3f));
+
+	public static final CustomItem NEAVE_BERRIES = new CustomItem(new AdvancedItemSettings().food(3, 0.6f));
 
 	public static final CustomItem GEAR = new CustomItem(new AdvancedItemSettings());
 
@@ -313,6 +339,8 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomItem SNAIL_SHELL = new CustomItem(new AdvancedItemSettings());
 
 	public static final CustomItem AURORA_CRYSTAL = new CustomItem(new AdvancedItemSettings());
+
+	public static final CustomItem IMPRESSIVE_AURORA_CRYSTAL = new CustomItem(new AdvancedItemSettings().nameFormattings(Formatting.GOLD));
 
 	public static final CustomSpawnEggItem AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.AURORA_CATALYST, 4380648, 3876673, new AdvancedItemSettings());
 	public static final CustomSpawnEggItem POISONOUS_AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.POISONOUS_AURORA_CATALYST, 517623, 6633076, new AdvancedItemSettings());
@@ -365,6 +393,20 @@ public class ArcheonItems implements ElementsInitializer {
 		FAELITE_CHESTPLATE.register(Archeon.createId("faelite_chestplate"));
 		FAELITE_LEGGINGS.register(Archeon.createId("faelite_leggings"));
 		FAELITE_BOOTS.register(Archeon.createId("faelite_boots"));
+		LUSONYTH_SWORD.register(Archeon.createId("lusonyth_sword"));
+		LUSONYTH_PICKAXE.register(Archeon.createId("lusonyth_pickaxe"));
+		LUSONYTH_AXE.register(Archeon.createId("lusonyth_axe"));
+		LUSONYTH_SHOVEL.register(Archeon.createId("lusonyth_shovel"));
+		LUSONYTH_HOE.register(Archeon.createId("lusonyth_hoe"));
+		LUSONYTH_HELMET.register(Archeon.createId("lusonyth_helmet"));
+		LUSONYTH_CHESTPLATE.register(Archeon.createId("lusonyth_chestplate"));
+		LUSONYTH_LEGGINGS.register(Archeon.createId("lusonyth_leggings"));
+		LUSONYTH_BOOTS.register(Archeon.createId("lusonyth_boots"));
+		CLEMENTIUM_SWORD.register(Archeon.createId("clementium_sword"));
+		CLEMENTIUM_PICKAXE.register(Archeon.createId("clementium_pickaxe"));
+		CLEMENTIUM_AXE.register(Archeon.createId("clementium_axe"));
+		CLEMENTIUM_SHOVEL.register(Archeon.createId("clementium_shovel"));
+		CLEMENTIUM_HOE.register(Archeon.createId("clementium_hoe"));
 		FAELITE_BOW.register(Archeon.createId("faelite_bow"));
 		LUSONYTH_ARROW.register(Archeon.createId("lusonyth_arrow"));
 		EXYRIANE_FISHING_ROD.register(Archeon.createId("exyriane_fishing_rod"));
@@ -372,8 +414,8 @@ public class ArcheonItems implements ElementsInitializer {
 		CLOTHES_LEGGINGS.register(Archeon.createId("clothes_leggings"));
 		APAFLORITE_RING.register(Archeon.createId("apaflorite_ring"));
 		FAELITE_RING.register(Archeon.createId("faelite_ring"));
-		CLEMENTIUM_RING.register(Archeon.createId("clementium_ring"));
 		LUSONYTH_RING.register(Archeon.createId("lusonyth_ring"));
+		CLEMENTIUM_RING.register(Archeon.createId("clementium_ring"));
 		RING_OF_EDEN.register(Archeon.createId("ring_of_eden"));
 		RING_OF_WAHVEN.register(Archeon.createId("ring_of_wahven"));
 		AMULET_OF_NATURE.register(Archeon.createId("amulet_of_nature"));
@@ -382,6 +424,8 @@ public class ArcheonItems implements ElementsInitializer {
 		EXYRIANE_CRYSTAL.register(Archeon.createId("exyriane_crystal"));
 		RAW_FAELITE.register(Archeon.createId("raw_faelite"));
 		FAELITE_INGOT.register(Archeon.createId("faelite_ingot"));
+		RAW_LUSONYTH.register(Archeon.createId("raw_lusonyth"));
+		LUSONYTH_INGOT.register(Archeon.createId("lusonyth_ingot"));
 		PLANT_FIBER.register(Archeon.createId("plant_fiber"));
 		MOSS_BALL.register(Archeon.createId("moss_ball"));
 		BLUE_SHELL.register(Archeon.createId("blue_shell"));
@@ -408,6 +452,7 @@ public class ArcheonItems implements ElementsInitializer {
 		ORANGE_LYCORIS_PETAL.register(Archeon.createId("orange_lycoris_petal"));
 		RED_LYCORIS_PETAL.register(Archeon.createId("red_lycoris_petal"));
 		PINK_LYCORIS_PETAL.register(Archeon.createId("pink_lycoris_petal"));
+		LORE_SCRAP.register(Archeon.createId("lore_scrap"));
 		PE_4K.register(Archeon.createId("pe_4k"));
 		GEOMETRIC_FALL.register(Archeon.createId("geometric_fall"));
 		RISING.register(Archeon.createId("rising"));
@@ -421,10 +466,14 @@ public class ArcheonItems implements ElementsInitializer {
 		COOKED_HEIFER.register(Archeon.createId("cooked_heifer"));
 		RAW_SUNSTRADIVER_CHOP.register(Archeon.createId("raw_sunstradiver_chop"));
 		COOKED_SUNSTRADIVER_CHOP.register(Archeon.createId("cooked_sunstradiver_chop"));
+		RAW_DEER.register(Archeon.createId("raw_deer"));
+		COOKED_DEER.register(Archeon.createId("cooked_deer"));
 		LYCORIS_JAM_PIE.register(Archeon.createId("lycoris_jam_pie"));
 		BLOOD_ORANGE.register(Archeon.createId("blood_orange"));
 		GRAPE.register(Archeon.createId("grape"));
 		GOLDEN_GRAPE.register(Archeon.createId("golden_grape"));
+		GROWING_NEAVE_BERRIES.register(Archeon.createId("growing_neave_berries"));
+		NEAVE_BERRIES.register(Archeon.createId("neave_berries"));
 		GEAR.register(Archeon.createId("gear"));
 		HERBICIDE.register(Archeon.createId("herbicide"));
 		INK_BOTTLE.register(Archeon.createId("ink_bottle"));
@@ -432,6 +481,7 @@ public class ArcheonItems implements ElementsInitializer {
 		SUNSTRADIVER_FEATHER.register(Archeon.createId("sunstradiver_feather"));
 		SNAIL_SHELL.register(Archeon.createId("snail_shell"));
 		AURORA_CRYSTAL.register(Archeon.createId("aurora_crystal"));
+		IMPRESSIVE_AURORA_CRYSTAL.register(Archeon.createId("impressive_aurora_crystal"));
 		AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("aurora_catalyst_spawn_egg"));
 		POISONOUS_AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("poisonous_aurora_catalyst_spawn_egg"));
 		EXPLOSIVE_AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("explosive_aurora_catalyst_spawn_egg"));

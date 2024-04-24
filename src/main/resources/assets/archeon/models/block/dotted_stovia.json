@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "archeon:block/dotted_stovia",
+    "particle": "archeon:block/dotted_stovia"
+  }
+}

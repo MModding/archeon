@@ -33,6 +33,10 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.TALL_WITHERED_ORGANDEANE.cutout();
 		ArcheonBlocks.SEPTICEOLIA.cutout();
 		ArcheonBlocks.WITHERED_SEPTICEOLIA.cutout();
+		ArcheonBlocks.AMAROTH.cutout();
+		ArcheonBlocks.DOTTED_STOVIA.cutout();
+		ArcheonBlocks.WILLS_OF_LIGHT.cutout();
+		ArcheonBlocks.ETERNAL_FORTUNES.cutout();
 		ArcheonBlocks.BLUE_DOELDIA.cutout();
 		ArcheonBlocks.WHITE_DOELDIA.cutout();
 		ArcheonBlocks.PINK_DOELDIA.cutout();
@@ -41,6 +45,8 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.SMALL_HOT_SPRING_LILY_PAD.cutout();
 		ArcheonBlocks.HOT_SPRING_LILY_PAD.cutout();
 		ArcheonBlocks.GIANT_LILY.cutout();
+
+		ArcheonBlocks.ACHREAN_VINE.cutout();
 
 		ArcheonBlocks.WET_GRASS.cutout();
 		ArcheonBlocks.TALL_WET_GRASS.cutout();
@@ -73,6 +79,8 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 
 		ArcheonBlocks.NYRETH_DOOR.cutout();
 		ArcheonBlocks.NYRETH_TRAPDOOR.cutout();
+
+		ArcheonBlocks.CLEMENTIUM_BARS.cutout();
 
 		ArcheonBlocks.BUSH_LEAVES.cutout();
 		ArcheonBlocks.PALM_LEAVES.cutout();

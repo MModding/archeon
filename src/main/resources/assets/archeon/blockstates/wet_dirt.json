@@ -1,7 +1,21 @@
 {
   "variants": {
-    "": {
-      "model": "archeon:block/wet_dirt"
-    }
+    "": [
+      {
+        "model": "archeon:block/wet_dirt"
+      },
+      {
+        "model": "archeon:block/wet_dirt",
+        "y": 90
+      },
+      {
+        "model": "archeon:block/wet_dirt",
+        "y": 180
+      },
+      {
+        "model": "archeon:block/wet_dirt",
+        "y": 270
+      }
+    ]
   }
 }

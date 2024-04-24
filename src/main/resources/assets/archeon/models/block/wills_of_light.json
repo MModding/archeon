@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "archeon:block/wills_of_light",
+    "particle": "archeon:block/wills_of_light"
+  }
+}

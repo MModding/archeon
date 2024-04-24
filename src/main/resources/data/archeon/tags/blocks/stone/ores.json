@@ -6,6 +6,8 @@
     "archeon:exyriane_ore",
     "archeon:faelite_ore",
     "archeon:lusonyth_ore",
+    "archeon:slightly_condensed_apaflorite_ore",
+    "archeon:slightly_condensed_exyriane_ore",
     "archeon:condensed_apaflorite_ore",
     "archeon:condensed_exyriane_ore",
     "archeon:phosnor_slate_coal_ore",
@@ -13,6 +15,8 @@
     "archeon:phosnor_slate_exyriane_ore",
     "archeon:phosnor_slate_faelite_ore",
     "archeon:phosnor_slate_lusonyth_ore",
+    "archeon:slightly_condensed_phosnor_slate_apaflorite_ore",
+    "archeon:slightly_condensed_phosnor_slate_exyriane_ore",
     "archeon:condensed_phosnor_slate_apaflorite_ore",
     "archeon:condensed_phosnor_slate_exyriane_ore"
   ]

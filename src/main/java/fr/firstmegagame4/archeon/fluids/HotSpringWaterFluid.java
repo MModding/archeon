@@ -1,9 +1,10 @@
 package fr.firstmegagame4.archeon.fluids;
 
+import com.mmodding.mmodding_lib.library.colors.Color;
+import com.mmodding.mmodding_lib.library.colors.RGB;
 import com.mmodding.mmodding_lib.library.fluids.CustomFluid;
 import com.mmodding.mmodding_lib.library.fluids.FluidGroup;
 import com.mmodding.mmodding_lib.library.fluids.collisions.FluidCollisionHandler;
-import com.mmodding.mmodding_lib.library.utils.Colors;
 import fr.firstmegagame4.archeon.init.ArcheonBlocks;
 import fr.firstmegagame4.archeon.init.ArcheonFluids;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandler;
@@ -21,8 +22,8 @@ import org.quiltmc.loader.api.minecraft.ClientOnly;
 
 public class HotSpringWaterFluid extends CustomFluid {
 
-	public static final Colors.RGB TINT_COLOR = new Colors.RGB(65, 200, 250);
-	public static final Colors.RGB FOG_COLOR = new Colors.RGB(25,  75, 150);
+	public static final RGB TINT_COLOR = Color.rgb(65, 200, 250);
+	public static final RGB FOG_COLOR = Color.rgb(25,  75, 150);
 
 	public HotSpringWaterFluid(boolean source) {
 		super(source);
@@ -57,7 +58,7 @@ public class HotSpringWaterFluid extends CustomFluid {
 
 	@ClientOnly
 	@Override
-	public Colors.RGB getFogColor() {
+	public Color getFogColor() {
 		return HotSpringWaterFluid.FOG_COLOR;
 	}
 

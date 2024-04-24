@@ -77,6 +77,33 @@ public class ArcheonEntities implements ElementsInitializer {
 			.maxChunkTrackingRange(8)
 	);
 
+	public static final CustomEntityType<DeerEntity> DEER = CustomEntityType.createMob(
+		builder -> builder
+			.entityFactory(DeerEntity::new)
+			.spawnGroup(SpawnGroup.CREATURE)
+			.defaultAttributes(DeerEntity.createDeerAttributes())
+			.setDimensions(EntityDimensions.fixed(1.3f, 2.6f))
+			.maxChunkTrackingRange(8)
+	);
+
+	public static final CustomEntityType<MouncreepEntity> MOUNCREEP = CustomEntityType.createMob(
+		builder -> builder
+			.entityFactory(MouncreepEntity::new)
+			.spawnGroup(SpawnGroup.MONSTER)
+			.defaultAttributes(MouncreepEntity.createMouncreepAttributes())
+			.setDimensions(EntityDimensions.fixed(0.6f, 1.95f))
+			.maxChunkTrackingRange(8)
+	);
+
+	public static final CustomEntityType<CentaurEntity> CENTAUR = CustomEntityType.createMob(
+		builder -> builder
+			.entityFactory(CentaurEntity::new)
+			.spawnGroup(SpawnGroup.MONSTER)
+			.defaultAttributes(CentaurEntity.createCentaurAttributes())
+			.setDimensions(EntityDimensions.fixed(1.0f, 5.0f))
+			.maxChunkTrackingRange(8)
+	);
+
 	public static final CustomEntityType<LusonythArrowEntity> LUSONYTH_ARROW = CustomEntityType.create(
 		builder -> builder
 			.entityFactory(LusonythArrowEntity::new)
@@ -95,6 +122,9 @@ public class ArcheonEntities implements ElementsInitializer {
 		SNAIL.register(Archeon.createId("snail"));
 		SUNSTRADIVER.register(Archeon.createId("sunstradiver"));
 		HEIFER.register(Archeon.createId("heifer"));
+		DEER.register(Archeon.createId("deer"));
+		MOUNCREEP.register(Archeon.createId("mouncreep"));
+		CENTAUR.register(Archeon.createId("centaur"));
 		LUSONYTH_ARROW.register(Archeon.createId("lusonyth_arrow"));
 	}
 }

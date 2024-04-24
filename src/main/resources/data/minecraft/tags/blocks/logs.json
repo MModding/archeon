@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:palm_log",
+    "archeon:palm_wood",
+    "archeon:neclane_log",
+    "archeon:neclane_wood",
+    "archeon:cypress_log",
+    "archeon:cypress_wood",
+    "archeon:vuxancia_log",
+    "archeon:vuxancia_wood",
+    "archeon:nume_willow_log",
+    "archeon:nume_willow_wood",
+    "archeon:nyreth_log",
+    "archeon:nyreth_wood"
+  ]
+}

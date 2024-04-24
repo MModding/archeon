@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:southstone",
+    "archeon:artemnite",
+    "archeon:gypsum",
+    "archeon:phosnor_slate",
+    "archeon:aketite",
+    "archeon:anhydrite",
+    "archeon:achrean_moss_block"
+  ]
+}

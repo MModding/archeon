@@ -177,8 +177,8 @@ public class AuroraCatalystEntity extends HostileEntity {
 	}
 
 	@Override
-	protected void onKilledBy(@Nullable LivingEntity adversary) {
-		super.onKilledBy(adversary);
+	public void remove(RemovalReason reason) {
+		super.remove(reason);
 		if (this.hasMaster()) {
 			Entity entity = this.world.getEntityById(this.master);
 			if (entity instanceof HeartOfNatureEntity heartOfNatureEntity) {
