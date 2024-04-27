@@ -22,9 +22,9 @@ import org.quiltmc.loader.api.Requires;
 
 import java.util.UUID;
 
-public class AmuletOfNature extends CustomItemAcceptingStacks implements @Requires("trinkets") Trinket {
+public class AmuletOfNatureItem extends CustomItemAcceptingStacks implements @Requires("trinkets") Trinket {
 
-	public AmuletOfNature(Settings settings) {
+	public AmuletOfNatureItem(Settings settings) {
 		super(settings);
 		CompatibilityUtils.executeIfModLoaded("trinkets", this::registerTrinket);
 	}

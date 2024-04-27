@@ -11,6 +11,7 @@ import com.mmodding.mmodding_lib.library.portals.CustomPortalKeyItem;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.buckets.CeramicBucketManager;
 import fr.firstmegagame4.archeon.buckets.WoodenBucketManager;
+import fr.firstmegagame4.archeon.entities.CentaurSpearEntity;
 import fr.firstmegagame4.archeon.entities.HeartOfNatureEntity;
 import fr.firstmegagame4.archeon.items.*;
 import fr.firstmegagame4.archeon.materials.armor.*;
@@ -60,6 +61,9 @@ public class ArcheonItems implements ElementsInitializer {
 			if(!context.getPlayer().isCreative()) context.getPlayer().getInventory().removeOne(context.getPlayer().getStackInHand(context.getHand()));
 		}
 	}));
+
+	public static final CustomSpearItem CENTAUR_SPEAR = new CustomSpearItem(CentaurSpearEntity::new, new AdvancedItemSettings().maxCount(1).maxDamage(250).rarity(Rarity.EPIC).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final CustomAxeItem CENTAUR_BATTLE_AXE = new CustomAxeItem(CentaurTool.INSTANCE, 6, -2.5f, new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
 
 	public static final CustomSwordItem NECLANE_SWORD = new CustomSwordItem(ToolMaterials.WOOD, 3, -2.4f, new AdvancedItemSettings());
 	public static final CustomPickaxeItem NECLANE_PICKAXE = new CustomPickaxeItem(ToolMaterials.WOOD, 1, -2.8f, new AdvancedItemSettings());
@@ -139,7 +143,7 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final RingItem RING_OF_EDEN = new RingItem(RingItem::ringOfEdenModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE));
 	public static final RingItem RING_OF_WAHVEN = new RingItem(RingItem::ringOfWahvenModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE));
 
-	public static final AmuletOfNature AMULET_OF_NATURE = new AmuletOfNature(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC));
+	public static final AmuletOfNatureItem AMULET_OF_NATURE = new AmuletOfNatureItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC));
 
 	public static final CustomItem MANUSCRIPT = new CustomItem(new AdvancedItemSettings());
 
@@ -355,6 +359,8 @@ public class ArcheonItems implements ElementsInitializer {
 		QOLM_PICK.register(Archeon.createId("qolm_pick"));
 		MASSACRE_DAGGER.register(Archeon.createId("massacre_dagger"));
 		POWER_KEY.register(Archeon.createId("power_key"));
+		CENTAUR_SPEAR.register(Archeon.createId("centaur_spear"));
+		CENTAUR_BATTLE_AXE.register(Archeon.createId("centaur_battle_axe"));
 		NECLANE_SWORD.register(Archeon.createId("neclane_sword"));
 		NECLANE_PICKAXE.register(Archeon.createId("neclane_pickaxe"));
 		NECLANE_AXE.register(Archeon.createId("neclane_axe"));

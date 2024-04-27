@@ -1,0 +1,51 @@
+{
+  "parent": "item/generated",
+  "gui_light": "front",
+  "textures": {
+    "layer0": "archeon:item/centaur_spear"
+  },
+  "display": {
+    "ground": {
+      "rotation": [ 0, 0, 0 ],
+      "translation": [ 0, 2, 0 ],
+      "scale": [ 1.5, 1.5, 0.75 ]
+    },
+    "head": {
+      "rotation": [ 0, 180, 0 ],
+      "translation": [ 0, 13, 7 ],
+      "scale":[ 3, 3, 1.5 ]
+    },
+    "fixed": {
+      "rotation": [ 0, 180, 0 ],
+      "scale": [ 3, 3, 1.5 ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [ 0, -90, 55 ],
+      "translation": [ 0, 4.0, 0.5 ],
+      "scale": [ 2.55, 2.55, 1.275 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 0, 90, -55 ],
+      "translation": [ 0, 4.0, 0.5 ],
+      "scale": [ 2.55, 2.55, 1.275 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ 0, -90, 45 ],
+      "translation": [ 1.13, 3.2, 1.13 ],
+      "scale": [ 1.02, 1.02, 0.51 ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [ 0, 90, -45 ],
+      "translation": [ 1.13, 3.2, 1.13 ],
+      "scale": [ 1.02, 1.02, 0.51 ]
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "mmodding:throwing": 1
+      },
+      "model": "archeon:item/centaur_spear_throwing"
+    }
+  ]
+}

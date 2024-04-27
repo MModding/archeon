@@ -113,6 +113,15 @@ public class ArcheonEntities implements ElementsInitializer {
 			.trackingTickInterval(20)
 	);
 
+	public static final CustomEntityType<CentaurSpearEntity> CENTAUR_SPEAR = CustomEntityType.create(
+		builder -> builder
+			.entityFactory(CentaurSpearEntity::new)
+			.spawnGroup(SpawnGroup.MISC)
+			.setDimensions(EntityDimensions.fixed(0.5f, 0.5f))
+			.maxChunkTrackingRange(4)
+			.trackingTickInterval(20)
+	);
+
 	@Override
 	public void register() {
 		AURORA_CATALYST.register(Archeon.createId("aurora_catalyst"));
@@ -126,5 +135,6 @@ public class ArcheonEntities implements ElementsInitializer {
 		MOUNCREEP.register(Archeon.createId("mouncreep"));
 		CENTAUR.register(Archeon.createId("centaur"));
 		LUSONYTH_ARROW.register(Archeon.createId("lusonyth_arrow"));
+		CENTAUR_SPEAR.register(Archeon.createId("centaur_spear"));
 	}
 }

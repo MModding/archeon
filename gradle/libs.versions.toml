@@ -7,7 +7,7 @@ quilt_loader = "0.25.0"
 # Required Dependencies
 
 quilted_fabric_api = "4.0.0-beta.26+0.72.0-1.19.2"
-mmodding_lib = "b8aa5ccd05"
+mmodding_lib = "28ade4054a"
 
 # Included Dependencies
 
@@ -36,4 +36,4 @@ double_jump_attribute = { module = "amymialee:double-jump-attribute", version.re
 trinkets = { module = "dev.emi:trinkets", version.ref = "trinkets" }
 
 [plugins]
-quilt_loom = { id = "org.quiltmc.loom", version = "1.0.+" }
+quilt_loom = { id = "org.quiltmc.loom", version = "1.6.+" }
