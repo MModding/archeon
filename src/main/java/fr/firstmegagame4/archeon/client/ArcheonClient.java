@@ -2,12 +2,14 @@ package fr.firstmegagame4.archeon.client;
 
 import com.mmodding.mmodding_lib.library.base.AdvancedModContainer;
 import com.mmodding.mmodding_lib.library.base.MModdingClientModInitializer;
+import com.mmodding.mmodding_lib.library.client.render.model.InventoryModels;
 import com.mmodding.mmodding_lib.library.config.Config;
 import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
 import com.mmodding.mmodding_lib.library.stellar.client.StellarObject;
 import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.client.init.*;
+import fr.firstmegagame4.archeon.init.ArcheonItems;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -38,5 +40,18 @@ public class ArcheonClient implements MModdingClientModInitializer {
 	public void onInitializeClient(AdvancedModContainer mod) {
 		StellarObject.load(Archeon.createId("diethea"), new TextureLocation(Archeon.id(), "environment/diethea"), 16, 16);
 		StellarObject.load(Archeon.createId("napor"), new TextureLocation(Archeon.id(), "environment/napor"), 8, 8);
+		InventoryModels.REGISTRY.add(Archeon.createId("item/centaur_spear_inventory"));
+		InventoryModels.REGISTRY.add(Archeon.createId("item/centaur_battle_axe_inventory"));
+		InventoryModels.EVENT.register(stack -> {
+			if (stack.isOf(ArcheonItems.CENTAUR_SPEAR)) {
+				return Archeon.createId("item/centaur_spear_inventory");
+			}
+			else if (stack.isOf(ArcheonItems.CENTAUR_BATTLE_AXE)) {
+				return Archeon.createId("item/centaur_battle_axe_inventory");
+			}
+			else {
+				return null;
+			}
+		});
 	}
 }

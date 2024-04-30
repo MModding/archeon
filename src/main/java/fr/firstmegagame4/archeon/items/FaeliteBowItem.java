@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 public class FaeliteBowItem extends CustomBowItem {
 
 	public FaeliteBowItem(Settings settings) {
-		super(ArcheonItems.LUSONYTH_ARROW, settings);
+		super(() -> ArcheonItems.LUSONYTH_ARROW, settings);
 	}
 
 	@Override

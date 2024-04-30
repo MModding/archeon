@@ -4,7 +4,6 @@ import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.utils.RegistrationUtils;
 import com.mmodding.mmodding_lib.library.utils.SurfaceRuleUtils;
 import com.mmodding.mmodding_lib.library.utils.WorldUtils;
-import com.mmodding.mmodding_lib.library.worldgen.chunkgenerators.DefaultGenerationShapes;
 import com.mmodding.mmodding_lib.library.worldgen.chunkgenerators.routers.CustomNoiseRouters;
 import com.mmodding.mmodding_lib.library.worldgen.veins.CustomVeinType;
 import com.mmodding.mmodding_lib.library.worldgen.veins.CustomVeinType.VeinStateGroup;
@@ -76,12 +75,20 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 		RegistrationUtils.registerChunkGeneratorSettings(GENERATOR_SETTINGS_IDENTIFIER, ArcheonChunkGeneratorSettings.createArcheonSettings());
 		WorldUtils.addCustomVeinTypes(GENERATOR_SETTINGS_IDENTIFIER,
 			new CustomVeinType(5, 45,
-				VeinStateGroup.single(ArcheonBlocks.EXYRIANE_ORE),
+				VeinStateGroup.create(
+					ArcheonBlocks.EXYRIANE_ORE, ArcheonBlocks.EXYRIANE_ORE, ArcheonBlocks.EXYRIANE_ORE,
+					ArcheonBlocks.EXYRIANE_ORE, ArcheonBlocks.EXYRIANE_ORE, ArcheonBlocks.EXYRIANE_ORE,
+					ArcheonBlocks.EXYRIANE_ORE, ArcheonBlocks.EXYRIANE_ORE, ArcheonBlocks.SLIGHTLY_CONDENSED_EXYRIANE_ORE
+				),
 				VeinStateGroup.single(ArcheonBlocks.CONDENSED_EXYRIANE_ORE),
 				VeinStateGroup.create(ArcheonBlocks.ARTEMNITE, ArcheonBlocks.GYPSUM)
 			).setMinRichness(0.05f).setMaxRichness(0.15f),
 			new CustomVeinType(-45, -5,
-				VeinStateGroup.single(ArcheonBlocks.PHOSNOR_SLATE_APAFLORITE_ORE),
+				VeinStateGroup.create(
+					ArcheonBlocks.PHOSNOR_SLATE_APAFLORITE_ORE, ArcheonBlocks.PHOSNOR_SLATE_APAFLORITE_ORE, ArcheonBlocks.PHOSNOR_SLATE_APAFLORITE_ORE,
+					ArcheonBlocks.PHOSNOR_SLATE_APAFLORITE_ORE, ArcheonBlocks.PHOSNOR_SLATE_APAFLORITE_ORE, ArcheonBlocks.PHOSNOR_SLATE_APAFLORITE_ORE,
+					ArcheonBlocks.PHOSNOR_SLATE_APAFLORITE_ORE, ArcheonBlocks.PHOSNOR_SLATE_APAFLORITE_ORE, ArcheonBlocks.SLIGHTLY_CONDENSED_PHOSNOR_SLATE_APAFLORITE_ORE
+				),
 				VeinStateGroup.single(ArcheonBlocks.CONDENSED_PHOSNOR_SLATE_APAFLORITE_ORE),
 				VeinStateGroup.single(ArcheonBlocks.AKETITE)
 			)

@@ -1,7 +1,9 @@
 package fr.firstmegagame4.archeon.init;
 
+import com.mmodding.mmodding_lib.library.blocks.CustomLayeredBlock;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.utils.BiList;
+import com.mmodding.mmodding_lib.library.utils.ListUtils;
 import com.mmodding.mmodding_lib.library.utils.RegistrationUtils;
 import com.mmodding.mmodding_lib.library.worldgen.features.AdvancedFeature;
 import com.mmodding.mmodding_lib.library.worldgen.features.defaults.*;
@@ -20,8 +22,12 @@ import fr.firstmegagame4.archeon.worldgen.features.trees.foliage.VuxanciaFoliage
 import fr.firstmegagame4.archeon.worldgen.features.trees.trunk.NeclaneTrunkPlacer;
 import fr.firstmegagame4.archeon.worldgen.features.trees.trunk.PalmTrunkPlacer;
 import fr.firstmegagame4.archeon.worldgen.features.trees.trunk.VuxanciaTrunkPlacer;
+import net.minecraft.block.BlockState;
+import net.minecraft.state.property.Properties;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.VerticalSurfaceType;
 import net.minecraft.util.math.floatprovider.ClampedNormalFloatProvider;
 import net.minecraft.util.math.floatprovider.UniformFloatProvider;
 import net.minecraft.util.math.intprovider.ClampedNormalIntProvider;
@@ -88,11 +94,11 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 	public static final CustomTreeFeature CYPRESS_TREE = new CustomTreeFeature(
 		ArcheonBlocks.CYPRESS_LOG,
-		new StraightTrunkPlacer(4, 2, 0),
+		new StraightTrunkPlacer(9, 9, 3),
 		ArcheonBlocks.CYPRESS_LEAVES,
 		new CypressFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
-		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
+		PlacedFeatureUtil.createCountExtraModifier(2, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
@@ -309,6 +315,77 @@ public class ArcheonFeatures implements ElementsInitializer {
 		0.5f
 	);
 
+	public static final CustomVegetationPatchFeature GOLDEN_SAND_PATCH = new CustomVegetationPatchFeature(
+		125,
+		Direction.DOWN,
+		12,
+		ArcheonTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
+		ArcheonBlocks.GOLDEN_SAND.getDefaultState(),
+		ListUtils.biBuilder(
+			vegetation -> {
+				ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, 1, 50);
+				ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, 2, 35);
+				ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, 3, 30);
+				ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, 4, 25);
+				ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, 5, 20);
+				ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, 6, 15);
+				ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, 7, 10);
+				ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, 8, 5);
+			}
+		),
+		VerticalSurfaceType.FLOOR,
+		ConstantIntProvider.create(3),
+		0.8f,
+		2,
+		0.8f,
+		UniformIntProvider.create(4, 7),
+		0.7f
+	);
+
+	public static final CustomVegetationPatchFeature ACHREAN_MOSS_PATCH = new CustomVegetationPatchFeature(
+		125,
+		Direction.DOWN,
+		12,
+		ArcheonTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
+		ArcheonBlocks.ACHREAN_MOSS_BLOCK.getDefaultState(),
+		ListUtils.biBuilder(
+			vegetation -> {
+				for (int i = 0; i < 4; i++) {
+					ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, i + 1, 10);
+				}
+				vegetation.add(ArcheonBlocks.BLUE_DOELDIA.getDefaultState(), 10);
+				vegetation.add(ArcheonBlocks.WHITE_DOELDIA.getDefaultState(), 10);
+				vegetation.add(ArcheonBlocks.PINK_DOELDIA.getDefaultState(), 10);
+				vegetation.add(ArcheonBlocks.YELLOW_DOELDIA.getDefaultState(), 10);
+			}
+		),
+		VerticalSurfaceType.FLOOR,
+		ConstantIntProvider.create(1),
+		0.0f,
+		5,
+		0.8f,
+		UniformIntProvider.create(4, 7),
+		0.3f
+	);
+
+	public static final CustomGrowsDownPlantWithCeilingFeature ACHREAN_MOSS_CEILING = new CustomGrowsDownPlantWithCeilingFeature(
+		125,
+		12,
+		() -> ArcheonBlocks.ACHREAN_VINE,
+		() -> ArcheonBlocks.ACHREAN_MOSS_BLOCK,
+		ArcheonTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
+		UniformIntProvider.create(1, 2),
+		0.0f,
+		5,
+		0.08f,
+		UniformIntProvider.create(4, 7),
+		0.3f
+	);
+
+	private static void addLayeredBlock(BiList<BlockState, Integer> vegetation, @SuppressWarnings("SameParameterValue") CustomLayeredBlock layered, int layer, int weight) {
+		vegetation.add(layered.getDefaultState().with(Properties.LAYERS, layer), weight);
+	}
+
 	@Override
 	public void register() {
 		RegistrationUtils.registerTrunkPlacerType(Archeon.createId("neclane_trunk_placer"), NECLANE_TRUNK_PLACER);
@@ -362,6 +439,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ANHYDRITE_CLUSTER.register(Archeon.createId("anhydrite_cluster"));
 		LARGE_ANHYDRITE.register(Archeon.createId("large_anhydrite"));
 		POINTED_ANHYDRITE.register(Archeon.createId("pointed_anhydrite"));
+		GOLDEN_SAND_PATCH.register(Archeon.createId("golden_sand_patch"));
+		ACHREAN_MOSS_PATCH.register(Archeon.createId("achrean_moss_patch"));
+		ACHREAN_MOSS_CEILING.register(Archeon.createId("achrean_moss_ceiling"));
 
 		Predicate<BiomeSelectionContext> randomPatchPredicate = ctx -> !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) ||
 			!ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES) ||
@@ -374,6 +454,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 		Predicate<BiomeSelectionContext> gypsumPredicate = ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.GYPSUM_VALLEYS);
 
 		Predicate<BiomeSelectionContext> anhydritePredicate = ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ANHYDRITE_VALLEYS);
+
+		Predicate<BiomeSelectionContext> achreanPredicate = ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ACHREAN_CAVES);
 
 		BiomeModifications.addFeature(
 			ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS) ||
@@ -434,5 +516,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ANHYDRITE_CLUSTER.addDefaultToBiomes(anhydritePredicate);
 		LARGE_ANHYDRITE.addDefaultToBiomes(anhydritePredicate);
 		POINTED_ANHYDRITE.addDefaultToBiomes(anhydritePredicate);
+
+		GOLDEN_SAND_PATCH.addDefaultToBiomes(achreanPredicate);
+		ACHREAN_MOSS_PATCH.addDefaultToBiomes(achreanPredicate);
+		ACHREAN_MOSS_CEILING.addDefaultToBiomes(achreanPredicate);
 	}
 }

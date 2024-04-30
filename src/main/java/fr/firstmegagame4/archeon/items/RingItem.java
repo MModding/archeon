@@ -7,10 +7,12 @@ import com.google.common.collect.Multimaps;
 import com.mmodding.mmodding_lib.library.items.CustomItem;
 import com.mmodding.mmodding_lib.library.utils.CompatibilityUtils;
 import com.mmodding.mmodding_lib.library.utils.TweakFunction;
+import dev.emi.trinkets.api.SlotReference;
+import dev.emi.trinkets.api.Trinket;
 import dev.emi.trinkets.api.TrinketItem;
 import dev.emi.trinkets.api.TrinketsApi;
-import fr.firstmegagame4.archeon.impl.trinkets.ArcheonTrinkets;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -19,11 +21,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import org.quiltmc.loader.api.Requires;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class RingItem extends CustomItem {
+public class RingItem extends CustomItem implements @Requires("trinkets") Trinket {
 
 	public static final UUID MOVEMENT_SPEED_MODIFIER_ID = UUID.fromString("97de589f-1ae6-4528-8c72-b50c904e8bf1");
 	public static final UUID ATTACK_DAMAGE_MODIFIER_ID = UUID.fromString("89cb7bb9-a460-4df2-a844-b6514d412c9b");
@@ -37,7 +40,7 @@ public class RingItem extends CustomItem {
 	public RingItem(TweakFunction<Multimap<EntityAttribute, EntityAttributeModifier>> tweak, Settings settings) {
 		super(settings);
 		this.tweak = tweak;
-		CompatibilityUtils.executeIfModLoaded("trinkets", () -> this.registerTrinket(tweak));
+		CompatibilityUtils.executeIfModLoaded("trinkets", this::registerTrinket);
 	}
 
 	public static Multimap<EntityAttribute, EntityAttributeModifier> apafloriteRingModifiers(Multimap<EntityAttribute, EntityAttributeModifier> modifiers) {
@@ -111,8 +114,15 @@ public class RingItem extends CustomItem {
 		return slot == EquipmentSlot.MAINHAND || slot == EquipmentSlot.OFFHAND ? this.tweak.apply(Multimaps.newMultimap(Maps.newLinkedHashMap(), ArrayList::new)) : super.getAttributeModifiers(slot);
 	}
 
-	protected void registerTrinket(TweakFunction<Multimap<EntityAttribute, EntityAttributeModifier>> tweak) {
-		TrinketsApi.registerTrinket(this, ArcheonTrinkets.createRing(tweak));
+	@Override
+	@Requires("trinkets")
+	public Multimap<EntityAttribute, EntityAttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, UUID uuid) {
+		return this.tweak.apply(Trinket.super.getModifiers(stack, slot, entity, uuid));
+	}
+
+	@Requires("trinkets")
+	private void registerTrinket() {
+		TrinketsApi.registerTrinket(this, this);
 	}
 
 	private TypedActionResult<ItemStack> equipTrinket(World world, PlayerEntity user, Hand hand, ItemStack stack) {

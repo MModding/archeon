@@ -1,7 +1,20 @@
 {
   "variants": {
-    "": {
-      "model": "archeon:block/southstone"
-    }
+    "": [
+      {
+        "model": "archeon:block/southstone"
+      },
+      {
+        "model": "archeon:block/southstone_mirrored"
+      },
+      {
+        "model": "archeon:block/southstone",
+        "y": 180
+      },
+      {
+        "model": "archeon:block/southstone_mirrored",
+        "y": 180
+      }
+    ]
   }
 }

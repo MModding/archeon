@@ -1,9 +1,10 @@
 package fr.firstmegagame4.archeon.fluids;
 
+import com.mmodding.mmodding_lib.library.colors.Color;
+import com.mmodding.mmodding_lib.library.colors.RGB;
 import com.mmodding.mmodding_lib.library.fluids.CustomFluid;
 import com.mmodding.mmodding_lib.library.fluids.FluidGroup;
 import com.mmodding.mmodding_lib.library.fluids.collisions.FluidCollisionHandler;
-import com.mmodding.mmodding_lib.library.utils.Colors;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.init.ArcheonBlocks;
 import fr.firstmegagame4.archeon.init.ArcheonFluids;
@@ -26,7 +27,7 @@ public class DasciumFluid extends CustomFluid {
 	public static final Identifier STILL_TEXTURE = Archeon.createId("block/dascium_still");
 	public static final Identifier FLOWING_TEXTURE = Archeon.createId("block/dascium_flow");
 
-	public static final Colors.RGB FOG_COLOR = new Colors.RGB(175, 155, 85);
+	public static final RGB FOG_COLOR = Color.rgb(175, 155, 85);
 
 	public DasciumFluid(boolean source) {
 		super(source);
@@ -61,7 +62,7 @@ public class DasciumFluid extends CustomFluid {
 
 	@ClientOnly
 	@Override
-	public Colors.RGB getFogColor() {
+	public Color getFogColor() {
 		return DasciumFluid.FOG_COLOR;
 	}
 

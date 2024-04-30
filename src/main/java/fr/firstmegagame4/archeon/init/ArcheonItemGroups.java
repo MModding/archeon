@@ -12,6 +12,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.quiltmc.qsl.item.group.api.QuiltItemGroup;
 
@@ -67,6 +68,11 @@ public class ArcheonItemGroups implements ElementsInitializer {
 		(item instanceof CustomHoeItem) ||
 		(item instanceof CustomFishingRodItem) ||
 		(item instanceof RingItem);
+
+	public static final ItemGroup SULLEN_RIFTS_ADVENTURE = QuiltItemGroup.builder(new Identifier("sullen_rifts", "adventure"))
+		.icon(ArcheonItems.LORE_SCRAP::getDefaultStack)
+		.appendItems(stacks -> stacks.add(ArcheonItems.LORE_SCRAP.getDefaultStack()))
+		.build();
 
 	public static final ItemGroup BLOCKS = QuiltItemGroup.builder(Archeon.createId("blocks"))
 		.icon(ArcheonBlocks.WET_GRASS_BLOCK.getItem()::getDefaultStack)

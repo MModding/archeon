@@ -6,6 +6,7 @@ import com.mojang.datafixers.util.Pair;
 import fr.firstmegagame4.archeon.init.ArcheonBiomes;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;
 
 import java.util.function.Consumer;
@@ -116,11 +117,11 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 	@Override
 	public RegistryKey<Biome>[][] windsweptBiomes() {
 		return new RegistryKey[][] {
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null}
+			{ArcheonBiomes.NYRETH_GLADE, ArcheonBiomes.NYRETH_GLADE, ArcheonBiomes.NYRETH_GLADE, ArcheonBiomes.NYRETH_GLADE, ArcheonBiomes.NYRETH_GLADE},
+			{ArcheonBiomes.NYRETH_GLADE, ArcheonBiomes.NYRETH_GLADE, ArcheonBiomes.NYRETH_GLADE, ArcheonBiomes.NYRETH_GLADE, ArcheonBiomes.NYRETH_GLADE},
+			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.NYRETH_GLADE, ArcheonBiomes.NYRETH_GLADE, ArcheonBiomes.NYRETH_GLADE, ArcheonBiomes.NYRETH_GLADE},
+			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.NYRETH_GLADE, ArcheonBiomes.NYRETH_GLADE, ArcheonBiomes.NYRETH_GLADE},
+			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.NYRETH_GLADE, ArcheonBiomes.NYRETH_GLADE}
 		};
 	}
 
@@ -130,43 +131,28 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 	}
 
 	@Override
-	public void provideUnderground(Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> parameters) {
-		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
+	public void provideMid(Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> parameters, MultiNoiseUtil.ParameterRange weirdness) {
+		BiomeSourceUtils.addSurfaceBiomeTo(
+			parameters,
+			MultiNoiseUtil.ParameterRange.combine(this.temperatures()[1], this.temperatures()[2]),
 			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.combine(this.nearInlandContinentalness(), this.farInlandContinentalness()),
+			this.erosions()[6],
+			weirdness,
+			0.0f,
+			ArcheonBiomes.NUME_SWAMP
+		);
+		BiomeSourceUtils.addSurfaceBiomeTo(
+			parameters,
+			MultiNoiseUtil.ParameterRange.combine(this.temperatures()[3], this.temperatures()[4]),
 			this.fullRange(),
-			MultiNoiseUtil.ParameterRange.of(-1.0f, 0.5f),
-			this.fullRange(),
-			MultiNoiseUtil.ParameterRange.of(0.3f, 0.7f),
-			this.fullRange(),
-			0.0f
-		), ArcheonBiomes.UNDERGROUND_CAVES));
-		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
-			this.fullRange(),
-			this.fullRange(),
-			MultiNoiseUtil.ParameterRange.of(0.5f, 1.0f),
-			this.fullRange(),
-			MultiNoiseUtil.ParameterRange.of(0.3f, 0.7f),
-			this.fullRange(),
-			0.0f
-		), ArcheonBiomes.GYPSUM_VALLEYS));
-		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
-			this.fullRange(),
-			this.fullRange(),
-			MultiNoiseUtil.ParameterRange.of(-1.0f, 0.5f),
-			this.fullRange(),
-			MultiNoiseUtil.ParameterRange.of(0.7f, 1.1f),
-			this.fullRange(),
-			0.0f
-		), ArcheonBiomes.ABYSS_CAVES));
-		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
-			this.fullRange(),
-			this.fullRange(),
-			MultiNoiseUtil.ParameterRange.of(0.5f, 1.0f),
-			this.fullRange(),
-			MultiNoiseUtil.ParameterRange.of(0.7f, 1.1f),
-			this.fullRange(),
-			0.0f
-		), ArcheonBiomes.ANHYDRITE_VALLEYS));
+			MultiNoiseUtil.ParameterRange.combine(this.nearInlandContinentalness(), this.farInlandContinentalness()),
+			this.erosions()[6],
+			weirdness,
+			0.0f,
+			BiomeKeys.MANGROVE_SWAMP
+		);
+		AdvancedBiomeProvider.super.provideMid(parameters, weirdness);
 	}
 
 	@Override
@@ -193,5 +179,54 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 			weirdness, 0.0F, ArcheonBiomes.DUNE_OCEAN
 		);
 		AdvancedBiomeProvider.super.provideValleys(parameters, weirdness);
+	}
+
+	@Override
+	public void provideUnderground(Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> parameters) {
+		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(-1.0f, 0.0f),
+			MultiNoiseUtil.ParameterRange.of(-1.0f, 0.5f),
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(0.3f, 0.7f),
+			this.fullRange(),
+			0.0f
+		), ArcheonBiomes.UNDERGROUND_CAVES));
+		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(-1.0f, 0.0f),
+			MultiNoiseUtil.ParameterRange.of(-1.0f, 0.5f),
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(0.7f, 1.1f),
+			this.fullRange(),
+			0.0f
+		), ArcheonBiomes.ABYSS_CAVES));
+		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(-1.0f, 0.0f),
+			MultiNoiseUtil.ParameterRange.of(0.5f, 1.0f),
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(0.3f, 0.7f),
+			this.fullRange(),
+			0.0f
+		), ArcheonBiomes.GYPSUM_VALLEYS));
+		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(-1.0f, 0.0f),
+			MultiNoiseUtil.ParameterRange.of(0.5f, 1.0f),
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(0.7f, 1.1f),
+			this.fullRange(),
+			0.0f
+		), ArcheonBiomes.ANHYDRITE_VALLEYS));
+		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(0.0f, 1.0f),
+			MultiNoiseUtil.ParameterRange.of(-1.0f, 0.5f),
+			this.fullRange(),
+			MultiNoiseUtil.ParameterRange.of(0.3f, 1.1f),
+			this.fullRange(),
+			0.0f
+		), ArcheonBiomes.ACHREAN_CAVES));
 	}
 }

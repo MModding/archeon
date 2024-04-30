@@ -77,7 +77,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 	protected void initGoals() {
 		this.goalSelector.add(0, new MoveToSpecificPosGoal(this, 2.0, 16, 16, this::isRecoveringOriginalPos, this::getOriginalPos, this::posRecoveredPostProcess));
 		this.goalSelector.add(1, new HeartOfNatureAttackGoal(this, 1.0, false));
-		this.targetSelector.add(0, new TargetGoal<>(this, PlayerEntity.class, true).setMaxTimeWithoutVisibility(300));
+		this.targetSelector.add(0, new TargetGoal<>(this, PlayerEntity.class, true));
 	}
 
 	@Override
@@ -154,6 +154,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 
 	public void shieldDeployment(boolean deployed) {
 		this.dataTracker.set(HeartOfNatureEntity.SHIELD, deployed);
+		this.setTarget(null);
 	}
 
 	public List<UUID> getSoldiers() {
@@ -292,7 +293,13 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 
 	@Override
 	public void tickMovement() {
-		super.tickMovement();
+		if (this.isShieldDeployed()) {
+			this.tickHandSwing();
+			this.updateDespawnCounter();
+		}
+		else {
+			super.tickMovement();
+		}
 
 		if (!this.isOnGround() && this.getVelocity().y < 0.0) {
 			this.setVelocity(this.getVelocity().multiply(1.0, 0.6, 1.0));

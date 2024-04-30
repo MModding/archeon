@@ -1,6 +1,6 @@
 package fr.firstmegagame4.archeon.client.screens;
 
-import com.mmodding.mmodding_lib.library.utils.Colors;
+import com.mmodding.mmodding_lib.library.colors.Color;
 import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import com.mojang.blaze3d.systems.RenderSystem;
 import fr.firstmegagame4.archeon.Archeon;
@@ -21,7 +21,7 @@ public class PouchScreen extends HandledScreen<ScreenHandler> {
 
 	@Override
 	protected void drawForeground(MatrixStack matrices, int mouseX, int mouseY) {
-		this.textRenderer.draw(matrices, this.title, this.titleX, this.titleY, new Colors.RGB(136, 75, 43).toDecimal());
+		this.textRenderer.draw(matrices, this.title, this.titleX, this.titleY, Color.rgb(136, 75, 43).toDecimal());
 	}
 
 	@Override

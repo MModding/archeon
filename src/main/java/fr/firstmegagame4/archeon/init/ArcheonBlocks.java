@@ -4,15 +4,14 @@ import com.mmodding.mmodding_lib.library.blocks.*;
 import com.mmodding.mmodding_lib.library.blocks.settings.AdvancedBlockSettings;
 import com.mmodding.mmodding_lib.library.blocks.settings.DefaultBlockSettings;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
+import com.mmodding.mmodding_lib.library.items.settings.AdvancedItemSettings;
 import com.mmodding.mmodding_lib.library.portals.squared.CustomSquaredPortalBlock;
+import com.mmodding.mmodding_lib.library.tags.modifiers.TagModifier;
 import com.mmodding.mmodding_lib.library.utils.SaplingGeneratorUtils;
 import fr.firstmegagame4.archeon.Archeon;
 import fr.firstmegagame4.archeon.blocks.*;
 import fr.firstmegagame4.archeon.bootstrap.init.ArcheonCauldronBehaviors;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.Material;
+import net.minecraft.block.*;
 import net.minecraft.block.PressurePlateBlock.ActivationRule;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.Fluids;
@@ -223,27 +222,55 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomTallFlowerBlock BLUE_DOELDIA = new CustomTallFlowerBlock(
+	public static final CustomFlowerBlock AMAROTH = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		DefaultBlockSettings.PLANT_SETTINGS,
+		StatusEffects.INVISIBILITY,
+		10,
+		DefaultBlockSettings.PLANT_SETTINGS
+	);
+
+	public static final CustomFlowerBlock DOTTED_STOVIA = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		StatusEffects.INSTANT_HEALTH,
+		0,
+		DefaultBlockSettings.PLANT_SETTINGS
+	);
+
+	public static final CustomFlowerBlock WILLS_OF_LIGHT = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		StatusEffects.ABSORPTION,
+		10,
+		DefaultBlockSettings.PLANT_SETTINGS
+	);
+
+	public static final CustomFlowerBlock ETERNAL_FORTUNES = new CustomFlowerBlock(
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		StatusEffects.LUCK,
+		10,
+		DefaultBlockSettings.PLANT_SETTINGS
+	);
+
+	public static final CustomTallFlowerBlock BLUE_DOELDIA = new CustomTallFlowerBlock(
+		floor -> floor.isIn(TagModifier.ofSimple(ArcheonTags.Blocks.SOIL).append(ArcheonBlocks.ACHREAN_MOSS_BLOCK)),
+		DefaultBlockSettings.PLANT_SETTINGS.luminance(9),
 		true
 	);
 
 	public static final CustomTallFlowerBlock WHITE_DOELDIA = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		DefaultBlockSettings.PLANT_SETTINGS,
+		floor -> floor.isIn(TagModifier.ofSimple(ArcheonTags.Blocks.SOIL).append(ArcheonBlocks.ACHREAN_MOSS_BLOCK)),
+		DefaultBlockSettings.PLANT_SETTINGS.luminance(9),
 		true
 	);
 
 	public static final CustomTallFlowerBlock PINK_DOELDIA = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		DefaultBlockSettings.PLANT_SETTINGS,
+		floor -> floor.isIn(TagModifier.ofSimple(ArcheonTags.Blocks.SOIL).append(ArcheonBlocks.ACHREAN_MOSS_BLOCK)),
+		DefaultBlockSettings.PLANT_SETTINGS.luminance(9),
 		true
 	);
 
 	public static final CustomTallFlowerBlock YELLOW_DOELDIA = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		DefaultBlockSettings.PLANT_SETTINGS,
+		floor -> floor.isIn(TagModifier.ofSimple(ArcheonTags.Blocks.SOIL).append(ArcheonBlocks.ACHREAN_MOSS_BLOCK)),
+		DefaultBlockSettings.PLANT_SETTINGS.luminance(9),
 		true
 	);
 
@@ -261,6 +288,18 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final GiantLilyBlock GIANT_LILY = new GiantLilyBlock(
 		DefaultBlockSettings.PLANT_SETTINGS.collidable(true)
+	);
+
+	public static final AchreanVinesBlock ACHREAN_VINE = new AchreanVinesBlock(
+		DefaultBlockSettings.PLANT_SETTINGS
+			.luminance(state -> state.get(AchreanVinesBlock.NEAVE_BERRIES) && state.get(AchreanVinesBlock.DONE) ? 14 : 0)
+			.sounds(BlockSoundGroup.CAVE_VINES),
+		false,
+		0.1f,
+		1,
+		BlockState::isAir,
+		true,
+		new AdvancedItemSettings()
 	);
 
 	public static final CustomFernBlock WET_GRASS = new CustomFernBlock(
@@ -382,16 +421,19 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomSnowBlock GLOWSHROOM_MOSS = new CustomSnowBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLayeredBlock GLOWSHROOM_MOSS = new CustomLayeredBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 	public static final CustomBlock GLOWSHROOM_MOSS_BLOCK = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
 	public static final CustomBlock WET_GRASS_BLOCK = new CustomBlock(DefaultBlockSettings.GRASS_SETTINGS, true);
 	public static final CustomBlock WET_DIRT = new CustomBlock(DefaultBlockSettings.DIRT_SETTINGS, true);
 
+	public static final CustomLayeredBlock ACHREAN_MOSS = new CustomLayeredBlock(DefaultBlockSettings.GRASS_SETTINGS.sounds(BlockSoundGroup.MOSS_BLOCK), true);
+	public static final CustomBlock ACHREAN_MOSS_BLOCK = new CustomBlock(DefaultBlockSettings.GRASS_SETTINGS.sounds(BlockSoundGroup.MOSS_BLOCK), true);
+
 	public static final CustomFallingBlock DUNE_SAND = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
 	public static final CustomFallingBlock SHELLSAND = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
 	public static final CustomFallingBlock SALT_BLOCK = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
-	public static final CustomFallingBlock GOLDEN_SAND = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
+	public static final GoldenSandBlock GOLDEN_SAND = new GoldenSandBlock(DefaultBlockSettings.SAND_SETTINGS, true);
 	public static final CustomFallingBlock SANDY_SOIL = new CustomFallingBlock(DefaultBlockSettings.CLAY_SETTINGS, true);
 	public static final CustomFallingBlock DUST = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
 
@@ -470,7 +512,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomDoorBlock NYRETH_DOOR = new CustomDoorBlock(DefaultBlockSettings.WOOD_SETTINGS.nonOpaque(), true);
 	public static final CustomTrapdoorBlock NYRETH_TRAPDOOR = new CustomTrapdoorBlock(DefaultBlockSettings.WOOD_SETTINGS.nonOpaque(), true);
 
-	public static final CustomBlock SOUTHSTONE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock SOUTHSTONE = new GlowshroomableBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock SOUTHSTONE_STAIRS = new CustomStairsBlock(SOUTHSTONE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomSlabBlock SOUTHSTONE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomWallBlock SOUTHSTONE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
@@ -519,7 +561,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock FALSE_CRACKED_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock FALSE_MOSSY_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
-	public static final CustomBlock PHOSNOR_SLATE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
+	public static final CustomBlock PHOSNOR_SLATE = new GlowshroomableBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomStairsBlock PHOSNOR_SLATE_STAIRS = new CustomStairsBlock(PHOSNOR_SLATE.getDefaultState(), DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomSlabBlock PHOSNOR_SLATE_SLAB = new CustomSlabBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomWallBlock PHOSNOR_SLATE_WALL = new CustomWallBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
@@ -555,6 +597,9 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock LUSONYTH_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock SOUTHSTONE_COAL_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
+	public static final CustomBlock SLIGHTLY_CONDENSED_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock SLIGHTLY_CONDENSED_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+
 	public static final CustomBlock CONDENSED_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock CONDENSED_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
@@ -564,14 +609,17 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock PHOSNOR_SLATE_LUSONYTH_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomBlock PHOSNOR_SLATE_COAL_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 
+	public static final CustomBlock SLIGHTLY_CONDENSED_PHOSNOR_SLATE_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
+	public static final CustomBlock SLIGHTLY_CONDENSED_PHOSNOR_SLATE_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
+
 	public static final CustomBlock CONDENSED_PHOSNOR_SLATE_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomBlock CONDENSED_PHOSNOR_SLATE_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 
 	public static final CustomBlock APAFLORITE_BLOCK = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS, true);
 	public static final CustomBlock EXYRIANE_BLOCK = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS.strength(4.0f), true);
 	public static final CustomBlock FAELITE_BLOCK = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS, true);
-	public static final CustomBlock CLEMENTIUM_BLOCK = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS, true);
 	public static final CustomBlock LUSONYTH_BLOCK = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS, true);
+	public static final CustomBlock CLEMENTIUM_BLOCK = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS, true);
 
 	public static final CustomBlock AKETITE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.sounds(BlockSoundGroup.TUFF), true);
 	public static final CustomStairsBlock AKETITE_STAIRS = new CustomStairsBlock(AKETITE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS.sounds(BlockSoundGroup.TUFF), true);
@@ -645,6 +693,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock SOUTHSTONE_LAMP = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.luminance(15), true);
 	public static final CustomBlock AKETITE_LAMP = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.luminance(15), true);
 
+	public static final CustomPaneBlock CLEMENTIUM_BARS = new CustomPaneBlock(DefaultBlockSettings.METAL_SETTINGS, true);
+
 	public static final CustomBlock POWER_KEYSTONE = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS.strength(-1, 3600000.0f), true);
 	public static final NaturiteBlock NATURITE = new NaturiteBlock(DefaultBlockSettings.NETHERITE_SETTINGS, true);
 
@@ -666,21 +716,21 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomPillarBlock STRIPPED_NYRETH_WOOD = new CustomPillarBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
 	public static final CustomPillarBlock STRIPPED_NYRETH_LOG = new CustomPillarBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
 
-	public static final CustomBlock BUSH_LEAVES = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomBlock PALM_LEAVES = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomBlock NECLANE_LEAVES = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomBlock FLOWERED_NECLANE_LEAVES = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomBlock CYPRESS_LEAVES = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock BUSH_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock PALM_LEAVES = new PalmLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock NECLANE_LEAVES = new NeclaneLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock FLOWERED_NECLANE_LEAVES = new NeclaneLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock CYPRESS_LEAVES = new CypressLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
-	public static final CustomBlock PNEVANTIAL_VUXANCIA_LEAVES = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomBlock STREIAN_VUXANCIA_LEAVES = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomBlock ORIAN_VUXANCIA_LEAVES = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomBlock VALE_VUXANCIA_LEAVES = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomBlock ZIAL_VUXANCIA_LEAVES = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock PNEVANTIAL_VUXANCIA_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock STREIAN_VUXANCIA_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock ORIAN_VUXANCIA_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock VALE_VUXANCIA_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock ZIAL_VUXANCIA_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
-	public static final CustomBlock NUME_WILLOW_LEAVES = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomBlock NYRETH_LEAVES = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomBlock PALE_NYRETH_LEAVES = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock NUME_WILLOW_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock NYRETH_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock PALE_NYRETH_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
 	public static final CustomGrowsDownPlantBlock HANGING_PNEVANTIAL_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.PLANT_SETTINGS,
 		false, 0.1f, 1, BlockState::isAir, true);
@@ -1126,7 +1176,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomBlock PEAKS_GRASS_BLOCK = new CustomBlock(DefaultBlockSettings.GRASS_SETTINGS, true);
 	public static final CustomBlock SNOWY_SOUTHSTONE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSnowBlock PEAKS_SNOW = new CustomSnowBlock(DefaultBlockSettings.SNOW_SETTINGS, true);
+	public static final CustomLayeredBlock PEAKS_SNOW = new CustomLayeredBlock(DefaultBlockSettings.SNOW_SETTINGS, true);
 	public static final CustomBlock PEAKS_SNOW_BLOCK = new CustomBlock(DefaultBlockSettings.SNOW_BLOCK_SETTINGS, true);
 
 	public static final CustomBlock DARK_GREEN_TILES = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
@@ -1201,6 +1251,10 @@ public class ArcheonBlocks implements ElementsInitializer {
 		WITHERED_SUNSET_ORCHID.register(Archeon.createId("withered_orchid"));
 		ROSEYPIA.register(Archeon.createId("roseypia"));
 		AEROLIA.register(Archeon.createId("aerolia"));
+		AMAROTH.register(Archeon.createId("amaroth"));
+		DOTTED_STOVIA.register(Archeon.createId("dotted_stovia"));
+		WILLS_OF_LIGHT.register(Archeon.createId("wills_of_light"));
+		ETERNAL_FORTUNES.register(Archeon.createId("eternal_fortunes"));
 		WITHERED_AEROLIA.register(Archeon.createId("withered_aerolia"));
 		ASTEDIBES.register(Archeon.createId("astedibes"));
 		WITHERED_ASTEDIBES.register(Archeon.createId("withered_astedibes"));
@@ -1229,6 +1283,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		SMALL_HOT_SPRING_LILY_PAD.register(Archeon.createId("small_hot_spring_lily_pad"));
 		HOT_SPRING_LILY_PAD.register(Archeon.createId("hot_spring_lily_pad"));
 		GIANT_LILY.register(Archeon.createId("giant_lily"));
+		ACHREAN_VINE.register(Archeon.createId("achrean_vines"));
 		WET_GRASS.register(Archeon.createId("wet_grass"));
 		TALL_WET_GRASS.register(Archeon.createId("tall_wet_grass"));
 		FLOWERED_WET_GRASS.register(Archeon.createId("flowered_wet_grass"));
@@ -1253,6 +1308,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 		GLOWSHROOM_MOSS_BLOCK.register(Archeon.createId("glowshroom_moss_block"));
 		WET_GRASS_BLOCK.register(Archeon.createId("wet_grass_block"));
 		WET_DIRT.register(Archeon.createId("wet_dirt"));
+		ACHREAN_MOSS.register(Archeon.createId("achrean_moss"));
+		ACHREAN_MOSS_BLOCK.register(Archeon.createId("achrean_moss_block"));
 		DUNE_SAND.register(Archeon.createId("dune_sand"));
 		SHELLSAND.register(Archeon.createId("shellsand"));
 		SALT_BLOCK.register(Archeon.createId("salt_block"));
@@ -1392,6 +1449,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 		FAELITE_ORE.register(Archeon.createId("faelite_ore"));
 		LUSONYTH_ORE.register(Archeon.createId("lusonyth_ore"));
 		SOUTHSTONE_COAL_ORE.register(Archeon.createId("southstone_coal_ore"));
+		SLIGHTLY_CONDENSED_APAFLORITE_ORE.register(Archeon.createId("slightly_condensed_apaflorite_ore"));
+		SLIGHTLY_CONDENSED_EXYRIANE_ORE.register(Archeon.createId("slightly_condensed_exyriane_ore"));
 		CONDENSED_APAFLORITE_ORE.register(Archeon.createId("condensed_apaflorite_ore"));
 		CONDENSED_EXYRIANE_ORE.register(Archeon.createId("condensed_exyriane_ore"));
 		PHOSNOR_SLATE_APAFLORITE_ORE.register(Archeon.createId("phosnor_slate_apaflorite_ore"));
@@ -1399,13 +1458,15 @@ public class ArcheonBlocks implements ElementsInitializer {
 		PHOSNOR_SLATE_FAELITE_ORE.register(Archeon.createId("phosnor_slate_faelite_ore"));
 		PHOSNOR_SLATE_LUSONYTH_ORE.register(Archeon.createId("phosnor_slate_lusonyth_ore"));
 		PHOSNOR_SLATE_COAL_ORE.register(Archeon.createId("phosnor_slate_coal_ore"));
+		SLIGHTLY_CONDENSED_PHOSNOR_SLATE_APAFLORITE_ORE.register(Archeon.createId("slightly_condensed_phosnor_slate_apaflorite_ore"));
+		SLIGHTLY_CONDENSED_PHOSNOR_SLATE_EXYRIANE_ORE.register(Archeon.createId("slightly_condensed_phosnor_slate_exyriane_ore"));
 		CONDENSED_PHOSNOR_SLATE_APAFLORITE_ORE.register(Archeon.createId("condensed_phosnor_slate_apaflorite_ore"));
 		CONDENSED_PHOSNOR_SLATE_EXYRIANE_ORE.register(Archeon.createId("condensed_phosnor_slate_exyriane_ore"));
 		APAFLORITE_BLOCK.register(Archeon.createId("apaflorite_block"));
 		EXYRIANE_BLOCK.register(Archeon.createId("exyriane_block"));
 		FAELITE_BLOCK.register(Archeon.createId("faelite_block"));
-		CLEMENTIUM_BLOCK.register(Archeon.createId("clementium_block"));
 		LUSONYTH_BLOCK.register(Archeon.createId("lusonyth_block"));
+		CLEMENTIUM_BLOCK.register(Archeon.createId("clementium_block"));
 		AKETITE.register(Archeon.createId("aketite"));
 		AKETITE_STAIRS.register(Archeon.createId("aketite_stairs"));
 		AKETITE_SLAB.register(Archeon.createId("aketite_slab"));
@@ -1460,6 +1521,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		ARTEMNITE_BASEBOARD.register(Archeon.createId("artemnite_baseboard"));
 		SOUTHSTONE_LAMP.register(Archeon.createId("southstone_lamp"));
 		AKETITE_LAMP.register(Archeon.createId("aketite_lamp"));
+		CLEMENTIUM_BARS.register(Archeon.createId("clementium_bars"));
 		POWER_KEYSTONE.register(Archeon.createId("power_keystone"));
 		NATURITE.register(Archeon.createId("naturite"));
 		STRIPPED_PALM_WOOD.register(Archeon.createId("stripped_palm_wood"));

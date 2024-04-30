@@ -41,5 +41,10 @@ public class AuroraCatalystEntityRenderer extends MobEntityRenderer<AuroraCataly
 		public RenderLayer getGlowingLayer(AuroraCatalystEntity entity) {
 			return RenderLayer.getEyes(this.getTexture(entity));
 		}
+
+		@Override
+		public int getLight(AuroraCatalystEntity entity) {
+			return 15728;
+		}
 	}
 }

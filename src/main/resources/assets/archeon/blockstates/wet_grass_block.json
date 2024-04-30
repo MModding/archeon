@@ -1,7 +1,21 @@
 {
   "variants": {
-    "": {
-      "model": "archeon:block/wet_grass_block"
-    }
+    "": [
+      {
+        "model": "archeon:block/wet_grass_block"
+      },
+      {
+        "model": "archeon:block/wet_grass_block",
+        "y": 90
+      },
+      {
+        "model": "archeon:block/wet_grass_block",
+        "y": 180
+      },
+      {
+        "model": "archeon:block/wet_grass_block",
+        "y": 270
+      }
+    ]
   }
 }

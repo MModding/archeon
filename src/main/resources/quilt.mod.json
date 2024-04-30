@@ -1,6 +1,5 @@
 {
 	"schema_version": 1,
-	"fluidlogged": "archeon.fluidlogged.json",
 	"quilt_loader": {
 		"group": "fr.firstmegagame4",
 		"id": "archeon",
@@ -14,10 +13,10 @@
 				"Aeramisu": "Project Manager, Art Director, Composer, Concept Artist, Sound Designer",
 				"FirstMegaGame4": "Lead Quilt Developer",
 				"Aerod": "Additional Art",
-				"Tenkite": "Additional Art",
 				"Tim Rurkowski": "Composer",
 				"Rotch Gwylt": "Composer",
 				"Scarecrowman": "Composer",
+				"Tenkite": "Old Additional Art",
 				"Mystoxi": "Additional Old Forge Development"
 			},
 			"contact": {
@@ -36,7 +35,7 @@
 		"depends": [
 			{
 				"id": "quilt_loader",
-				"versions": ">=0.17.0-"
+				"versions": ">=0.25.0-"
 			},
 			{
 				"id": "quilted_fabric_api",
@@ -58,5 +57,6 @@
 			}
 		]
 	},
-	"mixin": "archeon.mixins.json"
+	"mixin": "archeon.mixins.json",
+	"fluidlogged": "archeon.fluidlogged.json"
 }

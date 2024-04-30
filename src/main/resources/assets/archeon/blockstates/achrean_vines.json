@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "neave_berries=false,done=false": {
+      "model": "archeon:block/achrean_vines"
+    },
+    "neave_berries=false,done=true": {
+      "model": "archeon:block/achrean_vines"
+    },
+    "neave_berries=true,done=false": {
+      "model": "archeon:block/achrean_vines_growing"
+    },
+    "neave_berries=true,done=true": {
+      "model": "archeon:block/achrean_vines_done"
+    }
+  }
+}
