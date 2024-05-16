@@ -41,7 +41,7 @@ Rotch Gwylt (Composer)
 Special thanks to Aerod (Additonal Art), Tenkite (Additonal Art) and Mystoxi (Additional Old Forge Development)
 
 ### In Collaboration with the MModding Team
-[![MModding Banner](https://raw.githubusercontent.com/MModding/art/main/brand/mmodding_banner.png)](https://mmodding.com/discord-link)
+[![MModding Banner](https://raw.githubusercontent.com/MModding/art/main/brand/mmodding_banner.png)](https://mmodding.com/discord)
 
 ## 💎 Found an Issue?
 
