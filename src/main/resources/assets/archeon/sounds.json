@@ -136,15 +136,6 @@
       }
     ]
   },
-  "wild_breath": {
-    "category": "music",
-    "sounds": [
-      {
-        "name": "archeon:wild_breath",
-        "stream": true
-      }
-    ]
-  },
   "rising": {
     "category": "record",
     "sounds": [
