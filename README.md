@@ -2,7 +2,7 @@
 # Archeon
 ![](https://media.discordapp.net/attachments/938106904129986590/1116017304086511626/image.png?width=1663&height=935)
 
-## 🏷️ Welcome to Archeon and the Echo of the Worlds
+## Welcome to Archeon and the Echo of the Worlds
 
 The Silent Winds team presents the Archeon mod for QuiltMC! Archeon is a brand new dimension, full of new blocks, mobs and more! All you need to get there is a portal made of Mysterious Stone, filled with a magical energy provided by the Wand of Nature! The Archeon mod is still in heavy development, but the release "Rebirth of History" (last version of the mod for Forge) is out on CurseForge! Go check it out: https://www.curseforge.com/minecraft/mc-mods/archeon/files - Note that the Forge version is the mod is now discontinued, and led tis place to the QUILT version, currently in development for the new update of Archeon, called Archeon and the Echo of the Worlds!
 
