@@ -2,6 +2,8 @@
 
 # Archeon
 
+![](https://media.discordapp.net/attachments/938106904129986590/1116017304086511626/image.png?width=1663&height=935)
+
 ## Supports
 
 [<img src="https://github.com/JR1811/Boatism/blob/5bdbea79b11428101353c4a67ccd4b3821200a76/extrernal/promo/badges/supported_on_quilt_loader.png?raw=true" width="256" alt="Supports Quilt Loader">](https://quiltmc.org)
