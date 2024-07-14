@@ -7,7 +7,7 @@ quilt_loader = "0.25.0"
 # Required Dependencies
 
 quilted_fabric_api = "4.0.0-beta.26+0.72.0-1.19.2"
-mmodding_lib = "28ade4054a"
+mmodding = "6e37741db8"
 
 # Included Dependencies
 
@@ -25,7 +25,7 @@ quilt_loader = { module = "org.quiltmc:quilt-loader", version.ref = "quilt_loade
 # Required Dependencies
 
 quilted_fabric_api = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api", version.ref = "quilted_fabric_api" }
-mmodding_lib = { module = "com.github.MModding:MModding-Library", version.ref = "mmodding_lib" }
+mmodding = { module = "com.mmodding:mmodding-library", version.ref = "mmodding" }
 
 # Included Dependencies
 

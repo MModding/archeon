@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "lives=empty": {
+      "model": "archeon:block/centaur_life_vault"
+    },
+    "lives=left": {
+      "model": "archeon:block/centaur_life_vault_left"
+    },
+    "lives=right": {
+      "model": "archeon:block/centaur_life_vault_right"
+    },
+    "lives=full": {
+      "model": "archeon:block/centaur_life_vault_full"
+    }
+  }
+}

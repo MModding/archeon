@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "fr.firstmegagame4.archeon.mixin",
+  "package": "com.mmodding.archeon.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "EnchantmentHelperMixin",
