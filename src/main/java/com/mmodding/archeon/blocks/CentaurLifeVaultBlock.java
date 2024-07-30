@@ -39,10 +39,10 @@ public class CentaurLifeVaultBlock extends CustomBlock {
 	public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, RandomGenerator random) {
 		world.setBlockState(pos, state.with(CentaurLifeVaultBlock.LIVES, Lives.FULL));
 		world.spawnParticles(ParticleTypes.SOUL_FIRE_FLAME, pos.getX() - 0.5, pos.getY() - 0.5, pos.getZ() - 0.5, 10, 1, 1, 1, 3.0f);
-		CentaurEntity armoredCentaurEntity = new CentaurEntity(world, Vec3d.ofCenter(pos), true);
+		CentaurEntity armoredCentaurEntity = new CentaurEntity(world, pos, true);
 		armoredCentaurEntity.setPosition(Vec3d.ofCenter(pos.west(13)));
 		armoredCentaurEntity.setStackInHand(Hand.MAIN_HAND, ArcheonItems.CENTAUR_BATTLE_AXE.getDefaultStack());
-		CentaurEntity centaurEntity = new CentaurEntity(world, Vec3d.ofCenter(pos), false);
+		CentaurEntity centaurEntity = new CentaurEntity(world, pos, false);
 		centaurEntity.setPosition(Vec3d.ofCenter(pos.east(13)));
 		centaurEntity.setStackInHand(Hand.MAIN_HAND, ArcheonItems.CENTAUR_SPEAR.getDefaultStack());
 		world.spawnEntity(armoredCentaurEntity);

@@ -10,6 +10,7 @@ import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.goal.TargetGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,19 +20,20 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.util.EnumSet;
+import java.util.logging.Logger;
 
 public class CentaurEntity extends HostileEntity {
 
 	public AnimationState galloping = new AnimationState();
 
-	private Vec3d vaultPos;
+	private BlockPos vaultPos;
 
 	public CentaurEntity(EntityType<? extends CentaurEntity> entityType, World world) {
 		super(entityType, world);
-		this.vaultPos = Vec3d.ZERO;
+		this.vaultPos = BlockPos.ORIGIN;
 	}
 
-	public CentaurEntity(World world, Vec3d vaultPos, boolean armored) {
+	public CentaurEntity(World world, BlockPos vaultPos, boolean armored) {
 		super(armored ? ArcheonEntities.ARMORED_CENTAUR : ArcheonEntities.CENTAUR, world);
 		this.vaultPos = vaultPos;
 	}
@@ -55,9 +57,9 @@ public class CentaurEntity extends HostileEntity {
 	public void writeCustomDataToNbt(NbtCompound nbt) {
 		super.writeCustomDataToNbt(nbt);
 		NbtCompound vaultPos = new NbtCompound();
-		vaultPos.putDouble("X", this.vaultPos.getX());
-		vaultPos.putDouble("Y", this.vaultPos.getY());
-		vaultPos.putDouble("Z", this.vaultPos.getZ());
+		vaultPos.putInt("X", this.vaultPos.getX());
+		vaultPos.putInt("Y", this.vaultPos.getY());
+		vaultPos.putInt("Z", this.vaultPos.getZ());
 		nbt.put("VaultPos", vaultPos);
 	}
 
@@ -65,10 +67,10 @@ public class CentaurEntity extends HostileEntity {
 	public void readCustomDataFromNbt(NbtCompound nbt) {
 		super.readCustomDataFromNbt(nbt);
 		NbtCompound vaultPos = nbt.getCompound("VaultPos");
-		this.vaultPos = new Vec3d(
-			vaultPos.getDouble("X"),
-			vaultPos.getDouble("Y"),
-			vaultPos.getDouble("Z")
+		this.vaultPos = new BlockPos(
+			vaultPos.getInt("X"),
+			vaultPos.getInt("Y"),
+			vaultPos.getInt("Z")
 		);
 	}
 
@@ -81,10 +83,14 @@ public class CentaurEntity extends HostileEntity {
 	}
 
 	@Override
-	public void onRemoved() {
-		BlockState state = this.getWorld().getBlockState(new BlockPos(this.vaultPos));
-		TweakFunction<CentaurLifeVaultBlock.Lives> lives = property -> this.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? property.decadeRight() : property.decadeLeft();
-		this.getWorld().setBlockState(new BlockPos(this.vaultPos), state.with(CentaurLifeVaultBlock.LIVES, lives.apply(state.get(CentaurLifeVaultBlock.LIVES))));
+	public boolean damage(DamageSource source, float amount) {
+		boolean bool = super.damage(source, amount);
+		if (this.isDead()) {
+			BlockState state = this.getWorld().getBlockState(this.vaultPos);
+			TweakFunction<CentaurLifeVaultBlock.Lives> lives = property -> this.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? property.decadeRight() : property.decadeLeft();
+			this.getWorld().setBlockState(this.vaultPos, state.with(CentaurLifeVaultBlock.LIVES, lives.apply(state.get(CentaurLifeVaultBlock.LIVES))));
+		}
+		return bool;
 	}
 
 	public static class CentaurMovement extends Goal {
@@ -98,7 +104,7 @@ public class CentaurEntity extends HostileEntity {
 
 		@Override
 		public boolean canStart() {
-			return this.centaur.vaultPos != Vec3d.ZERO && this.centaur.getTarget() == null;
+			return this.centaur.vaultPos != BlockPos.ORIGIN && this.centaur.getTarget() == null;
 		}
 
 		@Override
