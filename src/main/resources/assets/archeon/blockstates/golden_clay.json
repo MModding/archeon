@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "influence=default": {
+      "model": "archeon:block/golden_clay"
+    },
+    "influence=mossy": {
+      "model": "archeon:block/mossy_golden_clay"
+    }
+  }
+}

@@ -26,6 +26,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.state.property.Properties;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
+import net.minecraft.util.Holder;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.VerticalSurfaceType;
 import net.minecraft.util.math.floatprovider.ClampedNormalFloatProvider;
@@ -36,9 +37,8 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.feature.SimpleBlockFeatureConfig;
+import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.util.ConfiguredFeatureUtil;
 import net.minecraft.world.gen.feature.util.PlacedFeatureUtil;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
@@ -315,12 +315,12 @@ public class ArcheonFeatures implements ElementsInitializer {
 		0.5f
 	);
 
-	public static final CustomVegetationPatchFeature GOLDEN_SAND_PATCH = new CustomVegetationPatchFeature(
+	public static final CustomVegetationPatchFeature GOLDEN_CLAY_PATCH = new CustomVegetationPatchFeature(
 		125,
 		Direction.DOWN,
 		12,
 		ArcheonTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
-		ArcheonBlocks.GOLDEN_SAND.getDefaultState(),
+		ArcheonBlocks.GOLDEN_CLAY.getDefaultState(),
 		ListUtils.biBuilder(
 			vegetation -> {
 				ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, 1, 50);
@@ -439,7 +439,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ANHYDRITE_CLUSTER.register(Archeon.createId("anhydrite_cluster"));
 		LARGE_ANHYDRITE.register(Archeon.createId("large_anhydrite"));
 		POINTED_ANHYDRITE.register(Archeon.createId("pointed_anhydrite"));
-		GOLDEN_SAND_PATCH.register(Archeon.createId("golden_sand_patch"));
+		GOLDEN_CLAY_PATCH.register(Archeon.createId("golden_clay_patch"));
 		ACHREAN_MOSS_PATCH.register(Archeon.createId("achrean_moss_patch"));
 		ACHREAN_MOSS_CEILING.register(Archeon.createId("achrean_moss_ceiling"));
 
@@ -517,7 +517,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		LARGE_ANHYDRITE.addDefaultToBiomes(anhydritePredicate);
 		POINTED_ANHYDRITE.addDefaultToBiomes(anhydritePredicate);
 
-		GOLDEN_SAND_PATCH.addDefaultToBiomes(achreanPredicate);
+		GOLDEN_CLAY_PATCH.addDefaultToBiomes(achreanPredicate);
 		ACHREAN_MOSS_PATCH.addDefaultToBiomes(achreanPredicate);
 		ACHREAN_MOSS_CEILING.addDefaultToBiomes(achreanPredicate);
 	}

@@ -433,7 +433,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomFallingBlock DUNE_SAND = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
 	public static final CustomFallingBlock SHELLSAND = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
 	public static final CustomFallingBlock SALT_BLOCK = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
-	public static final GoldenSandBlock GOLDEN_SAND = new GoldenSandBlock(DefaultBlockSettings.SAND_SETTINGS, true);
+	public static final CustomFallingBlock GOLDEN_SAND = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
+	public static final GoldenClayBlock GOLDEN_CLAY = new GoldenClayBlock(DefaultBlockSettings.CLAY_SETTINGS, true);
 	public static final CustomFallingBlock SANDY_SOIL = new CustomFallingBlock(DefaultBlockSettings.CLAY_SETTINGS, true);
 	public static final CustomFallingBlock DUST = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
 
@@ -1316,6 +1317,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		SHELLSAND.register(Archeon.createId("shellsand"));
 		SALT_BLOCK.register(Archeon.createId("salt_block"));
 		GOLDEN_SAND.register(Archeon.createId("golden_sand"));
+		GOLDEN_CLAY.register(Archeon.createId("golden_clay"));
 		SANDY_SOIL.register(Archeon.createId("sandy_soil"));
 		DUST.register(Archeon.createId("dust"));
 		PALM_WOOD.register(Archeon.createId("palm_wood"));
