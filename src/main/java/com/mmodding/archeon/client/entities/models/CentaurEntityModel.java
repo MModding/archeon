@@ -101,7 +101,7 @@ public class CentaurEntityModel extends SinglePartEntityModel<CentaurEntity> imp
 	public void setAngles(CentaurEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
 		this.getPart().traverse().forEach(ModelPart::resetTransform);
 		if (AnimationUtils.isMoving(entity, limbDistance)) {
-			Animation galloping = entity.getType().equals(ArcheonEntities.CENTAUR) ? CentaurEntityAnimations.GALLOPING_WITH_SPEAR : CentaurEntityAnimations.GALLOPING;
+			Animation galloping = entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? CentaurEntityAnimations.BATTLE_AXE_GALLOPING : CentaurEntityAnimations.SPEAR_GALLOPING;
 			AnimationUtils.updateAnimation(this, galloping, entity.galloping, animationProgress, 2.0f);
 		}
 	}

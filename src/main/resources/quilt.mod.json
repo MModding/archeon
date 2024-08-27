@@ -9,18 +9,15 @@
 			"description": "This is the Official Version of Archeon. Archeon is a brand new dimension, full of new blocks, mobs and more! All you need to get there is a portal made of Mysterious Stone, filled with a magical energy made by the Wand of Nature!",
 			"contributors": {
 				"MModding Team": "Owner",
-				"Aethyus": "Author, Project Manager, Art Director, Former MCreator Development",
-				"Aeramisu": "Project Manager, Art Director, Composer, Concept Artist, Sound Designer",
+				"Aethyus": "Author, Art Director, Project Manager",
+				"Aeramisu": "Art Director, Project Manager, Composer, Concept Artist, Sound Designer",
 				"FirstMegaGame4": "Lead Developer, Project Manager",
-				"Aerod": "Additional Art",
-				"Tim Rurkowski": "Composer",
-				"Rotch Gwylt": "Composer",
-				"Scarecrowman": "Composer",
-				"Tenkite": "Old Additional Art",
-				"Mystoxi": "Additional Old Forge Development"
+				"Chatoine": "Modeler",
+				"Contributors": "Aerod (Additional Art); Tim Rurkowski (Composer); Rotch Gwylt (Composer); Scarecrowman (Composer)",
+				"Past": "Aethyus (as Former Forge Version Developer trough MCreator); Mystoxi (Help on MCreator); Tenkite (Old Additional Art)"
 			},
 			"contact": {
-				"homepage": "https://modrinth/mod/quilted-archeon",
+				"homepage": "https://modrinth/mod/archeon",
 				"issues": "https://github.com/MModding/archeon/issues",
 				"sources": "https://github.com/MModding/archeon"
 			},
