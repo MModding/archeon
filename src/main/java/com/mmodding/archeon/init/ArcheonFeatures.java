@@ -26,7 +26,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.state.property.Properties;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
-import net.minecraft.util.Holder;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.VerticalSurfaceType;
 import net.minecraft.util.math.floatprovider.ClampedNormalFloatProvider;
@@ -37,8 +36,9 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.feature.util.ConfiguredFeatureUtil;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.feature.SimpleBlockFeatureConfig;
 import net.minecraft.world.gen.feature.util.PlacedFeatureUtil;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
@@ -342,6 +342,29 @@ public class ArcheonFeatures implements ElementsInitializer {
 		0.7f
 	);
 
+	public static final CustomWaterloggedVegetationPatchFeature GOLDEN_CLAY_POOL = new CustomWaterloggedVegetationPatchFeature(
+		125,
+		Direction.DOWN,
+		12,
+		ArcheonTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
+		ArcheonBlocks.GOLDEN_CLAY.getDefaultState(),
+		ListUtils.biBuilder(
+			vegetation -> {
+				vegetation.add(ArcheonBlocks.BLUE_DOELDIA.getDefaultState(), 10);
+				vegetation.add(ArcheonBlocks.WHITE_DOELDIA.getDefaultState(), 10);
+				vegetation.add(ArcheonBlocks.PINK_DOELDIA.getDefaultState(), 10);
+				vegetation.add(ArcheonBlocks.YELLOW_DOELDIA.getDefaultState(), 10);
+			}
+		),
+		VerticalSurfaceType.FLOOR,
+		ConstantIntProvider.create(3),
+		0.8f,
+		2,
+		0.1f,
+		UniformIntProvider.create(4, 7),
+		0.7f
+	);
+
 	public static final CustomVegetationPatchFeature ACHREAN_MOSS_PATCH = new CustomVegetationPatchFeature(
 		125,
 		Direction.DOWN,
@@ -351,7 +374,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ListUtils.biBuilder(
 			vegetation -> {
 				for (int i = 0; i < 4; i++) {
-					ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, i + 1, 10);
+					ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, i + 1, 25);
 				}
 				vegetation.add(ArcheonBlocks.BLUE_DOELDIA.getDefaultState(), 10);
 				vegetation.add(ArcheonBlocks.WHITE_DOELDIA.getDefaultState(), 10);
@@ -380,6 +403,12 @@ public class ArcheonFeatures implements ElementsInitializer {
 		0.08f,
 		UniformIntProvider.create(4, 7),
 		0.3f
+	);
+
+	public static final CustomBooleanFeature ACHREAN_GOLDEN_CLAY = new CustomBooleanFeature(
+		() -> ArcheonFeatures.GOLDEN_CLAY_PATCH,
+		() -> ArcheonFeatures.GOLDEN_CLAY_POOL,
+		GenerationStep.Feature.VEGETAL_DECORATION
 	);
 
 	private static void addLayeredBlock(BiList<BlockState, Integer> vegetation, @SuppressWarnings("SameParameterValue") CustomLayeredBlock layered, int layer, int weight) {
@@ -440,8 +469,10 @@ public class ArcheonFeatures implements ElementsInitializer {
 		LARGE_ANHYDRITE.register(Archeon.createId("large_anhydrite"));
 		POINTED_ANHYDRITE.register(Archeon.createId("pointed_anhydrite"));
 		GOLDEN_CLAY_PATCH.register(Archeon.createId("golden_clay_patch"));
+		GOLDEN_CLAY_POOL.register(Archeon.createId("golden_clay_pool"));
 		ACHREAN_MOSS_PATCH.register(Archeon.createId("achrean_moss_patch"));
 		ACHREAN_MOSS_CEILING.register(Archeon.createId("achrean_moss_ceiling"));
+		ACHREAN_GOLDEN_CLAY.register(Archeon.createId("achrean_golden_clay"));
 
 		Predicate<BiomeSelectionContext> randomPatchPredicate = ctx -> !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) ||
 			!ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES) ||
@@ -517,8 +548,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 		LARGE_ANHYDRITE.addDefaultToBiomes(anhydritePredicate);
 		POINTED_ANHYDRITE.addDefaultToBiomes(anhydritePredicate);
 
-		GOLDEN_CLAY_PATCH.addDefaultToBiomes(achreanPredicate);
 		ACHREAN_MOSS_PATCH.addDefaultToBiomes(achreanPredicate);
 		ACHREAN_MOSS_CEILING.addDefaultToBiomes(achreanPredicate);
+		ACHREAN_GOLDEN_CLAY.addDefaultToBiomes(achreanPredicate);
 	}
 }
