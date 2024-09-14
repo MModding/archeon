@@ -32,7 +32,7 @@ dependencies {
 	modImplementation libs.quilted.fabric.api
 
 	// MModding Library
-	modImplementation libs.mmodding.lib
+	modImplementation libs.mmodding
 
 	// Double Jump Attribute
 	modImplementation libs.double.jump.attribute

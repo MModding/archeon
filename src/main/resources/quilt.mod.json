@@ -1,36 +1,33 @@
 {
 	"schema_version": 1,
 	"quilt_loader": {
-		"group": "fr.firstmegagame4",
+		"group": "com.mmodding",
 		"id": "archeon",
 		"version": "${version}",
 		"metadata": {
 			"name": "Archeon",
 			"description": "This is the Official Version of Archeon. Archeon is a brand new dimension, full of new blocks, mobs and more! All you need to get there is a portal made of Mysterious Stone, filled with a magical energy made by the Wand of Nature!",
 			"contributors": {
-				"Silent Winds Team": "Owner",
-				"Aethyus": "Author, Project Manager, Art Director, Former Lead Forge Developer",
-				"Aeramisu": "Project Manager, Art Director, Composer, Concept Artist, Sound Designer",
-				"FirstMegaGame4": "Lead Quilt Developer",
-				"Aerod": "Additional Art",
-				"Tim Rurkowski": "Composer",
-				"Rotch Gwylt": "Composer",
-				"Scarecrowman": "Composer",
-				"Tenkite": "Old Additional Art",
-				"Mystoxi": "Additional Old Forge Development"
+				"MModding Team": "Owner",
+				"Aethyus": "Author, Art Director, Project Manager",
+				"Aeramisu": "Art Director, Project Manager, Composer, Concept Artist, Sound Designer",
+				"FirstMegaGame4": "Lead Developer, Project Manager",
+				"Chatoine": "Modeler",
+				"Contributors": "Aerod (Additional Art); Tim Rurkowski (Composer); Rotch Gwylt (Composer); Scarecrowman (Composer)",
+				"Past": "Aethyus (as Former Forge Version Developer trough MCreator); Mystoxi (Help on MCreator); Tenkite (Old Additional Art)"
 			},
 			"contact": {
-				"homepage": "https://modrinth/mod/quilted-archeon",
-				"issues": "https://github.com/Silent-Winds/Archeon-Quilt/issues",
-				"sources": "https://github.com/Silent-Winds/Archeon-Quilt"
+				"homepage": "https://modrinth/mod/archeon",
+				"issues": "https://github.com/MModding/archeon/issues",
+				"sources": "https://github.com/MModding/archeon"
 			},
 			"icon": "assets/archeon/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "fr.firstmegagame4.archeon.Archeon",
-			"client_init": "fr.firstmegagame4.archeon.client.ArcheonClient",
-			"mmodding_bootstrap_init": "fr.firstmegagame4.archeon.bootstrap.ArcheonBootstrap"
+			"init": "com.mmodding.archeon.Archeon",
+			"client_init": "com.mmodding.archeon.client.ArcheonClient",
+			"mmodding_bootstrap_init": "com.mmodding.archeon.bootstrap.ArcheonBootstrap"
 		},
 		"depends": [
 			{
@@ -47,7 +44,7 @@
 			},
 			{
 				"id": "mmodding_lib",
-				"versions": ">=0.1.0-"
+				"versions": ">=0.0.2-"
 			}
 		],
 		"suggests": [

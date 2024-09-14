@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "top": "archeon:block/centaur_life_vault_top",
+    "bottom": "archeon:block/centaur_life_vault_bottom",
+    "front": "archeon:block/centaur_life_vault_front_eyes_left",
+    "side": "archeon:block/centaur_life_vault_side"
+  }
+}

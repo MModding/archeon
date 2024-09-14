@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "archeon:block/achrean_moss",
+    "down": "archeon:block/golden_clay",
+    "north": "archeon:block/mossy_golden_clay",
+    "south": "archeon:block/mossy_golden_clay",
+    "west": "archeon:block/mossy_golden_clay",
+    "east": "archeon:block/mossy_golden_clay",
+    "particle": "archeon:block/golden_clay"
+  }
+}

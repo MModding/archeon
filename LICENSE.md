@@ -1,7 +1,8 @@
 ### License for Archeon Past, Current and Future Assets:
 
 ```
-Copyright (c) 2023-2024 Silent Wind's Team
+Copyright (c) 2023 Silent Wind's Team
+Copyright (c) 2024 MModding
 
 All rights reserved.
 ```
