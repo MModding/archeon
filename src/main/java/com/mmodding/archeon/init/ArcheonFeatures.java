@@ -36,6 +36,8 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.blockpredicate.BlockPredicate;
+import net.minecraft.world.gen.decorator.*;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.SimpleBlockFeatureConfig;
@@ -406,9 +408,15 @@ public class ArcheonFeatures implements ElementsInitializer {
 	);
 
 	public static final CustomBooleanFeature ACHREAN_GOLDEN_CLAY = new CustomBooleanFeature(
-		() -> ArcheonFeatures.GOLDEN_CLAY_PATCH,
-		() -> ArcheonFeatures.GOLDEN_CLAY_POOL,
-		GenerationStep.Feature.VEGETAL_DECORATION
+		() -> RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Archeon.createId("golden_clay_patch")),
+		() -> RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Archeon.createId("golden_clay_pool")),
+		GenerationStep.Feature.VEGETAL_DECORATION,
+		CountPlacementModifier.create(62),
+		InSquarePlacementModifier.getInstance(),
+		PlacedFeatureUtil.BOTTOM_TO_MAX_TERRAIN_HEIGHT_RANGE,
+		EnvironmentScanPlacementModifier.create(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.IS_AIR, 12),
+		RandomOffsetPlacementModifier.vertical(ConstantIntProvider.create(1)),
+		BiomePlacementModifier.getInstance()
 	);
 
 	private static void addLayeredBlock(BiList<BlockState, Integer> vegetation, @SuppressWarnings("SameParameterValue") CustomLayeredBlock layered, int layer, int weight) {
