@@ -18,6 +18,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
+import org.jetbrains.annotations.Nullable;
 
 public class GiantLilyBlock extends CustomDoubleWidthBlock {
 
@@ -48,7 +50,7 @@ public class GiantLilyBlock extends CustomDoubleWidthBlock {
 	}
 
 	@Override
-	public boolean canPlacePartAt(World world, BlockPos pos, BlockState state, ItemPlacementContext ctx) {
+	public boolean canPlacePartAt(WorldView world, BlockPos pos, BlockState state, @Nullable ItemPlacementContext ctx) {
 		return super.canPlacePartAt(world, pos, state, ctx) && this.canPlantOnTop(world, pos.down());
 	}
 

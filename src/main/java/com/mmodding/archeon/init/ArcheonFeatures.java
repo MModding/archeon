@@ -344,24 +344,24 @@ public class ArcheonFeatures implements ElementsInitializer {
 		0.7f
 	);
 
-	public static final CustomWaterloggedVegetationPatchFeature GOLDEN_CLAY_POOL = new CustomWaterloggedVegetationPatchFeature(
+	public static final CustomLiquidVegetationPatchFeature GOLDEN_CLAY_POOL = new CustomLiquidVegetationPatchFeature(
 		125,
 		Direction.DOWN,
 		12,
 		ArcheonTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
 		ArcheonBlocks.GOLDEN_CLAY.getDefaultState(),
+		ArcheonFluids.HOT_SPRING_WATER.getBlock().getDefaultState(),
 		ListUtils.biBuilder(
 			vegetation -> {
-				vegetation.add(ArcheonBlocks.BLUE_DOELDIA.getDefaultState(), 10);
-				vegetation.add(ArcheonBlocks.WHITE_DOELDIA.getDefaultState(), 10);
-				vegetation.add(ArcheonBlocks.PINK_DOELDIA.getDefaultState(), 10);
-				vegetation.add(ArcheonBlocks.YELLOW_DOELDIA.getDefaultState(), 10);
+				vegetation.add(ArcheonBlocks.SMALL_HOT_SPRING_LILY_PAD.getDefaultState(), 30);
+				vegetation.add(ArcheonBlocks.HOT_SPRING_LILY_PAD.getDefaultState(), 20);
+				vegetation.add(ArcheonBlocks.GIANT_LILY.getDefaultState(), 10);
 			}
 		),
 		VerticalSurfaceType.FLOOR,
 		ConstantIntProvider.create(3),
 		0.8f,
-		2,
+		5,
 		0.1f,
 		UniformIntProvider.create(4, 7),
 		0.7f
@@ -378,10 +378,17 @@ public class ArcheonFeatures implements ElementsInitializer {
 				for (int i = 0; i < 4; i++) {
 					ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, i + 1, 25);
 				}
-				vegetation.add(ArcheonBlocks.BLUE_DOELDIA.getDefaultState(), 10);
-				vegetation.add(ArcheonBlocks.WHITE_DOELDIA.getDefaultState(), 10);
-				vegetation.add(ArcheonBlocks.PINK_DOELDIA.getDefaultState(), 10);
-				vegetation.add(ArcheonBlocks.YELLOW_DOELDIA.getDefaultState(), 10);
+				vegetation.add(ArcheonBlocks.WET_GRASS.getDefaultState(), 5);
+				vegetation.add(ArcheonBlocks.TALL_WET_GRASS.getDefaultState(), 5);
+				vegetation.add(ArcheonBlocks.FLOWERED_WET_GRASS.getDefaultState(), 5);
+				vegetation.add(ArcheonBlocks.FLOWERED_TALL_WET_GRASS.getDefaultState(), 5);
+				vegetation.add(ArcheonBlocks.WET_FERN.getDefaultState(), 5);
+				vegetation.add(ArcheonBlocks.TALL_WET_FERN.getDefaultState(), 5);
+				vegetation.add(ArcheonBlocks.WET_GRASS_TUFFET.getDefaultState(), 5);
+				vegetation.add(ArcheonBlocks.BLUE_DOELDIA.getDefaultState(), 5);
+				vegetation.add(ArcheonBlocks.WHITE_DOELDIA.getDefaultState(), 5);
+				vegetation.add(ArcheonBlocks.PINK_DOELDIA.getDefaultState(), 5);
+				vegetation.add(ArcheonBlocks.YELLOW_DOELDIA.getDefaultState(), 5);
 			}
 		),
 		VerticalSurfaceType.FLOOR,

@@ -303,43 +303,43 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFernBlock WET_GRASS = new CustomFernBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.ACHREAN_MOSS_BLOCK),
 		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
 	public static final CustomTallPlantBlock TALL_WET_GRASS = new CustomTallPlantBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.ACHREAN_MOSS_BLOCK),
 		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
 
 	public static final CustomFernBlock FLOWERED_WET_GRASS = new CustomFernBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.ACHREAN_MOSS_BLOCK),
 		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
 	public static final CustomTallPlantBlock FLOWERED_TALL_WET_GRASS = new CustomTallPlantBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.ACHREAN_MOSS_BLOCK),
 		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
 
 	public static final CustomFernBlock WET_FERN = new CustomFernBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.ACHREAN_MOSS_BLOCK),
 		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XYZ),
 		true
 	);
 
 	public static final CustomTallPlantBlock TALL_WET_FERN = new CustomTallPlantBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.ACHREAN_MOSS_BLOCK),
 		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
 
 	public static final CustomPlantBlock WET_GRASS_TUFFET = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.ACHREAN_MOSS_BLOCK),
 		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
