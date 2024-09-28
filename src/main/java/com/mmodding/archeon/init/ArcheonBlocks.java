@@ -725,11 +725,11 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomLeavesBlock FLOWERED_NECLANE_LEAVES = new NeclaneLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 	public static final CustomLeavesBlock CYPRESS_LEAVES = new CypressLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
-	public static final CustomLeavesBlock PNEVANTIAL_VUXANCIA_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomLeavesBlock STREIAN_VUXANCIA_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomLeavesBlock ORIAN_VUXANCIA_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomLeavesBlock VALE_VUXANCIA_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomLeavesBlock ZIAL_VUXANCIA_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock PNEVANTIAL_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock STREIAN_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock ORIAN_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock VALE_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock ZIAL_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
 	public static final CustomLeavesBlock NUME_WILLOW_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 	public static final CustomLeavesBlock NYRETH_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);

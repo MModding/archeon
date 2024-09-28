@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "archeon:exyriane_crystal",
+          "name": "archeon:exyriane_shard",
           "functions": [
             {
               "function": "minecraft:set_count",

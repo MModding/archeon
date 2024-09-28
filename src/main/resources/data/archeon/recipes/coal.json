@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "archeon:exyriane_crystal"
+    "item": "archeon:exyriane_shard"
   },
   "addition": {
     "item": "archeon:salt"

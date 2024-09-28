@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "archeon:exyriane_crystal"
+              "archeon:exyriane_shard"
             ]
           }
         ]
@@ -22,7 +22,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "archeon:exyriane_crystal"
+      "item": "archeon:exyriane_shard"
     },
     "show_toast": true,
     "title": {

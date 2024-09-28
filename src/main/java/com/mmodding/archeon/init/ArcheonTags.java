@@ -60,7 +60,9 @@ public class ArcheonTags {
 	public static class Items {
 
 		public static final TagKey<Item> LEAVES = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("leaves"), TagType.NORMAL);
+		public static final TagKey<Item> LYCORIS_PETALS = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("lycoris_petals"), TagType.NORMAL);
 		public static final TagKey<Item> PLANKS = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("planks"), TagType.NORMAL);
+		public static final TagKey<Item> SHELLS = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("shells"), TagType.NORMAL);
 		public static final TagKey<Item> TILES = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("tiles"), TagType.NORMAL);
 	}
 }

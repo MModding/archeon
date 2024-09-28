@@ -152,7 +152,7 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomItem APAFLORITE_GEMSTONE = new CustomItem(new AdvancedItemSettings());
 
-	public static final CustomItem EXYRIANE_CRYSTAL = new CustomItem(new AdvancedItemSettings());
+	public static final CustomItem EXYRIANE_SHARD = new CustomItem(new AdvancedItemSettings());
 
 	public static final CustomItem RAW_FAELITE = new CustomItem(new AdvancedItemSettings());
 	public static final CustomItem FAELITE_INGOT = new CustomItem(new AdvancedItemSettings());
@@ -430,7 +430,7 @@ public class ArcheonItems implements ElementsInitializer {
 		AMULET_OF_NATURE.register(Archeon.createId("amulet_of_nature"));
 		MANUSCRIPT.register(Archeon.createId("manuscript"));
 		APAFLORITE_GEMSTONE.register(Archeon.createId("apaflorite_gemstone"));
-		EXYRIANE_CRYSTAL.register(Archeon.createId("exyriane_crystal"));
+		EXYRIANE_SHARD.register(Archeon.createId("exyriane_shard"));
 		RAW_FAELITE.register(Archeon.createId("raw_faelite"));
 		FAELITE_INGOT.register(Archeon.createId("faelite_ingot"));
 		RAW_LUSONYTH.register(Archeon.createId("raw_lusonyth"));
