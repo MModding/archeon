@@ -45,12 +45,11 @@
 			{
 				"id": "mmodding_lib",
 				"versions": ">=0.0.2-"
-			}
-		],
-		"suggests": [
+			},
 			{
 				"id": "trinkets",
-				"versions": ">=3.4.1-"
+				"versions": ">=3.4.1-",
+				"optional": true
 			}
 		]
 	},

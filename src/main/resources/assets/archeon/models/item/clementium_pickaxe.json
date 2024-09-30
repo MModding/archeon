@@ -6,19 +6,19 @@
   "overrides": [
     {
       "predicate": {
-        "archeon:lusonifyed": 0.1
+        "archeon:lusonyfied": 0.1
       },
       "model": "archeon:item/slightly_lusonyfied_clementium_pickaxe"
     },
     {
       "predicate": {
-        "archeon:lusonifyed": 0.2
+        "archeon:lusonyfied": 0.2
       },
       "model": "archeon:item/lusonyfied_clementium_pickaxe"
     },
     {
       "predicate": {
-        "archeon:lusonifyed": 0.3
+        "archeon:lusonyfied": 0.3
       },
       "model": "archeon:item/strongly_lusonyfied_clementium_pickaxe"
     }

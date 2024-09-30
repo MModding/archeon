@@ -37,7 +37,7 @@ public class ClementiumTool implements ToolMaterial, RepairOperations {
 
 	@Override
 	public Ingredient getRepairIngredient() {
-		return Ingredient.ofItems(ArcheonItems.APAFLORITE_GEMSTONE);
+		return Ingredient.ofItems(ArcheonItems.LUSONYTH_INGOT);
 	}
 
 	@Override
