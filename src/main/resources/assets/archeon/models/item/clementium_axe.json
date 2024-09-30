@@ -2,5 +2,25 @@
   "parent": "item/handheld",
   "textures": {
     "layer0": "archeon:item/clementium_axe"
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "archeon:lusonifyed": 0.1
+      },
+      "model": "archeon:item/slightly_lusonyfied_clementium_axe"
+    },
+    {
+      "predicate": {
+        "archeon:lusonifyed": 0.2
+      },
+      "model": "archeon:item/lusonyfied_clementium_axe"
+    },
+    {
+      "predicate": {
+        "archeon:lusonifyed": 0.3
+      },
+      "model": "archeon:item/strongly_lusonyfied_clementium_axe"
+    }
+  ]
 }

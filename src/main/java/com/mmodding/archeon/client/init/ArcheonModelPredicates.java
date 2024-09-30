@@ -5,6 +5,8 @@ import com.mmodding.archeon.init.ArcheonItems;
 import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 
+import java.util.Objects;
+
 public class ArcheonModelPredicates implements ClientElementsInitializer {
 
 	@Override
@@ -14,6 +16,9 @@ public class ArcheonModelPredicates implements ClientElementsInitializer {
 		);
 		ModelPredicateProviderRegistry.register(ArcheonItems.FAELITE_BOW, Archeon.createId("pulling"), (stack, world, entity, seed) ->
 			entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0f : 0.0f
+		);
+		ModelPredicateProviderRegistry.register(Archeon.createId("lusonyfied"), (stack, world, entity, seed) ->
+			stack.hasNbt() && Objects.requireNonNull(stack.getNbt()).contains("repair_rate") ? stack.getNbt().getInt("repair_rate") / 10.0f : 0.0f
 		);
 	}
 }
