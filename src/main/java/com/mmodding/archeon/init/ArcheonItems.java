@@ -146,6 +146,9 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final RingItem RING_OF_EDEN = new RingItem(RingItem::ringOfEdenModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE));
 	public static final RingItem RING_OF_WAHVEN = new RingItem(RingItem::ringOfWahvenModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE));
 
+	public static final CustomEnchantedBookItem MASSACRE_BOOK = new CustomEnchantedBookItem(ArcheonEnchantments.MASSACRE, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE).nameFormattings(Formatting.RED).glintPack(DefaultGlintPacks.LIGHTENED_RED));
+	public static final CustomEnchantedBookItem QOLM_BOOK = new CustomEnchantedBookItem(ArcheonEnchantments.QOLM, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE).nameFormattings(Formatting.GREEN).glintPack(DefaultGlintPacks.LIGHTENED_GREEN));
+
 	public static final AmuletOfNatureItem AMULET_OF_NATURE = new AmuletOfNatureItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC));
 
 	public static final CustomItem MANUSCRIPT = new CustomItem(new AdvancedItemSettings());
