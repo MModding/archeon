@@ -536,16 +536,16 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_SNOWY_GRASS_TUFFET.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES));
 
 		SUNSET_ORCHID_FEATURE.addDefaultToBiomes(randomPatchPredicate);
-		ROSEYPIA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
+		ROSEYPIA_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
 		AEROLIA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
-		ASTEDIBES_FEATURE.addDefaultToBiomes(randomPatchPredicate);
+		ASTEDIBES_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST) && !ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
 		TWILIGHT_ROSE_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		PINK_LYCORIS_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		RED_LYCORIS_FEATURE.addDefaultToBiomes(randomPatchPredicate);
-		ORANGE_LYCORIS_FEATURE.addDefaultToBiomes(randomPatchPredicate);
-		ASCENDIA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
-		OEA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
-		IOPEA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
+		ORANGE_LYCORIS_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS) && !ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
+		ASCENDIA_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS));
+		OEA_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS));
+		IOPEA_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
 		ORGANDEANE_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		SEPTICEOLIA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 
