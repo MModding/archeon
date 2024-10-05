@@ -6,6 +6,7 @@ import com.mmodding.mmodding_lib.library.entities.data.MModdingTrackedDataHandle
 import com.mmodding.mmodding_lib.library.entities.data.syncable.SyncableData;
 import com.mmodding.mmodding_lib.library.entities.goals.MoveToSpecificPosGoal;
 import com.mmodding.mmodding_lib.library.utils.WorldUtils;
+import com.mmodding.mmodding_lib.library.world.SmoothTeleport;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.render.entity.feature.ConditionalOverlayOwner;
 import net.minecraft.entity.Entity;
@@ -221,7 +222,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		return this.originalPosRecoveringState.get();
 	}
 
-	private Vec3d getOriginalPos() {
+	public Vec3d getOriginalPos() {
 		return this.originalPos;
 	}
 
@@ -293,13 +294,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 
 	@Override
 	public void tickMovement() {
-		if (this.isShieldDeployed()) {
-			this.tickHandSwing();
-			this.updateDespawnCounter();
-		}
-		else {
-			super.tickMovement();
-		}
+		super.tickMovement();
 
 		if (!this.isOnGround() && this.getVelocity().y < 0.0) {
 			this.setVelocity(this.getVelocity().multiply(1.0, 0.6, 1.0));
