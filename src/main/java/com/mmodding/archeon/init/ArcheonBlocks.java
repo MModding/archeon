@@ -42,14 +42,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomFlowerBlock WITHERED_SUNSET_ORCHID = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		StatusEffects.WITHER,
-		10,
-		DefaultBlockSettings.PLANT_SETTINGS,
-		true
-	);
-
 	public static final CustomFlowerBlock ROSEYPIA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.UNLUCK,
@@ -66,26 +58,10 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomFlowerBlock WITHERED_AEROLIA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		StatusEffects.WITHER,
-		10,
-		DefaultBlockSettings.PLANT_SETTINGS,
-		true
-	);
-
 	public static final CustomFlowerBlock ASTEDIBES = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.WATER_BREATHING,
 		30,
-		DefaultBlockSettings.PLANT_SETTINGS,
-		true
-	);
-
-	public static final CustomFlowerBlock WITHERED_ASTEDIBES = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		StatusEffects.WITHER,
-		10,
 		DefaultBlockSettings.PLANT_SETTINGS,
 		true
 	);
@@ -98,7 +74,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomFlowerBlock LYCORIS_RADIATA = new CustomFlowerBlock(
+	public static final CustomFlowerBlock PINK_LYCORIS = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.NAUSEA,
 		10,
@@ -114,7 +90,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomFlowerBlock LYCORIS_SANGUINEA = new CustomFlowerBlock(
+	public static final CustomFlowerBlock ORANGE_LYCORIS = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.STRENGTH,
 		20,
@@ -128,24 +104,10 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomTallFlowerBlock WITHERED_ASCENDIA = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		DefaultBlockSettings.PLANT_SETTINGS,
-		true
-	);
-
 	public static final CustomFlowerBlock OEA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.NIGHT_VISION,
 		30,
-		DefaultBlockSettings.PLANT_SETTINGS,
-		true
-	);
-
-	public static final CustomFlowerBlock WITHERED_OEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		StatusEffects.WITHER,
-		10,
 		DefaultBlockSettings.PLANT_SETTINGS,
 		true
 	);
@@ -164,20 +126,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomFlowerBlock WITHERED_IOPEA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		StatusEffects.WITHER,
-		10,
-		DefaultBlockSettings.PLANT_SETTINGS,
-		true
-	);
-
-	public static final CustomTallFlowerBlock TALL_WITHERED_IOPEA = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		DefaultBlockSettings.PLANT_SETTINGS,
-		true
-	);
-
 	public static final CustomFlowerBlock ORGANDEANE_BLOSSOM = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.JUMP_BOOST,
@@ -186,21 +134,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomTallFlowerBlock ORGANDEANE_TALL = new CustomTallFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		DefaultBlockSettings.PLANT_SETTINGS,
-		true
-	);
-
-	public static final CustomFlowerBlock WITHERED_ORGANDEANE_BLOSSOM = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		StatusEffects.WITHER,
-		10,
-		DefaultBlockSettings.PLANT_SETTINGS,
-		true
-	);
-
-	public static final CustomTallFlowerBlock TALL_WITHERED_ORGANDEANE = new CustomTallFlowerBlock(
+	public static final CustomTallFlowerBlock TALL_ORGANDEANE = new CustomTallFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.PLANT_SETTINGS,
 		true
@@ -209,14 +143,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomFlowerBlock SEPTICEOLIA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.DARKNESS,
-		10,
-		DefaultBlockSettings.PLANT_SETTINGS,
-		true
-	);
-
-	public static final CustomFlowerBlock WITHERED_SEPTICEOLIA = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		StatusEffects.WITHER,
 		10,
 		DefaultBlockSettings.PLANT_SETTINGS,
 		true
@@ -1250,35 +1176,25 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public void register() {
 		HOT_SPRING_WATER_CAULDRON.register(Archeon.createId("hot_spring_water_cauldron"));
 		DASCIUM_CAULDRON.register(Archeon.createId("dascium_cauldron"));
-		SUNSET_ORCHID.register(Archeon.createId("orchid"));
-		WITHERED_SUNSET_ORCHID.register(Archeon.createId("withered_orchid"));
+		SUNSET_ORCHID.register(Archeon.createId("sunset_orchid"));
 		ROSEYPIA.register(Archeon.createId("roseypia"));
 		AEROLIA.register(Archeon.createId("aerolia"));
 		AMAROTH.register(Archeon.createId("amaroth"));
 		DOTTED_STOVIA.register(Archeon.createId("dotted_stovia"));
 		WILLS_OF_LIGHT.register(Archeon.createId("wills_of_light"));
 		ETERNAL_FORTUNES.register(Archeon.createId("eternal_fortunes"));
-		WITHERED_AEROLIA.register(Archeon.createId("withered_aerolia"));
 		ASTEDIBES.register(Archeon.createId("astedibes"));
-		WITHERED_ASTEDIBES.register(Archeon.createId("withered_astedibes"));
 		TWILIGHT_ROSE.register(Archeon.createId("twilight_rose"));
-		LYCORIS_RADIATA.register(Archeon.createId("lycoris_radiata"));
+		PINK_LYCORIS.register(Archeon.createId("pink_lycoris"));
 		RED_LYCORIS.register(Archeon.createId("red_lycoris"));
-		LYCORIS_SANGUINEA.register(Archeon.createId("lycoris_sanguinea"));
+		ORANGE_LYCORIS.register(Archeon.createId("orange_lycoris"));
 		ASCENDIA.register(Archeon.createId("ascendia"));
-		WITHERED_ASCENDIA.register(Archeon.createId("withered_ascendia"));
 		OEA.register(Archeon.createId("oea"));
-		WITHERED_OEA.register(Archeon.createId("withered_oea"));
 		IOPEA.register(Archeon.createId("iopea"));
 		TALL_IOPEA.register(Archeon.createId("tall_iopea"));
-		WITHERED_IOPEA.register(Archeon.createId("withered_iopea"));
-		TALL_WITHERED_IOPEA.register(Archeon.createId("tall_withered_iopea"));
 		ORGANDEANE_BLOSSOM.register(Archeon.createId("organdeane_blossom"));
-		ORGANDEANE_TALL.register(Archeon.createId("organdeane_tall"));
-		WITHERED_ORGANDEANE_BLOSSOM.register(Archeon.createId("withered_organdeane_blossom"));
-		TALL_WITHERED_ORGANDEANE.register(Archeon.createId("tall_withered_organdeane"));
+		TALL_ORGANDEANE.register(Archeon.createId("tall_organdeane"));
 		SEPTICEOLIA.register(Archeon.createId("septiceolia"));
-		WITHERED_SEPTICEOLIA.register(Archeon.createId("withered_septiceolia"));
 		BLUE_DOELDIA.register(Archeon.createId("blue_doeldia"));
 		WHITE_DOELDIA.register(Archeon.createId("white_doeldia"));
 		PINK_DOELDIA.register(Archeon.createId("pink_doeldia"));

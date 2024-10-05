@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "archeon:block/tall_organdeane"
+    },
+    "half=lower": {
+      "model": "archeon:block/tall_organdeane_bottom"
+    }
+  }
+}

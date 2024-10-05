@@ -21,6 +21,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import org.quiltmc.loader.api.QuiltLoader;
 import org.quiltmc.loader.api.Requires;
 
 import java.util.ArrayList;
@@ -40,7 +41,11 @@ public class RingItem extends CustomItem implements @Requires("trinkets") Trinke
 	public RingItem(TweakFunction<Multimap<EntityAttribute, EntityAttributeModifier>> tweak, Settings settings) {
 		super(settings);
 		this.tweak = tweak;
-		CompatibilityUtils.executeIfModLoaded("trinkets", this::registerTrinket);
+		CompatibilityUtils.executeIfModLoaded("trinkets", () -> {
+			@Requires("trinkets")
+			Runnable callback = this::registerTrinket;
+			callback.run();
+		});
 	}
 
 	public static Multimap<EntityAttribute, EntityAttributeModifier> apafloriteRingModifiers(Multimap<EntityAttribute, EntityAttributeModifier> modifiers) {

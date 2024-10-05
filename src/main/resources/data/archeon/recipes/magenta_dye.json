@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "archeon:lycoris_radiata"
+      "item": "archeon:pink_lycoris"
     }
   ],
   "result": {

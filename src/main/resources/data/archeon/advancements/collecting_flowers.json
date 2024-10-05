@@ -1,0 +1,203 @@
+{
+  "display": {
+    "icon": {
+      "item": "archeon:twilight_rose"
+    },
+    "title": {
+      "translate": "advancements.collecting_flowers.title"
+    },
+    "description": {
+      "translate": "advancements.collecting_flowers.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "archeon:archeon",
+  "criteria": {
+    "collecting_flowers": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:aerolia"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:ascendia"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:astedibes"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:cokiplant"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:iopea"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:oea"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:orange_lycoris"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:organdeane_blossom"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:pink_lycoris"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:red_lycoris"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:roseypia"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:septiceolia"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:sunset_orchid"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:tall_iopea"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:tall_organdeane"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:blue_doeldia"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:white_doeldia"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:pink_doeldia"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          },
+          {
+            "items": [
+              "archeon:yellow_doeldia"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "collecting_flowers"
+    ]
+  ]
+}

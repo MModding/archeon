@@ -131,7 +131,7 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomShovelItem CLEMENTIUM_SHOVEL = new CustomShovelItem(ClementiumTool.INSTANCE, 1,-3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
 	public static final CustomHoeItem CLEMENTIUM_HOE = new CustomHoeItem(ClementiumTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
 
-	public static final FaeliteBowItem FAELITE_BOW = new FaeliteBowItem(new AdvancedItemSettings().maxCount(1));
+	public static final FaeliteBowItem FAELITE_BOW = new FaeliteBowItem(new AdvancedItemSettings().maxCount(1).maxDamage(500));
 	public static final CustomArrowItem LUSONYTH_ARROW = new LusonythArrowItem(new AdvancedItemSettings());
 
 	public static final CustomFishingRodItem EXYRIANE_FISHING_ROD = new CustomFishingRodItem(new AdvancedItemSettings());
@@ -430,6 +430,8 @@ public class ArcheonItems implements ElementsInitializer {
 		CLEMENTIUM_RING.register(Archeon.createId("clementium_ring"));
 		RING_OF_EDEN.register(Archeon.createId("ring_of_eden"));
 		RING_OF_WAHVEN.register(Archeon.createId("ring_of_wahven"));
+		MASSACRE_BOOK.register(Archeon.createId("massacre_book"));
+		QOLM_BOOK.register(Archeon.createId("qolm_book"));
 		AMULET_OF_NATURE.register(Archeon.createId("amulet_of_nature"));
 		MANUSCRIPT.register(Archeon.createId("manuscript"));
 		APAFLORITE_GEMSTONE.register(Archeon.createId("apaflorite_gemstone"));

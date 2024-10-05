@@ -26,7 +26,11 @@ public class AmuletOfNatureItem extends CustomItemAcceptingStacks implements @Re
 
 	public AmuletOfNatureItem(Settings settings) {
 		super(settings);
-		CompatibilityUtils.executeIfModLoaded("trinkets", this::registerTrinket);
+		CompatibilityUtils.executeIfModLoaded("trinkets", () -> {
+			@Requires("trinkets")
+			Runnable callback = this::registerTrinket;
+			callback.run();
+		});
 	}
 
 	@Override

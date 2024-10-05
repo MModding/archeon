@@ -1,6 +1,7 @@
 package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
+import com.mmodding.archeon.blocks.GiantLilyBlock;
 import com.mmodding.archeon.blocks.SporeRootcapBlock;
 import com.mmodding.archeon.items.RingItem;
 import com.mmodding.mmodding_lib.library.blocks.*;
@@ -24,8 +25,8 @@ public class ArcheonItemGroups implements ElementsInitializer {
 	private static final List<Item> NOT_IN_CREATIVE_TAB = List.of(
 		ArcheonItems.CLOTHES_CHESTPLATE,
 		ArcheonItems.CLOTHES_LEGGINGS,
-		ArcheonEnchantments.MASSACRE.getEnchantedBook(),
-		ArcheonEnchantments.QOLM.getEnchantedBook()
+		ArcheonItems.MASSACRE_BOOK,
+		ArcheonItems.QOLM_BOOK
 	);
 
 	public static final Predicate<Block> HAS_ITEM = block -> {
@@ -54,6 +55,8 @@ public class ArcheonItemGroups implements ElementsInitializer {
 		(block instanceof CustomFernBlock) ||
 		(block instanceof CustomSugarCaneBlock) ||
 		(block instanceof SporeRootcapBlock) ||
+		(block instanceof CustomLilyPadBlock) ||
+		(block instanceof GiantLilyBlock) ||
 		(block == ArcheonBlocks.GLOWSHROOM_MOSS) ||
 		(block == ArcheonBlocks.GLOWSHROOM_MOSS_BLOCK);
 
@@ -62,6 +65,7 @@ public class ArcheonItemGroups implements ElementsInitializer {
 		(item instanceof CustomPortalKeyItem) ||
 		(item instanceof CustomArmorItem) ||
 		(item instanceof CustomSwordItem) ||
+		(item instanceof CustomSpearItem) ||
 		(item instanceof CustomPickaxeItem) ||
 		(item instanceof CustomAxeItem) ||
 		(item instanceof CustomShovelItem) ||

@@ -170,7 +170,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomRandomPatchFeature PATCH_SNOWY_GRASS_TUFFET = new CustomRandomPatchFeature(20, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.SNOWY_GRASS_TUFFET)))).setCount(7);
 
-	public static final CustomFlowerFeature ORCHID_FEATURE = new CustomFlowerFeature(64, 7, 3,
+	public static final CustomFlowerFeature SUNSET_ORCHID_FEATURE = new CustomFlowerFeature(64, 7, 3,
 		ArcheonBlocks.SUNSET_ORCHID).setRarity(5);
 	public static final CustomFlowerFeature ROSEYPIA_FEATURE = new CustomFlowerFeature(8, 7, 3,
 		ArcheonBlocks.ROSEYPIA).setRarity(2);
@@ -180,12 +180,12 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.ASTEDIBES).setRarity(2);
 	public static final CustomFlowerFeature TWILIGHT_ROSE_FEATURE = new CustomFlowerFeature(8, 7, 3,
 		ArcheonBlocks.TWILIGHT_ROSE).setRarity(2);
-	public static final CustomFlowerFeature LYCORIS_RADIATA_FEATURE = new CustomFlowerFeature(8, 7, 3,
-		ArcheonBlocks.LYCORIS_RADIATA).setRarity(2);
+	public static final CustomFlowerFeature PINK_LYCORIS_FEATURE = new CustomFlowerFeature(8, 7, 3,
+		ArcheonBlocks.PINK_LYCORIS).setRarity(2);
 	public static final CustomFlowerFeature RED_LYCORIS_FEATURE = new CustomFlowerFeature(8, 7, 3,
 		ArcheonBlocks.RED_LYCORIS).setRarity(2);
-	public static final CustomFlowerFeature LYCORIS_SANGUINEA_FEATURE = new CustomFlowerFeature(8, 7, 3,
-		ArcheonBlocks.LYCORIS_SANGUINEA).setRarity(2);
+	public static final CustomFlowerFeature ORANGE_LYCORIS_FEATURE = new CustomFlowerFeature(8, 7, 3,
+		ArcheonBlocks.ORANGE_LYCORIS).setRarity(2);
 	public static final CustomFlowerFeature ASCENDIA_FEATURE = new CustomFlowerFeature(8, 7, 3,
 		ArcheonBlocks.ASCENDIA).setRarity(2);
 	public static final CustomFlowerFeature OEA_FEATURE = new CustomFlowerFeature(8, 7, 3,
@@ -194,7 +194,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		BiList.of(ArcheonBlocks.IOPEA, 3, ArcheonBlocks.TALL_IOPEA, 1)
 	).setRarity(2);
 	public static final CustomFlowerFeature ORGANDEANE_FEATURE = new CustomFlowerFeature(8, 12, 6,
-		BiList.of(ArcheonBlocks.ORGANDEANE_BLOSSOM, 3, ArcheonBlocks.ORGANDEANE_TALL, 1)
+		BiList.of(ArcheonBlocks.ORGANDEANE_BLOSSOM, 3, ArcheonBlocks.TALL_ORGANDEANE, 1)
 	).setRarity(2);
 	public static final CustomFlowerFeature SEPTICEOLIA_FEATURE = new CustomFlowerFeature(8, 7, 3,
 		ArcheonBlocks.SEPTICEOLIA).setRarity(2);
@@ -459,14 +459,14 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_SOUTH_WHEAT.register(Archeon.createId("patch_south_wheat"));
 		PATCH_TALL_SOUTH_WHEAT.register(Archeon.createId("patch_tall_south_wheat"));
 		PATCH_SNOWY_GRASS_TUFFET.register(Archeon.createId("patch_snowy_grass_tuffet"));
-		ORCHID_FEATURE.register(Archeon.createId("orchid_feature"));
+		SUNSET_ORCHID_FEATURE.register(Archeon.createId("sunset_orchid_feature"));
 		ROSEYPIA_FEATURE.register(Archeon.createId("roseypia_feature"));
 		AEROLIA_FEATURE.register(Archeon.createId("aerolia_feature"));
 		ASTEDIBES_FEATURE.register(Archeon.createId("astedibes_feature"));
 		TWILIGHT_ROSE_FEATURE.register(Archeon.createId("twilight_rose_feature"));
-		LYCORIS_RADIATA_FEATURE.register(Archeon.createId("lycoris_radiata_feature"));
+		PINK_LYCORIS_FEATURE.register(Archeon.createId("pink_lycoris_feature"));
 		RED_LYCORIS_FEATURE.register(Archeon.createId("red_lycoris_feature"));
-		LYCORIS_SANGUINEA_FEATURE.register(Archeon.createId("lycoris_sanguinea_feature"));
+		ORANGE_LYCORIS_FEATURE.register(Archeon.createId("orange_lycoris_feature"));
 		ASCENDIA_FEATURE.register(Archeon.createId("ascendia_feature"));
 		OEA_FEATURE.register(Archeon.createId("oea_feature"));
 		IOPEA_FEATURE.register(Archeon.createId("iopea_feature"));
@@ -535,14 +535,14 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 		PATCH_SNOWY_GRASS_TUFFET.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES));
 
-		ORCHID_FEATURE.addDefaultToBiomes(randomPatchPredicate);
+		SUNSET_ORCHID_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		ROSEYPIA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		AEROLIA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		ASTEDIBES_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		TWILIGHT_ROSE_FEATURE.addDefaultToBiomes(randomPatchPredicate);
-		LYCORIS_RADIATA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
+		PINK_LYCORIS_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		RED_LYCORIS_FEATURE.addDefaultToBiomes(randomPatchPredicate);
-		LYCORIS_SANGUINEA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
+		ORANGE_LYCORIS_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		ASCENDIA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		OEA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		IOPEA_FEATURE.addDefaultToBiomes(randomPatchPredicate);

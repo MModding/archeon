@@ -9,30 +9,20 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 	@Override
 	public void registerClient() {
 		ArcheonBlocks.SUNSET_ORCHID.cutout();
-		ArcheonBlocks.WITHERED_SUNSET_ORCHID.cutout();
 		ArcheonBlocks.ROSEYPIA.cutout();
 		ArcheonBlocks.AEROLIA.cutout();
-		ArcheonBlocks.WITHERED_AEROLIA.cutout();
 		ArcheonBlocks.ASTEDIBES.cutout();
-		ArcheonBlocks.WITHERED_ASTEDIBES.cutout();
 		ArcheonBlocks.TWILIGHT_ROSE.cutout();
-		ArcheonBlocks.LYCORIS_RADIATA.cutout();
+		ArcheonBlocks.PINK_LYCORIS.cutout();
 		ArcheonBlocks.RED_LYCORIS.cutout();
-		ArcheonBlocks.LYCORIS_SANGUINEA.cutout();
+		ArcheonBlocks.ORANGE_LYCORIS.cutout();
 		ArcheonBlocks.ASCENDIA.cutout();
-		ArcheonBlocks.WITHERED_ASCENDIA.cutout();
 		ArcheonBlocks.OEA.cutout();
-		ArcheonBlocks.WITHERED_OEA.cutout();
 		ArcheonBlocks.IOPEA.cutout();
 		ArcheonBlocks.TALL_IOPEA.cutout();
-		ArcheonBlocks.WITHERED_IOPEA.cutout();
-		ArcheonBlocks.TALL_WITHERED_IOPEA.cutout();
 		ArcheonBlocks.ORGANDEANE_BLOSSOM.cutout();
-		ArcheonBlocks.ORGANDEANE_TALL.cutout();
-		ArcheonBlocks.WITHERED_ORGANDEANE_BLOSSOM.cutout();
-		ArcheonBlocks.TALL_WITHERED_ORGANDEANE.cutout();
+		ArcheonBlocks.TALL_ORGANDEANE.cutout();
 		ArcheonBlocks.SEPTICEOLIA.cutout();
-		ArcheonBlocks.WITHERED_SEPTICEOLIA.cutout();
 		ArcheonBlocks.AMAROTH.cutout();
 		ArcheonBlocks.DOTTED_STOVIA.cutout();
 		ArcheonBlocks.WILLS_OF_LIGHT.cutout();
