@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "archeon:item/broken_lusonyfied_clementium_hoe"
+  }
+}

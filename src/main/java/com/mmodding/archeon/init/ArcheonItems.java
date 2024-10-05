@@ -125,11 +125,11 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomArmorItem LUSONYTH_LEGGINGS = new CustomArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.LEGS, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
 	public static final CustomArmorItem LUSONYTH_BOOTS = new CustomArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.FEET, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
 
-	public static final CustomSwordItem CLEMENTIUM_SWORD = new CustomSwordItem(ClementiumTool.INSTANCE, 7, -2.4f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
-	public static final CustomPickaxeItem CLEMENTIUM_PICKAXE = new CustomPickaxeItem(ClementiumTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
-	public static final CustomAxeItem CLEMENTIUM_AXE = new CustomAxeItem(ClementiumTool.INSTANCE, 8, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
-	public static final CustomShovelItem CLEMENTIUM_SHOVEL = new CustomShovelItem(ClementiumTool.INSTANCE, 1,-3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
-	public static final CustomHoeItem CLEMENTIUM_HOE = new CustomHoeItem(ClementiumTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final CustomSwordItem CLEMENTIUM_SWORD = new CustomSwordItem(ClementiumTool.INSTANCE, 7, -2.4f, new AdvancedItemSettings().hasBrokenState().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final CustomPickaxeItem CLEMENTIUM_PICKAXE = new CustomPickaxeItem(ClementiumTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().hasBrokenState().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final CustomAxeItem CLEMENTIUM_AXE = new CustomAxeItem(ClementiumTool.INSTANCE, 8, -3.1f, new AdvancedItemSettings().hasBrokenState().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final CustomShovelItem CLEMENTIUM_SHOVEL = new CustomShovelItem(ClementiumTool.INSTANCE, 1,-3.1f, new AdvancedItemSettings().hasBrokenState().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final CustomHoeItem CLEMENTIUM_HOE = new CustomHoeItem(ClementiumTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().hasBrokenState().glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
 
 	public static final FaeliteBowItem FAELITE_BOW = new FaeliteBowItem(new AdvancedItemSettings().maxCount(1).maxDamage(500));
 	public static final CustomArrowItem LUSONYTH_ARROW = new LusonythArrowItem(new AdvancedItemSettings());

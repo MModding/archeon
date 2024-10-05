@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "archeon:orchid"
+      "item": "archeon:sunset_orchid"
     }
   ],
   "result": {
