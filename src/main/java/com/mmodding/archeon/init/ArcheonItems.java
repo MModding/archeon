@@ -127,7 +127,7 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomArmorItem LUSONYTH_LEGGINGS = new CustomArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.LEGS, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
 	public static final CustomArmorItem LUSONYTH_BOOTS = new CustomArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.FEET, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
 
-	public static final Predicate<ItemStack> CLEMENTIUM_BROKEN_STATE = stack -> stack.getNbt() != null && stack.getNbt().contains("repair_rate") && stack.getNbt().getInt("repair_rate") < 3;
+	public static final Predicate<ItemStack> CLEMENTIUM_BROKEN_STATE = stack -> stack.getNbt() == null || !stack.getNbt().contains("repair_rate") || stack.getNbt().getInt("repair_rate") < 3;
 
 	public static final CustomSwordItem CLEMENTIUM_SWORD = new CustomSwordItem(ClementiumTool.INSTANCE, 7, -2.4f, new AdvancedItemSettings().hasBrokenState(CLEMENTIUM_BROKEN_STATE).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
 	public static final CustomPickaxeItem CLEMENTIUM_PICKAXE = new CustomPickaxeItem(ClementiumTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().hasBrokenState(CLEMENTIUM_BROKEN_STATE).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
