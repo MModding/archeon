@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "archeon:block/archeon:pink_lycoris"
+      "model": "archeon:block/pink_lycoris"
     }
   }
 }
