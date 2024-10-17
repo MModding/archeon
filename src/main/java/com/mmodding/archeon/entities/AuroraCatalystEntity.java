@@ -15,6 +15,9 @@ import net.minecraft.entity.ai.pathing.EntityNavigation;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.HostileEntity;
@@ -27,19 +30,21 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
+import java.util.Optional;
 import java.util.UUID;
 
 public class AuroraCatalystEntity extends HostileEntity {
 
-	private final Type type;
+	private static final TrackedData<Optional<UUID>> MASTER = DataTracker.registerData(AuroraCatalystEntity.class, TrackedDataHandlerRegistry.OPTIONAL_UUID);
 
-	private int master;
+	private final Type type;
 
 	public AuroraCatalystEntity(EntityType<? extends AuroraCatalystEntity> entityType, World world) {
 		super(entityType, world);
@@ -48,27 +53,35 @@ public class AuroraCatalystEntity extends HostileEntity {
 	}
 
 	public void onInvokedByMaster(UUID master) {
-		if (this.world instanceof ServerWorld serverWorld) {
-			this.master = Objects.requireNonNull(serverWorld.getEntity(master)).getId();
-		}
-	}
-
-	public boolean hasMaster() {
-		return this.master != 0;
+		this.dataTracker.set(AuroraCatalystEntity.MASTER, Optional.of(master));
 	}
 
 	@Override
 	protected void initGoals() {
 		this.goalSelector.add(0, new MeleeAttackGoal(this, 2.0f, false));
-		this.goalSelector.add(1, new FlyingAroundFarGoal(this, 1.0));
+		this.goalSelector.add(1, new AuroraCatalystFlyingGoal(this, 1.0));
 		this.targetSelector.add(0, new TargetGoal<>(this, PlayerEntity.class, true).setMaxTimeWithoutVisibility(300));
+	}
+
+	@Override
+	protected void initDataTracker() {
+		super.initDataTracker();
+		this.dataTracker.startTracking(AuroraCatalystEntity.MASTER, Optional.empty());
+	}
+
+	public boolean hasMaster() {
+		return this.dataTracker.get(AuroraCatalystEntity.MASTER).isPresent();
+	}
+
+	public HeartOfNatureEntity getMaster(ServerWorld world) {
+		return (HeartOfNatureEntity) world.getEntity(this.dataTracker.get(AuroraCatalystEntity.MASTER).orElseThrow());
 	}
 
 	@Override
 	public void writeCustomDataToNbt(NbtCompound nbt) {
 		super.writeCustomDataToNbt(nbt);
 		if (this.hasMaster()) {
-			nbt.putUuid("Master", Objects.requireNonNull(this.world.getEntityById(this.master)).getUuid());
+			nbt.putUuid("Master", this.dataTracker.get(AuroraCatalystEntity.MASTER).orElseThrow());
 		}
 	}
 
@@ -76,10 +89,23 @@ public class AuroraCatalystEntity extends HostileEntity {
 	public void readCustomDataFromNbt(NbtCompound nbt) {
 		super.readCustomDataFromNbt(nbt);
 		if (nbt.contains("Master")) {
-			if (this.world instanceof ServerWorld serverWorld) {
-				this.master = Objects.requireNonNull(serverWorld.getEntity(nbt.getUuid("Master"))).getId();
-			}
+			this.onInvokedByMaster(nbt.getUuid("Master"));
 		}
+	}
+
+	public @Nullable Box getAreaIfHavingMaster(ServerWorld world) {
+		if (this.hasMaster()) {
+			HeartOfNatureEntity heartOfNature = this.getMaster(world);
+			if (heartOfNature == null) { // if the master was discarded
+				this.dataTracker.set(AuroraCatalystEntity.MASTER, Optional.empty());
+				return null;
+			}
+			return new Box(
+				heartOfNature.getOriginalPos().add(8, 6, 8),
+				heartOfNature.getOriginalPos().add(-8, -3, -8)
+			);
+		}
+		return null;
 	}
 
 	@Override
@@ -91,7 +117,7 @@ public class AuroraCatalystEntity extends HostileEntity {
 		}
 
 		if (this.hasMaster()) {
-			this.world.addParticle(ParticleTypes.SCULK_SOUL, this.getX(), this.getY() + 2.5f, this.getZ(), 0.0f, 0.0f, 0.0f);
+			this.world.addParticle(ParticleTypes.SCULK_SOUL, this.getX(), this.getY() + 1.0f, this.getZ(), 0.0f, 0.0f, 0.0f);
 		}
 
 		DefaultParticleType particleType = switch (this.type) {
@@ -179,8 +205,8 @@ public class AuroraCatalystEntity extends HostileEntity {
 	@Override
 	public void remove(RemovalReason reason) {
 		super.remove(reason);
-		if (this.hasMaster()) {
-			Entity entity = this.world.getEntityById(this.master);
+		if (this.hasMaster() && this.getWorld() instanceof ServerWorld serverWorld) {
+			Entity entity = this.getMaster(serverWorld);
 			if (entity instanceof HeartOfNatureEntity heartOfNatureEntity) {
 				heartOfNatureEntity.removeSoldier(this.getUuid());
 				if (heartOfNatureEntity.getSoldiers().isEmpty()) {
@@ -220,6 +246,32 @@ public class AuroraCatalystEntity extends HostileEntity {
 	@Override
 	protected SoundEvent getDeathSound() {
 		return SoundEvents.BLOCK_AMETHYST_BLOCK_BREAK;
+	}
+
+	public static class AuroraCatalystFlyingGoal extends FlyingAroundFarGoal {
+
+		public AuroraCatalystFlyingGoal(AuroraCatalystEntity auroraCatalyst, double speed) {
+			super(auroraCatalyst, speed);
+		}
+
+		@Override
+		@Nullable
+		protected Vec3d getWanderTarget() {
+			Vec3d pos = super.getWanderTarget();
+			if (pos == null || !(this.mob.getWorld() instanceof ServerWorld)) {
+				return null;
+			}
+			Box box = ((AuroraCatalystEntity) this.mob).getAreaIfHavingMaster((ServerWorld) this.mob.getWorld());
+			if (box != null) {
+				boolean xCheck = pos.x <= box.minX || pos.x >= box.maxX;
+				boolean yCheck = pos.y <= box.minY || pos.y >= box.maxY;
+				boolean zCheck = pos.z <= box.minZ || pos.z >= box.maxZ;
+				if (xCheck || yCheck || zCheck) {
+					return ((AuroraCatalystEntity) this.mob).getMaster((ServerWorld) this.mob.getWorld()).getOriginalPos();
+				}
+			}
+			return pos;
+		}
 	}
 
 	public enum Type {
