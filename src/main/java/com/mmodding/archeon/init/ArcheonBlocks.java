@@ -330,19 +330,19 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final SporeRootcapBlock SPORE_ROOTCAP = new SporeRootcapBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
 	public static final CustomPlantBlock GLOWSPROUTS = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.STONE) || floor.isIn(ArcheonTags.Blocks.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.STONE) || floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.GLOWSHROOM_MOSS_BLOCK),
 		DefaultBlockSettings.PLANT_SETTINGS,
 		true
 	);
 
 	public static final CustomPlantBlock GLOWSHROOMS = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.STONE) || floor.isIn(ArcheonTags.Blocks.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.STONE) || floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.GLOWSHROOM_MOSS_BLOCK),
 		DefaultBlockSettings.PLANT_SETTINGS,
 		true
 	);
 
 	public static final CustomPlantBlock GLOWSHROOM_PARASITES = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.STONE) || floor.isIn(ArcheonTags.Blocks.SOIL),
+		floor -> floor.isIn(ArcheonTags.Blocks.STONE) || floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.GLOWSHROOM_MOSS_BLOCK),
 		DefaultBlockSettings.PLANT_SETTINGS,
 		true
 	);

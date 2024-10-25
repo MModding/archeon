@@ -6,7 +6,6 @@ import com.mmodding.mmodding_lib.library.entities.data.MModdingTrackedDataHandle
 import com.mmodding.mmodding_lib.library.entities.data.syncable.SyncableData;
 import com.mmodding.mmodding_lib.library.entities.goals.MoveToSpecificPosGoal;
 import com.mmodding.mmodding_lib.library.utils.WorldUtils;
-import com.mmodding.mmodding_lib.library.world.SmoothTeleport;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.render.entity.feature.ConditionalOverlayOwner;
 import net.minecraft.entity.Entity;

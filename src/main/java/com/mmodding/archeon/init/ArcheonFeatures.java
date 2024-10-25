@@ -110,7 +110,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.PNEVANTIAL_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
-		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
+		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
@@ -120,7 +120,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.STREIAN_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
-		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
+		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
@@ -130,7 +130,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.ORIAN_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
-		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
+		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
@@ -140,7 +140,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.VALE_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
-		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
+		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
@@ -150,7 +150,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.ZIAL_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
-		PlacedFeatureUtil.createCountExtraModifier(5, 0.1f, 1),
+		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
@@ -228,6 +228,64 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomOreFeature FAELITE_ORE_FEATURE = new CustomOreFeature(6, 5, -60, 45, FAELITE_ORE_TARGETS);
 	public static final CustomOreFeature LUSONYTH_ORE_FEATURE = new CustomOreFeature(6, 3, -60, 0, LUSONYTH_ORE_TARGETS, 0.75f);
 	public static final CustomOreFeature COAL_ORE_FEATURE = new CustomOreFeature(13, 7, -60, 80, ARCHEON_COAL_ORE_TARGETS);
+
+	public static final CustomLiquidVegetationPatchFeature GLOWSHROOMS_POOL = new CustomLiquidVegetationPatchFeature(
+		5,
+		Direction.DOWN,
+		12,
+		ArcheonTags.Blocks.PHOSNOR_SLATE_ORES_REPLACEABLES,
+		ArcheonBlocks.GLOWSHROOM_MOSS_BLOCK.getDefaultState(),
+		ArcheonFluids.DASCIUM.getBlock().getDefaultState(),
+		ListUtils.biBuilder(
+			vegetation -> vegetation.add(ArcheonBlocks.GLOWSHROOM_MOSS.getDefaultState(), 1)
+		),
+		VerticalSurfaceType.FLOOR,
+		ConstantIntProvider.create(3),
+		0.8f,
+		2,
+		0.1f,
+		UniformIntProvider.create(1, 2),
+		0.7f
+	);
+
+	public static final CustomVegetationPatchFeature GLOWSHROOMS_PATCH = new CustomVegetationPatchFeature(
+		5,
+		Direction.DOWN,
+		12,
+		ArcheonTags.Blocks.PHOSNOR_SLATE_ORES_REPLACEABLES,
+		ArcheonBlocks.GLOWSHROOM_MOSS_BLOCK.getDefaultState(),
+		ListUtils.biBuilder(
+			vegetation -> {
+				vegetation.add(ArcheonBlocks.GLOWSHROOM_MOSS.getDefaultState().with(Properties.LAYERS, 1), 5);
+				vegetation.add(ArcheonBlocks.GLOWSHROOM_MOSS.getDefaultState().with(Properties.LAYERS, 2), 5);
+				vegetation.add(ArcheonBlocks.GLOWSHROOM_MOSS.getDefaultState().with(Properties.LAYERS, 3), 5);
+				vegetation.add(ArcheonBlocks.GLOWSPROUTS.getDefaultState(), 10);
+				vegetation.add(ArcheonBlocks.GLOWSHROOMS.getDefaultState(), 5);
+				vegetation.add(ArcheonBlocks.GLOWSHROOM_PARASITES.getDefaultState(), 5);
+			}
+		),
+		VerticalSurfaceType.FLOOR,
+		ConstantIntProvider.create(3),
+		0.8f,
+		3,
+		0.6f,
+		UniformIntProvider.create(2, 3),
+		0.9f
+	);
+
+	public static final CustomLayeredFeature GLOWSHROOMS = new CustomLayeredFeature(
+		() -> List.of(
+			RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Archeon.createId("glowshrooms_pool")),
+			RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Archeon.createId("glowshrooms_patch"))
+		),
+		GenerationStep.Feature.VEGETAL_DECORATION,
+		CountPlacementModifier.create(10),
+		InSquarePlacementModifier.getInstance(),
+		PlacedFeatureUtil.BOTTOM_TO_MAX_TERRAIN_HEIGHT_RANGE,
+		EnvironmentScanPlacementModifier.create(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.IS_AIR, 12),
+		RandomOffsetPlacementModifier.vertical(ConstantIntProvider.create(1)),
+		BiomePlacementModifier.getInstance()
+	);
 
 	public static final CustomDripstoneClusterFeature GYPSUM_CLUSTER = new CustomDripstoneClusterFeature(
 		ArcheonBlocks.POINTED_GYPSUM,
@@ -477,6 +535,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 		FAELITE_ORE_FEATURE.register(Archeon.createId("faelite_ore_feature"));
 		LUSONYTH_ORE_FEATURE.register(Archeon.createId("lusonyth_ore_feature"));
 		COAL_ORE_FEATURE.register(Archeon.createId("coal_ore_feature"));
+		GLOWSHROOMS_POOL.register(Archeon.createId("glowshrooms_pool"));
+		GLOWSHROOMS_PATCH.register(Archeon.createId("glowshrooms_patch"));
+		GLOWSHROOMS.register(Archeon.createId("glowshrooms"));
 		GYPSUM_CLUSTER.register(Archeon.createId("gypsum_cluster"));
 		LARGE_GYPSUM.register(Archeon.createId("large_gypsum"));
 		POINTED_GYPSUM.register(Archeon.createId("pointed_gypsum"));
@@ -554,6 +615,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 		FAELITE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 		LUSONYTH_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 		COAL_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
+
+		GLOWSHROOMS.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ABYSS_CAVES));
 
 		GYPSUM_CLUSTER.addDefaultToBiomes(gypsumPredicate);
 		LARGE_GYPSUM.addDefaultToBiomes(gypsumPredicate);

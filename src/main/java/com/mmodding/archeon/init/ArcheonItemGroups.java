@@ -56,9 +56,7 @@ public class ArcheonItemGroups implements ElementsInitializer {
 		(block instanceof CustomSugarCaneBlock) ||
 		(block instanceof SporeRootcapBlock) ||
 		(block instanceof CustomLilyPadBlock) ||
-		(block instanceof GiantLilyBlock) ||
-		(block == ArcheonBlocks.GLOWSHROOM_MOSS) ||
-		(block == ArcheonBlocks.GLOWSHROOM_MOSS_BLOCK);
+		(block instanceof GiantLilyBlock);
 
 	public static final Predicate<Item> IS_EQUIPMENT = item ->
 		(Registry.ITEM.getId(item).equals(Archeon.createId("power_key"))) ||
