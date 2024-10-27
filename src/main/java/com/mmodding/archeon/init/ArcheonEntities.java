@@ -100,7 +100,7 @@ public class ArcheonEntities implements ElementsInitializer {
 			.entityFactory(CentaurEntity::new)
 			.spawnGroup(SpawnGroup.MONSTER)
 			.defaultAttributes(CentaurEntity.createCentaurAttributes())
-			.setDimensions(EntityDimensions.fixed(2.5f, 3.0f))
+			.setDimensions(EntityDimensions.fixed(1.75f, 3.5f))
 			.maxChunkTrackingRange(8)
 	);
 
@@ -109,7 +109,7 @@ public class ArcheonEntities implements ElementsInitializer {
 			.entityFactory(CentaurEntity::new)
 			.spawnGroup(SpawnGroup.MONSTER)
 			.defaultAttributes(CentaurEntity.createCentaurAttributes())
-			.setDimensions(EntityDimensions.fixed(2.5f, 3.0f))
+			.setDimensions(EntityDimensions.fixed(1.75f, 3.5f))
 			.maxChunkTrackingRange(8)
 	);
 

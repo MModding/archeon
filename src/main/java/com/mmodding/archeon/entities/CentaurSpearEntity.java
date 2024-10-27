@@ -6,6 +6,8 @@ import com.mmodding.mmodding_lib.library.entities.projectiles.SpearEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
 
 public class CentaurSpearEntity extends SpearEntity {
@@ -16,5 +18,22 @@ public class CentaurSpearEntity extends SpearEntity {
 
 	public CentaurSpearEntity(World world, LivingEntity owner, ItemStack stack) {
 		super(ArcheonEntities.CENTAUR_SPEAR, world, owner, stack);
+	}
+
+	@Override
+	protected void onEntityHit(EntityHitResult entityHitResult) {
+		if (!(this.getOwner() instanceof CentaurEntity && entityHitResult.getEntity() instanceof CentaurEntity)) {
+			super.onEntityHit(entityHitResult);
+		}
+	}
+
+	@Override
+	protected void onBlockHit(BlockHitResult blockHitResult) {
+		if (!(this.getOwner() instanceof CentaurEntity)) {
+			super.onBlockHit(blockHitResult);
+		}
+		else {
+			this.discard();
+		}
 	}
 }
