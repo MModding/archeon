@@ -1,6 +1,7 @@
 package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
+import com.mmodding.archeon.worldgen.features.HollowCypressLogFeature;
 import com.mmodding.archeon.worldgen.features.MenhirFeature;
 import com.mmodding.archeon.worldgen.features.RockyFieldsRockFeature;
 import com.mmodding.archeon.worldgen.features.trees.decorators.HangingLeavesTreeDecorator;
@@ -69,6 +70,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 	public static final AdvancedFeature<RockyFieldsRockFeature.Config> ROCKY_FIELDS_ROCK = new RockyFieldsRockFeature(RockyFieldsRockFeature.Config.CODEC);
 	public static final AdvancedFeature<MenhirFeature.Config> MENHIR = new MenhirFeature(MenhirFeature.Config.CODEC);
+	public static final AdvancedFeature<HollowCypressLogFeature.Config> HOLLOW_CYPRESS_LOG = new HollowCypressLogFeature(HollowCypressLogFeature.Config.CODEC);
 
 	public static final CustomTreeFeature PALM_TREE = new CustomTreeFeature(
 		ArcheonBlocks.PALM_LOG,
@@ -502,6 +504,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 		ROCKY_FIELDS_ROCK.register(Archeon.createId("rocky_fields_rock"));
 		MENHIR.register(Archeon.createId("menhir"));
+		HOLLOW_CYPRESS_LOG.register(Archeon.createId("hollow_cypress_log"));
 		PALM_TREE.register(Archeon.createId("palm_tree"));
 		NECLANE_TREE.register(Archeon.createId("neclane_tree"));
 		CYPRESS_TREE.register(Archeon.createId("cypress_tree"));
@@ -575,6 +578,15 @@ public class ArcheonFeatures implements ElementsInitializer {
 		BiomeModifications.addFeature(
 			inArcheonPredicate, GenerationStep.Feature.LOCAL_MODIFICATIONS,
 			RegistryKey.of(Registry.PLACED_FEATURE_KEY, Archeon.createId("menhir"))
+		);
+
+		BiomeModifications.addFeature(
+			ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS) ||
+				ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST) ||
+				ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST) ||
+				ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_MEADOWS),
+			GenerationStep.Feature.LOCAL_MODIFICATIONS,
+			RegistryKey.of(Registry.PLACED_FEATURE_KEY, Archeon.createId("hollow_cypress_log"))
 		);
 
 		PALM_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN));
