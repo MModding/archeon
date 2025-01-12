@@ -6,7 +6,6 @@ import com.mmodding.mmodding_lib.library.worldgen.AdvancedBiomeProvider;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;
 
 import java.util.function.Consumer;
@@ -150,7 +149,7 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 			this.erosions()[6],
 			weirdness,
 			0.0f,
-			BiomeKeys.MANGROVE_SWAMP
+			ArcheonBiomes.NUME_SWAMP
 		);
 		AdvancedBiomeProvider.super.provideMid(parameters, weirdness);
 	}
