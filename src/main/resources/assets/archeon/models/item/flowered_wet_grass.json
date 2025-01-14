@@ -1,6 +1,7 @@
 {
-  "parent": "item/generated",
+  "parent": "mmodding:item/not_colliding_generated",
   "textures": {
-    "layer0": "archeon:block/flowered_wet_grass"
+    "layer0": "archeon:block/wet_grass",
+    "layer1": "archeon:block/flowered_wet_grass_overlay"
   }
 }

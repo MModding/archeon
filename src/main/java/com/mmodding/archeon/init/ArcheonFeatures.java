@@ -114,7 +114,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(SporeRootcapTreeDecorator.INSTANCE, HangingLeavesTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
 	public static final CustomTreeFeature STREIAN_VUXANCIA_TREE = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
@@ -124,7 +124,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(SporeRootcapTreeDecorator.INSTANCE, HangingLeavesTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
 	public static final CustomTreeFeature ORIAN_VUXANCIA_TREE = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
@@ -134,7 +134,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(SporeRootcapTreeDecorator.INSTANCE, HangingLeavesTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
 	public static final CustomTreeFeature VALE_VUXANCIA_TREE = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
@@ -144,7 +144,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(SporeRootcapTreeDecorator.INSTANCE, HangingLeavesTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
 	public static final CustomTreeFeature ZIAL_VUXANCIA_TREE = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
@@ -154,12 +154,16 @@ public class ArcheonFeatures implements ElementsInitializer {
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
-	).addTreeDecorators(HangingLeavesTreeDecorator.INSTANCE, SporeRootcapTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
+	).addTreeDecorators(SporeRootcapTreeDecorator.INSTANCE, HangingLeavesTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
-	public static final CustomRandomPatchFeature PATCH_WET_GRASS = new CustomRandomPatchFeature(50, 7, 3,
+	public static final CustomRandomPatchFeature PATCH_WET_GRASS = new CustomRandomPatchFeature(45, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.WET_GRASS)))).setCount(10);
-	public static final CustomRandomPatchFeature PATCH_TALL_WET_GRASS = new CustomRandomPatchFeature(30, 7, 3,
+	public static final CustomRandomPatchFeature PATCH_TALL_WET_GRASS = new CustomRandomPatchFeature(25, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.TALL_WET_GRASS)))).setCount(7);
+	public static final CustomRandomPatchFeature PATCH_FLOWERED_WET_GRASS = new CustomRandomPatchFeature(3, 7, 3,
+		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.FLOWERED_WET_GRASS)))).setCount(3);
+	public static final CustomRandomPatchFeature PATCH_FLOWERED_TALL_WET_GRASS = new CustomRandomPatchFeature(2, 7, 3,
+		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.FLOWERED_TALL_WET_GRASS)))).setCount(2);
 	public static final CustomRandomPatchFeature PATCH_WET_FERN = new CustomRandomPatchFeature(40, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.WET_FERN)))).setRarity(6);
 	public static final CustomRandomPatchFeature PATCH_TALL_WET_FERN = new CustomRandomPatchFeature(50, 7, 3,
@@ -172,33 +176,33 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomRandomPatchFeature PATCH_SNOWY_GRASS_TUFFET = new CustomRandomPatchFeature(20, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.SNOWY_GRASS_TUFFET)))).setCount(7);
 
-	public static final CustomFlowerFeature SUNSET_ORCHID_FEATURE = new CustomFlowerFeature(64, 7, 3,
+	public static final CustomFlowerFeature SUNSET_ORCHID_FEATURE = new CustomFlowerFeature(32, 7, 3,
 		ArcheonBlocks.SUNSET_ORCHID).setRarity(5);
-	public static final CustomFlowerFeature ROSEYPIA_FEATURE = new CustomFlowerFeature(8, 7, 3,
+	public static final CustomFlowerFeature ROSEYPIA_FEATURE = new CustomFlowerFeature(4, 7, 3,
 		ArcheonBlocks.ROSEYPIA).setRarity(2);
-	public static final CustomFlowerFeature AEROLIA_FEATURE = new CustomFlowerFeature(8, 7, 3,
+	public static final CustomFlowerFeature AEROLIA_FEATURE = new CustomFlowerFeature(4, 7, 3,
 		ArcheonBlocks.AEROLIA).setRarity(2);
-	public static final CustomFlowerFeature ASTEDIBES_FEATURE = new CustomFlowerFeature(8, 7, 3,
+	public static final CustomFlowerFeature ASTEDIBES_FEATURE = new CustomFlowerFeature(4, 7, 3,
 		ArcheonBlocks.ASTEDIBES).setRarity(2);
-	public static final CustomFlowerFeature TWILIGHT_ROSE_FEATURE = new CustomFlowerFeature(8, 7, 3,
+	public static final CustomFlowerFeature TWILIGHT_ROSE_FEATURE = new CustomFlowerFeature(4, 7, 3,
 		ArcheonBlocks.TWILIGHT_ROSE).setRarity(2);
-	public static final CustomFlowerFeature PINK_LYCORIS_FEATURE = new CustomFlowerFeature(8, 7, 3,
+	public static final CustomFlowerFeature PINK_LYCORIS_FEATURE = new CustomFlowerFeature(4, 7, 3,
 		ArcheonBlocks.PINK_LYCORIS).setRarity(2);
-	public static final CustomFlowerFeature RED_LYCORIS_FEATURE = new CustomFlowerFeature(8, 7, 3,
+	public static final CustomFlowerFeature RED_LYCORIS_FEATURE = new CustomFlowerFeature(4, 7, 3,
 		ArcheonBlocks.RED_LYCORIS).setRarity(2);
-	public static final CustomFlowerFeature ORANGE_LYCORIS_FEATURE = new CustomFlowerFeature(8, 7, 3,
+	public static final CustomFlowerFeature ORANGE_LYCORIS_FEATURE = new CustomFlowerFeature(4, 7, 3,
 		ArcheonBlocks.ORANGE_LYCORIS).setRarity(2);
-	public static final CustomFlowerFeature ASCENDIA_FEATURE = new CustomFlowerFeature(8, 7, 3,
+	public static final CustomFlowerFeature ASCENDIA_FEATURE = new CustomFlowerFeature(4, 7, 3,
 		ArcheonBlocks.ASCENDIA).setRarity(2);
-	public static final CustomFlowerFeature OEA_FEATURE = new CustomFlowerFeature(8, 7, 3,
+	public static final CustomFlowerFeature OEA_FEATURE = new CustomFlowerFeature(4, 7, 3,
 		ArcheonBlocks.OEA).setRarity(2);
-	public static final CustomFlowerFeature IOPEA_FEATURE = new CustomFlowerFeature(8, 12, 6,
+	public static final CustomFlowerFeature IOPEA_FEATURE = new CustomFlowerFeature(4, 12, 6,
 		BiList.of(ArcheonBlocks.IOPEA, 3, ArcheonBlocks.TALL_IOPEA, 1)
 	).setRarity(2);
-	public static final CustomFlowerFeature ORGANDEANE_FEATURE = new CustomFlowerFeature(8, 12, 6,
+	public static final CustomFlowerFeature ORGANDEANE_FEATURE = new CustomFlowerFeature(4, 12, 6,
 		BiList.of(ArcheonBlocks.ORGANDEANE_BLOSSOM, 3, ArcheonBlocks.TALL_ORGANDEANE, 1)
 	).setRarity(2);
-	public static final CustomFlowerFeature SEPTICEOLIA_FEATURE = new CustomFlowerFeature(8, 7, 3,
+	public static final CustomFlowerFeature SEPTICEOLIA_FEATURE = new CustomFlowerFeature(4, 7, 3,
 		ArcheonBlocks.SEPTICEOLIA).setRarity(2);
 
 	public static final RuleTest SOUTHSTONE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.SOUTHSTONE_ORES_REPLACEABLES);
@@ -226,10 +230,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 	);
 
 	public static final CustomOreFeature APAFLORITE_ORE_FEATURE = new CustomOreFeature(6, 5, -60, 45, APAFLORITE_ORE_TARGETS);
-	public static final CustomOreFeature EXYRIANE_ORE_FEATURE = new CustomOreFeature(8, 7, -60, 45, EXYRIANE_ORE_TARGETS);
+	public static final CustomOreFeature EXYRIANE_ORE_FEATURE = new CustomOreFeature(30, 7, -60, 160, EXYRIANE_ORE_TARGETS);
 	public static final CustomOreFeature FAELITE_ORE_FEATURE = new CustomOreFeature(6, 5, -60, 45, FAELITE_ORE_TARGETS);
 	public static final CustomOreFeature LUSONYTH_ORE_FEATURE = new CustomOreFeature(6, 3, -60, 0, LUSONYTH_ORE_TARGETS, 0.75f);
-	public static final CustomOreFeature COAL_ORE_FEATURE = new CustomOreFeature(13, 7, -60, 80, ARCHEON_COAL_ORE_TARGETS);
 
 	public static final CustomLiquidVegetationPatchFeature GLOWSHROOMS_POOL = new CustomLiquidVegetationPatchFeature(
 		5,
@@ -515,6 +518,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ZIAL_VUXANCIA_TREE.register(Archeon.createId("zial_vuxancia_tree"));
 		PATCH_WET_GRASS.register(Archeon.createId("patch_wet_grass"));
 		PATCH_TALL_WET_GRASS.register(Archeon.createId("patch_tall_wet_grass"));
+		PATCH_FLOWERED_WET_GRASS.register(Archeon.createId("patch_flowered_wet_grass"));
+		PATCH_FLOWERED_TALL_WET_GRASS.register(Archeon.createId("patch_flowered_tall_wet_grass"));
 		PATCH_WET_FERN.register(Archeon.createId("path_wet_fern"));
 		PATCH_TALL_WET_FERN.register(Archeon.createId("patch_tall_wet_fern"));
 		PATCH_SOUTH_WHEAT.register(Archeon.createId("patch_south_wheat"));
@@ -537,7 +542,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		EXYRIANE_ORE_FEATURE.register(Archeon.createId("exyriane_ore_feature"));
 		FAELITE_ORE_FEATURE.register(Archeon.createId("faelite_ore_feature"));
 		LUSONYTH_ORE_FEATURE.register(Archeon.createId("lusonyth_ore_feature"));
-		COAL_ORE_FEATURE.register(Archeon.createId("coal_ore_feature"));
+		// COAL_ORE_FEATURE.register(Archeon.createId("coal_ore_feature"));
 		GLOWSHROOMS_POOL.register(Archeon.createId("glowshrooms_pool"));
 		GLOWSHROOMS_PATCH.register(Archeon.createId("glowshrooms_patch"));
 		GLOWSHROOMS.register(Archeon.createId("glowshrooms"));
@@ -601,6 +606,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 		PATCH_WET_GRASS.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_TALL_WET_GRASS.addDefaultToBiomes(randomPatchPredicate);
+		PATCH_FLOWERED_WET_GRASS.addDefaultToBiomes(randomPatchPredicate);
+		PATCH_FLOWERED_TALL_WET_GRASS.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_WET_FERN.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_TALL_WET_FERN.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_SOUTH_WHEAT.addDefaultToBiomes(randomPatchPredicate);
@@ -626,7 +633,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		EXYRIANE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 		FAELITE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 		LUSONYTH_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
-		COAL_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
+		// COAL_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 
 		GLOWSHROOMS.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ABYSS_CAVES));
 

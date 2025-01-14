@@ -40,7 +40,6 @@ public class VuxanciaTrunkPlacer extends CustomTrunkPlacer {
 		setToDirt(world, replacer, random, startPos.down(), config);
 
 		List<FoliagePlacer.TreeNode> nodes = new ArrayList<>();
-
 		Consumer<BlockPos> consumer = pos -> this.method_35375(world, replacer, random, pos, config);
 
 		int startHeight = 4 + random.nextInt(3);
@@ -50,18 +49,16 @@ public class VuxanciaTrunkPlacer extends CustomTrunkPlacer {
 		}
 
 		BlockPos smallBranchAnchorPos = startPos.up(startHeight).down(MathHelper.floor(startHeight * 2.0 / 3.0));
-
-		RadiusUtils.forBlockPosInLine(smallBranchAnchorPos, smallBranchAnchorPos.add(random.nextBoolean() ? -3 : 3, 3, random.nextBoolean() ? -3 : 3), consumer);
+		BlockPos smallBranchPos = smallBranchAnchorPos.add(random.nextBoolean() ? -3 : 3, 3, random.nextBoolean() ? -3 : 3);
+		RadiusUtils.forBlockPosInLine(smallBranchAnchorPos, smallBranchPos, consumer);
+		nodes.add(new FoliagePlacer.TreeNode(smallBranchPos, 0, true));
 
 		BlockPos middleStart = startPos.up(startHeight);
-
 		nodes.add(new FoliagePlacer.TreeNode(middleStart, 0, false));
 
 		BlockPos topPos = middleStart.add(random.nextBoolean() ? -2 : 2, 4, random.nextBoolean() ? -2 : 2);
-
 		RadiusUtils.forBlockPosInLine(middleStart.down(), topPos, consumer);
-
-		nodes.add(new FoliagePlacer.TreeNode(topPos, 0, false));
+		nodes.add(new FoliagePlacer.TreeNode(topPos, 0, true));
 
 		return nodes;
 	}

@@ -1,7 +1,8 @@
 {
-  "parent": "block/cross",
+  "parent": "mmodding:block/overlaid_tinted_cross",
   "textures": {
-    "cross": "archeon:block/flowered_tall_wet_grass_bottom",
-    "particle": "archeon:block/flowered_tall_wet_grass_bottom"
+    "cross": "archeon:block/tall_wet_grass_bottom",
+    "particle": "archeon:block/tall_wet_grass_bottom",
+    "overlay": "archeon:block/flowered_tall_wet_grass_bottom_overlay"
   }
 }

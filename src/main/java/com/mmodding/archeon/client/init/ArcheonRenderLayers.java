@@ -60,6 +60,8 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.GLOWSHROOMS.cutout();
 		ArcheonBlocks.GLOWSHROOM_PARASITES.cutout();
 
+		ArcheonBlocks.WET_GRASS_BLOCK.cutout();
+
 		ArcheonBlocks.PALM_DOOR.cutout();
 		ArcheonBlocks.PALM_TRAPDOOR.cutout();
 
