@@ -122,7 +122,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.STREIAN_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
-		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
+		PlacedFeatureUtil.createCountExtraModifier(2, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).addTreeDecorators(SporeRootcapTreeDecorator.INSTANCE, HangingLeavesTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
@@ -132,7 +132,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.ORIAN_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
-		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
+		PlacedFeatureUtil.createCountExtraModifier(1, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).addTreeDecorators(SporeRootcapTreeDecorator.INSTANCE, HangingLeavesTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
@@ -142,7 +142,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.VALE_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
-		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
+		PlacedFeatureUtil.createCountExtraModifier(1, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).addTreeDecorators(SporeRootcapTreeDecorator.INSTANCE, HangingLeavesTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
@@ -152,7 +152,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.ZIAL_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
-		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
+		PlacedFeatureUtil.createCountExtraModifier(1, 0.1f, 1),
 		ArcheonBlocks.WET_GRASS
 	).addTreeDecorators(SporeRootcapTreeDecorator.INSTANCE, HangingLeavesTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
