@@ -22,7 +22,7 @@ public class PalmLeavesBlock extends CustomLeavesBlock {
 	}
 
 	@Override
-	protected boolean areLeavesConnected() {
+	public boolean areLeavesConnected() {
 		return false;
 	}
 }

@@ -36,6 +36,8 @@ public class PalmFoliagePlacer extends CustomFoliagePlacer {
 	@Override
 	protected void generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, RandomGenerator random, TreeFeatureConfig config, int trunkHeight, TreeNode node, int foliageHeight, int radius, int offset) {
 
+		this.placePalmFoliage(world, replacer, random, config, node.getCenter());
+
 		BlockPos downPos = node.getCenter().down();
 
 		Direction.Type.HORIZONTAL.forEach(direction -> {
