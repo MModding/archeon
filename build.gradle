@@ -43,6 +43,11 @@ dependencies {
 	include libs.double.jump.attribute
 }
 
+project.configurations.configureEach {
+	exclude(group: "net.fabricmc", module: "fabric-loader")
+	exclude(group: "net.fabricmc.fabric-api")
+}
+
 processResources {
 	inputs.property 'version', version
 

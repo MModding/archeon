@@ -5,7 +5,7 @@ import net.minecraft.state.property.IntProperty;
 
 public class PalmLeavesBlock extends CustomLeavesBlock {
 
-	public static final IntProperty DISTANCE = IntProperty.of("distance", 0, 9);
+	public static final IntProperty DISTANCE = IntProperty.of("distance", 1, 9);
 
 	public PalmLeavesBlock(Settings settings, boolean hasItem) {
 		super(settings, hasItem);
@@ -22,7 +22,7 @@ public class PalmLeavesBlock extends CustomLeavesBlock {
 	}
 
 	@Override
-	protected boolean hasSeparatedLeaves() {
-		return true;
+	protected boolean areLeavesConnected() {
+		return false;
 	}
 }

@@ -13,7 +13,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.util.random.RandomGenerator;
 import net.minecraft.world.TestableWorld;
-import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
 
@@ -49,7 +48,7 @@ public class CypressFoliagePlacer extends CustomFoliagePlacer {
 
 		// Placing the middle foliage column
 		for (int i = 0; i < height; i++) {
-			this.placeCypressFoliage(world, replacer, random, centerPos.up(i), config);
+			CypressFoliagePlacer.placeFoliageBlock(world, replacer, random, config, centerPos.up(i));
 		}
 
 		List<IntIntPair> alreadyGenerated = new ArrayList<>();
@@ -72,7 +71,7 @@ public class CypressFoliagePlacer extends CustomFoliagePlacer {
 
 				// Placing the foliage column for the current direction dans the current layer
 				for (int j = 0; j < heightScaled; j++) {
-					this.placeCypressFoliage(world, replacer, random, centerPos.up(i).offset(direction, i).up(j), config);
+					CypressFoliagePlacer.placeFoliageBlock(world, replacer, random, config, centerPos.up(i).offset(direction, i).up(j));
 				}
 
 				// Adding foliage to the right and to the left of it
@@ -82,7 +81,7 @@ public class CypressFoliagePlacer extends CustomFoliagePlacer {
 						BlockPos pos = centerPos.up(i + 1 + randomInt).offset(direction, i).offset(orientation, 1).up(j);
 						if (!alreadyGenerated.contains(IntIntPair.of(pos.getX(), pos.getX()))){
 							alreadyGenerated.add(IntIntPair.of(pos.getX(), pos.getY()));
-							this.placeCypressFoliage(world, replacer, random, pos, config);
+							CypressFoliagePlacer.placeFoliageBlock(world, replacer, random, config, pos);
 						}
 					}
 				}
@@ -98,7 +97,7 @@ public class CypressFoliagePlacer extends CustomFoliagePlacer {
 					BlockPos checkPos = baseCheckPos.offset(direction);
 
 					if (world.testBlockState(checkPos, BlockState::isAir)) {
-						this.placeCypressFoliage(world, replacer, random, checkPos, config);
+						CypressFoliagePlacer.placeFoliageBlock(world, replacer, random, config, checkPos);
 					}
 				}
 			}
@@ -113,11 +112,5 @@ public class CypressFoliagePlacer extends CustomFoliagePlacer {
 	@Override
 	protected boolean isInvalidForLeaves(RandomGenerator random, int dx, int y, int dz, int radius, boolean giantTrunk) {
 		return false;
-	}
-
-	protected void placeCypressFoliage(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, RandomGenerator random, BlockPos pos, TreeFeatureConfig config) {
-		if (TreeFeature.canReplace(world, pos)) {
-			replacer.accept(pos, config.foliageProvider.getBlockState(random, pos));
-		}
 	}
 }
