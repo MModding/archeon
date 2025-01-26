@@ -45,6 +45,8 @@ public class CentaurLifeVaultBlock extends CustomBlock {
 		CentaurEntity centaurEntity = new CentaurEntity(world, pos, false);
 		centaurEntity.setPosition(Vec3d.ofCenter(pos.east(13)));
 		centaurEntity.setStackInHand(Hand.MAIN_HAND, ArcheonItems.CENTAUR_SPEAR.getDefaultStack());
+		armoredCentaurEntity.setupBossBar();
+		centaurEntity.setupBossBar();
 		world.spawnEntity(armoredCentaurEntity);
 		world.spawnEntity(centaurEntity);
 	}

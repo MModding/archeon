@@ -16,6 +16,8 @@ import net.minecraft.entity.ai.goal.ProjectileAttackGoal;
 import net.minecraft.entity.ai.goal.TargetGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.boss.BossBar;
+import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
@@ -26,11 +28,13 @@ import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
 
@@ -38,6 +42,8 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
 	public static final TrackedData<Boolean> ATTACK = DataTracker.registerData(CentaurEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 	public static final TrackedData<Boolean> TALENT = DataTracker.registerData(CentaurEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+
+	private final ServerBossBar bossBar = new ServerBossBar(this.getDisplayName(), BossBar.Color.YELLOW, BossBar.Style.PROGRESS);
 
 	private final Goal attackGoal;
 	private final Goal talentGoal;
@@ -120,6 +126,25 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 			vaultPos.getInt("Z")
 		);
 		this.updateGoals();
+		if (this.hasCustomName()) {
+			this.bossBar.setName(this.getDisplayName());
+		}
+	}
+
+	public void setupBossBar() {
+		this.bossBar.setPercent(0.0f);
+	}
+
+	@Override
+	public void onStartedTrackingBy(ServerPlayerEntity player) {
+		super.onStartedTrackingBy(player);
+		this.bossBar.addPlayer(player);
+	}
+
+	@Override
+	public void onStoppedTrackingBy(ServerPlayerEntity player) {
+		super.onStoppedTrackingBy(player);
+		this.bossBar.removePlayer(player);
 	}
 
 	@Override
@@ -140,6 +165,13 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 			this.galloping.start(this.age);
 		}
 		super.tick();
+	}
+
+	@Override
+	protected void mobTick() {
+		super.mobTick();
+
+		this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
 	}
 
 	@Override
