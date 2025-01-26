@@ -13,7 +13,7 @@ public class NeclaneLeavesBlock extends CustomLeavesBlock {
 	}
 
 	@Override
-	protected IntProperty getDistanceProperty() {
+	public IntProperty getDistanceProperty() {
 		return NeclaneLeavesBlock.DISTANCE;
 	}
 

@@ -1,4 +1,85 @@
 {
+  "elkin/intro": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:elkin/intro",
+        "stream": true
+      }
+    ]
+  },
+  "elkin/first_phase": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:elkin/first_phase",
+        "stream": true
+      }
+    ]
+  },
+  "elkin/first_phase_transition": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:elkin/first_phase_transition",
+        "stream": true
+      }
+    ]
+  },
+  "elkin/first_phase_climax": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:elkin/first_phase_climax",
+        "stream": true
+      }
+    ]
+  },
+  "elkin/transition": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:elkin/transition",
+        "stream": true
+      }
+    ]
+  },
+  "elkin/second_phase": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:elkin/second_phase",
+        "stream": true
+      }
+    ]
+  },
+  "elkin/second_phase_transition": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:elkin/second_phase_transition",
+        "stream": true
+      }
+    ]
+  },
+  "elkin/second_phase_climax": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:elkin/second_phase_climax",
+        "stream": true
+      }
+    ]
+  },
+  "elkin/outro": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:elkin/outro",
+        "stream": true
+      }
+    ]
+  },
   "genesis": {
     "category": "music",
     "sounds": [

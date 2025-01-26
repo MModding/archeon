@@ -10,6 +10,7 @@ import com.mmodding.mmodding_lib.library.portals.CustomPortalLink;
 import com.mmodding.mmodding_lib.library.portals.CustomPortals;
 import com.mmodding.mmodding_lib.library.portals.Ignition;
 import com.mmodding.mmodding_lib.library.portals.squared.CustomSquaredPortal;
+import com.mmodding.mmodding_lib.library.soundtracks.Soundtrack;
 import com.mmodding.mmodding_lib.library.stellar.StellarCycle;
 import com.mmodding.mmodding_lib.library.utils.MModdingIdentifier;
 
@@ -30,6 +31,18 @@ public class ArcheonMiscellaneous implements ElementsInitializer {
 			ref.set(new MModdingIdentifier("lightened_magenta"));
 		}
 	});
+
+	public static final Soundtrack ELKIN = Soundtrack.create(
+		Soundtrack.Part.iterations(Archeon.createId("elkin/intro"), 1),
+		Soundtrack.Part.looping(Archeon.createId("elkin/first_phase")),
+		Soundtrack.Part.iterations(Archeon.createId("elkin/first_phase_transition"), 1),
+		Soundtrack.Part.looping(Archeon.createId("elkin/first_phase_climax")),
+		Soundtrack.Part.iterations(Archeon.createId("elkin/transition"), 1),
+		Soundtrack.Part.looping(Archeon.createId("elkin/second_phase")),
+		Soundtrack.Part.iterations(Archeon.createId("elkin/second_phase_transition"), 1),
+		Soundtrack.Part.looping(Archeon.createId("elkin/second_phase_climax")),
+		Soundtrack.Part.iterations(Archeon.createId("elkin/outro"), 1)
+	);
 
 	@Override
 	public void register() {

@@ -12,7 +12,7 @@ public class PalmLeavesBlock extends CustomLeavesBlock {
 	}
 
 	@Override
-	protected IntProperty getDistanceProperty() {
+	public IntProperty getDistanceProperty() {
 		return PalmLeavesBlock.DISTANCE;
 	}
 

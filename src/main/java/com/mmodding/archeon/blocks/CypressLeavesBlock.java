@@ -12,7 +12,7 @@ public class CypressLeavesBlock extends CustomLeavesBlock {
 	}
 
 	@Override
-	protected IntProperty getDistanceProperty() {
+	public IntProperty getDistanceProperty() {
 		return CypressLeavesBlock.DISTANCE;
 	}
 
