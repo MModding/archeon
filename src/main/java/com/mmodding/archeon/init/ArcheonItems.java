@@ -356,6 +356,10 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomItem IMPRESSIVE_AURORA_CRYSTAL = new CustomItem(new AdvancedItemSettings().nameFormattings(Formatting.GOLD));
 
+	public static final CustomItem CENTAUR_HOOF = new CustomItem(new AdvancedItemSettings());
+
+	public static final CustomItem CENTAUR_HORSESHOE = new CustomItem(new AdvancedItemSettings().nameFormattings(Formatting.GOLD));
+
 	public static final CustomSpawnEggItem AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.AURORA_CATALYST, 4380648, 3876673, new AdvancedItemSettings());
 	public static final CustomSpawnEggItem POISONOUS_AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.POISONOUS_AURORA_CATALYST, 517623, 6633076, new AdvancedItemSettings());
 	public static final CustomSpawnEggItem EXPLOSIVE_AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.EXPLOSIVE_AURORA_CATALYST, 12279738, 6967084, new AdvancedItemSettings());
@@ -500,6 +504,8 @@ public class ArcheonItems implements ElementsInitializer {
 		SNAIL_SHELL.register(Archeon.createId("snail_shell"));
 		AURORA_CRYSTAL.register(Archeon.createId("aurora_crystal"));
 		IMPRESSIVE_AURORA_CRYSTAL.register(Archeon.createId("impressive_aurora_crystal"));
+		CENTAUR_HOOF.register(Archeon.createId("centaur_hoof"));
+		CENTAUR_HORSESHOE.register(Archeon.createId("centaur_horseshoe"));
 		AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("aurora_catalyst_spawn_egg"));
 		POISONOUS_AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("poisonous_aurora_catalyst_spawn_egg"));
 		EXPLOSIVE_AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("explosive_aurora_catalyst_spawn_egg"));
