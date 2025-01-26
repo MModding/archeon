@@ -69,6 +69,9 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.SUMMER_NECLANE_DOOR.cutout();
 		ArcheonBlocks.SUMMER_NECLANE_TRAPDOOR.cutout();
 
+		ArcheonBlocks.NUME_WILLOW_DOOR.cutout();
+		ArcheonBlocks.NUME_WILLOW_TRAPDOOR.cutout();
+
 		ArcheonBlocks.NYRETH_DOOR.cutout();
 		ArcheonBlocks.NYRETH_TRAPDOOR.cutout();
 
