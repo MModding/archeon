@@ -46,7 +46,7 @@ public class AmuletOfNatureItem extends CustomItemAcceptingStacks implements @Re
 
 	@Override
 	public FilterList<Item> getFilter() {
-		return new WhiteList<>(ArcheonItems.IMPRESSIVE_AURORA_CRYSTAL);
+		return new WhiteList<>(ArcheonItems.IMPRESSIVE_AURORA_CRYSTAL, ArcheonItems.CENTAUR_HORSESHOE);
 	}
 
 	@Override
