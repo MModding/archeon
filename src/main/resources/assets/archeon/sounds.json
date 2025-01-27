@@ -1,4 +1,58 @@
 {
+  "heart_of_nature/intro": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:heart_of_nature/intro",
+        "stream": true
+      }
+    ]
+  },
+  "heart_of_nature/petrified": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:heart_of_nature/petrified",
+        "stream": true
+      }
+    ]
+  },
+  "heart_of_nature/first_phase": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:heart_of_nature/first_phase",
+        "stream": true
+      }
+    ]
+  },
+  "heart_of_nature/second_phase": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:heart_of_nature/second_phase",
+        "stream": true
+      }
+    ]
+  },
+  "heart_of_nature/third_phase": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:heart_of_nature/third_phase",
+        "stream": true
+      }
+    ]
+  },
+  "heart_of_nature/outro": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "archeon:heart_of_nature/outro",
+        "stream": true
+      }
+    ]
+  },
   "elkin/intro": {
     "category": "music",
     "sounds": [
@@ -222,24 +276,6 @@
     "sounds": [
       {
         "name": "archeon:rising",
-        "stream": true
-      }
-    ]
-  },
-  "heart_of_nature_end": {
-    "category": "music",
-    "sounds": [
-      {
-        "name": "archeon:heart_of_nature_end",
-        "stream": true
-      }
-    ]
-  },
-  "heart_of_nature": {
-    "category": "music",
-    "sounds": [
-      {
-        "name": "archeon:heart_of_nature",
         "stream": true
       }
     ]

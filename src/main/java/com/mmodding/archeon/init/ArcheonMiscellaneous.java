@@ -32,6 +32,15 @@ public class ArcheonMiscellaneous implements ElementsInitializer {
 		}
 	});
 
+	public static final Soundtrack HEART_OF_NATURE = Soundtrack.create(
+		Soundtrack.Part.iterations(Archeon.createId("heart_of_nature/intro"), 1),
+		Soundtrack.Part.looping(Archeon.createId("heart_of_nature/petrified")),
+		Soundtrack.Part.looping(Archeon.createId("heart_of_nature/first_phase")),
+		Soundtrack.Part.looping(Archeon.createId("heart_of_nature/second_phase")),
+		Soundtrack.Part.looping(Archeon.createId("heart_of_nature/third_phase")),
+		Soundtrack.Part.iterations(Archeon.createId("heart_of_nature/outro"), 1)
+	);
+
 	public static final Soundtrack ELKIN = Soundtrack.create(
 		Soundtrack.Part.iterations(Archeon.createId("elkin/intro"), 1),
 		Soundtrack.Part.looping(Archeon.createId("elkin/first_phase")),
