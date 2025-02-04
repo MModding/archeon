@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "archeon:block/cobbled_southstone",
-    "particle": "archeon:block/cobbled_southstone"
-  }
-}

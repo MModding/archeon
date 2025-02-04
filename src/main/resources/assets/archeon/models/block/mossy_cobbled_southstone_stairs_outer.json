@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "archeon:block/mossy_cobbled_southstone",
-    "top": "archeon:block/mossy_cobbled_southstone",
-    "side": "archeon:block/mossy_cobbled_southstone"
-  }
-}

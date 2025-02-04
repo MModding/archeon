@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "archeon:block/cobbled_southstone",
-    "top": "archeon:block/cobbled_southstone",
-    "side": "archeon:block/cobbled_southstone"
-  }
-}

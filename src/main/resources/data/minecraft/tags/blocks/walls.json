@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "archeon:southstone_brick_wall",
-    "archeon:cobbled_southstone_wall",
-    "archeon:gilded_cobbled_southstone_wall",
-    "archeon:mossy_southstone_brick_wall",
-    "archeon:mossy_cobbled_southstone_wall",
+    "archeon:chiaspen_brick_wall",
+    "archeon:cobbled_chiaspen_wall",
+    "archeon:gilded_cobbled_chiaspen_wall",
+    "archeon:mossy_chiaspen_brick_wall",
+    "archeon:mossy_cobbled_chiaspen_wall",
     "archeon:phosnor_slate_wall",
     "archeon:phosnor_slate_brick_wall",
     "archeon:phosnor_slate_tile_wall",

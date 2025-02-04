@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "archeon:block/chiaspen"
+      },
+      {
+        "model": "archeon:block/chiaspen_mirrored"
+      },
+      {
+        "model": "archeon:block/chiaspen",
+        "y": 180
+      },
+      {
+        "model": "archeon:block/chiaspen_mirrored",
+        "y": 180
+      }
+    ]
+  }
+}

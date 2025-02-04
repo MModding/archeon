@@ -205,23 +205,23 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomFlowerFeature SEPTICEOLIA_FEATURE = new CustomFlowerFeature(4, 7, 3,
 		ArcheonBlocks.SEPTICEOLIA).setRarity(2);
 
-	public static final RuleTest SOUTHSTONE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.SOUTHSTONE_ORES_REPLACEABLES);
+	public static final RuleTest CHIASPEN_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.CHIASPEN_ORES_REPLACEABLES);
 	public static final RuleTest PHOSNOR_SLATE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.PHOSNOR_SLATE_ORES_REPLACEABLES);
 
 	public static final List<OreFeatureConfig.Target> APAFLORITE_ORE_TARGETS = List.of(
-		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.APAFLORITE_ORE.getDefaultState()),
+		OreFeatureConfig.createTarget(CHIASPEN_ORES_REPLACEABLES, ArcheonBlocks.APAFLORITE_ORE.getDefaultState()),
 		OreFeatureConfig.createTarget(PHOSNOR_SLATE_ORES_REPLACEABLES, ArcheonBlocks.PHOSNOR_SLATE_APAFLORITE_ORE.getDefaultState())
 	);
 	public static final List<OreFeatureConfig.Target> EXYRIANE_ORE_TARGETS = List.of(
-		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.EXYRIANE_ORE.getDefaultState()),
+		OreFeatureConfig.createTarget(CHIASPEN_ORES_REPLACEABLES, ArcheonBlocks.EXYRIANE_ORE.getDefaultState()),
 		OreFeatureConfig.createTarget(PHOSNOR_SLATE_ORES_REPLACEABLES, ArcheonBlocks.PHOSNOR_SLATE_EXYRIANE_ORE.getDefaultState())
 	);
 	public static final List<OreFeatureConfig.Target> FAELITE_ORE_TARGETS = List.of(
-		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.FAELITE_ORE.getDefaultState()),
+		OreFeatureConfig.createTarget(CHIASPEN_ORES_REPLACEABLES, ArcheonBlocks.FAELITE_ORE.getDefaultState()),
 		OreFeatureConfig.createTarget(PHOSNOR_SLATE_ORES_REPLACEABLES, ArcheonBlocks.PHOSNOR_SLATE_FAELITE_ORE.getDefaultState())
 	);
 	public static final List<OreFeatureConfig.Target> LUSONYTH_ORE_TARGETS = List.of(
-		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.LUSONYTH_ORE.getDefaultState()),
+		OreFeatureConfig.createTarget(CHIASPEN_ORES_REPLACEABLES, ArcheonBlocks.LUSONYTH_ORE.getDefaultState()),
 		OreFeatureConfig.createTarget(PHOSNOR_SLATE_ORES_REPLACEABLES, ArcheonBlocks.PHOSNOR_SLATE_LUSONYTH_ORE.getDefaultState())
 	);
 

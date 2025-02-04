@@ -31,8 +31,8 @@ public class RockyFieldsRockFeature extends AdvancedFeature<RockyFieldsRockFeatu
 	@Override
 	public ConfiguredFeature<Config, AdvancedFeature<Config>> getDefaultConfigured() {
 		return new ConfiguredFeature<>(ArcheonFeatures.ROCKY_FIELDS_ROCK, new Config(
-			BlockStateProvider.of(ArcheonBlocks.COBBLED_SOUTHSTONE),
-			BlockStateProvider.of(ArcheonBlocks.COBBLED_SOUTHSTONE_SLAB)
+			BlockStateProvider.of(ArcheonBlocks.COBBLED_CHIASPEN),
+			BlockStateProvider.of(ArcheonBlocks.COBBLED_CHIASPEN_SLAB)
 		));
 	}
 

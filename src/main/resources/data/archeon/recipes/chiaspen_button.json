@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:chiaspen"
+    }
+  ],
+  "result": {
+    "item": "archeon:chiaspen_button",
+    "count": 1
+  }
+}

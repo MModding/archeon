@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "archeon:southstone_pickaxe"
+              "archeon:chiaspen_pickaxe"
             ]
           }
         ]
@@ -22,7 +22,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "archeon:southstone_pickaxe",
+      "item": "archeon:chiaspen_pickaxe",
       "nbt": "{Damage:0}"
     },
     "show_toast": true,

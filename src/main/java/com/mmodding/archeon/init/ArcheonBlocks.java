@@ -439,54 +439,54 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomDoorBlock NYRETH_DOOR = new CustomDoorBlock(DefaultBlockSettings.WOOD_SETTINGS.nonOpaque(), true);
 	public static final CustomTrapdoorBlock NYRETH_TRAPDOOR = new CustomTrapdoorBlock(DefaultBlockSettings.WOOD_SETTINGS.nonOpaque(), true);
 
-	public static final CustomBlock SOUTHSTONE = new GlowshroomableBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock SOUTHSTONE_STAIRS = new CustomStairsBlock(SOUTHSTONE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock SOUTHSTONE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomWallBlock SOUTHSTONE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock CHIASPEN = new GlowshroomableBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock CHIASPEN_STAIRS = new CustomStairsBlock(CHIASPEN.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock CHIASPEN_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock CHIASPEN_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
-	public static final CustomBlock SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock SOUTHSTONE_BRICK_STAIRS = new CustomStairsBlock(SOUTHSTONE_BRICKS.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock SOUTHSTONE_BRICK_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomWallBlock SOUTHSTONE_BRICK_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock CHIASPEN_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock CHIASPEN_BRICK_STAIRS = new CustomStairsBlock(CHIASPEN_BRICKS.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock CHIASPEN_BRICK_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock CHIASPEN_BRICK_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
-	public static final CustomBlock COBBLED_SOUTHSTONE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
-	public static final CustomStairsBlock COBBLED_SOUTHSTONE_STAIRS = new CustomStairsBlock(COBBLED_SOUTHSTONE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
-	public static final CustomSlabBlock COBBLED_SOUTHSTONE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
-	public static final CustomWallBlock COBBLED_SOUTHSTONE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomBlock COBBLED_CHIASPEN = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomStairsBlock COBBLED_CHIASPEN_STAIRS = new CustomStairsBlock(COBBLED_CHIASPEN.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomSlabBlock COBBLED_CHIASPEN_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomWallBlock COBBLED_CHIASPEN_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
 
-	public static final CustomBlock GILDED_COBBLED_SOUTHSTONE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
-	public static final CustomStairsBlock GILDED_COBBLED_SOUTHSTONE_STAIRS = new CustomStairsBlock(GILDED_COBBLED_SOUTHSTONE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
-	public static final CustomSlabBlock GILDED_COBBLED_SOUTHSTONE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
-	public static final CustomWallBlock GILDED_COBBLED_SOUTHSTONE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomBlock GILDED_COBBLED_CHIASPEN = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomStairsBlock GILDED_COBBLED_CHIASPEN_STAIRS = new CustomStairsBlock(GILDED_COBBLED_CHIASPEN.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomSlabBlock GILDED_COBBLED_CHIASPEN_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomWallBlock GILDED_COBBLED_CHIASPEN_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
 
-	public static final CustomPillarBlock SOUTHSTONE_PILLAR_TOP = new CustomPillarBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomPillarBlock SOUTHSTONE_PILLAR = new CustomPillarBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomPillarBlock SOUTHSTONE_PILLAR_BOTTOM = new CustomPillarBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final SouthstoneColumnBlock SOUTHSTONE_COLUMN = new SouthstoneColumnBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomPillarBlock CHIASPEN_PILLAR_TOP = new CustomPillarBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomPillarBlock CHIASPEN_PILLAR = new CustomPillarBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomPillarBlock CHIASPEN_PILLAR_BOTTOM = new CustomPillarBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final ChiaspenColumnBlock CHIASPEN_COLUMN = new ChiaspenColumnBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
-	public static final CustomBlock SMOOTH_SOUTHSTONE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock SMOOTH_SOUTHSTONE_STAIRS = new CustomStairsBlock(SMOOTH_SOUTHSTONE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock SMOOTH_SOUTHSTONE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock SMOOTH_CHIASPEN = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock SMOOTH_CHIASPEN_STAIRS = new CustomStairsBlock(SMOOTH_CHIASPEN.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock SMOOTH_CHIASPEN_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
-	public static final CustomBlock CHISELED_SOUTHSTONE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomBlock CRACKED_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock CHISELED_CHIASPEN = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock CRACKED_CHIASPEN_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
-	public static final CustomPressurePlateBlock SOUTHSTONE_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomButtonBlock.Stone SOUTHSTONE_BUTTON = new CustomButtonBlock.Stone(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomPressurePlateBlock CHIASPEN_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomButtonBlock.Stone CHIASPEN_BUTTON = new CustomButtonBlock.Stone(DefaultBlockSettings.STONE_SETTINGS, true);
 
-	public static final CustomBlock MOSSY_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomStairsBlock MOSSY_SOUTHSTONE_BRICK_STAIRS = new CustomStairsBlock(MOSSY_SOUTHSTONE_BRICKS.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomSlabBlock MOSSY_SOUTHSTONE_BRICK_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomWallBlock MOSSY_SOUTHSTONE_BRICK_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock MOSSY_CHIASPEN_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock MOSSY_CHIASPEN_BRICK_STAIRS = new CustomStairsBlock(MOSSY_CHIASPEN_BRICKS.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock MOSSY_CHIASPEN_BRICK_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock MOSSY_CHIASPEN_BRICK_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
-	public static final CustomBlock MOSSY_COBBLED_SOUTHSTONE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
-	public static final CustomStairsBlock MOSSY_COBBLED_SOUTHSTONE_STAIRS = new CustomStairsBlock(MOSSY_COBBLED_SOUTHSTONE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
-	public static final CustomSlabBlock MOSSY_COBBLED_SOUTHSTONE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
-	public static final CustomWallBlock MOSSY_COBBLED_SOUTHSTONE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomBlock MOSSY_COBBLED_CHIASPEN = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomStairsBlock MOSSY_COBBLED_CHIASPEN_STAIRS = new CustomStairsBlock(MOSSY_COBBLED_CHIASPEN.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomSlabBlock MOSSY_COBBLED_CHIASPEN_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
+	public static final CustomWallBlock MOSSY_COBBLED_CHIASPEN_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS.hardness(2.0f), true);
 
-	public static final CustomBlock FALSE_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomBlock FALSE_CRACKED_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomBlock FALSE_MOSSY_SOUTHSTONE_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock FALSE_CHIASPEN_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock FALSE_CRACKED_CHIASPEN_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock FALSE_MOSSY_CHIASPEN_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock PHOSNOR_SLATE = new GlowshroomableBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomStairsBlock PHOSNOR_SLATE_STAIRS = new CustomStairsBlock(PHOSNOR_SLATE.getDefaultState(), DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
@@ -515,7 +515,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomBlock CHISELED_PHOSNOR_SLATE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 
-	public static final CustomFurnaceBlock SOUTHSTONE_FURNACE = new CustomFurnaceBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomFurnaceBlock CHIASPEN_FURNACE = new CustomFurnaceBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomFurnaceBlock PHOSNOR_SLATE_FURNACE = new CustomFurnaceBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 
 	public static final CustomBlock APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
@@ -615,7 +615,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomBlock ARTEMNITE_BASEBOARD = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
-	public static final CustomBlock SOUTHSTONE_LAMP = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.luminance(15), true);
+	public static final CustomBlock CHIASPEN_LAMP = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.luminance(15), true);
 	public static final CustomBlock AKETITE_LAMP = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.luminance(15), true);
 
 	public static final CustomPaneBlock CLEMENTIUM_BARS = new CustomPaneBlock(DefaultBlockSettings.METAL_SETTINGS, true);
@@ -1102,7 +1102,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomWallBlock FANCY_SNAIL_SHELL_BRICK_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock PEAKS_GRASS_BLOCK = new CustomBlock(DefaultBlockSettings.GRASS_SETTINGS, true);
-	public static final CustomBlock SNOWY_SOUTHSTONE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomBlock SNOWY_CHIASPEN = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomLayeredBlock PEAKS_SNOW = new CustomLayeredBlock(DefaultBlockSettings.SNOW_SETTINGS, true);
 	public static final CustomBlock PEAKS_SNOW_BLOCK = new CustomBlock(DefaultBlockSettings.SNOW_BLOCK_SETTINGS, true);
 
@@ -1303,44 +1303,44 @@ public class ArcheonBlocks implements ElementsInitializer {
 		NYRETH_BUTTON.register(Archeon.createId("nyreth_button"));
 		NYRETH_DOOR.register(Archeon.createId("nyreth_door"));
 		NYRETH_TRAPDOOR.register(Archeon.createId("nyreth_trapdoor"));
-		SOUTHSTONE.register(Archeon.createId("southstone"));
-		SOUTHSTONE_STAIRS.register(Archeon.createId("southstone_stairs"));
-		SOUTHSTONE_SLAB.register(Archeon.createId("southstone_slab"));
-		SOUTHSTONE_WALL.register(Archeon.createId("southstone_wall"));
-		SOUTHSTONE_BRICKS.register(Archeon.createId("southstone_bricks"));
-		SOUTHSTONE_BRICK_STAIRS.register(Archeon.createId("southstone_brick_stairs"));
-		SOUTHSTONE_BRICK_SLAB.register(Archeon.createId("southstone_brick_slab"));
-		SOUTHSTONE_BRICK_WALL.register(Archeon.createId("southstone_brick_wall"));
-		COBBLED_SOUTHSTONE.register(Archeon.createId("cobbled_southstone"));
-		COBBLED_SOUTHSTONE_STAIRS.register(Archeon.createId("cobbled_southstone_stairs"));
-		COBBLED_SOUTHSTONE_SLAB.register(Archeon.createId("cobbled_southstone_slab"));
-		COBBLED_SOUTHSTONE_WALL.register(Archeon.createId("cobbled_southstone_wall"));
-		GILDED_COBBLED_SOUTHSTONE.register(Archeon.createId("gilded_cobbled_southstone"));
-		GILDED_COBBLED_SOUTHSTONE_STAIRS.register(Archeon.createId("gilded_cobbled_southstone_stairs"));
-		GILDED_COBBLED_SOUTHSTONE_SLAB.register(Archeon.createId("gilded_cobbled_southstone_slab"));
-		GILDED_COBBLED_SOUTHSTONE_WALL.register(Archeon.createId("gilded_cobbled_southstone_wall"));
-		SOUTHSTONE_PILLAR_TOP.register(Archeon.createId("southstone_pillar_top"));
-		SOUTHSTONE_PILLAR.register(Archeon.createId("southstone_pillar"));
-		SOUTHSTONE_PILLAR_BOTTOM.register(Archeon.createId("southstone_pillar_bottom"));
-		SOUTHSTONE_COLUMN.register(Archeon.createId("southstone_column"));
-		SMOOTH_SOUTHSTONE.register(Archeon.createId("smooth_southstone"));
-		SMOOTH_SOUTHSTONE_STAIRS.register(Archeon.createId("smooth_southstone_stairs"));
-		SMOOTH_SOUTHSTONE_SLAB.register(Archeon.createId("smooth_southstone_slab"));
-		CHISELED_SOUTHSTONE.register(Archeon.createId("chiseled_southstone"));
-		CRACKED_SOUTHSTONE_BRICKS.register(Archeon.createId("cracked_southstone_bricks"));
-		SOUTHSTONE_PRESSURE_PLATE.register(Archeon.createId("southstone_pressure_plate"));
-		SOUTHSTONE_BUTTON.register(Archeon.createId("southstone_button"));
-		MOSSY_SOUTHSTONE_BRICKS.register(Archeon.createId("mossy_southstone_bricks"));
-		MOSSY_SOUTHSTONE_BRICK_STAIRS.register(Archeon.createId("mossy_southstone_brick_stairs"));
-		MOSSY_SOUTHSTONE_BRICK_SLAB.register(Archeon.createId("mossy_southstone_brick_slab"));
-		MOSSY_SOUTHSTONE_BRICK_WALL.register(Archeon.createId("mossy_southstone_brick_wall"));
-		MOSSY_COBBLED_SOUTHSTONE.register(Archeon.createId("mossy_cobbled_southstone"));
-		MOSSY_COBBLED_SOUTHSTONE_STAIRS.register(Archeon.createId("mossy_cobbled_southstone_stairs"));
-		MOSSY_COBBLED_SOUTHSTONE_SLAB.register(Archeon.createId("mossy_cobbled_southstone_slab"));
-		MOSSY_COBBLED_SOUTHSTONE_WALL.register(Archeon.createId("mossy_cobbled_southstone_wall"));
-		FALSE_SOUTHSTONE_BRICKS.register(Archeon.createId("false_southstone_bricks"));
-		FALSE_CRACKED_SOUTHSTONE_BRICKS.register(Archeon.createId("false_cracked_southstone_bricks"));
-		FALSE_MOSSY_SOUTHSTONE_BRICKS.register(Archeon.createId("false_mossy_southstone_bricks"));
+		CHIASPEN.register(Archeon.createId("chiaspen"));
+		CHIASPEN_STAIRS.register(Archeon.createId("chiaspen_stairs"));
+		CHIASPEN_SLAB.register(Archeon.createId("chiaspen_slab"));
+		CHIASPEN_WALL.register(Archeon.createId("chiaspen_wall"));
+		CHIASPEN_BRICKS.register(Archeon.createId("chiaspen_bricks"));
+		CHIASPEN_BRICK_STAIRS.register(Archeon.createId("chiaspen_brick_stairs"));
+		CHIASPEN_BRICK_SLAB.register(Archeon.createId("chiaspen_brick_slab"));
+		CHIASPEN_BRICK_WALL.register(Archeon.createId("chiaspen_brick_wall"));
+		COBBLED_CHIASPEN.register(Archeon.createId("cobbled_chiaspen"));
+		COBBLED_CHIASPEN_STAIRS.register(Archeon.createId("cobbled_chiaspen_stairs"));
+		COBBLED_CHIASPEN_SLAB.register(Archeon.createId("cobbled_chiaspen_slab"));
+		COBBLED_CHIASPEN_WALL.register(Archeon.createId("cobbled_chiaspen_wall"));
+		GILDED_COBBLED_CHIASPEN.register(Archeon.createId("gilded_cobbled_chiaspen"));
+		GILDED_COBBLED_CHIASPEN_STAIRS.register(Archeon.createId("gilded_cobbled_chiaspen_stairs"));
+		GILDED_COBBLED_CHIASPEN_SLAB.register(Archeon.createId("gilded_cobbled_chiaspen_slab"));
+		GILDED_COBBLED_CHIASPEN_WALL.register(Archeon.createId("gilded_cobbled_chiaspen_wall"));
+		CHIASPEN_PILLAR_TOP.register(Archeon.createId("chiaspen_pillar_top"));
+		CHIASPEN_PILLAR.register(Archeon.createId("chiaspen_pillar"));
+		CHIASPEN_PILLAR_BOTTOM.register(Archeon.createId("chiaspen_pillar_bottom"));
+		CHIASPEN_COLUMN.register(Archeon.createId("chiaspen_column"));
+		SMOOTH_CHIASPEN.register(Archeon.createId("smooth_chiaspen"));
+		SMOOTH_CHIASPEN_STAIRS.register(Archeon.createId("smooth_chiaspen_stairs"));
+		SMOOTH_CHIASPEN_SLAB.register(Archeon.createId("smooth_chiaspen_slab"));
+		CHISELED_CHIASPEN.register(Archeon.createId("chiseled_chiaspen"));
+		CRACKED_CHIASPEN_BRICKS.register(Archeon.createId("cracked_chiaspen_bricks"));
+		CHIASPEN_PRESSURE_PLATE.register(Archeon.createId("chiaspen_pressure_plate"));
+		CHIASPEN_BUTTON.register(Archeon.createId("chiaspen_button"));
+		MOSSY_CHIASPEN_BRICKS.register(Archeon.createId("mossy_chiaspen_bricks"));
+		MOSSY_CHIASPEN_BRICK_STAIRS.register(Archeon.createId("mossy_chiaspen_brick_stairs"));
+		MOSSY_CHIASPEN_BRICK_SLAB.register(Archeon.createId("mossy_chiaspen_brick_slab"));
+		MOSSY_CHIASPEN_BRICK_WALL.register(Archeon.createId("mossy_chiaspen_brick_wall"));
+		MOSSY_COBBLED_CHIASPEN.register(Archeon.createId("mossy_cobbled_chiaspen"));
+		MOSSY_COBBLED_CHIASPEN_STAIRS.register(Archeon.createId("mossy_cobbled_chiaspen_stairs"));
+		MOSSY_COBBLED_CHIASPEN_SLAB.register(Archeon.createId("mossy_cobbled_chiaspen_slab"));
+		MOSSY_COBBLED_CHIASPEN_WALL.register(Archeon.createId("mossy_cobbled_chiaspen_wall"));
+		FALSE_CHIASPEN_BRICKS.register(Archeon.createId("false_chiaspen_bricks"));
+		FALSE_CRACKED_CHIASPEN_BRICKS.register(Archeon.createId("false_cracked_chiaspen_bricks"));
+		FALSE_MOSSY_CHIASPEN_BRICKS.register(Archeon.createId("false_mossy_chiaspen_bricks"));
 		PHOSNOR_SLATE.register(Archeon.createId("phosnor_slate"));
 		PHOSNOR_SLATE_STAIRS.register(Archeon.createId("phosnor_slate_stairs"));
 		PHOSNOR_SLATE_SLAB.register(Archeon.createId("phosnor_slate_slab"));
@@ -1435,7 +1435,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		CHISELED_ARTEMNITE.register(Archeon.createId("chiseled_artemnite"));
 		CRACKED_ARTEMNITE_BRICKS.register(Archeon.createId("cracked_artemnite_bricks"));
 		ARTEMNITE_BASEBOARD.register(Archeon.createId("artemnite_baseboard"));
-		SOUTHSTONE_LAMP.register(Archeon.createId("southstone_lamp"));
+		CHIASPEN_LAMP.register(Archeon.createId("chiaspen_lamp"));
 		AKETITE_LAMP.register(Archeon.createId("aketite_lamp"));
 		CLEMENTIUM_BARS.register(Archeon.createId("clementium_bars"));
 		CENTAUR_LIFE_VAULT.register(Archeon.createId("centaur_life_vault"));
@@ -1482,7 +1482,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		VUXANCIA_CRAFTING_TABLE.register(Archeon.createId("vuxancia_crafting_table"));
 		NUME_WILLOW_CRAFTING_TABLE.register(Archeon.createId("nume_willow_crafting_table"));
 		NYRETH_CRAFTING_TABLE.register(Archeon.createId("nyreth_crafting_table"));
-		SOUTHSTONE_FURNACE.register(Archeon.createId("southstone_furnace"));
+		CHIASPEN_FURNACE.register(Archeon.createId("chiaspen_furnace"));
 		PHOSNOR_SLATE_FURNACE.register(Archeon.createId("phosnor_slate_furnace"));
 		PALM_BOOKSHELF.register(Archeon.createId("palm_bookshelf"));
 		NECLANE_BOOKSHELF.register(Archeon.createId("neclane_bookshelf"));
@@ -1582,7 +1582,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		FANCY_SNAIL_SHELL_BRICK_SLAB.register(Archeon.createId("fancy_snail_shell_brick_slab"));
 		FANCY_SNAIL_SHELL_BRICK_WALL.register(Archeon.createId("fancy_snail_shell_brick_wall"));
 		PEAKS_GRASS_BLOCK.register(Archeon.createId("peaks_grass_block"));
-		SNOWY_SOUTHSTONE.register(Archeon.createId("snowy_southstone"));
+		SNOWY_CHIASPEN.register(Archeon.createId("snowy_chiaspen"));
 		PEAKS_SNOW.register(Archeon.createId("peaks_snow"));
 		PEAKS_SNOW_BLOCK.register(Archeon.createId("peaks_snow_block"));
 		DARK_GREEN_TILES.register(Archeon.createId("dark_green_tiles"));

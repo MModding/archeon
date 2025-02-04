@@ -1,0 +1,9 @@
+{
+  "parent": "archeon:custom/chiaspen_column",
+  "textures": {
+    "all": "archeon:block/chiaspen_column_top",
+    "particle": "archeon:block/chiaspen_column_top",
+    "2": "archeon:block/chiaspen_column_top",
+    "3": "archeon:block/chiaspen_column"
+  }
+}

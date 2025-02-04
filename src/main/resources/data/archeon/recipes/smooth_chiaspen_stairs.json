@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S  ",
+    "SS ",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "archeon:smooth_chiaspen"
+    }
+  },
+  "result": {
+    "item": "archeon:smooth_chiaspen_stairs",
+    "count": 4
+  }
+}

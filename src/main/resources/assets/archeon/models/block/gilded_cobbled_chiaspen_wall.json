@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_wall_side",
+  "textures": {
+    "wall": "archeon:block/gilded_cobbled_chiaspen",
+    "particle": "archeon:block/gilded_cobbled_chiaspen"
+  }
+}

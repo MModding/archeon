@@ -9,7 +9,7 @@
   },
   "display": {
     "announce_to_chat": true,
-    "background": "archeon:textures/block/southstone.png",
+    "background": "archeon:textures/block/chiaspen.png",
     "description": {
       "translate": "advancements.archeon.descr"
     },

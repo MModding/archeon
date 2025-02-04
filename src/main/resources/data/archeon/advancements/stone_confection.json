@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "archeon:southstone_column"
+              "archeon:chiaspen_column"
             ],
             "count": {
               "min": 64,
@@ -26,7 +26,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "archeon:southstone_column"
+      "item": "archeon:chiaspen_column"
     },
     "show_toast": true,
     "title": {

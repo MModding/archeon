@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:block/gilded_cobbled_chiaspen",
+    "particle": "archeon:block/gilded_cobbled_chiaspen"
+  }
+}

@@ -18,14 +18,14 @@ import java.util.List;
 public class ArcheonEvents implements ElementsInitializer {
 
 	private static void furnaceBlockEntityTypeCallback(List<Block> supportedBlocks) {
-		supportedBlocks.add(ArcheonBlocks.SOUTHSTONE_FURNACE);
+		supportedBlocks.add(ArcheonBlocks.CHIASPEN_FURNACE);
 		supportedBlocks.add(ArcheonBlocks.PHOSNOR_SLATE_FURNACE);
 	}
 
 	private static BlockState stoneGenerationCallback(WorldAccess access, BlockPos pos, BlockState blockState, Direction direction, FluidState fluidState) {
 		if (access instanceof World world) {
 			if (world.getRegistryKey() == Archeon.WORLD_KEY) {
-				return ArcheonBlocks.SOUTHSTONE.getDefaultState();
+				return ArcheonBlocks.CHIASPEN.getDefaultState();
 			}
 		}
 		return null;
@@ -33,7 +33,7 @@ public class ArcheonEvents implements ElementsInitializer {
 
 	private static Block cobblestoneGenerationCallback(World world, BlockPos pos, BlockState state, Direction direction, BlockPos offsetPos) {
 		if (world.getRegistryKey() == Archeon.WORLD_KEY) {
-			return ArcheonBlocks.COBBLED_SOUTHSTONE;
+			return ArcheonBlocks.COBBLED_CHIASPEN;
 		}
 		return null;
 	}

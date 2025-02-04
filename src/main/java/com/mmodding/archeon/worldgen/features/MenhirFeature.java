@@ -38,13 +38,13 @@ public class MenhirFeature extends AdvancedFeature<MenhirFeature.Config> {
 	@Override
 	public ConfiguredFeature<Config, AdvancedFeature<Config>> getDefaultConfigured() {
 		return new ConfiguredFeature<>(ArcheonFeatures.MENHIR, new Config(
-			BlockStateProvider.of(ArcheonBlocks.SOUTHSTONE),
-			BlockStateProvider.of(ArcheonBlocks.CHISELED_SOUTHSTONE),
-			BlockStateProvider.of(ArcheonBlocks.SOUTHSTONE_BRICKS),
-			BlockStateProvider.of(ArcheonBlocks.SOUTHSTONE_BRICK_STAIRS),
-			BlockStateProvider.of(ArcheonBlocks.SOUTHSTONE_BRICK_SLAB),
-			BlockStateProvider.of(ArcheonBlocks.SOUTHSTONE_BRICK_WALL),
-			BlockStateProvider.of(ArcheonBlocks.CRACKED_SOUTHSTONE_BRICKS)
+			BlockStateProvider.of(ArcheonBlocks.CHIASPEN),
+			BlockStateProvider.of(ArcheonBlocks.CHISELED_CHIASPEN),
+			BlockStateProvider.of(ArcheonBlocks.CHIASPEN_BRICKS),
+			BlockStateProvider.of(ArcheonBlocks.CHIASPEN_BRICK_STAIRS),
+			BlockStateProvider.of(ArcheonBlocks.CHIASPEN_BRICK_SLAB),
+			BlockStateProvider.of(ArcheonBlocks.CHIASPEN_BRICK_WALL),
+			BlockStateProvider.of(ArcheonBlocks.CRACKED_CHIASPEN_BRICKS)
 		));
 	}
 

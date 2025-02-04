@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "archeon:smooth_chiaspen"
+    }
+  },
+  "result": {
+    "item": "archeon:chiseled_chiaspen",
+    "count": 4
+  }
+}

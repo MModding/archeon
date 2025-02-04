@@ -85,7 +85,7 @@ public class ArcheonItemGroups implements ElementsInitializer {
 		.build();
 
 	public static final ItemGroup COMBAT_AND_TOOLS = QuiltItemGroup.builder(Archeon.createId("combat_and_tools"))
-		.icon(ArcheonItems.SOUTHSTONE_SWORD::getDefaultStack)
+		.icon(ArcheonItems.CHIASPEN_SWORD::getDefaultStack)
 		.appendItems(itemStacks -> Registry.ITEM.stream().filter(item -> Registry.ITEM.getId(item).getNamespace()
 				.equals("archeon") && !(item instanceof BlockItem) && IS_EQUIPMENT.test(item) && IS_IN_CREATIVE_TAB.test(item))
 			.forEach(item -> itemStacks.add(item.getDefaultStack())))

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "archeon:block/chiaspen_furnace_top",
+    "front": "archeon:block/chiaspen_furnace_front",
+    "side": "archeon:block/chiaspen_furnace_side"
+  }
+}

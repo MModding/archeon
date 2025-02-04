@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "archeon:chiaspen_bricks"
+    }
+  },
+  "result": {
+    "item": "archeon:chiaspen_brick_slab",
+    "count": 6
+  }
+}

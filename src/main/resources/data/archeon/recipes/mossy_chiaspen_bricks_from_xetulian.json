@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "archeon:chiaspen_bricks"
+    },
+    {
+      "item": "archeon:xetulian_sugar_cane"
+    }
+  ],
+  "result": {
+    "item": "archeon:mossy_chiaspen_bricks",
+    "count": 1
+  }
+}

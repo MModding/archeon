@@ -71,7 +71,7 @@
         {
           "type": "minecraft:item",
           "weight": 1,
-          "name": "archeon:southstone_bricks",
+          "name": "archeon:chiaspen_bricks",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -113,7 +113,7 @@
         {
           "type": "minecraft:item",
           "weight": 1,
-          "name": "archeon:southstone_pickaxe",
+          "name": "archeon:chiaspen_pickaxe",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -357,7 +357,7 @@
         {
           "type": "minecraft:item",
           "weight": 1,
-          "name": "archeon:southstone_sword",
+          "name": "archeon:chiaspen_sword",
           "functions": [
             {
               "function": "minecraft:set_count",

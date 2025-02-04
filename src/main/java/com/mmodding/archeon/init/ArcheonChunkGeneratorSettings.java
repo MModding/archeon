@@ -25,7 +25,7 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 	public static ChunkGeneratorSettings createArcheonSettings() {
 		return new ChunkGeneratorSettings(
 			ArcheonChunkGeneratorSettings.ARCHEON_GENERATION_SHAPE,
-			ArcheonBlocks.SOUTHSTONE.getDefaultState(),
+			ArcheonBlocks.CHIASPEN.getDefaultState(),
 			Blocks.WATER.getDefaultState(),
 			CustomNoiseRouters.getSmallBiomes(BuiltinRegistries.DENSITY_FUNCTION),
 			ArcheonChunkGeneratorSettings.getArcheonRules(),
@@ -48,7 +48,7 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 							SurfaceRuleUtils.getConditionalBlock(SurfaceRuleUtils.water(), ArcheonBlocks.PEAKS_GRASS_BLOCK, ArcheonBlocks.WET_DIRT)
 						),
 						SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.SOUTH_SNOWY_PEAKS),
-							SurfaceRuleUtils.getBlock(ArcheonBlocks.SNOWY_SOUTHSTONE)
+							SurfaceRuleUtils.getBlock(ArcheonBlocks.SNOWY_CHIASPEN)
 						),
 						SurfaceRules.condition(SurfaceRules.not(SurfaceRules.biome(
 							ArcheonBiomes.DUNE_OCEAN

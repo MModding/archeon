@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "C"
+  ],
+  "key": {
+    "C": {
+      "item": "archeon:chiseled_chiaspen"
+    }
+  },
+  "result": {
+    "item": "archeon:chiaspen_column",
+    "count": 2
+  }
+}

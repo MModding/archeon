@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_mirrored_all",
-  "textures": {
-    "all": "archeon:block/southstone",
-    "particle": "archeon:block/southstone"
-  }
-}

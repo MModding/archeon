@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": {
+      "item": "archeon:chiaspen_slab"
+    }
+  },
+  "result": {
+    "item": "archeon:smooth_chiaspen",
+    "count": 1
+  }
+}

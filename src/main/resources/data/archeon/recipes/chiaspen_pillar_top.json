@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CC",
+    "SS"
+  ],
+  "key": {
+    "C": {
+      "item": "archeon:chiseled_chiaspen"
+    },
+    "S": {
+      "item": "archeon:chiaspen_column"
+    }
+  },
+  "result": {
+    "item": "archeon:chiaspen_pillar_top",
+    "count": 4
+  }
+}

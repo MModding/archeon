@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "archeon:block/smooth_southstone",
-    "top": "archeon:block/smooth_southstone",
-    "side": "archeon:block/smooth_southstone"
-  }
-}

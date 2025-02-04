@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "archeon:chiaspen"
+  },
+  "result": "archeon:chiaspen_stairs"
+}

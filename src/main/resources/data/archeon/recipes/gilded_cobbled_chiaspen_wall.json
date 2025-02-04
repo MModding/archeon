@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "archeon:gilded_cobbled_chiaspen"
+    }
+  },
+  "result": {
+    "item": "archeon:gilded_cobbled_chiaspen_wall",
+    "count": 6
+  }
+}

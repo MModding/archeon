@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "archeon:block/cobbled_chiaspen",
+    "top": "archeon:block/cobbled_chiaspen",
+    "side": "archeon:block/cobbled_chiaspen"
+  }
+}

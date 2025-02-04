@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:block/smooth_chiaspen",
+    "particle": "archeon:block/smooth_chiaspen"
+  }
+}

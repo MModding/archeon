@@ -88,11 +88,11 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomShovelItem VUXANCIA_SHOVEL = new CustomShovelItem(ToolMaterials.WOOD, 1.5f, -3.0f, new AdvancedItemSettings());
 	public static final CustomHoeItem VUXANCIA_HOE = new CustomHoeItem(ToolMaterials.WOOD, 0, -3.0f, new AdvancedItemSettings());
 
-	public static final CustomSwordItem SOUTHSTONE_SWORD = new CustomSwordItem(ToolMaterials.STONE, 3, -2.4f, new AdvancedItemSettings());
-	public static final CustomPickaxeItem SOUTHSTONE_PICKAXE = new CustomPickaxeItem(ToolMaterials.STONE, 1, -2.8f, new AdvancedItemSettings());
-	public static final CustomAxeItem SOUTHSTONE_AXE = new CustomAxeItem(ToolMaterials.STONE, 7.0f, -3.2f, new AdvancedItemSettings());
-	public static final CustomShovelItem SOUTHSTONE_SHOVEL = new CustomShovelItem(ToolMaterials.STONE, 1.5f, -3.0f, new AdvancedItemSettings());
-	public static final CustomHoeItem SOUTHSTONE_HOE = new CustomHoeItem(ToolMaterials.STONE, -1, -2.0f, new AdvancedItemSettings());
+	public static final CustomSwordItem CHIASPEN_SWORD = new CustomSwordItem(ToolMaterials.STONE, 3, -2.4f, new AdvancedItemSettings());
+	public static final CustomPickaxeItem CHIASPEN_PICKAXE = new CustomPickaxeItem(ToolMaterials.STONE, 1, -2.8f, new AdvancedItemSettings());
+	public static final CustomAxeItem CHIASPEN_AXE = new CustomAxeItem(ToolMaterials.STONE, 7.0f, -3.2f, new AdvancedItemSettings());
+	public static final CustomShovelItem CHIASPEN_SHOVEL = new CustomShovelItem(ToolMaterials.STONE, 1.5f, -3.0f, new AdvancedItemSettings());
+	public static final CustomHoeItem CHIASPEN_HOE = new CustomHoeItem(ToolMaterials.STONE, -1, -2.0f, new AdvancedItemSettings());
 
 	public static final CustomSwordItem APAFLORITE_SABER = new CustomSwordItem(ApafloriteTool.INSTANCE, 5, -0.8f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
 	public static final CustomPickaxeItem APAFLORITE_PICKAXE = new CustomPickaxeItem(ApafloriteTool.INSTANCE, 1, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
@@ -390,11 +390,11 @@ public class ArcheonItems implements ElementsInitializer {
 		VUXANCIA_AXE.register(Archeon.createId("vuxancia_axe"));
 		VUXANCIA_SHOVEL.register(Archeon.createId("vuxancia_shovel"));
 		VUXANCIA_HOE.register(Archeon.createId("vuxancia_hoe"));
-		SOUTHSTONE_SWORD.register(Archeon.createId("southstone_sword"));
-		SOUTHSTONE_PICKAXE.register(Archeon.createId("southstone_pickaxe"));
-		SOUTHSTONE_AXE.register(Archeon.createId("southstone_axe"));
-		SOUTHSTONE_SHOVEL.register(Archeon.createId("southstone_shovel"));
-		SOUTHSTONE_HOE.register(Archeon.createId("southstone_hoe"));
+		CHIASPEN_SWORD.register(Archeon.createId("chiaspen_sword"));
+		CHIASPEN_PICKAXE.register(Archeon.createId("chiaspen_pickaxe"));
+		CHIASPEN_AXE.register(Archeon.createId("chiaspen_axe"));
+		CHIASPEN_SHOVEL.register(Archeon.createId("chiaspen_shovel"));
+		CHIASPEN_HOE.register(Archeon.createId("chiaspen_hoe"));
 		APAFLORITE_SABER.register(Archeon.createId("apaflorite_saber"));
 		APAFLORITE_PICKAXE.register(Archeon.createId("apaflorite_pickaxe"));
 		APAFLORITE_AXE.register(Archeon.createId("apaflorite_axe"));

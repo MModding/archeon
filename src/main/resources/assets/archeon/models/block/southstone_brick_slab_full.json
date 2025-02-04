@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_bottom_top",
-  "textures": {
-    "bottom": "archeon:block/southstone_bricks",
-    "top": "archeon:block/southstone_bricks",
-    "side": "archeon:block/southstone_bricks"
-  }
-}

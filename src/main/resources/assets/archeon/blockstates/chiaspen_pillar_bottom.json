@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "archeon:block/chiaspen_pillar_bottom",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "archeon:block/chiaspen_pillar_bottom"
+    },
+    "axis=z": {
+      "model": "archeon:block/chiaspen_pillar_bottom",
+      "x": 90
+    }
+  }
+}
