@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "archeon:block/gypsum_tiles",
-    "top": "archeon:block/gypsum_tiles",
-    "side": "archeon:block/gypsum_tiles"
-  }
-}

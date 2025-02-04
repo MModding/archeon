@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "archeon:block/criadan_pillar_top",
+    "up": "archeon:block/criadan_pillar_top",
+    "north": "archeon:block/criadan_pillar",
+    "east": "archeon:block/criadan_pillar",
+    "south": "archeon:block/criadan_pillar",
+    "west": "archeon:block/criadan_pillar",
+    "particle": "archeon:block/criadan_pillar_top"
+  }
+}

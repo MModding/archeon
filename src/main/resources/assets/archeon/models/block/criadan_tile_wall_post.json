@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_wall_post",
+  "textures": {
+    "wall": "archeon:block/criadan_tiles",
+    "particle": "archeon:block/criadan_tiles"
+  }
+}

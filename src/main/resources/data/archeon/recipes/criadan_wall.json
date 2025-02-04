@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "archeon:criadan"
+    }
+  },
+  "result": {
+    "item": "archeon:criadan_wall",
+    "count": 6
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pointed_dripstone",
+  "key": {
+    "#": {
+      "item": "archeon:pointed_criadan"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "item": "archeon:criadan"
+  }
+}

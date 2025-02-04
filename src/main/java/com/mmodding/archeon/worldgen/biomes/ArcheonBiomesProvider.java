@@ -208,7 +208,7 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 			MultiNoiseUtil.ParameterRange.of(0.3f, 0.7f),
 			this.fullRange(),
 			0.0f
-		), ArcheonBiomes.GYPSUM_VALLEYS));
+		), ArcheonBiomes.CRIADAN_VALLEYS));
 		parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(
 			this.fullRange(),
 			MultiNoiseUtil.ParameterRange.of(-1.0f, 0.0f),

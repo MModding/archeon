@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BB",
+    "BB"
+  ],
+  "key": {
+    "B": {
+      "item": "archeon:criadan_bricks"
+    }
+  },
+  "result": {
+    "item": "archeon:criadan_tiles",
+    "count": 4
+  }
+}

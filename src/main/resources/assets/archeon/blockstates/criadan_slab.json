@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/criadan_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/criadan_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/criadan_slab_full"
+    }
+  }
+}

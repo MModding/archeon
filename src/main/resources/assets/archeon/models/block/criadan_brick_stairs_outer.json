@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "archeon:block/criadan_bricks",
+    "top": "archeon:block/criadan_bricks",
+    "side": "archeon:block/criadan_bricks"
+  }
+}

@@ -288,9 +288,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 		BiomePlacementModifier.getInstance()
 	);
 
-	public static final CustomDripstoneClusterFeature GYPSUM_CLUSTER = new CustomDripstoneClusterFeature(
-		ArcheonBlocks.POINTED_GYPSUM,
-		ArcheonBlocks.GYPSUM,
+	public static final CustomDripstoneClusterFeature CRIADAN_CLUSTER = new CustomDripstoneClusterFeature(
+		ArcheonBlocks.POINTED_CRIADAN,
+		ArcheonBlocks.CRIADAN,
 		UniformIntProvider.create(48, 96),
 		12,
 		UniformIntProvider.create(3, 6),
@@ -305,8 +305,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 		8
 	);
 
-	public static final CustomLargeDripstoneFeature LARGE_GYPSUM = new CustomLargeDripstoneFeature(
-		ArcheonBlocks.GYPSUM,
+	public static final CustomLargeDripstoneFeature LARGE_CRIADAN = new CustomLargeDripstoneFeature(
+		ArcheonBlocks.CRIADAN,
 		UniformIntProvider.create(10, 48),
 		30,
 		UniformIntProvider.create(3, 19),
@@ -319,9 +319,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 		0.6f
 	);
 
-	public static final CustomPointedDripstoneFeature POINTED_GYPSUM = new CustomPointedDripstoneFeature(
-		ArcheonBlocks.POINTED_GYPSUM,
-		ArcheonBlocks.GYPSUM,
+	public static final CustomPointedDripstoneFeature POINTED_CRIADAN = new CustomPointedDripstoneFeature(
+		ArcheonBlocks.POINTED_CRIADAN,
+		ArcheonBlocks.CRIADAN,
 		UniformIntProvider.create(192, 256),
 		UniformIntProvider.create(1, 5),
 		ClampedNormalIntProvider.create(0.0f, 3.0f, -10, 10),
@@ -541,9 +541,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 		GLOWSHROOMS_POOL.register(Archeon.createId("glowshrooms_pool"));
 		GLOWSHROOMS_PATCH.register(Archeon.createId("glowshrooms_patch"));
 		GLOWSHROOMS.register(Archeon.createId("glowshrooms"));
-		GYPSUM_CLUSTER.register(Archeon.createId("gypsum_cluster"));
-		LARGE_GYPSUM.register(Archeon.createId("large_gypsum"));
-		POINTED_GYPSUM.register(Archeon.createId("pointed_gypsum"));
+		CRIADAN_CLUSTER.register(Archeon.createId("criadan_cluster"));
+		LARGE_CRIADAN.register(Archeon.createId("large_criadan"));
+		POINTED_CRIADAN.register(Archeon.createId("pointed_criadan"));
 		ANHYDRITE_CLUSTER.register(Archeon.createId("anhydrite_cluster"));
 		LARGE_ANHYDRITE.register(Archeon.createId("large_anhydrite"));
 		POINTED_ANHYDRITE.register(Archeon.createId("pointed_anhydrite"));
@@ -561,7 +561,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 		Predicate<BiomeSelectionContext> inArcheonPredicate = ctx -> ctx.canGenerateIn(RegistryKey.of(Registry.DIMENSION_KEY, Archeon.createId("archeon")));
 
-		Predicate<BiomeSelectionContext> gypsumPredicate = ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.GYPSUM_VALLEYS);
+		Predicate<BiomeSelectionContext> criadanPredicate = ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.CRIADAN_VALLEYS);
 
 		Predicate<BiomeSelectionContext> anhydritePredicate = ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ANHYDRITE_VALLEYS);
 
@@ -631,9 +631,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 		GLOWSHROOMS.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ABYSS_CAVES));
 
-		GYPSUM_CLUSTER.addDefaultToBiomes(gypsumPredicate);
-		LARGE_GYPSUM.addDefaultToBiomes(gypsumPredicate);
-		POINTED_GYPSUM.addDefaultToBiomes(gypsumPredicate);
+		CRIADAN_CLUSTER.addDefaultToBiomes(criadanPredicate);
+		LARGE_CRIADAN.addDefaultToBiomes(criadanPredicate);
+		POINTED_CRIADAN.addDefaultToBiomes(criadanPredicate);
 
 		ANHYDRITE_CLUSTER.addDefaultToBiomes(anhydritePredicate);
 		LARGE_ANHYDRITE.addDefaultToBiomes(anhydritePredicate);

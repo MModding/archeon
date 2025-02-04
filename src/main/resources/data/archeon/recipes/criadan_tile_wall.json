@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TTT",
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "archeon:criadan_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:criadan_tile_wall",
+    "count": 6
+  }
+}

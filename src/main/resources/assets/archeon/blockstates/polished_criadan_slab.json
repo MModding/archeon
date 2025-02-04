@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/polished_criadan_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/polished_criadan_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/polished_criadan_slab_full"
+    }
+  }
+}

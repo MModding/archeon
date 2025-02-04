@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "archeon:block/criadan_tiles",
+    "top": "archeon:block/criadan_tiles",
+    "side": "archeon:block/criadan_tiles"
+  }
+}

@@ -114,7 +114,7 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.VALE_VUXANCIA_SAPLING.cutout();
 		ArcheonBlocks.ZIAL_VUXANCIA_SAPLING.cutout();
 
-		ArcheonBlocks.POINTED_GYPSUM.cutout();
+		ArcheonBlocks.POINTED_CRIADAN.cutout();
 		ArcheonBlocks.POINTED_ANHYDRITE.cutout();
 
 		ArcheonBlocks.DUNE_SAND_GLASS.cutout();

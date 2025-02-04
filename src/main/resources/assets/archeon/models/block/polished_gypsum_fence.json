@@ -1,7 +1,0 @@
-{
-  "parent": "block/fence_side",
-  "textures": {
-    "texture": "archeon:block/polished_gypsum",
-    "particle": "archeon:block/polished_gypsum"
-  }
-}

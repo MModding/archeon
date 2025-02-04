@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "texture": "archeon:block/criadan_bricks",
+    "particle": "archeon:block/criadan_bricks"
+  }
+}

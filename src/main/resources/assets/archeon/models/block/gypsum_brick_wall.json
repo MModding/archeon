@@ -1,7 +1,0 @@
-{
-  "parent": "block/template_wall_side",
-  "textures": {
-    "wall": "archeon:block/gypsum_bricks",
-    "particle": "archeon:block/gypsum_bricks"
-  }
-}

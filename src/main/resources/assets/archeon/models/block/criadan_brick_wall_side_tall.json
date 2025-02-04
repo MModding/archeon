@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_wall_side_tall",
+  "textures": {
+    "wall": "archeon:block/criadan_bricks",
+    "particle": "archeon:block/criadan_bricks"
+  }
+}

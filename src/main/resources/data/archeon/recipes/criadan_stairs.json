@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "G  ",
+    "GG ",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "archeon:criadan"
+    }
+  },
+  "result": {
+    "item": "archeon:criadan_stairs",
+    "count": 4
+  }
+}

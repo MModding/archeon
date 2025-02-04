@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "T  ",
+    "TT ",
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "archeon:criadan_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:criadan_tile_stairs",
+    "count": 4
+  }
+}

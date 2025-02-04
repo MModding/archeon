@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "archeon:block/criadan_bricks",
+    "particle": "archeon:block/criadan_bricks"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B  ",
+    "BB ",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "archeon:criadan_bricks"
+    }
+  },
+  "result": {
+    "item": "archeon:criadan_brick_stairs",
+    "count": 4
+  }
+}

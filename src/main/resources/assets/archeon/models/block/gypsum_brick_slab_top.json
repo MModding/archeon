@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab_top",
-  "textures": {
-    "bottom": "archeon:block/gypsum_bricks",
-    "top": "archeon:block/gypsum_bricks",
-    "side": "archeon:block/gypsum_bricks"
-  }
-}

@@ -6,8 +6,8 @@
     "archeon:cypress_fence",
     "archeon:vuxancia_fence",
     "archeon:ceramic_fence",
-    "archeon:gypsum_brick_fence",
-    "archeon:gypsum_tile_fence",
-    "archeon:polished_gypsum_fence"
+    "archeon:criadan_brick_fence",
+    "archeon:criadan_tile_fence",
+    "archeon:polished_criadan_fence"
   ]
 }
