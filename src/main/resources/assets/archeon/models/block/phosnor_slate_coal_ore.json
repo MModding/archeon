@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "archeon:block/phosnor_slate_coal_ore",
-    "particle": "archeon:block/phosnor_slate_coal_ore"
-  }
-}

@@ -224,10 +224,6 @@ public class ArcheonFeatures implements ElementsInitializer {
 		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.LUSONYTH_ORE.getDefaultState()),
 		OreFeatureConfig.createTarget(PHOSNOR_SLATE_ORES_REPLACEABLES, ArcheonBlocks.PHOSNOR_SLATE_LUSONYTH_ORE.getDefaultState())
 	);
-	public static final List<OreFeatureConfig.Target> ARCHEON_COAL_ORE_TARGETS = List.of(
-		OreFeatureConfig.createTarget(SOUTHSTONE_ORES_REPLACEABLES, ArcheonBlocks.SOUTHSTONE_COAL_ORE.getDefaultState()),
-		OreFeatureConfig.createTarget(PHOSNOR_SLATE_ORES_REPLACEABLES, ArcheonBlocks.PHOSNOR_SLATE_COAL_ORE.getDefaultState())
-	);
 
 	public static final CustomOreFeature APAFLORITE_ORE_FEATURE = new CustomOreFeature(6, 5, -60, 45, APAFLORITE_ORE_TARGETS);
 	public static final CustomOreFeature EXYRIANE_ORE_FEATURE = new CustomOreFeature(30, 7, -60, 160, EXYRIANE_ORE_TARGETS);
@@ -542,7 +538,6 @@ public class ArcheonFeatures implements ElementsInitializer {
 		EXYRIANE_ORE_FEATURE.register(Archeon.createId("exyriane_ore_feature"));
 		FAELITE_ORE_FEATURE.register(Archeon.createId("faelite_ore_feature"));
 		LUSONYTH_ORE_FEATURE.register(Archeon.createId("lusonyth_ore_feature"));
-		// COAL_ORE_FEATURE.register(Archeon.createId("coal_ore_feature"));
 		GLOWSHROOMS_POOL.register(Archeon.createId("glowshrooms_pool"));
 		GLOWSHROOMS_PATCH.register(Archeon.createId("glowshrooms_patch"));
 		GLOWSHROOMS.register(Archeon.createId("glowshrooms"));
@@ -633,7 +628,6 @@ public class ArcheonFeatures implements ElementsInitializer {
 		EXYRIANE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 		FAELITE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 		LUSONYTH_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
-		// COAL_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 
 		GLOWSHROOMS.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ABYSS_CAVES));
 

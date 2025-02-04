@@ -522,7 +522,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock FAELITE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock LUSONYTH_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomBlock SOUTHSTONE_COAL_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock SLIGHTLY_CONDENSED_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock SLIGHTLY_CONDENSED_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
@@ -534,7 +533,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock PHOSNOR_SLATE_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomBlock PHOSNOR_SLATE_FAELITE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomBlock PHOSNOR_SLATE_LUSONYTH_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
-	public static final CustomBlock PHOSNOR_SLATE_COAL_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 
 	public static final CustomBlock SLIGHTLY_CONDENSED_PHOSNOR_SLATE_APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomBlock SLIGHTLY_CONDENSED_PHOSNOR_SLATE_EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
@@ -1368,7 +1366,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		EXYRIANE_ORE.register(Archeon.createId("exyriane_ore"));
 		FAELITE_ORE.register(Archeon.createId("faelite_ore"));
 		LUSONYTH_ORE.register(Archeon.createId("lusonyth_ore"));
-		SOUTHSTONE_COAL_ORE.register(Archeon.createId("southstone_coal_ore"));
 		SLIGHTLY_CONDENSED_APAFLORITE_ORE.register(Archeon.createId("slightly_condensed_apaflorite_ore"));
 		SLIGHTLY_CONDENSED_EXYRIANE_ORE.register(Archeon.createId("slightly_condensed_exyriane_ore"));
 		CONDENSED_APAFLORITE_ORE.register(Archeon.createId("condensed_apaflorite_ore"));
@@ -1377,7 +1374,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		PHOSNOR_SLATE_EXYRIANE_ORE.register(Archeon.createId("phosnor_slate_exyriane_ore"));
 		PHOSNOR_SLATE_FAELITE_ORE.register(Archeon.createId("phosnor_slate_faelite_ore"));
 		PHOSNOR_SLATE_LUSONYTH_ORE.register(Archeon.createId("phosnor_slate_lusonyth_ore"));
-		PHOSNOR_SLATE_COAL_ORE.register(Archeon.createId("phosnor_slate_coal_ore"));
 		SLIGHTLY_CONDENSED_PHOSNOR_SLATE_APAFLORITE_ORE.register(Archeon.createId("slightly_condensed_phosnor_slate_apaflorite_ore"));
 		SLIGHTLY_CONDENSED_PHOSNOR_SLATE_EXYRIANE_ORE.register(Archeon.createId("slightly_condensed_phosnor_slate_exyriane_ore"));
 		CONDENSED_PHOSNOR_SLATE_APAFLORITE_ORE.register(Archeon.createId("condensed_phosnor_slate_apaflorite_ore"));

@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:blasting",
-  "experience": 1,
-  "cookingtime": 100,
-  "ingredient": {
-    "item": "archeon:southstone_coal_ore"
-  },
-  "result": "minecraft:coal"
-}

@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "archeon:southstone_coal_ore",
     "archeon:apaflorite_ore",
     "archeon:exyriane_ore",
     "archeon:faelite_ore",
@@ -10,7 +9,6 @@
     "archeon:slightly_condensed_exyriane_ore",
     "archeon:condensed_apaflorite_ore",
     "archeon:condensed_exyriane_ore",
-    "archeon:phosnor_slate_coal_ore",
     "archeon:phosnor_slate_apaflorite_ore",
     "archeon:phosnor_slate_exyriane_ore",
     "archeon:phosnor_slate_faelite_ore",
