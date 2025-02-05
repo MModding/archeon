@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "archeon:block/pnevantial_vuxancia_sapling"
+    "cross": "archeon:block/pnevential_vuxancia_sapling"
   }
 }

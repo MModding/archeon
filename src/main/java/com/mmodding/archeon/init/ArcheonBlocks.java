@@ -649,7 +649,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomLeavesBlock FLOWERED_NECLANE_LEAVES = new NeclaneLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 	public static final CustomLeavesBlock CYPRESS_LEAVES = new CypressLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
-	public static final CustomLeavesBlock PNEVANTIAL_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final CustomLeavesBlock PNEVENTIAL_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 	public static final CustomLeavesBlock STREIAN_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 	public static final CustomLeavesBlock ORIAN_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 	public static final CustomLeavesBlock VALE_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
@@ -659,7 +659,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomLeavesBlock NYRETH_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 	public static final CustomLeavesBlock PALE_NYRETH_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
-	public static final CustomGrowsDownPlantBlock HANGING_PNEVANTIAL_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.PLANT_SETTINGS,
+	public static final CustomGrowsDownPlantBlock HANGING_PNEVENTIAL_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.PLANT_SETTINGS,
 		false, 0.1f, 1, BlockState::isAir, true);
 	public static final CustomGrowsDownPlantBlock HANGING_STREIAN_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.PLANT_SETTINGS,
 		false, 0.1f, 1, BlockState::isAir, true);
@@ -671,7 +671,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		false, 0.1f, 1, BlockState::isAir, true);
 
 	public static final LeavesCarpetBlock ORIAN_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.LEAVES_CARPET, true);
-	public static final LeavesCarpetBlock PNEVANTIAL_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.LEAVES_CARPET, true);
+	public static final LeavesCarpetBlock PNEVENTIAL_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.LEAVES_CARPET, true);
 	public static final LeavesCarpetBlock STREIAN_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.LEAVES_CARPET, true);
 	public static final LeavesCarpetBlock VALE_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.LEAVES_CARPET, true);
 	public static final LeavesCarpetBlock ZIAL_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.LEAVES_CARPET, true);
@@ -711,8 +711,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomSaplingBlock PNEVANTIAL_VUXANCIA_SAPLING = new CustomSaplingBlock(
-		SaplingGeneratorUtils.of(() -> ArcheonFeatures.PNEVANTIAL_VUXANCIA_TREE),
+	public static final CustomSaplingBlock PNEVENTIAL_VUXANCIA_SAPLING = new CustomSaplingBlock(
+		SaplingGeneratorUtils.of(() -> ArcheonFeatures.PNEVENTIAL_VUXANCIA_TREE),
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.SAPLING_SETTINGS,
 		true
@@ -1458,7 +1458,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		NECLANE_LEAVES.register(Archeon.createId("neclane_leaves"));
 		FLOWERED_NECLANE_LEAVES.register(Archeon.createId("flowered_neclane_leaves"));
 		CYPRESS_LEAVES.register(Archeon.createId("cypress_leaves"));
-		PNEVANTIAL_VUXANCIA_LEAVES.register(Archeon.createId("pnevantial_vuxancia_leaves"));
+		PNEVENTIAL_VUXANCIA_LEAVES.register(Archeon.createId("pnevential_vuxancia_leaves"));
 		STREIAN_VUXANCIA_LEAVES.register(Archeon.createId("streian_vuxancia_leaves"));
 		ORIAN_VUXANCIA_LEAVES.register(Archeon.createId("orian_vuxancia_leaves"));
 		VALE_VUXANCIA_LEAVES.register(Archeon.createId("vale_vuxancia_leaves"));
@@ -1466,12 +1466,12 @@ public class ArcheonBlocks implements ElementsInitializer {
 		NUME_WILLOW_LEAVES.register(Archeon.createId("nume_willow_leaves"));
 		NYRETH_LEAVES.register(Archeon.createId("nyreth_leaves"));
 		PALE_NYRETH_LEAVES.register(Archeon.createId("pale_nyreth_leaves"));
-		HANGING_PNEVANTIAL_VUXANCIA_LEAVES.register(Archeon.createId("hanging_pnevantial_vuxancia_leaves"));
+		HANGING_PNEVENTIAL_VUXANCIA_LEAVES.register(Archeon.createId("hanging_pnevential_vuxancia_leaves"));
 		HANGING_STREIAN_VUXANCIA_LEAVES.register(Archeon.createId("hanging_streian_vuxancia_leaves"));
 		HANGING_ORIAN_VUXANCIA_LEAVES.register(Archeon.createId("hanging_orian_vuxancia_leaves"));
 		HANGING_VALE_VUXANCIA_LEAVES.register(Archeon.createId("hanging_vale_vuxancia_leaves"));
 		HANGING_ZIAL_VUXANCIA_LEAVES.register(Archeon.createId("hanging_zial_vuxancia_leaves"));
-		PNEVANTIAL_VUXANCIA_LEAVES_CARPET.register(Archeon.createId("pnevantial_vuxancia_leaves_carpet"));
+		PNEVENTIAL_VUXANCIA_LEAVES_CARPET.register(Archeon.createId("pnevential_vuxancia_leaves_carpet"));
 		STREIAN_VUXANCIA_LEAVES_CARPET.register(Archeon.createId("streian_vuxancia_leaves_carpet"));
 		ORIAN_VUXANCIA_LEAVES_CARPET.register(Archeon.createId("orian_vuxancia_leaves_carpet"));
 		VALE_VUXANCIA_LEAVES_CARPET.register(Archeon.createId("vale_vuxancia_leaves_carpet"));
@@ -1493,7 +1493,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		PALM_SAPLING.register(Archeon.createId("palm_sapling"));
 		NECLANE_SAPLING.register(Archeon.createId("neclane_sapling"));
 		CYPRESS_SAPLING.register(Archeon.createId("cypress_sapling"));
-		PNEVANTIAL_VUXANCIA_SAPLING.register(Archeon.createId("pnevantial_vuxancia_sapling"));
+		PNEVENTIAL_VUXANCIA_SAPLING.register(Archeon.createId("pnevential_vuxancia_sapling"));
 		STREIAN_VUXANCIA_SAPLING.register(Archeon.createId("streian_vuxancia_sapling"));
 		ORIAN_VUXANCIA_SAPLING.register(Archeon.createId("orian_vuxancia_sapling"));
 		VALE_VUXANCIA_SAPLING.register(Archeon.createId("vale_vuxancia_sapling"));

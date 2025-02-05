@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "archeon:block/pnevantial_vuxancia_sapling"
+    "layer0": "archeon:block/pnevential_vuxancia_sapling"
   }
 }

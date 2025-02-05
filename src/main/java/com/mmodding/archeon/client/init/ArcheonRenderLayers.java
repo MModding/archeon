@@ -84,7 +84,7 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.NECLANE_LEAVES.cutout();
 		ArcheonBlocks.FLOWERED_NECLANE_LEAVES.cutout();
 		ArcheonBlocks.CYPRESS_LEAVES.cutout();
-		ArcheonBlocks.PNEVANTIAL_VUXANCIA_LEAVES.cutout();
+		ArcheonBlocks.PNEVENTIAL_VUXANCIA_LEAVES.cutout();
 		ArcheonBlocks.STREIAN_VUXANCIA_LEAVES.cutout();
 		ArcheonBlocks.ORIAN_VUXANCIA_LEAVES.cutout();
 		ArcheonBlocks.VALE_VUXANCIA_LEAVES.cutout();
@@ -93,14 +93,14 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.NYRETH_LEAVES.cutout();
 		ArcheonBlocks.PALE_NYRETH_LEAVES.cutout();
 
-		ArcheonBlocks.HANGING_PNEVANTIAL_VUXANCIA_LEAVES.cutout();
+		ArcheonBlocks.HANGING_PNEVENTIAL_VUXANCIA_LEAVES.cutout();
 		ArcheonBlocks.HANGING_STREIAN_VUXANCIA_LEAVES.cutout();
 		ArcheonBlocks.HANGING_ORIAN_VUXANCIA_LEAVES.cutout();
 		ArcheonBlocks.HANGING_VALE_VUXANCIA_LEAVES.cutout();
 		ArcheonBlocks.HANGING_ZIAL_VUXANCIA_LEAVES.cutout();
 
 		ArcheonBlocks.ORIAN_VUXANCIA_LEAVES_CARPET.cutout();
-		ArcheonBlocks.PNEVANTIAL_VUXANCIA_LEAVES_CARPET.cutout();
+		ArcheonBlocks.PNEVENTIAL_VUXANCIA_LEAVES_CARPET.cutout();
 		ArcheonBlocks.STREIAN_VUXANCIA_LEAVES_CARPET.cutout();
 		ArcheonBlocks.VALE_VUXANCIA_LEAVES_CARPET.cutout();
 		ArcheonBlocks.ZIAL_VUXANCIA_LEAVES_CARPET.cutout();
@@ -108,7 +108,7 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.PALM_SAPLING.cutout();
 		ArcheonBlocks.NECLANE_SAPLING.cutout();
 		ArcheonBlocks.CYPRESS_SAPLING.cutout();
-		ArcheonBlocks.PNEVANTIAL_VUXANCIA_SAPLING.cutout();
+		ArcheonBlocks.PNEVENTIAL_VUXANCIA_SAPLING.cutout();
 		ArcheonBlocks.STREIAN_VUXANCIA_SAPLING.cutout();
 		ArcheonBlocks.ORIAN_VUXANCIA_SAPLING.cutout();
 		ArcheonBlocks.VALE_VUXANCIA_SAPLING.cutout();

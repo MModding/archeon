@@ -1,8 +1,0 @@
-{
-  "parent": "archeon:custom/hanging_leaves3",
-  "textures": {
-    "all": "archeon:block/hanging_pnevantial_vuxancia_leaves",
-    "particle": "archeon:block/hanging_pnevantial_vuxancia_leaves",
-    "0": "archeon:block/hanging_pnevantial_vuxancia_leaves"
-  }
-}

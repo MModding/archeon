@@ -33,8 +33,8 @@ public class HangingLeavesTreeDecorator extends CustomTreeDecorator {
 			.toList();
 		BlockPos testingPos = leaves.get(0);
 		CustomGrowsDownPlantBlock hangingLeavesBlock;
-		if (placer.getWorld().testBlockState(testingPos, state -> state.isOf(ArcheonBlocks.PNEVANTIAL_VUXANCIA_LEAVES))) {
-			hangingLeavesBlock = ArcheonBlocks.HANGING_PNEVANTIAL_VUXANCIA_LEAVES;
+		if (placer.getWorld().testBlockState(testingPos, state -> state.isOf(ArcheonBlocks.PNEVENTIAL_VUXANCIA_LEAVES))) {
+			hangingLeavesBlock = ArcheonBlocks.HANGING_PNEVENTIAL_VUXANCIA_LEAVES;
 		}
 		else if (placer.getWorld().testBlockState(testingPos, state -> state.isOf(ArcheonBlocks.STREIAN_VUXANCIA_LEAVES))) {
 			hangingLeavesBlock = ArcheonBlocks.HANGING_STREIAN_VUXANCIA_LEAVES;

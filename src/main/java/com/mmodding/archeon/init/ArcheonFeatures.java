@@ -25,6 +25,7 @@ import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomTreeDecor
 import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomTrunkPlacer;
 import net.minecraft.block.BlockState;
 import net.minecraft.state.property.Properties;
+import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.math.Direction;
@@ -106,10 +107,10 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.WET_GRASS
 	).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
-	public static final CustomTreeFeature PNEVANTIAL_VUXANCIA_TREE = new CustomTreeFeature(
+	public static final CustomTreeFeature PNEVENTIAL_VUXANCIA_TREE = new CustomTreeFeature(
 		ArcheonBlocks.VUXANCIA_LOG,
 		new VuxanciaTrunkPlacer(4, 2, 0),
-		ArcheonBlocks.PNEVANTIAL_VUXANCIA_LEAVES,
+		ArcheonBlocks.PNEVENTIAL_VUXANCIA_LEAVES,
 		new VuxanciaFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
 		PlacedFeatureUtil.createCountExtraModifier(3, 0.1f, 1),
@@ -206,6 +207,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.SEPTICEOLIA).setRarity(2);
 
 	public static final RuleTest BASE_STONE_ARCHEON = new TagMatchRuleTest(ArcheonTags.Blocks.BASE_STONE_ARCHEON);
+	public static final RuleTest BASE_SAND_ARCHEON = new BlockMatchRuleTest(ArcheonBlocks.DUNE_SAND);
 
 	public static final RuleTest CHIASPEN_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.CHIASPEN_ORES_REPLACEABLES);
 	public static final RuleTest PHOSNOR_SLATE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.PHOSNOR_SLATE_ORES_REPLACEABLES);
@@ -222,6 +224,11 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomOreFeature AKETITE_PATCH = new CustomOreFeature(
 		64, 8, -64, 0,
 		List.of(OreFeatureConfig.createTarget(BASE_STONE_ARCHEON, ArcheonBlocks.AKETITE.getDefaultState()))
+	);
+
+	public static final CustomOreFeature SHELLSAND_PATCH = new CustomOreFeature(
+		12, 3, 60, 120,
+		List.of(OreFeatureConfig.createTarget(BASE_SAND_ARCHEON, ArcheonBlocks.SHELLSAND.getDefaultState()))
 	);
 
 	public static final List<OreFeatureConfig.Target> APAFLORITE_ORE_TARGETS = List.of(
@@ -523,7 +530,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PALM_TREE.register(Archeon.createId("palm_tree"));
 		NECLANE_TREE.register(Archeon.createId("neclane_tree"));
 		CYPRESS_TREE.register(Archeon.createId("cypress_tree"));
-		PNEVANTIAL_VUXANCIA_TREE.register(Archeon.createId("pnevantial_vuxancia_tree"));
+		PNEVENTIAL_VUXANCIA_TREE.register(Archeon.createId("pnevential_vuxancia_tree"));
 		STREIAN_VUXANCIA_TREE.register(Archeon.createId("streian_vuxancia_tree"));
 		ORIAN_VUXANCIA_TREE.register(Archeon.createId("orian_vuxancia_tree"));
 		VALE_VUXANCIA_TREE.register(Archeon.createId("vale_vuxancia_tree"));
@@ -553,6 +560,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ARTEMNITE_PATCH.register(Archeon.createId("artemnite_patch"));
 		CRIADAN_PATCH.register(Archeon.createId("criadan_patch"));
 		AKETITE_PATCH.register(Archeon.createId("aketite_patch"));
+		SHELLSAND_PATCH.register(Archeon.createId("shellsand_patch"));
 		APAFLORITE_ORE_FEATURE.register(Archeon.createId("apaflorite_ore_feature"));
 		EXYRIANE_ORE_FEATURE.register(Archeon.createId("exyriane_ore_feature"));
 		FAELITE_ORE_FEATURE.register(Archeon.createId("faelite_ore_feature"));
@@ -612,7 +620,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		NECLANE_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.NECLANE_GROVE));
 		NECLANE_TREE.addAdditionalToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS), "rocky_fields");
 		CYPRESS_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS));
-		PNEVANTIAL_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
+		PNEVENTIAL_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
 		STREIAN_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
 		ORIAN_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
 		VALE_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
@@ -646,6 +654,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ARTEMNITE_PATCH.addDefaultToBiomes(inArcheonPredicate);
 		CRIADAN_PATCH.addDefaultToBiomes(inArcheonPredicate);
 		AKETITE_PATCH.addDefaultToBiomes(inArcheonPredicate);
+
+		SHELLSAND_PATCH.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN));
 
 		APAFLORITE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 		EXYRIANE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
