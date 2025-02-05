@@ -7,7 +7,7 @@ quilt_loader = "0.25.0"
 # Required Dependencies
 
 quilted_fabric_api = "4.0.0-beta.30+0.77.0-1.19.2"
-mmodding = "5c6ec4b90f"
+mmodding = "13b77e2abb"
 
 # Included Dependencies
 

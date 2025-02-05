@@ -643,7 +643,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomPillarBlock STRIPPED_NYRETH_WOOD = new CustomPillarBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
 	public static final CustomPillarBlock STRIPPED_NYRETH_LOG = new CustomPillarBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
 
-	public static final CustomLeavesBlock BUSH_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final BushLeavesBlock BUSH_LEAVES = new BushLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS.innerVelocityMultiplier(0.5f), true);
 	public static final CustomLeavesBlock PALM_LEAVES = new PalmLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 	public static final CustomLeavesBlock NECLANE_LEAVES = new NeclaneLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 	public static final CustomLeavesBlock FLOWERED_NECLANE_LEAVES = new NeclaneLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
