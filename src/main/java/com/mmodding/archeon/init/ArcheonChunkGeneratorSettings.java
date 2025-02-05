@@ -59,11 +59,9 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 					SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.DUNE_OCEAN),
 						SurfaceRuleUtils.getBlock(ArcheonBlocks.DUNE_SAND)
 					),
-					SurfaceRules.condition(SurfaceRuleUtils.water(), SurfaceRules.sequence(
-						SurfaceRules.condition(SurfaceRules.not(SurfaceRules.biome(
-							ArcheonBiomes.SOUTH_SNOWY_PEAKS
-						)), SurfaceRuleUtils.getBlock(ArcheonBlocks.WET_DIRT))
-					))
+					SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.SOUTH_MEADOWS),
+						SurfaceRuleUtils.getBlock(ArcheonBlocks.WET_DIRT)
+					)
 				))
 			)),
 			SurfaceRuleUtils.getDeep("archeon:phosnor_slate", ArcheonBlocks.PHOSNOR_SLATE)
