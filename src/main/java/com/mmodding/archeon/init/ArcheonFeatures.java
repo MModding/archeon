@@ -205,8 +205,24 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomFlowerFeature SEPTICEOLIA_FEATURE = new CustomFlowerFeature(4, 7, 3,
 		ArcheonBlocks.SEPTICEOLIA).setRarity(2);
 
+	public static final RuleTest BASE_STONE_ARCHEON = new TagMatchRuleTest(ArcheonTags.Blocks.BASE_STONE_ARCHEON);
+
 	public static final RuleTest CHIASPEN_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.CHIASPEN_ORES_REPLACEABLES);
 	public static final RuleTest PHOSNOR_SLATE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.PHOSNOR_SLATE_ORES_REPLACEABLES);
+
+	public static final CustomOreFeature ARTEMNITE_PATCH = new CustomOreFeature(
+		64, 8, 0, 120, List.of(OreFeatureConfig.createTarget(BASE_STONE_ARCHEON, ArcheonBlocks.ARTEMNITE.getDefaultState()))
+	);
+
+	public static final CustomOreFeature CRIADAN_PATCH = new CustomOreFeature(
+		64, 8, 0, 120,
+		List.of(OreFeatureConfig.createTarget(BASE_STONE_ARCHEON, ArcheonBlocks.CRIADAN.getDefaultState()))
+	);
+
+	public static final CustomOreFeature AKETITE_PATCH = new CustomOreFeature(
+		64, 8, -64, 0,
+		List.of(OreFeatureConfig.createTarget(BASE_STONE_ARCHEON, ArcheonBlocks.AKETITE.getDefaultState()))
+	);
 
 	public static final List<OreFeatureConfig.Target> APAFLORITE_ORE_TARGETS = List.of(
 		OreFeatureConfig.createTarget(CHIASPEN_ORES_REPLACEABLES, ArcheonBlocks.APAFLORITE_ORE.getDefaultState()),
@@ -534,6 +550,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 		IOPEA_FEATURE.register(Archeon.createId("iopea_feature"));
 		ORGANDEANE_FEATURE.register(Archeon.createId("organdeane_feature"));
 		SEPTICEOLIA_FEATURE.register(Archeon.createId("septiceolia_feature"));
+		ARTEMNITE_PATCH.register(Archeon.createId("artemnite_patch"));
+		CRIADAN_PATCH.register(Archeon.createId("criadan_patch"));
+		AKETITE_PATCH.register(Archeon.createId("aketite_patch"));
 		APAFLORITE_ORE_FEATURE.register(Archeon.createId("apaflorite_ore_feature"));
 		EXYRIANE_ORE_FEATURE.register(Archeon.createId("exyriane_ore_feature"));
 		FAELITE_ORE_FEATURE.register(Archeon.createId("faelite_ore_feature"));
@@ -623,6 +642,10 @@ public class ArcheonFeatures implements ElementsInitializer {
 		IOPEA_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
 		ORGANDEANE_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		SEPTICEOLIA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
+
+		ARTEMNITE_PATCH.addDefaultToBiomes(inArcheonPredicate);
+		CRIADAN_PATCH.addDefaultToBiomes(inArcheonPredicate);
+		AKETITE_PATCH.addDefaultToBiomes(inArcheonPredicate);
 
 		APAFLORITE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 		EXYRIANE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
