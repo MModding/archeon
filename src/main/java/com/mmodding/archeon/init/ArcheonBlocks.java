@@ -358,11 +358,9 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomFallingBlock DUNE_SAND = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
 	public static final CustomFallingBlock SHELLSAND = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
-	public static final CustomFallingBlock SALT_BLOCK = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
-	public static final CustomFallingBlock GOLDEN_SAND = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
+	public static final CustomFallingBlock SALT_BLOCK = new CustomFallingBlock(DefaultBlockSettings.CLAY_SETTINGS, true);
+	public static final CustomFallingBlock DUST = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS.sounds(BlockSoundGroup.GRAVEL), true);
 	public static final GoldenClayBlock GOLDEN_CLAY = new GoldenClayBlock(DefaultBlockSettings.CLAY_SETTINGS, true);
-	public static final CustomFallingBlock SANDY_SOIL = new CustomFallingBlock(DefaultBlockSettings.CLAY_SETTINGS, true);
-	public static final CustomFallingBlock DUST = new CustomFallingBlock(DefaultBlockSettings.SAND_SETTINGS, true);
 
 	public static final CustomPillarBlock PALM_WOOD = new CustomPillarBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
 	public static final CustomPillarBlock PALM_LOG = new CustomPillarBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
@@ -1230,10 +1228,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DUNE_SAND.register(Archeon.createId("dune_sand"));
 		SHELLSAND.register(Archeon.createId("shellsand"));
 		SALT_BLOCK.register(Archeon.createId("salt_block"));
-		GOLDEN_SAND.register(Archeon.createId("golden_sand"));
-		GOLDEN_CLAY.register(Archeon.createId("golden_clay"));
-		SANDY_SOIL.register(Archeon.createId("sandy_soil"));
 		DUST.register(Archeon.createId("dust"));
+		GOLDEN_CLAY.register(Archeon.createId("golden_clay"));
 		PALM_WOOD.register(Archeon.createId("palm_wood"));
 		PALM_LOG.register(Archeon.createId("palm_log"));
 		PALM_PLANKS.register(Archeon.createId("palm_planks"));
