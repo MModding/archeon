@@ -2,7 +2,7 @@
 
 ```
 Copyright (c) 2023 Silent Wind's Team
-Copyright (c) 2024 MModding
+Copyright (c) 2024-2025 MModding
 
 All rights reserved.
 ```
