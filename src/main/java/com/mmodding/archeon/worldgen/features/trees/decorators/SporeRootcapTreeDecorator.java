@@ -27,7 +27,7 @@ public class SporeRootcapTreeDecorator extends CustomTreeDecorator {
 	public void generate(Placer placer) {
 		placer.getLogPositions().forEach(pos -> {
 			for (Direction direction : Direction.Type.HORIZONTAL) {
-				if (placer.getWorld().testBlockState(pos.offset(direction), BlockState::isAir) && placer.getRandom().nextFloat() <= 0.3f) {
+				if (placer.getWorld().testBlockState(pos.offset(direction), BlockState::isAir) && placer.getRandom().nextFloat() <= 0.1f) {
 					placer.replace(
 						pos.offset(direction),
 						ArcheonBlocks.SPORE_ROOTCAP.getDefaultState().with(SporeRootcapBlock.FACING, direction)
