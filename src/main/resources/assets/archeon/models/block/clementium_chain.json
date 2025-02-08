@@ -1,0 +1,7 @@
+{
+  "parent": "block/chain",
+  "textures": {
+    "all": "archeon:block/clementium_chain",
+    "particle": "archeon:block/clementium_chain"
+  }
+}

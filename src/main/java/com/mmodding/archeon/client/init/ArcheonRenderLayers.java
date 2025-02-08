@@ -79,6 +79,7 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.EXYRIANE_LANTERN.cutout();
 
 		ArcheonBlocks.CLEMENTIUM_BARS.cutout();
+		ArcheonBlocks.CLEMENTIUM_CHAIN.cutout();
 
 		ArcheonBlocks.CENTAUR_LIFE_VAULT.cutout();
 

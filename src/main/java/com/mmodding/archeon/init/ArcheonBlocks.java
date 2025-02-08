@@ -611,6 +611,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock AKETITE_LAMP = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.luminance(15), true);
 
 	public static final CustomPaneBlock CLEMENTIUM_BARS = new CustomPaneBlock(DefaultBlockSettings.METAL_SETTINGS, true);
+	public static final CustomChainBlock CLEMENTIUM_CHAIN = new CustomChainBlock(DefaultBlockSettings.METAL_SETTINGS, true);
 
 	public static final CentaurLifeVaultBlock CENTAUR_LIFE_VAULT = new CentaurLifeVaultBlock(DefaultBlockSettings.METAL_SETTINGS.nonOpaque().strength(-1, 3600000.0f), true);
 
@@ -1435,6 +1436,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		CHIASPEN_LAMP.register(Archeon.createId("chiaspen_lamp"));
 		AKETITE_LAMP.register(Archeon.createId("aketite_lamp"));
 		CLEMENTIUM_BARS.register(Archeon.createId("clementium_bars"));
+		CLEMENTIUM_CHAIN.register(Archeon.createId("clementium_chain"));
 		CENTAUR_LIFE_VAULT.register(Archeon.createId("centaur_life_vault"));
 		POWER_KEYSTONE.register(Archeon.createId("power_keystone"));
 		NATURITE.register(Archeon.createId("naturite"));
