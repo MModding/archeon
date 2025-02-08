@@ -148,13 +148,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomFlowerBlock AMAROTH = new CustomFlowerBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		StatusEffects.INVISIBILITY,
-		10,
-		DefaultBlockSettings.PLANT_SETTINGS
-	);
-
 	public static final CustomFlowerBlock DOTTED_STOVIA = new CustomFlowerBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		StatusEffects.INSTANT_HEALTH,
@@ -265,19 +258,16 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomPlantBlock WET_GRASS_TUFFET = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.ACHREAN_MOSS_BLOCK),
 		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
 
 	public static final CustomPlantBlock DEAD_WET_GRASS_TUFFET = new CustomPlantBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
 
 	public static final CustomPlantBlock SNOWY_GRASS_TUFFET = new CustomPlantBlock(
-		floor -> floor.isOf(ArcheonBlocks.PEAKS_GRASS_BLOCK),
 		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.NONE),
 		true
 	);
@@ -1180,7 +1170,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		SUNSET_ORCHID.register(Archeon.createId("sunset_orchid"));
 		ROSEYPIA.register(Archeon.createId("roseypia"));
 		AEROLIA.register(Archeon.createId("aerolia"));
-		AMAROTH.register(Archeon.createId("amaroth"));
 		DOTTED_STOVIA.register(Archeon.createId("dotted_stovia"));
 		WILLS_OF_LIGHT.register(Archeon.createId("wills_of_light"));
 		ETERNAL_FORTUNES.register(Archeon.createId("eternal_fortunes"));
