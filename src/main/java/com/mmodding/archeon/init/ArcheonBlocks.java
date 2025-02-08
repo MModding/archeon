@@ -1154,6 +1154,11 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomSlabBlock RED_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomWallBlock RED_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
+	public static final CustomBlock BLACK_TILES = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock BLACK_TILE_STAIRS = new CustomStairsBlock(BLACK_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock BLACK_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock BLACK_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+
 	public static final CustomBlock CERAMIC_TILES = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock CERAMIC_TILE_STAIRS = new CustomStairsBlock(CERAMIC_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomSlabBlock CERAMIC_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
@@ -1621,6 +1626,10 @@ public class ArcheonBlocks implements ElementsInitializer {
 		RED_TILE_STAIRS.register(Archeon.createId("red_tile_stairs"));
 		RED_TILE_SLAB.register(Archeon.createId("red_tile_slab"));
 		RED_TILE_WALL.register(Archeon.createId("red_tile_wall"));
+		BLACK_TILES.register(Archeon.createId("black_tiles"));
+		BLACK_TILE_STAIRS.register(Archeon.createId("black_tile_stairs"));
+		BLACK_TILE_SLAB.register(Archeon.createId("black_tile_slab"));
+		BLACK_TILE_WALL.register(Archeon.createId("black_tile_wall"));
 		CERAMIC_TILES.register(Archeon.createId("ceramic_tiles"));
 		CERAMIC_TILE_STAIRS.register(Archeon.createId("ceramic_tile_stairs"));
 		CERAMIC_TILE_SLAB.register(Archeon.createId("ceramic_tile_slab"));

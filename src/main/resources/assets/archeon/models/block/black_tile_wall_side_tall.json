@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_wall_side_tall",
+  "textures": {
+    "wall": "archeon:block/black_tiles",
+    "particle": "archeon:block/black_tiles"
+  }
+}

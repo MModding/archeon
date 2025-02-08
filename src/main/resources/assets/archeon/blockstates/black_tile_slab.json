@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/black_tile_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/black_tile_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/black_tile_slab_full"
+    }
+  }
+}
