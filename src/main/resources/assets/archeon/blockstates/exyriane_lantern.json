@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "archeon:block/exyriane_lantern"
+    },
+    "hanging=true": {
+      "model": "archeon:block/exyriane_lantern_hanging"
+    }
+  }
+}

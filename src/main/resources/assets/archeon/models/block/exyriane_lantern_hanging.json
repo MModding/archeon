@@ -1,0 +1,7 @@
+{
+  "parent": "archeon:custom/exyriane_lantern_hanging",
+  "textures": {
+    "all": "archeon:block/exyriane_lantern",
+    "particle": "archeon:block/exyriane_lantern"
+  }
+}

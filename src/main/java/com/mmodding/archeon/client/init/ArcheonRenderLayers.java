@@ -23,7 +23,6 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.ORGANDEANE_BLOSSOM.cutout();
 		ArcheonBlocks.TALL_ORGANDEANE.cutout();
 		ArcheonBlocks.SEPTICEOLIA.cutout();
-		ArcheonBlocks.AMAROTH.cutout();
 		ArcheonBlocks.DOTTED_STOVIA.cutout();
 		ArcheonBlocks.WILLS_OF_LIGHT.cutout();
 		ArcheonBlocks.ETERNAL_FORTUNES.cutout();
@@ -74,6 +73,10 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 
 		ArcheonBlocks.NYRETH_DOOR.cutout();
 		ArcheonBlocks.NYRETH_TRAPDOOR.cutout();
+
+		ArcheonBlocks.EXYRIANE_TORCH.cutout();
+		ArcheonBlocks.WALL_EXYRIANE_TORCH.cutout();
+		ArcheonBlocks.EXYRIANE_LANTERN.cutout();
 
 		ArcheonBlocks.CLEMENTIUM_BARS.cutout();
 

@@ -215,6 +215,8 @@ public class ArcheonItems implements ElementsInitializer {
 		ArcheonFluids.DASCIUM.getStill(), CeramicBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
 	);
 
+	public static final CustomWallStandingBlockItem EXYRIANE_TORCH = new CustomWallStandingBlockItem(ArcheonBlocks.EXYRIANE_TORCH, ArcheonBlocks.WALL_EXYRIANE_TORCH, new AdvancedItemSettings());
+
 	public static final CustomItem GOBLET = new CustomItem(new AdvancedItemSettings());
 
 	public static final ItemFinishUsing GOBLET_USE = (stack, world, user) -> (stack.isEmpty() ? new ItemStack(ArcheonItems.GOBLET) : stack);
@@ -463,6 +465,7 @@ public class ArcheonItems implements ElementsInitializer {
 		CERAMIC_LAVA_BUCKET.register(Archeon.createId("ceramic_lava_bucket"));
 		CERAMIC_HOT_SPRING_WATER_BUCKET.register(Archeon.createId("ceramic_hot_spring_water_bucket"));
 		CERAMIC_DASCIUM_BUCKET.register(Archeon.createId("ceramic_dascium_bucket"));
+		EXYRIANE_TORCH.register(Archeon.createId("exyriane_torch"));
 		GOBLET.register(Archeon.createId("goblet"));
 		GOBLET_WATER.register(Archeon.createId("goblet_water"));
 		GOBLET_COCONUT_MILK.register(Archeon.createId("goblet_coconut_milk"));

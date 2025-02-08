@@ -503,6 +503,10 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomBlock CHISELED_PHOSNOR_SLATE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 
+	public static final CustomTorchBlock EXYRIANE_TORCH = new CustomTorchBlock(DefaultBlockSettings.WOOD_SETTINGS.luminance(14), ParticleTypes.INSTANT_EFFECT);
+	public static final CustomWallTorchBlock WALL_EXYRIANE_TORCH = new CustomWallTorchBlock(DefaultBlockSettings.WOOD_SETTINGS.luminance(14), ParticleTypes.INSTANT_EFFECT);
+	public static final CustomLanternBlock EXYRIANE_LANTERN = new CustomLanternBlock(DefaultBlockSettings.STONE_SETTINGS.luminance(15), true);
+
 	public static final CustomFurnaceBlock CHIASPEN_FURNACE = new CustomFurnaceBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomFurnaceBlock PHOSNOR_SLATE_FURNACE = new CustomFurnaceBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 
@@ -1352,6 +1356,9 @@ public class ArcheonBlocks implements ElementsInitializer {
 		POLISHED_PHOSNOR_SLATE_SLAB.register(Archeon.createId("polished_phosnor_slate_slab"));
 		POLISHED_PHOSNOR_SLATE_WALL.register(Archeon.createId("polished_phosnor_slate_wall"));
 		CHISELED_PHOSNOR_SLATE.register(Archeon.createId("chiseled_phosnor_slate"));
+		EXYRIANE_TORCH.register(Archeon.createId("exyriane_torch"));
+		WALL_EXYRIANE_TORCH.register(Archeon.createId("wall_exyriane_torch"));
+		EXYRIANE_LANTERN.register(Archeon.createId("exyriane_lantern"));
 		APAFLORITE_ORE.register(Archeon.createId("apaflorite_ore"));
 		EXYRIANE_ORE.register(Archeon.createId("exyriane_ore"));
 		FAELITE_ORE.register(Archeon.createId("faelite_ore"));

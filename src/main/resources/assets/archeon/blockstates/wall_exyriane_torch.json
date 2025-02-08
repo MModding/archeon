@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "archeon:block/wall_exyriane_torch"
+    },
+    "facing=north": {
+      "model": "archeon:block/wall_exyriane_torch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "archeon:block/wall_exyriane_torch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "archeon:block/wall_exyriane_torch",
+      "y": 180
+    }
+  }
+}
