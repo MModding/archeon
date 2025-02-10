@@ -5,13 +5,13 @@ import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.utils.RegistrationUtils;
 import com.mmodding.mmodding_lib.library.utils.SurfaceRuleUtils;
 import com.mmodding.mmodding_lib.library.utils.WorldUtils;
-import com.mmodding.mmodding_lib.library.worldgen.chunkgenerators.routers.CustomNoiseRouters;
 import com.mmodding.mmodding_lib.library.worldgen.veins.CustomVeinType;
 import com.mmodding.mmodding_lib.library.worldgen.veins.CustomVeinType.VeinStateGroup;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.world.biome.source.util.OverworldBiomeParameters;
+import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
 import net.minecraft.world.gen.chunk.GenerationShapeConfig;
 import net.minecraft.world.gen.surfacebuilder.SurfaceRules;
@@ -27,7 +27,7 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 			ArcheonChunkGeneratorSettings.ARCHEON_GENERATION_SHAPE,
 			ArcheonBlocks.CHIASPEN.getDefaultState(),
 			Blocks.WATER.getDefaultState(),
-			CustomNoiseRouters.getSmallBiomes(BuiltinRegistries.DENSITY_FUNCTION),
+			ArcheonNoiseRouter.getRouter(BuiltinRegistries.DENSITY_FUNCTION),
 			ArcheonChunkGeneratorSettings.getArcheonRules(),
 			new OverworldBiomeParameters().getSpawnSuitabilityNoises(),
 			63,
@@ -57,7 +57,11 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 				)),
 				SurfaceRules.condition(SurfaceRuleUtils.waterWithStoneDepth(), SurfaceRules.sequence(
 					SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.DUNE_OCEAN),
-						SurfaceRuleUtils.getBlock(ArcheonBlocks.DUNE_SAND)
+						SurfaceRuleUtils.getConditionalBlock(
+							SurfaceRules.verticalGradient("archeon:dune_sand", YOffset.fixed(80), YOffset.fixed(81)),
+							ArcheonBlocks.DUNE_SAND,
+							ArcheonBlocks.CHIASPEN
+						)
 					),
 					SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.SOUTH_MEADOWS),
 						SurfaceRuleUtils.getBlock(ArcheonBlocks.WET_DIRT)

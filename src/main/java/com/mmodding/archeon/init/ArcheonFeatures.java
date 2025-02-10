@@ -79,7 +79,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.PALM_LEAVES,
 		new PalmFoliagePlacer(ConstantIntProvider.create(6), ConstantIntProvider.create(0), ConstantIntProvider.create(3)),
 		1, 0, 1,
-		PlacedFeatureUtil.createCountExtraModifier(1, 0.1f, 1),
+		PlacedFeatureUtil.createCountExtraModifier(0, 0.5f, 1),
 		ArcheonBlocks.COKIPLANT
 	).setGroundBlock(ArcheonBlocks.DUNE_SAND);
 
