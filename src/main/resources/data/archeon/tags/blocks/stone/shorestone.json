@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:shorestone",
+    "archeon:shorestone_stairs",
+    "archeon:shorestone_slab",
+    "archeon:shorestone_wall"
+  ]
+}

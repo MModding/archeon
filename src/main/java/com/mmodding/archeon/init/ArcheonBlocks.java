@@ -755,6 +755,11 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomPressurePlateBlock CERAMIC_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.BONE_SETTINGS, true);
 	public static final CustomButtonBlock.Stone CERAMIC_BUTTON = new CustomButtonBlock.Stone(DefaultBlockSettings.BONE_SETTINGS, true);
 
+	public static final CustomBlock SHORESTONE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock SHORESTONE_STAIRS = new CustomStairsBlock(SHORESTONE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock SHORESTONE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock SHORESTONE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+
 	public static final CustomPointedDripstoneBlock POINTED_CRIADAN = new CustomPointedDripstoneBlock(ArcheonBlocks.CRIADAN, DefaultBlockSettings.BASALT_SETTINGS.dynamicBounds().offsetType(AbstractBlock.OffsetType.XZ), true);
 
 	public static final CustomBlock CRIADAN = new CustomBlock(DefaultBlockSettings.BASALT_SETTINGS, true);
@@ -1510,6 +1515,10 @@ public class ArcheonBlocks implements ElementsInitializer {
 		CERAMIC_FENCE.register(Archeon.createId("ceramic_fence"));
 		CERAMIC_PRESSURE_PLATE.register(Archeon.createId("ceramic_pressure_plate"));
 		CERAMIC_BUTTON.register(Archeon.createId("ceramic_button"));
+		SHORESTONE.register(Archeon.createId("shorestone"));
+		SHORESTONE_STAIRS.register(Archeon.createId("shorestone_stairs"));
+		SHORESTONE_SLAB.register(Archeon.createId("shorestone_slab"));
+		SHORESTONE_WALL.register(Archeon.createId("shorestone_wall"));
 		POINTED_CRIADAN.register(Archeon.createId("pointed_criadan"));
 		CRIADAN.register(Archeon.createId("criadan"));
 		CRIADAN_STAIRS.register(Archeon.createId("criadan_stairs"));
