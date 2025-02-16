@@ -2,6 +2,7 @@ package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.registry.Registry;
@@ -65,5 +66,11 @@ public class ArcheonTags {
 		public static final TagKey<Item> PLANKS = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("planks"), TagType.NORMAL);
 		public static final TagKey<Item> SHELLS = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("shells"), TagType.NORMAL);
 		public static final TagKey<Item> TILES = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("tiles"), TagType.NORMAL);
+	}
+
+	public static class Entities {
+
+		public static final TagKey<EntityType<?>> AURORA_CATALYSTS = QuiltTagKey.of(Registry.ENTITY_TYPE_KEY, Archeon.createId("aurora_catalysts"), TagType.NORMAL);
+		public static final TagKey<EntityType<?>> CENTAURS = QuiltTagKey.of(Registry.ENTITY_TYPE_KEY, Archeon.createId("centaurs"), TagType.NORMAL);
 	}
 }
