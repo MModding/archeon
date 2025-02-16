@@ -258,16 +258,19 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomPlantBlock WET_GRASS_TUFFET = new CustomPlantBlock(
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isIn(ArcheonTags.Blocks.STONE) || floor.isOf(ArcheonBlocks.ACHREAN_MOSS_BLOCK),
 		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
 
 	public static final CustomPlantBlock DEAD_WET_GRASS_TUFFET = new CustomPlantBlock(
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isIn(ArcheonTags.Blocks.STONE) || floor.isOf(ArcheonBlocks.ACHREAN_MOSS_BLOCK),
 		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.XZ),
 		true
 	);
 
 	public static final CustomPlantBlock SNOWY_GRASS_TUFFET = new CustomPlantBlock(
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isIn(ArcheonTags.Blocks.STONE) || floor.isOf(ArcheonBlocks.ACHREAN_MOSS_BLOCK),
 		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.NONE),
 		true
 	);
