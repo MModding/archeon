@@ -1,7 +1,7 @@
 {
   "parent": "block/wall_inventory",
   "textures": {
-    "wall": "archeon:block/salt",
-    "particle": "archeon:block/salt"
+    "wall": "archeon:block/roughcast",
+    "particle": "archeon:block/roughcast"
   }
 }
