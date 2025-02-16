@@ -1,6 +1,7 @@
 package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
+import com.mmodding.archeon.blocks.BushLeavesBlock;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.utils.RegistrationUtils;
 import com.mmodding.mmodding_lib.library.utils.SurfaceRuleUtils;
@@ -14,6 +15,7 @@ import net.minecraft.world.biome.source.util.OverworldBiomeParameters;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
 import net.minecraft.world.gen.chunk.GenerationShapeConfig;
+import net.minecraft.world.gen.noise.NoiseParametersKeys;
 import net.minecraft.world.gen.surfacebuilder.SurfaceRules;
 
 public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
@@ -40,35 +42,51 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 
 	public static SurfaceRules.MaterialRule getArcheonRules() {
 		return SurfaceRules.sequence(SurfaceRuleUtils.createBuilder(
-			SurfaceRuleUtils.getFloor("archeon:innermost_rock_floor", ArcheonBlocks.INNERMOST_ROCK),
+			SurfaceRuleUtils.floor("archeon:innermost_rock_floor", ArcheonBlocks.INNERMOST_ROCK),
 			SurfaceRules.condition(SurfaceRules.abovePreliminarySurface(), SurfaceRules.sequence(
 				SurfaceRules.condition(SurfaceRuleUtils.onFloor(), SurfaceRules.condition(
 					SurfaceRuleUtils.underWater(), SurfaceRules.sequence(
 						SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.SOUTH_SNOWY_SLOPES),
-							SurfaceRuleUtils.getConditionalBlock(SurfaceRuleUtils.water(), ArcheonBlocks.PEAKS_GRASS_BLOCK, ArcheonBlocks.WET_DIRT)
+							SurfaceRuleUtils.conditionalBlock(SurfaceRuleUtils.water(), ArcheonBlocks.PEAKS_GRASS_BLOCK, ArcheonBlocks.WET_DIRT)
 						),
 						SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.SOUTH_SNOWY_PEAKS),
-							SurfaceRuleUtils.getBlock(ArcheonBlocks.SNOWY_CHIASPEN)
+							SurfaceRuleUtils.block(ArcheonBlocks.SNOWY_CHIASPEN)
 						),
 						SurfaceRules.condition(SurfaceRules.not(SurfaceRules.biome(
-							ArcheonBiomes.DUNE_OCEAN
-						)), SurfaceRuleUtils.getConditionalBlock(SurfaceRuleUtils.water(), ArcheonBlocks.WET_GRASS_BLOCK, ArcheonBlocks.WET_DIRT))
+							ArcheonBiomes.DUNE_OCEAN,
+							ArcheonBiomes.SHORE
+						)), SurfaceRuleUtils.conditionalBlock(SurfaceRuleUtils.water(), ArcheonBlocks.WET_GRASS_BLOCK, ArcheonBlocks.WET_DIRT))
 					)
 				)),
 				SurfaceRules.condition(SurfaceRuleUtils.waterWithStoneDepth(), SurfaceRules.sequence(
 					SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.DUNE_OCEAN),
-						SurfaceRuleUtils.getConditionalBlock(
+						SurfaceRuleUtils.conditionalBlock(
 							SurfaceRules.verticalGradient("archeon:dune_sand", YOffset.fixed(80), YOffset.fixed(81)),
 							ArcheonBlocks.DUNE_SAND,
 							ArcheonBlocks.CHIASPEN
 						)
 					),
+					SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.SHORE),
+						SurfaceRuleUtils.conditional(
+							SurfaceRules.noiseThreshold(NoiseParametersKeys.AQUIFER_LAVA, 0.0),
+							SurfaceRuleUtils.block(ArcheonBlocks.SHORESTONE),
+							SurfaceRuleUtils.conditional(
+								SurfaceRules.noiseThreshold(NoiseParametersKeys.AQUIFER_BARRIER, 0.0),
+								SurfaceRuleUtils.block(ArcheonBlocks.COBBLED_CHIASPEN),
+								SurfaceRuleUtils.conditional(
+									SurfaceRules.noiseThreshold(NoiseParametersKeys.ICE, -0.15),
+									SurfaceRules.block(ArcheonBlocks.MOSSY_COBBLED_CHIASPEN.getDefaultState()),
+									SurfaceRules.block(ArcheonBlocks.BUSH_LEAVES.getDefaultState().with(BushLeavesBlock.PERSISTENT, true).with(BushLeavesBlock.SOLID, true))
+								)
+							)
+						)
+					),
 					SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.SOUTH_MEADOWS),
-						SurfaceRuleUtils.getBlock(ArcheonBlocks.WET_DIRT)
+						SurfaceRuleUtils.block(ArcheonBlocks.WET_DIRT)
 					)
 				))
 			)),
-			SurfaceRuleUtils.getDeep("archeon:phosnor_slate", ArcheonBlocks.PHOSNOR_SLATE)
+			SurfaceRuleUtils.deep("archeon:phosnor_slate", ArcheonBlocks.PHOSNOR_SLATE)
 		).build().toArray(SurfaceRules.MaterialRule[]::new));
 	}
 

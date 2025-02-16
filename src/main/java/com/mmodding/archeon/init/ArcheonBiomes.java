@@ -23,6 +23,7 @@ public class ArcheonBiomes implements ElementsInitializer {
 	public static final RegistryKey<Biome> ROCKY_FIELDS = BiomeUtils.getBiomeKey(Archeon.createId("rocky_fields"));
 	public static final RegistryKey<Biome> NUME_SWAMP = BiomeUtils.getBiomeKey(Archeon.createId("nume_swamp"));
 	public static final RegistryKey<Biome> NYRETH_GLADE = BiomeUtils.getBiomeKey(Archeon.createId("nyreth_glade"));
+	public static final RegistryKey<Biome> SHORE = BiomeUtils.getBiomeKey(Archeon.createId("shore"));
 	public static final RegistryKey<Biome> SOUTH_MEADOWS = BiomeUtils.getBiomeKey(Archeon.createId("south_meadows"));
 	public static final RegistryKey<Biome> SOUTH_SNOWY_PEAKS = BiomeUtils.getBiomeKey(Archeon.createId("south_snowy_peaks"));
 	public static final RegistryKey<Biome> SOUTH_SNOWY_SLOPES = BiomeUtils.getBiomeKey(Archeon.createId("south_snowy_slopes"));

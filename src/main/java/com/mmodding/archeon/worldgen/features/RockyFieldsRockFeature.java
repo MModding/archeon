@@ -6,6 +6,7 @@ import com.mmodding.mmodding_lib.library.worldgen.features.AdvancedFeature;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.util.Holder;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.random.RandomGenerator;
@@ -57,7 +58,11 @@ public class RockyFieldsRockFeature extends AdvancedFeature<RockyFieldsRockFeatu
 		RandomGenerator random = context.getRandom();
 		RockyFieldsRockFeature.Config config = context.getConfig();
 
-		if (!structureWorldAccess.getBlockState(basePos).isOf(ArcheonBlocks.WET_GRASS_BLOCK)) return false;
+		BlockState baseState = structureWorldAccess.getBlockState(basePos);
+
+		if (!baseState.isOf(ArcheonBlocks.WET_GRASS_BLOCK) && !baseState.isOf(ArcheonBlocks.SHORESTONE)) {
+			return false;
+		}
 
 		if (originPos.getY() > structureWorldAccess.getBottomY() + 4) {
 

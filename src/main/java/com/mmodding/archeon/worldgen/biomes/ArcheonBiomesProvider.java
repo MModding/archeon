@@ -164,13 +164,13 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 		BiomeSourceUtils.addSurfaceBiomeTo(
 			parameters, this.fullRange(), this.fullRange(), this.nearInlandContinentalness(),
 			MultiNoiseUtil.ParameterRange.combine(this.erosions()[0], this.erosions()[1]),
-			weirdness, 0.0F, ArcheonBiomes.DUNE_OCEAN
+			weirdness, 0.0F, ArcheonBiomes.SHORE
 		);
 		BiomeSourceUtils.addSurfaceBiomeTo(
 			parameters, this.fullRange(), this.fullRange(),
 			MultiNoiseUtil.ParameterRange.combine(this.coastContinentalness(), this.farInlandContinentalness()),
 			MultiNoiseUtil.ParameterRange.combine(this.erosions()[2], this.erosions()[5]),
-			weirdness, 0.0F, ArcheonBiomes.DUNE_OCEAN
+			weirdness, 0.0F, ArcheonBiomes.SHORE
 		);
 		BiomeSourceUtils.addSurfaceBiomeTo(
 			parameters, this.fullRange(), this.fullRange(),

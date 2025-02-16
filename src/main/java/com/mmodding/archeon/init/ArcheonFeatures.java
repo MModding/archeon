@@ -173,6 +173,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.SOUTH_WHEAT)))).setRarity(5);
 	public static final CustomRandomPatchFeature PATCH_TALL_SOUTH_WHEAT = new CustomRandomPatchFeature(30, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.TALL_SOUTH_WHEAT)))).setRarity(5);
+	public static final CustomRandomPatchFeature PATCH_WET_GRASS_TUFFET = new CustomRandomPatchFeature(10, 7, 3,
+		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.WET_GRASS_TUFFET)))).setCount(3);
 
 	public static final CustomRandomPatchFeature PATCH_SNOWY_GRASS_TUFFET = new CustomRandomPatchFeature(20, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.SNOWY_GRASS_TUFFET)))).setCount(7);
@@ -543,6 +545,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_TALL_WET_FERN.register(Archeon.createId("patch_tall_wet_fern"));
 		PATCH_SOUTH_WHEAT.register(Archeon.createId("patch_south_wheat"));
 		PATCH_TALL_SOUTH_WHEAT.register(Archeon.createId("patch_tall_south_wheat"));
+		PATCH_WET_GRASS_TUFFET.register(Archeon.createId("patch_wet_grass_tuffet"));
 		PATCH_SNOWY_GRASS_TUFFET.register(Archeon.createId("patch_snowy_grass_tuffet"));
 		SUNSET_ORCHID_FEATURE.register(Archeon.createId("sunset_orchid_feature"));
 		ROSEYPIA_FEATURE.register(Archeon.createId("roseypia_feature"));
@@ -595,7 +598,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 		Predicate<BiomeSelectionContext> achreanPredicate = ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ACHREAN_CAVES);
 
 		BiomeModifications.addFeature(
-			ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS) ||
+			ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SHORE) ||
+				ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS) ||
 				ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST) ||
 				ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST),
 			GenerationStep.Feature.LOCAL_MODIFICATIONS,
@@ -634,6 +638,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_TALL_WET_FERN.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_SOUTH_WHEAT.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_TALL_SOUTH_WHEAT.addDefaultToBiomes(randomPatchPredicate);
+		PATCH_WET_GRASS_TUFFET.addDefaultToBiomes(randomPatchPredicate);
 
 		PATCH_SNOWY_GRASS_TUFFET.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES));
 
