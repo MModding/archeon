@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "archeon:wet_dirt",
-    "archeon:wet_grass_block"
+    "archeon:wet_grass_block",
+    "archeon:achrean_moss",
+    "archeon:achrean_moss_block"
   ]
 }
