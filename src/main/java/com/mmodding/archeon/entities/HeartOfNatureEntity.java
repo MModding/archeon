@@ -48,6 +48,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.function.BooleanSupplier;
 
 public class HeartOfNatureEntity extends HostileEntity implements ConditionalOverlayOwner {
 
@@ -180,8 +181,11 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 	public void openProtections() {
 		this.shieldDeployment(false);
 		if (this.world instanceof ServerWorld serverWorld) {
+			Phase phaseWhenOpened = this.getPhase();
 			WorldUtils.doTaskAfter(serverWorld, 30 * 20, () -> {
-				if (!this.isDead()) {
+				// prevents the behavior if the phase changes; was previously a bug that allowed the heart of nature
+				// to make its soldiers spawn twice
+				if (!this.isDead() && this.getPhase().equals(phaseWhenOpened)) {
 					this.shieldDeployment(true);
 					this.nowRecoveringOriginalPos();
 				}
@@ -234,6 +238,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		this.originalPosRecoveringState.set(false);
 		this.originalPosRecoveringState.synchronize();
 		this.teleport(this.originalPos.x, this.originalPos.y, this.originalPos.z);
+		this.setVelocity(Vec3d.ZERO);
 		this.invokeSoldiers();
 	}
 
@@ -243,13 +248,13 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 				WorldUtils.doTaskAfter(serverWorld, i * 20, () -> {
 					EntityType<AuroraCatalystEntity> type;
 					switch (this.getPhase()) {
-						default -> type = ArcheonEntities.AURORA_CATALYST;
 						case POISONOUS -> type = this.random.nextInt(2) == 1 ? ArcheonEntities.POISONOUS_AURORA_CATALYST : ArcheonEntities.AURORA_CATALYST;
 						case EXPLOSIVE -> type = switch (this.random.nextInt(3)) {
-							default -> ArcheonEntities.AURORA_CATALYST;
 							case 1 -> ArcheonEntities.POISONOUS_AURORA_CATALYST;
 							case 2 -> ArcheonEntities.EXPLOSIVE_AURORA_CATALYST;
+							default -> ArcheonEntities.AURORA_CATALYST;
 						};
+						default -> type = ArcheonEntities.AURORA_CATALYST;
 					}
 					AuroraCatalystEntity auroraCatalystEntity = new AuroraCatalystEntity(type, this.world);
 					auroraCatalystEntity.onInvokedByMaster(this.getUuid());
@@ -381,9 +386,9 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 				}
 				else {
 					EntityType<? extends AuroraCatalystEntity> type = switch (this.getPhase()) {
-						default -> ArcheonEntities.AURORA_CATALYST;
 						case POISONOUS -> ArcheonEntities.POISONOUS_AURORA_CATALYST;
 						case EXPLOSIVE -> ArcheonEntities.EXPLOSIVE_AURORA_CATALYST;
+						default -> ArcheonEntities.AURORA_CATALYST;
 					};
 					AuroraCatalystEntity auroraCatalystEntity = new AuroraCatalystEntity(type, this.world);
 					auroraCatalystEntity.teleport(
@@ -441,22 +446,30 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 
 	public static class HeartOfNatureAttackGoal extends MeleeAttackGoal {
 
-		public HeartOfNatureEntity natureCore() {
-			return (HeartOfNatureEntity) this.mob;
+		private final HeartOfNatureEntity heartOfNatureEntity;
+
+		public HeartOfNatureAttackGoal(HeartOfNatureEntity heartOfNatureEntity, double speed, boolean pauseWhenMobIdle) {
+			super(heartOfNatureEntity, speed, pauseWhenMobIdle);
+			this.heartOfNatureEntity = heartOfNatureEntity;
 		}
 
-		public HeartOfNatureAttackGoal(HeartOfNatureEntity pathAwareEntity, double speed, boolean pauseWhenMobIdle) {
-			super(pathAwareEntity, speed, pauseWhenMobIdle);
+		private boolean canAttack(BooleanSupplier supplier) {
+			if (!this.heartOfNatureEntity.getPhase().equals(Phase.PETRIFIED) && !this.heartOfNatureEntity.getPhase().equals(Phase.DEFEATED)) {
+				return !this.heartOfNatureEntity.isShieldDeployed() && supplier.getAsBoolean();
+			}
+			else {
+				return false;
+			}
 		}
 
 		@Override
 		public boolean canStart() {
-			return this.natureCore().getPhase() != Phase.PETRIFIED && this.natureCore().getPhase() != Phase.DEFEATED && super.canStart();
+			return this.canAttack(super::canStart);
 		}
 
 		@Override
 		public boolean shouldContinue() {
-			return this.natureCore().getPhase() != Phase.PETRIFIED && this.natureCore().getPhase() != Phase.DEFEATED && super.shouldContinue();
+			return this.canAttack(super::shouldContinue);
 		}
 	}
 }
