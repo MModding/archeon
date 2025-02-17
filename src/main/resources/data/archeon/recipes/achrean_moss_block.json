@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "archeon:moss_ball"
+    }
+  },
+  "result": {
+    "item": "archeon:achrean_moss_block"
+  }
+}
