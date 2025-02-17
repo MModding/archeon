@@ -312,15 +312,17 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 			case DEFEATED -> ParticleTypes.SMOKE;
 		};
 
+		float velocityMultiplier = !this.getPhase().equals(Phase.EXPLOSIVE) ? 0.5f : 0.1f;
+
 		for (int i = 0; i < 2; i++) {
 			this.world.addParticle(
 				particleType,
 				this.getX() + this.random.nextFloat() - 0.5f,
 				this.getY() + this.random.nextFloat() - 0.0f,
 				this.getZ() + this.random.nextFloat() - 0.5f,
-				(this.random.nextFloat() - 0.5f) * 0.5f,
-				(this.random.nextFloat() - 0.5f) * 0.5f,
-				(this.random.nextFloat() - 0.5f) * 0.5f
+				(this.random.nextFloat() - 0.5f) * velocityMultiplier,
+				(this.random.nextFloat() - 0.5f) * velocityMultiplier,
+				(this.random.nextFloat() - 0.5f) * velocityMultiplier
 			);
 		}
 	}

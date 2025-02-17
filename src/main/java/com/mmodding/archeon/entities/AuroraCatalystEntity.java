@@ -60,7 +60,7 @@ public class AuroraCatalystEntity extends HostileEntity {
 	protected void initGoals() {
 		this.goalSelector.add(0, new MeleeAttackGoal(this, 2.0f, false));
 		this.goalSelector.add(1, new AuroraCatalystFlyingGoal(this, 1.0));
-		this.targetSelector.add(0, new TargetGoal<>(this, PlayerEntity.class, true).setMaxTimeWithoutVisibility(300));
+		this.targetSelector.add(0, new TargetGoal<>(this, PlayerEntity.class, true));
 	}
 
 	@Override
@@ -123,8 +123,10 @@ public class AuroraCatalystEntity extends HostileEntity {
 		DefaultParticleType particleType = switch (this.type) {
 			case NORMAL -> ParticleTypes.ENCHANT;
 			case POISONOUS -> ParticleTypes.FALLING_SPORE_BLOSSOM;
-			case EXPLOSIVE -> this.random.nextFloat() > 0.01f ? ParticleTypes.FLAME : ParticleTypes.LAVA;
+			case EXPLOSIVE -> this.random.nextFloat() > 0.01f ? ParticleTypes.SMALL_FLAME : ParticleTypes.LAVA;
 		};
+
+		float velocityMultiplier = !this.type.equals(Type.EXPLOSIVE) ? 0.5f : 0.1f;
 
 		for (int i = 0; i < 2; i++) {
 			this.world.addParticle(
@@ -132,9 +134,9 @@ public class AuroraCatalystEntity extends HostileEntity {
 				this.getX() + this.random.nextFloat() - 0.5f,
 				this.getY() + this.random.nextFloat() - 0.0f,
 				this.getZ() + this.random.nextFloat() - 0.5f,
-				(this.random.nextFloat() - 0.5f) * 0.5f,
-				(this.random.nextFloat() - 0.5f) * 0.5f,
-				(this.random.nextFloat() - 0.5f) * 0.5f
+				(this.random.nextFloat() - 0.5f) * velocityMultiplier,
+				(this.random.nextFloat() - 0.5f) * velocityMultiplier,
+				(this.random.nextFloat() - 0.5f) * velocityMultiplier
 			);
 		}
 	}
