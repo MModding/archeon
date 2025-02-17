@@ -508,7 +508,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomTorchBlock EXYRIANE_TORCH = new CustomTorchBlock(DefaultBlockSettings.WOOD_SETTINGS.collidable(false).breakInstantly().luminance(14), ParticleTypes.INSTANT_EFFECT);
 	public static final CustomWallTorchBlock WALL_EXYRIANE_TORCH = new CustomWallTorchBlock(DefaultBlockSettings.WOOD_SETTINGS.collidable(false).breakInstantly().luminance(14), ParticleTypes.INSTANT_EFFECT);
-	public static final CustomLanternBlock EXYRIANE_LANTERN = new CustomLanternBlock(DefaultBlockSettings.STONE_SETTINGS.luminance(15), true);
+	public static final ExyrianeTorchBlock EXYRIANE_LANTERN = new ExyrianeTorchBlock(DefaultBlockSettings.STONE_SETTINGS.luminance(15), true);
 
 	public static final CustomFurnaceBlock CHIASPEN_FURNACE = new CustomFurnaceBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomFurnaceBlock PHOSNOR_SLATE_FURNACE = new CustomFurnaceBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
