@@ -2,6 +2,7 @@ package com.mmodding.archeon.entities;
 
 import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.init.ArcheonEntities;
+import com.mmodding.archeon.init.ArcheonMiscellaneous;
 import com.mmodding.mmodding_lib.library.entities.data.MModdingTrackedDataHandlers;
 import com.mmodding.mmodding_lib.library.entities.data.syncable.SyncableData;
 import com.mmodding.mmodding_lib.library.entities.goals.MoveToSpecificPosGoal;
@@ -194,12 +195,20 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 	}
 
 	public boolean switchPhase() {
+		if (this.world instanceof ServerWorld serverWorld) {
+			WorldUtils.getPlayersAround(serverWorld, this.getPos(), length -> length <= 20.0).forEach(player -> {
+				player.getSoundtrackPlayer().release();
+				player.getSoundtrackPlayer().unseal();
+			});
+		}
 		if (this.getPhase() != Phase.DEFEATED) {
 			this.dataTracker.set(HeartOfNatureEntity.PHASE, MathHelper.clamp(this.getPhaseIndex() + 1, 0, 4));
 			this.updateBossBar();
 			return true;
 		}
-		return false;
+		else {
+			return false;
+		}
 	}
 
 	public void newPhaseProcess() {
@@ -294,6 +303,43 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		}
 
 		this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
+
+		if (this.world instanceof ServerWorld serverWorld) {
+			WorldUtils.getPlayersAround(serverWorld, this.getPos(), length -> length <= 20.0).forEach(player -> {
+				player.getSoundtrackPlayer().lock(ArcheonMiscellaneous.HEART_OF_NATURE);
+				int fromPart, toPart;
+				switch (this.getPhase()) {
+					case PETRIFIED -> {
+						fromPart = 0;
+						toPart = 1;
+					}
+					case NORMAL -> {
+						fromPart = 2;
+						toPart = 2;
+					}
+					case POISONOUS -> {
+						fromPart = 3;
+						toPart = 3;
+					}
+					case EXPLOSIVE -> {
+						fromPart = 4;
+						toPart = 4;
+					}
+					case DEFEATED -> {
+						fromPart = 5;
+						toPart = 5;
+					}
+					default -> throw new IllegalStateException("Unexpected value: " + this.getPhase());
+				}
+				player.getSoundtrackPlayer().play(ArcheonMiscellaneous.HEART_OF_NATURE, fromPart, toPart);
+				player.getSoundtrackPlayer().seal();
+			});
+			WorldUtils.getPlayersAround(serverWorld, this.getPos(), length -> length >= 20.0 && length <= 30.0).forEach(player -> {
+				player.getSoundtrackPlayer().unlock();
+				player.getSoundtrackPlayer().clear();
+				player.getSoundtrackPlayer().unseal();
+			});
+		}
 	}
 
 	@Override
