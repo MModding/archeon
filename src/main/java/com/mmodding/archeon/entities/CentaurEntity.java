@@ -1,5 +1,8 @@
 package com.mmodding.archeon.entities;
 
+import com.mmodding.archeon.Archeon;
+import com.mmodding.archeon.blockentities.ArcheonBlockEntities;
+import com.mmodding.archeon.blockentities.CentaurLifeVaultBlockEntity;
 import com.mmodding.archeon.blocks.CentaurLifeVaultBlock;
 import com.mmodding.archeon.init.ArcheonEntities;
 import com.mmodding.archeon.init.ArcheonItems;
@@ -33,6 +36,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -148,6 +152,15 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 	}
 
 	@Override
+	public void checkDespawn() {
+		if (this.world.getDifficulty() == Difficulty.PEACEFUL && this.isDisallowedInPeaceful()) {
+			this.discard();
+		} else {
+			this.despawnCounter = 0;
+		}
+	}
+
+	@Override
 	public void tick() {
 		if (this.getWorld().isClient()) {
 			if (this.dataTracker.get(CentaurEntity.ATTACK)) {
@@ -176,14 +189,19 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
 	@Override
 	public boolean damage(DamageSource source, float amount) {
+		float previousHealth = this.getHealth();
 		boolean bool = super.damage(source, amount);
 		if (this.isDead()) {
 			BlockState state = this.getWorld().getBlockState(this.vaultPos);
 			TweakFunction<CentaurLifeVaultBlock.Lives> lives = property -> this.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? property.decadeRight() : property.decadeLeft();
 			this.getWorld().setBlockState(this.vaultPos, state.with(CentaurLifeVaultBlock.LIVES, lives.apply(state.get(CentaurLifeVaultBlock.LIVES))));
+			this.world.getBlockEntity(this.vaultPos, ArcheonBlockEntities.CENTAUR_LIFE_VAULT).ifPresent(CentaurLifeVaultBlockEntity::releaseSoundtrack);
 		}
 		else {
 			this.updateGoals();
+			if (previousHealth >= this.getMaxHealth() / 2.0f && this.getHealth() <= this.getMaxHealth() / 2.0f) {
+				this.world.getBlockEntity(this.vaultPos, ArcheonBlockEntities.CENTAUR_LIFE_VAULT).ifPresent(CentaurLifeVaultBlockEntity::releaseSoundtrack);
+			}
 		}
 		return bool;
 	}

@@ -1,5 +1,6 @@
 package com.mmodding.archeon;
 
+import com.mmodding.archeon.blockentities.ArcheonBlockEntities;
 import com.mmodding.archeon.init.*;
 import com.mmodding.mmodding_lib.library.base.AdvancedModContainer;
 import com.mmodding.mmodding_lib.library.base.MModdingModInitializer;
@@ -28,6 +29,7 @@ public class Archeon implements MModdingModInitializer {
 	public List<ElementsInitializer> getElementsInitializers() {
 		List<ElementsInitializer> elementsInitializers = new ArrayList<>();
 		elementsInitializers.add(new ArcheonBlocks());
+		elementsInitializers.add(new ArcheonBlockEntities());
 		elementsInitializers.add(new ArcheonItems());
 		elementsInitializers.add(new ArcheonEnchantments());
 		elementsInitializers.add(new ArcheonFluids());

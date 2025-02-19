@@ -42,6 +42,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import org.jetbrains.annotations.Nullable;
@@ -140,6 +141,15 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 	public void onStoppedTrackingBy(ServerPlayerEntity player) {
 		super.onStoppedTrackingBy(player);
 		this.bossBar.removePlayer(player);
+	}
+
+	@Override
+	public void checkDespawn() {
+		if (this.world.getDifficulty() == Difficulty.PEACEFUL && this.isDisallowedInPeaceful()) {
+			this.discard();
+		} else {
+			this.despawnCounter = 0;
+		}
 	}
 
 	private int getPhaseIndex() {

@@ -1,6 +1,8 @@
 package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
+import com.mmodding.archeon.blockentities.ArcheonBlockEntities;
+import com.mmodding.archeon.blockentities.CentaurLifeVaultBlockEntity;
 import com.mmodding.archeon.buckets.CeramicBucketManager;
 import com.mmodding.archeon.buckets.WoodenBucketManager;
 import com.mmodding.archeon.entities.CentaurSpearEntity;
@@ -27,6 +29,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
@@ -53,6 +56,17 @@ public class ArcheonItems implements ElementsInitializer {
 			target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 60));
 			world.syncWorldEvent(WorldEvents.BLOCK_BROKEN, target.getBlockPos(), Block.getRawIdFromState(Blocks.FIRE_CORAL_BLOCK.getDefaultState()));
 		})
+	);
+
+	public static final CustomItem CENTAUR_LIFE_IGNITER = new CustomItem(
+		new AdvancedItemSettings()
+			.maxCount(1)
+			.rarity(Rarity.RARE)
+			.itemUseOnBlock(context -> context.getWorld().getBlockEntity(context.getBlockPos(), ArcheonBlockEntities.CENTAUR_LIFE_VAULT).ifPresent(blockEntity -> {
+				if (context.getWorld() instanceof ServerWorld world) {
+					blockEntity.initiate(world, context.getBlockPos(), world.getBlockState(context.getBlockPos()));
+				}
+			}))
 	);
 
 	public static final CustomItem POWER_KEY = new CustomItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE).itemUseOnBlock(context -> {
@@ -374,6 +388,7 @@ public class ArcheonItems implements ElementsInitializer {
 		WAND_OF_NATURE.register(Archeon.createId("wand_of_nature"));
 		QOLM_PICK.register(Archeon.createId("qolm_pick"));
 		MASSACRE_DAGGER.register(Archeon.createId("massacre_dagger"));
+		CENTAUR_LIFE_IGNITER.register(Archeon.createId("centaur_life_igniter"));
 		POWER_KEY.register(Archeon.createId("power_key"));
 		CENTAUR_SPEAR.register(Archeon.createId("centaur_spear"));
 		CENTAUR_BATTLE_AXE.register(Archeon.createId("centaur_battle_axe"));
