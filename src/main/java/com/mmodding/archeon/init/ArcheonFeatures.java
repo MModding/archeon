@@ -24,14 +24,17 @@ import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomFoliagePl
 import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomTreeDecorator;
 import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomTrunkPlacer;
 import net.minecraft.block.BlockState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.state.property.Properties;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.VerticalSurfaceType;
 import net.minecraft.util.math.floatprovider.ClampedNormalFloatProvider;
 import net.minecraft.util.math.floatprovider.UniformFloatProvider;
+import net.minecraft.util.math.intprovider.BiasedToBottomIntProvider;
 import net.minecraft.util.math.intprovider.ClampedNormalIntProvider;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -40,6 +43,7 @@ import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.decorator.*;
+import net.minecraft.world.gen.feature.BlockColumnFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.SimpleBlockFeatureConfig;
@@ -236,6 +240,26 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomOreFeature SHELLSAND_PATCH = new CustomOreFeature(
 		3, 32, 45, 80,
 		List.of(OreFeatureConfig.createTarget(BASE_SAND_ARCHEON, ArcheonBlocks.SHELLSAND.getDefaultState()))
+	);
+
+	public static final CustomRandomPatchFeature XETULIAN_SUGAR_CANE = new CustomRandomPatchFeature(
+		20, 4, 0,
+		PlacedFeatureUtil.placedInline(
+			Feature.BLOCK_COLUMN,
+			BlockColumnFeatureConfig.create(BiasedToBottomIntProvider.create(2, 4), BlockStateProvider.of(ArcheonBlocks.XETULIAN_SUGAR_CANE)),
+			BlockPredicateFilterPlacementModifier.create(
+				BlockPredicate.allOf(
+					BlockPredicate.IS_AIR,
+					BlockPredicate.wouldSurvive(ArcheonBlocks.XETULIAN_SUGAR_CANE.getDefaultState(), BlockPos.ORIGIN),
+					BlockPredicate.anyOf(
+						BlockPredicate.method_43289(new BlockPos(1, -1, 0), Fluids.WATER, Fluids.FLOWING_WATER),
+						BlockPredicate.method_43289(new BlockPos(-1, -1, 0), Fluids.WATER, Fluids.FLOWING_WATER),
+						BlockPredicate.method_43289(new BlockPos(0, -1, 1), Fluids.WATER, Fluids.FLOWING_WATER),
+						BlockPredicate.method_43289(new BlockPos(0, -1, -1), Fluids.WATER, Fluids.FLOWING_WATER)
+					)
+				)
+			)
+		)
 	);
 
 	public static final List<OreFeatureConfig.Target> APAFLORITE_ORE_TARGETS = List.of(
@@ -570,6 +594,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		AKETITE_PATCH.register(Archeon.createId("aketite_patch"));
 		SALT_PATCH.register(Archeon.createId("salt_patch"));
 		SHELLSAND_PATCH.register(Archeon.createId("shellsand_patch"));
+		XETULIAN_SUGAR_CANE.register(Archeon.createId("xetulian_sugar_cane"));
 		APAFLORITE_ORE_FEATURE.register(Archeon.createId("apaflorite_ore_feature"));
 		EXYRIANE_ORE_FEATURE.register(Archeon.createId("exyriane_ore_feature"));
 		FAELITE_ORE_FEATURE.register(Archeon.createId("faelite_ore_feature"));
@@ -668,6 +693,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 		SALT_PATCH.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN));
 		SHELLSAND_PATCH.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN));
+		XETULIAN_SUGAR_CANE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN));
 
 		APAFLORITE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
 		EXYRIANE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);
