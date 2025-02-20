@@ -228,8 +228,13 @@ public class ArcheonFeatures implements ElementsInitializer {
 		List.of(OreFeatureConfig.createTarget(BASE_STONE_ARCHEON, ArcheonBlocks.AKETITE.getDefaultState()))
 	);
 
+	public static final CustomOreFeature SALT_PATCH = new CustomOreFeature(
+		32, 4, 45, 80,
+		List.of(OreFeatureConfig.createTarget(BASE_SAND_ARCHEON, ArcheonBlocks.SALT_BLOCK.getDefaultState()))
+	);
+
 	public static final CustomOreFeature SHELLSAND_PATCH = new CustomOreFeature(
-		12, 3, 60, 120,
+		3, 32, 45, 80,
 		List.of(OreFeatureConfig.createTarget(BASE_SAND_ARCHEON, ArcheonBlocks.SHELLSAND.getDefaultState()))
 	);
 
@@ -563,6 +568,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ARTEMNITE_PATCH.register(Archeon.createId("artemnite_patch"));
 		CRIADAN_PATCH.register(Archeon.createId("criadan_patch"));
 		AKETITE_PATCH.register(Archeon.createId("aketite_patch"));
+		SALT_PATCH.register(Archeon.createId("salt_patch"));
 		SHELLSAND_PATCH.register(Archeon.createId("shellsand_patch"));
 		APAFLORITE_ORE_FEATURE.register(Archeon.createId("apaflorite_ore_feature"));
 		EXYRIANE_ORE_FEATURE.register(Archeon.createId("exyriane_ore_feature"));
@@ -660,6 +666,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		CRIADAN_PATCH.addDefaultToBiomes(inArcheonPredicate);
 		AKETITE_PATCH.addDefaultToBiomes(inArcheonPredicate);
 
+		SALT_PATCH.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN));
 		SHELLSAND_PATCH.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN));
 
 		APAFLORITE_ORE_FEATURE.addDefaultToBiomes(inArcheonPredicate);

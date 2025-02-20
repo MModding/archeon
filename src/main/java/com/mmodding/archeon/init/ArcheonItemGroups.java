@@ -59,6 +59,7 @@ public class ArcheonItemGroups implements ElementsInitializer {
 		(block instanceof GiantLilyBlock);
 
 	public static final Predicate<Item> IS_EQUIPMENT = item ->
+		(Registry.ITEM.getId(item).equals(Archeon.createId("centaur_life_igniter"))) ||
 		(Registry.ITEM.getId(item).equals(Archeon.createId("power_key"))) ||
 		(item instanceof CustomPortalKeyItem) ||
 		(item instanceof CustomArmorItem) ||
