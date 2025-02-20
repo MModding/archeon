@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AEA",
+    "AAA"
+  ],
+  "key": {
+    "E": {
+      "item": "archeon:exyriane_block"
+    },
+    "A": {
+      "item": "archeon:aketite"
+    }
+  },
+  "result": {
+    "item": "archeon:aketite_lamp"
+  }
+}
