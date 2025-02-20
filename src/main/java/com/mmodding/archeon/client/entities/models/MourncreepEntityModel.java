@@ -1,14 +1,14 @@
 package com.mmodding.archeon.client.entities.models;
 
-import com.mmodding.archeon.entities.MouncreepEntity;
+import com.mmodding.archeon.entities.MourncreepEntity;
 import net.minecraft.client.model.Dilation;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.model.TexturedModelData;
 import net.minecraft.client.render.entity.model.*;
 
-public class MouncreepEntityModel extends ZombieEntityModel<MouncreepEntity> {
+public class MourncreepEntityModel extends ZombieEntityModel<MourncreepEntity> {
 
-	public MouncreepEntityModel(ModelPart root) {
+	public MourncreepEntityModel(ModelPart root) {
 		super(root);
 	}
 
@@ -29,7 +29,7 @@ public class MouncreepEntityModel extends ZombieEntityModel<MouncreepEntity> {
 	}
 
 	@Override
-	public void setAngles(MouncreepEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+	public void setAngles(MourncreepEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
 		super.setAngles(entity, limbAngle, limbDistance, animationProgress, headYaw, headPitch);
 	}
 }

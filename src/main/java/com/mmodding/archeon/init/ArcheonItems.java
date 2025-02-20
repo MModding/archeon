@@ -235,14 +235,6 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomItem GOBLET_WATER = new CustomItem(new AdvancedItemSettings().maxCount(1)
 		.food(0, 0.0f, false, true).drinkable().itemFinishUsing(GOBLET_USE));
 
-	public static final CustomItem GOBLET_COCONUT_MILK = new CustomItem(new AdvancedItemSettings().maxCount(1)
-		.food(0, 0.0f, false, true).drinkable().itemFinishUsing((stack, world, user) -> {
-			if (!world.isClient()) {
-				user.clearStatusEffects();
-			}
-			return GOBLET_USE.apply(stack, world, user);
-		}));
-
 	public static final CustomItem GOBLET_BLOOD_ORANGE_JUICE = new CustomItem(new AdvancedItemSettings().maxCount(1)
 		.food(4, 0.5f).drinkable().itemFinishUsing(GOBLET_USE));
 
@@ -354,7 +346,7 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomSpawnEggItem AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.AURORA_CATALYST, 4380648, 3876673, new AdvancedItemSettings());
 	public static final CustomSpawnEggItem POISONOUS_AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.POISONOUS_AURORA_CATALYST, 2881287, 6633076, new AdvancedItemSettings());
 	public static final CustomSpawnEggItem EXPLOSIVE_AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.EXPLOSIVE_AURORA_CATALYST, 12279738, 6967084, new AdvancedItemSettings());
-	public static final CustomSpawnEggItem MOUNCREEP_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.MOUNCREEP, 6380368, 5267794, new AdvancedItemSettings());
+	public static final CustomSpawnEggItem MOURNCREEP_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.MOURNCREEP, 6380368, 5267794, new AdvancedItemSettings());
 	public static final CustomSpawnEggItem SNAIL_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.SNAIL, 9198398, 14794633, new AdvancedItemSettings());
 	public static final CustomSpawnEggItem SUNSTRADIVER_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.SUNSTRADIVER, 16724787, 16764006, new AdvancedItemSettings());
 	public static final CustomSpawnEggItem HEIFER_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.HEIFER, 2298374, 3680013, new AdvancedItemSettings());
@@ -459,7 +451,6 @@ public class ArcheonItems implements ElementsInitializer {
 		EXYRIANE_TORCH.register(Archeon.createId("exyriane_torch"));
 		GOBLET.register(Archeon.createId("goblet"));
 		GOBLET_WATER.register(Archeon.createId("goblet_water"));
-		GOBLET_COCONUT_MILK.register(Archeon.createId("goblet_coconut_milk"));
 		GOBLET_BLOOD_ORANGE_JUICE.register(Archeon.createId("goblet_blood_orange_juice"));
 		JAM_POT.register(Archeon.createId("jam_pot"));
 		ORANGE_LYCORIS_JAM_POT.register(Archeon.createId("orange_lycoris_jam_pot"));
@@ -498,7 +489,7 @@ public class ArcheonItems implements ElementsInitializer {
 		AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("aurora_catalyst_spawn_egg"));
 		POISONOUS_AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("poisonous_aurora_catalyst_spawn_egg"));
 		EXPLOSIVE_AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("explosive_aurora_catalyst_spawn_egg"));
-		MOUNCREEP_SPAWN_EGG.register(Archeon.createId("mouncreep_spawn_egg"));
+		MOURNCREEP_SPAWN_EGG.register(Archeon.createId("mourncreep_spawn_egg"));
 		SNAIL_SPAWN_EGG.register(Archeon.createId("snail_spawn_egg"));
 		SUNSTRADIVER_SPAWN_EGG.register(Archeon.createId("sunstradiver_spawn_egg"));
 		HEIFER_SPAWN_EGG.register(Archeon.createId("heifer_spawn_egg"));

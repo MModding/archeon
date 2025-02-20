@@ -14,10 +14,10 @@ public class ArcheonEntityModelLayers implements ClientElementsInitializer {
 	public static final EntityModelLayer SUNSTRADIVER = new EntityModelLayer(Archeon.createId("sunstradiver"), "main");
 	public static final EntityModelLayer HEIFER = new EntityModelLayer(Archeon.createId("heifer"), "main");
 	public static final EntityModelLayer DEER = new EntityModelLayer(Archeon.createId("deer"), "main");
-	public static final EntityModelLayer MOUNCREEP = new EntityModelLayer(Archeon.createId("mouncreep"), "main");
-	public static final EntityModelLayer MOUNCREEP_INNER_ARMOR = new EntityModelLayer(Archeon.createId("mouncreep"), "inner_armor");
-	public static final EntityModelLayer MOUNCREEP_OUTER_ARMOR = new EntityModelLayer(Archeon.createId("mouncreep"), "outer_armor");
-	public static final EntityModelLayer MOUNCREEP_HEAD = new EntityModelLayer(Archeon.createId("mouncreep_head"), "main");
+	public static final EntityModelLayer MOURNCREEP = new EntityModelLayer(Archeon.createId("mourncreep"), "main");
+	public static final EntityModelLayer MOURNCREEP_INNER_ARMOR = new EntityModelLayer(Archeon.createId("mourncreep"), "inner_armor");
+	public static final EntityModelLayer MOURNCREEP_OUTER_ARMOR = new EntityModelLayer(Archeon.createId("mourncreep"), "outer_armor");
+	public static final EntityModelLayer MOURNCREEP_HEAD = new EntityModelLayer(Archeon.createId("mourncreep_head"), "main");
 	public static final EntityModelLayer CENTAUR = new EntityModelLayer(Archeon.createId("centaur"), "main");
 
 	@Override
@@ -28,10 +28,10 @@ public class ArcheonEntityModelLayers implements ClientElementsInitializer {
 		EntityModelLayerRegistry.registerModelLayer(SUNSTRADIVER, SunstradiverEntityModel::getTexturedModelData);
 		EntityModelLayerRegistry.registerModelLayer(HEIFER, HeiferEntityModel::getTexturedModelData);
 		EntityModelLayerRegistry.registerModelLayer(DEER, DeerEntityModel::getTexturedModelData);
-		EntityModelLayerRegistry.registerModelLayer(MOUNCREEP, MouncreepEntityModel::getTexturedModelData);
-		EntityModelLayerRegistry.registerModelLayer(MOUNCREEP_INNER_ARMOR, MouncreepEntityModel::getInnerArmorTexturedModelData);
-		EntityModelLayerRegistry.registerModelLayer(MOUNCREEP_OUTER_ARMOR, MouncreepEntityModel::getOuterArmorTexturedModelData);
-		EntityModelLayerRegistry.registerModelLayer(MOUNCREEP_HEAD, MouncreepEntityModel::getHeadTexturedModelData);
+		EntityModelLayerRegistry.registerModelLayer(MOURNCREEP, MourncreepEntityModel::getTexturedModelData);
+		EntityModelLayerRegistry.registerModelLayer(MOURNCREEP_INNER_ARMOR, MourncreepEntityModel::getInnerArmorTexturedModelData);
+		EntityModelLayerRegistry.registerModelLayer(MOURNCREEP_OUTER_ARMOR, MourncreepEntityModel::getOuterArmorTexturedModelData);
+		EntityModelLayerRegistry.registerModelLayer(MOURNCREEP_HEAD, MourncreepEntityModel::getHeadTexturedModelData);
 		EntityModelLayerRegistry.registerModelLayer(CENTAUR, CentaurEntityModel::getTexturedModelData);
 	}
 }

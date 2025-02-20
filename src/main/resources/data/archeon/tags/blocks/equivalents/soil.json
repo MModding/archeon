@@ -4,6 +4,10 @@
     "archeon:wet_dirt",
     "archeon:wet_grass_block",
     "archeon:achrean_moss",
-    "archeon:achrean_moss_block"
+    "archeon:achrean_moss_block",
+    "archeon:dune_sand",
+    "archeon:shellsand",
+    "archeon:salt_block",
+    "archeon:dust"
   ]
 }

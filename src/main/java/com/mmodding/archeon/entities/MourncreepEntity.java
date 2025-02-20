@@ -18,11 +18,11 @@ import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class MouncreepEntity extends ZombieEntity {
+public class MourncreepEntity extends ZombieEntity {
 
-	private static final TrackedData<Integer> VARIANT = DataTracker.registerData(MouncreepEntity.class, TrackedDataHandlerRegistry.INTEGER);
+	private static final TrackedData<Integer> VARIANT = DataTracker.registerData(MourncreepEntity.class, TrackedDataHandlerRegistry.INTEGER);
 
-	public MouncreepEntity(EntityType<? extends MouncreepEntity> entityType, World world) {
+	public MourncreepEntity(EntityType<? extends MourncreepEntity> entityType, World world) {
 		super(entityType, world);
 	}
 
@@ -36,10 +36,10 @@ public class MouncreepEntity extends ZombieEntity {
 	@Override
 	protected void initDataTracker() {
 		super.initDataTracker();
-		this.dataTracker.startTracking(MouncreepEntity.VARIANT, 0);
+		this.dataTracker.startTracking(MourncreepEntity.VARIANT, 0);
 	}
 
-	public static DefaultAttributeContainer.Builder createMouncreepAttributes() {
+	public static DefaultAttributeContainer.Builder createMourncreepAttributes() {
 		return ZombieEntity.createZombieAttributes();
 	}
 
@@ -60,7 +60,7 @@ public class MouncreepEntity extends ZombieEntity {
 	}
 
 	public int getVariantIndex() {
-		return MathHelper.clamp(this.dataTracker.get(MouncreepEntity.VARIANT), 0, 3);
+		return MathHelper.clamp(this.dataTracker.get(MourncreepEntity.VARIANT), 0, 3);
 	}
 
 	public void setVariant(Variant variant) {
@@ -68,7 +68,7 @@ public class MouncreepEntity extends ZombieEntity {
 	}
 
 	public void setVariantIndex(int index) {
-		this.dataTracker.set(MouncreepEntity.VARIANT, index);
+		this.dataTracker.set(MourncreepEntity.VARIANT, index);
 	}
 
 	@Override

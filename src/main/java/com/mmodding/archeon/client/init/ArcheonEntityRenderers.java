@@ -20,7 +20,7 @@ public class ArcheonEntityRenderers implements ClientElementsInitializer {
 		EntityRendererRegistry.register(ArcheonEntities.SUNSTRADIVER, SunstradiverEntityRenderer::new);
 		EntityRendererRegistry.register(ArcheonEntities.HEIFER, HeiferEntityRenderer::new);
 		EntityRendererRegistry.register(ArcheonEntities.DEER, DeerEntityRenderer::new);
-		EntityRendererRegistry.register(ArcheonEntities.MOUNCREEP, MouncreepEntityRenderer::new);
+		EntityRendererRegistry.register(ArcheonEntities.MOURNCREEP, MourncreepEntityRenderer::new);
 		EntityRendererRegistry.register(ArcheonEntities.CENTAUR, CentaurEntityRenderer::new);
 		EntityRendererRegistry.register(ArcheonEntities.ARMORED_CENTAUR, CentaurEntityRenderer::new);
 		EntityRendererRegistry.register(ArcheonEntities.LUSONYTH_ARROW, LusonythArrowEntityRenderer::new);

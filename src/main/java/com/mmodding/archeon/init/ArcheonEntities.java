@@ -86,11 +86,11 @@ public class ArcheonEntities implements ElementsInitializer {
 			.maxChunkTrackingRange(8)
 	);
 
-	public static final CustomEntityType<MouncreepEntity> MOUNCREEP = CustomEntityType.createMob(
+	public static final CustomEntityType<MourncreepEntity> MOURNCREEP = CustomEntityType.createMob(
 		builder -> builder
-			.entityFactory(MouncreepEntity::new)
+			.entityFactory(MourncreepEntity::new)
 			.spawnGroup(SpawnGroup.MONSTER)
-			.defaultAttributes(MouncreepEntity.createMouncreepAttributes())
+			.defaultAttributes(MourncreepEntity.createMourncreepAttributes())
 			.setDimensions(EntityDimensions.fixed(0.6f, 1.95f))
 			.maxChunkTrackingRange(8)
 	);
@@ -141,7 +141,7 @@ public class ArcheonEntities implements ElementsInitializer {
 		SUNSTRADIVER.register(Archeon.createId("sunstradiver"));
 		HEIFER.register(Archeon.createId("heifer"));
 		DEER.register(Archeon.createId("deer"));
-		MOUNCREEP.register(Archeon.createId("mouncreep"));
+		MOURNCREEP.register(Archeon.createId("mourncreep"));
 		CENTAUR.register(Archeon.createId("centaur"));
 		ARMORED_CENTAUR.register(Archeon.createId("armored_centaur"));
 		LUSONYTH_ARROW.register(Archeon.createId("lusonyth_arrow"));
