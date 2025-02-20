@@ -1,15 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "OIO",
+    "III",
     "I I"
   ],
   "key": {
     "I": {
       "item": "archeon:faelite_ingot"
-    },
-    "O": {
-      "item": "minecraft:obsidian"
     }
   },
   "result": {

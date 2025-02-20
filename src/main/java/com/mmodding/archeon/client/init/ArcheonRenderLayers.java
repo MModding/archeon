@@ -51,7 +51,6 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.BUSH.cutout();
 		ArcheonBlocks.VINE.cutout();
 		ArcheonBlocks.BLOOD_ORANGE_BUSH.cutout();
-		ArcheonBlocks.COKIPLANT.cutout();
 		ArcheonBlocks.XETULIAN_SUGAR_CANE.cutout();
 		ArcheonBlocks.SPORE_ROOTCAP.cutout();
 

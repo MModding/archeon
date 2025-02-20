@@ -49,15 +49,6 @@
           },
           {
             "items": [
-              "archeon:cokiplant"
-            ],
-            "count": {
-              "min": 1,
-              "max": 10000
-            }
-          },
-          {
-            "items": [
               "archeon:iopea"
             ],
             "count": {

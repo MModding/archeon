@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "archeon:block/shellplant",
-    "particle": "archeon:block/shellplant"
-  }
-}

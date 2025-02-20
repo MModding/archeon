@@ -31,13 +31,11 @@ import net.minecraft.item.*;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
-import net.minecraft.world.explosion.Explosion;
 
 import java.util.function.Predicate;
 
@@ -297,17 +295,8 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomMusicDiscItem GEOMETRIC_FALL = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
 		new SoundEvent(Archeon.createId("geometric_fall")), 0, 74);
 
-	public static final CustomMusicDiscItem RISING = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
-		new SoundEvent(Archeon.createId("rising")), 0, 90);
-
 	public static final CustomMusicDiscItem PARALLELIFY = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
 		new SoundEvent(Archeon.createId("parallelify")), 0, 101);
-
-	public static final CustomMusicDiscItem RESIDE = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
-		new SoundEvent(Archeon.createId("reside")), 0, 165);
-
-	public static final CustomMusicDiscItem ARCHEON_CHRISTMAS = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
-		new SoundEvent(Archeon.createId("archeon_christmas")), 0, 165);
 
 	public static final CustomMusicDiscItem DEVOURING = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
 		new SoundEvent(Archeon.createId("glaive")), 0, 176);
@@ -345,19 +334,6 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomItem GROWING_NEAVE_BERRIES = new CustomItem(new AdvancedItemSettings().food(1, 0.3f));
 
 	public static final CustomItem NEAVE_BERRIES = new CustomItem(new AdvancedItemSettings().food(3, 0.6f));
-
-	public static final CustomItem GEAR = new CustomItem(new AdvancedItemSettings());
-
-	public static final CustomItem HERBICIDE = new CustomItem(new AdvancedItemSettings().maxCount(1).eatable()
-		.descriptionLines(Text.of("§7Don't use this.")).itemDropped((stack, world, user, droppedItem) -> world.createExplosion(
-			droppedItem,
-			droppedItem.getX(),
-			droppedItem.getY(),
-			droppedItem.getZ(),
-			3,
-			Explosion.DestructionType.NONE
-		))
-	);
 
 	public static final CustomItem INK_BOTTLE = new CustomItem(new AdvancedItemSettings().maxCount(16));
 
@@ -495,10 +471,7 @@ public class ArcheonItems implements ElementsInitializer {
 		LORE_SCRAP.register(Archeon.createId("lore_scrap"));
 		PE_4K.register(Archeon.createId("pe_4k"));
 		GEOMETRIC_FALL.register(Archeon.createId("geometric_fall"));
-		RISING.register(Archeon.createId("rising"));
 		PARALLELIFY.register(Archeon.createId("parallelify"));
-		RESIDE.register(Archeon.createId("reside"));
-		ARCHEON_CHRISTMAS.register(Archeon.createId("archeon_christmas"));
 		DEVOURING.register(Archeon.createId("devouring"));
 		RECORD_FRAGMENT.register(Archeon.createId("record_fragment"));
 		SALT.register(Archeon.createId("salt"));
@@ -514,8 +487,6 @@ public class ArcheonItems implements ElementsInitializer {
 		GOLDEN_GRAPE.register(Archeon.createId("golden_grape"));
 		GROWING_NEAVE_BERRIES.register(Archeon.createId("growing_neave_berries"));
 		NEAVE_BERRIES.register(Archeon.createId("neave_berries"));
-		GEAR.register(Archeon.createId("gear"));
-		HERBICIDE.register(Archeon.createId("herbicide"));
 		INK_BOTTLE.register(Archeon.createId("ink_bottle"));
 		POUCH.register(Archeon.createId("pouch"));
 		SUNSTRADIVER_FEATHER.register(Archeon.createId("sunstradiver_feather"));

@@ -305,14 +305,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomFlowerBlock COKIPLANT = new CustomFlowerBlock(
-		floor -> floor.isOf(ArcheonBlocks.DUNE_SAND),
-		StatusEffects.POISON,
-		5,
-		DefaultBlockSettings.PLANT_SETTINGS,
-		true
-	);
-
 	public static final CustomSugarCaneBlock XETULIAN_SUGAR_CANE = new CustomSugarCaneBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.DUNE_SAND) || floor.isOf(ArcheonBlocks.SALT_BLOCK),
 		null,
@@ -320,7 +312,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final SporeRootcapBlock SPORE_ROOTCAP = new SporeRootcapBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final SporeRootcapBlock SPORE_ROOTCAP = new SporeRootcapBlock(DefaultBlockSettings.LEAVES_SETTINGS, true, new AdvancedItemSettings().food(1, 0.1f, false, true, true));
 
 	public static final CustomPlantBlock GLOWSPROUTS = new CustomPlantBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.STONE) || floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.GLOWSHROOM_MOSS_BLOCK),
@@ -330,7 +322,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomPlantBlock GLOWSHROOMS = new CustomPlantBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.STONE) || floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.GLOWSHROOM_MOSS_BLOCK),
-		DefaultBlockSettings.PLANT_SETTINGS,
+		DefaultBlockSettings.PLANT_SETTINGS.luminance(14),
 		true
 	);
 
@@ -1230,7 +1222,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		BUSH.register(Archeon.createId("bush"));
 		VINE.register(Archeon.createId("vine"));
 		BLOOD_ORANGE_BUSH.register(Archeon.createId("blood_orange_bush"));
-		COKIPLANT.register(Archeon.createId("cokiplant"));
 		XETULIAN_SUGAR_CANE.register(Archeon.createId("xetulian_sugar_cane"));
 		SPORE_ROOTCAP.register(Archeon.createId("spore_rootcap"));
 		GLOWSPROUTS.register(Archeon.createId("glowsprouts"));

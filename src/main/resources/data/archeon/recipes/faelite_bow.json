@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " IS",
-    "I S",
-    " IS"
+    " IF",
+    "I F",
+    " IF"
   ],
   "key": {
     "I": {
       "item": "archeon:faelite_ingot"
     },
-    "S": {
-      "item": "minecraft:stick"
+    "F": {
+      "item": "archeon:plant_fiber"
     }
   },
   "result": {
