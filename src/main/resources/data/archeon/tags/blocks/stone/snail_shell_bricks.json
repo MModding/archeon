@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:snail_shell_bricks",
+    "archeon:snail_shell_brick_stairs",
+    "archeon:snail_shell_brick_slab",
+    "archeon:snail_shell_brick_wall",
+    "archeon:fancy_snail_shell_bricks",
+    "archeon:fancy_snail_shell_brick_stairs",
+    "archeon:fancy_snail_shell_brick_slab",
+    "archeon:fancy_snail_shell_brick_wall"
+  ]
+}

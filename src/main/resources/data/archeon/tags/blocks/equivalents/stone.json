@@ -11,6 +11,7 @@
     "#archeon:stone/criadan",
     "#archeon:stone/anhydrite",
     "#archeon:stone/roughcast",
+    "#archeon:stone/black_tiles",
     "#archeon:stone/dark_green_tiles",
     "#archeon:stone/green_tiles",
     "#archeon:stone/lime_tiles",
@@ -22,6 +23,9 @@
     "#archeon:stone/pink_tiles",
     "#archeon:stone/red_tiles",
     "#archeon:stone/ceramic_tiles",
-    "#archeon:stone/ochre_tiles"
+    "#archeon:stone/ochre_tiles",
+    "#archeon:stone/antic_mosaic",
+    "#archeon:stone/antic_floortile",
+    "#archeon:stone/snail_shell_bricks"
   ]
 }

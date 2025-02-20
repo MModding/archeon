@@ -1092,6 +1092,16 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomPaneBlock DUNE_SAND_GLASS_PANE_TILES_BOTTOM_LEFT = new CustomPaneBlock(DefaultBlockSettings.GLASS_SETTINGS, true);
 	public static final CustomPaneBlock DUNE_SAND_GLASS_PANE_TILES_BOTTOM_RIGHT = new CustomPaneBlock(DefaultBlockSettings.GLASS_SETTINGS, true);
 
+	public static final CustomBlock ANTIC_MOSAIC = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock ANTIC_MOSAIC_STAIRS = new CustomStairsBlock(ANTIC_MOSAIC.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock ANTIC_MOSAIC_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock ANTIC_MOSAIC_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+
+	public static final CustomBlock ANTIC_FLOORTILE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomStairsBlock ANTIC_FLOORTILE_STAIRS = new CustomStairsBlock(ANTIC_FLOORTILE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomSlabBlock ANTIC_FLOORTILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final CustomWallBlock ANTIC_FLOORTILE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+
 	public static final CustomBlock SNAIL_SHELL_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock SNAIL_SHELL_BRICK_STAIRS = new CustomStairsBlock(SNAIL_SHELL_BRICKS.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomSlabBlock SNAIL_SHELL_BRICK_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
@@ -1579,6 +1589,14 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DUNE_SAND_GLASS_TILES_BOTTOM_LEFT.register(Archeon.createId("dune_sand_glass_tiles_bottom_left"));
 		DUNE_SAND_GLASS_TILES_BOTTOM_RIGHT.register(Archeon.createId("dune_sand_glass_tiles_bottom_right"));
 		DUNE_SAND_GLASS_PANE.register(Archeon.createId("dune_sand_glass_pane"));
+		ANTIC_MOSAIC.register(Archeon.createId("antic_mosaic"));
+		ANTIC_MOSAIC_STAIRS.register(Archeon.createId("antic_mosaic_stairs"));
+		ANTIC_MOSAIC_SLAB.register(Archeon.createId("antic_mosaic_slab"));
+		ANTIC_MOSAIC_WALL.register(Archeon.createId("antic_mosaic_wall"));
+		ANTIC_FLOORTILE.register(Archeon.createId("antic_floortile"));
+		ANTIC_FLOORTILE_STAIRS.register(Archeon.createId("antic_floortile_stairs"));
+		ANTIC_FLOORTILE_SLAB.register(Archeon.createId("antic_floortile_slab"));
+		ANTIC_FLOORTILE_WALL.register(Archeon.createId("antic_floortile_wall"));
 		DUNE_SAND_GLASS_PANE_TILES.register(Archeon.createId("dune_sand_glass_pane_tiles"));
 		DUNE_SAND_GLASS_PANE_TILES_TOP_LEFT.register(Archeon.createId("dune_sand_glass_pane_tiles_top_left"));
 		DUNE_SAND_GLASS_PANE_TILES_TOP_RIGHT.register(Archeon.createId("dune_sand_glass_pane_tiles_top_right"));

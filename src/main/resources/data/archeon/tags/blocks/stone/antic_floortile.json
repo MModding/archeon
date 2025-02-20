@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:antic_floortile",
+    "archeon:antic_floortile_stairs",
+    "archeon:antic_floortile_slab",
+    "archeon:antic_floortile_wall"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:antic_mosaic",
+    "archeon:antic_mosaic_stairs",
+    "archeon:antic_mosaic_slab",
+    "archeon:antic_mosaic_wall"
+  ]
+}

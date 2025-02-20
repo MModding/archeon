@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeon:block/antic_floortile_slab"
+    },
+    "type=top": {
+      "model": "archeon:block/antic_floortile_slab_top"
+    },
+    "type=double": {
+      "model": "archeon:block/antic_floortile_slab_full"
+    }
+  }
+}

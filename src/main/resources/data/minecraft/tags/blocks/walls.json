@@ -44,6 +44,8 @@
     "archeon:red_tile_wall",
     "archeon:black_tile_wall",
     "archeon:ceramic_tile_wall",
-    "archeon:ochre_tile_wall"
+    "archeon:ochre_tile_wall",
+    "archeon:antic_mosaic_wall",
+    "archeon:antic_floortile_wall"
   ]
 }
