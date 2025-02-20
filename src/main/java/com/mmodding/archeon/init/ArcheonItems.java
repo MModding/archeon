@@ -2,7 +2,6 @@ package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.blockentities.ArcheonBlockEntities;
-import com.mmodding.archeon.blockentities.CentaurLifeVaultBlockEntity;
 import com.mmodding.archeon.buckets.CeramicBucketManager;
 import com.mmodding.archeon.buckets.WoodenBucketManager;
 import com.mmodding.archeon.entities.CentaurSpearEntity;
@@ -44,7 +43,7 @@ import java.util.function.Predicate;
 
 public class ArcheonItems implements ElementsInitializer {
 
-	public static final CustomPortalKeyItem WAND_OF_NATURE = new CustomPortalKeyItem(new AdvancedItemSettings(), SoundEvents.ITEM_FLINTANDSTEEL_USE);
+	public static final CustomPortalKeyItem WAND_OF_NATURE = new CustomPortalKeyItem(new AdvancedItemSettings().maxDamage(1), SoundEvents.ITEM_FLINTANDSTEEL_USE);
 
 	public static final CustomPickaxeItem QOLM_PICK = new CustomPickaxeItem(QolmTool.INSTANCE, 1, -2.5f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.GREEN).fireproof());
 
