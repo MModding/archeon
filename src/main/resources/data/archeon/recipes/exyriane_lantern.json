@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CTC",
+    "CCC"
+  ],
+  "key": {
+    "T": {
+      "item": "archeon:exyriane_torch"
+    },
+    "C": {
+      "item": "archeon:chiaspen"
+    }
+  },
+  "result": {
+    "item": "archeon:exyriane_lantern"
+  }
+}
