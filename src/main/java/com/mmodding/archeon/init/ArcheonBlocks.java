@@ -209,7 +209,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DefaultBlockSettings.PLANT_SETTINGS.collidable(true)
 	);
 
-	public static final AchreanVinesBlock ACHREAN_VINE = new AchreanVinesBlock(
+	public static final AchreanVinesBlock ACHREAN_VINES = new AchreanVinesBlock(
 		DefaultBlockSettings.PLANT_SETTINGS
 			.luminance(state -> state.get(AchreanVinesBlock.NEAVE_BERRIES) && state.get(AchreanVinesBlock.DONE) ? 14 : 0)
 			.sounds(BlockSoundGroup.CAVE_VINES),
@@ -742,8 +742,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomPillarBlock BLOCK_OF_CERAMIC = new CustomPillarBlock(DefaultBlockSettings.BONE_SETTINGS, true);
-	public static final CustomStairsBlock CERAMIC_STAIRS = new CustomStairsBlock(BLOCK_OF_CERAMIC.getDefaultState(), DefaultBlockSettings.BONE_SETTINGS, true);
+	public static final CustomPillarBlock CERAMIC_BLOCK = new CustomPillarBlock(DefaultBlockSettings.BONE_SETTINGS, true);
+	public static final CustomStairsBlock CERAMIC_STAIRS = new CustomStairsBlock(CERAMIC_BLOCK.getDefaultState(), DefaultBlockSettings.BONE_SETTINGS, true);
 	public static final CustomSlabBlock CERAMIC_SLAB = new CustomSlabBlock(DefaultBlockSettings.BONE_SETTINGS, true);
 
 	public static final CustomPillarBlock CERAMIC_BRICKS = new CustomPillarBlock(DefaultBlockSettings.BONE_SETTINGS, true);
@@ -1215,7 +1215,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		SMALL_HOT_SPRING_LILY_PAD.register(Archeon.createId("small_hot_spring_lily_pad"));
 		HOT_SPRING_LILY_PAD.register(Archeon.createId("hot_spring_lily_pad"));
 		GIANT_LILY.register(Archeon.createId("giant_lily"));
-		ACHREAN_VINE.register(Archeon.createId("achrean_vines"));
+		ACHREAN_VINES.register(Archeon.createId("achrean_vines"));
 		WET_GRASS.register(Archeon.createId("wet_grass"));
 		TALL_WET_GRASS.register(Archeon.createId("tall_wet_grass"));
 		FLOWERED_WET_GRASS.register(Archeon.createId("flowered_wet_grass"));
@@ -1515,7 +1515,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		ORIAN_VUXANCIA_SAPLING.register(Archeon.createId("orian_vuxancia_sapling"));
 		VALE_VUXANCIA_SAPLING.register(Archeon.createId("vale_vuxancia_sapling"));
 		ZIAL_VUXANCIA_SAPLING.register(Archeon.createId("zial_vuxancia_sapling"));
-		BLOCK_OF_CERAMIC.register(Archeon.createId("block_of_ceramic"));
+		CERAMIC_BLOCK.register(Archeon.createId("ceramic_block"));
 		CERAMIC_STAIRS.register(Archeon.createId("ceramic_stairs"));
 		CERAMIC_SLAB.register(Archeon.createId("ceramic_slab"));
 		CERAMIC_BRICKS.register(Archeon.createId("ceramic_bricks"));
@@ -1589,6 +1589,11 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DUNE_SAND_GLASS_TILES_BOTTOM_LEFT.register(Archeon.createId("dune_sand_glass_tiles_bottom_left"));
 		DUNE_SAND_GLASS_TILES_BOTTOM_RIGHT.register(Archeon.createId("dune_sand_glass_tiles_bottom_right"));
 		DUNE_SAND_GLASS_PANE.register(Archeon.createId("dune_sand_glass_pane"));
+		DUNE_SAND_GLASS_PANE_TILES.register(Archeon.createId("dune_sand_glass_pane_tiles"));
+		DUNE_SAND_GLASS_PANE_TILES_TOP_LEFT.register(Archeon.createId("dune_sand_glass_pane_tiles_top_left"));
+		DUNE_SAND_GLASS_PANE_TILES_TOP_RIGHT.register(Archeon.createId("dune_sand_glass_pane_tiles_top_right"));
+		DUNE_SAND_GLASS_PANE_TILES_BOTTOM_LEFT.register(Archeon.createId("dune_sand_glass_pane_tiles_bottom_left"));
+		DUNE_SAND_GLASS_PANE_TILES_BOTTOM_RIGHT.register(Archeon.createId("dune_sand_glass_pane_tiles_bottom_right"));
 		ANTIC_MOSAIC.register(Archeon.createId("antic_mosaic"));
 		ANTIC_MOSAIC_STAIRS.register(Archeon.createId("antic_mosaic_stairs"));
 		ANTIC_MOSAIC_SLAB.register(Archeon.createId("antic_mosaic_slab"));
@@ -1597,11 +1602,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		ANTIC_FLOORTILE_STAIRS.register(Archeon.createId("antic_floortile_stairs"));
 		ANTIC_FLOORTILE_SLAB.register(Archeon.createId("antic_floortile_slab"));
 		ANTIC_FLOORTILE_WALL.register(Archeon.createId("antic_floortile_wall"));
-		DUNE_SAND_GLASS_PANE_TILES.register(Archeon.createId("dune_sand_glass_pane_tiles"));
-		DUNE_SAND_GLASS_PANE_TILES_TOP_LEFT.register(Archeon.createId("dune_sand_glass_pane_tiles_top_left"));
-		DUNE_SAND_GLASS_PANE_TILES_TOP_RIGHT.register(Archeon.createId("dune_sand_glass_pane_tiles_top_right"));
-		DUNE_SAND_GLASS_PANE_TILES_BOTTOM_LEFT.register(Archeon.createId("dune_sand_glass_pane_tiles_bottom_left"));
-		DUNE_SAND_GLASS_PANE_TILES_BOTTOM_RIGHT.register(Archeon.createId("dune_sand_glass_pane_tiles_bottom_right"));
 		SNAIL_SHELL_BRICKS.register(Archeon.createId("snail_shell_bricks"));
 		SNAIL_SHELL_BRICK_STAIRS.register(Archeon.createId("snail_shell_brick_stairs"));
 		SNAIL_SHELL_BRICK_SLAB.register(Archeon.createId("snail_shell_brick_slab"));

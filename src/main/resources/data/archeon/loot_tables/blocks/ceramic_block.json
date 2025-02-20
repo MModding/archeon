@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "archeon:block_of_ceramic"
+          "name": "archeon:ceramic_block"
         }
       ],
       "rolls": 1.0

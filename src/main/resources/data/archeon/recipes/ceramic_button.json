@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "archeon:block_of_ceramic"
+      "item": "archeon:ceramic_block"
     }
   ],
   "result": {

@@ -487,7 +487,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomGrowsDownPlantWithCeilingFeature ACHREAN_MOSS_CEILING = new CustomGrowsDownPlantWithCeilingFeature(
 		125,
 		12,
-		() -> ArcheonBlocks.ACHREAN_VINE,
+		() -> ArcheonBlocks.ACHREAN_VINES,
 		() -> ArcheonBlocks.ACHREAN_MOSS_BLOCK,
 		ArcheonTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
 		UniformIntProvider.create(1, 2),
