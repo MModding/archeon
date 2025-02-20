@@ -49,25 +49,6 @@
         {
           "type": "minecraft:item",
           "weight": 1,
-          "name": "minecraft:coal",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 4
-              }
-            },
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:ore_drops"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
           "name": "archeon:apaflorite_gemstone",
           "functions": [
             {
