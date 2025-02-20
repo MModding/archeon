@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " IS",
+    "I S",
+    " IS"
+  ],
+  "key": {
+    "I": {
+      "item": "archeon:faelite_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "archeon:faelite_bow"
+  }
+}

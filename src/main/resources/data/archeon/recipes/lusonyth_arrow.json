@@ -1,23 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "F",
+    "L",
     "S",
-    "D"
+    "F"
   ],
   "key": {
-    "F": {
-      "item": "minecraft:flint"
+    "L": {
+      "item": "archeon:lusonyth_ingot"
     },
     "S": {
       "item": "minecraft:stick"
     },
-    "D": {
+    "F": {
       "item": "archeon:sunstradiver_feather"
     }
   },
   "result": {
-    "item": "minecraft:arrow",
+    "item": "archeon:lusonyth_arrow",
     "count": 4
   }
 }
