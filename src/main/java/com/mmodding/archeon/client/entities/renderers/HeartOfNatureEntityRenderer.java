@@ -63,7 +63,7 @@ public class HeartOfNatureEntityRenderer extends MobEntityRenderer<HeartOfNature
 
 		@Override
 		protected float getEnergySwirlOffsetX(float partialAge) {
-			return MathHelper.cos(partialAge * 0.02F) * 3.0F;
+			return MathHelper.cos(partialAge * 0.02f) * 3.0f;
 		}
 
 		@Override
