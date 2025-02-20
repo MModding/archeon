@@ -7,11 +7,11 @@
   ],
   "key": {
     "C": {
-      "item": "archeon:cobbled_chiaspen"
+      "item": "archeon:cobbled_phosnor_slate"
     }
   },
   "result": {
-    "item": "minecraft:furnace",
+    "item": "archeon:phosnor_slate_furnace",
     "count": 1
   }
 }
