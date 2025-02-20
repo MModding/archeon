@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "archeon:phosnor_slate_lusonyth_ore"
+  },
+  "result": "archeon:lusonyth_ingot"
+}
