@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "#archeon:equivalents/soil"
+    "#archeon:equivalents/soil",
+    "archeon:dune_sand",
+    "archeon:shellsand",
+    "archeon:salt_block",
+    "archeon:dust"
   ]
 }
