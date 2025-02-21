@@ -13,17 +13,17 @@ public class FaeliteArmor implements ArmorMaterial {
 
 	@Override
 	public int getDurability(EquipmentSlot slot) {
-		return new int[] {13, 15, 16, 11} [slot.getEntitySlotId()] * 32;
+		return new int[] {13, 15, 16, 11} [slot.getEntitySlotId()] * 33;
 	}
 
 	@Override
 	public int getProtectionAmount(EquipmentSlot slot) {
-		return new int[] {2, 5, 8, 3} [slot.getEntitySlotId()];
+		return new int[] {3, 6, 8, 3} [slot.getEntitySlotId()];
 	}
 
 	@Override
 	public int getEnchantability() {
-		return 18;
+		return 10;
 	}
 
 	@Override
@@ -43,11 +43,11 @@ public class FaeliteArmor implements ArmorMaterial {
 
 	@Override
 	public float getToughness() {
-		return 0.2f;
+		return 2.0f;
 	}
 
 	@Override
 	public float getKnockbackResistance() {
-		return 0.1f;
+		return 0.0f;
 	}
 }

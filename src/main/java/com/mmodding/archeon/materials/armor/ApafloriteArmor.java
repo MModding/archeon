@@ -13,7 +13,7 @@ public class ApafloriteArmor implements ArmorMaterial {
 
 	@Override
 	public int getDurability(EquipmentSlot slot) {
-		return new int[] {13, 15, 16, 11} [slot.getEntitySlotId()] * 21;
+		return new int[] {13, 15, 16, 11} [slot.getEntitySlotId()] * 15;
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class ApafloriteArmor implements ArmorMaterial {
 
 	@Override
 	public int getEnchantability() {
-		return 10;
+		return 9;
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class ApafloriteArmor implements ArmorMaterial {
 
 	@Override
 	public float getToughness() {
-		return 2.5f;
+		return 0.0f;
 	}
 
 	@Override

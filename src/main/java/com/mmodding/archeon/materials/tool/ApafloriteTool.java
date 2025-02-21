@@ -10,12 +10,12 @@ public class ApafloriteTool implements ToolMaterial {
 
 	@Override
 	public int getDurability() {
-		return 800;
+		return 250;
 	}
 
 	@Override
 	public float getMiningSpeedMultiplier() {
-		return 8.0f;
+		return 6.0f;
 	}
 
 	@Override

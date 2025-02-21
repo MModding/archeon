@@ -13,27 +13,27 @@ public class LusonythArmor implements ArmorMaterial {
 
 	@Override
 	public int getDurability(EquipmentSlot slot) {
-		return new int[] {13, 15, 16, 11} [slot.getEntitySlotId()] * 32;
+		return new int[] {13, 15, 16, 11} [slot.getEntitySlotId()] * 37;
 	}
 
 	@Override
 	public int getProtectionAmount(EquipmentSlot slot) {
-		return new int[] {2, 5, 8, 3} [slot.getEntitySlotId()];
+		return new int[] {3, 6, 8, 3} [slot.getEntitySlotId()];
 	}
 
 	@Override
 	public int getEnchantability() {
-		return 18;
+		return 15;
 	}
 
 	@Override
 	public SoundEvent getEquipSound() {
-		return SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND;
+		return SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE;
 	}
 
 	@Override
 	public Ingredient getRepairIngredient() {
-		return Ingredient.ofItems(ArcheonItems.RAW_LUSONYTH);
+		return Ingredient.ofItems(ArcheonItems.LUSONYTH_INGOT);
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class LusonythArmor implements ArmorMaterial {
 
 	@Override
 	public float getToughness() {
-		return 0.2f;
+		return 3.0f;
 	}
 
 	@Override

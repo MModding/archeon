@@ -10,31 +10,31 @@ public class LusonythTool implements ToolMaterial {
 
 	@Override
 	public int getDurability() {
-		return 800;
+		return 2031;
 	}
 
 	@Override
 	public float getMiningSpeedMultiplier() {
-		return 8.0f;
+		return 9.0f;
 	}
 
 	@Override
 	public float getAttackDamage() {
-		return 2.5f;
+		return 5.0f;
 	}
 
 	@Override
 	public int getMiningLevel() {
-		return 2;
+		return 4;
 	}
 
 	@Override
 	public int getEnchantability() {
-		return 14;
+		return 15;
 	}
 
 	@Override
 	public Ingredient getRepairIngredient() {
-		return Ingredient.ofItems(ArcheonItems.APAFLORITE_GEMSTONE);
+		return Ingredient.ofItems(ArcheonItems.LUSONYTH_INGOT);
 	}
 }

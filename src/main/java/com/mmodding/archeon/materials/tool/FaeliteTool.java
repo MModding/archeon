@@ -10,27 +10,27 @@ public class FaeliteTool implements ToolMaterial {
 
 	@Override
 	public int getDurability() {
-		return 2031;
+		return 1561;
 	}
 
 	@Override
 	public float getMiningSpeedMultiplier() {
-		return 12.0f;
+		return 8.0f;
 	}
 
 	@Override
 	public float getAttackDamage() {
-		return 1.0f;
+		return 4.0f;
 	}
 
 	@Override
 	public int getMiningLevel() {
-		return 4;
+		return 3;
 	}
 
 	@Override
 	public int getEnchantability() {
-		return 42;
+		return 10;
 	}
 
 	@Override
