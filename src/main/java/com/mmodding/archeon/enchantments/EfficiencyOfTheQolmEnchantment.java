@@ -11,19 +11,8 @@ import net.minecraft.item.ItemStack;
 
 public class EfficiencyOfTheQolmEnchantment extends CustomEnchantment {
 
-
 	public EfficiencyOfTheQolmEnchantment(EnchantmentType type, Rarity rarity, EnchantmentTarget enchantmentTarget, EquipmentSlot... equipmentSlots) {
 		super(type, rarity, enchantmentTarget, equipmentSlots);
-	}
-
-	@Override
-	public int getMinPower(int level) {
-		return (level - 1) * 10 + 1;
-	}
-
-	@Override
-	public int getMaxPower(int level) {
-		return super.getMinPower(level) + 50;
 	}
 
 	@Override
