@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SJS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "archeon:spore_rootcap"
+    },
+    "J": {
+      "item": "archeon:pink_lycoris_jam_pot"
+    }
+  },
+  "result": {
+    "item": "archeon:lycoris_jam_pie",
+    "count": 1
+  }
+}

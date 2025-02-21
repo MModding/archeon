@@ -253,7 +253,7 @@ public class ArcheonItems implements ElementsInitializer {
 			.snack()
 			.statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 1000), 1.0f)
 			.build()
-	).drinkable().itemFinishUsing(JAM_POT_USE));
+	).drinkable().recipeRemainder(ArcheonItems.JAM_POT).itemFinishUsing(JAM_POT_USE));
 
 	public static final CustomItem RED_LYCORIS_JAM_POT = new CustomItem(new AdvancedItemSettings().maxCount(1).food(
 		new FoodComponent.Builder()
@@ -263,7 +263,7 @@ public class ArcheonItems implements ElementsInitializer {
 			.snack()
 			.statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 1000, 1), 1.0f)
 			.build()
-	).drinkable().itemFinishUsing(JAM_POT_USE));
+	).drinkable().recipeRemainder(ArcheonItems.JAM_POT).itemFinishUsing(JAM_POT_USE));
 
 	public static final CustomItem PINK_LYCORIS_JAM_POT = new CustomItem(new AdvancedItemSettings().maxCount(1).food(
 		new FoodComponent.Builder()
@@ -274,7 +274,7 @@ public class ArcheonItems implements ElementsInitializer {
 			.statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 1000, 1), 1.0f)
 			.statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 1000, 1), 1.0f)
 			.build()
-	).drinkable().itemFinishUsing(JAM_POT_USE));
+	).drinkable().recipeRemainder(ArcheonItems.JAM_POT).itemFinishUsing(JAM_POT_USE));
 
 	public static final CustomItem RED_LYCORIS_PETAL = new CustomItem(new AdvancedItemSettings().food(3, 0.2f));
 
