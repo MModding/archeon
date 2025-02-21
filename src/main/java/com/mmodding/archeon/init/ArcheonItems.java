@@ -122,7 +122,7 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomSwordItem FAELITE_SWORD = new CustomSwordItem(FaeliteTool.INSTANCE, 3, -2.4f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
 	public static final CustomPickaxeItem FAELITE_PICKAXE = new CustomPickaxeItem(FaeliteTool.INSTANCE, 1, -2.8f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
 	public static final CustomAxeItem FAELITE_AXE = new CustomAxeItem(FaeliteTool.INSTANCE, 5.0f, -3.0f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
-	public static final CustomShovelItem FAELITE_SHOVEL = new CustomShovelItem(FaeliteTool.INSTANCE, 1.5F, -3.0f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
+	public static final CustomShovelItem FAELITE_SHOVEL = new CustomShovelItem(FaeliteTool.INSTANCE, 1.5f, -3.0f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
 	public static final CustomHoeItem FAELITE_HOE = new CustomHoeItem(FaeliteTool.INSTANCE, -3, 0.0f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
 
 	public static final CustomArmorItem FAELITE_HELMET = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.HEAD, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
@@ -309,7 +309,7 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomItem RAW_DEER = new CustomItem(new AdvancedItemSettings().food(3, 0.3f, true));
 	public static final CustomItem COOKED_DEER = new CustomItem(new AdvancedItemSettings().food(9, 1.0f, true));
 
-	public static final CustomItem LYCORIS_JAM_PIE = new CustomItem(new AdvancedItemSettings().maxCount(1).food(20, 20.0f));
+	public static final CustomItem LYCORIS_JAM_PIE = new CustomItem(new AdvancedItemSettings().maxCount(1).food(6, 10.0f));
 
 	public static final CustomItem BLOOD_ORANGE = new CustomItem(new AdvancedItemSettings());
 

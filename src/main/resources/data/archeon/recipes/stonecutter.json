@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " G ",
+    " A ",
     "BBB"
   ],
   "key": {
-    "G": {
-      "item": "archeon:gear"
+    "A": {
+      "item": "archeon:apaflorite_gemstone"
     },
     "B": {
       "item": "archeon:chiaspen_bricks"

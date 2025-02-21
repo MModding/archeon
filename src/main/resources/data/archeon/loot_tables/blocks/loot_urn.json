@@ -361,20 +361,6 @@
         {
           "type": "minecraft:item",
           "weight": 1,
-          "name": "archeon:reside",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 0,
-                "max": 1
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
           "name": "archeon:exyriane_shard",
           "functions": [
             {

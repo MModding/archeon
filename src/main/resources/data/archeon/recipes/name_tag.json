@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "archeon:gear"
+      "item": "archeon:aurora_crystal"
     },
     {
       "item": "archeon:manuscript"
