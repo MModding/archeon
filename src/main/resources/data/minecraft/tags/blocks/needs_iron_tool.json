@@ -1,8 +1,10 @@
 {
   "replace": false,
   "values": [
-    "archeon:exyriane_block",
-    "archeon:apaflorite_block",
+    "archeon:faelite_ore",
+    "archeon:phosnor_slate_faelite_ore",
+    "archeon:lusonyth_ore",
+    "archeon:phosnor_slate_lusonyth_ore",
     "archeon:faelite_block",
     "archeon:lusonyth_block",
     "archeon:clementium_bars",

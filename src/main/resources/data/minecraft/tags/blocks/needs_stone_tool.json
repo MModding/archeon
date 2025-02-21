@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:apaflorite_ore",
+    "archeon:slightly_condensed_apaflorite_ore",
+    "archeon:condensed_apaflorite_ore",
+    "archeon:phosnor_slate_apaflorite_ore",
+    "archeon:slightly_condensed_phosnor_slate_apaflorite_ore",
+    "archeon:condensed_phosnor_slate_apaflorite_ore",
+    "archeon:apaflorite_block"
+  ]
+}
