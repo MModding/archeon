@@ -60,8 +60,11 @@ public class ArcheonItems implements ElementsInitializer {
 			.maxCount(1)
 			.rarity(Rarity.RARE)
 			.itemUseOnBlock(context -> context.getWorld().getBlockEntity(context.getBlockPos(), ArcheonBlockEntities.CENTAUR_LIFE_VAULT).ifPresent(blockEntity -> {
-				if (context.getWorld() instanceof ServerWorld world) {
-					blockEntity.initiate(world, context.getBlockPos(), world.getBlockState(context.getBlockPos()));
+				if (context.getPlayer() != null) {
+					if (context.getWorld() instanceof ServerWorld world) {
+						blockEntity.initiate(world, context.getBlockPos(), world.getBlockState(context.getBlockPos()));
+					}
+					if (!context.getPlayer().isCreative()) context.getPlayer().getInventory().removeOne(context.getPlayer().getStackInHand(context.getHand()));
 				}
 			}))
 	);
@@ -74,7 +77,7 @@ public class ArcheonItems implements ElementsInitializer {
 			heartOfNatureEntity.setPosition(originalPos);
 			heartOfNatureEntity.onSummonedByPowerKey(originalPos);
 			context.getWorld().spawnEntity(heartOfNatureEntity);
-			if(!context.getPlayer().isCreative()) context.getPlayer().getInventory().removeOne(context.getPlayer().getStackInHand(context.getHand()));
+			if (!context.getPlayer().isCreative()) context.getPlayer().getInventory().removeOne(context.getPlayer().getStackInHand(context.getHand()));
 		}
 	}));
 

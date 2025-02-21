@@ -48,6 +48,8 @@ public class ArcheonItemGroups implements ElementsInitializer {
 	public static final Predicate<Block> BLOCK_IN_CREATIVE_TAB = (block) -> HAS_ITEM.test(block) && IS_IN_CREATIVE_TAB.test(block.asItem());
 
 	public static final Predicate<Block> IS_FAUNA = block ->
+		(Registry.BLOCK.getId(block).getPath().contains("achrean")) ||
+		(Registry.BLOCK.getId(block).getPath().contains("glowshroom")) ||
 		(block instanceof CustomFlowerBlock) ||
 		(block instanceof CustomTallFlowerBlock) ||
 		(block instanceof CustomPlantBlock) ||

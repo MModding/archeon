@@ -610,7 +610,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CentaurLifeVaultBlock CENTAUR_LIFE_VAULT = new CentaurLifeVaultBlock(DefaultBlockSettings.METAL_SETTINGS.nonOpaque().strength(-1, 3600000.0f), true);
 
-	public static final CustomBlock POWER_KEYSTONE = new CustomBlock(DefaultBlockSettings.METAL_SETTINGS.strength(-1, 3600000.0f), true);
+	public static final PowerKeystoneBlock POWER_KEYSTONE = new PowerKeystoneBlock(DefaultBlockSettings.METAL_SETTINGS.strength(-1, 3600000.0f), true);
 	public static final NaturiteBlock NATURITE = new NaturiteBlock(DefaultBlockSettings.NETHERITE_SETTINGS, true);
 
 	public static final CustomPillarBlock STRIPPED_PALM_WOOD = new CustomPillarBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
