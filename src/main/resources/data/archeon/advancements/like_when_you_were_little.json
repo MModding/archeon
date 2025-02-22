@@ -3,13 +3,11 @@
   "criteria": {
     "like_when_you_were_little": {
       "conditions": {
-        "items": [
-          {
-            "items": [
-              "archeon:dune_sand_castle"
-            ]
-          }
-        ]
+        "item": {
+          "items": [
+            "archeon:dune_sand_castle"
+          ]
+        }
       },
       "trigger": "minecraft:placed_block"
     }

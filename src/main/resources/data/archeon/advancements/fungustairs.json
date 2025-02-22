@@ -3,13 +3,11 @@
   "criteria": {
     "fungustairs": {
       "conditions": {
-        "items": [
-          {
-            "items": [
-              "archeon:spore_rootcap"
-            ]
-          }
-        ]
+        "item": {
+          "items": [
+            "archeon:spore_rootcap"
+          ]
+        }
       },
       "trigger": "minecraft:placed_block"
     }
