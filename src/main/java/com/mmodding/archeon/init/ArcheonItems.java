@@ -301,6 +301,7 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomItem SALT = new CustomItem(new AdvancedItemSettings());
 
 	public static final CustomItem RAW_HEIFER = new CustomItem(new AdvancedItemSettings().food(2, 0.3f, true));
+	public static final CustomItem SALTED_HEIFER = new CustomItem(new AdvancedItemSettings().food(3, 0.9f, true));
 	public static final CustomItem COOKED_HEIFER = new CustomItem(new AdvancedItemSettings().food(4, 1.5f, true));
 
 	public static final CustomItem RAW_SUNSTRADIVER_CHOP = new CustomItem(new AdvancedItemSettings().food(2, 0.3f, true));
@@ -470,6 +471,7 @@ public class ArcheonItems implements ElementsInitializer {
 		RECORD_FRAGMENT.register(Archeon.createId("record_fragment"));
 		SALT.register(Archeon.createId("salt"));
 		RAW_HEIFER.register(Archeon.createId("raw_heifer"));
+		SALTED_HEIFER.register(Archeon.createId("salted_heifer"));
 		COOKED_HEIFER.register(Archeon.createId("cooked_heifer"));
 		RAW_SUNSTRADIVER_CHOP.register(Archeon.createId("raw_sunstradiver_chop"));
 		COOKED_SUNSTRADIVER_CHOP.register(Archeon.createId("cooked_sunstradiver_chop"));

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CSC",
+    "SGS",
+    "CSC"
+  ],
+  "key": {
+    "C": {
+      "item": "archeon:exyriane_shard"
+    },
+    "S": {
+      "item": "archeon:salt"
+    },
+    "G": {
+      "item": "archeon:grape"
+    }
+  },
+  "result": {
+    "item": "archeon:exyriane_grape",
+    "count": 3
+  }
+}

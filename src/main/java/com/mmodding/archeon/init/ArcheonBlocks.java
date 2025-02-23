@@ -305,7 +305,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomSugarCaneBlock XETULIAN_SUGAR_CANE = new CustomSugarCaneBlock(
+	public static final XetulianSugarCaneBlock XETULIAN_SUGAR_CANE = new XetulianSugarCaneBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isOf(ArcheonBlocks.DUNE_SAND) || floor.isOf(ArcheonBlocks.SALT_BLOCK),
 		null,
 		DefaultBlockSettings.PLANT_SETTINGS,
