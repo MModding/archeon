@@ -282,7 +282,7 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomItem ORANGE_LYCORIS_PETAL = new CustomItem(new AdvancedItemSettings().food(3, 0.2f));
 
-	public static final LoreScrapItem LORE_SCRAP = new LoreScrapItem(new AdvancedItemSettings());
+	public static final LoreScrapItem LORE_SCRAP = new LoreScrapItem(new AdvancedItemSettings().maxCount(1));
 
 	public static final CustomMusicDiscItem PE_4K = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
 		new SoundEvent(Archeon.createId("pe_4k")), 0, 116);
