@@ -25,7 +25,7 @@ public abstract class ItemEntityMixin {
 		if (!itemEntity.getWorld().isClient()) {
 			if (this.getStack().isOf(ArcheonBlocks.CRIADAN.getItem())) {
 				if (itemEntity.getWorld().getFluidState(itemEntity.getBlockPos()).isOf(ArcheonFluids.DASCIUM)) {
-					if (this.itemAge >= 600) {
+					if (this.itemAge >= 300) {
 						int count = itemEntity.getStack().getCount();
 						double x = itemEntity.getX();
 						double y = itemEntity.getY();
