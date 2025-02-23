@@ -6,10 +6,15 @@
     },
     {
       "item": "archeon:salt"
+    },
+    {
+      "item": "archeon:salt"
+    },
+    {
+      "item": "archeon:salt"
     }
   ],
   "result": {
-    "item": "archeon:cooked_heifer",
-    "count": 2
+    "item": "archeon:salted_heifer"
   }
 }
