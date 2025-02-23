@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "archeon:golden_grape"
+              "archeon:exyriane_grape"
             ]
           }
         ]
@@ -22,7 +22,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "archeon:golden_grape"
+      "item": "archeon:exyriane_grape"
     },
     "show_toast": true,
     "title": {

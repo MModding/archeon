@@ -21,7 +21,7 @@
         {
           "type": "minecraft:item",
           "weight": 1,
-          "name": "archeon:golden_grape",
+          "name": "archeon:exyriane_grape",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -246,7 +246,7 @@
         {
           "type": "minecraft:item",
           "weight": 1,
-          "name": "archeon:golden_grape",
+          "name": "archeon:exyriane_grape",
           "functions": [
             {
               "function": "minecraft:set_count",

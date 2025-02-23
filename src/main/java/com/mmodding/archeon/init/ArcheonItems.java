@@ -315,7 +315,7 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomItem GRAPE = new CustomItem(new AdvancedItemSettings().food(1, 0.3f));
 
-	public static final CustomItem GOLDEN_GRAPE = new CustomItem(new AdvancedItemSettings().food(
+	public static final CustomItem EXYRIANE_GRAPE = new CustomItem(new AdvancedItemSettings().food(
 		new FoodComponent.Builder()
 			.hunger(5)
 			.saturationModifier(2.5f)
@@ -478,7 +478,7 @@ public class ArcheonItems implements ElementsInitializer {
 		LYCORIS_JAM_PIE.register(Archeon.createId("lycoris_jam_pie"));
 		BLOOD_ORANGE.register(Archeon.createId("blood_orange"));
 		GRAPE.register(Archeon.createId("grape"));
-		GOLDEN_GRAPE.register(Archeon.createId("golden_grape"));
+		EXYRIANE_GRAPE.register(Archeon.createId("exyriane_grape"));
 		GROWING_NEAVE_BERRIES.register(Archeon.createId("growing_neave_berries"));
 		NEAVE_BERRIES.register(Archeon.createId("neave_berries"));
 		INK_BOTTLE.register(Archeon.createId("ink_bottle"));
