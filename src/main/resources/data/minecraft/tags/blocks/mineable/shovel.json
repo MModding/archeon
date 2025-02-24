@@ -5,6 +5,7 @@
     "archeon:dune_sand",
     "archeon:shellsand",
     "archeon:salt_block",
-    "archeon:dust"
+    "archeon:dust",
+    "archeon:golden_clay"
   ]
 }
