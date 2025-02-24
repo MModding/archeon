@@ -284,8 +284,8 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final LoreScrapItem LORE_SCRAP = new LoreScrapItem(new AdvancedItemSettings().maxCount(1));
 
-	public static final CustomMusicDiscItem PE_4K = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
-		new SoundEvent(Archeon.createId("pe_4k")), 0, 116);
+	public static final CustomMusicDiscItem PE4K = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
+		new SoundEvent(Archeon.createId("pe4k")), 0, 116);
 
 	public static final CustomMusicDiscItem GEOMETRIC_FALL = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
 		new SoundEvent(Archeon.createId("geometric_fall")), 0, 74);
@@ -464,7 +464,7 @@ public class ArcheonItems implements ElementsInitializer {
 		RED_LYCORIS_PETAL.register(Archeon.createId("red_lycoris_petal"));
 		PINK_LYCORIS_PETAL.register(Archeon.createId("pink_lycoris_petal"));
 		LORE_SCRAP.register(Archeon.createId("lore_scrap"));
-		PE_4K.register(Archeon.createId("pe_4k"));
+		PE4K.register(Archeon.createId("pe4k"));
 		GEOMETRIC_FALL.register(Archeon.createId("geometric_fall"));
 		PARALLELIFY.register(Archeon.createId("parallelify"));
 		GLAIVE.register(Archeon.createId("glaive"));
