@@ -648,15 +648,15 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomLeavesBlock PALE_NYRETH_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
 	public static final CustomGrowsDownPlantBlock HANGING_PNEVENTIAL_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.PLANT_SETTINGS,
-		false, 0.1f, 1, BlockState::isAir, true);
+		false, 0.005f, 1, BlockState::isAir, true);
 	public static final CustomGrowsDownPlantBlock HANGING_STREIAN_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.PLANT_SETTINGS,
-		false, 0.1f, 1, BlockState::isAir, true);
+		false, 0.005f, 1, BlockState::isAir, true);
 	public static final CustomGrowsDownPlantBlock HANGING_ORIAN_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.PLANT_SETTINGS,
-		false, 0.1f, 1, BlockState::isAir, true);
+		false, 0.005f, 1, BlockState::isAir, true);
 	public static final CustomGrowsDownPlantBlock HANGING_VALE_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.PLANT_SETTINGS,
-		false, 0.1f, 1, BlockState::isAir, true);
+		false, 0.005f, 1, BlockState::isAir, true);
 	public static final CustomGrowsDownPlantBlock HANGING_ZIAL_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.PLANT_SETTINGS,
-		false, 0.1f, 1, BlockState::isAir, true);
+		false, 0.005f, 1, BlockState::isAir, true);
 
 	public static final LeavesCarpetBlock ORIAN_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.LEAVES_CARPET, true);
 	public static final LeavesCarpetBlock PNEVENTIAL_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.LEAVES_CARPET, true);
