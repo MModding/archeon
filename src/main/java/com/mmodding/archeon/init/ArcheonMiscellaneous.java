@@ -40,25 +40,25 @@ public class ArcheonMiscellaneous implements ElementsInitializer {
 
 	public static final Soundtrack HEART_OF_NATURE = Soundtrack.create(
 		Archeon.createId("heart_of_nature"),
-		Soundtrack.Part.iterations(Archeon.createId("heart_of_nature/intro"), 1),
-		Soundtrack.Part.looping(Archeon.createId("heart_of_nature/petrified")),
-		Soundtrack.Part.looping(Archeon.createId("heart_of_nature/first_phase")),
-		Soundtrack.Part.looping(Archeon.createId("heart_of_nature/second_phase")),
-		Soundtrack.Part.looping(Archeon.createId("heart_of_nature/third_phase")),
-		Soundtrack.Part.iterations(Archeon.createId("heart_of_nature/outro"), 1)
+		Soundtrack.Part.iterations(Archeon.createId("heart_of_nature.intro"), 1),
+		Soundtrack.Part.looping(Archeon.createId("heart_of_nature.petrified")),
+		Soundtrack.Part.looping(Archeon.createId("heart_of_nature.first_phase")),
+		Soundtrack.Part.looping(Archeon.createId("heart_of_nature.second_phase")),
+		Soundtrack.Part.looping(Archeon.createId("heart_of_nature.third_phase")),
+		Soundtrack.Part.iterations(Archeon.createId("heart_of_nature.outro"), 1)
 	);
 
 	public static final Soundtrack ELKIN = Soundtrack.create(
 		Archeon.createId("elkin"),
-		Soundtrack.Part.iterations(Archeon.createId("elkin/intro"), 1),
-		Soundtrack.Part.looping(Archeon.createId("elkin/first_phase")),
-		Soundtrack.Part.iterations(Archeon.createId("elkin/first_phase_transition"), 1),
-		Soundtrack.Part.looping(Archeon.createId("elkin/first_phase_climax")),
-		Soundtrack.Part.iterations(Archeon.createId("elkin/transition"), 1),
-		Soundtrack.Part.looping(Archeon.createId("elkin/second_phase")),
-		Soundtrack.Part.iterations(Archeon.createId("elkin/second_phase_transition"), 1),
-		Soundtrack.Part.looping(Archeon.createId("elkin/second_phase_climax")),
-		Soundtrack.Part.iterations(Archeon.createId("elkin/outro"), 1)
+		Soundtrack.Part.iterations(Archeon.createId("elkin.intro"), 1),
+		Soundtrack.Part.looping(Archeon.createId("elkin.first_phase")),
+		Soundtrack.Part.iterations(Archeon.createId("elkin.first_phase_transition"), 1),
+		Soundtrack.Part.looping(Archeon.createId("elkin.first_phase_climax")),
+		Soundtrack.Part.iterations(Archeon.createId("elkin.transition"), 1),
+		Soundtrack.Part.looping(Archeon.createId("elkin.second_phase")),
+		Soundtrack.Part.iterations(Archeon.createId("elkin.second_phase_transition"), 1),
+		Soundtrack.Part.looping(Archeon.createId("elkin.second_phase_climax")),
+		Soundtrack.Part.iterations(Archeon.createId("elkin.outro"), 1)
 	);
 
 	@Override

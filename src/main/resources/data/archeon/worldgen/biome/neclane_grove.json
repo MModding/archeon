@@ -9,11 +9,11 @@
     "fog_color": 12638463,
     "water_color": 4159204,
     "water_fog_color": 329011,
-    "mood_sound": {
-      "sound": "archeon:genesis",
-      "tick_delay": 3600,
-      "block_search_extent": 8,
-      "offset": 2
+    "music": {
+      "sound": "archeon:music.neclane_grove",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
     }
   },
   "spawners": {

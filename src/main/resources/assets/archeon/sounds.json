@@ -1,5 +1,154 @@
 {
-  "heart_of_nature/intro": {
+  "music.achrean_caves": {
+    "sounds": [
+      "archeon:the_pit",
+      "archeon:chiaspen_ammeri"
+    ]
+  },
+  "music.abyss_caves": {
+    "sounds": [
+      "archeon:lost_in_penumbra",
+      "archeon:the_pit"
+    ]
+  },
+  "music.anhydrite_valleys": {
+    "sounds": [
+      "archeon:lost_in_penumbra",
+      "archeon:the_pit",
+      "archeon:fallen_from_high"
+    ]
+  },
+  "music.criadan_valleys": {
+    "sounds": [
+      "archeon:lost_in_penumbra",
+      "archeon:the_pit",
+      "archeon:fallen_from_high"
+    ]
+  },
+  "music.neclane_grove": {
+    "sounds": [
+      "archeon:unfamiliar_winds",
+      "archeon:serene",
+      "archeon:sohnems",
+      "archeon:chiaspen_ammeri"
+    ]
+  },
+  "music.rocky_fields": {
+    "sounds": [
+      "archeon:unfamiliar_winds",
+      "archeon:sonata",
+      "archeon:sohnems",
+      "archeon:chiaspen_ammeri"
+    ]
+  },
+  "music.dune_ocean": {
+    "sounds": [
+      "archeon:chiaspen_ammeri",
+      "archeon:sonata",
+      "archeon:pnevential"
+    ]
+  },
+  "music.shore": {
+    "sounds": [
+      "archeon:serene",
+      "archeon:sohnems",
+      "archeon:chiaspen_ammeri"
+    ]
+  },
+  "music.south_meadows": {
+    "sounds": [
+      "archeon:sonata",
+      "archeon:sohnems",
+      "archeon:chiaspen_ammeri"
+    ]
+  },
+  "music.south_snowy_peaks": {
+    "sounds": [
+      "archeon:unfamiliar_winds",
+      "archeon:sohnems",
+      "archeon:chiaspen_ammeri"
+    ]
+  },
+  "music.south_snowy_slopes": {
+    "sounds": [
+      "archeon:unfamiliar_winds",
+      "archeon:sohnems",
+      "archeon:chiaspen_ammeri"
+    ]
+  },
+  "music.underground_caves": {
+    "sounds": [
+      "archeon:lost_in_penumbra",
+      "archeon:the_pit"
+    ]
+  },
+  "music.cold_vuxancia_forest": {
+    "sounds": [
+      "archeon:unfamiliar_winds",
+      "archeon:pnevential",
+      "archeon:sonata",
+      "archeon:sohnems",
+      "archeon:chiaspen_ammeri"
+    ]
+  },
+  "music.snowy_vuxancia_forest": {
+    "sounds": [
+      "archeon:unfamiliar_winds",
+      "archeon:serene",
+      "archeon:pnevential",
+      "archeon:sonata",
+      "archeon:sohnems",
+      "archeon:chiaspen_ammeri"
+    ]
+  },
+  "music.warm_vuxancia_forest": {
+    "sounds": [
+      "archeon:unfamiliar_winds",
+      "archeon:pnevential",
+      "archeon:sonata"
+    ]
+  },
+  "music.vuxancia_forest": {
+    "sounds": [
+      "archeon:unfamiliar_winds",
+      "archeon:serene",
+      "archeon:pnevential",
+      "archeon:sonata"
+    ]
+  },
+  "music.nume_swamp": {
+    "sounds": [
+      "archeon:unfamiliar_winds",
+      "archeon:serene",
+      "archeon:sohnems"
+    ]
+  },
+  "music.nyreth_glade": {
+    "sounds": [
+      "archeon:unfamiliar_winds",
+      "archeon:serene",
+      "archeon:sonata",
+      "archeon:chiaspen_ammeri"
+    ]
+  },
+  "music.sunset": {
+    "sounds": [
+      "archeon:sunset"
+    ]
+  },
+  "music.night": {
+    "sounds": [
+      "archeon:iscetha",
+      "archeon:chiaspen_ammeri",
+      "archeon:serene"
+    ]
+  },
+  "music.sunrise": {
+    "sounds": [
+      "archeon:sunrise"
+    ]
+  },
+  "heart_of_nature.intro": {
     "category": "music",
     "sounds": [
       {
@@ -8,7 +157,7 @@
       }
     ]
   },
-  "heart_of_nature/petrified": {
+  "heart_of_nature.petrified": {
     "category": "music",
     "sounds": [
       {
@@ -17,7 +166,7 @@
       }
     ]
   },
-  "heart_of_nature/first_phase": {
+  "heart_of_nature.first_phase": {
     "category": "music",
     "sounds": [
       {
@@ -26,7 +175,7 @@
       }
     ]
   },
-  "heart_of_nature/second_phase": {
+  "heart_of_nature.second_phase": {
     "category": "music",
     "sounds": [
       {
@@ -35,7 +184,7 @@
       }
     ]
   },
-  "heart_of_nature/third_phase": {
+  "heart_of_nature.third_phase": {
     "category": "music",
     "sounds": [
       {
@@ -44,7 +193,7 @@
       }
     ]
   },
-  "heart_of_nature/outro": {
+  "heart_of_nature.outro": {
     "category": "music",
     "sounds": [
       {
@@ -53,7 +202,7 @@
       }
     ]
   },
-  "elkin/intro": {
+  "elkin.intro": {
     "category": "music",
     "sounds": [
       {
@@ -62,7 +211,7 @@
       }
     ]
   },
-  "elkin/first_phase": {
+  "elkin.first_phase": {
     "category": "music",
     "sounds": [
       {
@@ -71,7 +220,7 @@
       }
     ]
   },
-  "elkin/first_phase_transition": {
+  "elkin.first_phase_transition": {
     "category": "music",
     "sounds": [
       {
@@ -80,7 +229,7 @@
       }
     ]
   },
-  "elkin/first_phase_climax": {
+  "elkin.first_phase_climax": {
     "category": "music",
     "sounds": [
       {
@@ -89,7 +238,7 @@
       }
     ]
   },
-  "elkin/transition": {
+  "elkin.transition": {
     "category": "music",
     "sounds": [
       {
@@ -98,7 +247,7 @@
       }
     ]
   },
-  "elkin/second_phase": {
+  "elkin.second_phase": {
     "category": "music",
     "sounds": [
       {
@@ -107,7 +256,7 @@
       }
     ]
   },
-  "elkin/second_phase_transition": {
+  "elkin.second_phase_transition": {
     "category": "music",
     "sounds": [
       {
@@ -116,7 +265,7 @@
       }
     ]
   },
-  "elkin/second_phase_climax": {
+  "elkin.second_phase_climax": {
     "category": "music",
     "sounds": [
       {
@@ -125,56 +274,11 @@
       }
     ]
   },
-  "elkin/outro": {
+  "elkin.outro": {
     "category": "music",
     "sounds": [
       {
         "name": "archeon:elkin/outro",
-        "stream": true
-      }
-    ]
-  },
-  "genesis": {
-    "category": "music",
-    "sounds": [
-      {
-        "name": "archeon:genesis",
-        "stream": true
-      }
-    ]
-  },
-  "fallen_from_high_ambient": {
-    "category": "music",
-    "sounds": [
-      {
-        "name": "archeon:fallen_from_high_ambient",
-        "stream": true
-      }
-    ]
-  },
-  "hoxa": {
-    "category": "music",
-    "sounds": [
-      {
-        "name": "archeon:hoxa",
-        "stream": true
-      }
-    ]
-  },
-  "no_ones_around": {
-    "category": "music",
-    "sounds": [
-      {
-        "name": "archeon:no_ones_around",
-        "stream": true
-      }
-    ]
-  },
-  "brile": {
-    "category": "music",
-    "sounds": [
-      {
-        "name": "archeon:brile",
         "stream": true
       }
     ]
@@ -188,15 +292,6 @@
       }
     ]
   },
-  "reside": {
-    "category": "record",
-    "sounds": [
-      {
-        "name": "archeon:reside",
-        "stream": true
-      }
-    ]
-  },
   "parallelify": {
     "category": "record",
     "sounds": [
@@ -206,11 +301,21 @@
       }
     ]
   },
-  "archeon_christmas": {
+  "pe4k": {
+    "category": "record",
+    "subtitle": "subtitles.pe4k",
+    "sounds": [
+      {
+        "name": "archeon:pe4k",
+        "stream": true
+      }
+    ]
+  },
+  "glaive": {
     "category": "record",
     "sounds": [
       {
-        "name": "archeon:archeon_christmas",
+        "name": "archeon:glaive",
         "stream": true
       }
     ]
@@ -230,62 +335,6 @@
       {
         "name": "archeon:aurora_catalyst_hit",
         "stream": false
-      }
-    ]
-  },
-  "sunny": {
-    "category": "music",
-    "sounds": [
-      {
-        "name": "archeon:sunny",
-        "stream": true
-      }
-    ]
-  },
-  "pe4k": {
-    "category": "record",
-    "subtitle": "subtitles.pe4k",
-    "sounds": [
-      {
-        "name": "archeon:pe4k",
-        "stream": true
-      }
-    ]
-  },
-  "devouring": {
-    "category": "record",
-    "subtitle": "subtitles.devouring",
-    "sounds": [
-      {
-        "name": "archeon:devouring",
-        "stream": true
-      }
-    ]
-  },
-  "dotted_sky": {
-    "category": "music",
-    "sounds": [
-      {
-        "name": "archeon:dotted_sky",
-        "stream": true
-      }
-    ]
-  },
-  "rising": {
-    "category": "record",
-    "sounds": [
-      {
-        "name": "archeon:rising",
-        "stream": true
-      }
-    ]
-  },
-  "glaive": {
-    "category": "record",
-    "sounds": [
-      {
-        "name": "archeon:glaive",
-        "stream": true
       }
     ]
   }
