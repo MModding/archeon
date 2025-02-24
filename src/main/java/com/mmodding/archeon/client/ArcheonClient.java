@@ -3,11 +3,13 @@ package com.mmodding.archeon.client;
 import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.client.init.*;
 import com.mmodding.archeon.init.ArcheonItems;
+import com.mmodding.archeon.init.ArcheonMiscellaneous;
 import com.mmodding.mmodding_lib.library.base.AdvancedModContainer;
 import com.mmodding.mmodding_lib.library.base.MModdingClientModInitializer;
 import com.mmodding.mmodding_lib.library.client.render.model.InventoryModels;
 import com.mmodding.mmodding_lib.library.config.Config;
 import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
+import com.mmodding.mmodding_lib.library.sounds.client.music.MusicTypeSelectionCallback;
 import com.mmodding.mmodding_lib.library.stellar.client.StellarObject;
 import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import org.jetbrains.annotations.Nullable;
@@ -52,6 +54,31 @@ public class ArcheonClient implements MModdingClientModInitializer {
 			else {
 				return null;
 			}
+		});
+		MusicTypeSelectionCallback.EVENT.register((client, original) -> {
+			if (client.world != null && client.world.getRegistryKey().getValue().getPath().contains("archeon")) {
+				/*
+				 * Values were selected based on https://minecraft.wiki/w/Daylight_cycle "24-hour Minecraft Day" information.
+				 * Time 12040: The internal sky-light Level begins to decrease.
+				 * Time 13702: The sun disappears on the horizon.
+				 * Time 22300: The sun appears on the horizon.
+				 * Time 23961: The internal sky-light level reaches the maximum.
+				 * Sunset: t >= 12040 && t < 13702.
+				 * Night: t >= 13702 && t < 22300.
+				 * Sunrise: t >= 22300 && t < 23961.
+				 */
+				long t = client.world.getTimeOfDay();
+				if (t >= 12040 && t < 13702) {
+					return ArcheonMiscellaneous.SUNSET;
+				}
+				else if (t >= 13702 && t < 22300) {
+					return ArcheonMiscellaneous.NIGHT;
+				}
+				else if (t >= 22300 && t < 23961) {
+					return ArcheonMiscellaneous.SUNRISE;
+				}
+			}
+			return original;
 		});
 	}
 }

@@ -13,6 +13,8 @@ import com.mmodding.mmodding_lib.library.portals.squared.CustomSquaredPortal;
 import com.mmodding.mmodding_lib.library.soundtracks.Soundtrack;
 import com.mmodding.mmodding_lib.library.stellar.StellarCycle;
 import com.mmodding.mmodding_lib.library.utils.MModdingIdentifier;
+import net.minecraft.client.sound.MusicType;
+import net.minecraft.sound.MusicSound;
 
 public class ArcheonMiscellaneous implements ElementsInitializer {
 
@@ -31,6 +33,10 @@ public class ArcheonMiscellaneous implements ElementsInitializer {
 			ref.set(new MModdingIdentifier("lightened_magenta"));
 		}
 	});
+
+	public static final MusicSound SUNSET = MusicType.createIngameMusic(ArcheonSoundEvents.MUSIC_SUNSET);
+	public static final MusicSound NIGHT = MusicType.createIngameMusic(ArcheonSoundEvents.MUSIC_NIGHT);
+	public static final MusicSound SUNRISE = MusicType.createIngameMusic(ArcheonSoundEvents.MUSIC_SUNRISE);
 
 	public static final Soundtrack HEART_OF_NATURE = Soundtrack.create(
 		Archeon.createId("heart_of_nature"),
