@@ -23,8 +23,6 @@ import java.util.function.Predicate;
 public class ArcheonItemGroups implements ElementsInitializer {
 
 	private static final List<Item> NOT_IN_CREATIVE_TAB = List.of(
-		ArcheonItems.CLOTHES_CHESTPLATE,
-		ArcheonItems.CLOTHES_LEGGINGS,
 		ArcheonItems.MASSACRE_BOOK,
 		ArcheonItems.QOLM_BOOK
 	);
