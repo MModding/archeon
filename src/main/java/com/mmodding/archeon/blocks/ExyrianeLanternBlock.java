@@ -9,7 +9,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
-public class ExyrianeTorchBlock extends CustomLanternBlock {
+public class ExyrianeLanternBlock extends CustomLanternBlock {
 
 	protected static final VoxelShape STANDING_SHAPE = VoxelShapes.union(
 		Block.createCuboidShape(4.0, 0.0, 4.0, 12.0, 2.0, 12.0),
@@ -25,12 +25,12 @@ public class ExyrianeTorchBlock extends CustomLanternBlock {
 		Block.createCuboidShape(5.0, 11.0, 5.0, 11.0, 12.0, 11.0)
 	);
 
-	public ExyrianeTorchBlock(Settings settings, boolean hasItem) {
+	public ExyrianeLanternBlock(Settings settings, boolean hasItem) {
 		super(settings, hasItem);
 	}
 
 	@Override
 	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-		return state.get(ExyrianeTorchBlock.HANGING) ? ExyrianeTorchBlock.HANGING_SHAPE : ExyrianeTorchBlock.STANDING_SHAPE;
+		return state.get(ExyrianeLanternBlock.HANGING) ? ExyrianeLanternBlock.HANGING_SHAPE : ExyrianeLanternBlock.STANDING_SHAPE;
 	}
 }

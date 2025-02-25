@@ -500,7 +500,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomTorchBlock EXYRIANE_TORCH = new CustomTorchBlock(DefaultBlockSettings.WOOD_SETTINGS.collidable(false).breakInstantly().luminance(14), ParticleTypes.INSTANT_EFFECT);
 	public static final CustomWallTorchBlock WALL_EXYRIANE_TORCH = new CustomWallTorchBlock(DefaultBlockSettings.WOOD_SETTINGS.collidable(false).breakInstantly().luminance(14), ParticleTypes.INSTANT_EFFECT);
-	public static final ExyrianeTorchBlock EXYRIANE_LANTERN = new ExyrianeTorchBlock(DefaultBlockSettings.STONE_SETTINGS.luminance(15), true);
+	public static final ExyrianeLanternBlock EXYRIANE_LANTERN = new ExyrianeLanternBlock(DefaultBlockSettings.STONE_SETTINGS.luminance(15), true);
 
 	public static final CustomFurnaceBlock CHIASPEN_FURNACE = new CustomFurnaceBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomFurnaceBlock PHOSNOR_SLATE_FURNACE = new CustomFurnaceBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
@@ -1175,7 +1175,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomWallBlock OCHRE_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final DuneSandCastleBlock DUNE_SAND_CASTLE = new DuneSandCastleBlock(DefaultBlockSettings.SAND_SETTINGS.nonOpaque().strength(0.7f, 0.0f), true);
-	public static final CustomBlock LOOT_URN = new CustomBlock(DefaultBlockSettings.BONE_SETTINGS.nonOpaque().strength(0.8f, 2.0f), true);
+	public static final UrnBlock URN = new UrnBlock(DefaultBlockSettings.BONE_SETTINGS.nonOpaque().strength(0.8f, 2.0f), true);
 	public static final HeartOfNatureTrophyBlock HEART_OF_NATURE_TROPHY = new HeartOfNatureTrophyBlock(DefaultBlockSettings.LODESTONE_SETTINGS.nonOpaque().strength(1.0f, 6.0f), true, new AdvancedItemSettings().maxCount(1).fireproof());
 
 	@Override
@@ -1658,7 +1658,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		OCHRE_TILE_SLAB.register(Archeon.createId("ochre_tile_slab"));
 		OCHRE_TILE_WALL.register(Archeon.createId("ochre_tile_wall"));
 		DUNE_SAND_CASTLE.register(Archeon.createId("dune_sand_castle"));
-		LOOT_URN.register(Archeon.createId("loot_urn"));
+		URN.register(Archeon.createId("urn"));
 		HEART_OF_NATURE_TROPHY.register(Archeon.createId("heart_of_nature_trophy"));
 	}
 }
