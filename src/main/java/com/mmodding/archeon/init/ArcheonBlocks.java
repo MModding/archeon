@@ -1176,7 +1176,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final DuneSandCastleBlock DUNE_SAND_CASTLE = new DuneSandCastleBlock(DefaultBlockSettings.SAND_SETTINGS.nonOpaque().strength(0.7f, 0.0f), true);
 	public static final CustomBlock LOOT_URN = new CustomBlock(DefaultBlockSettings.BONE_SETTINGS.nonOpaque().strength(0.8f, 2.0f), true);
-	public static final HeartOfNatureTrophyBlock HEART_OF_NATURE_TROPHY = new HeartOfNatureTrophyBlock(DefaultBlockSettings.LODESTONE_SETTINGS.nonOpaque().strength(1.0f, 6.0f), true);
+	public static final HeartOfNatureTrophyBlock HEART_OF_NATURE_TROPHY = new HeartOfNatureTrophyBlock(DefaultBlockSettings.LODESTONE_SETTINGS.nonOpaque().strength(1.0f, 6.0f), true, new AdvancedItemSettings().maxCount(1).fireproof());
 
 	@Override
 	public void register() {

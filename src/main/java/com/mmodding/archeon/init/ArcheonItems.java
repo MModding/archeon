@@ -335,13 +335,13 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomItem SNAIL_SHELL = new CustomItem(new AdvancedItemSettings());
 
-	public static final CustomItem AURORA_CRYSTAL = new CustomItem(new AdvancedItemSettings());
+	public static final CustomItem AURORA_CRYSTAL = new CustomItem(new AdvancedItemSettings().fireproof());
 
-	public static final CustomItem IMPRESSIVE_AURORA_CRYSTAL = new CustomItem(new AdvancedItemSettings().nameFormattings(Formatting.GOLD));
+	public static final CustomItem IMPRESSIVE_AURORA_CRYSTAL = new CustomItem(new AdvancedItemSettings().fireproof().nameFormattings(Formatting.GOLD));
 
-	public static final CustomItem CENTAUR_HOOF = new CustomItem(new AdvancedItemSettings());
+	public static final CustomItem CENTAUR_HOOF = new CustomItem(new AdvancedItemSettings().fireproof());
 
-	public static final CustomItem CENTAUR_HORSESHOE = new CustomItem(new AdvancedItemSettings().nameFormattings(Formatting.GOLD));
+	public static final CustomItem CENTAUR_HORSESHOE = new CustomItem(new AdvancedItemSettings().fireproof().nameFormattings(Formatting.GOLD));
 
 	public static final CustomSpawnEggItem AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.AURORA_CATALYST, 4380648, 3876673, new AdvancedItemSettings());
 	public static final CustomSpawnEggItem POISONOUS_AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.POISONOUS_AURORA_CATALYST, 2881287, 6633076, new AdvancedItemSettings());
