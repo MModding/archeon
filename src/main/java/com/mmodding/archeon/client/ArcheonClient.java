@@ -12,6 +12,7 @@ import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
 import com.mmodding.mmodding_lib.library.sounds.client.music.MusicTypeSelectionCallback;
 import com.mmodding.mmodding_lib.library.stellar.client.StellarObject;
 import com.mmodding.mmodding_lib.library.utils.TextureLocation;
+import net.minecraft.client.sound.MusicType;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -76,6 +77,9 @@ public class ArcheonClient implements MModdingClientModInitializer {
 				}
 				else if (t >= 22300 && t < 23961) {
 					return ArcheonMiscellaneous.SUNRISE;
+				}
+				else if (original.equals(MusicType.CREATIVE) || original.equals(MusicType.UNDERWATER)) {
+					return ArcheonMiscellaneous.DAY;
 				}
 			}
 			return original;

@@ -131,6 +131,16 @@
       "archeon:chiaspen_ammeri"
     ]
   },
+  "music.day": {
+    "sounds": [
+      "archeon:unfamiliar_winds",
+      "archeon:serene",
+      "archeon:pnevential",
+      "archeon:sonata",
+      "archeon:sohnems",
+      "archeon:chiaspen_ammeri"
+    ]
+  },
   "music.sunset": {
     "sounds": [
       "archeon:sunset"

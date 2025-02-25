@@ -34,6 +34,7 @@ public class ArcheonMiscellaneous implements ElementsInitializer {
 		}
 	});
 
+	public static final MusicSound DAY = MusicType.createIngameMusic(ArcheonSoundEvents.MUSIC_DAY);
 	public static final MusicSound SUNSET = MusicType.createIngameMusic(ArcheonSoundEvents.MUSIC_SUNSET);
 	public static final MusicSound NIGHT = MusicType.createIngameMusic(ArcheonSoundEvents.MUSIC_NIGHT);
 	public static final MusicSound SUNRISE = MusicType.createIngameMusic(ArcheonSoundEvents.MUSIC_SUNRISE);
