@@ -1,14 +1,14 @@
 {
   "structures": [
     {
-      "structure": "archeon:panopticon",
+      "structure": "archeon:piothiel",
       "weight": 1
     }
   ],
   "placement": {
     "type": "minecraft:random_spread",
-    "spacing": 65,
-    "separation": 30,
-    "salt": 425740409
+    "spacing": 15,
+    "separation": 10,
+    "salt": 875604950
   }
 }

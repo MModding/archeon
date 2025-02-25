@@ -3,11 +3,10 @@
   "biomes": "#archeon:terrain_biomes",
   "step": "surface_structures",
   "spawn_overrides": {},
-  "terrain_adaptation": "beard_box",
-  "start_pool": "archeon:atmosphere_tower",
+  "start_pool": "archeon:well",
   "size": 1,
   "start_height": {
-    "absolute": -5
+    "absolute": -1
   },
   "project_start_to_heightmap": "WORLD_SURFACE_WG",
   "max_distance_from_center": 80,
