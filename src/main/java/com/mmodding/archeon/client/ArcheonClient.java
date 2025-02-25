@@ -40,8 +40,8 @@ public class ArcheonClient implements MModdingClientModInitializer {
 
 	@Override
 	public void onInitializeClient(AdvancedModContainer mod) {
-		StellarObject.load(Archeon.createId("diethea"), new TextureLocation(Archeon.id(), "environment/diethea"), 16, 16);
-		StellarObject.load(Archeon.createId("napor"), new TextureLocation(Archeon.id(), "environment/napor"), 8, 8);
+		StellarObject.load(Archeon.createId("diethea"), new TextureLocation(Archeon.id(), "environment/diethea"), 32, 32);
+		StellarObject.load(Archeon.createId("napor"), new TextureLocation(Archeon.id(), "environment/napor"), 16, 16);
 		InventoryModels.REGISTRY.add(Archeon.createId("item/centaur_spear_inventory"));
 		InventoryModels.REGISTRY.add(Archeon.createId("item/centaur_battle_axe_inventory"));
 		InventoryModels.EVENT.register(stack -> {
