@@ -9,9 +9,11 @@
           "name": "archeon:exyriane_shard",
           "functions": [
             {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:ore_drops"
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2,
+                "max": 5
+              }
             }
           ],
           "conditions": [
@@ -41,7 +43,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "archeon:exyriane_ore",
+          "name": "archeon:slightly_condensed_phosnor_slate_exyriane_ore",
           "functions": [
             {
               "function": "minecraft:set_count",

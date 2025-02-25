@@ -2,18 +2,12 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "archeon:exyriane_shard",
-          "functions": [
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:ore_drops"
-            }
-          ],
+          "name": "archeon:apaflorite_gemstone",
+          "weight": 1,
           "conditions": [
             {
               "condition": "minecraft:inverted",
@@ -31,26 +25,26 @@
                 }
               }
             }
+          ],
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 5
+              }
+            }
           ]
         }
-      ],
-      "rolls": 1.0
+      ]
     },
     {
-      "bonus_rolls": 0.0,
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "archeon:exyriane_ore",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            }
-          ],
+          "name": "archeon:slightly_condensed_phosnor_slate_apaflorite_ore",
+          "weight": 1,
           "conditions": [
             {
               "condition": "minecraft:match_tool",
@@ -65,10 +59,18 @@
                 ]
               }
             }
+          ],
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
           ]
         }
-      ],
-      "rolls": 1.0
+      ]
     }
   ]
 }
