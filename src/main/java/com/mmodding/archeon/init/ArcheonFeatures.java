@@ -212,34 +212,35 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomFlowerFeature SEPTICEOLIA_FEATURE = new CustomFlowerFeature(4, 7, 3,
 		ArcheonBlocks.SEPTICEOLIA).setRarity(2);
 
-	public static final RuleTest BASE_STONE_ARCHEON = new TagMatchRuleTest(ArcheonTags.Blocks.BASE_STONE_ARCHEON);
-	public static final RuleTest BASE_SAND_ARCHEON = new BlockMatchRuleTest(ArcheonBlocks.DUNE_SAND);
+	public static final RuleTest CHIASPEN = new BlockMatchRuleTest(ArcheonBlocks.CHIASPEN);
+	public static final RuleTest PHOSNOR_SLATE = new BlockMatchRuleTest(ArcheonBlocks.PHOSNOR_SLATE);
+	public static final RuleTest DUNE_SAND = new BlockMatchRuleTest(ArcheonBlocks.DUNE_SAND);
 
 	public static final RuleTest CHIASPEN_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.CHIASPEN_ORES_REPLACEABLES);
 	public static final RuleTest PHOSNOR_SLATE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.PHOSNOR_SLATE_ORES_REPLACEABLES);
 
 	public static final CustomOreFeature ARTEMNITE_PATCH = new CustomOreFeature(
-		64, 8, 0, 120, List.of(OreFeatureConfig.createTarget(BASE_STONE_ARCHEON, ArcheonBlocks.ARTEMNITE.getDefaultState()))
+		64, 8, 0, 120, List.of(OreFeatureConfig.createTarget(CHIASPEN, ArcheonBlocks.ARTEMNITE.getDefaultState()))
 	);
 
 	public static final CustomOreFeature CRIADAN_PATCH = new CustomOreFeature(
 		64, 8, 0, 120,
-		List.of(OreFeatureConfig.createTarget(BASE_STONE_ARCHEON, ArcheonBlocks.CRIADAN.getDefaultState()))
+		List.of(OreFeatureConfig.createTarget(CHIASPEN, ArcheonBlocks.CRIADAN.getDefaultState()))
 	);
 
 	public static final CustomOreFeature AKETITE_PATCH = new CustomOreFeature(
 		64, 8, -64, 0,
-		List.of(OreFeatureConfig.createTarget(BASE_STONE_ARCHEON, ArcheonBlocks.AKETITE.getDefaultState()))
+		List.of(OreFeatureConfig.createTarget(PHOSNOR_SLATE, ArcheonBlocks.AKETITE.getDefaultState()))
 	);
 
 	public static final CustomOreFeature SALT_PATCH = new CustomOreFeature(
 		32, 4, 45, 80,
-		List.of(OreFeatureConfig.createTarget(BASE_SAND_ARCHEON, ArcheonBlocks.SALT_BLOCK.getDefaultState()))
+		List.of(OreFeatureConfig.createTarget(DUNE_SAND, ArcheonBlocks.SALT_BLOCK.getDefaultState()))
 	);
 
 	public static final CustomOreFeature SHELLSAND_PATCH = new CustomOreFeature(
 		3, 32, 45, 80,
-		List.of(OreFeatureConfig.createTarget(BASE_SAND_ARCHEON, ArcheonBlocks.SHELLSAND.getDefaultState()))
+		List.of(OreFeatureConfig.createTarget(DUNE_SAND, ArcheonBlocks.SHELLSAND.getDefaultState()))
 	);
 
 	public static final CustomRandomPatchFeature XETULIAN_SUGAR_CANE = new CustomRandomPatchFeature(

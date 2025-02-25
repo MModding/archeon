@@ -24,8 +24,6 @@ public class ArcheonTags {
 		public static final TagKey<Block> WOOD = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("equivalents/wood"), TagType.NORMAL);
 		public static final TagKey<Block> METALS = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("equivalents/metals"), TagType.NORMAL);
 
-		public static final TagKey<Block> BASE_STONE_ARCHEON = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("base_stone_archeon"), TagType.NORMAL);
-
 		public static final TagKey<Block> CHIASPEN_ORES_REPLACEABLES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("replaceables/chiaspen_ore"), TagType.NORMAL);
 		public static final TagKey<Block> PHOSNOR_SLATE_ORES_REPLACEABLES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("replaceables/phosnor_slate_ore"), TagType.NORMAL);
 		public static final TagKey<Block> ACHREAN_MOSS_REPLACEABLES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("replaceables/achrean_moss"), TagType.NORMAL);
