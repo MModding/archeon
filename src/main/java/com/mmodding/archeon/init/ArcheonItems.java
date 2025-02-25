@@ -8,7 +8,6 @@ import com.mmodding.archeon.entities.CentaurSpearEntity;
 import com.mmodding.archeon.entities.HeartOfNatureEntity;
 import com.mmodding.archeon.items.*;
 import com.mmodding.archeon.materials.armor.ApafloriteArmor;
-import com.mmodding.archeon.materials.armor.ClothesTunic;
 import com.mmodding.archeon.materials.armor.FaeliteArmor;
 import com.mmodding.archeon.materials.armor.LusonythArmor;
 import com.mmodding.archeon.materials.tool.*;
@@ -153,9 +152,6 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomArrowItem LUSONYTH_ARROW = new LusonythArrowItem(new AdvancedItemSettings());
 
 	public static final CustomFishingRodItem EXYRIANE_FISHING_ROD = new CustomFishingRodItem(new AdvancedItemSettings());
-
-	public static final CustomArmorItem CLOTHES_CHESTPLATE = new CustomArmorItem(ClothesTunic.INSTANCE, EquipmentSlot.CHEST, new AdvancedItemSettings());
-	public static final CustomArmorItem CLOTHES_LEGGINGS = new CustomArmorItem(ClothesTunic.INSTANCE, EquipmentSlot.LEGS, new AdvancedItemSettings());
 
 	public static final RingItem APAFLORITE_RING = new RingItem(RingItem::apafloriteRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
 	public static final RingItem FAELITE_RING = new RingItem(RingItem::faeliteRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
@@ -419,8 +415,6 @@ public class ArcheonItems implements ElementsInitializer {
 		FAELITE_BOW.register(Archeon.createId("faelite_bow"));
 		LUSONYTH_ARROW.register(Archeon.createId("lusonyth_arrow"));
 		EXYRIANE_FISHING_ROD.register(Archeon.createId("exyriane_fishing_rod"));
-		CLOTHES_CHESTPLATE.register(Archeon.createId("clothes_chestplate"));
-		CLOTHES_LEGGINGS.register(Archeon.createId("clothes_leggings"));
 		APAFLORITE_RING.register(Archeon.createId("apaflorite_ring"));
 		FAELITE_RING.register(Archeon.createId("faelite_ring"));
 		LUSONYTH_RING.register(Archeon.createId("lusonyth_ring"));
