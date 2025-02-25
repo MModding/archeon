@@ -1,6 +1,20 @@
 {
   "replace": false,
   "values": {
-    "archeon:exyriane_shard": 1600
+    "archeon:exyriane_shard": 1600,
+    "archeon:exyriane_block": 16000,
+    "#archeon:planks": 300,
+    "archeon:palm_log": 300,
+    "archeon:neclane_log": 300,
+    "archeon:cypress_log": 300,
+    "archeon:vuxancia_log": 300,
+    "archeon:nume_willow_log": 300,
+    "archeon:nyreth_log": 300,
+    "archeon:palm_wood": 300,
+    "archeon:neclane_wood": 300,
+    "archeon:cypress_wood": 300,
+    "archeon:vuxancia_wood": 300,
+    "archeon:nume_willow_wood": 300,
+    "archeon:nyreth_wood": 300
   }
 }
