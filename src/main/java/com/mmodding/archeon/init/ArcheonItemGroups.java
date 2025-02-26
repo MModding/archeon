@@ -61,10 +61,13 @@ public class ArcheonItemGroups implements ElementsInitializer {
 	public static final Predicate<Item> IS_EQUIPMENT = item ->
 		(Registry.ITEM.getId(item).equals(Archeon.createId("centaur_life_igniter"))) ||
 		(Registry.ITEM.getId(item).equals(Archeon.createId("power_key"))) ||
+		(Registry.ITEM.getId(item).equals(Archeon.createId("amulet_of_nature"))) ||
 		(item instanceof CustomPortalKeyItem) ||
 		(item instanceof CustomArmorItem) ||
 		(item instanceof CustomSwordItem) ||
 		(item instanceof CustomSpearItem) ||
+		(item instanceof CustomBowItem) ||
+		(item instanceof CustomArrowItem) ||
 		(item instanceof CustomPickaxeItem) ||
 		(item instanceof CustomAxeItem) ||
 		(item instanceof CustomShovelItem) ||
