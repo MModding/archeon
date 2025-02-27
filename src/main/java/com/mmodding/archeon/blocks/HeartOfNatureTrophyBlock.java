@@ -3,6 +3,7 @@ package com.mmodding.archeon.blocks;
 import com.mmodding.mmodding_lib.library.blocks.CustomBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.block.Waterloggable;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -17,6 +18,8 @@ import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
@@ -25,6 +28,8 @@ public class HeartOfNatureTrophyBlock extends CustomBlock implements Waterloggab
 
 	public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
+
+	protected static final VoxelShape SHAPE = UrnBlock.createCuboidShape(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
 
 	public HeartOfNatureTrophyBlock(Settings settings) {
 		this(settings, false);
@@ -41,6 +46,11 @@ public class HeartOfNatureTrophyBlock extends CustomBlock implements Waterloggab
 	public HeartOfNatureTrophyBlock(Settings settings, boolean hasItem, Item.Settings itemSettings) {
 		super(settings, hasItem, itemSettings);
 		this.setDefaultState(this.getDefaultState().with(FACING, Direction.NORTH).with(WATERLOGGED, false));
+	}
+
+	@Override
+	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+		return HeartOfNatureTrophyBlock.SHAPE;
 	}
 
 	@Nullable
