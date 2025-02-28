@@ -31,9 +31,9 @@ public class LoreScrapScreen extends Screen {
 	@Override
 	public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
 		this.renderBackground(matrices);
-		int x = (this.width / 2 - this.backgroundWidth / 2) + 11;
-		int max = this.backgroundWidth - this.backgroundWidth / 9;
-		int startY = (this.height / 4 - this.backgroundHeight / 4) + 25;
+		int x = (this.width / 2 - this.backgroundWidth / 2) + 16;
+		int max = this.backgroundWidth - this.backgroundWidth / 7;
+		int startY = (this.height / 4 - this.backgroundHeight / 4) + 26;
 		int endY = startY + this.backgroundHeight - 50;
 		TextUtils.drawCenteredTrimmed(this.textRenderer, this.display.fillStyle(LoreScrapScreen.LORE_SCRAP), x, max, startY, endY, Color.BLANK.get().toDecimal());
 	}
