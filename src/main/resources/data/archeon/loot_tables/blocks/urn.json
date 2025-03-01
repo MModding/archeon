@@ -2,26 +2,28 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "rolls": 3,
+      "bonus_rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 1,
           "name": "archeon:moss_ball",
+          "weight": 100,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
-                "min": 2,
+                "min": 1,
                 "max": 3
               }
             }
           ]
         },
         {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:exyriane_grape",
+          "type": "minecraft:tag",
+          "name": "archeon:shells",
+          "expand": true,
+          "weight": 100,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -34,339 +36,84 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:blue_shell",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 2
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:apaflorite_gemstone",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 0,
-                "max": 1
-              }
-            },
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:ore_drops"
-            }
-          ]
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "weight": 1,
           "name": "archeon:plant_fiber",
+          "weight": 100,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
-                "min": 0,
-                "max": 2
+                "min": 1,
+                "max": 3
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "name": "archeon:salt",
+          "weight": 100,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "archeon:raw_heifer",
+          "weight": 100,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:tag",
+          "name": "archeon:lycoris_jam_pots",
+          "expand": true,
+          "weight": 50
+        },
+        {
+          "type": "minecraft:item",
           "name": "archeon:grape",
+          "weight": 50,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 3
+                "max": 6
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
           "name": "archeon:exyriane_shard",
+          "weight": 50,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 2
-              }
-            },
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:ore_drops"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:record_fragment",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 0,
-                "max": 1
+                "max": 6
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:salt",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2,
-                "max": 3
-              }
-            }
-          ]
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:apaflorite_gemstone",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 0,
-                "max": 1
-              }
-            },
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:ore_drops"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:record_fragment",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 0,
-                "max": 1
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:exyriane_shard",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 2
-              }
-            },
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:ore_drops"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:red_lycoris_jam_pot",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            }
-          ]
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:exyriane_shard",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 3
-              }
-            },
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:ore_drops"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
           "name": "archeon:exyriane_grape",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 0,
-                "max": 2
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:salt",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2,
-                "max": 3
-              }
-            }
-          ]
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:blue_shell",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 2
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:exyriane_shard",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 2
-              }
-            },
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:ore_drops"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:exyriane_fishing_rod",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 0,
-                "max": 1
-              }
-            }
-          ]
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:exyriane_shard",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 3
-              }
-            },
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:ore_drops"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:moss_ball",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 2
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:yellow_shell",
+          "weight": 25,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -376,31 +123,25 @@
               }
             }
           ]
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
+        },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "name": "archeon:apaflorite_gemstone",
+          "weight": 25,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
           "name": "archeon:record_fragment",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 0,
-                "max": 1
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:exyriane_shard",
+          "weight": 25,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -408,58 +149,63 @@
                 "min": 1,
                 "max": 3
               }
-            },
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:ore_drops"
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:cooked_heifer",
+          "name": "archeon:faelite_ingot",
+          "weight": 10,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 2
+                "max": 3
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:salt",
+          "name": "archeon:apaflorite_ring",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "archeon:faelite_ring",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "archeon:clementium_ring",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "archeon:lusonyth_ring",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "archeon:lusonyth_ingot",
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
-                "min": 2,
-                "max": 4
+                "min": 1,
+                "max": 3
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
-          "name": "archeon:pink_shell",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 0,
-                "max": 1
-              }
-            }
-          ]
+          "name": "archeon:aiel",
+          "weight": 5
         }
-      ],
-      "rolls": 1.0
+      ]
     }
   ]
 }

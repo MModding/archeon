@@ -292,6 +292,9 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomMusicDiscItem GLAIVE = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
 		new SoundEvent(Archeon.createId("glaive")), 0, 176);
 
+	public static final CustomMusicDiscItem AIEL = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC),
+		new SoundEvent(Archeon.createId("aiel")), 0, 0);
+
 	public static final CustomItem RECORD_FRAGMENT = new CustomItem(new AdvancedItemSettings().maxCount(16));
 
 	public static final CustomItem SALT = new CustomItem(new AdvancedItemSettings());
@@ -462,6 +465,7 @@ public class ArcheonItems implements ElementsInitializer {
 		GEOMETRIC_FALL.register(Archeon.createId("geometric_fall"));
 		PARALLELIFY.register(Archeon.createId("parallelify"));
 		GLAIVE.register(Archeon.createId("glaive"));
+		AIEL.register(Archeon.createId("aiel"));
 		RECORD_FRAGMENT.register(Archeon.createId("record_fragment"));
 		SALT.register(Archeon.createId("salt"));
 		RAW_HEIFER.register(Archeon.createId("raw_heifer"));
