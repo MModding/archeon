@@ -28,6 +28,8 @@ public class ArcheonTags {
 		public static final TagKey<Block> PHOSNOR_SLATE_ORES_REPLACEABLES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("replaceables/phosnor_slate_ore"), TagType.NORMAL);
 		public static final TagKey<Block> ACHREAN_MOSS_REPLACEABLES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("replaceables/achrean_moss"), TagType.NORMAL);
 
+		public static final TagKey<Block> SUNSTRADIVERS_SPAWNABLE_ON = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("sunstradivers_spawnable_on"), TagType.NORMAL);
+
 		public static final TagKey<Block> CHIASPEN = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/chiaspen"), TagType.NORMAL);
 		public static final TagKey<Block> ORES = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/ores"), TagType.NORMAL);
 		public static final TagKey<Block> AKETITE = QuiltTagKey.of(Registry.BLOCK_KEY, Archeon.createId("stone/aketite"), TagType.NORMAL);
@@ -61,6 +63,7 @@ public class ArcheonTags {
 
 		public static final TagKey<Item> LEAVES = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("leaves"), TagType.NORMAL);
 		public static final TagKey<Item> LYCORIS_PETALS = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("lycoris_petals"), TagType.NORMAL);
+		public static final TagKey<Item> LYCORIS_JAM_POTS = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("lycoris_jam_pots"), TagType.NORMAL);
 		public static final TagKey<Item> PLANKS = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("planks"), TagType.NORMAL);
 		public static final TagKey<Item> SHELLS = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("shells"), TagType.NORMAL);
 		public static final TagKey<Item> TILES = QuiltTagKey.of(Registry.ITEM_KEY, Archeon.createId("tiles"), TagType.NORMAL);

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:wet_grass_block",
+    "minecraft:air",
+    "#minecraft:leaves",
+    "#minecraft:logs"
+  ]
+}

@@ -7,6 +7,8 @@ import com.mmodding.mmodding_lib.library.entities.CustomEntityType;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.SpawnRestriction;
+import net.minecraft.world.Heightmap;
 
 public class ArcheonEntities implements ElementsInitializer {
 
@@ -146,5 +148,11 @@ public class ArcheonEntities implements ElementsInitializer {
 		ARMORED_CENTAUR.register(Archeon.createId("armored_centaur"));
 		LUSONYTH_ARROW.register(Archeon.createId("lusonyth_arrow"));
 		CENTAUR_SPEAR.register(Archeon.createId("centaur_spear"));
+
+		SpawnRestriction.register(SNAIL, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, SnailEntity::isValidNaturalSpawn);
+		SpawnRestriction.register(SUNSTRADIVER, SpawnRestriction.Location.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, SunstradiverEntity::canSpawn);
+		SpawnRestriction.register(HEIFER, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HeiferEntity::isValidNaturalSpawn);
+		SpawnRestriction.register(DEER, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, DeerEntity::isValidNaturalSpawn);
+		SpawnRestriction.register(MOURNCREEP, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MourncreepEntity::canSpawnInDark);
 	}
 }

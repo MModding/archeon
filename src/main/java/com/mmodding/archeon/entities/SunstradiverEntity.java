@@ -2,12 +2,14 @@ package com.mmodding.archeon.entities;
 
 import com.mmodding.archeon.init.ArcheonEntities;
 import com.mmodding.archeon.init.ArcheonItems;
+import com.mmodding.archeon.init.ArcheonTags;
 import com.mmodding.mmodding_lib.library.entities.WingedAnimalEntity;
 import com.mmodding.mmodding_lib.library.entities.goals.FlyingAroundFarGoal;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Flutterer;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.control.FlightMoveControl;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.ai.pathing.BirdNavigation;
@@ -24,7 +26,9 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.random.RandomGenerator;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
 public class SunstradiverEntity extends WingedAnimalEntity implements Flutterer {
@@ -68,6 +72,10 @@ public class SunstradiverEntity extends WingedAnimalEntity implements Flutterer 
 			.add(EntityAttributes.GENERIC_FLYING_SPEED, 0.5f)
 			.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 16)
 			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3f);
+	}
+
+	public static boolean canSpawn(EntityType<SunstradiverEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, RandomGenerator random) {
+		return world.getBlockState(pos.down()).isIn(ArcheonTags.Blocks.SUNSTRADIVERS_SPAWNABLE_ON) && isBrightEnoughForNaturalSpawn(world, pos);
 	}
 
 	@Override
