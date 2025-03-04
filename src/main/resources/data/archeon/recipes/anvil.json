@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped"
+  "pattern": [
+    "BBB",
+    " G ",
+    "GGG"
+  ],,
+  "key": {
+    "B": {
+      "item": "archeon:apaflorite_block"
+    },
+    "G": {
+      "item": "archeon:apaflorite_gemstone"
+    }
+  },
+  "result": {
+    "item": "minecraft:anvil"
+  }
+}
