@@ -13,14 +13,14 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "block": "archeon:tall_organdeane",
+              "block": "archeon:nume_willow_door",
               "condition": "minecraft:block_state_property",
               "properties": {
                 "half": "lower"
               }
             }
           ],
-          "name": "archeon:tall_organdeane"
+          "name": "archeon:nume_willow_door"
         }
       ],
       "rolls": 1.0
