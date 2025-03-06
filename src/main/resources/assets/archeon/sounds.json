@@ -150,7 +150,8 @@
     "sounds": [
       "archeon:iscetha",
       "archeon:chiaspen_ammeri",
-      "archeon:serene"
+      "archeon:serene",
+      "archeon:diethea_lullaby"
     ]
   },
   "music.sunrise": {
@@ -326,6 +327,15 @@
     "sounds": [
       {
         "name": "archeon:glaive",
+        "stream": true
+      }
+    ]
+  },
+  "aiel": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "archeon:aiel",
         "stream": true
       }
     ]
