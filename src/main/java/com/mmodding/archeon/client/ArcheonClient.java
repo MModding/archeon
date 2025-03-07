@@ -57,7 +57,7 @@ public class ArcheonClient implements MModdingClientModInitializer {
 			}
 		});
 		MusicTypeSelectionCallback.EVENT.register((client, original) -> {
-			if (client.world != null && client.world.getRegistryKey().getValue().getPath().contains("archeon")) {
+			if (client.world != null && client.world.getRegistryKey().equals(Archeon.WORLD_KEY)) {
 				/*
 				 * Values were selected based on https://minecraft.wiki/w/Daylight_cycle "24-hour Minecraft Day" information.
 				 * Time 12040: The internal sky-light Level begins to decrease.
