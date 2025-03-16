@@ -6,6 +6,7 @@ import com.mmodding.mmodding_lib.library.blocks.CustomTallPlantBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Fertilizable;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -15,12 +16,19 @@ import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.random.RandomGenerator;
+import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 import java.util.function.Predicate;
 
 public class SouthWheatBlock extends CustomTallPlantBlock implements Fertilizable {
+
+	public static final VoxelShape[] SHAPES = new VoxelShape[] {
+		Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 6.0, 14.0),
+		Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 12.0, 14.0),
+		Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 16.0, 14.0),
+	};
 
 	public static final IntProperty AGE = IntProperty.of("age", 0, 4);
 
@@ -93,6 +101,11 @@ public class SouthWheatBlock extends CustomTallPlantBlock implements Fertilizabl
 	@Override
 	public void grow(ServerWorld world, RandomGenerator random, BlockPos pos, BlockState state) {
 		this.applyGrowth(world, random, pos, state, state.get(CustomTallPlantBlock.HALF).equals(DoubleBlockHalf.UPPER));
+	}
+
+	@Override
+	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+		return SouthWheatBlock.SHAPES[Math.max(state.get(SouthWheatBlock.AGE), 2)];
 	}
 
 	@Override
