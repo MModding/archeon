@@ -19,16 +19,30 @@
   "spawners": {
     "creature": [
       {
-        "type": "archeon:heifer",
-        "weight": 2,
-        "minCount": 2,
-        "maxCount": 4
+        "type": "archeon:snail",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 12
       },
       {
-        "type": "archeon:snail",
-        "weight": 2,
-        "minCount": 1,
-        "maxCount": 3
+        "type": "archeon:sunstradiver",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 10
+      },
+      {
+        "type": "archeon:heifer",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 8
+      }
+    ],
+    "monster": [
+      {
+        "type": "archeon:mourncreep",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 95
       }
     ]
   },

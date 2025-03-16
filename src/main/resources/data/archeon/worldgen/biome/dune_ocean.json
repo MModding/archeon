@@ -16,7 +16,24 @@
       "replace_current_music": false
     }
   },
-  "spawners": {},
+  "spawners": {
+    "creature": [
+      {
+        "type": "archeon:sunstradiver",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 25
+      }
+    ],
+    "monster": [
+      {
+        "type": "archeon:mourncreep",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 95
+      }
+    ]
+  },
   "spawn_costs": {},
   "carvers": {},
   "features": []
