@@ -105,7 +105,7 @@ public class SouthWheatBlock extends CustomTallPlantBlock implements Fertilizabl
 
 	@Override
 	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-		return SouthWheatBlock.SHAPES[Math.max(state.get(SouthWheatBlock.AGE), 2)];
+		return SouthWheatBlock.SHAPES[Math.min(state.get(SouthWheatBlock.AGE), 2)];
 	}
 
 	@Override
