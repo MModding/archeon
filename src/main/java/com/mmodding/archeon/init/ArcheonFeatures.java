@@ -175,8 +175,6 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.TALL_WET_FERN)))).setRarity(7);
 	public static final CustomRandomPatchFeature PATCH_SOUTH_WHEAT = new CustomRandomPatchFeature(40, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.SOUTH_WHEAT)))).setRarity(5);
-	public static final CustomRandomPatchFeature PATCH_TALL_SOUTH_WHEAT = new CustomRandomPatchFeature(30, 7, 3,
-		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.TALL_SOUTH_WHEAT)))).setRarity(5);
 	public static final CustomRandomPatchFeature PATCH_WET_GRASS_TUFFET = new CustomRandomPatchFeature(10, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.WET_GRASS_TUFFET)))).setCount(3);
 
@@ -574,7 +572,6 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_WET_FERN.register(Archeon.createId("path_wet_fern"));
 		PATCH_TALL_WET_FERN.register(Archeon.createId("patch_tall_wet_fern"));
 		PATCH_SOUTH_WHEAT.register(Archeon.createId("patch_south_wheat"));
-		PATCH_TALL_SOUTH_WHEAT.register(Archeon.createId("patch_tall_south_wheat"));
 		PATCH_WET_GRASS_TUFFET.register(Archeon.createId("patch_wet_grass_tuffet"));
 		PATCH_SNOWY_GRASS_TUFFET.register(Archeon.createId("patch_snowy_grass_tuffet"));
 		SUNSET_ORCHID_FEATURE.register(Archeon.createId("sunset_orchid_feature"));
@@ -669,7 +666,6 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_WET_FERN.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_TALL_WET_FERN.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_SOUTH_WHEAT.addDefaultToBiomes(randomPatchPredicate);
-		PATCH_TALL_SOUTH_WHEAT.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_WET_GRASS_TUFFET.addDefaultToBiomes(randomPatchPredicate);
 
 		PATCH_SNOWY_GRASS_TUFFET.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES));

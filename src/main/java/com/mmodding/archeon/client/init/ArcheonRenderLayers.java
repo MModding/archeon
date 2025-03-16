@@ -47,7 +47,6 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.DEAD_WET_GRASS_TUFFET.cutout();
 		ArcheonBlocks.SNOWY_GRASS_TUFFET.cutout();
 		ArcheonBlocks.SOUTH_WHEAT.cutout();
-		ArcheonBlocks.TALL_SOUTH_WHEAT.cutout();
 		ArcheonBlocks.BUSH.cutout();
 		ArcheonBlocks.VINE.cutout();
 		ArcheonBlocks.BLOOD_ORANGE_BUSH.cutout();

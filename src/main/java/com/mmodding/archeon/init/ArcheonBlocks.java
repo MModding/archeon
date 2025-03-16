@@ -275,13 +275,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomTallPlantBlock SOUTH_WHEAT = new CustomTallPlantBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
-		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS,
-		true
-	);
-
-	public static final CustomTallPlantBlock TALL_SOUTH_WHEAT = new CustomTallPlantBlock(
+	public static final SouthWheatBlock SOUTH_WHEAT = new SouthWheatBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS,
 		true
@@ -1218,7 +1212,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DEAD_WET_GRASS_TUFFET.register(Archeon.createId("dead_wet_grass_tuffet"));
 		SNOWY_GRASS_TUFFET.register(Archeon.createId("snowy_grass_tuffet"));
 		SOUTH_WHEAT.register(Archeon.createId("south_wheat"));
-		TALL_SOUTH_WHEAT.register(Archeon.createId("tall_south_wheat"));
 		BUSH.register(Archeon.createId("bush"));
 		VINE.register(Archeon.createId("vine"));
 		BLOOD_ORANGE_BUSH.register(Archeon.createId("blood_orange_bush"));
