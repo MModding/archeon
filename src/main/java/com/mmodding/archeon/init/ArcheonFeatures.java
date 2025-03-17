@@ -1,6 +1,7 @@
 package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
+import com.mmodding.archeon.blocks.SouthWheatBlock;
 import com.mmodding.archeon.worldgen.features.HollowCypressLogFeature;
 import com.mmodding.archeon.worldgen.features.MenhirFeature;
 import com.mmodding.archeon.worldgen.features.RockyFieldsRockFeature;
@@ -38,6 +39,8 @@ import net.minecraft.util.math.intprovider.BiasedToBottomIntProvider;
 import net.minecraft.util.math.intprovider.ClampedNormalIntProvider;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.util.math.noise.DoublePerlinNoiseSampler;
+import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.gen.GenerationStep;
@@ -49,7 +52,9 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.SimpleBlockFeatureConfig;
 import net.minecraft.world.gen.feature.util.PlacedFeatureUtil;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
+import net.minecraft.world.gen.noise.NoiseParametersKeys;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.stateprovider.NoiseBlockStateProvider;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacerType;
@@ -173,13 +178,32 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.WET_FERN)))).setRarity(6);
 	public static final CustomRandomPatchFeature PATCH_TALL_WET_FERN = new CustomRandomPatchFeature(50, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.TALL_WET_FERN)))).setRarity(7);
-	public static final CustomRandomPatchFeature PATCH_SOUTH_WHEAT = new CustomRandomPatchFeature(40, 7, 3,
-		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.SOUTH_WHEAT)))).setRarity(5);
 	public static final CustomRandomPatchFeature PATCH_WET_GRASS_TUFFET = new CustomRandomPatchFeature(10, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.WET_GRASS_TUFFET)))).setCount(3);
 
 	public static final CustomRandomPatchFeature PATCH_SNOWY_GRASS_TUFFET = new CustomRandomPatchFeature(20, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.SNOWY_GRASS_TUFFET)))).setCount(7);
+
+	public static final CustomRandomPatchFeature PATCH_SOUTH_WHEAT = new CustomRandomPatchFeature(
+		40, 7, 3,
+		PlacedFeatureUtil.onlyWhenEmpty(
+			Feature.SIMPLE_BLOCK,
+			new SimpleBlockFeatureConfig(
+				new NoiseBlockStateProvider(
+					23456L,
+					new DoublePerlinNoiseSampler.NoiseParameters(0, 1.0),
+					0.03125f,
+					List.of(
+						ArcheonBlocks.SOUTH_WHEAT.getDefaultState(),
+						ArcheonBlocks.SOUTH_WHEAT.getDefaultState().with(SouthWheatBlock.AGE, 1),
+						ArcheonBlocks.SOUTH_WHEAT.getDefaultState().with(SouthWheatBlock.AGE, 2),
+						ArcheonBlocks.SOUTH_WHEAT.getDefaultState().with(SouthWheatBlock.AGE, 3),
+						ArcheonBlocks.SOUTH_WHEAT.getDefaultState().with(SouthWheatBlock.AGE, 4)
+					)
+				)
+			)
+		)
+	).setRarity(5);
 
 	public static final CustomFlowerFeature SUNSET_ORCHID_FEATURE = new CustomFlowerFeature(32, 7, 3,
 		ArcheonBlocks.SUNSET_ORCHID).setRarity(5);
@@ -571,9 +595,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_FLOWERED_TALL_WET_GRASS.register(Archeon.createId("patch_flowered_tall_wet_grass"));
 		PATCH_WET_FERN.register(Archeon.createId("path_wet_fern"));
 		PATCH_TALL_WET_FERN.register(Archeon.createId("patch_tall_wet_fern"));
-		PATCH_SOUTH_WHEAT.register(Archeon.createId("patch_south_wheat"));
 		PATCH_WET_GRASS_TUFFET.register(Archeon.createId("patch_wet_grass_tuffet"));
 		PATCH_SNOWY_GRASS_TUFFET.register(Archeon.createId("patch_snowy_grass_tuffet"));
+		PATCH_SOUTH_WHEAT.register(Archeon.createId("patch_south_wheat"));
 		SUNSET_ORCHID_FEATURE.register(Archeon.createId("sunset_orchid_feature"));
 		ROSEYPIA_FEATURE.register(Archeon.createId("roseypia_feature"));
 		AEROLIA_FEATURE.register(Archeon.createId("aerolia_feature"));
@@ -665,10 +689,11 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_FLOWERED_TALL_WET_GRASS.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_WET_FERN.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_TALL_WET_FERN.addDefaultToBiomes(randomPatchPredicate);
-		PATCH_SOUTH_WHEAT.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_WET_GRASS_TUFFET.addDefaultToBiomes(randomPatchPredicate);
 
 		PATCH_SNOWY_GRASS_TUFFET.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES));
+
+		PATCH_SOUTH_WHEAT.addDefaultToBiomes(randomPatchPredicate);
 
 		SUNSET_ORCHID_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		ROSEYPIA_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
