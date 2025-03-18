@@ -1,4 +1,14 @@
 {
+  "music.panopticon": {
+    "sounds": [
+      "archeon:vestige"
+    ]
+  },
+  "music.atmosphere_tower": {
+    "sounds": [
+      "archeon:tower"
+    ]
+  },
   "music.achrean_caves": {
     "sounds": [
       "archeon:the_pit",

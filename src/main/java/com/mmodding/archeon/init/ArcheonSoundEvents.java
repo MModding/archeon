@@ -6,6 +6,9 @@ import com.mmodding.mmodding_lib.library.sounds.CustomSoundEvent;
 
 public class ArcheonSoundEvents implements ElementsInitializer {
 
+	public static final CustomSoundEvent MUSIC_PANOPTICON = new CustomSoundEvent(Archeon.createId("music.panopticon"));
+	public static final CustomSoundEvent MUSIC_ATMOSPHERE_TOWER = new CustomSoundEvent(Archeon.createId("music.atmosphere_tower"));
+
 	public static final CustomSoundEvent MUSIC_DAY = new CustomSoundEvent(Archeon.createId("music.day"));
 	public static final CustomSoundEvent MUSIC_SUNSET = new CustomSoundEvent(Archeon.createId("music.sunset"));
 	public static final CustomSoundEvent MUSIC_NIGHT = new CustomSoundEvent(Archeon.createId("music.night"));

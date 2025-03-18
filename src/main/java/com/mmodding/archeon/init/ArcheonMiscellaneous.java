@@ -15,6 +15,9 @@ import com.mmodding.mmodding_lib.library.stellar.StellarCycle;
 import com.mmodding.mmodding_lib.library.utils.MModdingIdentifier;
 import net.minecraft.client.sound.MusicType;
 import net.minecraft.sound.MusicSound;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.gen.feature.StructureFeature;
 
 public class ArcheonMiscellaneous implements ElementsInitializer {
 
@@ -33,6 +36,12 @@ public class ArcheonMiscellaneous implements ElementsInitializer {
 			ref.set(new MModdingIdentifier("lightened_magenta"));
 		}
 	});
+
+	public static final RegistryKey<StructureFeature> PANOPTICON_KEY = RegistryKey.of(Registry.STRUCTURE_WORLDGEN, Archeon.createId("panopticon"));
+	public static final RegistryKey<StructureFeature> ATMOSPHERE_TOWER_KEY = RegistryKey.of(Registry.STRUCTURE_WORLDGEN, Archeon.createId("atmosphere_tower"));
+
+	public static final MusicSound PANOPTICON = MusicType.createIngameMusic(ArcheonSoundEvents.MUSIC_PANOPTICON);
+	public static final MusicSound ATMOSPHERE_TOWER = MusicType.createIngameMusic(ArcheonSoundEvents.MUSIC_ATMOSPHERE_TOWER);
 
 	public static final MusicSound DAY = MusicType.createIngameMusic(ArcheonSoundEvents.MUSIC_DAY);
 	public static final MusicSound SUNSET = MusicType.createIngameMusic(ArcheonSoundEvents.MUSIC_SUNSET);
