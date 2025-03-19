@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "archeon:artemnite",
+    "archeon:artemnite_stairs",
+    "archeon:artemnite_slab",
+    "archeon:artemnite_wall",
     "archeon:artemnite_bricks",
     "archeon:artemnite_brick_stairs",
     "archeon:artemnite_brick_slab",
