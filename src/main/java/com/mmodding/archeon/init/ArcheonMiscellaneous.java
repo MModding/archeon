@@ -13,6 +13,8 @@ import com.mmodding.mmodding_lib.library.portals.squared.CustomSquaredPortal;
 import com.mmodding.mmodding_lib.library.soundtracks.Soundtrack;
 import com.mmodding.mmodding_lib.library.stellar.StellarCycle;
 import com.mmodding.mmodding_lib.library.utils.MModdingIdentifier;
+import com.mmodding.mmodding_lib.library.utils.WorldUtils;
+import com.mmodding.mmodding_lib.library.worldgen.structures.StructureSpreadLoot;
 import net.minecraft.client.sound.MusicType;
 import net.minecraft.sound.MusicSound;
 import net.minecraft.util.registry.Registry;
@@ -77,5 +79,8 @@ public class ArcheonMiscellaneous implements ElementsInitializer {
 
 		DIETHEA.register(Archeon.createId("diethea"));
 		NAPOR.register(Archeon.createId("napor"));
+
+		WorldUtils.addSpreadStructureLoot(PANOPTICON_KEY, StructureSpreadLoot.create().addStructureCommonLoot(ArcheonItems.CENTAUR_LIFE_IGNITER.getDefaultStack()));
+		WorldUtils.addSpreadStructureLoot(ATMOSPHERE_TOWER_KEY, StructureSpreadLoot.create().addStructureCommonLoot(ArcheonItems.POWER_KEY.getDefaultStack()));
 	}
 }

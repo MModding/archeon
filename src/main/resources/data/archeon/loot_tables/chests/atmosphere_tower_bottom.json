@@ -277,20 +277,6 @@
               }
             }
           ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
-          "name": "archeon:power_key",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            }
-          ]
         }
       ],
       "rolls": 1.0
