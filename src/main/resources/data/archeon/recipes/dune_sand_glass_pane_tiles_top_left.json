@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "archeon:dune_sand_glass_pane_tiles"
+  },
+  "result": "archeon:dune_sand_glass_pane_tiles_top_left"
+}
