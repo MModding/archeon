@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "I I",
+    "I I"
+  ],
+  "key": {
+    "I": {
+      "item": "archeon:lusonyth_ingot"
+    }
+  },
+  "result": {
+    "item": "archeon:lusonyth_leggings",
+    "count": 1
+  }
+}
