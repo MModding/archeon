@@ -1,20 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " B ",
-    "BTB",
-    " B "
+    " P ",
+    "PTP",
+    " P "
   ],
   "key": {
-    "B": {
-      "item": "archeon:blue_shell"
+    "P": {
+      "item": "archeon:pink_shell"
     },
     "T": {
       "tag": "archeon:tiles"
     }
   },
   "result": {
-    "item": "archeon:blue_tiles",
+    "item": "archeon:purple_tiles",
     "count": 5
   }
 }

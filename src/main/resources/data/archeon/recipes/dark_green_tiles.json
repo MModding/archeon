@@ -1,23 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "PMP",
+    "IMI",
     "MTM",
-    "PMP"
+    "IMI"
   ],
   "key": {
+    "I": {
+      "item": "archeon:ink_bottle"
+    },
     "M": {
       "item": "archeon:moss_ball"
-    },
-    "P": {
-      "item": "archeon:plant_fiber"
     },
     "T": {
       "tag": "archeon:tiles"
     }
   },
   "result": {
-    "item": "archeon:green_tiles",
+    "item": "archeon:dark_green_tiles",
     "count": 5
   }
 }

@@ -1,11 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " B ",
-    "BTB",
-    " B "
+    "BPB",
+    "PTP",
+    "BPB"
   ],
   "key": {
+    "P": {
+      "item": "archeon:plant_fiber"
+    },
     "B": {
       "item": "archeon:blue_shell"
     },
@@ -14,7 +17,7 @@
     }
   },
   "result": {
-    "item": "archeon:blue_tiles",
+    "item": "archeon:turquoise_tiles",
     "count": 5
   }
 }

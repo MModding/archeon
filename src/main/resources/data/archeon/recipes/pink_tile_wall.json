@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TTT",
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "archeon:pink_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:pink_tile_wall",
+    "count": 6
+  }
+}

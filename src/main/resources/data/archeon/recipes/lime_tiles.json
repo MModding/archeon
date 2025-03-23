@@ -1,20 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "FSF",
-    "F F",
-    "S S"
+    "YPY",
+    "PTP",
+    "YPY"
   ],
   "key": {
-    "F": {
+    "P": {
       "item": "archeon:plant_fiber"
     },
-    "S": {
+    "Y": {
       "item": "archeon:yellow_shell"
+    },
+    "T": {
+      "tag": "archeon:tiles"
     }
   },
   "result": {
-    "item": "archeon:clothes_leggings",
-    "count": 1
+    "item": "archeon:lime_tiles",
+    "count": 5
   }
 }

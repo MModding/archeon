@@ -1,11 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " B ",
-    "BTB",
-    " B "
+    "BIB",
+    "ITI",
+    "BIB"
   ],
   "key": {
+    "I": {
+      "item": "archeon:ink_bottle"
+    },
     "B": {
       "item": "archeon:blue_shell"
     },
@@ -14,7 +17,7 @@
     }
   },
   "result": {
-    "item": "archeon:blue_tiles",
+    "item": "archeon:dark_blue_tiles",
     "count": 5
   }
 }

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "archeon:purple_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:purple_tile_slab",
+    "count": 6
+  }
+}

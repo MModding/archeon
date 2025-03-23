@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "T  ",
+    "TT ",
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "archeon:purple_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:purple_tile_stairs",
+    "count": 4
+  }
+}
