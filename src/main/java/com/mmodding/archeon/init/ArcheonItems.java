@@ -280,20 +280,20 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final LoreScrapItem LORE_SCRAP = new LoreScrapItem(new AdvancedItemSettings().maxCount(1));
 
-	public static final CustomMusicDiscItem PE4K = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
-		new SoundEvent(Archeon.createId("pe4k")), 0, 116);
+	public static final CustomMusicDiscItem MUSIC_DISC_PE4K = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
+		new SoundEvent(Archeon.createId("music_disc.pe4k")), 0, 116);
 
-	public static final CustomMusicDiscItem GEOMETRIC_FALL = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
-		new SoundEvent(Archeon.createId("geometric_fall")), 0, 74);
+	public static final CustomMusicDiscItem MUSIC_DISC_GEOMETRIC_FALL = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
+		new SoundEvent(Archeon.createId("music_disc.geometric_fall")), 0, 74);
 
-	public static final CustomMusicDiscItem PARALLELIFY = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
-		new SoundEvent(Archeon.createId("parallelify")), 0, 101);
+	public static final CustomMusicDiscItem MUSIC_DISC_PARALLELIFY = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
+		new SoundEvent(Archeon.createId("music_disc.parallelify")), 0, 101);
 
-	public static final CustomMusicDiscItem GLAIVE = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
-		new SoundEvent(Archeon.createId("glaive")), 0, 176);
+	public static final CustomMusicDiscItem MUSIC_DISC_GLAIVE = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
+		new SoundEvent(Archeon.createId("music_disc.glaive")), 0, 176);
 
-	public static final CustomMusicDiscItem AIEL = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC),
-		new SoundEvent(Archeon.createId("aiel")), 0, 0);
+	public static final CustomMusicDiscItem MUSIC_DISC_AIEL = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC),
+		new SoundEvent(Archeon.createId("music_disc.aiel")), 0, 0);
 
 	public static final CustomItem RECORD_FRAGMENT = new CustomItem(new AdvancedItemSettings().maxCount(16));
 
@@ -461,11 +461,11 @@ public class ArcheonItems implements ElementsInitializer {
 		RED_LYCORIS_PETAL.register(Archeon.createId("red_lycoris_petal"));
 		PINK_LYCORIS_PETAL.register(Archeon.createId("pink_lycoris_petal"));
 		LORE_SCRAP.register(Archeon.createId("lore_scrap"));
-		PE4K.register(Archeon.createId("pe4k"));
-		GEOMETRIC_FALL.register(Archeon.createId("geometric_fall"));
-		PARALLELIFY.register(Archeon.createId("parallelify"));
-		GLAIVE.register(Archeon.createId("glaive"));
-		AIEL.register(Archeon.createId("aiel"));
+		MUSIC_DISC_PE4K.register(Archeon.createId("music_disc_pe4k"));
+		MUSIC_DISC_GEOMETRIC_FALL.register(Archeon.createId("music_disc_geometric_fall"));
+		MUSIC_DISC_PARALLELIFY.register(Archeon.createId("music_disc_parallelify"));
+		MUSIC_DISC_GLAIVE.register(Archeon.createId("music_disc_glaive"));
+		MUSIC_DISC_AIEL.register(Archeon.createId("music_disc_aiel"));
 		RECORD_FRAGMENT.register(Archeon.createId("record_fragment"));
 		SALT.register(Archeon.createId("salt"));
 		RAW_HEIFER.register(Archeon.createId("raw_heifer"));

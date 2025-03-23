@@ -202,7 +202,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "archeon:aiel",
+          "name": "archeon:music_disc_aiel",
           "weight": 5
         }
       ]

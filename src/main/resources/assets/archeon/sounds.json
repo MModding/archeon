@@ -304,7 +304,7 @@
       }
     ]
   },
-  "geometric_fall": {
+  "music_disc.geometric_fall": {
     "category": "record",
     "sounds": [
       {
@@ -313,7 +313,7 @@
       }
     ]
   },
-  "parallelify": {
+  "music_disc.parallelify": {
     "category": "record",
     "sounds": [
       {
@@ -322,7 +322,7 @@
       }
     ]
   },
-  "pe4k": {
+  "music_disc.pe4k": {
     "category": "record",
     "subtitle": "subtitles.pe4k",
     "sounds": [
@@ -332,7 +332,7 @@
       }
     ]
   },
-  "glaive": {
+  "music_disc.glaive": {
     "category": "record",
     "sounds": [
       {
@@ -341,7 +341,7 @@
       }
     ]
   },
-  "aiel": {
+  "music_disc.aiel": {
     "category": "record",
     "sounds": [
       {

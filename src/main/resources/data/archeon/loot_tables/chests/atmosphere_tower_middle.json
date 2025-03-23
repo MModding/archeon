@@ -65,7 +65,7 @@
         {
           "type": "minecraft:item",
           "weight": 1,
-          "name": "archeon:geometric_fall",
+          "name": "archeon:music_disc_geometric_fall",
           "functions": [
             {
               "function": "minecraft:set_count",

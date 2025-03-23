@@ -5,6 +5,12 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "archeon:music_disc_parallelify",
+          "weight": 5,
+          "functions": []
+        },
+        {
+          "type": "minecraft:item",
           "name": "archeon:faelite_bow",
           "weight": 25,
           "functions": [
