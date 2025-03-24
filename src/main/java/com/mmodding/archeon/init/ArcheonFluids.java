@@ -10,17 +10,9 @@ import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class ArcheonFluids implements ElementsInitializer {
 
-	public static final FluidGroup HOT_SPRING_WATER = new FluidGroup(
-		new HotSpringWaterFluid(true),
-		new HotSpringWaterFluid(false),
-		QuiltBlockSettings.copyOf(Blocks.WATER)
-	);
+	public static final FluidGroup HOT_SPRING_WATER = new FluidGroup(HotSpringWaterFluid::new, QuiltBlockSettings.copyOf(Blocks.WATER));
 
-	public static final FluidGroup DASCIUM = new FluidGroup(
-		new DasciumFluid(true),
-		new DasciumFluid(false),
-		QuiltBlockSettings.copyOf(Blocks.WATER)
-	);
+	public static final FluidGroup DASCIUM = new FluidGroup(DasciumFluid::new, QuiltBlockSettings.copyOf(Blocks.WATER));
 
 	@Override
 	public void register() {
