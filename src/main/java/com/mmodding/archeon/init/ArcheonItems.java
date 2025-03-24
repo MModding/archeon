@@ -30,6 +30,7 @@ import net.minecraft.item.*;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.tag.FluidTags;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.Vec3d;
@@ -227,7 +228,10 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomWallStandingBlockItem EXYRIANE_TORCH = new CustomWallStandingBlockItem(ArcheonBlocks.EXYRIANE_TORCH, ArcheonBlocks.WALL_EXYRIANE_TORCH, new AdvancedItemSettings());
 
-	public static final CustomItem GOBLET = new CustomItem(new AdvancedItemSettings());
+	public static final CustomFluidInteractableItem GOBLET = new CustomFluidInteractableItem(
+		(stack, state, world, pos) -> state.isIn(FluidTags.WATER) ? ArcheonItems.GOBLET_WATER.getDefaultStack() : ItemStack.EMPTY,
+		new AdvancedItemSettings()
+	);
 
 	public static final ItemFinishUsing GOBLET_USE = (stack, world, user) -> (stack.isEmpty() ? new ItemStack(ArcheonItems.GOBLET) : stack);
 
