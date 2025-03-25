@@ -14,6 +14,11 @@
                 "min": 2,
                 "max": 5
               }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
             }
           ],
           "conditions": [
