@@ -108,7 +108,7 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomShovelItem CHIASPEN_SHOVEL = new CustomShovelItem(ToolMaterials.STONE, 1.5f, -3.0f, new AdvancedItemSettings());
 	public static final CustomHoeItem CHIASPEN_HOE = new CustomHoeItem(ToolMaterials.STONE, -1, -2.0f, new AdvancedItemSettings());
 
-	public static final CustomSwordItem APAFLORITE_SABER = new CustomSwordItem(ApafloriteTool.INSTANCE, 3, -2.4f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
+	public static final CustomSwordItem APAFLORITE_SWORD = new CustomSwordItem(ApafloriteTool.INSTANCE, 3, -2.4f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
 	public static final CustomPickaxeItem APAFLORITE_PICKAXE = new CustomPickaxeItem(ApafloriteTool.INSTANCE, 1, -2.8f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
 	public static final CustomAxeItem APAFLORITE_AXE = new CustomAxeItem(ApafloriteTool.INSTANCE, 6.0F, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
 	public static final CustomShovelItem APAFLORITE_SHOVEL = new CustomShovelItem(ApafloriteTool.INSTANCE, 1.5f, -3.0f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
@@ -387,7 +387,7 @@ public class ArcheonItems implements ElementsInitializer {
 		CHIASPEN_AXE.register(Archeon.createId("chiaspen_axe"));
 		CHIASPEN_SHOVEL.register(Archeon.createId("chiaspen_shovel"));
 		CHIASPEN_HOE.register(Archeon.createId("chiaspen_hoe"));
-		APAFLORITE_SABER.register(Archeon.createId("apaflorite_saber"));
+		APAFLORITE_SWORD.register(Archeon.createId("apaflorite_sword"));
 		APAFLORITE_PICKAXE.register(Archeon.createId("apaflorite_pickaxe"));
 		APAFLORITE_AXE.register(Archeon.createId("apaflorite_axe"));
 		APAFLORITE_SHOVEL.register(Archeon.createId("apaflorite_shovel"));

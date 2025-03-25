@@ -20,7 +20,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "archeon:apaflorite_saber",
+          "name": "archeon:apaflorite_sword",
           "weight": 10,
           "functions": [
             {
