@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "archeon:phosnor_slate"
+    }
+  },
+  "result": {
+    "item": "archeon:phosnor_slate_wall",
+    "count": 6
+  }
+}

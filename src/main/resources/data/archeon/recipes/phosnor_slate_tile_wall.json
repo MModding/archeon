@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TTT",
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "archeon:phosnor_slate_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:phosnor_slate_tile_wall",
+    "count": 6
+  }
+}
