@@ -80,7 +80,7 @@ public class SouthWheatBlock extends CustomTallPlantBlock implements Fertilizabl
 	}
 
 	public void applyGrowth(World world, RandomGenerator random, BlockPos pos, BlockState state, boolean head) {
-		int age = (int) MathHelper.absMax(state.get(SouthWheatBlock.AGE) + MathHelper.nextInt(random, 1, 3), 4);
+		int age = Math.min(state.get(SouthWheatBlock.AGE) + MathHelper.nextInt(random, 1, 3), 4);
 		if (head) {
 			this.applyGrowth(world, pos, state, age);
 			this.applyGrowth(world, pos.down(), world.getBlockState(pos.down()), age);
