@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A  ",
+    "AA ",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "archeon:polished_anhydrite"
+    }
+  },
+  "result": {
+    "item": "archeon:polished_anhydrite_stairs",
+    "count": 4
+  }
+}
