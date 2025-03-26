@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    "BAB",
+    " B "
+  ],
+  "key": {
+    "B": {
+      "item": "archeon:phosnor_slate_bricks"
+    },
+    "A": {
+      "item": "archeon:phosnor_slate_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:chiseled_phosnor_slate",
+    "count": 5
+  }
+}

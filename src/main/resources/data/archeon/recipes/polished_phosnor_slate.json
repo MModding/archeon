@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "archeon:cobbled_phosnor_slate"
+    }
+  },
+  "result": {
+    "item": "archeon:polished_phosnor_slate",
+    "count": 4
+  }
+}
