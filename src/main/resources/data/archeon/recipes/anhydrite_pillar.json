@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "C"
+  ],
+  "key": {
+    "C": {
+      "item": "archeon:chiseled_anhydrite"
+    }
+  },
+  "result": {
+    "item": "archeon:anhydrite_pillar",
+    "count": 2
+  }
+}

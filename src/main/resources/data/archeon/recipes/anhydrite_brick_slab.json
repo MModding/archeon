@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "archeon:anhydrite_bricks"
+    }
+  },
+  "result": {
+    "item": "archeon:anhydrite_brick_slab",
+    "count": 6
+  }
+}

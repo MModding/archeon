@@ -1,16 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "AA",
-    "AA"
+    "A  ",
+    "AA ",
+    "AAA"
   ],
   "key": {
     "A": {
-      "item": "archeon:anhydrite_tiles"
+      "item": "archeon:anhydrite_bricks"
     }
   },
   "result": {
-    "item": "archeon:polished_anhydrite",
+    "item": "archeon:anhydrite_brick_stairs",
     "count": 4
   }
 }

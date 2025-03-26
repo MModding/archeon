@@ -1,7 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "AA",
     "AA"
   ],
   "key": {
@@ -10,7 +9,7 @@
     }
   },
   "result": {
-    "item": "archeon:polished_anhydrite",
-    "count": 4
+    "item": "archeon:anhydrite_tile_pressure_plate",
+    "count": 1
   }
 }

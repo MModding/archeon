@@ -1,8 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "AA",
-    "AA"
+    "A  ",
+    "AA ",
+    "AAA"
   ],
   "key": {
     "A": {
@@ -10,7 +11,7 @@
     }
   },
   "result": {
-    "item": "archeon:polished_anhydrite",
+    "item": "archeon:anhydrite_tile_stairs",
     "count": 4
   }
 }

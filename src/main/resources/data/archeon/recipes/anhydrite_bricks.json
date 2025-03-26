@@ -6,11 +6,11 @@
   ],
   "key": {
     "A": {
-      "item": "archeon:anhydrite_tiles"
+      "item": "archeon:anhydrite"
     }
   },
   "result": {
-    "item": "archeon:polished_anhydrite",
+    "item": "archeon:anhydrite_bricks",
     "count": 4
   }
 }
