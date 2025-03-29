@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "facing=east,part=head": {
+      "model": "archeon:block/neclane_bed",
+      "y": 90
+    },
+    "facing=north,part=head": {
+      "model": "archeon:block/neclane_bed"
+    },
+    "facing=south,part=head": {
+      "model": "archeon:block/neclane_bed",
+      "y": 180
+    },
+    "facing=west,part=head": {
+      "model": "archeon:block/neclane_bed",
+      "y": 270
+    },
+    "part=foot": {
+      "model": "archeon:block/neclane_bed_void"
+    }
+  }
+}

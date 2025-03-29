@@ -366,6 +366,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomDoorBlock SUMMER_NECLANE_DOOR = new CustomDoorBlock(DefaultBlockSettings.WOOD_SETTINGS.nonOpaque(), true);
 	public static final CustomTrapdoorBlock NECLANE_TRAPDOOR = new CustomTrapdoorBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
 	public static final CustomTrapdoorBlock SUMMER_NECLANE_TRAPDOOR = new CustomTrapdoorBlock(DefaultBlockSettings.WOOD_SETTINGS.nonOpaque(), true);
+	public static final NeclaneBedBlock NECLANE_BED = new NeclaneBedBlock(DefaultBlockSettings.WOOD_SETTINGS.strength(0.2f).nonOpaque(), true);
 
 	public static final CustomPillarBlock CYPRESS_WOOD = new CustomPillarBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
 	public static final CustomPillarBlock CYPRESS_LOG = new CustomPillarBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
@@ -1255,6 +1256,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		SUMMER_NECLANE_DOOR.register(Archeon.createId("summer_neclane_door"));
 		NECLANE_TRAPDOOR.register(Archeon.createId("neclane_trapdoor"));
 		SUMMER_NECLANE_TRAPDOOR.register(Archeon.createId("summer_neclane_trapdoor"));
+		NECLANE_BED.register(Archeon.createId("neclane_bed"));
 		CYPRESS_WOOD.register(Archeon.createId("cypress_wood"));
 		CYPRESS_LOG.register(Archeon.createId("cypress_log"));
 		HOLLOW_CYPRESS_LOG.register(Archeon.createId("hollow_cypress_log"));

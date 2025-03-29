@@ -1,0 +1,7 @@
+{
+  "parent": "archeon:custom/neclane_bed",
+  "textures": {
+    "all": "archeon:block/neclane_bed",
+    "particle": "archeon:block/neclane_planks"
+  }
+}
