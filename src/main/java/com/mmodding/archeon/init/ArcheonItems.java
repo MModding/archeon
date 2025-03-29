@@ -31,6 +31,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.tag.FluidTags;
+import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.Vec3d;
@@ -164,7 +165,7 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomEnchantedBookItem MASSACRE_BOOK = new CustomEnchantedBookItem(ArcheonEnchantments.MASSACRE, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE).nameFormattings(Formatting.RED).glintPack(DefaultGlintPacks.LIGHTENED_RED));
 	public static final CustomEnchantedBookItem QOLM_BOOK = new CustomEnchantedBookItem(ArcheonEnchantments.QOLM, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE).nameFormattings(Formatting.GREEN).glintPack(DefaultGlintPacks.LIGHTENED_GREEN));
 
-	public static final AmuletOfNatureItem AMULET_OF_NATURE = new AmuletOfNatureItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC));
+	public static final AmuletOfNatureItem AMULET_OF_NATURE = new AmuletOfNatureItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC).descriptionLines(Text.translatable("item.archeon.amulet_of_nature.desc").formatted(Formatting.GRAY)));
 
 	public static final CustomItem MANUSCRIPT = new CustomItem(new AdvancedItemSettings());
 
@@ -344,11 +345,27 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomItem AURORA_CRYSTAL = new CustomItem(new AdvancedItemSettings().fireproof());
 
-	public static final CustomItem IMPRESSIVE_AURORA_CRYSTAL = new CustomItem(new AdvancedItemSettings().fireproof().nameFormattings(Formatting.GOLD));
+	public static final CustomItem IMPRESSIVE_AURORA_CRYSTAL = new CustomItem(
+		new AdvancedItemSettings()
+			.fireproof()
+			.nameFormattings(Formatting.GOLD)
+			.descriptionLines(
+				Text.translatable("item.archeon.impressive_aurora_crystal.desc").formatted(Formatting.GRAY),
+				Text.translatable("interaction.archeon.amulet_of_nature").formatted(Formatting.GRAY)
+			)
+	);
 
 	public static final CustomItem CENTAUR_HOOF = new CustomItem(new AdvancedItemSettings().fireproof());
 
-	public static final CustomItem CENTAUR_HORSESHOE = new CustomItem(new AdvancedItemSettings().fireproof().nameFormattings(Formatting.GOLD));
+	public static final CustomItem CENTAUR_HORSESHOE = new CustomItem(
+		new AdvancedItemSettings()
+			.fireproof()
+			.nameFormattings(Formatting.GOLD)
+			.descriptionLines(
+				Text.translatable("item.archeon.centaur_horseshoe.desc").formatted(Formatting.GRAY),
+				Text.translatable("interaction.archeon.amulet_of_nature").formatted(Formatting.GRAY)
+			)
+	);
 
 	public static final CustomSpawnEggItem AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.AURORA_CATALYST, 4380648, 3876673, new AdvancedItemSettings());
 	public static final CustomSpawnEggItem POISONOUS_AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.POISONOUS_AURORA_CATALYST, 2881287, 6633076, new AdvancedItemSettings());
