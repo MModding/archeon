@@ -11,35 +11,6 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 0.0
-              },
-              "function": "minecraft:looting_enchant"
-            }
-          ],
-          "name": "archeon:heart_of_nature_trophy"
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
                 "max": 3.0,
                 "min": 1.0
               },
@@ -54,7 +25,7 @@
               "function": "minecraft:looting_enchant"
             }
           ],
-          "name": "archeon:pink_lycoris_petal"
+          "name": "archeon:manuscript"
         }
       ],
       "rolls": 1.0
@@ -64,14 +35,14 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 99,
+          "weight": 199,
           "functions": [
             {
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 5.0,
-                "min": 3.0
+                "max": 4.0,
+                "min": 2.0
               },
               "function": "minecraft:set_count"
             },
@@ -84,13 +55,13 @@
               "function": "minecraft:looting_enchant"
             }
           ],
-          "name": "archeon:aurora_crystal"
+          "name": "archeon:centaur_hoof"
         },
         {
           "type": "minecraft:item",
           "weight": 1,
           "functions": [],
-          "name": "archeon:impressive_aurora_crystal"
+          "name": "archeon:centaur_horseshoe"
         }
       ],
       "rolls": 1.0
