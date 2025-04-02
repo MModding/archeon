@@ -34,6 +34,44 @@
         }
       ],
       "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "archeon:plant_fiber",
+          "functions": [
+            {
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:uniform_bonus_count",
+              "function": "minecraft:apply_bonus",
+              "parameters": {
+                "bonusMultiplier": 2
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:match_tool",
+                "predicate": {
+                  "enchantments": [
+                    {
+                      "enchantment": "minecraft:silk_touch",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
     }
   ]
 }

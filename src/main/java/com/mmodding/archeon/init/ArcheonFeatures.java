@@ -40,7 +40,6 @@ import net.minecraft.util.math.intprovider.ClampedNormalIntProvider;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.math.noise.DoublePerlinNoiseSampler;
-import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.gen.GenerationStep;
@@ -52,7 +51,6 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.SimpleBlockFeatureConfig;
 import net.minecraft.world.gen.feature.util.PlacedFeatureUtil;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
-import net.minecraft.world.gen.noise.NoiseParametersKeys;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.stateprovider.NoiseBlockStateProvider;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
@@ -180,7 +178,6 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.TALL_WET_FERN)))).setRarity(7);
 	public static final CustomRandomPatchFeature PATCH_WET_GRASS_TUFFET = new CustomRandomPatchFeature(10, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.WET_GRASS_TUFFET)))).setCount(3);
-
 	public static final CustomRandomPatchFeature PATCH_SNOWY_GRASS_TUFFET = new CustomRandomPatchFeature(20, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.SNOWY_GRASS_TUFFET)))).setCount(7);
 
@@ -204,6 +201,15 @@ public class ArcheonFeatures implements ElementsInitializer {
 			)
 		)
 	).setRarity(5);
+
+	public static final CustomRandomPatchFeature PATCH_BUSH = new CustomRandomPatchFeature(5, 7, 3,
+		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.BUSH))));
+
+	public static final CustomRandomPatchFeature PATCH_VINE = new CustomRandomPatchFeature(1, 7, 3,
+		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.VINE))));
+
+	public static final CustomRandomPatchFeature PATCH_BLOOD_ORANGE_BUSH = new CustomRandomPatchFeature(1, 7, 3,
+		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.BLOOD_ORANGE_BUSH))));
 
 	public static final CustomFlowerFeature SUNSET_ORCHID_FEATURE = new CustomFlowerFeature(32, 7, 3,
 		ArcheonBlocks.SUNSET_ORCHID).setRarity(5);
@@ -598,6 +604,9 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_WET_GRASS_TUFFET.register(Archeon.createId("patch_wet_grass_tuffet"));
 		PATCH_SNOWY_GRASS_TUFFET.register(Archeon.createId("patch_snowy_grass_tuffet"));
 		PATCH_SOUTH_WHEAT.register(Archeon.createId("patch_south_wheat"));
+		PATCH_BUSH.register(Archeon.createId("patch_bush"));
+		PATCH_VINE.register(Archeon.createId("patch_vine"));
+		PATCH_BLOOD_ORANGE_BUSH.register(Archeon.createId("patch_blood_orange_bush"));
 		SUNSET_ORCHID_FEATURE.register(Archeon.createId("sunset_orchid_feature"));
 		ROSEYPIA_FEATURE.register(Archeon.createId("roseypia_feature"));
 		AEROLIA_FEATURE.register(Archeon.createId("aerolia_feature"));
@@ -690,10 +699,13 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_WET_FERN.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_TALL_WET_FERN.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_WET_GRASS_TUFFET.addDefaultToBiomes(randomPatchPredicate);
-
 		PATCH_SNOWY_GRASS_TUFFET.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES));
 
 		PATCH_SOUTH_WHEAT.addDefaultToBiomes(randomPatchPredicate);
+
+		PATCH_BUSH.addDefaultToBiomes(ctx -> inArcheonPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) && !ctx.getBiomeKey().equals(ArcheonBiomes.SHORE));
+		PATCH_VINE.addDefaultToBiomes(ctx -> inArcheonPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) && !ctx.getBiomeKey().equals(ArcheonBiomes.SHORE));
+		PATCH_BLOOD_ORANGE_BUSH.addDefaultToBiomes(ctx -> inArcheonPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) && !ctx.getBiomeKey().equals(ArcheonBiomes.SHORE));
 
 		SUNSET_ORCHID_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		ROSEYPIA_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));

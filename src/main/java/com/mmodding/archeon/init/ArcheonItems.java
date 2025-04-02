@@ -316,7 +316,7 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomItem LYCORIS_JAM_PIE = new CustomItem(new AdvancedItemSettings().maxCount(1).food(6, 10.0f));
 
-	public static final CustomItem BLOOD_ORANGE = new CustomItem(new AdvancedItemSettings());
+	public static final CustomItem BLOOD_ORANGE = new CustomItem(new AdvancedItemSettings().food(1, 0.3f));
 
 	public static final CustomItem GRAPE = new CustomItem(new AdvancedItemSettings().food(1, 0.3f));
 

@@ -281,19 +281,21 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
-	public static final CustomPlantBlock BUSH = new CustomPlantBlock(
+	public static final CustomFernBlock BUSH = new CustomFernBlock(
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.PLANT_SETTINGS,
 		true
 	);
 
-	public static final CustomPlantBlock VINE = new CustomPlantBlock(
+	public static final ToBushBlock VINE = new ToBushBlock(
+		() -> ArcheonItems.GRAPE,
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.PLANT_SETTINGS,
 		true
 	);
 
-	public static final CustomPlantBlock BLOOD_ORANGE_BUSH = new CustomPlantBlock(
+	public static final ToBushBlock BLOOD_ORANGE_BUSH = new ToBushBlock(
+		() -> ArcheonItems.BLOOD_ORANGE,
 		floor -> floor.isIn(ArcheonTags.Blocks.SOIL),
 		DefaultBlockSettings.PLANT_SETTINGS,
 		true
