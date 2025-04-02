@@ -30,7 +30,7 @@ public class ToBushBlock extends CustomFernBlock {
 
 	@Override
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-		ToBushBlock.dropStack(world, pos, new ItemStack(this.itemToLoot.get(), world.getRandom().nextInt(1)));
+		ToBushBlock.dropStack(world, pos, new ItemStack(this.itemToLoot.get(), world.getRandom().nextInt(2) + 1));
 		world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0f, 0.8f + world.getRandom().nextFloat() * 0.4f);
 		BlockState bushState = ArcheonBlocks.BUSH.getDefaultState();
 		world.setBlockState(pos, bushState, Block.NOTIFY_LISTENERS);
