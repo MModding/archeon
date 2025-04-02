@@ -18,6 +18,7 @@
   "music.abyss_caves": {
     "sounds": [
       "archeon:lost_in_penumbra",
+      "archeon:visage",
       "archeon:the_pit"
     ]
   },
