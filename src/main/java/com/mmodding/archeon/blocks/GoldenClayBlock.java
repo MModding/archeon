@@ -16,7 +16,7 @@ public class GoldenClayBlock extends CustomInfluenceableBlock<GoldenClayBlock.In
 	}
 
 	@Override
-	protected EnumProperty<Influence> getInfluenceProperty() {
+	public EnumProperty<Influence> getInfluenceProperty() {
 		return GoldenClayBlock.INFLUENCE;
 	}
 

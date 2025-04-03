@@ -6,28 +6,28 @@ import net.minecraft.block.BlockState;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.StringIdentifiable;
 
-public class GlowshroomableBlock extends CustomInfluenceableBlock<GlowshroomableBlock.Influence> {
+public class ChiaspenBlock extends CustomInfluenceableBlock<ChiaspenBlock.Influence> {
 
-	public static final EnumProperty<GlowshroomableBlock.Influence> INFLUENCE = CustomInfluenceableBlock.createInfluenceProperty(GlowshroomableBlock.Influence.class);
+	public static final EnumProperty<ChiaspenBlock.Influence> INFLUENCE = CustomInfluenceableBlock.createInfluenceProperty(ChiaspenBlock.Influence.class);
 
-	public GlowshroomableBlock(Settings settings, boolean hasItem) {
+	public ChiaspenBlock(Settings settings, boolean hasItem) {
 		super(settings, hasItem);
-		this.setDefaultState(this.getDefaultState().with(GlowshroomableBlock.INFLUENCE, Influence.DEFAULT));
+		this.setDefaultState(this.getDefaultState().with(ChiaspenBlock.INFLUENCE, Influence.DEFAULT));
 	}
 
 	@Override
-	protected EnumProperty<Influence> getInfluenceProperty() {
-		return GlowshroomableBlock.INFLUENCE;
+	public EnumProperty<Influence> getInfluenceProperty() {
+		return ChiaspenBlock.INFLUENCE;
 	}
 
 	@Override
 	public Influence getInfluence(BlockState state) {
-		return state.isOf(ArcheonBlocks.GLOWSHROOM_MOSS) ? Influence.MOSSY : Influence.DEFAULT;
+		return state.isOf(ArcheonBlocks.PEAKS_SNOW) ? Influence.SNOWY : Influence.DEFAULT;
 	}
 
 	public enum Influence implements StringIdentifiable {
 		DEFAULT("default"),
-		MOSSY("mossy");
+		SNOWY("snowy");
 
 		private final String name;
 

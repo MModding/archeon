@@ -25,6 +25,7 @@ import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomFoliagePl
 import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomTreeDecorator;
 import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomTrunkPlacer;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.state.property.Properties;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
@@ -210,6 +211,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 	public static final CustomRandomPatchFeature PATCH_BLOOD_ORANGE_BUSH = new CustomRandomPatchFeature(1, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.BLOOD_ORANGE_BUSH))));
+
+	public static final CustomFreezeTopLayerFeature PEAKS_SNOW = new CustomFreezeTopLayerFeature(Blocks.ICE, ArcheonBlocks.PEAKS_SNOW);
 
 	public static final CustomFlowerFeature SUNSET_ORCHID_FEATURE = new CustomFlowerFeature(32, 7, 3,
 		ArcheonBlocks.SUNSET_ORCHID).setRarity(5);
@@ -607,6 +610,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_BUSH.register(Archeon.createId("patch_bush"));
 		PATCH_VINE.register(Archeon.createId("patch_vine"));
 		PATCH_BLOOD_ORANGE_BUSH.register(Archeon.createId("patch_blood_orange_bush"));
+		PEAKS_SNOW.register(Archeon.createId("peaks_snow"));
 		SUNSET_ORCHID_FEATURE.register(Archeon.createId("sunset_orchid_feature"));
 		ROSEYPIA_FEATURE.register(Archeon.createId("roseypia_feature"));
 		AEROLIA_FEATURE.register(Archeon.createId("aerolia_feature"));
@@ -706,6 +710,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_BUSH.addDefaultToBiomes(ctx -> inArcheonPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) && !ctx.getBiomeKey().equals(ArcheonBiomes.SHORE));
 		PATCH_VINE.addDefaultToBiomes(ctx -> inArcheonPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) && !ctx.getBiomeKey().equals(ArcheonBiomes.SHORE));
 		PATCH_BLOOD_ORANGE_BUSH.addDefaultToBiomes(ctx -> inArcheonPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) && !ctx.getBiomeKey().equals(ArcheonBiomes.SHORE));
+
+		PEAKS_SNOW.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES) || ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_PEAKS));
 
 		SUNSET_ORCHID_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		ROSEYPIA_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));

@@ -46,19 +46,18 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 			SurfaceRules.condition(SurfaceRules.abovePreliminarySurface(), SurfaceRules.sequence(
 				SurfaceRules.condition(SurfaceRuleUtils.onFloor(), SurfaceRules.condition(
 					SurfaceRuleUtils.underWater(), SurfaceRules.sequence(
-						SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.SOUTH_SNOWY_SLOPES),
-							SurfaceRuleUtils.conditionalBlock(SurfaceRuleUtils.water(), ArcheonBlocks.PEAKS_GRASS_BLOCK, ArcheonBlocks.WET_DIRT)
-						),
-						SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.SOUTH_SNOWY_PEAKS),
-							SurfaceRuleUtils.block(ArcheonBlocks.SNOWY_CHIASPEN)
-						),
 						SurfaceRules.condition(SurfaceRules.not(SurfaceRules.biome(
+							ArcheonBiomes.SOUTH_SNOWY_PEAKS,
+							ArcheonBiomes.SOUTH_SNOWY_SLOPES,
 							ArcheonBiomes.DUNE_OCEAN,
 							ArcheonBiomes.SHORE
 						)), SurfaceRuleUtils.conditionalBlock(SurfaceRuleUtils.water(), ArcheonBlocks.WET_GRASS_BLOCK, ArcheonBlocks.WET_DIRT))
 					)
 				)),
 				SurfaceRules.condition(SurfaceRuleUtils.waterWithStoneDepth(), SurfaceRules.sequence(
+					SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.SOUTH_SNOWY_SLOPES),
+						SurfaceRuleUtils.block(ArcheonBlocks.PEAKS_SNOW_BLOCK)
+					),
 					SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.DUNE_OCEAN),
 						SurfaceRuleUtils.conditionalBlock(
 							SurfaceRules.verticalGradient("archeon:dune_sand", YOffset.fixed(80), YOffset.fixed(81)),

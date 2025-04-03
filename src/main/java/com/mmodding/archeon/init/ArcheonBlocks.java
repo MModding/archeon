@@ -419,7 +419,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomDoorBlock NYRETH_DOOR = new CustomDoorBlock(DefaultBlockSettings.WOOD_SETTINGS.nonOpaque(), true);
 	public static final CustomTrapdoorBlock NYRETH_TRAPDOOR = new CustomTrapdoorBlock(DefaultBlockSettings.WOOD_SETTINGS.nonOpaque(), true);
 
-	public static final CustomBlock CHIASPEN = new GlowshroomableBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final ChiaspenBlock CHIASPEN = new ChiaspenBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock CHIASPEN_STAIRS = new CustomStairsBlock(CHIASPEN.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomSlabBlock CHIASPEN_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomWallBlock CHIASPEN_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
@@ -468,7 +468,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomBlock FALSE_CRACKED_CHIASPEN_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock FALSE_MOSSY_CHIASPEN_BRICKS = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
-	public static final CustomBlock PHOSNOR_SLATE = new GlowshroomableBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
+	public static final CustomBlock PHOSNOR_SLATE = new CustomBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomStairsBlock PHOSNOR_SLATE_STAIRS = new CustomStairsBlock(PHOSNOR_SLATE.getDefaultState(), DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomSlabBlock PHOSNOR_SLATE_SLAB = new CustomSlabBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
 	public static final CustomWallBlock PHOSNOR_SLATE_WALL = new CustomWallBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
@@ -1102,7 +1102,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomWallBlock FANCY_SNAIL_SHELL_BRICK_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock PEAKS_GRASS_BLOCK = new CustomBlock(DefaultBlockSettings.GRASS_SETTINGS, true);
-	public static final CustomBlock SNOWY_CHIASPEN = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomLayeredBlock PEAKS_SNOW = new CustomLayeredBlock(DefaultBlockSettings.SNOW_SETTINGS, true);
 	public static final CustomBlock PEAKS_SNOW_BLOCK = new CustomBlock(DefaultBlockSettings.SNOW_BLOCK_SETTINGS, true);
 
@@ -1599,7 +1598,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		FANCY_SNAIL_SHELL_BRICK_SLAB.register(Archeon.createId("fancy_snail_shell_brick_slab"));
 		FANCY_SNAIL_SHELL_BRICK_WALL.register(Archeon.createId("fancy_snail_shell_brick_wall"));
 		PEAKS_GRASS_BLOCK.register(Archeon.createId("peaks_grass_block"));
-		SNOWY_CHIASPEN.register(Archeon.createId("snowy_chiaspen"));
 		PEAKS_SNOW.register(Archeon.createId("peaks_snow"));
 		PEAKS_SNOW_BLOCK.register(Archeon.createId("peaks_snow_block"));
 		DARK_GREEN_TILES.register(Archeon.createId("dark_green_tiles"));

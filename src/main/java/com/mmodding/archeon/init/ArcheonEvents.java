@@ -2,12 +2,14 @@ package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
 import com.mmodding.mmodding_lib.library.blockentities.BlockEntityTypeBlockSupportCallback;
+import com.mmodding.mmodding_lib.library.events.SnowPlacementCallback;
 import com.mmodding.mmodding_lib.library.events.VanillaFluidCollisionEvents;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.fluid.FluidState;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
@@ -20,6 +22,10 @@ public class ArcheonEvents implements ElementsInitializer {
 	private static void furnaceBlockEntityTypeCallback(List<Block> supportedBlocks) {
 		supportedBlocks.add(ArcheonBlocks.CHIASPEN_FURNACE);
 		supportedBlocks.add(ArcheonBlocks.PHOSNOR_SLATE_FURNACE);
+	}
+
+	private static BlockState snowPlacementCallback(ServerWorld world, BlockPos pos, BlockState state) {
+		return world.getRegistryKey().equals(Archeon.WORLD_KEY) ? ArcheonBlocks.PEAKS_SNOW.getDefaultState() : null;
 	}
 
 	private static BlockState stoneGenerationCallback(WorldAccess access, BlockPos pos, BlockState blockState, Direction direction, FluidState fluidState) {
@@ -55,6 +61,7 @@ public class ArcheonEvents implements ElementsInitializer {
 	@Override
 	public void register() {
 		BlockEntityTypeBlockSupportCallback.blockEntityType(BlockEntityType.FURNACE).register(ArcheonEvents::furnaceBlockEntityTypeCallback);
+		SnowPlacementCallback.EVENT.register(ArcheonEvents::snowPlacementCallback);
 		VanillaFluidCollisionEvents.STONE_GENERATION_CALLBACK.register(ArcheonEvents::stoneGenerationCallback);
 		VanillaFluidCollisionEvents.COBBLESTONE_GENERATION_CALLBACK.register(ArcheonEvents::cobblestoneGenerationCallback);
 		VanillaFluidCollisionEvents.OBSIDIAN_GENERATION_CALLBACK.register(ArcheonEvents::obsidianGenerationCallback);

@@ -1,20 +1,10 @@
 {
   "variants": {
-    "": [
-      {
-        "model": "archeon:block/chiaspen"
-      },
-      {
-        "model": "archeon:block/chiaspen_mirrored"
-      },
-      {
-        "model": "archeon:block/chiaspen",
-        "y": 180
-      },
-      {
-        "model": "archeon:block/chiaspen_mirrored",
-        "y": 180
-      }
-    ]
+    "influence=default": {
+      "model": "archeon:block/chiaspen"
+    },
+    "influence=snowy": {
+      "model": "archeon:block/snowy_chiaspen"
+    }
   }
 }
