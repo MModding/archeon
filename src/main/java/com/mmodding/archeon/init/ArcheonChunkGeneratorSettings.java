@@ -51,12 +51,20 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 							ArcheonBiomes.SOUTH_SNOWY_SLOPES,
 							ArcheonBiomes.DUNE_OCEAN,
 							ArcheonBiomes.SHORE
-						)), SurfaceRuleUtils.conditionalBlock(SurfaceRuleUtils.water(), ArcheonBlocks.WET_GRASS_BLOCK, ArcheonBlocks.WET_DIRT))
+						)), SurfaceRuleUtils.conditionalBlock(SurfaceRuleUtils.water(), ArcheonBlocks.WET_GRASS_BLOCK, ArcheonBlocks.WET_DIRT)),
+						SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.SHORE),
+							SurfaceRules.condition(
+								SurfaceRules.not(SurfaceRules.noiseThreshold(NoiseParametersKeys.BADLANDS_PILLAR, -0.3)),
+								SurfaceRules.block(ArcheonBlocks.BUSH_LEAVES.getDefaultState().with(BushLeavesBlock.PERSISTENT, true).with(BushLeavesBlock.SOLID, true))
+							)
+						)
 					)
 				)),
 				SurfaceRules.condition(SurfaceRuleUtils.waterWithStoneDepth(), SurfaceRules.sequence(
 					SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.SOUTH_SNOWY_SLOPES),
-						SurfaceRuleUtils.block(ArcheonBlocks.PEAKS_SNOW_BLOCK)
+						SurfaceRules.condition(SurfaceRules.water(0, 0),
+							SurfaceRuleUtils.block(ArcheonBlocks.PEAKS_SNOW_BLOCK)
+						)
 					),
 					SurfaceRules.condition(SurfaceRules.biome(ArcheonBiomes.DUNE_OCEAN),
 						SurfaceRuleUtils.conditionalBlock(
@@ -69,14 +77,10 @@ public class ArcheonChunkGeneratorSettings implements ElementsInitializer {
 						SurfaceRuleUtils.conditional(
 							SurfaceRules.noiseThreshold(NoiseParametersKeys.AQUIFER_LAVA, 0.0),
 							SurfaceRuleUtils.block(ArcheonBlocks.SHORESTONE),
-							SurfaceRuleUtils.conditional(
+							SurfaceRuleUtils.conditionalBlock(
 								SurfaceRules.noiseThreshold(NoiseParametersKeys.AQUIFER_BARRIER, 0.0),
-								SurfaceRuleUtils.block(ArcheonBlocks.COBBLED_CHIASPEN),
-								SurfaceRuleUtils.conditional(
-									SurfaceRules.noiseThreshold(NoiseParametersKeys.ICE, -0.15),
-									SurfaceRules.block(ArcheonBlocks.MOSSY_COBBLED_CHIASPEN.getDefaultState()),
-									SurfaceRules.block(ArcheonBlocks.BUSH_LEAVES.getDefaultState().with(BushLeavesBlock.PERSISTENT, true).with(BushLeavesBlock.SOLID, true))
-								)
+								ArcheonBlocks.COBBLED_CHIASPEN,
+								ArcheonBlocks.MOSSY_COBBLED_CHIASPEN
 							)
 						)
 					),

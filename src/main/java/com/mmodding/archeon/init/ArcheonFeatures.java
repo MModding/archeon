@@ -711,7 +711,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_VINE.addDefaultToBiomes(ctx -> inArcheonPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) && !ctx.getBiomeKey().equals(ArcheonBiomes.SHORE));
 		PATCH_BLOOD_ORANGE_BUSH.addDefaultToBiomes(ctx -> inArcheonPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) && !ctx.getBiomeKey().equals(ArcheonBiomes.SHORE));
 
-		PEAKS_SNOW.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES) || ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_PEAKS));
+		PEAKS_SNOW.addDefaultToBiomes(inArcheonPredicate);
 
 		SUNSET_ORCHID_FEATURE.addDefaultToBiomes(randomPatchPredicate);
 		ROSEYPIA_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
