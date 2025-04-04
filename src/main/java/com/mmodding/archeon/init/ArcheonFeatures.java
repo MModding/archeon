@@ -649,13 +649,14 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ACHREAN_MOSS_CEILING.register(Archeon.createId("achrean_moss_ceiling"));
 		ACHREAN_GOLDEN_CLAY.register(Archeon.createId("achrean_golden_clay"));
 
-		Predicate<BiomeSelectionContext> randomPatchPredicate = ctx -> !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) ||
-			!ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES) ||
-			!ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_PEAKS) ||
-			!ctx.getBiomeKey().equals(ArcheonBiomes.UNDERGROUND_CAVES) ||
-			!ctx.getBiomeKey().equals(ArcheonBiomes.ABYSS_CAVES);
-
 		Predicate<BiomeSelectionContext> inArcheonPredicate = ctx -> ctx.canGenerateIn(RegistryKey.of(Registry.DIMENSION_KEY, Archeon.createId("archeon")));
+
+		Predicate<BiomeSelectionContext> randomPatchPredicate = ctx -> inArcheonPredicate.test(ctx)
+			&& !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN)
+			&& !ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES)
+			&& !ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_PEAKS)
+			&& !ctx.getBiomeKey().equals(ArcheonBiomes.UNDERGROUND_CAVES)
+			&& !ctx.getBiomeKey().equals(ArcheonBiomes.ABYSS_CAVES);
 
 		Predicate<BiomeSelectionContext> criadanPredicate = ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.CRIADAN_VALLEYS);
 
@@ -703,7 +704,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_WET_FERN.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_TALL_WET_FERN.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_WET_GRASS_TUFFET.addDefaultToBiomes(randomPatchPredicate);
-		PATCH_SNOWY_GRASS_TUFFET.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES));
+		PATCH_SNOWY_GRASS_TUFFET.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES) || ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_PEAKS));
 
 		PATCH_SOUTH_WHEAT.addDefaultToBiomes(randomPatchPredicate);
 

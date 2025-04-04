@@ -270,8 +270,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomFernBlock SNOWY_GRASS_TUFFET = new CustomFernBlock(
-		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isIn(ArcheonTags.Blocks.STONE) || floor.isOf(ArcheonBlocks.ACHREAN_MOSS_BLOCK),
-		DefaultBlockSettings.REPLACEABLE_PLANT_SETTINGS.offsetType(AbstractBlock.OffsetType.NONE),
+		floor -> floor.isIn(ArcheonTags.Blocks.SOIL) || floor.isIn(ArcheonTags.Blocks.STONE) || floor.isOf(ArcheonBlocks.PEAKS_SNOW_BLOCK),
+		DefaultBlockSettings.GRASS_SETTINGS.noCollision().breakInstantly().offsetType(AbstractBlock.OffsetType.NONE).nonOpaque(),
 		true
 	);
 
