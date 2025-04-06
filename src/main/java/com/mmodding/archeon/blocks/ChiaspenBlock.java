@@ -22,7 +22,7 @@ public class ChiaspenBlock extends CustomInfluenceableBlock<ChiaspenBlock.Influe
 
 	@Override
 	public Influence getInfluence(BlockState state) {
-		return state.isOf(ArcheonBlocks.PEAKS_SNOW) ? Influence.SNOWY : Influence.DEFAULT;
+		return state.isOf(ArcheonBlocks.PEAKS_SNOW) || state.isOf(ArcheonBlocks.SNOWY_GRASS_TUFFET) ? Influence.SNOWY : Influence.DEFAULT;
 	}
 
 	public enum Influence implements StringIdentifiable {
