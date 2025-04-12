@@ -2,6 +2,7 @@ package com.mmodding.archeon.init;
 
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.worldgen.biomes.ArcheonBiomesProvider;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
@@ -55,10 +56,20 @@ public class ArcheonBiomes implements ElementsInitializer {
 			ServerWorldLoadEvents.LOAD.register((server, world) -> {
 				if (world.getRegistryKey().equals(Archeon.WORLD_KEY)) {
 					MultiNoiseBiomeSource source = preset.getBiomeSource(world.getRegistryManager().get(Registry.BIOME_KEY));
-					DataResult<JsonElement> r = MultiNoiseBiomeSource.CUSTOM_CODEC.encoder().encodeStart(RegistryOps.create(JsonOps.INSTANCE, world.getRegistryManager().freeze()), source);
+					DataResult<JsonElement> result = MultiNoiseBiomeSource.CUSTOM_CODEC.encoder().encodeStart(RegistryOps.create(JsonOps.INSTANCE, world.getRegistryManager().freeze()), source);
 					try {
+						JsonObject biomeSource = new JsonObject();
+						biomeSource.addProperty("type", "minecraft:multi_noise");
+						biomeSource.add("biomes", result.result().orElseThrow());
+						JsonObject generator = new JsonObject();
+						generator.addProperty("type", "minecraft:noise");
+						generator.addProperty("settings", "minecraft:overworld");
+						generator.add("biome_source", biomeSource);
+						JsonObject provider = new JsonObject();
+						provider.addProperty("type", "minecraft:overworld");
+						provider.add("generator", generator);
 						FileWriter configWriter = new FileWriter(QuiltLoader.getCacheDir().toString() + "/written-archeon-provider.json");
-						String json = new GsonBuilder().setPrettyPrinting().create().toJson(r.result().orElseThrow());
+						String json = new GsonBuilder().setPrettyPrinting().create().toJson(provider);
 						configWriter.write(json);
 						configWriter.close();
 					} catch (IOException error) {
