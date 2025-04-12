@@ -1,13 +1,26 @@
 package com.mmodding.archeon.init;
 
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
 import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.worldgen.biomes.ArcheonBiomesProvider;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.utils.BiomeSourceUtils;
 import com.mmodding.mmodding_lib.library.utils.BiomeUtils;
 import com.mmodding.mmodding_lib.library.utils.WorldUtils;
+import com.mojang.serialization.DataResult;
+import com.mojang.serialization.JsonOps;
+import net.minecraft.util.annotation.Debug;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.util.registry.RegistryOps;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.source.MultiNoiseBiomeSource;
+import org.quiltmc.loader.api.QuiltLoader;
+import org.quiltmc.qsl.lifecycle.api.event.ServerWorldLoadEvents;
+
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class ArcheonBiomes implements ElementsInitializer {
 
@@ -33,6 +46,26 @@ public class ArcheonBiomes implements ElementsInitializer {
 	@Override
 	public void register() {
 		WorldUtils.addDifferedSeed(Archeon.createId("archeon"));
-		BiomeSourceUtils.createMultiNoisePreset(Archeon.createId("biome_provider"), ARCHEON_BIOMES_PROVIDER);
+		ArcheonBiomes.writeArcheonProvider(BiomeSourceUtils.createMultiNoisePreset(Archeon.createId("biome_provider"), ARCHEON_BIOMES_PROVIDER), false);
+	}
+
+	@Debug
+	public static void writeArcheonProvider(MultiNoiseBiomeSource.Preset preset, boolean enabled) {
+		if (enabled) {
+			ServerWorldLoadEvents.LOAD.register((server, world) -> {
+				if (world.getRegistryKey().equals(Archeon.WORLD_KEY)) {
+					MultiNoiseBiomeSource source = preset.getBiomeSource(world.getRegistryManager().get(Registry.BIOME_KEY));
+					DataResult<JsonElement> r = MultiNoiseBiomeSource.CUSTOM_CODEC.encoder().encodeStart(RegistryOps.create(JsonOps.INSTANCE, world.getRegistryManager().freeze()), source);
+					try {
+						FileWriter configWriter = new FileWriter(QuiltLoader.getCacheDir().toString() + "/written-archeon-provider.json");
+						String json = new GsonBuilder().setPrettyPrinting().create().toJson(r.result().orElseThrow());
+						configWriter.write(json);
+						configWriter.close();
+					} catch (IOException error) {
+						throw new RuntimeException(error);
+					}
+				}
+			});
+		}
 	}
 }
