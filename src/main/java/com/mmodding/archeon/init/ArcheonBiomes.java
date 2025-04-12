@@ -60,7 +60,7 @@ public class ArcheonBiomes implements ElementsInitializer {
 					try {
 						JsonObject biomeSource = new JsonObject();
 						biomeSource.addProperty("type", "minecraft:multi_noise");
-						biomeSource.add("biomes", result.result().orElseThrow());
+						biomeSource.add("biomes", result.result().orElseThrow().getAsJsonObject().getAsJsonArray("biomes"));
 						JsonObject generator = new JsonObject();
 						generator.addProperty("type", "minecraft:noise");
 						generator.addProperty("settings", "minecraft:overworld");
@@ -72,6 +72,7 @@ public class ArcheonBiomes implements ElementsInitializer {
 						String json = new GsonBuilder().setPrettyPrinting().create().toJson(provider);
 						configWriter.write(json);
 						configWriter.close();
+						// Can then be pasted to https://misode.github.io/dimension/.
 					} catch (IOException error) {
 						throw new RuntimeException(error);
 					}
