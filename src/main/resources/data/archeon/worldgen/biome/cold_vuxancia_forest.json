@@ -1,16 +1,16 @@
 {
-  "temperature": 0.1,
+  "temperature": 0.4,
   "downfall": 0.1,
-  "precipitation": "snow",
+  "precipitation": "rain",
   "effects": {
-    "grass_color": 9551193,
-    "foliage_color": 7842607,
+    "grass_color": 8434839,
+    "foliage_color": 6332795,
     "sky_color": 7907327,
     "fog_color": 12638463,
     "water_color": 4159204,
     "water_fog_color": 329011,
     "music": {
-      "sound": "archeon:music.south_snowy_slopes",
+      "sound": "archeon:music.cold_vuxancia_forest",
       "min_delay": 12000,
       "max_delay": 24000,
       "replace_current_music": false
@@ -23,6 +23,12 @@
         "maxCount": 4,
         "minCount": 4,
         "weight": 12
+      },
+      {
+        "type": "archeon:sunstradiver",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 10
       },
       {
         "type": "archeon:heifer",

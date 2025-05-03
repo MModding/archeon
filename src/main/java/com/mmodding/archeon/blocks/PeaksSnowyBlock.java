@@ -6,18 +6,18 @@ import net.minecraft.block.BlockState;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.StringIdentifiable;
 
-public class ChiaspenBlock extends CustomInfluenceableBlock<ChiaspenBlock.Influence> {
+public class PeaksSnowyBlock extends CustomInfluenceableBlock<PeaksSnowyBlock.Influence> {
 
-	public static final EnumProperty<ChiaspenBlock.Influence> INFLUENCE = CustomInfluenceableBlock.createInfluenceProperty(ChiaspenBlock.Influence.class);
+	public static final EnumProperty<PeaksSnowyBlock.Influence> INFLUENCE = CustomInfluenceableBlock.createInfluenceProperty(PeaksSnowyBlock.Influence.class);
 
-	public ChiaspenBlock(Settings settings, boolean hasItem) {
+	public PeaksSnowyBlock(Settings settings, boolean hasItem) {
 		super(settings, hasItem);
-		this.setDefaultState(this.getDefaultState().with(ChiaspenBlock.INFLUENCE, Influence.DEFAULT));
+		this.setDefaultState(this.getDefaultState().with(PeaksSnowyBlock.INFLUENCE, Influence.DEFAULT));
 	}
 
 	@Override
 	public EnumProperty<Influence> getInfluenceProperty() {
-		return ChiaspenBlock.INFLUENCE;
+		return PeaksSnowyBlock.INFLUENCE;
 	}
 
 	@Override

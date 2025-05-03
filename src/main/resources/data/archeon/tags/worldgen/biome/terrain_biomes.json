@@ -1,12 +1,14 @@
 {
   "replace": false,
   "values": [
-    "archeon:magical_vuxancia_forest",
+    "archeon:cold_vuxancia_forest",
     "archeon:neclane_grove",
     "archeon:rocky_fields",
+    "archeon:snowy_vuxancia_forest",
     "archeon:south_meadows",
     "archeon:south_snowy_peaks",
     "archeon:south_snowy_slopes",
-    "archeon:vuxancia_forest"
+    "archeon:vuxancia_forest",
+    "archeon:warm_vuxancia_forest"
   ]
 }

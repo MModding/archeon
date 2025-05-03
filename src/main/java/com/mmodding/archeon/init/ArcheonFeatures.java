@@ -1,7 +1,9 @@
 package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
+import com.mmodding.archeon.blocks.LeavesCarpetBlock;
 import com.mmodding.archeon.blocks.SouthWheatBlock;
+import com.mmodding.archeon.blocks.VuxanciaLeavesBlock;
 import com.mmodding.archeon.worldgen.features.HollowCypressLogFeature;
 import com.mmodding.archeon.worldgen.features.MenhirFeature;
 import com.mmodding.archeon.worldgen.features.RockyFieldsRockFeature;
@@ -165,18 +167,51 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ArcheonBlocks.ZIAL_VUXANCIA_SAPLING
 	).addTreeDecorators(SporeRootcapTreeDecorator.INSTANCE, HangingLeavesTreeDecorator.INSTANCE).setGroundBlock(ArcheonBlocks.WET_DIRT);
 
+	public static final CustomVegetationPatchFeature PATCH_PNEVENTIAL_VUXANCIA_LEAVES = ArcheonFeatures.patchVuxanciaLeaves(6, ArcheonBlocks.PNEVENTIAL_VUXANCIA_LEAVES, ArcheonBlocks.PNEVENTIAL_VUXANCIA_LEAVES_CARPET);
+	public static final CustomVegetationPatchFeature PATCH_STREIAN_VUXANCIA_LEAVES = ArcheonFeatures.patchVuxanciaLeaves(6, ArcheonBlocks.STREIAN_VUXANCIA_LEAVES, ArcheonBlocks.STREIAN_VUXANCIA_LEAVES_CARPET);
+	public static final CustomVegetationPatchFeature PATCH_ORIAN_VUXANCIA_LEAVES = ArcheonFeatures.patchVuxanciaLeaves(4, ArcheonBlocks.ORIAN_VUXANCIA_LEAVES, ArcheonBlocks.ORIAN_VUXANCIA_LEAVES_CARPET);
+	public static final CustomVegetationPatchFeature PATCH_VALE_VUXANCIA_LEAVES = ArcheonFeatures.patchVuxanciaLeaves(4, ArcheonBlocks.VALE_VUXANCIA_LEAVES, ArcheonBlocks.VALE_VUXANCIA_LEAVES_CARPET);
+	public static final CustomVegetationPatchFeature PATCH_ZIAL_VUXANCIA_LEAVES = ArcheonFeatures.patchVuxanciaLeaves(4, ArcheonBlocks.ZIAL_VUXANCIA_LEAVES, ArcheonBlocks.ZIAL_VUXANCIA_LEAVES_CARPET);
+
+	public static final CustomLiquidVegetationPatchFeature VUXANCIA_POUND = new CustomLiquidVegetationPatchFeature(
+		15,
+		Direction.DOWN,
+		12,
+		ArcheonTags.Blocks.SOIL,
+		ArcheonBlocks.COBBLED_CHIASPEN.getDefaultState(),
+		Blocks.WATER.getDefaultState(),
+		BiList.of(
+			ArcheonBlocks.HOT_SPRING_LILY_PAD.getDefaultState(), 2,
+			ArcheonBlocks.SMALL_HOT_SPRING_LILY_PAD.getDefaultState(), 1
+		),
+		VerticalSurfaceType.FLOOR,
+		ConstantIntProvider.create(3),
+		0.8f,
+		3,
+		0.2f,
+		UniformIntProvider.create(1, 2),
+		0.7f
+	);
+
 	public static final CustomRandomPatchFeature PATCH_WET_GRASS = new CustomRandomPatchFeature(45, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.WET_GRASS)))).setCount(10);
 	public static final CustomRandomPatchFeature PATCH_TALL_WET_GRASS = new CustomRandomPatchFeature(25, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.TALL_WET_GRASS)))).setCount(7);
-	public static final CustomRandomPatchFeature PATCH_FLOWERED_WET_GRASS = new CustomRandomPatchFeature(3, 7, 3,
-		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.FLOWERED_WET_GRASS)))).setCount(3);
-	public static final CustomRandomPatchFeature PATCH_FLOWERED_TALL_WET_GRASS = new CustomRandomPatchFeature(2, 7, 3,
-		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.FLOWERED_TALL_WET_GRASS)))).setCount(2);
+
+	public static final CustomRandomPatchFeature PATCH_FLOWERED_WET_GRASS = new CustomRandomPatchFeature(
+		3, 7, 3,
+		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.FLOWERED_WET_GRASS)))
+	).setCount(3).addPlacedFeature(8, 0, "cold_vuxancia_forest");;
+	public static final CustomRandomPatchFeature PATCH_FLOWERED_TALL_WET_GRASS = new CustomRandomPatchFeature(
+		2, 7, 3,
+		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.FLOWERED_TALL_WET_GRASS)))
+	).setCount(2).addPlacedFeature(5, 0, "cold_vuxancia_forest");;
+
 	public static final CustomRandomPatchFeature PATCH_WET_FERN = new CustomRandomPatchFeature(40, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.WET_FERN)))).setRarity(6);
 	public static final CustomRandomPatchFeature PATCH_TALL_WET_FERN = new CustomRandomPatchFeature(50, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.TALL_WET_FERN)))).setRarity(7);
+
 	public static final CustomRandomPatchFeature PATCH_WET_GRASS_TUFFET = new CustomRandomPatchFeature(10, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.WET_GRASS_TUFFET)))).setCount(3);
 	public static final CustomRandomPatchFeature PATCH_SNOWY_GRASS_TUFFET = new CustomRandomPatchFeature(20, 7, 3,
@@ -212,7 +247,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomRandomPatchFeature PATCH_BLOOD_ORANGE_BUSH = new CustomRandomPatchFeature(1, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.BLOOD_ORANGE_BUSH))));
 
-	public static final CustomFreezeTopLayerFeature PEAKS_SNOW = new CustomFreezeTopLayerFeature(Blocks.ICE, ArcheonBlocks.PEAKS_SNOW);
+	public static final CustomFreezeTopLayerFeature PEAKS_SNOW = new CustomFreezeTopLayerFeature(Blocks.ICE, ArcheonBlocks.PEAKS_SNOW, 25);
 
 	public static final CustomFlowerFeature SUNSET_ORCHID_FEATURE = new CustomFlowerFeature(32, 7, 3,
 		ArcheonBlocks.SUNSET_ORCHID).setRarity(5);
@@ -242,6 +277,10 @@ public class ArcheonFeatures implements ElementsInitializer {
 	).setRarity(2);
 	public static final CustomFlowerFeature SEPTICEOLIA_FEATURE = new CustomFlowerFeature(4, 7, 3,
 		ArcheonBlocks.SEPTICEOLIA).setRarity(2);
+	public static final CustomFlowerFeature WHITE_DOELDIA_FEATURE = new CustomFlowerFeature(4, 7, 3,
+		ArcheonBlocks.WHITE_DOELDIA).setRarity(2);
+	public static final CustomFlowerFeature YELLOW_DOELDIA_FEATURE = new CustomFlowerFeature(4, 7, 3,
+		ArcheonBlocks.YELLOW_DOELDIA).setRarity(2);
 
 	public static final RuleTest CHIASPEN = new BlockMatchRuleTest(ArcheonBlocks.CHIASPEN);
 	public static final RuleTest PHOSNOR_SLATE = new BlockMatchRuleTest(ArcheonBlocks.PHOSNOR_SLATE);
@@ -521,7 +560,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ListUtils.biBuilder(
 			vegetation -> {
 				for (int i = 0; i < 4; i++) {
-					ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, i + 1, 25);
+					ArcheonFeatures.addLayeredBlock(vegetation, ArcheonBlocks.ACHREAN_MOSS, i + 1, 15);
 				}
 				vegetation.add(ArcheonBlocks.WET_GRASS.getDefaultState(), 5);
 				vegetation.add(ArcheonBlocks.TALL_WET_GRASS.getDefaultState(), 5);
@@ -540,7 +579,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ConstantIntProvider.create(1),
 		0.0f,
 		5,
-		0.8f,
+		0.9f,
 		UniformIntProvider.create(4, 7),
 		0.3f
 	);
@@ -575,6 +614,24 @@ public class ArcheonFeatures implements ElementsInitializer {
 		vegetation.add(layered.getDefaultState().with(Properties.LAYERS, layer), weight);
 	}
 
+	private static CustomVegetationPatchFeature patchVuxanciaLeaves(int count, VuxanciaLeavesBlock leaves, LeavesCarpetBlock carpet) {
+		return new CustomVegetationPatchFeature(
+			count,
+			Direction.DOWN,
+			12,
+			ArcheonTags.Blocks.SOIL,
+			ArcheonBlocks.WET_GRASS_BLOCK.getDefaultState(),
+			BiList.of(leaves.getDefaultState().with(VuxanciaLeavesBlock.PERSISTENT, true), 5, carpet.getDefaultState(), 25),
+			VerticalSurfaceType.FLOOR,
+			ConstantIntProvider.create(3),
+			0.8f,
+			3,
+			0.6f,
+			UniformIntProvider.create(2, 3),
+			0.9f
+		);
+	}
+
 	@Override
 	public void register() {
 		RegistrationUtils.registerTrunkPlacerType(Archeon.createId("neclane_trunk_placer"), NECLANE_TRUNK_PLACER);
@@ -598,6 +655,12 @@ public class ArcheonFeatures implements ElementsInitializer {
 		ORIAN_VUXANCIA_TREE.register(Archeon.createId("orian_vuxancia_tree"));
 		VALE_VUXANCIA_TREE.register(Archeon.createId("vale_vuxancia_tree"));
 		ZIAL_VUXANCIA_TREE.register(Archeon.createId("zial_vuxancia_tree"));
+		PATCH_PNEVENTIAL_VUXANCIA_LEAVES.register(Archeon.createId("patch_pnevential_vuxancia_leaves"));
+		PATCH_STREIAN_VUXANCIA_LEAVES.register(Archeon.createId("patch_streian_vuxancia_leaves"));
+		PATCH_ORIAN_VUXANCIA_LEAVES.register(Archeon.createId("patch_orian_vuxancia_leaves"));
+		PATCH_VALE_VUXANCIA_LEAVES.register(Archeon.createId("patch_vale_vuxancia_leaves"));
+		PATCH_ZIAL_VUXANCIA_LEAVES.register(Archeon.createId("patch_zial_vuxancia_leaves"));
+		VUXANCIA_POUND.register(Archeon.createId("vuxancia_pound"));
 		PATCH_WET_GRASS.register(Archeon.createId("patch_wet_grass"));
 		PATCH_TALL_WET_GRASS.register(Archeon.createId("patch_tall_wet_grass"));
 		PATCH_FLOWERED_WET_GRASS.register(Archeon.createId("patch_flowered_wet_grass"));
@@ -624,6 +687,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 		IOPEA_FEATURE.register(Archeon.createId("iopea_feature"));
 		ORGANDEANE_FEATURE.register(Archeon.createId("organdeane_feature"));
 		SEPTICEOLIA_FEATURE.register(Archeon.createId("septiceolia_feature"));
+		WHITE_DOELDIA_FEATURE.register(Archeon.createId("white_doeldia_feature"));
+		YELLOW_DOELDIA_FEATURE.register(Archeon.createId("yellow_doeldia_feature"));
 		ARTEMNITE_PATCH.register(Archeon.createId("artemnite_patch"));
 		CRIADAN_PATCH.register(Archeon.createId("criadan_patch"));
 		AKETITE_PATCH.register(Archeon.createId("aketite_patch"));
@@ -651,12 +716,21 @@ public class ArcheonFeatures implements ElementsInitializer {
 
 		Predicate<BiomeSelectionContext> inArcheonPredicate = ctx -> ctx.canGenerateIn(RegistryKey.of(Registry.DIMENSION_KEY, Archeon.createId("archeon")));
 
-		Predicate<BiomeSelectionContext> randomPatchPredicate = ctx -> inArcheonPredicate.test(ctx)
+		Predicate<BiomeSelectionContext> randomPatchNoColdPredicate = ctx -> inArcheonPredicate.test(ctx)
 			&& !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN)
+			&& !ctx.getBiomeKey().equals(ArcheonBiomes.SNOWY_VUXANCIA_FOREST)
+			&& !ctx.getBiomeKey().equals(ArcheonBiomes.COLD_VUXANCIA_FOREST)
 			&& !ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES)
 			&& !ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_PEAKS)
 			&& !ctx.getBiomeKey().equals(ArcheonBiomes.UNDERGROUND_CAVES)
 			&& !ctx.getBiomeKey().equals(ArcheonBiomes.ABYSS_CAVES);
+
+		Predicate<BiomeSelectionContext> randomPatchPredicate = ctx -> randomPatchNoColdPredicate.test(ctx)
+			|| ctx.getBiomeKey().equals(ArcheonBiomes.COLD_VUXANCIA_FOREST);
+
+		Predicate<BiomeSelectionContext> magicalVuxanciaPredicate = ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.COLD_VUXANCIA_FOREST) ||
+			ctx.getBiomeKey().equals(ArcheonBiomes.SNOWY_VUXANCIA_FOREST) ||
+			ctx.getBiomeKey().equals(ArcheonBiomes.WARM_VUXANCIA_FOREST);
 
 		Predicate<BiomeSelectionContext> criadanPredicate = ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.CRIADAN_VALLEYS);
 
@@ -668,7 +742,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 			ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SHORE) ||
 				ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS) ||
 				ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST) ||
-				ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST),
+				magicalVuxanciaPredicate.test(ctx),
 			GenerationStep.Feature.LOCAL_MODIFICATIONS,
 			RegistryKey.of(Registry.PLACED_FEATURE_KEY, Archeon.createId("rocky_fields_rock"))
 		);
@@ -681,7 +755,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		BiomeModifications.addFeature(
 			ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS) ||
 				ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST) ||
-				ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST) ||
+				ctx.getBiomeKey().equals(ArcheonBiomes.WARM_VUXANCIA_FOREST) ||
 				ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_MEADOWS),
 			GenerationStep.Feature.LOCAL_MODIFICATIONS,
 			RegistryKey.of(Registry.PLACED_FEATURE_KEY, Archeon.createId("hollow_cypress_log"))
@@ -693,40 +767,52 @@ public class ArcheonFeatures implements ElementsInitializer {
 		CYPRESS_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS));
 		PNEVENTIAL_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
 		STREIAN_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
-		ORIAN_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
-		VALE_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
-		ZIAL_VUXANCIA_TREE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
+		ORIAN_VUXANCIA_TREE.addDefaultToBiomes(magicalVuxanciaPredicate);
+		VALE_VUXANCIA_TREE.addDefaultToBiomes(magicalVuxanciaPredicate);
+		ZIAL_VUXANCIA_TREE.addDefaultToBiomes(magicalVuxanciaPredicate);
 
 		PATCH_WET_GRASS.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_TALL_WET_GRASS.addDefaultToBiomes(randomPatchPredicate);
-		PATCH_FLOWERED_WET_GRASS.addDefaultToBiomes(randomPatchPredicate);
-		PATCH_FLOWERED_TALL_WET_GRASS.addDefaultToBiomes(randomPatchPredicate);
+		PATCH_FLOWERED_WET_GRASS.addDefaultToBiomes(randomPatchNoColdPredicate);
+		PATCH_FLOWERED_TALL_WET_GRASS.addDefaultToBiomes(randomPatchNoColdPredicate);
+		PATCH_FLOWERED_WET_GRASS.addAdditionalToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.COLD_VUXANCIA_FOREST), "cold_vuxancia_forest");
+		PATCH_FLOWERED_TALL_WET_GRASS.addAdditionalToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.COLD_VUXANCIA_FOREST), "cold_vuxancia_forest");
 		PATCH_WET_FERN.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_TALL_WET_FERN.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_WET_GRASS_TUFFET.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_SNOWY_GRASS_TUFFET.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES) || ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_PEAKS));
 
-		PATCH_SOUTH_WHEAT.addDefaultToBiomes(randomPatchPredicate);
+		PATCH_SOUTH_WHEAT.addDefaultToBiomes(randomPatchNoColdPredicate);
 
-		PATCH_BUSH.addDefaultToBiomes(ctx -> inArcheonPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) && !ctx.getBiomeKey().equals(ArcheonBiomes.SHORE));
-		PATCH_VINE.addDefaultToBiomes(ctx -> inArcheonPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) && !ctx.getBiomeKey().equals(ArcheonBiomes.SHORE));
-		PATCH_BLOOD_ORANGE_BUSH.addDefaultToBiomes(ctx -> inArcheonPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) && !ctx.getBiomeKey().equals(ArcheonBiomes.SHORE));
+		PATCH_PNEVENTIAL_VUXANCIA_LEAVES.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
+		PATCH_STREIAN_VUXANCIA_LEAVES.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
+		PATCH_ORIAN_VUXANCIA_LEAVES.addDefaultToBiomes(magicalVuxanciaPredicate);
+		PATCH_VALE_VUXANCIA_LEAVES.addDefaultToBiomes(magicalVuxanciaPredicate);
+		PATCH_ZIAL_VUXANCIA_LEAVES.addDefaultToBiomes(magicalVuxanciaPredicate);
+
+		VUXANCIA_POUND.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST) || magicalVuxanciaPredicate.test(ctx));
+
+		PATCH_BUSH.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) && !ctx.getBiomeKey().equals(ArcheonBiomes.SHORE));
+		PATCH_VINE.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) && !ctx.getBiomeKey().equals(ArcheonBiomes.SHORE));
+		PATCH_BLOOD_ORANGE_BUSH.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.DUNE_OCEAN) && !ctx.getBiomeKey().equals(ArcheonBiomes.SHORE));
 
 		PEAKS_SNOW.addDefaultToBiomes(inArcheonPredicate);
 
-		SUNSET_ORCHID_FEATURE.addDefaultToBiomes(randomPatchPredicate);
-		ROSEYPIA_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
-		AEROLIA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
-		ASTEDIBES_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST) && !ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
-		TWILIGHT_ROSE_FEATURE.addDefaultToBiomes(randomPatchPredicate);
-		PINK_LYCORIS_FEATURE.addDefaultToBiomes(randomPatchPredicate);
-		RED_LYCORIS_FEATURE.addDefaultToBiomes(randomPatchPredicate);
-		ORANGE_LYCORIS_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS) && !ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
-		ASCENDIA_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS));
-		OEA_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS));
-		IOPEA_FEATURE.addDefaultToBiomes(ctx -> randomPatchPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.MAGICAL_VUXANCIA_FOREST));
-		ORGANDEANE_FEATURE.addDefaultToBiomes(randomPatchPredicate);
-		SEPTICEOLIA_FEATURE.addDefaultToBiomes(randomPatchPredicate);
+		SUNSET_ORCHID_FEATURE.addDefaultToBiomes(randomPatchNoColdPredicate);
+		ROSEYPIA_FEATURE.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.WARM_VUXANCIA_FOREST));
+		AEROLIA_FEATURE.addDefaultToBiomes(randomPatchNoColdPredicate);
+		ASTEDIBES_FEATURE.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST) && !ctx.getBiomeKey().equals(ArcheonBiomes.WARM_VUXANCIA_FOREST));
+		TWILIGHT_ROSE_FEATURE.addDefaultToBiomes(randomPatchNoColdPredicate);
+		PINK_LYCORIS_FEATURE.addDefaultToBiomes(randomPatchNoColdPredicate);
+		RED_LYCORIS_FEATURE.addDefaultToBiomes(randomPatchNoColdPredicate);
+		ORANGE_LYCORIS_FEATURE.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS) && !ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
+		ASCENDIA_FEATURE.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS));
+		OEA_FEATURE.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS));
+		IOPEA_FEATURE.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.WARM_VUXANCIA_FOREST));
+		ORGANDEANE_FEATURE.addDefaultToBiomes(randomPatchNoColdPredicate);
+		SEPTICEOLIA_FEATURE.addDefaultToBiomes(randomPatchNoColdPredicate);
+		WHITE_DOELDIA_FEATURE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.COLD_VUXANCIA_FOREST));
+		YELLOW_DOELDIA_FEATURE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.COLD_VUXANCIA_FOREST));
 
 		ARTEMNITE_PATCH.addDefaultToBiomes(inArcheonPredicate);
 		CRIADAN_PATCH.addDefaultToBiomes(inArcheonPredicate);

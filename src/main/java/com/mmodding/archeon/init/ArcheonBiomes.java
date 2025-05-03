@@ -30,19 +30,21 @@ public class ArcheonBiomes implements ElementsInitializer {
 	public static final RegistryKey<Biome> ACHREAN_CAVES = BiomeUtils.getBiomeKey(Archeon.createId("achrean_caves"));
 	public static final RegistryKey<Biome> ABYSS_CAVES = BiomeUtils.getBiomeKey(Archeon.createId("abyss_caves"));
 	public static final RegistryKey<Biome> ANHYDRITE_VALLEYS = BiomeUtils.getBiomeKey(Archeon.createId("anhydrite_valleys"));
-	public static final RegistryKey<Biome> DUNE_OCEAN = BiomeUtils.getBiomeKey(Archeon.createId("dune_ocean"));
+	public static final RegistryKey<Biome> COLD_VUXANCIA_FOREST = BiomeUtils.getBiomeKey(Archeon.createId("cold_vuxancia_forest"));
 	public static final RegistryKey<Biome> CRIADAN_VALLEYS = BiomeUtils.getBiomeKey(Archeon.createId("criadan_valleys"));
-	public static final RegistryKey<Biome> MAGICAL_VUXANCIA_FOREST = BiomeUtils.getBiomeKey(Archeon.createId("magical_vuxancia_forest"));
-	public static final RegistryKey<Biome> NECLANE_GROVE = BiomeUtils.getBiomeKey(Archeon.createId("neclane_grove"));
+	public static final RegistryKey<Biome> DUNE_OCEAN = BiomeUtils.getBiomeKey(Archeon.createId("dune_ocean"));
 	public static final RegistryKey<Biome> ROCKY_FIELDS = BiomeUtils.getBiomeKey(Archeon.createId("rocky_fields"));
+	public static final RegistryKey<Biome> NECLANE_GROVE = BiomeUtils.getBiomeKey(Archeon.createId("neclane_grove"));
 	public static final RegistryKey<Biome> NUME_SWAMP = BiomeUtils.getBiomeKey(Archeon.createId("nume_swamp"));
 	public static final RegistryKey<Biome> NYRETH_GLADE = BiomeUtils.getBiomeKey(Archeon.createId("nyreth_glade"));
 	public static final RegistryKey<Biome> SHORE = BiomeUtils.getBiomeKey(Archeon.createId("shore"));
+	public static final RegistryKey<Biome> SNOWY_VUXANCIA_FOREST = BiomeUtils.getBiomeKey(Archeon.createId("snowy_vuxancia_forest"));
 	public static final RegistryKey<Biome> SOUTH_MEADOWS = BiomeUtils.getBiomeKey(Archeon.createId("south_meadows"));
 	public static final RegistryKey<Biome> SOUTH_SNOWY_PEAKS = BiomeUtils.getBiomeKey(Archeon.createId("south_snowy_peaks"));
 	public static final RegistryKey<Biome> SOUTH_SNOWY_SLOPES = BiomeUtils.getBiomeKey(Archeon.createId("south_snowy_slopes"));
 	public static final RegistryKey<Biome> UNDERGROUND_CAVES = BiomeUtils.getBiomeKey(Archeon.createId("underground_caves"));
 	public static final RegistryKey<Biome> VUXANCIA_FOREST = BiomeUtils.getBiomeKey(Archeon.createId("vuxancia_forest"));
+	public static final RegistryKey<Biome> WARM_VUXANCIA_FOREST = BiomeUtils.getBiomeKey(Archeon.createId("warm_vuxancia_forest"));
 
 	@Override
 	public void register() {

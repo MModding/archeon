@@ -17,6 +17,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.tag.BlockTags;
 import org.quiltmc.qsl.base.api.util.TriState;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
@@ -194,13 +195,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 	);
 
 	public static final CustomLilyPadBlock SMALL_HOT_SPRING_LILY_PAD = new CustomLilyPadBlock(
-		(fluid, floor) -> fluid.isOf(ArcheonFluids.HOT_SPRING_WATER) || fluid.isOf(Fluids.WATER),
+		(fluid, floor) -> fluid.isOf(ArcheonFluids.HOT_SPRING_WATER) || fluid.isOf(Fluids.WATER) || floor.isIn(BlockTags.ICE),
 		DefaultBlockSettings.PLANT_SETTINGS.collidable(true),
 		true
 	);
 
 	public static final CustomLilyPadBlock HOT_SPRING_LILY_PAD = new CustomLilyPadBlock(
-		(fluid, floor) -> fluid.isOf(ArcheonFluids.HOT_SPRING_WATER) || fluid.isOf(Fluids.WATER),
+		(fluid, floor) -> fluid.isOf(ArcheonFluids.HOT_SPRING_WATER) || fluid.isOf(Fluids.WATER) || floor.isIn(BlockTags.ICE),
 		DefaultBlockSettings.PLANT_SETTINGS.collidable(true),
 		true
 	);
@@ -331,7 +332,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomLayeredBlock GLOWSHROOM_MOSS = new CustomLayeredBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 	public static final CustomBlock GLOWSHROOM_MOSS_BLOCK = new CustomBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
-	public static final CustomBlock WET_GRASS_BLOCK = new CustomBlock(DefaultBlockSettings.GRASS_SETTINGS, true);
+	public static final PeaksSnowyBlock WET_GRASS_BLOCK = new PeaksSnowyBlock(DefaultBlockSettings.GRASS_SETTINGS, true);
 	public static final CustomBlock WET_DIRT = new CustomBlock(DefaultBlockSettings.DIRT_SETTINGS, true);
 
 	public static final CustomLayeredBlock ACHREAN_MOSS = new CustomLayeredBlock(DefaultBlockSettings.GRASS_SETTINGS.sounds(BlockSoundGroup.MOSS_BLOCK), true);
@@ -419,7 +420,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomDoorBlock NYRETH_DOOR = new CustomDoorBlock(DefaultBlockSettings.WOOD_SETTINGS.nonOpaque(), true);
 	public static final CustomTrapdoorBlock NYRETH_TRAPDOOR = new CustomTrapdoorBlock(DefaultBlockSettings.WOOD_SETTINGS.nonOpaque(), true);
 
-	public static final ChiaspenBlock CHIASPEN = new ChiaspenBlock(DefaultBlockSettings.STONE_SETTINGS, true);
+	public static final PeaksSnowyBlock CHIASPEN = new PeaksSnowyBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock CHIASPEN_STAIRS = new CustomStairsBlock(CHIASPEN.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomSlabBlock CHIASPEN_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomWallBlock CHIASPEN_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
@@ -634,11 +635,11 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomLeavesBlock FLOWERED_NECLANE_LEAVES = new NeclaneLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 	public static final CustomLeavesBlock CYPRESS_LEAVES = new CypressLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
-	public static final CustomLeavesBlock PNEVENTIAL_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomLeavesBlock STREIAN_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomLeavesBlock ORIAN_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomLeavesBlock VALE_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
-	public static final CustomLeavesBlock ZIAL_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final VuxanciaLeavesBlock PNEVENTIAL_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final VuxanciaLeavesBlock STREIAN_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final VuxanciaLeavesBlock ORIAN_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final VuxanciaLeavesBlock VALE_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
+	public static final VuxanciaLeavesBlock ZIAL_VUXANCIA_LEAVES = new VuxanciaLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 
 	public static final CustomLeavesBlock NUME_WILLOW_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
 	public static final CustomLeavesBlock NYRETH_LEAVES = new CustomLeavesBlock(DefaultBlockSettings.LEAVES_SETTINGS, true);
@@ -1101,7 +1102,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomSlabBlock FANCY_SNAIL_SHELL_BRICK_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomWallBlock FANCY_SNAIL_SHELL_BRICK_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
-	public static final CustomBlock PEAKS_GRASS_BLOCK = new CustomBlock(DefaultBlockSettings.GRASS_SETTINGS, true);
 	public static final CustomLayeredBlock PEAKS_SNOW = new CustomLayeredBlock(DefaultBlockSettings.SNOW_SETTINGS, true);
 	public static final CustomBlock PEAKS_SNOW_BLOCK = new CustomBlock(DefaultBlockSettings.SNOW_BLOCK_SETTINGS, true);
 
@@ -1597,7 +1597,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		FANCY_SNAIL_SHELL_BRICK_STAIRS.register(Archeon.createId("fancy_snail_shell_brick_stairs"));
 		FANCY_SNAIL_SHELL_BRICK_SLAB.register(Archeon.createId("fancy_snail_shell_brick_slab"));
 		FANCY_SNAIL_SHELL_BRICK_WALL.register(Archeon.createId("fancy_snail_shell_brick_wall"));
-		PEAKS_GRASS_BLOCK.register(Archeon.createId("peaks_grass_block"));
 		PEAKS_SNOW.register(Archeon.createId("peaks_snow"));
 		PEAKS_SNOW_BLOCK.register(Archeon.createId("peaks_snow_block"));
 		DARK_GREEN_TILES.register(Archeon.createId("dark_green_tiles"));

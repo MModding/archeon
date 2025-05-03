@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "archeon:item/peaks_snow_piece"
+    "layer0": "archeon:item/peaks_snow_pile"
   }
 }

@@ -304,7 +304,7 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final CustomItem SALT = new CustomItem(new AdvancedItemSettings());
 
-	public static final CustomItem PEAKS_SNOW_PIECE = new CustomItem(new AdvancedItemSettings());
+	public static final CustomItem PEAKS_SNOW_PILE = new CustomItem(new AdvancedItemSettings());
 
 	public static final CustomItem RAW_HEIFER = new CustomItem(new AdvancedItemSettings().food(2, 0.3f, true));
 	public static final CustomItem SALTED_HEIFER = new CustomItem(new AdvancedItemSettings().food(3, 0.9f, true));
@@ -491,7 +491,7 @@ public class ArcheonItems implements ElementsInitializer {
 		MUSIC_DISC_AIEL.register(Archeon.createId("music_disc_aiel"));
 		RECORD_FRAGMENT.register(Archeon.createId("record_fragment"));
 		SALT.register(Archeon.createId("salt"));
-		PEAKS_SNOW_PIECE.register(Archeon.createId("peaks_snow_piece"));
+		PEAKS_SNOW_PILE.register(Archeon.createId("peaks_snow_pile"));
 		RAW_HEIFER.register(Archeon.createId("raw_heifer"));
 		SALTED_HEIFER.register(Archeon.createId("salted_heifer"));
 		COOKED_HEIFER.register(Archeon.createId("cooked_heifer"));

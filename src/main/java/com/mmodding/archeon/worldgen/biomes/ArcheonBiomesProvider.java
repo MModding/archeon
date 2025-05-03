@@ -31,33 +31,33 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 	@Override
 	public RegistryKey<Biome>[][] middleBiomes() {
 		return new RegistryKey[][] {
-			{ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE},
+			{ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.COLD_VUXANCIA_FOREST},
 			{ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST},
-			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.VUXANCIA_FOREST},
+			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.NECLANE_GROVE, ArcheonBiomes.VUXANCIA_FOREST},
 			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST},
-			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS}
+			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.WARM_VUXANCIA_FOREST}
 		};
 	}
 
 	@Override
 	public RegistryKey<Biome>[][] middleBiomesVariant() {
 		return new RegistryKey[][] {
+			{null, null, ArcheonBiomes.COLD_VUXANCIA_FOREST, ArcheonBiomes.COLD_VUXANCIA_FOREST, null},
+			{null, null, ArcheonBiomes.COLD_VUXANCIA_FOREST, ArcheonBiomes.COLD_VUXANCIA_FOREST, ArcheonBiomes.COLD_VUXANCIA_FOREST},
 			{null, null, null, null, null},
-			{null, null, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST},
-			{null, null, null, null, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST},
-			{null, null, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST},
-			{null, null, null, null, null}
+			{null, null, ArcheonBiomes.WARM_VUXANCIA_FOREST, ArcheonBiomes.WARM_VUXANCIA_FOREST, ArcheonBiomes.WARM_VUXANCIA_FOREST},
+			{null, null, ArcheonBiomes.WARM_VUXANCIA_FOREST, ArcheonBiomes.WARM_VUXANCIA_FOREST, null}
 		};
 	}
 
 	@Override
 	public RegistryKey<Biome>[] hotBiomes() {
-		return new RegistryKey[] {ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST, ArcheonBiomes.VUXANCIA_FOREST};
+		return new RegistryKey[] {ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.WARM_VUXANCIA_FOREST, ArcheonBiomes.WARM_VUXANCIA_FOREST};
 	}
 
 	@Override
 	public RegistryKey<Biome>[] hotBiomesVariant() {
-		return new RegistryKey[] {ArcheonBiomes.MAGICAL_VUXANCIA_FOREST, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST};
+		return new RegistryKey[] {null, null, null, null, null};
 	}
 
 	@Override
@@ -97,9 +97,9 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 	public RegistryKey<Biome>[][] plateauBiomesVariant() {
 		return new RegistryKey[][] {
 			{null, null, null, null, null},
-			{null, null, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST},
-			{null, null, null, null, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST},
-			{null, null, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST, ArcheonBiomes.MAGICAL_VUXANCIA_FOREST},
+			{null, null, ArcheonBiomes.COLD_VUXANCIA_FOREST, ArcheonBiomes.COLD_VUXANCIA_FOREST, ArcheonBiomes.COLD_VUXANCIA_FOREST},
+			{null, null, null, null, null},
+			{null, null, ArcheonBiomes.WARM_VUXANCIA_FOREST, ArcheonBiomes.WARM_VUXANCIA_FOREST, ArcheonBiomes.WARM_VUXANCIA_FOREST},
 			{null, null, null, null, null}
 		};
 	}
@@ -107,8 +107,8 @@ public class ArcheonBiomesProvider implements AdvancedBiomeProvider {
 	@Override
 	public RegistryKey<Biome>[][] slopeBiomes() {
 		return new RegistryKey[][] {
-			{ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES},
-			{ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES},
+			{ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.SOUTH_SNOWY_SLOPES, ArcheonBiomes.COLD_VUXANCIA_FOREST, ArcheonBiomes.NECLANE_GROVE},
+			{ArcheonBiomes.SNOWY_VUXANCIA_FOREST, ArcheonBiomes.SNOWY_VUXANCIA_FOREST, ArcheonBiomes.SNOWY_VUXANCIA_FOREST, ArcheonBiomes.COLD_VUXANCIA_FOREST, ArcheonBiomes.NECLANE_GROVE},
 			{ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS, ArcheonBiomes.ROCKY_FIELDS}
 		};
 	}

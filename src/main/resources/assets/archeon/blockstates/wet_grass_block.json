@@ -1,6 +1,6 @@
 {
   "variants": {
-    "": [
+    "influence=default": [
       {
         "model": "archeon:block/wet_grass_block"
       },
@@ -14,6 +14,23 @@
       },
       {
         "model": "archeon:block/wet_grass_block",
+        "y": 270
+      }
+    ],
+    "influence=snowy": [
+      {
+        "model": "archeon:block/snowy_grass_block"
+      },
+      {
+        "model": "archeon:block/snowy_grass_block",
+        "y": 90
+      },
+      {
+        "model": "archeon:block/snowy_grass_block",
+        "y": 180
+      },
+      {
+        "model": "archeon:block/snowy_grass_block",
         "y": 270
       }
     ]

@@ -18,6 +18,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
@@ -40,6 +41,11 @@ public class LeavesCarpetBlock extends CustomCarpetBlock implements Waterloggabl
 	public LeavesCarpetBlock(Settings settings, boolean hasItem, Item.Settings itemSettings) {
 		super(settings, hasItem, itemSettings);
 		this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false));
+	}
+
+	@Override
+	public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+		return Block.isFaceFullSquare(world.getBlockState(pos.down()).getCollisionShape(world, pos.down()), Direction.UP);
 	}
 
 	@Override

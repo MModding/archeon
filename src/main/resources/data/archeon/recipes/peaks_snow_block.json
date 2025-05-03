@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "archeon:peaks_snow_piece"
+      "item": "archeon:peaks_snow_pile"
     }
   },
   "pattern": [
