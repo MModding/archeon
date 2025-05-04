@@ -28,6 +28,7 @@ public class Archeon implements MModdingModInitializer {
 	@Override
 	public List<ElementsInitializer> getElementsInitializers() {
 		List<ElementsInitializer> elementsInitializers = new ArrayList<>();
+		elementsInitializers.add(new ArcheonParticleTypes());
 		elementsInitializers.add(new ArcheonBlocks());
 		elementsInitializers.add(new ArcheonBlockEntities());
 		elementsInitializers.add(new ArcheonItems());

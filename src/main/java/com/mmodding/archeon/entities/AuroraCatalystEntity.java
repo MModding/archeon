@@ -1,6 +1,7 @@
 package com.mmodding.archeon.entities;
 
 import com.mmodding.archeon.init.ArcheonEntities;
+import com.mmodding.archeon.init.ArcheonParticleTypes;
 import com.mmodding.archeon.init.ArcheonSoundEvents;
 import com.mmodding.mmodding_lib.library.MModdingDamageSources;
 import com.mmodding.mmodding_lib.library.entities.goals.FlyingAroundFarGoal;
@@ -116,8 +117,8 @@ public class AuroraCatalystEntity extends HostileEntity {
 			this.setVelocity(this.getVelocity().multiply(1.0, 0.6, 1.0));
 		}
 
-		if (this.hasMaster()) {
-			this.world.addParticle(ParticleTypes.SCULK_SOUL, this.getX(), this.getY() + 1.0f, this.getZ(), 0.0f, 0.0f, 0.0f);
+		if (this.hasMaster() && this.age % 15 == 0) {
+			this.world.addParticle(ArcheonParticleTypes.CATALYST_TEAR, this.getX(), this.getY() + 1.5f, this.getZ(), 0.0f, 0.0f, 0.0f);
 		}
 
 		DefaultParticleType particleType = switch (this.type) {

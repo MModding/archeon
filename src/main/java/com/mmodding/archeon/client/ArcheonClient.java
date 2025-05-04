@@ -29,6 +29,7 @@ public class ArcheonClient implements MModdingClientModInitializer {
 	@Override
 	public List<ClientElementsInitializer> getClientElementsInitializers() {
 		List<ClientElementsInitializer> clientElementsInitializers = new ArrayList<>();
+		clientElementsInitializers.add(new ArcheonParticles());
 		clientElementsInitializers.add(new ArcheonModelPredicates());
 		clientElementsInitializers.add(new ArcheonSprites());
 		clientElementsInitializers.add(new ArcheonColorProviders());
