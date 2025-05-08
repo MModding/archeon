@@ -26,6 +26,8 @@ import com.mmodding.mmodding_lib.library.worldgen.features.defaults.*;
 import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomFoliagePlacer;
 import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomTreeDecorator;
 import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomTrunkPlacer;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluids;
@@ -59,8 +61,6 @@ import net.minecraft.world.gen.stateprovider.NoiseBlockStateProvider;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacerType;
-import org.quiltmc.qsl.worldgen.biome.api.BiomeModifications;
-import org.quiltmc.qsl.worldgen.biome.api.BiomeSelectionContext;
 
 import java.util.List;
 import java.util.function.Predicate;

@@ -6,8 +6,8 @@ import com.mmodding.archeon.blockentities.CentaurLifeVaultBlockEntity;
 import com.mmodding.archeon.blocks.CentaurLifeVaultBlock;
 import com.mmodding.archeon.init.ArcheonEntities;
 import com.mmodding.archeon.init.ArcheonItems;
+import com.mmodding.mmodding_lib.library.entities.action.EntityAction;
 import com.mmodding.mmodding_lib.library.utils.TweakFunction;
-import com.mmodding.mmodding_lib.library.utils.WorldUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.AnimationState;
 import net.minecraft.entity.EntityType;
@@ -22,9 +22,6 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.boss.BossBar;
 import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.data.DataTracker;
-import net.minecraft.entity.data.TrackedData;
-import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.PathAwareEntity;
@@ -38,14 +35,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
 
 public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
-	public static final TrackedData<Boolean> ATTACK = DataTracker.registerData(CentaurEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
-	public static final TrackedData<Boolean> TALENT = DataTracker.registerData(CentaurEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+	public final EntityAction attackAction = new EntityAction(this, Archeon.createId("attack"), 10, 10);
+	public final EntityAction talentAction = new EntityAction(this, Archeon.createId("talent"), 10, 10);
 
 	private final ServerBossBar bossBar = new ServerBossBar(this.getDisplayName(), BossBar.Color.YELLOW, BossBar.Style.PROGRESS);
 
@@ -53,8 +49,6 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 	private final Goal talentGoal;
 
 	public AnimationState galloping = new AnimationState();
-	public AnimationState attack = new AnimationState();
-	public AnimationState talent = new AnimationState();
 
 	private BlockPos vaultPos = BlockPos.ORIGIN;
 
@@ -101,13 +95,6 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 				this.goalSelector.add(0, this.talentGoal);
 			}
 		}
-	}
-
-	@Override
-	protected void initDataTracker() {
-		super.initDataTracker();
-		this.dataTracker.startTracking(CentaurEntity.ATTACK, false);
-		this.dataTracker.startTracking(CentaurEntity.TALENT, false);
 	}
 
 	@Override
@@ -163,18 +150,8 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 	@Override
 	public void tick() {
 		if (this.getWorld().isClient()) {
-			if (this.dataTracker.get(CentaurEntity.ATTACK)) {
-				this.attack.start(this.age);
-			}
-			else {
-				this.attack.stop();
-			}
-			if (this.dataTracker.get(CentaurEntity.TALENT)) {
-				this.talent.start(this.age);
-			}
-			else {
-				this.talent.stop();
-			}
+			this.attackAction.tick();
+			this.talentAction.tick();
 			this.galloping.start(this.age);
 		}
 		super.tick();
@@ -210,8 +187,7 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 	@Override
 	public void attack(LivingEntity target, float pullProgress) {
 		if (this.getWorld() instanceof ServerWorld serverWorld) {
-			this.dataTracker.set(CentaurEntity.TALENT, true);
-			WorldUtils.doTaskAfter(serverWorld, 10, () -> {
+			this.talentAction.execute(() -> {
 				CentaurSpearEntity spear = new CentaurSpearEntity(serverWorld, this, new ItemStack(ArcheonItems.CENTAUR_SPEAR));
 				double relativeX = target.getX() - this.getX();
 				double relativeY = target.getBodyY(0.4) - spear.getY();
@@ -221,7 +197,6 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 				this.playSound(SoundEvents.ITEM_TRIDENT_THROW, 1.0f, 1.0f / (this.getRandom().nextFloat() * 0.4f + 0.8f));
 				this.getWorld().spawnEntity(spear);
 			});
-			WorldUtils.doTaskAfter(serverWorld, 30, () -> this.dataTracker.set(CentaurEntity.TALENT, false));
 		}
 	}
 
@@ -272,16 +247,14 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 		}
 
 		@Override
-		public boolean canStart() {
-			return this.superStart() && !this.centaur.dataTracker.get(CentaurEntity.ATTACK);
+		protected int getMaxCooldown() {
+			return this.getTickCount(60);
 		}
 
 		@Override
 		protected void attack(LivingEntity target, double squaredDistance) {
-			if (this.centaur.getWorld() instanceof ServerWorld serverWorld) {
-				this.centaur.dataTracker.set(CentaurEntity.ATTACK, true);
-				WorldUtils.doTaskAfter(serverWorld, 10, () -> super.attack(target, squaredDistance));
-				WorldUtils.doTaskAfter(serverWorld, 30, () -> this.centaur.dataTracker.set(CentaurEntity.ATTACK, false));
+			if (this.centaur.getWorld() instanceof ServerWorld && !this.centaur.attackAction.isExecutingAction()) {
+				this.centaur.attackAction.execute(() -> super.attack(target, squaredDistance));
 			}
 		}
 	}
@@ -321,9 +294,8 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
 		@Override
 		protected void attack(LivingEntity target, double squaredDistance) {
-			if (this.centaur.getWorld() instanceof ServerWorld serverWorld) {
-				this.centaur.dataTracker.set(CentaurEntity.TALENT, true);
-				WorldUtils.doTaskAfter(serverWorld, 10, () -> {
+			if (this.centaur.getWorld() instanceof ServerWorld) {
+				this.centaur.attackAction.execute(() -> {
 					double max = this.getSquaredMaxAttackDistance(target);
 					if (squaredDistance <= max && this.getCooldown() <= 0) {
 						this.resetCooldown();
@@ -333,13 +305,17 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 						target.addVelocity(velocity.x, 0.6f, velocity.z);
 					}
 				});
-				WorldUtils.doTaskAfter(serverWorld, 30, () -> this.centaur.dataTracker.set(CentaurEntity.TALENT, false));
 			}
 		}
 
 		@Override
 		public boolean canStart() {
-			return this.superStart() && !this.centaur.dataTracker.get(CentaurEntity.TALENT);
+			return this.superStart() && !this.centaur.talentAction.isExecutingAction();
+		}
+
+		@Override
+		public boolean shouldContinue() {
+			return super.shouldContinue() && !this.centaur.talentAction.isExecutingAction();
 		}
 	}
 }

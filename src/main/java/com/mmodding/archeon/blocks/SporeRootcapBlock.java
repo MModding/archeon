@@ -2,6 +2,7 @@ package com.mmodding.archeon.blocks;
 
 import com.mmodding.mmodding_lib.library.blocks.BlockRegistrable;
 import com.mmodding.mmodding_lib.library.blocks.BlockWithItem;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LadderBlock;
 import net.minecraft.block.ShapeContext;
@@ -13,7 +14,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -31,7 +31,7 @@ public class SporeRootcapBlock extends LadderBlock implements BlockRegistrable, 
 	}
 
 	public SporeRootcapBlock(Settings settings, boolean hasItem, ItemGroup itemGroup) {
-		this(settings, hasItem, itemGroup != null ? new QuiltItemSettings().group(itemGroup) : new QuiltItemSettings());
+		this(settings, hasItem, itemGroup != null ? new FabricItemSettings().group(itemGroup) : new FabricItemSettings());
 	}
 
 	public SporeRootcapBlock(Settings settings, boolean hasItem, Item.Settings itemSettings) {

@@ -1,6 +1,7 @@
 package com.mmodding.archeon.blocks;
 
 import com.mmodding.mmodding_lib.library.blocks.CustomBlock;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -8,7 +9,6 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.random.RandomGenerator;
 import net.minecraft.world.World;
-import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
 public class NaturiteBlock extends CustomBlock {
 
@@ -21,7 +21,7 @@ public class NaturiteBlock extends CustomBlock {
 	}
 
 	public NaturiteBlock(Settings settings, boolean hasItem, ItemGroup itemGroup) {
-		this(settings, hasItem, itemGroup != null ? new QuiltItemSettings().group(itemGroup) : new QuiltItemSettings());
+		this(settings, hasItem, itemGroup != null ? new FabricItemSettings().group(itemGroup) : new FabricItemSettings());
 	}
 
 	public NaturiteBlock(Settings settings, boolean hasItem, Item.Settings itemSettings) {

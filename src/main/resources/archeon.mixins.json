@@ -3,11 +3,14 @@
   "minVersion": "0.8",
   "package": "com.mmodding.archeon.mixin",
   "compatibilityLevel": "JAVA_17",
+  "plugin": "com.mmodding.archeon.mixin.plugin.ArcheonMixinPlugin",
   "mixins": [
+    "AmuletOfNatureItemMixin",
     "BlockColumnFeatureMixin",
     "ItemEntityMixin",
     "ItemMixin",
     "PlayerEntityMixin",
+    "RingItemMixin",
     "SimpleBlockFeatureMixin",
     "TallPlantBlockMixin"
   ],

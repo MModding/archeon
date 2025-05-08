@@ -5,14 +5,14 @@ import com.mmodding.archeon.fluids.DasciumFluid;
 import com.mmodding.archeon.fluids.HotSpringWaterFluid;
 import com.mmodding.mmodding_lib.library.fluids.FluidGroup;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Blocks;
-import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class ArcheonFluids implements ElementsInitializer {
 
-	public static final FluidGroup HOT_SPRING_WATER = new FluidGroup(HotSpringWaterFluid::new, QuiltBlockSettings.copyOf(Blocks.WATER));
+	public static final FluidGroup HOT_SPRING_WATER = new FluidGroup(HotSpringWaterFluid::new, FabricBlockSettings.copyOf(Blocks.WATER));
 
-	public static final FluidGroup DASCIUM = new FluidGroup(DasciumFluid::new, QuiltBlockSettings.copyOf(Blocks.WATER));
+	public static final FluidGroup DASCIUM = new FluidGroup(DasciumFluid::new, FabricBlockSettings.copyOf(Blocks.WATER));
 
 	@Override
 	public void register() {

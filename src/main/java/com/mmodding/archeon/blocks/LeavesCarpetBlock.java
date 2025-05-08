@@ -1,6 +1,7 @@
 package com.mmodding.archeon.blocks;
 
 import com.mmodding.mmodding_lib.library.blocks.CustomCarpetBlock;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -20,7 +21,6 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
-import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
 public class LeavesCarpetBlock extends CustomCarpetBlock implements Waterloggable {
 
@@ -35,7 +35,7 @@ public class LeavesCarpetBlock extends CustomCarpetBlock implements Waterloggabl
 	}
 
 	public LeavesCarpetBlock(Settings settings, boolean hasItem, ItemGroup itemGroup) {
-		this(settings, hasItem, itemGroup != null ? new QuiltItemSettings().group(itemGroup) : new QuiltItemSettings());
+		this(settings, hasItem, itemGroup != null ? new FabricItemSettings().group(itemGroup) : new FabricItemSettings());
 	}
 
 	public LeavesCarpetBlock(Settings settings, boolean hasItem, Item.Settings itemSettings) {

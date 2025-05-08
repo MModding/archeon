@@ -11,6 +11,8 @@ import com.mmodding.mmodding_lib.library.items.settings.AdvancedItemSettings;
 import com.mmodding.mmodding_lib.library.portals.squared.CustomSquaredPortalBlock;
 import com.mmodding.mmodding_lib.library.tags.modifiers.TagModifier;
 import com.mmodding.mmodding_lib.library.utils.SaplingGeneratorUtils;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.util.TriState;
 import net.minecraft.block.*;
 import net.minecraft.block.PressurePlateBlock.ActivationRule;
 import net.minecraft.entity.effect.StatusEffects;
@@ -18,19 +20,17 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.tag.BlockTags;
-import org.quiltmc.qsl.base.api.util.TriState;
-import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class ArcheonBlocks implements ElementsInitializer {
 
 	public static final CustomCauldronBlock HOT_SPRING_WATER_CAULDRON = new CustomCauldronBlock(
-		QuiltBlockSettings.copyOf(Blocks.CAULDRON),
+		FabricBlockSettings.copyOf(Blocks.CAULDRON),
 		null,
 		ArcheonCauldronBehaviors.HOT_SPRING_WATER_BEHAVIOR
 	);
 
 	public static final CustomCauldronBlock DASCIUM_CAULDRON = new CustomCauldronBlock(
-		QuiltBlockSettings.copyOf(Blocks.CAULDRON),
+		FabricBlockSettings.copyOf(Blocks.CAULDRON),
 		null,
 		ArcheonCauldronBehaviors.DASCIUM_BEHAVIOR
 	);
@@ -562,7 +562,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomStairsBlock MYSTERIOUS_STONE_STAIRS = new CustomStairsBlock(MYSTERIOUS_STONE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomSlabBlock MYSTERIOUS_STONE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 
-	public static final CustomSquaredPortalBlock ARCHEON_PORTAL = new CustomSquaredPortalBlock(ParticleTypes.ENCHANT, QuiltBlockSettings.of(Material.PORTAL).noCollision().strength(-1.0F).luminance(11).sounds(BlockSoundGroup.GLASS));
+	public static final CustomSquaredPortalBlock ARCHEON_PORTAL = new CustomSquaredPortalBlock(ParticleTypes.ENCHANT, FabricBlockSettings.of(Material.PORTAL).noCollision().strength(-1.0F).luminance(11).sounds(BlockSoundGroup.GLASS));
 
 	public static final CustomBlock ARTEMNITE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS.sounds(BlockSoundGroup.NETHERRACK), true);
 	public static final CustomStairsBlock ARTEMNITE_STAIRS = new CustomStairsBlock(ARTEMNITE.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS.sounds(BlockSoundGroup.NETHERRACK), true);
@@ -793,7 +793,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always)
@@ -807,7 +806,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -819,7 +817,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DefaultBlockSettings.AMETHYST_SETTINGS
 			.translucent(TriState.TRUE)
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -830,7 +827,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DefaultBlockSettings.AMETHYST_SETTINGS
 			.translucent(TriState.TRUE)
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -842,7 +838,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -855,7 +850,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -867,7 +861,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -879,7 +872,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DefaultBlockSettings.AMETHYST_SETTINGS
 			.translucent(TriState.TRUE)
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -890,7 +882,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DefaultBlockSettings.AMETHYST_SETTINGS
 			.translucent(TriState.TRUE)
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -902,7 +893,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -915,7 +905,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -927,7 +916,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -939,7 +927,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DefaultBlockSettings.AMETHYST_SETTINGS
 			.translucent(TriState.TRUE)
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -950,7 +937,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 		DefaultBlockSettings.AMETHYST_SETTINGS
 			.translucent(TriState.TRUE)
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -962,7 +948,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -975,7 +960,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -987,7 +971,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -1000,7 +983,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -1012,7 +994,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -1024,7 +1005,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -1037,7 +1017,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -1049,7 +1028,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),
@@ -1061,7 +1039,6 @@ public class ArcheonBlocks implements ElementsInitializer {
 			.translucent(TriState.TRUE)
 			.invisibleSides()
 			.nonOpaque()
-			.material(Material.GLASS)
 			.blockVision(AdvancedBlockSettings::never)
 			.luminance(3)
 			.emissiveLighting(AdvancedBlockSettings::always),

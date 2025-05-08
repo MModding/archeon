@@ -8,6 +8,7 @@ import com.mmodding.mmodding_lib.library.blocks.*;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.items.*;
 import com.mmodding.mmodding_lib.library.portals.CustomPortalKeyItem;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -15,7 +16,6 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import org.quiltmc.qsl.item.group.api.QuiltItemGroup;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -75,12 +75,12 @@ public class ArcheonItemGroups implements ElementsInitializer {
 		(item instanceof CustomFishingRodItem) ||
 		(item instanceof RingItem);
 
-	public static final ItemGroup SULLEN_RIFTS_ADVENTURE = QuiltItemGroup.builder(new Identifier("sullen_rifts", "adventure"))
+	public static final ItemGroup SULLEN_RIFTS_ADVENTURE = FabricItemGroupBuilder.create(new Identifier("sullen_rifts", "adventure"))
 		.icon(ArcheonItems.LORE_SCRAP::getDefaultStack)
 		.appendItems(stacks -> stacks.add(ArcheonItems.LORE_SCRAP.getDefaultStack()))
 		.build();
 
-	public static final ItemGroup BLOCKS = QuiltItemGroup.builder(Archeon.createId("blocks"))
+	public static final ItemGroup BLOCKS = FabricItemGroupBuilder.create(Archeon.createId("blocks"))
 		.icon(ArcheonBlocks.WET_GRASS_BLOCK.getItem()::getDefaultStack)
 		.appendItems(itemStacks -> Registry.BLOCK.stream().filter(block -> block.toString()
 				.split(":")[0]
@@ -88,14 +88,14 @@ public class ArcheonItemGroups implements ElementsInitializer {
 			.forEach(block -> itemStacks.add(new ItemStack(block))))
 		.build();
 
-	public static final ItemGroup COMBAT_AND_TOOLS = QuiltItemGroup.builder(Archeon.createId("combat_and_tools"))
+	public static final ItemGroup COMBAT_AND_TOOLS = FabricItemGroupBuilder.create(Archeon.createId("combat_and_tools"))
 		.icon(ArcheonItems.CHIASPEN_SWORD::getDefaultStack)
 		.appendItems(itemStacks -> Registry.ITEM.stream().filter(item -> Registry.ITEM.getId(item).getNamespace()
 				.equals("archeon") && !(item instanceof BlockItem) && IS_EQUIPMENT.test(item) && IS_IN_CREATIVE_TAB.test(item))
 			.forEach(item -> itemStacks.add(item.getDefaultStack())))
 		.build();
 
-	public static final ItemGroup FAUNA = QuiltItemGroup.builder(Archeon.createId("fauna"))
+	public static final ItemGroup FAUNA = FabricItemGroupBuilder.create(Archeon.createId("fauna"))
 		.icon(ArcheonBlocks.RED_LYCORIS.getItem()::getDefaultStack)
 		.appendItems(itemStacks -> Registry.BLOCK.stream().filter(block -> block.toString()
 				.split(":")[0]
@@ -103,7 +103,7 @@ public class ArcheonItemGroups implements ElementsInitializer {
 			.forEach(block -> itemStacks.add(new ItemStack(block))))
 		.build();
 
-	public static final ItemGroup MISCELLANEOUS = QuiltItemGroup.builder(Archeon.createId("miscellaneous"))
+	public static final ItemGroup MISCELLANEOUS = FabricItemGroupBuilder.create(Archeon.createId("miscellaneous"))
 		.icon(ArcheonItems.PINK_LYCORIS_PETAL::getDefaultStack)
 		.appendItems(itemStacks -> Registry.ITEM.stream().filter(item -> Registry.ITEM.getId(item).getNamespace()
 				.equals("archeon") && !(item instanceof BlockItem) && !IS_EQUIPMENT.test(item) && IS_IN_CREATIVE_TAB.test(item))

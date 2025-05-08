@@ -11,14 +11,14 @@ import com.mmodding.mmodding_lib.library.utils.BiomeUtils;
 import com.mmodding.mmodding_lib.library.utils.WorldUtils;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.util.annotation.Debug;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.util.registry.RegistryOps;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.MultiNoiseBiomeSource;
-import org.quiltmc.loader.api.QuiltLoader;
-import org.quiltmc.qsl.lifecycle.api.event.ServerWorldLoadEvents;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -55,7 +55,7 @@ public class ArcheonBiomes implements ElementsInitializer {
 	@Debug
 	public static void writeArcheonProvider(MultiNoiseBiomeSource.Preset preset, boolean enabled) {
 		if (enabled) {
-			ServerWorldLoadEvents.LOAD.register((server, world) -> {
+			ServerWorldEvents.LOAD.register((server, world) -> {
 				if (world.getRegistryKey().equals(Archeon.WORLD_KEY)) {
 					MultiNoiseBiomeSource source = preset.getBiomeSource(world.getRegistryManager().get(Registry.BIOME_KEY));
 					DataResult<JsonElement> result = MultiNoiseBiomeSource.CUSTOM_CODEC.encoder().encodeStart(RegistryOps.create(JsonOps.INSTANCE, world.getRegistryManager().freeze()), source);
@@ -70,7 +70,7 @@ public class ArcheonBiomes implements ElementsInitializer {
 						JsonObject provider = new JsonObject();
 						provider.addProperty("type", "minecraft:overworld");
 						provider.add("generator", generator);
-						FileWriter configWriter = new FileWriter(QuiltLoader.getCacheDir().toString() + "/written-archeon-provider.json");
+						FileWriter configWriter = new FileWriter(FabricLoader.getInstance().getGameDir().toString() + "/written-archeon-provider.json");
 						String json = new GsonBuilder().setPrettyPrinting().create().toJson(provider);
 						configWriter.write(json);
 						configWriter.close();

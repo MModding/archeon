@@ -1,6 +1,7 @@
 package com.mmodding.archeon.blocks;
 
 import com.mmodding.mmodding_lib.library.blocks.CustomBlock;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -22,7 +23,6 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
-import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
 public class HeartOfNatureTrophyBlock extends CustomBlock implements Waterloggable {
 
@@ -40,7 +40,7 @@ public class HeartOfNatureTrophyBlock extends CustomBlock implements Waterloggab
 	}
 
 	public HeartOfNatureTrophyBlock(Settings settings, boolean hasItem, ItemGroup itemGroup) {
-		this(settings, hasItem, itemGroup != null ? new QuiltItemSettings().group(itemGroup) : new QuiltItemSettings());
+		this(settings, hasItem, itemGroup != null ? new FabricItemSettings().group(itemGroup) : new FabricItemSettings());
 	}
 
 	public HeartOfNatureTrophyBlock(Settings settings, boolean hasItem, Item.Settings itemSettings) {

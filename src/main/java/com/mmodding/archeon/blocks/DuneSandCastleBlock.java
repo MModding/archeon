@@ -1,6 +1,7 @@
 package com.mmodding.archeon.blocks;
 
 import com.mmodding.mmodding_lib.library.blocks.CustomBlock;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -21,7 +22,6 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
-import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
 public class DuneSandCastleBlock extends CustomBlock implements Waterloggable {
 
@@ -37,7 +37,7 @@ public class DuneSandCastleBlock extends CustomBlock implements Waterloggable {
 	}
 
 	public DuneSandCastleBlock(Settings settings, boolean hasItem, ItemGroup itemGroup) {
-		this(settings, hasItem, itemGroup != null ? new QuiltItemSettings().group(itemGroup) : new QuiltItemSettings());
+		this(settings, hasItem, itemGroup != null ? new FabricItemSettings().group(itemGroup) : new FabricItemSettings());
 	}
 
 	public DuneSandCastleBlock(Settings settings, boolean hasItem, Item.Settings itemSettings) {

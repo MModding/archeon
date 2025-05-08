@@ -102,11 +102,23 @@ public class CentaurEntityModel extends SinglePartEntityModel<CentaurEntity> imp
 		this.getPart().traverse().forEach(ModelPart::resetTransform);
 		Animation attack = entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? CentaurEntityAnimations.BATTLE_AXE_ATTACK : CentaurEntityAnimations.SPEAR_ATTACK;
 		Animation talent = entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? CentaurEntityAnimations.CROSS_ATTACK : CentaurEntityAnimations.SPEAR_THROW;
-		AnimationUtils.updateAnimation(this, attack, entity.attack, animationProgress, 1.0f);
-		AnimationUtils.updateAnimation(this, talent, entity.talent, animationProgress, 1.0f);
-		if (AnimationUtils.isMoving(entity, limbDistance) && !entity.attack.isAnimating() && !entity.talent.isAnimating()) {
-			Animation galloping = entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? CentaurEntityAnimations.BATTLE_AXE_GALLOPING : CentaurEntityAnimations.SPEAR_GALLOPING;
-			AnimationUtils.updateAnimation(this, galloping, entity.galloping, animationProgress, 2.0f);
+		AnimationUtils.updateAnimation(this, attack, entity.attackAction.getAnimationState(), animationProgress, 1.0f);
+		AnimationUtils.updateAnimation(this, talent, entity.talentAction.getAnimationState(), animationProgress, 1.0f);
+		/* if (entity.attackAction.method_43687() / 1000.0f >= attack.length() || !entity.isAttacking()) {
+			entity.playingAttackAnimation.set(false);
+		}
+		if (entity.talentAction.method_43687() / 1000.0f >= talent.length() || !entity.isAttacking()) {
+			entity.playingTalentAnimation.set(false);
+		} */
+		if (!entity.attackAction.isExecutingAction() && !entity.talentAction.isExecutingAction() && AnimationUtils.isMoving(entity, limbDistance, entity.isAttacking() ? 0.1f : 0.015f)) {
+			Animation moving;
+			if (entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR)) {
+				moving = !entity.isAttacking() ? CentaurEntityAnimations.BATTLE_AXE_GALLOPING : CentaurEntityAnimations.BATTLE_AXE_WALKING; // target might be null on client
+			}
+			else {
+				moving = !entity.isAttacking() ? CentaurEntityAnimations.SPEAR_GALLOPING : CentaurEntityAnimations.SPEAR_WALKING;
+			}
+			AnimationUtils.updateAnimation(this, moving, entity.galloping, animationProgress, !entity.isAttacking() ? 2.0f : 1.0f);
 		}
 	}
 

@@ -8,6 +8,8 @@ import com.mmodding.mmodding_lib.library.colors.RGB;
 import com.mmodding.mmodding_lib.library.fluids.CustomFluid;
 import com.mmodding.mmodding_lib.library.fluids.FluidGroup;
 import com.mmodding.mmodding_lib.library.fluids.collisions.FluidCollisionHandler;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandler;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.minecraft.fluid.Fluid;
@@ -20,7 +22,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldView;
-import org.quiltmc.loader.api.minecraft.ClientOnly;
 
 public class DasciumFluid extends CustomFluid {
 
@@ -54,14 +55,14 @@ public class DasciumFluid extends CustomFluid {
 			.addHandling(ArcheonFluids.HOT_SPRING_WATER, (world, state) -> ArcheonBlocks.ARTEMNITE.getDefaultState());
 	}
 
-	@ClientOnly
 	@Override
+	@Environment(EnvType.CLIENT)
 	public FluidRenderHandler getRenderHandler() {
 		return new SimpleFluidRenderHandler(DasciumFluid.STILL_TEXTURE, DasciumFluid.FLOWING_TEXTURE);
 	}
 
-	@ClientOnly
 	@Override
+	@Environment(EnvType.CLIENT)
 	public Color getFogColor() {
 		return DasciumFluid.FOG_COLOR;
 	}
