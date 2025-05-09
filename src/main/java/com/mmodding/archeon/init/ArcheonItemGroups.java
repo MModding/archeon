@@ -3,6 +3,7 @@ package com.mmodding.archeon.init;
 import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.blocks.GiantLilyBlock;
 import com.mmodding.archeon.blocks.SporeRootcapBlock;
+import com.mmodding.archeon.items.LoreScrapItem;
 import com.mmodding.archeon.items.RingItem;
 import com.mmodding.mmodding_lib.library.blocks.*;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
@@ -77,7 +78,7 @@ public class ArcheonItemGroups implements ElementsInitializer {
 
 	public static final ItemGroup SULLEN_RIFTS_ADVENTURE = FabricItemGroupBuilder.create(new Identifier("sullen_rifts", "adventure"))
 		.icon(ArcheonItems.LORE_SCRAP::getDefaultStack)
-		.appendItems(stacks -> stacks.add(ArcheonItems.LORE_SCRAP.getDefaultStack()))
+		.appendItems(stacks -> stacks.addAll(LoreScrapItem.getLoreScrapItemStacks()))
 		.build();
 
 	public static final ItemGroup BLOCKS = FabricItemGroupBuilder.create(Archeon.createId("blocks"))

@@ -26,6 +26,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class LoreScrapItem extends CustomItem {
 
@@ -58,6 +60,14 @@ public class LoreScrapItem extends CustomItem {
 		super(settings);
 	}
 
+	public static Set<ItemStack> getLoreScrapItemStacks() {
+		return LoreScrapItem.LORE_SCRAPS.keySet().stream().map(key -> {
+			ItemStack stack = new ItemStack(ArcheonItems.LORE_SCRAP);
+			stack.getOrCreateNbt().putString("LoreData", key.toString());
+			return stack;
+		}).collect(Collectors.toSet());
+	}
+
 	@Override
 	public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 		if (world.isClient()) {
@@ -71,11 +81,7 @@ public class LoreScrapItem extends CustomItem {
 	@Override
 	public void appendStacks(ItemGroup group, DefaultedList<ItemStack> stacks) {
 		if (group == ArcheonItemGroups.SULLEN_RIFTS_ADVENTURE || group == ItemGroup.SEARCH) {
-			LoreScrapItem.LORE_SCRAPS.keySet().forEach(key -> {
-				ItemStack stack = new ItemStack(ArcheonItems.LORE_SCRAP);
-				stack.getOrCreateNbt().putString("LoreData", key.toString());
-				stacks.add(stack);
-			});
+			stacks.addAll(LoreScrapItem.getLoreScrapItemStacks());
 		}
 	}
 
