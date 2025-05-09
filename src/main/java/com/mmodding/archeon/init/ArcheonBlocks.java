@@ -6,6 +6,7 @@ import com.mmodding.archeon.bootstrap.init.ArcheonCauldronBehaviors;
 import com.mmodding.mmodding_lib.library.blocks.*;
 import com.mmodding.mmodding_lib.library.blocks.settings.AdvancedBlockSettings;
 import com.mmodding.mmodding_lib.library.blocks.settings.DefaultBlockSettings;
+import com.mmodding.mmodding_lib.library.blocks.settings.ImmutableBlockSettings;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.items.settings.AdvancedItemSettings;
 import com.mmodding.mmodding_lib.library.portals.squared.CustomSquaredPortalBlock;
@@ -656,11 +657,13 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomGrowsDownPlantBlock HANGING_ZIAL_VUXANCIA_LEAVES = new CustomGrowsDownPlantBlock(DefaultBlockSettings.PLANT_SETTINGS,
 		false, 0.005f, 1, BlockState::isAir, true);
 
-	public static final LeavesCarpetBlock ORIAN_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.LEAVES_CARPET, true);
-	public static final LeavesCarpetBlock PNEVENTIAL_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.LEAVES_CARPET, true);
-	public static final LeavesCarpetBlock STREIAN_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.LEAVES_CARPET, true);
-	public static final LeavesCarpetBlock VALE_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.LEAVES_CARPET, true);
-	public static final LeavesCarpetBlock ZIAL_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(DefaultBlockSettings.LEAVES_CARPET, true);
+	public static final ImmutableBlockSettings LEAVES_CARPET = ImmutableBlockSettings.of(Material.REPLACEABLE_PLANT).sounds(BlockSoundGroup.GRASS).noCollision().strength(0.2f);
+
+	public static final LeavesCarpetBlock ORIAN_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(ArcheonBlocks.LEAVES_CARPET, true);
+	public static final LeavesCarpetBlock PNEVENTIAL_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(ArcheonBlocks.LEAVES_CARPET, true);
+	public static final LeavesCarpetBlock STREIAN_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(ArcheonBlocks.LEAVES_CARPET, true);
+	public static final LeavesCarpetBlock VALE_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(ArcheonBlocks.LEAVES_CARPET, true);
+	public static final LeavesCarpetBlock ZIAL_VUXANCIA_LEAVES_CARPET = new LeavesCarpetBlock(ArcheonBlocks.LEAVES_CARPET, true);
 
 	public static final CustomCraftingTableBlock PALM_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
 	public static final CustomCraftingTableBlock NECLANE_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
