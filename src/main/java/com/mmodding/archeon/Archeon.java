@@ -32,6 +32,7 @@ public class Archeon implements MModdingModInitializer {
 		elementsInitializers.add(new ArcheonBlocks());
 		elementsInitializers.add(new ArcheonBlockEntities());
 		elementsInitializers.add(new ArcheonItems());
+		elementsInitializers.add(new ArcheonContentRegistries());
 		elementsInitializers.add(new ArcheonEnchantments());
 		elementsInitializers.add(new ArcheonFluids());
 		elementsInitializers.add(new ArcheonEvents());
