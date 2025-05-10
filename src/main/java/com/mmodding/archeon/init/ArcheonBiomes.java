@@ -27,8 +27,8 @@ public class ArcheonBiomes implements ElementsInitializer {
 
 	public static final ArcheonBiomesProvider ARCHEON_BIOMES_PROVIDER = new ArcheonBiomesProvider();
 
-	public static final RegistryKey<Biome> ACHREAN_CAVES = BiomeUtils.getBiomeKey(Archeon.createId("achrean_caves"));
 	public static final RegistryKey<Biome> ABYSS_CAVES = BiomeUtils.getBiomeKey(Archeon.createId("abyss_caves"));
+	public static final RegistryKey<Biome> ACHREAN_CAVES = BiomeUtils.getBiomeKey(Archeon.createId("achrean_caves"));
 	public static final RegistryKey<Biome> ANHYDRITE_VALLEYS = BiomeUtils.getBiomeKey(Archeon.createId("anhydrite_valleys"));
 	public static final RegistryKey<Biome> COLD_VUXANCIA_FOREST = BiomeUtils.getBiomeKey(Archeon.createId("cold_vuxancia_forest"));
 	public static final RegistryKey<Biome> CRIADAN_VALLEYS = BiomeUtils.getBiomeKey(Archeon.createId("criadan_valleys"));

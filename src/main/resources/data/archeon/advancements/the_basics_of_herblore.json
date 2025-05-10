@@ -1,0 +1,124 @@
+{
+  "display": {
+    "icon": {
+      "item": "archeon:twilight_rose"
+    },
+    "title": {
+      "translate": "advancements.archeon.the_basics_of_herblore.title"
+    },
+    "description": {
+      "translate": "advancements.archeon.the_basics_of_herblore.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "archeon:wayfarer",
+  "criteria": {
+    "flowers": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:aerolia"
+            ]
+          },
+          {
+            "items": [
+              "archeon:ascendia"
+            ]
+          },
+          {
+            "items": [
+              "archeon:astedibes"
+            ]
+          },
+          {
+            "items": [
+              "archeon:iopea"
+            ]
+          },
+          {
+            "items": [
+              "archeon:oea"
+            ]
+          },
+          {
+            "items": [
+              "archeon:orange_lycoris"
+            ]
+          },
+          {
+            "items": [
+              "archeon:organdeane_blossom"
+            ]
+          },
+          {
+            "items": [
+              "archeon:pink_lycoris"
+            ]
+          },
+          {
+            "items": [
+              "archeon:red_lycoris"
+            ]
+          },
+          {
+            "items": [
+              "archeon:roseypia"
+            ]
+          },
+          {
+            "items": [
+              "archeon:septiceolia"
+            ]
+          },
+          {
+            "items": [
+              "archeon:sunset_orchid"
+            ]
+          },
+          {
+            "items": [
+              "archeon:tall_iopea"
+            ]
+          },
+          {
+            "items": [
+              "archeon:tall_organdeane"
+            ]
+          },
+          {
+            "items": [
+              "archeon:twilight_rose"
+            ]
+          },
+          {
+            "items": [
+              "archeon:blue_doeldia"
+            ]
+          },
+          {
+            "items": [
+              "archeon:white_doeldia"
+            ]
+          },
+          {
+            "items": [
+              "archeon:pink_doeldia"
+            ]
+          },
+          {
+            "items": [
+              "archeon:yellow_doeldia"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "flowers"
+    ]
+  ]
+}

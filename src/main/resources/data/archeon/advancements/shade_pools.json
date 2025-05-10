@@ -1,0 +1,42 @@
+{
+  "display": {
+    "icon": {
+      "item": "archeon:aketite_lamp"
+    },
+    "title": {
+      "translate": "advancements.archeon.shade_pools.title"
+    },
+    "description": {
+      "translate": "advancements.archeon.shade_pools.description"
+    }
+  },
+  "parent": "archeon:first_steps",
+  "criteria": {
+    "dascium_pool": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "structure": "archeon:piothiel"
+          }
+        }
+      }
+    },
+    "piothiel": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "structure": "archeon:dascium_pool"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "dascium_pool",
+      "piothiel"
+    ]
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "display": {
+    "icon": {
+      "item": "archeon:chiaspen_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.archeon.twiggy_equipment.title"
+    },
+    "description": {
+      "translate": "advancements.archeon.twiggy_equipment.description"
+    }
+  },
+  "parent": "archeon:first_steps",
+  "criteria": {
+    "tools": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:neclane_sword",
+              "archeon:neclane_pickaxe",
+              "archeon:neclane_axe",
+              "archeon:neclane_shovel",
+              "archeon:neclane_hoe",
+              "archeon:cypress_sword",
+              "archeon:cypress_pickaxe",
+              "archeon:cypress_axe",
+              "archeon:cypress_shovel",
+              "archeon:cypress_hoe",
+              "archeon:vuxancia_sword",
+              "archeon:vuxancia_pickaxe",
+              "archeon:vuxancia_axe",
+              "archeon:vuxancia_shovel",
+              "archeon:vuxancia_hoe",
+              "archeon:chiaspen_sword",
+              "archeon:chiaspen_pickaxe",
+              "archeon:chiaspen_axe",
+              "archeon:chiaspen_shovel",
+              "archeon:chiaspen_hoe"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "tools"
+    ]
+  ]
+}

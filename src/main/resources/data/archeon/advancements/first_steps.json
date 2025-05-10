@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "archeon:wet_grass_block"
+    },
+    "title": {
+      "translate": "advancements.archeon.first_steps.title"
+    },
+    "description": {
+      "translate": "advancements.archeon.first_steps.description"
+    }
+  },
+  "parent": "archeon:archeon",
+  "criteria": {
+    "archeon": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "archeon:archeon"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "archeon"
+    ]
+  ]
+}

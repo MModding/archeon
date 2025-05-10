@@ -71,6 +71,8 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 
 	private Vec3d originalPos = Vec3d.ZERO;
 
+	private UUID lastHit = null;
+
 	public HeartOfNatureEntity(EntityType<? extends HeartOfNatureEntity> entityType, World world) {
 		super(entityType, world);
 		this.moveControl = new FlightMoveControl(this, 10, false);
@@ -104,6 +106,9 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		originalPos.putDouble("Y", this.originalPos.y);
 		originalPos.putDouble("Z", this.originalPos.z);
 		nbt.put("OriginalPos", originalPos);
+		if (this.lastHit != null) {
+			nbt.putUuid("LastHit", this.lastHit);
+		}
 	}
 
 	@Override
@@ -123,6 +128,9 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		);
 		if (this.hasCustomName()) {
 			this.bossBar.setName(this.getDisplayName());
+		}
+		if (nbt.contains("LastHit")) {
+			this.lastHit = nbt.getUuid("LastHit");
 		}
 	}
 
@@ -221,12 +229,15 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		}
 	}
 
-	public void newPhaseProcess() {
+	public void newPhaseProcess(DamageSource source) {
 		this.shieldDeployment(!this.getPhase().equals(Phase.DEFEATED));
 		this.setHealth(this.getPhase().equals(Phase.DEFEATED) ? 50.0f : 0.1f);
 		if (!this.getPhase().equals(Phase.DEFEATED)) {
 			WorldUtils.repeatSyncedTaskUntil(this.world, 50, () -> this.heal(1.0f));
 			this.nowRecoveringOriginalPos();
+		}
+		else {
+			WorldUtils.doSyncedTaskAfter(this.world, 100, () -> super.damage(source, 50.0f));
 		}
 	}
 
@@ -304,7 +315,9 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 
 		if (this.getPhase().equals(Phase.DEFEATED)) {
 			this.addVelocity(0.0, (0.3 - this.getVelocity().y) * 0.3, 0.0);
-			this.setHealth(this.getHealth() - 0.5f);
+			if (this.getHealth() > 0.0f) {
+				this.setHealth(this.getHealth() - 0.5f);
+			}
 		}
 
 		if (this.isDead()) {
@@ -428,7 +441,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 			if (source.getAttacker() instanceof PlayerEntity entity) {
 				if (entity.getMainHandStack().getItem() instanceof PickaxeItem) {
 					if (this.switchPhase()) {
-						this.newPhaseProcess();
+						this.newPhaseProcess(source);
 					}
 					return true;
 				}
@@ -438,7 +451,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 			if (!this.isShieldDeployed()) {
 				if (this.getHealth() - amount <= 0.0f) {
 					if (this.switchPhase()) {
-						this.newPhaseProcess();
+						this.newPhaseProcess(source);
 						return true;
 					}
 				}

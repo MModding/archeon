@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "archeon:gilded_cobbled_chiaspen"
+    },
+    "title": {
+      "translate": "advancements.archeon.arches_of_yore.title"
+    },
+    "description": {
+      "translate": "advancements.archeon.arches_of_yore.description"
+    },
+    "frame": "goal"
+  },
+  "parent": "archeon:shade_pools",
+  "criteria": {
+    "panopticon": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "structure": "archeon:panopticon"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "panopticon"
+    ]
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "display": {
+    "icon": {
+      "item": "archeon:centaur_battle_axe"
+    },
+    "title": {
+      "translate": "advancements.archeon.sovlie.title"
+    },
+    "description": {
+      "translate": "advancements.archeon.sovlie.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "archeon:arches_of_yore",
+  "criteria": {
+    "armored_centaur": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "archeon:armored_centaur"
+        }
+      }
+    },
+    "centaur": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "archeon:centaur"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "armored_centaur"
+    ],
+    [
+      "centaur"
+    ]
+  ]
+}

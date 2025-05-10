@@ -1,24 +1,24 @@
 {
   "display": {
     "icon": {
-      "item": "archeon:wand_of_nature"
+      "item": "archeon:amulet_of_nature"
     },
     "title": {
-      "translate": "advancements.archeon.title"
+      "translate": "advancements.archeon.antique_jewelry.title"
     },
     "description": {
-      "translate": "advancements.archeon.description"
-    },
-    "background": "archeon:textures/block/chiaspen.png"
+      "translate": "advancements.archeon.antique_jewelry.description"
+    }
   },
+  "parent": "archeon:arches_of_yore",
   "criteria": {
-    "wand_of_nature": {
+    "amulet_of_nature": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "archeon:wand_of_nature"
+              "archeon:amulet_of_nature"
             ]
           }
         ]
@@ -27,7 +27,7 @@
   },
   "requirements": [
     [
-      "wand_of_nature"
+      "amulet_of_nature"
     ]
   ]
 }

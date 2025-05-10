@@ -1,24 +1,24 @@
 {
   "display": {
     "icon": {
-      "item": "archeon:wand_of_nature"
+      "item": "archeon:raw_faelite"
     },
     "title": {
-      "translate": "advancements.archeon.title"
+      "translate": "advancements.archeon.gleaming_in_the_darkness.title"
     },
     "description": {
-      "translate": "advancements.archeon.description"
-    },
-    "background": "archeon:textures/block/chiaspen.png"
+      "translate": "advancements.archeon.gleaming_in_the_darkness.description"
+    }
   },
+  "parent": "archeon:blush_ambers",
   "criteria": {
-    "wand_of_nature": {
+    "raw_faelite": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "archeon:wand_of_nature"
+              "archeon:raw_faelite"
             ]
           }
         ]
@@ -27,7 +27,7 @@
   },
   "requirements": [
     [
-      "wand_of_nature"
+      "raw_faelite"
     ]
   ]
 }

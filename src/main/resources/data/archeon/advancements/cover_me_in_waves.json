@@ -1,0 +1,49 @@
+{
+  "display": {
+    "icon": {
+      "item": "archeon:lusonyth_chestplate"
+    },
+    "title": {
+      "translate": "advancements.archeon.cover_me_in_waves.title"
+    },
+    "description": {
+      "translate": "advancements.archeon.cover_me_in_waves.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "archeon:gleaming_in_the_darkness",
+  "criteria": {
+    "lusonyth_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:lusonyth_helmet"
+            ]
+          },
+          {
+            "items": [
+              "archeon:lusonyth_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "archeon:lusonyth_leggings"
+            ]
+          },
+          {
+            "items": [
+              "archeon:lusonyth_boots"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "lusonyth_armor"
+    ]
+  ]
+}

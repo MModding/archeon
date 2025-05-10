@@ -1,0 +1,54 @@
+{
+  "display": {
+    "icon": {
+      "item": "archeon:music_disc_geometric_fall"
+    },
+    "title": {
+      "translate": "advancements.archeon.echoes.title"
+    },
+    "description": {
+      "translate": "advancements.archeon.echoes.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "archeon:the_basics_of_herblore",
+  "criteria": {
+    "music_discs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "archeon:music_disc_pe4k"
+            ]
+          },
+          {
+            "items": [
+              "archeon:music_disc_geometric_fall"
+            ]
+          },
+          {
+            "items": [
+              "archeon:music_disc_parallelify"
+            ]
+          },
+          {
+            "items": [
+              "archeon:music_disc_glaive"
+            ]
+          },
+          {
+            "items": [
+              "archeon:music_disc_aiel"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "music_discs"
+    ]
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "archeon:aurora_crystal"
+    },
+    "title": {
+      "translate": "advancements.archeon.crystalline_paroxysm.title"
+    },
+    "description": {
+      "translate": "advancements.archeon.crystalline_paroxysm.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "archeon:reach_for_the_skies",
+  "criteria": {
+    "heart_of_nature": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "archeon:heart_of_nature"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "heart_of_nature"
+    ]
+  ]
+}

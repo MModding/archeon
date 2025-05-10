@@ -1,0 +1,227 @@
+{
+  "display": {
+    "icon": {
+      "item": "archeon:palm_sapling"
+    },
+    "title": {
+      "translate": "advancements.archeon.wayfarer.title"
+    },
+    "description": {
+      "translate": "advancements.archeon.wayfarer.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "archeon:first_steps",
+  "criteria": {
+    "abyss_caves": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:abyss_caves"
+          }
+        }
+      }
+    },
+    "achrean_caves": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:achrean_caves"
+          }
+        }
+      }
+    },
+    "anhydrite_valleys": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:anhydrite_valleys"
+          }
+        }
+      }
+    },
+    "cold_vuxancia_forest": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:cold_vuxancia_forest"
+          }
+        }
+      }
+    },
+    "criadan_valleys": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:criadan_valleys"
+          }
+        }
+      }
+    },
+    "dune_ocean": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:dune_ocean"
+          }
+        }
+      }
+    },
+    "rocky_fields": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:rocky_fields"
+          }
+        }
+      }
+    },
+    "neclane_grove": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:neclane_grove"
+          }
+        }
+      }
+    },
+    "shore": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:shore"
+          }
+        }
+      }
+    },
+    "snowy_vuxancia_forest": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:snowy_vuxancia_forest"
+          }
+        }
+      }
+    },
+    "south_meadows": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:south_meadows"
+          }
+        }
+      }
+    },
+    "south_snowy_peaks": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:south_snowy_peaks"
+          }
+        }
+      }
+    },
+    "south_snowy_slopes": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:south_snowy_slopes"
+          }
+        }
+      }
+    },
+    "underground_caves": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:underground_caves"
+          }
+        }
+      }
+    },
+    "vuxancia_forest": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:vuxancia_forest"
+          }
+        }
+      }
+    },
+    "warm_vuxancia_forest": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "archeon:achrean_caves"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "abyss_caves"
+    ],
+    [
+      "achrean_caves"
+    ],
+    [
+      "anhydrite_valleys"
+    ],
+    [
+      "cold_vuxancia_forest"
+    ],
+    [
+      "criadan_valleys"
+    ],
+    [
+      "dune_ocean"
+    ],
+    [
+      "neclane_grove"
+    ],
+    [
+      "rocky_fields"
+    ],
+    [
+      "shore"
+    ],
+    [
+      "snowy_vuxancia_forest"
+    ],
+    [
+      "south_meadows"
+    ],
+    [
+      "south_snowy_peaks"
+    ],
+    [
+      "south_snowy_slopes"
+    ],
+    [
+      "underground_caves"
+    ],
+    [
+      "vuxancia_forest"
+    ],
+    [
+      "warm_vuxancia_forest"
+    ]
+  ]
+}

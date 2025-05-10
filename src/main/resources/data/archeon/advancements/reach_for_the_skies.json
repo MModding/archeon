@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "archeon:power_key"
+    },
+    "title": {
+      "translate": "advancements.archeon.reach_for_the_skies.title"
+    },
+    "description": {
+      "translate": "advancements.archeon.reach_for_the_skies.description"
+    },
+    "frame": "goal"
+  },
+  "parent": "archeon:shade_pools",
+  "criteria": {
+    "tower_of_atmosphere": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "structure": "archeon:atmosphere_tower"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "tower_of_atmosphere"
+    ]
+  ]
+}
