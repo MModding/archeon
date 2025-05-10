@@ -1,24 +1,8 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "archeon:exyriane_shard"
-    },
-    {
-      "item": "archeon:exyriane_shard"
-    },
-    {
-      "item": "archeon:phosnor_slate"
-    },
-    {
-      "item": "archeon:criadan"
-    },
-    {
-      "item": "archeon:criadan"
-    }
-  ],
-  "result": {
-    "item": "archeon:anhydrite",
-    "count": 1
-  }
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "ingredient": {
+    "item": "archeon:criadan"
+  },
+  "result": "archeon:anhydrite"
 }

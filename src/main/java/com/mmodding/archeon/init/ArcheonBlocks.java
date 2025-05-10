@@ -672,12 +672,12 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomCraftingTableBlock NUME_WILLOW_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
 	public static final CustomCraftingTableBlock NYRETH_CRAFTING_TABLE = new CustomCraftingTableBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
 
-	public static final CustomBlock PALM_BOOKSHELF = new CustomBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
-	public static final CustomBlock NECLANE_BOOKSHELF = new CustomBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
-	public static final CustomBlock CYPRESS_BOOKSHELF = new CustomBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
-	public static final CustomBlock VUXANCIA_BOOKSHELF = new CustomBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
-	public static final CustomBlock NUME_WILLOW_BOOKSHELF = new CustomBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
-	public static final CustomBlock NYRETH_BOOKSHELF = new CustomBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
+	public static final CustomBookshelfBlock PALM_BOOKSHELF = new CustomBookshelfBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
+	public static final CustomBookshelfBlock NECLANE_BOOKSHELF = new CustomBookshelfBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
+	public static final CustomBookshelfBlock CYPRESS_BOOKSHELF = new CustomBookshelfBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
+	public static final CustomBookshelfBlock VUXANCIA_BOOKSHELF = new CustomBookshelfBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
+	public static final CustomBookshelfBlock NUME_WILLOW_BOOKSHELF = new CustomBookshelfBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
+	public static final CustomBookshelfBlock NYRETH_BOOKSHELF = new CustomBookshelfBlock(DefaultBlockSettings.WOOD_SETTINGS, true);
 
 	public static final CustomSaplingBlock PALM_SAPLING = new CustomSaplingBlock(
 		SaplingGeneratorUtils.of(() -> ArcheonFeatures.PALM_TREE),

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "archeon:antic_floortile"
+    }
+  },
+  "result": {
+    "item": "archeon:antic_floortile_slab",
+    "count": 6
+  }
+}

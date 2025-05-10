@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "AAA",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "archeon:aketite_slab"
+    },
+    "A": {
+      "item": "archeon:smooth_aketite"
+    }
+  },
+  "result": {
+    "item": "archeon:aketite_baseboard",
+    "count": 6
+  }
+}

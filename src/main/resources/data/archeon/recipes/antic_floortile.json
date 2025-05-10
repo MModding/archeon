@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ACA",
+    "CAC",
+    "ACA"
+  ],
+  "key": {
+    "A": {
+      "item": "archeon:smooth_artemnite"
+    },
+    "C": {
+      "item": "archeon:ceramic_tiles"
+    }
+  },
+  "result": {
+    "item": "archeon:antic_floortile",
+    "count": 9
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "AAA",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "archeon:artemnite_slab"
+    },
+    "A": {
+      "item": "archeon:smooth_artemnite"
+    }
+  },
+  "result": {
+    "item": "archeon:artemnite_baseboard",
+    "count": 6
+  }
+}

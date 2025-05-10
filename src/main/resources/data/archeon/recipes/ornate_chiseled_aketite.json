@@ -1,8 +1,18 @@
 {
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "archeon:aketite_bricks"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "G",
+    "B"
+  ],
+  "key": {
+    "G": {
+      "item": "archeon:apaflorite_gemstone"
+    },
+    "B": {
+      "item": "archeon:aketite_bricks"
+    }
   },
-  "result": "archeon:ornate_chiseled_aketite"
+  "result": {
+    "item": "archeon:ornate_chiseled_aketite"
+  }
 }

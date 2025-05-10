@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A  ",
+    "AA ",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "archeon:antic_mosaic"
+    }
+  },
+  "result": {
+    "item": "archeon:antic_mosaic_stairs",
+    "count": 4
+  }
+}

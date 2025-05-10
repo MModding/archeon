@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "archeon:antic_mosaic"
+    }
+  },
+  "result": {
+    "item": "archeon:antic_mosaic_slab",
+    "count": 6
+  }
+}

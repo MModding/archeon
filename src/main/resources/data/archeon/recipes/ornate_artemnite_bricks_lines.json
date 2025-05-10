@@ -1,8 +1,17 @@
 {
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "archeon:artemnite"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BG"
+  ],
+  "key": {
+    "G": {
+      "item": "archeon:apaflorite_gemstone"
+    },
+    "B": {
+      "item": "archeon:artemnite_bricks"
+    }
   },
-  "result": "archeon:ornate_artemnite_bricks_lines"
+  "result": {
+    "item": "archeon:ornate_artemnite_bricks_lines"
+  }
 }

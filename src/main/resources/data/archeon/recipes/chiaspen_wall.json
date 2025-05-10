@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "item": "archeon:chiaspen"
+    }
+  },
+  "result": {
+    "item": "archeon:chiaspen_wall",
+    "count": 6
+  }
+}

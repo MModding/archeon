@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "archeon:antic_floortile"
+    }
+  },
+  "result": {
+    "item": "archeon:antic_floortile_wall",
+    "count": 6
+  }
+}
