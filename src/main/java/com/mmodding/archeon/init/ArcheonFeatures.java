@@ -805,12 +805,12 @@ public class ArcheonFeatures implements ElementsInitializer {
 		TWILIGHT_ROSE_FEATURE.addDefaultToBiomes(randomPatchNoColdPredicate);
 		PINK_LYCORIS_FEATURE.addDefaultToBiomes(randomPatchNoColdPredicate);
 		RED_LYCORIS_FEATURE.addDefaultToBiomes(randomPatchNoColdPredicate);
-		ORANGE_LYCORIS_FEATURE.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS) && !ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
-		ASCENDIA_FEATURE.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS));
+		ORANGE_LYCORIS_FEATURE.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.NECLANE_GROVE) && !ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS) && !ctx.getBiomeKey().equals(ArcheonBiomes.VUXANCIA_FOREST));
+		ASCENDIA_FEATURE.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_MEADOWS) && !ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS));
 		OEA_FEATURE.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.ROCKY_FIELDS));
 		IOPEA_FEATURE.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.WARM_VUXANCIA_FOREST));
 		ORGANDEANE_FEATURE.addDefaultToBiomes(randomPatchNoColdPredicate);
-		SEPTICEOLIA_FEATURE.addDefaultToBiomes(randomPatchNoColdPredicate);
+		SEPTICEOLIA_FEATURE.addDefaultToBiomes(ctx -> randomPatchNoColdPredicate.test(ctx) && !ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_MEADOWS));
 		WHITE_DOELDIA_FEATURE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.COLD_VUXANCIA_FOREST));
 		YELLOW_DOELDIA_FEATURE.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.COLD_VUXANCIA_FOREST));
 
