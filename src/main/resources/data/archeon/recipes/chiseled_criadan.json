@@ -7,14 +7,14 @@
   ],
   "key": {
     "B": {
-      "item": "archeon:anhydrite_bricks"
+      "item": "archeon:criadan_bricks"
     },
     "T": {
-      "item": "archeon:anhydrite_tiles"
+      "item": "archeon:criadan_tiles"
     }
   },
   "result": {
-    "item": "archeon:chiseled_anhydrite",
+    "item": "archeon:chiseled_criadan",
     "count": 5
   }
 }

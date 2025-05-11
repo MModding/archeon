@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "C"
+  ],
+  "key": {
+    "C": {
+      "item": "archeon:chiseled_criadan"
+    }
+  },
+  "result": {
+    "item": "archeon:criadan_pillar",
+    "count": 2
+  }
+}

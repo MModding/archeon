@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "item": "archeon:polished_criadan"
+    }
+  },
+  "result": {
+    "item": "archeon:polished_criadan_fence",
+    "count": 3
+  }
+}
