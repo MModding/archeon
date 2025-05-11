@@ -20,6 +20,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.state.property.Properties;
 import net.minecraft.tag.BlockTags;
 
 public class ArcheonBlocks implements ElementsInitializer {
@@ -501,8 +502,8 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomWallTorchBlock WALL_EXYRIANE_TORCH = new CustomWallTorchBlock(DefaultBlockSettings.WOOD_SETTINGS.collidable(false).breakInstantly().luminance(14), ArcheonParticleTypes.EXYRIANE_FLAME);
 	public static final ExyrianeLanternBlock EXYRIANE_LANTERN = new ExyrianeLanternBlock(DefaultBlockSettings.STONE_SETTINGS.luminance(15), true);
 
-	public static final CustomFurnaceBlock CHIASPEN_FURNACE = new CustomFurnaceBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomFurnaceBlock PHOSNOR_SLATE_FURNACE = new CustomFurnaceBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS, true);
+	public static final CustomFurnaceBlock CHIASPEN_FURNACE = new CustomFurnaceBlock(DefaultBlockSettings.STONE_SETTINGS.luminance(state -> state.get(Properties.LIT) ? 13 : 0), true);
+	public static final CustomFurnaceBlock PHOSNOR_SLATE_FURNACE = new CustomFurnaceBlock(DefaultBlockSettings.DEEPSLATE_SETTINGS.luminance(state -> state.get(Properties.LIT) ? 13 : 0), true);
 
 	public static final CustomBlock APAFLORITE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomBlock EXYRIANE_ORE = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
