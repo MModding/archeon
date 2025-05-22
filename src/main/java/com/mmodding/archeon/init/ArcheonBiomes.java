@@ -49,7 +49,7 @@ public class ArcheonBiomes implements ElementsInitializer {
 	@Override
 	public void register() {
 		WorldUtils.addDifferedSeed(Archeon.createId("archeon"));
-		ArcheonBiomes.writeArcheonProvider(BiomeSourceUtils.createMultiNoisePreset(Archeon.createId("biome_provider"), ARCHEON_BIOMES_PROVIDER), false);
+		ArcheonBiomes.writeArcheonProvider(BiomeSourceUtils.createMultiNoisePreset(Archeon.createId("biome_provider"), ARCHEON_BIOMES_PROVIDER), System.getProperty("archeon.provider-debug") != null);
 	}
 
 	@Debug
