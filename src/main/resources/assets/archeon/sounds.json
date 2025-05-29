@@ -333,6 +333,15 @@
       }
     ]
   },
+  "advancement.challenge": {
+    "category": "ui",
+    "sounds": [
+      {
+        "name": "archeon:advancement_challenge",
+        "stream": false
+      }
+    ]
+  },
   "aurora_catalyst.ambient": {
     "category": "neutral",
     "sounds": [

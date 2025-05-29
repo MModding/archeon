@@ -4,8 +4,10 @@ import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.client.init.*;
 import com.mmodding.archeon.init.ArcheonItems;
 import com.mmodding.archeon.init.ArcheonMiscellaneous;
+import com.mmodding.archeon.init.ArcheonSoundEvents;
 import com.mmodding.mmodding_lib.library.base.AdvancedModContainer;
 import com.mmodding.mmodding_lib.library.base.MModdingClientModInitializer;
+import com.mmodding.mmodding_lib.library.client.advancements.AdvancementChallengeCompletionSoundCallback;
 import com.mmodding.mmodding_lib.library.client.render.model.InventoryModels;
 import com.mmodding.mmodding_lib.library.config.Config;
 import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
@@ -57,6 +59,10 @@ public class ArcheonClient implements MModdingClientModInitializer {
 				return null;
 			}
 		});
+		AdvancementChallengeCompletionSoundCallback.EVENT.register(
+			(client, advancement, sound) ->
+			client.world != null && client.world.getRegistryKey().equals(Archeon.WORLD_KEY) ? ArcheonSoundEvents.ADVANCEMENT_CHALLENGE : sound
+		);
 		MusicTypeSelectionCallback.EVENT.register((client, original) -> {
 			if (client.player != null && client.player.isCloseToStructure(ArcheonMiscellaneous.PANOPTICON_KEY)) {
 				return ArcheonMiscellaneous.PANOPTICON;

@@ -14,6 +14,8 @@ public class ArcheonSoundEvents implements ElementsInitializer {
 	public static final CustomSoundEvent MUSIC_NIGHT = new CustomSoundEvent(Archeon.createId("music.night"));
 	public static final CustomSoundEvent MUSIC_SUNRISE = new CustomSoundEvent(Archeon.createId("music.sunrise"));
 
+	public static final CustomSoundEvent ADVANCEMENT_CHALLENGE = new CustomSoundEvent(Archeon.createId("advancement.challenge"));
+
 	public static final CustomSoundEvent ENTITY_AURORA_CATALYST_AMBIENT = new CustomSoundEvent(Archeon.createId("aurora_catalyst.ambient"));
 	public static final CustomSoundEvent ENTITY_AURORA_CATALYST_HIT = new CustomSoundEvent(Archeon.createId("aurora_catalyst.hit"));
 
@@ -22,6 +24,7 @@ public class ArcheonSoundEvents implements ElementsInitializer {
 		MUSIC_SUNSET.register();
 		MUSIC_NIGHT.register();
 		MUSIC_SUNRISE.register();
+		ADVANCEMENT_CHALLENGE.register();
 		ENTITY_AURORA_CATALYST_AMBIENT.register();
 		ENTITY_AURORA_CATALYST_HIT.register();
 	}
