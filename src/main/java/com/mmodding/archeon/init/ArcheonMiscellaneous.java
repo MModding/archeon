@@ -64,11 +64,9 @@ public class ArcheonMiscellaneous implements ElementsInitializer {
 		Archeon.createId("elkin"),
 		Soundtrack.Part.iterations(Archeon.createId("elkin.intro"), 1),
 		Soundtrack.Part.looping(Archeon.createId("elkin.first_phase")),
-		Soundtrack.Part.iterations(Archeon.createId("elkin.first_phase_transition"), 1),
 		Soundtrack.Part.looping(Archeon.createId("elkin.first_phase_climax")),
 		Soundtrack.Part.iterations(Archeon.createId("elkin.transition"), 1),
 		Soundtrack.Part.looping(Archeon.createId("elkin.second_phase")),
-		Soundtrack.Part.iterations(Archeon.createId("elkin.second_phase_transition"), 1),
 		Soundtrack.Part.looping(Archeon.createId("elkin.second_phase_climax")),
 		Soundtrack.Part.iterations(Archeon.createId("elkin.outro"), 1)
 	);

@@ -62,19 +62,19 @@ public class CentaurLifeVaultBlockEntity extends BlockEntity {
 					}
 					case FIRST_PHASE_HALF -> {
 						fromPart = 2;
-						toPart = 3;
+						toPart = 2;
 					}
 					case SECOND_PHASE -> {
-						fromPart = 4;
-						toPart = 5;
+						fromPart = 3;
+						toPart = 4;
 					}
 					case SECOND_PHASE_HALF -> {
-						fromPart = 6;
-						toPart = 7;
+						fromPart = 5;
+						toPart = 5;
 					}
 					case DEATH -> {
-						fromPart = 8;
-						toPart = 8;
+						fromPart = 6;
+						toPart = 6;
 					}
 					default -> throw new IllegalStateException("Unexpected value: " + phase);
 				}

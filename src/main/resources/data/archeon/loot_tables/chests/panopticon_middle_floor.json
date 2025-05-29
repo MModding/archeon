@@ -95,7 +95,7 @@
           "functions": [
             {
               "function": "minecraft:set_nbt",
-              "tag": "{LoreData:\"archeon:stone\"}"
+              "tag": "{LoreData:\"archeon:stones\"}"
             }
           ]
         },
@@ -106,7 +106,7 @@
           "functions": [
             {
               "function": "minecraft:set_nbt",
-              "tag": "{LoreData:\"archeon:stone_sequel\"}"
+              "tag": "{LoreData:\"archeon:stones_sequel\"}"
             }
           ]
         }

@@ -242,15 +242,6 @@
       }
     ]
   },
-  "elkin.first_phase_transition": {
-    "category": "music",
-    "sounds": [
-      {
-        "name": "archeon:elkin/first_phase_transition",
-        "stream": true
-      }
-    ]
-  },
   "elkin.first_phase_climax": {
     "category": "music",
     "sounds": [
@@ -274,15 +265,6 @@
     "sounds": [
       {
         "name": "archeon:elkin/second_phase",
-        "stream": true
-      }
-    ]
-  },
-  "elkin.second_phase_transition": {
-    "category": "music",
-    "sounds": [
-      {
-        "name": "archeon:elkin/second_phase_transition",
         "stream": true
       }
     ]
