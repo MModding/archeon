@@ -98,6 +98,50 @@
           "type": "minecraft:item",
           "name": "archeon:lusonyth_ring",
           "weight": 25
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 25,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:artifacts\"}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 25,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:seashells\"}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 25,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:apaflorite\"}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 25,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:faelite\"}"
+            }
+          ]
         }
       ]
     }

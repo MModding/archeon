@@ -98,6 +98,50 @@
           "type": "minecraft:item",
           "name": "archeon:faelite_ring",
           "weight": 25
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 25,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:culinary_arts\"}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 25,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:fruits\"}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 25,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:exyriane\"}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 25,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:glass_confection\"}"
+            }
+          ]
         }
       ]
     }

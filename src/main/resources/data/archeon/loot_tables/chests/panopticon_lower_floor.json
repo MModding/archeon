@@ -54,6 +54,7 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "weight": 60,
           "name": "archeon:plant_fiber",
           "functions": [
             {
@@ -67,6 +68,7 @@
         },
         {
           "type": "minecraft:tag",
+          "weight": 60,
           "name": "archeon:shells",
           "expand": false,
           "functions": [
@@ -76,6 +78,28 @@
                 "min": 2,
                 "max": 3
               }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:columns_and_pots\"}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:clementium\"}"
             }
           ]
         }

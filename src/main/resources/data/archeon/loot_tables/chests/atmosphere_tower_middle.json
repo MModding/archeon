@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 10,
           "name": "archeon:faelite_axe",
           "functions": [
             {
@@ -28,7 +28,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 10,
           "name": "archeon:faelite_pickaxe",
           "functions": [
             {
@@ -50,7 +50,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 5,
           "name": "archeon:faelite_ingot",
           "functions": [
             {
@@ -64,7 +64,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 5,
           "name": "archeon:music_disc_geometric_fall",
           "functions": [
             {
@@ -78,7 +78,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 30,
           "name": "archeon:pink_lycoris_petal",
           "functions": [
             {
@@ -92,7 +92,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 20,
           "name": "archeon:apaflorite_gemstone",
           "functions": [
             {
@@ -106,7 +106,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
+          "weight": 10,
           "name": "archeon:pouch",
           "functions": [
             {
@@ -115,6 +115,28 @@
                 "min": 1,
                 "max": 1
               }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:flora_alchemy\"}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:flora_alchemy_sequel\"}"
             }
           ]
         }

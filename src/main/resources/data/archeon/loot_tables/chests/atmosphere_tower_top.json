@@ -2,7 +2,7 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
@@ -65,6 +65,28 @@
                 "min": 2,
                 "max": 6
               }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:the_tower_of_atmosphere\"}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:heart_of_nature\"}"
             }
           ]
         },
@@ -133,7 +155,7 @@
           ]
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     }
   ]
 }

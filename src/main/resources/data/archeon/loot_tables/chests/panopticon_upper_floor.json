@@ -6,7 +6,7 @@
         {
           "type": "minecraft:item",
           "name": "archeon:cooked_heifer",
-          "weight": 125,
+          "weight": 130,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -20,7 +20,29 @@
         {
           "type": "minecraft:item",
           "name": "archeon:apaflorite_ring",
-          "weight": 25
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:the_panopticon\"}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "archeon:lore_scrap",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{LoreData:\"archeon:sunstradiver_and_snail\"}"
+            }
+          ]
         }
       ]
     },
