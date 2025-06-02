@@ -32,6 +32,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
@@ -40,8 +41,8 @@ import java.util.EnumSet;
 
 public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
-	public final EntityAction attackAction = new EntityAction(this, Archeon.createId("attack"), 10, 10);
-	public final EntityAction talentAction = new EntityAction(this, Archeon.createId("talent"), 10, 10);
+	public final EntityAction attackAction = new EntityAction(this, Archeon.createId("attack"), 8, 10);
+	public final EntityAction talentAction = new EntityAction(this, Archeon.createId("talent"), 11, 7);
 
 	private final ServerBossBar bossBar = new ServerBossBar(this.getDisplayName(), BossBar.Color.YELLOW, BossBar.Style.PROGRESS);
 
@@ -82,7 +83,7 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 	@Override
 	protected void initGoals() {
 		this.goalSelector.add(1, new CentaurMovementGoal(this));
-		this.targetSelector.add(0, new TargetGoal<>(this, PlayerEntity.class, true));
+		this.targetSelector.add(0, new CentaurTargetGoal(this, true));
 	}
 
 	private void updateGoals() {
@@ -149,9 +150,9 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
 	@Override
 	public void tick() {
+		this.attackAction.tick();
+		this.talentAction.tick();
 		if (this.getWorld().isClient()) {
-			this.attackAction.tick();
-			this.talentAction.tick();
 			this.galloping.start(this.age);
 		}
 		super.tick();
@@ -230,6 +231,21 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 			double x = this.centaur.vaultPos.getX() + 13.0 * Math.cos(degree * (Math.PI / 180.0));
 			double z = this.centaur.vaultPos.getZ() + 13.0 * Math.sin(degree * (Math.PI / 180.0));
 			this.centaur.getMoveControl().moveTo(x, this.centaur.getY(), z, 2.0f);
+		}
+	}
+
+	public static class CentaurTargetGoal extends TargetGoal<PlayerEntity> {
+
+		private final CentaurEntity centaur;
+
+		public CentaurTargetGoal(CentaurEntity mob, boolean checkVisibility) {
+			super(mob, PlayerEntity.class, checkVisibility);
+			this.centaur = mob;
+		}
+
+		@Override
+		protected Box getSearchBox(double distance) {
+			return Box.of(Vec3d.ofCenter(this.centaur.vaultPos), 22.5, 22.5, 22.5);
 		}
 	}
 
