@@ -9,7 +9,8 @@ All rights reserved.
 
 ### Are Considered As Assets:
 ```
-- All Classes inside the ./src/main/java/com/mmodding/archeon/client/entities/models Package
+- All Files inside the ./src/main/java/com/mmodding/archeon/client/entities/models Directory
+- All Files inside the ./src/main/java/com/mmodding/archeon/client/entities/animations Directory
 - All Files inside the ./src/main/resources/assets Directory
 ```
 
