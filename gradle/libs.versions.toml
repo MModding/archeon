@@ -7,7 +7,7 @@ fabric_loader = "0.16.4"
 # Required Dependencies
 
 fabric_api = "0.77.0+1.19.2"
-mmodding = "a9b3f1b70e"
+mmodding = "5fa09578c3"
 
 # Included Dependencies
 

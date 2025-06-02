@@ -1434,4 +1434,268 @@ public class CentaurEntityAnimations {
 			new AnimationKeyframe(0.8333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
 		))
 		.build();
+
+	public static final Animation SPEAR_FALLING = Animation.Builder.withLength(1.375f)
+		.addPartAnimation("bone", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(7.5f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0f, Animator.rotate(7.5f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0833f, Animator.rotate(-1.87f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.25f, Animator.rotate(0.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.375f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.4167f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE)
+		))
+		.addPartAnimation("top", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(21.0732f, 4.6671f, 1.7958f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(21.0732f, 4.6671f, 1.7958f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("top", new PartAnimation(PartAnimation.AnimationTargets.TRANSLATE,
+			new AnimationKeyframe(0.0f, Animator.translate(0.0f, -8.0f, -1.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.translate(0.0f, -8.0f, -1.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.translate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("left_arm", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(-44.9291f, -6.2146f, -17.557f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(-44.9291f, -6.2146f, -17.557f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(-20.7855f, -21.6347f, -34.5027f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("left_arm", new PartAnimation(PartAnimation.AnimationTargets.TRANSLATE,
+			new AnimationKeyframe(0.0f, Animator.translate(0.0f, 0.0f, -1.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.translate(0.0f, 0.0f, -1.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.translate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("right_arm", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(-57.5f, 0.0f, -170.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(-57.5f, 0.0f, -170.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(-28.1635f, 21.772f, 7.9951f), PartAnimation.Interpolators.SPLINE)
+		))
+		.addPartAnimation("right_arm", new PartAnimation(PartAnimation.AnimationTargets.TRANSLATE,
+			new AnimationKeyframe(0.0f, Animator.translate(4.0f, -3.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.translate(4.0f, -3.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.translate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE)
+		))
+		.addPartAnimation("head", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(-2.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(-2.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE)
+		))
+		.addPartAnimation("flank", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("flank", new PartAnimation(PartAnimation.AnimationTargets.TRANSLATE,
+			new AnimationKeyframe(0.0f, Animator.translate(0.0f, -6.0f, 3.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.translate(0.0f, -6.0f, 3.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.translate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("tail", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(55.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0f, Animator.rotate(55.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.1667f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE)
+		))
+		.addPartAnimation("left_head", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(-22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(-22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0417f, Animator.rotate(-23.8407f, 4.0766f, 9.1391f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.125f, Animator.rotate(-22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.2917f, Animator.rotate(-3.3985f, -0.0652f, -0.1462f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 5.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.375f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("right_head", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(-22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(-22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0417f, Animator.rotate(-23.8407f, -4.0766f, -9.1391f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.125f, Animator.rotate(-22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.2917f, Animator.rotate(-3.3985f, 0.0652f, 0.1462f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, -5.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.375f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("left_front_leg", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(5.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(5.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.1667f, Animator.rotate(-37.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("left_front_leg", new PartAnimation(PartAnimation.AnimationTargets.TRANSLATE,
+			new AnimationKeyframe(0.0f, Animator.translate(0.0f, -3.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.translate(0.0f, -3.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.1667f, Animator.translate(0.0f, 0.5f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.translate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("left_front_foot", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.1667f, Animator.rotate(50.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("left_back_leg", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0f, Animator.rotate(22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("left_back_foot", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("right_front_leg", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(-17.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(-17.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("right_front_leg", new PartAnimation(PartAnimation.AnimationTargets.TRANSLATE,
+			new AnimationKeyframe(0.0f, Animator.translate(0.0f, -1.0f, -1.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.translate(0.0f, -1.0f, -1.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.translate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("right_front_foot", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("right_back_leg", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(-5.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0f, Animator.rotate(-5.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("right_back_foot", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.build();
+
+	public static final Animation BATTLE_AXE_FALLING = Animation.Builder.withLength(1.375f)
+		.addPartAnimation("bone", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(7.5f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0f, Animator.rotate(7.5f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0833f, Animator.rotate(-1.87f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.25f, Animator.rotate(0.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.375f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.4167f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE)
+		))
+		.addPartAnimation("top", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(21.0732f, 4.6671f, 1.7958f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(21.0732f, 4.6671f, 1.7958f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("top", new PartAnimation(PartAnimation.AnimationTargets.TRANSLATE,
+			new AnimationKeyframe(0.0f, Animator.translate(0.0f, -8.0f, -1.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.translate(0.0f, -8.0f, -1.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.translate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("left_arm", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(-85.3509f, -34.8432f, 15.2359f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(-85.3509f, -34.8432f, 15.2359f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(-115.3509f, -34.8432f, 15.2359f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("left_arm", new PartAnimation(PartAnimation.AnimationTargets.TRANSLATE,
+			new AnimationKeyframe(0.0f, Animator.translate(0.0f, -4.0f, 1.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.translate(0.0f, -4.0f, 1.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.translate(0.0f, -4.0f, 1.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("right_arm", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(-88.9552f, 19.0474f, 0.7357f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0f, Animator.rotate(-88.9552f, 19.0474f, 0.7357f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(-118.9552f, 19.0474f, 0.7357f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("right_arm", new PartAnimation(PartAnimation.AnimationTargets.TRANSLATE,
+			new AnimationKeyframe(0.0f, Animator.translate(0.0f, -5.0f, 1.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0f, Animator.translate(0.0f, -5.0f, 1.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.translate(0.0f, -5.0f, 1.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("head", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(-2.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(-2.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE)
+		))
+		.addPartAnimation("flank", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("flank", new PartAnimation(PartAnimation.AnimationTargets.TRANSLATE,
+			new AnimationKeyframe(0.0f, Animator.translate(0.0f, -6.0f, 3.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.translate(0.0f, -6.0f, 3.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.translate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("tail", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(55.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0f, Animator.rotate(55.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.1667f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE)
+		))
+		.addPartAnimation("leftHead", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(-22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(-22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0417f, Animator.rotate(-23.8407f, 4.0766f, 9.1391f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.125f, Animator.rotate(-22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.2917f, Animator.rotate(-3.3985f, -0.0652f, -0.1462f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 5.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.375f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("rightHead", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(-22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(-22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0417f, Animator.rotate(-23.8407f, -4.0766f, -9.1391f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.125f, Animator.rotate(-22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.2917f, Animator.rotate(-3.3985f, 0.0652f, 0.1462f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, -5.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.375f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("left_front_leg", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(5.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(5.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.1667f, Animator.rotate(-37.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("left_front_leg", new PartAnimation(PartAnimation.AnimationTargets.TRANSLATE,
+			new AnimationKeyframe(0.0f, Animator.translate(0.0f, -3.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.translate(0.0f, -3.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.1667f, Animator.translate(0.0f, 0.5f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.translate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("left_front_foot", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.1667f, Animator.rotate(50.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("left_back_leg", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0f, Animator.rotate(22.5f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("left_back_foot", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("right_front_leg", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(-17.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(-17.5f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("right_front_leg", new PartAnimation(PartAnimation.AnimationTargets.TRANSLATE,
+			new AnimationKeyframe(0.0f, Animator.translate(0.0f, -1.0f, -1.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.translate(0.0f, -1.0f, -1.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.translate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("right_front_foot", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.SPLINE),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("right_back_leg", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(-5.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0f, Animator.rotate(-5.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.addPartAnimation("right_back_foot", new PartAnimation(PartAnimation.AnimationTargets.ROTATE,
+			new AnimationKeyframe(0.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.0f, Animator.rotate(20.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR),
+			new AnimationKeyframe(1.3333f, Animator.rotate(0.0f, 0.0f, 0.0f), PartAnimation.Interpolators.LINEAR)
+		))
+		.build();
 }
