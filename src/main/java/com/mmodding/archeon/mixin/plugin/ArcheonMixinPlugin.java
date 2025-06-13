@@ -12,7 +12,7 @@ public class ArcheonMixinPlugin implements IMixinConfigPlugin {
 
 	private static final Set<String> TRINKETS_INTEGRATION = Set.of(
 		"RingItemMixin",
-		"AmuletOfNatureItem"
+		"AmuletOfNatureItemMixin"
 	);
 
 	@Override

@@ -2,7 +2,6 @@ package com.mmodding.archeon.mixin;
 
 import com.google.common.collect.Multimap;
 import com.mmodding.archeon.items.RingItem;
-import com.mmodding.mmodding_lib.library.utils.CompatibilityUtils;
 import com.mmodding.mmodding_lib.library.utils.TweakFunction;
 import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.Trinket;
