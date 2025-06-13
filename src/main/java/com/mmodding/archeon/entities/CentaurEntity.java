@@ -4,17 +4,24 @@ import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.blockentities.ArcheonBlockEntities;
 import com.mmodding.archeon.blockentities.CentaurLifeVaultBlockEntity;
 import com.mmodding.archeon.blocks.CentaurLifeVaultBlock;
+import com.mmodding.archeon.init.ArcheonBlocks;
 import com.mmodding.archeon.init.ArcheonEntities;
 import com.mmodding.archeon.init.ArcheonItems;
 import com.mmodding.mmodding_lib.library.entities.action.EntityAction;
+import com.mmodding.mmodding_lib.library.entities.goals.CooledDownMeleeAttackGoal;
+import com.mmodding.mmodding_lib.library.math.OrientedBlockPos;
+import com.mmodding.mmodding_lib.library.utils.MapUtils;
 import com.mmodding.mmodding_lib.library.utils.TweakFunction;
+import com.mmodding.mmodding_lib.library.utils.WorldUtils;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.enums.BlockHalf;
+import net.minecraft.block.enums.StairShape;
 import net.minecraft.entity.AnimationState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.RangedAttackMob;
 import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.ProjectileAttackGoal;
 import net.minecraft.entity.ai.goal.TargetGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -28,39 +35,55 @@ import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.random.RandomGenerator;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
+import org.apache.logging.log4j.util.TriConsumer;
 
+import java.util.Arrays;
 import java.util.EnumSet;
+import java.util.List;
+import java.util.Map;
 
 public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
-	public final EntityAction attackAction = new EntityAction(this, Archeon.createId("attack"), 8, 10);
-	public final EntityAction talentAction = new EntityAction(this, Archeon.createId("talent"), 11, 7);
+	public final EntityAction firstHalfAction;
+	public final EntityAction secondHalfAction;
 
 	private final ServerBossBar bossBar = new ServerBossBar(this.getDisplayName(), BossBar.Color.YELLOW, BossBar.Style.PROGRESS);
 
-	private final Goal attackGoal;
-	private final Goal talentGoal;
+	private final Goal firstHalfGoal;
+	private final Goal secondHalfGoal;
 
+	public AnimationState breathing = new AnimationState();
 	public AnimationState galloping = new AnimationState();
 
 	private BlockPos vaultPos = BlockPos.ORIGIN;
 
 	public CentaurEntity(EntityType<? extends CentaurEntity> entityType, World world) {
 		super(entityType, world);
-		this.attackGoal = new CentaurMeleeAttackGoal(this, 1.5f, false);
 		if (this.getType().equals(ArcheonEntities.ARMORED_CENTAUR)) {
-			this.talentGoal = new CentaurCrossAttackGoal(this, 1.5f, false);
+			this.firstHalfAction = new EntityAction(this, Archeon.createId("cross_attack"), 10, 7);
+			this.firstHalfGoal = new CentaurCrossAttackGoal(this, 80, 1.5f);
+			this.secondHalfAction = new EntityAction(this, Archeon.createId("aoe_attack"), 15, 12);
+			this.secondHalfGoal = new CentaurDamageZoneAttackGoal(this, 60);
 		}
 		else {
-			this.talentGoal = new CentaurSpearAttackGoal(this, 1.0, 40, 20.0f);
+			this.firstHalfAction = new EntityAction(this, Archeon.createId("spear_throw"), 8, 7);
+			this.firstHalfGoal = new CentaurSpearAttackGoal(this, 1.0, 40, 30.0f);
+			this.secondHalfAction = new EntityAction(this, Archeon.createId("air_move"), 15, 12);
+			this.secondHalfGoal = new CentaurMovingSpearAttackGoal(this, 30);
 		}
 		this.updateGoals();
 	}
@@ -76,7 +99,7 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 			.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0f)
 			.add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 1.0f)
 			.add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 3.0f)
-			.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 16)
+			.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 30)
 			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3f);
 	}
 
@@ -88,12 +111,12 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
 	private void updateGoals() {
 		if (!this.getWorld().isClient()) {
-			this.goalSelector.remove(this.attackGoal);
-			this.goalSelector.remove(this.talentGoal);
+			this.goalSelector.remove(this.firstHalfGoal);
+			this.goalSelector.remove(this.secondHalfGoal);
 			if (this.getHealth() >= this.getMaxHealth() / 2) {
-				this.goalSelector.add(0, this.attackGoal);
+				this.goalSelector.add(0, this.firstHalfGoal);
 			} else {
-				this.goalSelector.add(0, this.talentGoal);
+				this.goalSelector.add(0, this.secondHalfGoal);
 			}
 		}
 	}
@@ -150,9 +173,10 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
 	@Override
 	public void tick() {
-		this.attackAction.tick();
-		this.talentAction.tick();
+		this.firstHalfAction.tick();
+		this.secondHalfAction.tick();
 		if (this.getWorld().isClient()) {
+			this.breathing.start(this.age);
 			this.galloping.start(this.age);
 		}
 		super.tick();
@@ -163,6 +187,11 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 		super.mobTick();
 
 		this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
+	}
+
+	@Override
+	protected int computeFallDamage(float fallDistance, float damageMultiplier) {
+		return 0;
 	}
 
 	@Override
@@ -188,7 +217,7 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 	@Override
 	public void attack(LivingEntity target, float pullProgress) {
 		if (this.getWorld() instanceof ServerWorld serverWorld) {
-			this.talentAction.execute(() -> {
+			this.firstHalfAction.execute(() -> {
 				CentaurSpearEntity spear = new CentaurSpearEntity(serverWorld, this, new ItemStack(ArcheonItems.CENTAUR_SPEAR));
 				double relativeX = target.getX() - this.getX();
 				double relativeY = target.getBodyY(0.4) - spear.getY();
@@ -212,6 +241,9 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
 		@Override
 		public boolean canStart() {
+			if (this.centaur.getType().equals(ArcheonEntities.CENTAUR) && this.centaur.getHealth() <= this.centaur.getMaxHealth() / 2.0f) {
+				return false;
+			}
 			return this.centaur.vaultPos != BlockPos.ORIGIN && this.centaur.getTarget() == null;
 		}
 
@@ -249,28 +281,113 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 		}
 	}
 
-	public static class CentaurMeleeAttackGoal extends MeleeAttackGoal {
+	public static class CentaurCrossAttackGoal extends CooledDownMeleeAttackGoal {
 
-		final CentaurEntity centaur;
+		private final CentaurEntity centaur;
 
-		public CentaurMeleeAttackGoal(PathAwareEntity mob, double speed, boolean pauseWhenMobIdle) {
-			super(mob, speed, pauseWhenMobIdle);
+		public CentaurCrossAttackGoal(PathAwareEntity mob, int cooldownInTicks, double speed) {
+			super(mob, cooldownInTicks, speed);
 			this.centaur = (CentaurEntity) mob;
 		}
 
-		public boolean superStart() {
-			return super.canStart();
+		@Override
+		protected void tryAttack(LivingEntity target) {
+			if (this.centaur.getWorld() instanceof ServerWorld) {
+				this.centaur.firstHalfAction.execute(() -> {
+					this.centaur.tryAttack(target);
+					Vec3d relativePos = this.mob.getPos().add(target.getPos());
+					Vec3d velocity = relativePos.multiply(0.25);
+					target.addVelocity(velocity.x, 0.6f, velocity.z);
+				});
+			}
 		}
 
 		@Override
-		protected int getMaxCooldown() {
-			return this.getTickCount(60);
+		protected double getSquaredMaxAttackDistance(LivingEntity entity) {
+			float f = this.centaur.getWidth() + 1.0f;
+			return f * 2.0f * f * 2.0f + entity.getWidth();
+		}
+	}
+
+	public static class CentaurDamageZoneAttackGoal extends Goal {
+
+		private final CentaurEntity centaur;
+		private final int cooldownIntTicks;
+
+		private long lastUpdateTime;
+		private int cooldown;
+
+		public CentaurDamageZoneAttackGoal(CentaurEntity centaur, int cooldownIntTicks) {
+			this.centaur = centaur;
+			this.cooldownIntTicks = cooldownIntTicks;
 		}
 
 		@Override
-		protected void attack(LivingEntity target, double squaredDistance) {
-			if (this.centaur.getWorld() instanceof ServerWorld && !this.centaur.attackAction.isExecutingAction()) {
-				this.centaur.attackAction.execute(() -> super.attack(target, squaredDistance));
+		public boolean canStart() {
+			long l = this.centaur.world.getTime();
+			if (l - this.lastUpdateTime < 20L) {
+				return false;
+			} else {
+				this.lastUpdateTime = l;
+				LivingEntity livingEntity = this.centaur.getTarget();
+				return livingEntity != null && livingEntity.isAlive();
+			}
+		}
+
+		@Override
+		public boolean shouldContinue() {
+			LivingEntity livingEntity = this.centaur.getTarget();
+			return livingEntity != null && livingEntity.isAlive() && (!(livingEntity instanceof PlayerEntity playerEntity) || (!playerEntity.isSpectator() && !playerEntity.isCreative()));
+		}
+
+		@Override
+		public void start() {
+			this.centaur.setAttacking(true);
+			this.cooldown = 0;
+		}
+
+		@Override
+		public void stop() {
+			LivingEntity livingEntity = this.centaur.getTarget();
+			if (!EntityPredicates.EXCEPT_CREATIVE_OR_SPECTATOR.test(livingEntity)) {
+				this.centaur.setTarget(null);
+			}
+			this.centaur.setAttacking(false);
+		}
+
+		@Override
+		public boolean requiresUpdateEveryTick() {
+			return true;
+		}
+
+		@Override
+		public void tick() {
+			if (this.cooldown > 0) {
+				this.cooldown -= 1;
+			}
+			else if (this.cooldown == 0) {
+				LivingEntity target = this.centaur.getTarget();
+				assert target != null;
+				this.centaur.teleport(target.getX(), target.getY() + 10.0, target.getZ());
+				RandomGenerator random = this.centaur.getRandom();
+				for (int i = 0; i < 5; i++) {
+					this.centaur.world.addParticle(
+						ParticleTypes.WHITE_ASH,
+						target.getX(),
+						target.getY() + 10.0,
+						target.getZ(),
+						random.nextDouble() - 0.5,
+						random.nextDouble() - 0.5,
+						random.nextDouble() - 0.5
+					);
+				}
+				this.cooldown = -1; // Prevents repeated execution
+				this.centaur.secondHalfAction.execute(() -> {
+					List<Entity> entitiesToOffend = this.centaur.world.getOtherEntities(this.centaur, Box.of(this.centaur.getPos(), 10.0, 1.0, 10.0), EntityPredicates.EXCEPT_CREATIVE_OR_SPECTATOR);
+					entitiesToOffend.forEach(this.centaur::tryAttack);
+					this.centaur.world.playSoundFromEntity(null, this.centaur, SoundEvents.ENTITY_RAVAGER_STEP, SoundCategory.BLOCKS, 1.0f, 1.0f);
+				});
+				WorldUtils.doSyncedTaskAfter(this.centaur.world, 27, () -> this.cooldown = this.getTickCount(this.cooldownIntTicks));
 			}
 		}
 	}
@@ -302,36 +419,126 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 		}
 	}
 
-	public static class CentaurCrossAttackGoal extends CentaurMeleeAttackGoal {
+	public static class CentaurMovingSpearAttackGoal extends Goal {
 
-		public CentaurCrossAttackGoal(PathAwareEntity mob, double speed, boolean pauseWhenMobIdle) {
-			super(mob, speed, pauseWhenMobIdle);
-		}
+		// Map of with directions when looking from the side of the panopticon to the center of it as keys and tweaks of the centaur position to the corresponding side position as values
+		private static final Map<Direction, TweakFunction<BlockPos>> POSITIONS = MapUtils.builder(map -> {
+			map.put(Direction.NORTH, pos -> pos.add(0, 9, 15));
+			map.put(Direction.EAST, pos -> pos.add(-15, 9, 0));
+			map.put(Direction.SOUTH, pos -> pos.add(0, 9, -15));
+			map.put(Direction.WEST, pos -> pos.add(15, 9, 0));
+		});
 
-		@Override
-		protected void attack(LivingEntity target, double squaredDistance) {
-			if (this.centaur.getWorld() instanceof ServerWorld) {
-				this.centaur.attackAction.execute(() -> {
-					double max = this.getSquaredMaxAttackDistance(target);
-					if (squaredDistance <= max && this.getCooldown() <= 0) {
-						this.resetCooldown();
-						this.centaur.tryAttack(target);
-						Vec3d relativePos = this.mob.getPos().add(target.getPos());
-						Vec3d velocity = relativePos.multiply(0.25);
-						target.addVelocity(velocity.x, 0.6f, velocity.z);
-					}
-				});
-			}
+		private static final TriConsumer<World, BlockPos, Direction> PLATFORM_MAKER = (world, pos, direction) -> {
+			OrientedBlockPos oriented = OrientedBlockPos.of(pos).apply(direction);
+			world.setBlockState(oriented.behind(2), ArcheonBlocks.COBBLED_CHIASPEN_STAIRS.getDefaultState().with(Properties.BLOCK_HALF, BlockHalf.TOP).with(Properties.HORIZONTAL_FACING, direction));
+			world.setBlockState(oriented.behind(), ArcheonBlocks.POLISHED_ANHYDRITE.getDefaultState());
+			world.setBlockState(oriented, ArcheonBlocks.POLISHED_ANHYDRITE.getDefaultState());
+			world.setBlockState(oriented.front(), ArcheonBlocks.GILDED_COBBLED_CHIASPEN_STAIRS.getDefaultState().with(Properties.BLOCK_HALF, BlockHalf.TOP).with(Properties.HORIZONTAL_FACING, direction.getOpposite()));
+			world.setBlockState(oriented.left().behind(), ArcheonBlocks.GILDED_COBBLED_CHIASPEN_STAIRS.getDefaultState().with(Properties.BLOCK_HALF, BlockHalf.TOP).with(Properties.HORIZONTAL_FACING, direction.rotateYClockwise()));
+			world.setBlockState(oriented.left(), ArcheonBlocks.CHIASPEN_BRICK_STAIRS.getDefaultState().with(Properties.BLOCK_HALF, BlockHalf.TOP).with(Properties.HORIZONTAL_FACING, direction.rotateYClockwise()));
+			world.setBlockState(oriented.left().front(), ArcheonBlocks.COBBLED_CHIASPEN_STAIRS.getDefaultState().with(Properties.BLOCK_HALF, BlockHalf.TOP).with(Properties.HORIZONTAL_FACING, direction.rotateYClockwise()).with(Properties.STAIR_SHAPE, StairShape.OUTER_RIGHT));
+			world.setBlockState(oriented.right().behind(), ArcheonBlocks.CHIASPEN_BRICK_STAIRS.getDefaultState().with(Properties.BLOCK_HALF, BlockHalf.TOP).with(Properties.HORIZONTAL_FACING, direction.rotateYCounterclockwise()));
+			world.setBlockState(oriented.right(), ArcheonBlocks.GILDED_COBBLED_CHIASPEN_STAIRS.getDefaultState().with(Properties.BLOCK_HALF, BlockHalf.TOP).with(Properties.HORIZONTAL_FACING, direction.rotateYCounterclockwise()));
+			world.setBlockState(oriented.right().front(), ArcheonBlocks.COBBLED_CHIASPEN_STAIRS.getDefaultState().with(Properties.BLOCK_HALF, BlockHalf.TOP).with(Properties.HORIZONTAL_FACING, direction.rotateYCounterclockwise()).with(Properties.STAIR_SHAPE, StairShape.OUTER_LEFT));
+		};
+
+		private static final TriConsumer<World, BlockPos, Direction> PLATFORM_REMOVER = (world, pos, direction) -> {
+			OrientedBlockPos oriented = OrientedBlockPos.of(pos).apply(direction);
+			world.removeBlock(oriented.behind(2), false);
+			world.removeBlock(oriented.behind(), false);
+			world.removeBlock(oriented, false);
+			world.removeBlock(oriented.front(), false);
+			world.removeBlock(oriented.left().behind(), false);
+			world.removeBlock(oriented.left(), false);
+			world.removeBlock(oriented.left().front(), false);
+			world.removeBlock(oriented.right().behind(), false);
+			world.removeBlock(oriented.right(), false);
+			world.removeBlock(oriented.right().front(), false);
+		};
+
+		private final CentaurEntity centaur;
+		private final int cooldownInTicks;
+
+		private LivingEntity target;
+		private int cooldown;
+		private Direction lastDirection;
+
+		public CentaurMovingSpearAttackGoal(CentaurEntity centaur, int cooldownInTicks) {
+			this.centaur = centaur;
+			this.cooldownInTicks = cooldownInTicks;
 		}
 
 		@Override
 		public boolean canStart() {
-			return this.superStart() && !this.centaur.talentAction.isExecutingAction();
+			LivingEntity livingEntity = this.centaur.getTarget();
+			if (livingEntity != null && livingEntity.isAlive()) {
+				this.target = livingEntity;
+				return true;
+			} else {
+				return false;
+			}
 		}
 
 		@Override
 		public boolean shouldContinue() {
-			return super.shouldContinue() && !this.centaur.talentAction.isExecutingAction();
+			return this.target.isAlive();
+		}
+
+		@Override
+		public void start() {
+			this.centaur.getNavigation().stop();
+		}
+
+		@Override
+		public void stop() {
+			this.target = null;
+			this.cooldown = -1;
+		}
+
+		@Override
+		public boolean requiresUpdateEveryTick() {
+			return true;
+		}
+
+		@Override
+		public void tick() {
+			if (this.centaur.age % 200 == 0) {
+				RandomGenerator random = this.centaur.getRandom();
+				Direction direction = Arrays.stream(Direction.values()).filter(current -> current != this.lastDirection && current.getAxis().isHorizontal()).toList().get(random.nextInt(3));
+				BlockPos pos = POSITIONS.get(direction).apply(this.centaur.vaultPos);
+				PLATFORM_MAKER.accept(this.centaur.world, pos.down(), direction);
+				Vec3d vec3d = Vec3d.ofBottomCenter(pos);
+				this.centaur.teleport(vec3d.getX(), vec3d.getY() + 10.0, vec3d.getZ());
+				for (int i = 0; i < 5; i++) {
+					this.centaur.world.addParticle(
+						ParticleTypes.WHITE_ASH,
+						target.getX(),
+						target.getY() + 10.0,
+						target.getZ(),
+						random.nextDouble() - 0.5,
+						random.nextDouble() - 0.5,
+						random.nextDouble() - 0.5
+					);
+				}
+				if (this.lastDirection != null) {
+					PLATFORM_REMOVER.accept(this.centaur.world, POSITIONS.get(this.lastDirection).apply(this.centaur.vaultPos).down(), this.lastDirection);
+				}
+				this.lastDirection = direction;
+				this.centaur.secondHalfAction.execute(() -> this.centaur.world.playSoundFromEntity(null, this.centaur, SoundEvents.ENTITY_RAVAGER_STEP, SoundCategory.BLOCKS, 1.0f, 1.0f));
+			}
+			if (!this.centaur.secondHalfAction.isExecutingAction()) {
+				this.centaur.getLookControl().lookAt(this.target, 30.0f, 30.0f);
+				if (this.cooldown-- == 0) {
+					if (!this.centaur.getVisibilityCache().canSee(this.target)) {
+						return;
+					}
+					this.centaur.attack(this.target, 0);
+					this.cooldown = this.getTickCount(this.cooldownInTicks);
+				} else if (this.cooldown < 0) {
+					this.cooldown = this.getTickCount(this.cooldownInTicks);
+				}
+			}
 		}
 	}
 }

@@ -117,19 +117,29 @@ public class CentaurEntityModel extends SinglePartEntityModel<CentaurEntity> imp
 	@Override
 	public void setAngles(CentaurEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
 		this.getPart().traverse().forEach(ModelPart::resetTransform);
-		Animation attack = entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? CentaurEntityAnimations.BATTLE_AXE_ATTACK : CentaurEntityAnimations.SPEAR_ATTACK;
-		Animation talent = entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? CentaurEntityAnimations.CROSS_ATTACK : CentaurEntityAnimations.SPEAR_THROW;
-		AnimationUtils.updateAnimation(this, attack, entity.attackAction.getAnimationState(), animationProgress, 1.0f);
-		AnimationUtils.updateAnimation(this, talent, entity.talentAction.getAnimationState(), animationProgress, 1.0f);
-		if (!entity.attackAction.isExecutingAction() && !entity.talentAction.isExecutingAction() && AnimationUtils.isMoving(entity, limbDistance, entity.isAttacking() ? 0.1f : 0.015f)) {
-			Animation moving;
-			if (entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR)) {
-				moving = !entity.isAttacking() ? CentaurEntityAnimations.BATTLE_AXE_GALLOPING : CentaurEntityAnimations.BATTLE_AXE_WALKING; // target might be null on client
+		Animation firstHalf = entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? CentaurEntityAnimations.CROSS_ATTACK : CentaurEntityAnimations.SPEAR_THROW;
+		Animation secondHalf = entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? CentaurEntityAnimations.BATTLE_AXE_FALLING : CentaurEntityAnimations.SPEAR_FALLING;
+		AnimationUtils.updateAnimation(this, firstHalf, entity.firstHalfAction.getAnimationState(), animationProgress, 1.0f);
+		AnimationUtils.updateAnimation(this, secondHalf, entity.secondHalfAction.getAnimationState(), animationProgress, 1.0f);
+		if (!entity.firstHalfAction.isExecutingAction() && !entity.secondHalfAction.isExecutingAction()) {
+			if (AnimationUtils.isMoving(entity, limbDistance, 0.015f)) {
+				Animation moving;
+				if (entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR)) {
+					moving = !entity.isAttacking() ? CentaurEntityAnimations.BATTLE_AXE_GALLOPING : CentaurEntityAnimations.BATTLE_AXE_WALKING; // target might be null on client
+				} else {
+					moving = !entity.isAttacking() ? CentaurEntityAnimations.SPEAR_GALLOPING : CentaurEntityAnimations.SPEAR_WALKING;
+				}
+				AnimationUtils.updateAnimation(this, moving, entity.galloping, animationProgress, !entity.isAttacking() ? 2.0f : 1.0f);
 			}
 			else {
-				moving = !entity.isAttacking() ? CentaurEntityAnimations.SPEAR_GALLOPING : CentaurEntityAnimations.SPEAR_WALKING;
+				Animation idle;
+				if (entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR)) {
+					idle = CentaurEntityAnimations.BATTLE_AXE_IDLE;
+				} else {
+					idle = CentaurEntityAnimations.SPEAR_IDLE;
+				}
+				AnimationUtils.updateAnimation(this, idle, entity.breathing, animationProgress, 1.0f);
 			}
-			AnimationUtils.updateAnimation(this, moving, entity.galloping, animationProgress, !entity.isAttacking() ? 2.0f : 1.0f);
 		}
 	}
 
