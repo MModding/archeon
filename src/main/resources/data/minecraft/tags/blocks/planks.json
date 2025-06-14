@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:cypress_planks",
+    "archeon:neclane_planks",
+    "archeon:nume_willow_planks",
+    "archeon:nyreth_planks",
+    "archeon:palm_planks",
+    "archeon:vuxancia_planks"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:cypress_pressure_plate",
+    "archeon:neclane_pressure_plate",
+    "archeon:nume_willow_pressure_plate",
+    "archeon:nyreth_pressure_plate",
+    "archeon:palm_pressure_plate",
+    "archeon:vuxancia_pressure_plate"
+  ]
+}

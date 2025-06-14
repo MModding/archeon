@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:apaflorite_block",
+    "archeon:faelite_block",
+    "archeon:lusonyth_block",
+    "archeon:clementium_block"
+  ]
+}

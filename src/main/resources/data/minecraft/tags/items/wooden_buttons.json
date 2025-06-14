@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:cypress_button",
+    "archeon:neclane_button",
+    "archeon:nume_willow_button",
+    "archeon:nyreth_button",
+    "archeon:palm_button",
+    "archeon:vuxancia_button"
+  ]
+}

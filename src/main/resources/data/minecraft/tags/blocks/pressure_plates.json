@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:chiaspen_pressure_plate",
+    "archeon:ceramic_pressure_plate",
+    "archeon:criadan_pressure_plate",
+    "archeon:criadan_brick_pressure_plate",
+    "archeon:criadan_tile_pressure_plate",
+    "archeon:polished_criadan_pressure_plate",
+    "archeon:anhydrite_pressure_plate",
+    "archeon:anhydrite_brick_pressure_plate",
+    "archeon:anhydrite_tile_pressure_plate",
+    "archeon:polished_anhydrite_pressure_plate"
+  ]
+}

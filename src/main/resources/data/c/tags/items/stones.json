@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:chiaspen",
+    "archeon:phosnor_slate",
+    "archeon:aketite",
+    "archeon:artemnite",
+    "archeon:shorestone",
+    "archeon:criadan",
+    "archeon:roughcast"
+  ]
+}

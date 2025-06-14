@@ -1,10 +1,6 @@
 {
   "replace": false,
   "values": [
-    "archeon:palm_fence",
-    "archeon:neclane_fence",
-    "archeon:cypress_fence",
-    "archeon:vuxancia_fence",
     "archeon:ceramic_fence",
     "archeon:criadan_brick_fence",
     "archeon:criadan_tile_fence",

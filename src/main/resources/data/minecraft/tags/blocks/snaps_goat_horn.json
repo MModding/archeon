@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#archeon:equivalents/logs",
+    "#archeon:stone/ores",
+    "archeon:chiaspen"
+  ]
+}

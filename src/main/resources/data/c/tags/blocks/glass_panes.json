@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:dune_sand_glass_pane",
+    "archeon:dune_sand_glass_pane_tiles",
+    "archeon:dune_sand_glass_pane_tiles_top_left",
+    "archeon:dune_sand_glass_pane_tiles_top_right",
+    "archeon:dune_sand_glass_pane_tiles_bottom_left",
+    "archeon:dune_sand_glass_pane_tiles_bottom_right"
+  ]
+}

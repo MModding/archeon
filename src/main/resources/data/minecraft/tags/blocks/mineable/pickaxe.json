@@ -4,6 +4,9 @@
     "#archeon:equivalents/stone",
     "#archeon:equivalents/metals",
     "archeon:power_keystone",
-    "archeon:naturite"
+    "archeon:naturite",
+    "archeon:exyriane_lantern",
+    "archeon:heart_of_nature_trophy"
+
   ]
 }
