@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#archeon:equivalents/leaves",
+    "archeon:achrean_moss_block",
+    "archeon:achrean_moss"
+  ]
+}

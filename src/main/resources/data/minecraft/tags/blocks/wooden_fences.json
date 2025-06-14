@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:cypress_fence",
+    "archeon:neclane_fence",
+    "archeon:nume_willow_fence",
+    "archeon:nyreth_fence",
+    "archeon:palm_fence",
+    "archeon:vuxancia_fence"
+  ]
+}

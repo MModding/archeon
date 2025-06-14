@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:ceramic_block",
+    "archeon:ceramic_stairs",
+    "archeon:ceramic_slab",
+    "archeon:ceramic_fence",
+    "archeon:ceramic_pressure_plate",
+    "archeon:ceramic_button",
+    "archeon:ceramic_bricks",
+    "archeon:ceramic_brick_stairs",
+    "archeon:ceramic_brick_slab"
+  ]
+}

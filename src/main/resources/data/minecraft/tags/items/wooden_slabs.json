@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:cypress_slab",
+    "archeon:neclane_slab",
+    "archeon:nume_willow_slab",
+    "archeon:nyreth_slab",
+    "archeon:palm_slab",
+    "archeon:vuxancia_slab"
+  ]
+}

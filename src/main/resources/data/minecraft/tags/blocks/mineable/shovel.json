@@ -1,11 +1,15 @@
 {
   "replace": false,
   "values": [
-    "#archeon:equivalents/soil",
+    "archeon:wet_dirt",
+    "archeon:wet_grass_block",
     "archeon:dune_sand",
+    "archeon:dune_sand_castle",
     "archeon:shellsand",
     "archeon:salt_block",
     "archeon:dust",
-    "archeon:golden_clay"
+    "archeon:golden_clay",
+    "archeon:peaks_snow",
+    "archeon:peaks_snow_block"
   ]
 }

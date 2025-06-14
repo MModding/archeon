@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:cypress_stairs",
+    "archeon:neclane_stairs",
+    "archeon:nume_willow_stairs",
+    "archeon:nyreth_stairs",
+    "archeon:palm_stairs",
+    "archeon:vuxancia_stairs"
+  ]
+}

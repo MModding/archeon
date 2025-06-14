@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:palm_sapling",
+    "archeon:neclane_sapling",
+    "archeon:cypress_sapling",
+    "archeon:pnevential_vuxancia_sapling",
+    "archeon:streian_vuxancia_sapling",
+    "archeon:orian_vuxancia_sapling",
+    "archeon:vale_vuxancia_sapling",
+    "archeon:zial_vuxancia_sapling"
+  ]
+}

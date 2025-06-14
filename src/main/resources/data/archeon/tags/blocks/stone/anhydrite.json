@@ -21,6 +21,8 @@
     "archeon:polished_anhydrite_stairs",
     "archeon:polished_anhydrite_slab",
     "archeon:polished_anhydrite_wall",
-    "archeon:polished_anhydrite_pressure_plate"
+    "archeon:polished_anhydrite_pressure_plate",
+    "archeon:anhydrite_pillar",
+    "archeon:chiseled_anhydrite"
   ]
 }

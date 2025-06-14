@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "archeon:cypress_trapdoor",
+    "archeon:neclane_trapdoor",
+    "archeon:nume_willow_trapdoor",
+    "archeon:nyreth_trapdoor",
+    "archeon:palm_trapdoor",
+    "archeon:vuxancia_trapdoor"
+  ]
+}
