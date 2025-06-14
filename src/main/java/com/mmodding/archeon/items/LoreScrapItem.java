@@ -1,19 +1,20 @@
 package com.mmodding.archeon.items;
 
 import com.mmodding.archeon.Archeon;
-import com.mmodding.archeon.client.screens.LoreScrapScreen;
 import com.mmodding.archeon.init.ArcheonItemGroups;
 import com.mmodding.archeon.init.ArcheonItems;
 import com.mmodding.mmodding_lib.library.items.CustomItem;
 import com.mmodding.mmodding_lib.library.network.support.NetworkSupport;
 import com.mmodding.mmodding_lib.library.utils.MapUtils;
-import net.minecraft.client.MinecraftClient;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -70,9 +71,11 @@ public class LoreScrapItem extends CustomItem {
 
 	@Override
 	public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-		if (world.isClient()) {
+		if (user instanceof ServerPlayerEntity player) {
 			ItemStack stack = user.getStackInHand(hand);
-			MinecraftClient.getInstance().setScreen(new LoreScrapScreen(LoreData.of(stack)));
+			PacketByteBuf buf = PacketByteBufs.create();
+			LoreData.of(stack).writeComplete(buf);
+			ServerPlayNetworking.send(player, Archeon.createId("lore_scrap"), buf);
 			return TypedActionResult.success(stack);
 		}
 		return super.use(world, user, hand);

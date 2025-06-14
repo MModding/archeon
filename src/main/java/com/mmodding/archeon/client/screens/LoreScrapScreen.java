@@ -6,6 +6,8 @@ import com.mmodding.mmodding_lib.library.colors.Color;
 import com.mmodding.mmodding_lib.library.utils.TextUtils;
 import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.render.GameRenderer;
@@ -13,6 +15,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 
+@Environment(EnvType.CLIENT)
 public class LoreScrapScreen extends Screen {
 
 	public static final Style LORE_SCRAP = TextUtils.createStyle(null, null, null, null, null, null, null, null, null, Archeon.createId("lore_scrap"));

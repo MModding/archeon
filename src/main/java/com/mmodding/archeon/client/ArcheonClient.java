@@ -2,18 +2,23 @@ package com.mmodding.archeon.client;
 
 import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.client.init.*;
+import com.mmodding.archeon.client.screens.LoreScrapScreen;
 import com.mmodding.archeon.init.ArcheonItems;
 import com.mmodding.archeon.init.ArcheonMiscellaneous;
 import com.mmodding.archeon.init.ArcheonSoundEvents;
+import com.mmodding.archeon.items.LoreScrapItem;
 import com.mmodding.mmodding_lib.library.base.AdvancedModContainer;
 import com.mmodding.mmodding_lib.library.base.MModdingClientModInitializer;
 import com.mmodding.mmodding_lib.library.client.advancements.AdvancementChallengeCompletionSoundCallback;
 import com.mmodding.mmodding_lib.library.client.render.model.InventoryModels;
 import com.mmodding.mmodding_lib.library.config.Config;
 import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
+import com.mmodding.mmodding_lib.library.network.support.NetworkSupport;
 import com.mmodding.mmodding_lib.library.sounds.client.music.MusicTypeSelectionCallback;
 import com.mmodding.mmodding_lib.library.stellar.client.StellarObject;
 import com.mmodding.mmodding_lib.library.utils.TextureLocation;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.sound.MusicType;
 import org.jetbrains.annotations.Nullable;
 
@@ -58,6 +63,10 @@ public class ArcheonClient implements MModdingClientModInitializer {
 			else {
 				return null;
 			}
+		});
+		ClientPlayNetworking.registerGlobalReceiver(Archeon.createId("lore_scrap"), (client, handler, buf, sender) -> {
+			LoreScrapItem.LoreData data = NetworkSupport.readComplete(buf);
+			client.execute(() -> MinecraftClient.getInstance().setScreen(new LoreScrapScreen(data)));
 		});
 		AdvancementChallengeCompletionSoundCallback.EVENT.register(
 			(client, advancement, sound) ->

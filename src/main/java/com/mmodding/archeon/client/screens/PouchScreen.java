@@ -4,6 +4,8 @@ import com.mmodding.archeon.Archeon;
 import com.mmodding.mmodding_lib.library.colors.Color;
 import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
@@ -11,6 +13,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 
+@Environment(EnvType.CLIENT)
 public class PouchScreen extends HandledScreen<ScreenHandler> {
 
 	public PouchScreen(ScreenHandler handler, PlayerInventory inventory, Text title) {
