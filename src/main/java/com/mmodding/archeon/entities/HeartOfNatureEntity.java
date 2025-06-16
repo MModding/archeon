@@ -456,19 +456,26 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 					}
 				}
 				else {
-					EntityType<? extends AuroraCatalystEntity> type = switch (this.getPhase()) {
-						case POISONOUS -> ArcheonEntities.POISONOUS_AURORA_CATALYST;
-						case EXPLOSIVE -> ArcheonEntities.EXPLOSIVE_AURORA_CATALYST;
-						default -> ArcheonEntities.AURORA_CATALYST;
-					};
-					AuroraCatalystEntity auroraCatalystEntity = new AuroraCatalystEntity(type, this.world);
-					auroraCatalystEntity.teleport(
-						this.getX() - 6 + this.random.nextInt(13),
-						this.getY() + 3.5f,
-						this.getZ() - 6 + this.random.nextInt(13)
-					);
-					this.world.spawnEntity(auroraCatalystEntity);
-					return super.damage(source, amount);
+					// required to prevent spawning soldiers even when damage is not taken; otherwise can result to THIS
+					// https://discord.com/channels/1142972540810178720/1383066881463812247/1384193573058121729
+					if (super.damage(source, amount)) {
+						EntityType<? extends AuroraCatalystEntity> type = switch (this.getPhase()) {
+							case POISONOUS -> ArcheonEntities.POISONOUS_AURORA_CATALYST;
+							case EXPLOSIVE -> ArcheonEntities.EXPLOSIVE_AURORA_CATALYST;
+							default -> ArcheonEntities.AURORA_CATALYST;
+						};
+						AuroraCatalystEntity auroraCatalystEntity = new AuroraCatalystEntity(type, this.world);
+						auroraCatalystEntity.teleport(
+							this.getX() - 6 + this.random.nextInt(13),
+							this.getY() + 3.5f,
+							this.getZ() - 6 + this.random.nextInt(13)
+						);
+						this.world.spawnEntity(auroraCatalystEntity);
+						return true;
+					}
+					else {
+						return false;
+					}
 				}
 			}
 		}
