@@ -50,6 +50,7 @@ import net.minecraft.util.random.RandomGenerator;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.util.TriConsumer;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.EnumSet;
@@ -200,9 +201,17 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 		boolean bool = super.damage(source, amount);
 		if (this.isDead()) {
 			BlockState state = this.getWorld().getBlockState(this.vaultPos);
-			TweakFunction<CentaurLifeVaultBlock.Lives> lives = property -> this.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? property.decadeRight() : property.decadeLeft();
-			this.getWorld().setBlockState(this.vaultPos, state.with(CentaurLifeVaultBlock.LIVES, lives.apply(state.get(CentaurLifeVaultBlock.LIVES))));
-			this.world.getBlockEntity(this.vaultPos, ArcheonBlockEntities.CENTAUR_LIFE_VAULT).ifPresent(CentaurLifeVaultBlockEntity::releaseSoundtrack);
+			if (state.isOf(ArcheonBlocks.CENTAUR_LIFE_VAULT)) {
+				TweakFunction<CentaurLifeVaultBlock.Lives> lives = property -> this.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? property.decadeRight() : property.decadeLeft();
+				this.getWorld().setBlockState(this.vaultPos, state.with(CentaurLifeVaultBlock.LIVES, lives.apply(state.get(CentaurLifeVaultBlock.LIVES))));
+				this.world.getBlockEntity(this.vaultPos, ArcheonBlockEntities.CENTAUR_LIFE_VAULT).ifPresent(CentaurLifeVaultBlockEntity::releaseSoundtrack);
+			}
+			else {
+				LoggerFactory.getLogger("Archeon").error(
+					"There is no Centaur Life Vault at [{}, {}, {}]! Centaur data might be corrupted!",
+					this.vaultPos.getX(), this.vaultPos.getY(), this.vaultPos.getZ()
+				);
+			}
 		}
 		else {
 			this.updateGoals();

@@ -81,16 +81,17 @@ public class NeclaneFoliagePlacer extends CustomFoliagePlacer {
 			int distanceY = MathHelper.abs(subtractedPos.getY());
 			int distanceZ = MathHelper.abs(subtractedPos.getZ());
 
-			float probabilityX = 1.0f / 3.0f - distanceX / 15.0f;
-			float probabilityY = 1.0f / 3.0f - distanceY / 15.0f;
-			float probabilityZ = 1.0f / 3.0f - distanceZ / 15.0f;
+			// 0.33 ~ 1/3 & 0.06 ~ 1/15
+			float probabilityX = 0.33f - 0.06f * distanceX;
+			float probabilityY = 0.33f - 0.06f * distanceY;
+			float probabilityZ = 0.33f - 0.06f * distanceZ;
 
 			float probability = probabilityX + probabilityY + probabilityZ;
 
 			if (random.nextFloat() <= probability) {
 				Predicate<BlockPos> check = p -> world.testBlockState(p, state -> state.isOf(ArcheonBlocks.NECLANE_LEAVES) || state.isOf(ArcheonBlocks.FLOWERED_NECLANE_LEAVES));
 
-				if (Arrays.stream(Direction.values()).map(direction -> check.test(pos.offset(direction))).filter(b -> b).collect(Collectors.toSet()).size() >= (probability <= 0.6f ? 2 : 1)) {
+				if (Direction.stream().map(direction -> check.test(pos.offset(direction))).filter(Boolean::booleanValue).collect(Collectors.toSet()).size() >= (probability <= 0.6f ? 2 : 1)) {
 					this.placeNeclaneFoliage(world, replacer, random, config, pos);
 				}
 			}
