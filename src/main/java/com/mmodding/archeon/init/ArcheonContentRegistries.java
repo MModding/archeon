@@ -1,6 +1,8 @@
 package com.mmodding.archeon.init;
 
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
+import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 
@@ -8,6 +10,13 @@ public class ArcheonContentRegistries implements ElementsInitializer {
 
 	@Override
 	public void register() {
+		this.registerStrippableBlocks();
+		this.registerFuelElements();
+		this.registerCompostableElements();
+		this.registerFlammableElements();
+	}
+
+	private void registerStrippableBlocks() {
 		StrippableBlockRegistry.register(ArcheonBlocks.PALM_WOOD, ArcheonBlocks.STRIPPED_PALM_WOOD);
 		StrippableBlockRegistry.register(ArcheonBlocks.PALM_LOG, ArcheonBlocks.STRIPPED_PALM_LOG);
 		StrippableBlockRegistry.register(ArcheonBlocks.NECLANE_WOOD, ArcheonBlocks.STRIPPED_NECLANE_WOOD);
@@ -20,6 +29,9 @@ public class ArcheonContentRegistries implements ElementsInitializer {
 		StrippableBlockRegistry.register(ArcheonBlocks.NUME_WILLOW_LOG, ArcheonBlocks.STRIPPED_NUME_WILLOW_LOG);
 		StrippableBlockRegistry.register(ArcheonBlocks.NYRETH_WOOD, ArcheonBlocks.STRIPPED_NYRETH_WOOD);
 		StrippableBlockRegistry.register(ArcheonBlocks.NYRETH_LOG, ArcheonBlocks.STRIPPED_NYRETH_LOG);
+	}
+
+	private void registerFuelElements() {
 		FuelRegistry.INSTANCE.add(ArcheonItems.EXYRIANE_SHARD, 1600);
 		FuelRegistry.INSTANCE.add(ArcheonBlocks.EXYRIANE_BLOCK.getItem(), 16000);
 		FuelRegistry.INSTANCE.add(ArcheonTags.Items.PLANKS, 300);
@@ -47,5 +59,161 @@ public class ArcheonContentRegistries implements ElementsInitializer {
 		FuelRegistry.INSTANCE.add(ArcheonBlocks.STRIPPED_VUXANCIA_WOOD.getItem(), 300);
 		FuelRegistry.INSTANCE.add(ArcheonBlocks.STRIPPED_NUME_WILLOW_WOOD.getItem(), 300);
 		FuelRegistry.INSTANCE.add(ArcheonBlocks.STRIPPED_NYRETH_WOOD.getItem(), 300);
+	}
+
+	private void registerCompostableElements() {
+		CompostingChanceRegistry.INSTANCE.add(ArcheonTags.Items.LEAVES, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.PALM_SAPLING, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.NECLANE_SAPLING, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.CYPRESS_SAPLING, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.PNEVENTIAL_VUXANCIA_SAPLING, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.STREIAN_VUXANCIA_SAPLING, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.ORIAN_VUXANCIA_SAPLING, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.VALE_VUXANCIA_SAPLING, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.ZIAL_VUXANCIA_SAPLING, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.WET_GRASS, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.TALL_WET_GRASS, 0.5f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.FLOWERED_WET_GRASS, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.FLOWERED_TALL_WET_GRASS, 0.5f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.WET_FERN, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.TALL_WET_FERN, 0.5f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.WET_GRASS_TUFFET, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.SNOWY_GRASS_TUFFET, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.SUNSET_ORCHID, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.ROSEYPIA, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.AEROLIA, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.ASTEDIBES, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.TWILIGHT_ROSE, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.PINK_LYCORIS, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.RED_LYCORIS, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.ORANGE_LYCORIS, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.OEA, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.IOPEA, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.TALL_IOPEA, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.ORGANDEANE_BLOSSOM, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.TALL_ORGANDEANE, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.SEPTICEOLIA, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.DOTTED_STOVIA, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.WILLS_OF_LIGHT, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.ETERNAL_FORTUNES, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.BLUE_DOELDIA, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.WHITE_DOELDIA, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.PINK_DOELDIA, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.YELLOW_DOELDIA, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.SMALL_HOT_SPRING_LILY_PAD, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.HOT_SPRING_LILY_PAD, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.GIANT_LILY, 1.0f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonItems.PLANT_FIBER, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonItems.MOSS_BALL, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.ACHREAN_MOSS, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.ACHREAN_MOSS_BLOCK, 0.65f);
+	}
+
+	private void registerFlammableElements() {
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PALM_PLANKS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NECLANE_PLANKS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.CYPRESS_PLANKS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.VUXANCIA_PLANKS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NUME_WILLOW_PLANKS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NYRETH_PLANKS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PALM_SLAB, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NECLANE_SLAB, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.CYPRESS_SLAB, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.VUXANCIA_SLAB, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NUME_WILLOW_SLAB, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NYRETH_SLAB, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PALM_FENCE_GATE, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NECLANE_FENCE_GATE, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.CYPRESS_FENCE_GATE, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.VUXANCIA_FENCE_GATE, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NUME_WILLOW_FENCE_GATE, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NYRETH_FENCE_GATE, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PALM_FENCE, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NECLANE_FENCE, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.CYPRESS_FENCE, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.VUXANCIA_FENCE, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NUME_WILLOW_FENCE, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NYRETH_FENCE, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PALM_STAIRS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NECLANE_STAIRS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.CYPRESS_STAIRS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.VUXANCIA_STAIRS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NUME_WILLOW_STAIRS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NYRETH_STAIRS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PALM_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NECLANE_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.CYPRESS_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.VUXANCIA_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NUME_WILLOW_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NYRETH_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PALM_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NECLANE_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.CYPRESS_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.VUXANCIA_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NUME_WILLOW_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NYRETH_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STRIPPED_PALM_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STRIPPED_NECLANE_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STRIPPED_CYPRESS_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STRIPPED_VUXANCIA_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STRIPPED_NUME_WILLOW_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STRIPPED_NYRETH_LOG, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PALM_WOOD, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NECLANE_WOOD, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.CYPRESS_WOOD, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.VUXANCIA_WOOD, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NUME_WILLOW_WOOD, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NYRETH_WOOD, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STRIPPED_PALM_WOOD, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STRIPPED_NECLANE_WOOD, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STRIPPED_CYPRESS_WOOD, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STRIPPED_VUXANCIA_WOOD, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STRIPPED_NUME_WILLOW_WOOD, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STRIPPED_NYRETH_WOOD, 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PALM_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NECLANE_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.FLOWERED_NECLANE_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.CYPRESS_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PNEVENTIAL_VUXANCIA_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STREIAN_VUXANCIA_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.ORIAN_VUXANCIA_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.VALE_VUXANCIA_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.ZIAL_VUXANCIA_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NUME_WILLOW_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NYRETH_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PNEVENTIAL_VUXANCIA_LEAVES_CARPET, 60, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STREIAN_VUXANCIA_LEAVES_CARPET, 60, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.ORIAN_VUXANCIA_LEAVES_CARPET, 60, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.VALE_VUXANCIA_LEAVES_CARPET, 60, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.ZIAL_VUXANCIA_LEAVES_CARPET, 60, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.WET_GRASS, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.TALL_WET_GRASS, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.FLOWERED_WET_GRASS, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.FLOWERED_TALL_WET_GRASS, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.WET_FERN, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.TALL_WET_FERN, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.WET_GRASS_TUFFET, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.SNOWY_GRASS_TUFFET, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.SUNSET_ORCHID, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.ROSEYPIA, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.AEROLIA, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.ASTEDIBES, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.TWILIGHT_ROSE, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PINK_LYCORIS, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.RED_LYCORIS, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.ORANGE_LYCORIS, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.OEA, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.IOPEA, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.TALL_IOPEA, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.ORGANDEANE_BLOSSOM, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.TALL_ORGANDEANE, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.SEPTICEOLIA, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.DOTTED_STOVIA, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.WILLS_OF_LIGHT, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.ETERNAL_FORTUNES, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.BLUE_DOELDIA, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.WHITE_DOELDIA, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PINK_DOELDIA, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.YELLOW_DOELDIA, 60, 100);
 	}
 }
