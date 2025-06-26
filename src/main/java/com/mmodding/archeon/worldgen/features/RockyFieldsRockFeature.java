@@ -64,6 +64,12 @@ public class RockyFieldsRockFeature extends AdvancedFeature<RockyFieldsRockFeatu
 			return false;
 		}
 
+		for (BlockPos pos : BlockPos.iterate(basePos.add(-1, 0, -1), basePos.add(1, 0, 1))) {
+			if (structureWorldAccess.getBlockState(pos).isAir()) {
+				return false;
+			}
+		}
+
 		if (originPos.getY() > structureWorldAccess.getBottomY() + 4) {
 
 			int longerSide = random.nextInt(2);

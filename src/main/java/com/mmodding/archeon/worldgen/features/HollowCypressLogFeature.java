@@ -67,7 +67,7 @@ public class HollowCypressLogFeature extends AdvancedFeature<HollowCypressLogFea
 				blockPositions.add(context.getOrigin().offset(randomPickedDirection, i));
 			}
 			int numberOfBlocksNotOnAir = blockPositions.stream().filter(pos -> context.getWorld().testBlockState(pos.down(), state -> !state.isAir())).collect(Collectors.toSet()).size();
-			if (blockPositions.size() * 0.6 >= numberOfBlocksNotOnAir) { // Simple check that at least 60% of block positions are not on air
+			if (randomPickedLength * 0.66 <= numberOfBlocksNotOnAir) { // Simple check that at least two thirds of block positions are not on air blocks
 				for (BlockPos pos : blockPositions) {
 					context.getWorld().setBlockState(
 						pos,
