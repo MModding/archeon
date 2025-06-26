@@ -62,7 +62,24 @@ public class ArcheonContentRegistries implements ElementsInitializer {
 	}
 
 	private void registerCompostableElements() {
-		CompostingChanceRegistry.INSTANCE.add(ArcheonTags.Items.LEAVES, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.BUSH_LEAVES, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.PALM_LEAVES, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.NECLANE_LEAVES, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.FLOWERED_NECLANE_LEAVES, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.CYPRESS_LEAVES, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.PNEVENTIAL_VUXANCIA_LEAVES, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.STREIAN_VUXANCIA_LEAVES, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.ORIAN_VUXANCIA_LEAVES, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.VALE_VUXANCIA_LEAVES, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.ZIAL_VUXANCIA_LEAVES, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.PNEVENTIAL_VUXANCIA_LEAVES_CARPET, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.STREIAN_VUXANCIA_LEAVES_CARPET, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.ORIAN_VUXANCIA_LEAVES_CARPET, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.VALE_VUXANCIA_LEAVES_CARPET, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.ZIAL_VUXANCIA_LEAVES_CARPET, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.NUME_WILLOW_LEAVES, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.NYRETH_LEAVES, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.PALE_NYRETH_LEAVES, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.PALM_SAPLING, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.NECLANE_SAPLING, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(ArcheonBlocks.CYPRESS_SAPLING, 0.3f);
@@ -181,6 +198,7 @@ public class ArcheonContentRegistries implements ElementsInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.ZIAL_VUXANCIA_LEAVES, 30, 60);
 		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NUME_WILLOW_LEAVES, 30, 60);
 		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.NYRETH_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PALE_NYRETH_LEAVES, 30, 60);
 		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.PNEVENTIAL_VUXANCIA_LEAVES_CARPET, 60, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.STREIAN_VUXANCIA_LEAVES_CARPET, 60, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ArcheonBlocks.ORIAN_VUXANCIA_LEAVES_CARPET, 60, 20);
