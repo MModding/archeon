@@ -93,7 +93,7 @@ public class ArcheonEntities implements ElementsInitializer {
 			.entityFactory(MourncreepEntity::new)
 			.spawnGroup(SpawnGroup.MONSTER)
 			.defaultAttributes(MourncreepEntity::createMourncreepAttributes)
-			.dimensions(EntityDimensions.fixed(0.6f, 1.95f))
+			.dimensions(EntityDimensions.changing(0.6f, 1.95f))
 			.trackRangeChunks(8)
 	);
 
