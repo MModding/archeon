@@ -17,6 +17,10 @@ public class SnailEntityRenderer extends MobEntityRenderer<SnailEntity, SnailEnt
 
 	@Override
 	public Identifier getTexture(SnailEntity entity) {
-		return new TextureLocation(Archeon.id(), "entity/snail");
+		return switch (entity.getVariant()) {
+			case BROWN -> new TextureLocation(Archeon.id(), "entity/snail/brown");
+			case GRAY -> new TextureLocation(Archeon.id(), "entity/snail/gray");
+			case WHITE -> new TextureLocation(Archeon.id(), "entity/snail/white");
+		};
 	}
 }

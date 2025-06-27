@@ -3,27 +3,45 @@ package com.mmodding.archeon.entities;
 import com.mmodding.archeon.init.ArcheonEntities;
 import com.mmodding.archeon.init.ArcheonItems;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.LocalDifficulty;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class SnailEntity extends AnimalEntity {
 
+	private static final TrackedData<Integer> VARIANT = DataTracker.registerData(SnailEntity.class, TrackedDataHandlerRegistry.INTEGER);
+
 	public SnailEntity(EntityType<? extends SnailEntity> entityType, World world) {
 		super(entityType, world);
+	}
+
+	public static DefaultAttributeContainer.Builder createSnailAttributes() {
+		return MobEntity.createMobAttributes()
+			.add(EntityAttributes.GENERIC_MAX_HEALTH, 7.0f)
+			.add(EntityAttributes.GENERIC_ARMOR, 1.0f)
+			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.15f);
 	}
 
 	@Override
@@ -36,11 +54,36 @@ public class SnailEntity extends AnimalEntity {
 		this.goalSelector.add(5, new WanderAroundFarGoal(this, 1.0));
 	}
 
-	public static DefaultAttributeContainer.Builder createSnailAttributes() {
-		return MobEntity.createMobAttributes()
-			.add(EntityAttributes.GENERIC_MAX_HEALTH, 7.0f)
-			.add(EntityAttributes.GENERIC_ARMOR, 1.0f)
-			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.15f);
+	@Override
+	protected void initDataTracker() {
+		super.initDataTracker();
+		this.dataTracker.startTracking(SnailEntity.VARIANT, 0);
+	}
+
+	@Override
+	public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
+		this.dataTracker.set(SnailEntity.VARIANT, world.getRandom().nextInt(3));
+		return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
+	}
+
+	@Override
+	public void writeCustomDataToNbt(NbtCompound nbt) {
+		super.writeCustomDataToNbt(nbt);
+		nbt.putInt("Variant", this.getVariantIndex());
+	}
+
+	@Override
+	public void readCustomDataFromNbt(NbtCompound nbt) {
+		super.readCustomDataFromNbt(nbt);
+		this.dataTracker.set(SnailEntity.VARIANT, MathHelper.clamp(nbt.getInt("Variant"), 0, 2));
+	}
+
+	public Variant getVariant() {
+		return Variant.values()[this.getVariantIndex()];
+	}
+
+	private int getVariantIndex() {
+		return MathHelper.clamp(this.dataTracker.get(SnailEntity.VARIANT), 0, 2);
 	}
 
 	@Nullable
@@ -74,5 +117,11 @@ public class SnailEntity extends AnimalEntity {
 	@Override
 	public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
 		return ArcheonEntities.SNAIL.create(world);
+	}
+
+	public enum Variant {
+		BROWN,
+		GRAY,
+		WHITE
 	}
 }
