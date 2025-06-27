@@ -169,8 +169,8 @@ public class SunstradiverEntityModel extends EntityModel<SunstradiverEntity> {
 		this.rightWing.pivotX = -2.5F;
 		switch (!entity.isInAir() ? 0 : 1) {
 			case 0:
-				this.leftLeg.pitch += MathHelper.cos(limbSwing * 0.6662F) * 1.4f * limbSwingAmount;
-				this.rightLeg.pitch += MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4f * limbSwingAmount;
+				this.leftLeg.pitch += MathHelper.cos(limbSwing * 0.6662f) * 1.4f * limbSwingAmount;
+				this.rightLeg.pitch += MathHelper.cos(limbSwing * 0.6662f + (float) Math.PI) * 1.4f * limbSwingAmount;
 			case 1:
 			default:
 				float pivotAgeBased = ageInTicks * 0.3F;

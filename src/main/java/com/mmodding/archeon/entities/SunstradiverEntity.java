@@ -53,12 +53,6 @@ public class SunstradiverEntity extends WingedAnimalEntity implements Flutterer 
 	}
 
 	@Override
-	public void tickMovement() {
-		super.tickMovement();
-		this.flapWings();
-	}
-
-	@Override
 	public void setTarget(@Nullable LivingEntity target) {
 		if (target instanceof SnailEntity) {
 			super.setTarget(target);

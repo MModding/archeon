@@ -13,7 +13,7 @@ import net.minecraft.util.math.MathHelper;
 public class SunstradiverEntityRenderer extends MobEntityRenderer<SunstradiverEntity, SunstradiverEntityModel> {
 
 	public SunstradiverEntityRenderer(EntityRendererFactory.Context context) {
-		super(context, new SunstradiverEntityModel(context.getPart(ArcheonEntityModelLayers.SUNSTRADIVER)), 0.5f);
+		super(context, new SunstradiverEntityModel(context.getPart(ArcheonEntityModelLayers.SUNSTRADIVER)), 0.3f);
 	}
 
 	@Override
@@ -21,9 +21,9 @@ public class SunstradiverEntityRenderer extends MobEntityRenderer<SunstradiverEn
 		return new TextureLocation(Archeon.id(), "entity/sunstradiver");
 	}
 
-	public float getAnimationProgress(SunstradiverEntity parrotEntity, float f) {
-		float flapProgress = MathHelper.lerp(f, parrotEntity.prevFlapProgress().getValue(), parrotEntity.flapProgress().getValue());
-		float wingDeviation = MathHelper.lerp(f, parrotEntity.prevMaxWingDeviation().getValue(), parrotEntity.maxWingDeviation().getValue());
+	public float getAnimationProgress(SunstradiverEntity sunstradiverEntity, float f) {
+		float flapProgress = MathHelper.lerp(f, sunstradiverEntity.prevFlapProgress().getValue(), sunstradiverEntity.flapProgress().getValue());
+		float wingDeviation = MathHelper.lerp(f, sunstradiverEntity.prevMaxWingDeviation().getValue(), sunstradiverEntity.maxWingDeviation().getValue());
 		return (MathHelper.sin(flapProgress) + 1.0F) * wingDeviation;
 	}
 }
