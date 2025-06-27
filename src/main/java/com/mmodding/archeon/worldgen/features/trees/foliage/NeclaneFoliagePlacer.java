@@ -20,7 +20,6 @@ import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
 
-import java.util.Arrays;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -71,7 +70,7 @@ public class NeclaneFoliagePlacer extends CustomFoliagePlacer {
 		Direction opposite = direction.getOpposite();
 		BlockPos crossPos = pos.offset(direction);
 		this.placeNeclaneFoliage(world, replacer, random, config, crossPos);
-		Arrays.stream(Direction.values()).filter(filter -> filter != direction && filter != opposite).forEach(crossDirection -> this.placeNeclaneFoliage(world, replacer, random, config, crossPos.offset(crossDirection)));
+		Direction.stream().filter(filter -> filter != direction && filter != opposite).forEach(crossDirection -> this.placeNeclaneFoliage(world, replacer, random, config, crossPos.offset(crossDirection)));
 	}
 
 	protected void placeRandomlyFromCenterIfValid(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, RandomGenerator random, TreeFeatureConfig config, BlockPos pos, BlockPos centerPos) {
@@ -91,7 +90,7 @@ public class NeclaneFoliagePlacer extends CustomFoliagePlacer {
 			if (random.nextFloat() <= probability) {
 				Predicate<BlockPos> check = p -> world.testBlockState(p, state -> state.isOf(ArcheonBlocks.NECLANE_LEAVES) || state.isOf(ArcheonBlocks.FLOWERED_NECLANE_LEAVES));
 
-				if (Direction.stream().map(direction -> check.test(pos.offset(direction))).filter(Boolean::booleanValue).collect(Collectors.toSet()).size() >= (probability <= 0.6f ? 2 : 1)) {
+				if (Direction.stream().filter(direction -> check.test(pos.offset(direction))).collect(Collectors.toSet()).size() >= (probability <= 0.6f ? 2 : 1)) {
 					this.placeNeclaneFoliage(world, replacer, random, config, pos);
 				}
 			}
