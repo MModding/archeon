@@ -857,6 +857,17 @@ public class ArcheonBlocks implements ElementsInitializer {
 		true
 	);
 
+	public static final CustomFenceBlock ANHYDRITE_FENCE = new CustomFenceBlock(
+		DefaultBlockSettings.AMETHYST_SETTINGS
+			.translucent(TriState.TRUE)
+			.invisibleSides()
+			.nonOpaque()
+			.blockVision(AdvancedBlockSettings::never)
+			.luminance(3)
+			.emissiveLighting(AdvancedBlockSettings::always),
+		true
+	);
+
 	public static final CustomBlock ANHYDRITE_BRICKS = new CustomBlock(
 		DefaultBlockSettings.AMETHYST_SETTINGS
 			.translucent(TriState.TRUE)
@@ -1527,6 +1538,7 @@ public class ArcheonBlocks implements ElementsInitializer {
 		ANHYDRITE_SLAB.register(Archeon.createId("anhydrite_slab"));
 		ANHYDRITE_WALL.register(Archeon.createId("anhydrite_wall"));
 		ANHYDRITE_PRESSURE_PLATE.register(Archeon.createId("anhydrite_pressure_plate"));
+		ANHYDRITE_FENCE.register(Archeon.createId("anhydrite_fence"));
 		ANHYDRITE_BRICKS.register(Archeon.createId("anhydrite_bricks"));
 		ANHYDRITE_BRICK_STAIRS.register(Archeon.createId("anhydrite_brick_stairs"));
 		ANHYDRITE_BRICK_SLAB.register(Archeon.createId("anhydrite_brick_slab"));

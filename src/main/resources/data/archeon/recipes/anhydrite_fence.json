@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "A A"
+  ],
+  "key": {
+    "A": {
+      "item": "archeon:anhydrite"
+    }
+  },
+  "result": {
+    "item": "archeon:anhydrite_fence",
+    "count": 4
+  }
+}

@@ -71,6 +71,7 @@
   "block.archeon.anhydrite_brick_stairs": "Escadas de tijolos de anidrita",
   "block.archeon.anhydrite_brick_wall": "Muro de tijolos de anidrita",
   "block.archeon.anhydrite_bricks": "Tijolos de anidrita",
+  "block.archeon.anhydrite_fence": "Cerca de anidrita",
   "block.archeon.anhydrite_pillar": "Pilar de anidrita",
   "block.archeon.anhydrite_pressure_plate": "Placa de pressão de anidrita",
   "block.archeon.anhydrite_slab": "Laje de anidrita",
@@ -782,5 +783,6 @@
   "loreData.archeon.the_tower_of_atmosphere.title": "Torre da Atmosfera",
   "loreData.archeon.wood.desc": "Há árvores por todo lugar, então madeira realmente não é um problema aqui. É tão abundante! Podem fazer ferramentas com sua madeira, embora sejam terrivelmente desajeitadas. Meh, quem se importa de qualquer maneira, já que agora eu tenho esse equipamento brilhante. Construir estruturas baseadas em madeira ainda é sempre uma coisa divertida.",
   "loreData.archeon.wood.title": "Madeira",
+  "loreData.desc.desc": "Empty",
   "subtitles.pe4k": "Tim Rurkowski - P1co"
 }

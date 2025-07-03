@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "archeon:anhydrite_fence",
     "archeon:ceramic_fence"
   ]
 }

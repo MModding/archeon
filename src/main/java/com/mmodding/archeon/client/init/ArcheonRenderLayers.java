@@ -140,6 +140,7 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.ANHYDRITE_SLAB.translucent();
 		ArcheonBlocks.ANHYDRITE_WALL.translucent();
 		ArcheonBlocks.ANHYDRITE_PRESSURE_PLATE.translucent();
+		ArcheonBlocks.ANHYDRITE_FENCE.translucent();
 
 		ArcheonBlocks.ANHYDRITE_BRICKS.translucent();
 		ArcheonBlocks.ANHYDRITE_BRICK_STAIRS.translucent();
@@ -167,6 +168,7 @@ public class ArcheonRenderLayers implements ClientElementsInitializer {
 		ArcheonBlocks.ANHYDRITE_SLAB.transparent();
 		ArcheonBlocks.ANHYDRITE_WALL.transparent();
 		ArcheonBlocks.ANHYDRITE_PRESSURE_PLATE.transparent();
+		ArcheonBlocks.ANHYDRITE_FENCE.transparent();
 
 		ArcheonBlocks.ANHYDRITE_BRICKS.transparent();
 		ArcheonBlocks.ANHYDRITE_BRICK_STAIRS.transparent();
