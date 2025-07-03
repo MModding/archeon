@@ -1,9 +1,6 @@
 {
   "replace": false,
   "values": [
-    "archeon:ceramic_fence",
-    "archeon:criadan_brick_fence",
-    "archeon:criadan_tile_fence",
-    "archeon:polished_criadan_fence"
+    "archeon:ceramic_fence"
   ]
 }

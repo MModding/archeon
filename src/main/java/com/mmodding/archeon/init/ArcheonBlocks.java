@@ -766,21 +766,18 @@ public class ArcheonBlocks implements ElementsInitializer {
 	public static final CustomStairsBlock CRIADAN_BRICK_STAIRS = new CustomStairsBlock(CRIADAN_BRICKS.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomSlabBlock CRIADAN_BRICK_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomWallBlock CRIADAN_BRICK_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomFenceBlock CRIADAN_BRICK_FENCE = new CustomFenceBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomPressurePlateBlock CRIADAN_BRICK_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock CRIADAN_TILES = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock CRIADAN_TILE_STAIRS = new CustomStairsBlock(CRIADAN_TILES.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomSlabBlock CRIADAN_TILE_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomWallBlock CRIADAN_TILE_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomFenceBlock CRIADAN_TILE_FENCE = new CustomFenceBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomPressurePlateBlock CRIADAN_TILE_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomBlock POLISHED_CRIADAN = new CustomBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomStairsBlock POLISHED_CRIADAN_STAIRS = new CustomStairsBlock(POLISHED_CRIADAN.getDefaultState(), DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomSlabBlock POLISHED_CRIADAN_SLAB = new CustomSlabBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomWallBlock POLISHED_CRIADAN_WALL = new CustomWallBlock(DefaultBlockSettings.STONE_SETTINGS, true);
-	public static final CustomFenceBlock POLISHED_CRIADAN_FENCE = new CustomFenceBlock(DefaultBlockSettings.STONE_SETTINGS, true);
 	public static final CustomPressurePlateBlock POLISHED_CRIADAN_PRESSURE_PLATE = new CustomPressurePlateBlock(ActivationRule.MOBS, DefaultBlockSettings.STONE_SETTINGS, true);
 
 	public static final CustomPillarBlock CRIADAN_PILLAR = new CustomPillarBlock(DefaultBlockSettings.STONE_SETTINGS, true);
@@ -1507,19 +1504,16 @@ public class ArcheonBlocks implements ElementsInitializer {
 		CRIADAN_BRICK_STAIRS.register(Archeon.createId("criadan_brick_stairs"));
 		CRIADAN_BRICK_SLAB.register(Archeon.createId("criadan_brick_slab"));
 		CRIADAN_BRICK_WALL.register(Archeon.createId("criadan_brick_wall"));
-		CRIADAN_BRICK_FENCE.register(Archeon.createId("criadan_brick_fence"));
 		CRIADAN_BRICK_PRESSURE_PLATE.register(Archeon.createId("criadan_brick_pressure_plate"));
 		CRIADAN_TILES.register(Archeon.createId("criadan_tiles"));
 		CRIADAN_TILE_STAIRS.register(Archeon.createId("criadan_tile_stairs"));
 		CRIADAN_TILE_SLAB.register(Archeon.createId("criadan_tile_slab"));
 		CRIADAN_TILE_WALL.register(Archeon.createId("criadan_tile_wall"));
-		CRIADAN_TILE_FENCE.register(Archeon.createId("criadan_tile_fence"));
 		CRIADAN_TILE_PRESSURE_PLATE.register(Archeon.createId("criadan_tile_pressure_plate"));
 		POLISHED_CRIADAN.register(Archeon.createId("polished_criadan"));
 		POLISHED_CRIADAN_STAIRS.register(Archeon.createId("polished_criadan_stairs"));
 		POLISHED_CRIADAN_SLAB.register(Archeon.createId("polished_criadan_slab"));
 		POLISHED_CRIADAN_WALL.register(Archeon.createId("polished_criadan_wall"));
-		POLISHED_CRIADAN_FENCE.register(Archeon.createId("polished_criadan_fence"));
 		POLISHED_CRIADAN_PRESSURE_PLATE.register(Archeon.createId("polished_criadan_pressure_plate"));
 		CRIADAN_PILLAR.register(Archeon.createId("criadan_pillar"));
 		CHISELED_CRIADAN.register(Archeon.createId("chiseled_criadan"));

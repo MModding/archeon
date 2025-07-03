@@ -1,6 +1,6 @@
 {
-  "advancements.archeon.antique_jewelry.title": "Antique Jewelry",
   "advancements.archeon.antique_jewelry.description": "Find the Amulet of Nature",
+  "advancements.archeon.antique_jewelry.title": "Antique Jewelry",
   "advancements.archeon.arches_of_yore.description": "Find the Panopticon",
   "advancements.archeon.arches_of_yore.title": "Arches of Yore",
   "advancements.archeon.blush_ambers.description": "Collect some Apaflorite",
@@ -179,7 +179,6 @@
   "block.archeon.cracked_artemnite_bricks": "Cracked Artemnite Bricks",
   "block.archeon.cracked_chiaspen_bricks": "Cracked Chiaspen Bricks",
   "block.archeon.criadan": "Criadan",
-  "block.archeon.criadan_brick_fence": "Criadan Brick Fence",
   "block.archeon.criadan_brick_pressure_plate": "Criadan Brick Pressure Plate",
   "block.archeon.criadan_brick_slab": "Criadan Brick Slab",
   "block.archeon.criadan_brick_stairs": "Criadan Brick Stairs",
@@ -189,7 +188,6 @@
   "block.archeon.criadan_pressure_plate": "Criadan Pressure Plate",
   "block.archeon.criadan_slab": "Criadan Slab",
   "block.archeon.criadan_stairs": "Criadan Stairs",
-  "block.archeon.criadan_tile_fence": "Criadan Tile Fence",
   "block.archeon.criadan_tile_pressure_plate": "Criadan Tile Pressure Plate",
   "block.archeon.criadan_tile_slab": "Criadan Tile Slab",
   "block.archeon.criadan_tile_stairs": "Criadan Tile Stairs",
@@ -431,7 +429,6 @@
   "block.archeon.polished_anhydrite_stairs": "Polished Anhydrite Stairs",
   "block.archeon.polished_anhydrite_wall": "Polished Anhydrite Wall",
   "block.archeon.polished_criadan": "Polished Criadan",
-  "block.archeon.polished_criadan_fence": "Polished Criadan Fence",
   "block.archeon.polished_criadan_pressure_plate": "Polished Criadan Pressure Plate",
   "block.archeon.polished_criadan_slab": "Polished Criadan Slab",
   "block.archeon.polished_criadan_stairs": "Polished Criadan Stairs",
@@ -785,5 +782,6 @@
   "loreData.archeon.the_tower_of_atmosphere.title": "Tower of Atmosphere",
   "loreData.archeon.wood.desc": "There are trees everywhere, so wood really isn't a problem here. It's so abundant! Can make tools out of their wood, although they're terribly clunky. Meh, who cares anyway, since now I have this shiny equipment. Building wood-based structures' still always a fun thing though.",
   "loreData.archeon.wood.title": "Wood",
+  "loreData.desc.desc": "Empty",
   "subtitles.pe4k": "Tim Rurkowski - Pe4k"
 }

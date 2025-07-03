@@ -1,7 +1,0 @@
-{
-  "parent": "block/fence_inventory",
-  "textures": {
-    "texture": "archeon:block/polished_criadan",
-    "particle": "archeon:block/polished_criadan"
-  }
-}
