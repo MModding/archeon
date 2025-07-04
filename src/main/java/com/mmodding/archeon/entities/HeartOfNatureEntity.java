@@ -11,7 +11,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.render.entity.feature.ConditionalOverlayOwner;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.control.FlightMoveControl;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.TargetGoal;
@@ -82,7 +81,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 	protected void initGoals() {
 		this.goalSelector.add(0, new MoveToSpecificPosGoal(this, 2.0, 16, 16, this::isRecoveringOriginalPos, this::getOriginalPos, this::posRecoveredPostProcess));
 		this.goalSelector.add(1, new HeartOfNatureAttackGoal(this, 1.0, false));
-		this.targetSelector.add(0, new TargetGoal<>(this, PlayerEntity.class, true));
+		this.targetSelector.add(0, new TargetGoal<>(this, PlayerEntity.class, true, entity -> entity instanceof PlayerEntity player && !player.getAbilities().invulnerable));
 	}
 
 	@Override
@@ -397,10 +396,8 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 	}
 
 	@Override
-	public void setTarget(@Nullable LivingEntity target) {
-		if (target instanceof PlayerEntity && !this.isShieldDeployed()) {
-			super.setTarget(target);
-		}
+	public boolean canTarget(EntityType<?> type) {
+		return !this.isShieldDeployed();
 	}
 
 	public static DefaultAttributeContainer.Builder createHeartOfNatureAttributes() {

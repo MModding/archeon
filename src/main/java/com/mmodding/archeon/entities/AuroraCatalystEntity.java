@@ -61,7 +61,7 @@ public class AuroraCatalystEntity extends HostileEntity {
 	protected void initGoals() {
 		this.goalSelector.add(0, new MeleeAttackGoal(this, 2.0f, false));
 		this.goalSelector.add(1, new AuroraCatalystFlyingGoal(this, 1.0));
-		this.targetSelector.add(0, new TargetGoal<>(this, PlayerEntity.class, true));
+		this.targetSelector.add(0, new TargetGoal<>(this, PlayerEntity.class, true, entity -> entity instanceof PlayerEntity player && !player.getAbilities().invulnerable));
 	}
 
 	@Override
@@ -139,13 +139,6 @@ public class AuroraCatalystEntity extends HostileEntity {
 				(this.random.nextFloat() - 0.5f) * velocityMultiplier,
 				(this.random.nextFloat() - 0.5f) * velocityMultiplier
 			);
-		}
-	}
-
-	@Override
-	public void setTarget(@Nullable LivingEntity target) {
-		if (target instanceof PlayerEntity) {
-			super.setTarget(target);
 		}
 	}
 
