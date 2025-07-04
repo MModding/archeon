@@ -215,7 +215,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final CustomRandomPatchFeature PATCH_WET_GRASS_TUFFET = new CustomRandomPatchFeature(10, 7, 3,
 		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.WET_GRASS_TUFFET)))).setCount(3);
 	public static final CustomRandomPatchFeature PATCH_SNOWY_GRASS_TUFFET = new CustomRandomPatchFeature(20, 7, 3,
-		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.SNOWY_GRASS_TUFFET)))).setCount(7);
+		PlacedFeatureUtil.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ArcheonBlocks.SNOWY_GRASS_TUFFET)))).setCount(3)
+		.addPlacedFeature(9, 0, "forest");
 
 	public static final CustomRandomPatchFeature PATCH_SOUTH_WHEAT = new CustomRandomPatchFeature(
 		40, 7, 3,
@@ -781,6 +782,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		PATCH_TALL_WET_FERN.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_WET_GRASS_TUFFET.addDefaultToBiomes(randomPatchPredicate);
 		PATCH_SNOWY_GRASS_TUFFET.addDefaultToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_SLOPES) || ctx.getBiomeKey().equals(ArcheonBiomes.SOUTH_SNOWY_PEAKS));
+		PATCH_SNOWY_GRASS_TUFFET.addAdditionalToBiomes(ctx -> ctx.getBiomeKey().equals(ArcheonBiomes.SNOWY_VUXANCIA_FOREST), "forest");
 
 		PATCH_SOUTH_WHEAT.addDefaultToBiomes(randomPatchNoColdPredicate);
 
