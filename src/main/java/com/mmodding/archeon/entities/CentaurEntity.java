@@ -29,6 +29,9 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.boss.BossBar;
 import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.PathAwareEntity;
@@ -58,6 +61,8 @@ import java.util.List;
 import java.util.Map;
 
 public class CentaurEntity extends HostileEntity implements RangedAttackMob {
+
+	private static final TrackedData<Integer> TIME_WITHOUT_TARGET = DataTracker.registerData(CentaurEntity.class, TrackedDataHandlerRegistry.INTEGER);
 
 	public final EntityAction firstHalfAction;
 	public final EntityAction secondHalfAction;
@@ -110,6 +115,12 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 		this.targetSelector.add(0, new CentaurTargetGoal(this, true));
 	}
 
+	@Override
+	protected void initDataTracker() {
+		super.initDataTracker();
+		this.dataTracker.startTracking(CentaurEntity.TIME_WITHOUT_TARGET, 0);
+	}
+
 	private void updateGoals() {
 		if (!this.getWorld().isClient()) {
 			this.goalSelector.remove(this.firstHalfGoal);
@@ -125,6 +136,7 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 	@Override
 	public void writeCustomDataToNbt(NbtCompound nbt) {
 		super.writeCustomDataToNbt(nbt);
+		nbt.putInt("TimeWithoutTarget", this.dataTracker.get(TIME_WITHOUT_TARGET));
 		NbtCompound vaultPos = new NbtCompound();
 		vaultPos.putInt("X", this.vaultPos.getX());
 		vaultPos.putInt("Y", this.vaultPos.getY());
@@ -135,6 +147,7 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 	@Override
 	public void readCustomDataFromNbt(NbtCompound nbt) {
 		super.readCustomDataFromNbt(nbt);
+		this.dataTracker.set(TIME_WITHOUT_TARGET, nbt.getInt("TimeWithoutTarget"));
 		NbtCompound vaultPos = nbt.getCompound("VaultPos");
 		this.vaultPos = new BlockPos(
 			vaultPos.getInt("X"),
@@ -186,6 +199,18 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 	@Override
 	protected void mobTick() {
 		super.mobTick();
+
+		if (this.getTarget() == null && this.dataTracker.get(TIME_WITHOUT_TARGET) <= 200) {
+			this.dataTracker.set(TIME_WITHOUT_TARGET, this.dataTracker.get(TIME_WITHOUT_TARGET) + 1);
+		}
+		else if (this.getTarget() != null && this.dataTracker.get(TIME_WITHOUT_TARGET) != 0) {
+			this.dataTracker.set(TIME_WITHOUT_TARGET, 0);
+		}
+
+		if (this.dataTracker.get(TIME_WITHOUT_TARGET) == 200) {
+			this.setHealth(this.getMaxHealth());
+			this.updateGoals();
+		}
 
 		this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
 	}

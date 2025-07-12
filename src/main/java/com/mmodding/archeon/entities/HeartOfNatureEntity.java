@@ -56,6 +56,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 	private static final TrackedData<Integer> PHASE = DataTracker.registerData(HeartOfNatureEntity.class, TrackedDataHandlerRegistry.INTEGER);
 	private static final TrackedData<Boolean> SHIELD = DataTracker.registerData(HeartOfNatureEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 	private static final TrackedData<List<UUID>> SOLDIERS = DataTracker.registerData(HeartOfNatureEntity.class, MModdingTrackedDataHandlers.UUID_LIST);
+	private static final TrackedData<Integer> TIME_WITHOUT_TARGET = DataTracker.registerData(HeartOfNatureEntity.class, TrackedDataHandlerRegistry.INTEGER);
 
 	private final SyncableData<Boolean> originalPosRecoveringState = new SyncableData<>(
 		Boolean.FALSE,
@@ -69,8 +70,6 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 	private boolean reloaded = false;
 
 	private Vec3d originalPos = Vec3d.ZERO;
-
-	private UUID lastHit = null;
 
 	public HeartOfNatureEntity(EntityType<? extends HeartOfNatureEntity> entityType, World world) {
 		super(entityType, world);
@@ -90,6 +89,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		this.dataTracker.startTracking(HeartOfNatureEntity.PHASE, 0);
 		this.dataTracker.startTracking(HeartOfNatureEntity.SHIELD, false);
 		this.dataTracker.startTracking(HeartOfNatureEntity.SOLDIERS, new ArrayList<>());
+		this.dataTracker.startTracking(HeartOfNatureEntity.TIME_WITHOUT_TARGET, 0);
 	}
 
 	@Override
@@ -100,14 +100,12 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		NbtList soldiers = new NbtList();
 		this.getSoldiers().forEach(soldier -> soldiers.add(NbtString.of(soldier.toString())));
 		nbt.put("Soldiers", soldiers);
+		nbt.putInt("TimeWithoutTarget", this.dataTracker.get(TIME_WITHOUT_TARGET));
 		NbtCompound originalPos = new NbtCompound();
 		originalPos.putDouble("X", this.originalPos.x);
 		originalPos.putDouble("Y", this.originalPos.y);
 		originalPos.putDouble("Z", this.originalPos.z);
 		nbt.put("OriginalPos", originalPos);
-		if (this.lastHit != null) {
-			nbt.putUuid("LastHit", this.lastHit);
-		}
 	}
 
 	@Override
@@ -119,6 +117,7 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		for (int i = 0; i < soldiers.size(); i++) {
 			this.addSoldier(UUID.fromString(soldiers.getString(i)));
 		}
+		this.dataTracker.set(TIME_WITHOUT_TARGET, nbt.getInt("TimeWithoutTarget"));
 		NbtCompound originalPos = nbt.getCompound("OriginalPos");
 		this.originalPos = new Vec3d(
 			originalPos.getDouble("X"),
@@ -127,9 +126,6 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 		);
 		if (this.hasCustomName()) {
 			this.bossBar.setName(this.getDisplayName());
-		}
-		if (nbt.contains("LastHit")) {
-			this.lastHit = nbt.getUuid("LastHit");
 		}
 	}
 
@@ -173,7 +169,6 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 
 	public void shieldDeployment(boolean deployed) {
 		this.dataTracker.set(HeartOfNatureEntity.SHIELD, deployed);
-		this.setTarget(null);
 	}
 
 	public List<UUID> getSoldiers() {
@@ -302,6 +297,29 @@ public class HeartOfNatureEntity extends HostileEntity implements ConditionalOve
 	@Override
 	protected void mobTick() {
 		super.mobTick();
+
+		if (this.getTarget() == null && this.dataTracker.get(TIME_WITHOUT_TARGET) <= 200) {
+			this.dataTracker.set(TIME_WITHOUT_TARGET, this.dataTracker.get(TIME_WITHOUT_TARGET) + 1);
+		}
+		else if (this.getTarget() != null && this.dataTracker.get(TIME_WITHOUT_TARGET) != 0) {
+			this.dataTracker.set(TIME_WITHOUT_TARGET, 0);
+		}
+
+		if (this.dataTracker.get(TIME_WITHOUT_TARGET) == 200) {
+			this.shieldDeployment(false);
+			this.teleport(this.originalPos.x, this.originalPos.y, this.originalPos.z);
+			this.setHealth(this.getMaxHealth());
+			this.dataTracker.set(PHASE, 0);
+			this.updateBossBar();
+			List<UUID> soldiers = new ArrayList<>(this.getSoldiers());
+			soldiers.forEach(uuid -> {
+				if (this.getWorld() instanceof ServerWorld serverWorld) {
+					Entity soldier = serverWorld.getEntity(uuid);
+					assert soldier != null;
+					soldier.remove(RemovalReason.DISCARDED);
+				}
+			});
+		}
 
 		if (!this.reloaded) {
 			this.updateBossBar();
