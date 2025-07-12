@@ -40,7 +40,12 @@
       }
     ]
   },
-  "spawn_costs": {},
+  "spawn_costs": {
+    "archeon:mourncreep": {
+      "energy_budget": 200,
+      "charge": 20
+    }
+  },
   "carvers": {},
   "features": []
 }
