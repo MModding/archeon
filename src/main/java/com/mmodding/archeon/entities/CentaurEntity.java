@@ -187,13 +187,11 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
 	@Override
 	public void tick() {
+		super.tick();
 		this.firstHalfAction.tick();
 		this.secondHalfAction.tick();
-		if (this.getWorld().isClient()) {
-			this.breathing.start(this.age);
-			this.galloping.start(this.age);
-		}
-		super.tick();
+		this.breathing.start(this.age);
+		this.galloping.start(this.age);
 	}
 
 	@Override

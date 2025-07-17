@@ -104,6 +104,7 @@ public class ArcheonEntities implements ElementsInitializer {
 			.defaultAttributes(CentaurEntity::createCentaurAttributes)
 			.dimensions(EntityDimensions.fixed(1.75f, 3.5f))
 			.trackRangeChunks(8)
+			.forceTrackedVelocityUpdates(true) // without that velocity is not updated properly, which fucks the animation system
 	);
 
 	public static final CustomEntityType<CentaurEntity> ARMORED_CENTAUR = CustomEntityType.createMob(
@@ -113,6 +114,7 @@ public class ArcheonEntities implements ElementsInitializer {
 			.defaultAttributes(CentaurEntity::createCentaurAttributes)
 			.dimensions(EntityDimensions.fixed(1.75f, 3.5f))
 			.trackRangeChunks(8)
+			.forceTrackedVelocityUpdates(true)
 	);
 
 	public static final CustomEntityType<LusonythArrowEntity> LUSONYTH_ARROW = CustomEntityType.create(

@@ -122,7 +122,7 @@ public class CentaurEntityModel extends SinglePartEntityModel<CentaurEntity> imp
 		AnimationUtils.updateAnimation(this, firstHalf, entity.firstHalfAction.getAnimationState(), animationProgress, 1.0f);
 		AnimationUtils.updateAnimation(this, secondHalf, entity.secondHalfAction.getAnimationState(), animationProgress, 1.0f);
 		if (!entity.firstHalfAction.isExecutingAction() && !entity.secondHalfAction.isExecutingAction()) {
-			if (AnimationUtils.isMoving(entity, limbDistance, 0.015f)) {
+			if (AnimationUtils.isMoving(entity, limbDistance)) {
 				Animation moving;
 				if (entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR)) {
 					moving = !entity.isAttacking() ? CentaurEntityAnimations.BATTLE_AXE_GALLOPING : CentaurEntityAnimations.BATTLE_AXE_WALKING; // target might be null on client
