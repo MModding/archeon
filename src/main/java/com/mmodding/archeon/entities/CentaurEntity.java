@@ -45,20 +45,15 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.property.Properties;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
 import net.minecraft.util.random.RandomGenerator;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.util.TriConsumer;
 import org.slf4j.LoggerFactory;
 
-import java.util.Arrays;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Predicate;
 
 public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
@@ -400,7 +395,17 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 			else if (this.cooldown == 0) {
 				LivingEntity target = this.centaur.getTarget();
 				assert target != null;
-				this.centaur.teleport(target.getX(), target.getY() + 10.0, target.getZ());
+				Vec3d teleportPosition = new Vec3d(target.getX(), target.getY() + 8.0, target.getZ());
+				Predicate<Vec3d> positionValidityChecker = (pos) -> {
+					BlockPos center = new BlockPos(pos);
+					return BlockPos.stream(center.add(-1, -1, -1), center.add(1, 1, 1))
+						.filter(currentPos -> this.centaur.getWorld().getBlockState(currentPos).isAir())
+						.count() == 27L;
+				};
+				while (!positionValidityChecker.test(teleportPosition) && teleportPosition.getY() > target.getY()) {
+					teleportPosition = new Vec3d(teleportPosition.getX(), teleportPosition.getY() - 1.0, teleportPosition.getZ());
+				}
+				this.centaur.teleport(teleportPosition.getX(), teleportPosition.getY(), teleportPosition.getZ());
 				RandomGenerator random = this.centaur.getRandom();
 				for (int i = 0; i < 5; i++) {
 					this.centaur.world.addParticle(
