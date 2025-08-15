@@ -215,6 +215,9 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
 	@Override
 	public boolean damage(DamageSource source, float amount) {
+		if (source.isProjectile() && source.getSource() != null && source.getSource().getPos().squaredDistanceTo(this.getPos()) >= 10.0f) {
+			return false;
+		}
 		float previousHealth = this.getHealth();
 		boolean bool = super.damage(source, amount);
 		if (this.isDead()) {
