@@ -8,11 +8,9 @@ import com.mmodding.archeon.init.ArcheonBlocks;
 import com.mmodding.archeon.init.ArcheonEntities;
 import com.mmodding.archeon.init.ArcheonItems;
 import com.mmodding.mmodding_lib.library.entities.action.EntityAction;
-import com.mmodding.mmodding_lib.library.entities.goals.CooledDownMeleeAttackGoal;
 import com.mmodding.mmodding_lib.library.math.OrientedBlockPos;
 import com.mmodding.mmodding_lib.library.utils.MapUtils;
 import com.mmodding.mmodding_lib.library.utils.TweakFunction;
-import com.mmodding.mmodding_lib.library.utils.WorldUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.enums.BlockHalf;
 import net.minecraft.block.enums.StairShape;
@@ -22,6 +20,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.RangedAttackMob;
 import net.minecraft.entity.ai.goal.Goal;
+import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.ProjectileAttackGoal;
 import net.minecraft.entity.ai.goal.TargetGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -71,6 +70,9 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 	public AnimationState galloping = new AnimationState();
 
 	private BlockPos vaultPos = BlockPos.ORIGIN;
+
+	// Entity Cooldowns
+	private int attackCooldown;
 
 	public CentaurEntity(EntityType<? extends CentaurEntity> entityType, World world) {
 		super(entityType, world);
@@ -193,6 +195,8 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 	protected void mobTick() {
 		super.mobTick();
 
+		this.attackCooldown--;
+
 		if (this.getTarget() == null && this.dataTracker.get(TIME_WITHOUT_TARGET) <= 200) {
 			this.dataTracker.set(TIME_WITHOUT_TARGET, this.dataTracker.get(TIME_WITHOUT_TARGET) + 1);
 		}
@@ -311,24 +315,29 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 		}
 	}
 
-	public static class CentaurCrossAttackGoal extends CooledDownMeleeAttackGoal {
+	public static class CentaurCrossAttackGoal extends MeleeAttackGoal {
 
 		private final CentaurEntity centaur;
+		private final int cooldownInTicks;
 
 		public CentaurCrossAttackGoal(PathAwareEntity mob, int cooldownInTicks, double speed) {
-			super(mob, cooldownInTicks, speed);
+			super(mob, speed, false);
 			this.centaur = (CentaurEntity) mob;
+			this.cooldownInTicks = cooldownInTicks;
 		}
 
 		@Override
-		protected void tryAttack(LivingEntity target) {
-			if (this.centaur.getWorld() instanceof ServerWorld) {
-				this.centaur.firstHalfAction.execute(() -> {
-					this.centaur.tryAttack(target);
-					Vec3d relativePos = this.mob.getPos().add(target.getPos());
-					Vec3d velocity = relativePos.multiply(0.25);
-					target.addVelocity(velocity.x, 0.6f, velocity.z);
-				});
+		protected void attack(LivingEntity target, double squaredDistance) {
+			if (this.centaur.attackCooldown < 0 && squaredDistance <= this.getSquaredMaxAttackDistance(target)) {
+				this.centaur.attackCooldown = this.getTickCount(this.cooldownInTicks);
+				if (this.centaur.getWorld() instanceof ServerWorld) {
+					this.centaur.firstHalfAction.execute(() -> {
+						this.centaur.tryAttack(target);
+						Vec3d relativePos = this.mob.getPos().add(target.getPos());
+						Vec3d velocity = relativePos.multiply(0.25);
+						target.addVelocity(velocity.x, 0.6f, velocity.z);
+					});
+				}
 			}
 		}
 
@@ -345,7 +354,6 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 		private final int cooldownIntTicks;
 
 		private long lastUpdateTime;
-		private int cooldown;
 
 		public CentaurDamageZoneAttackGoal(CentaurEntity centaur, int cooldownIntTicks) {
 			this.centaur = centaur;
@@ -373,7 +381,6 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 		@Override
 		public void start() {
 			this.centaur.setAttacking(true);
-			this.cooldown = 0;
 		}
 
 		@Override
@@ -392,10 +399,7 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
 		@Override
 		public void tick() {
-			if (this.cooldown > 0) {
-				this.cooldown -= 1;
-			}
-			else if (this.cooldown == 0) {
+			if (this.centaur.age % this.cooldownIntTicks == 0) {
 				LivingEntity target = this.centaur.getTarget();
 				assert target != null;
 				Vec3d teleportPosition = new Vec3d(target.getX(), target.getY() + 8.0, target.getZ());
@@ -421,13 +425,11 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 						random.nextDouble() - 0.5
 					);
 				}
-				this.cooldown = -1; // Prevents repeated execution
 				this.centaur.secondHalfAction.execute(() -> {
 					List<Entity> entitiesToOffend = this.centaur.world.getOtherEntities(this.centaur, Box.of(this.centaur.getPos(), 10.0, 1.0, 10.0), EntityPredicates.EXCEPT_CREATIVE_OR_SPECTATOR);
 					entitiesToOffend.forEach(this.centaur::tryAttack);
 					this.centaur.world.playSoundFromEntity(null, this.centaur, SoundEvents.ENTITY_RAVAGER_STEP, SoundCategory.BLOCKS, 1.0f, 1.0f);
 				});
-				WorldUtils.doSyncedTaskAfter(this.centaur.world, 27, () -> this.cooldown = this.getTickCount(this.cooldownIntTicks));
 			}
 		}
 	}
@@ -501,7 +503,6 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 		private final int cooldownInTicks;
 
 		private LivingEntity target;
-		private int cooldown;
 		private Direction lastDirection;
 
 		public CentaurMovingSpearAttackGoal(CentaurEntity centaur, int cooldownInTicks) {
@@ -533,7 +534,6 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 		@Override
 		public void stop() {
 			this.target = null;
-			this.cooldown = -1;
 		}
 
 		@Override
@@ -569,14 +569,11 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 			}
 			if (!this.centaur.secondHalfAction.isExecutingAction()) {
 				this.centaur.getLookControl().lookAt(this.target, 30.0f, 30.0f);
-				if (this.cooldown-- == 0) {
+				if (this.centaur.age % this.cooldownInTicks == 0) {
 					if (!this.centaur.getVisibilityCache().canSee(this.target)) {
 						return;
 					}
 					this.centaur.attack(this.target, 0);
-					this.cooldown = this.getTickCount(this.cooldownInTicks);
-				} else if (this.cooldown < 0) {
-					this.cooldown = this.getTickCount(this.cooldownInTicks);
 				}
 			}
 		}
