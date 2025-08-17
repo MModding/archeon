@@ -2,7 +2,7 @@
 
 # Archeon (Sullen Rifts)
 
-[<img src="https://github.com/MModding/art/blob/main/mods/archeon/banner.png?raw=true" width="512" alt="Archeon Banner">](https://modrinth.com/mod/extravaganza)
+[<img src="https://github.com/MModding/art/blob/main/mods/archeon/banner.png?raw=true" width="512" alt="Archeon Banner">](https://modrinth.com/mod/sullen-rifts)
 
 ## Supports
 
