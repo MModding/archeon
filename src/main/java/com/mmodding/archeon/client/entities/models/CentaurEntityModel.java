@@ -114,30 +114,28 @@ public class CentaurEntityModel extends SinglePartEntityModel<CentaurEntity> imp
 		return TexturedModelData.of(modelData, 128, 128);
 	}
 
+	private Animation pickAnimation(CentaurEntity entity, Animation armoredCentaurAnimation, Animation centaurAnimation) {
+		return entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? armoredCentaurAnimation : centaurAnimation;
+	}
+
 	@Override
 	public void setAngles(CentaurEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
 		this.getPart().traverse().forEach(ModelPart::resetTransform);
-		Animation firstHalf = entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? CentaurEntityAnimations.CROSS_ATTACK : CentaurEntityAnimations.SPEAR_THROW;
-		Animation secondHalf = entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? CentaurEntityAnimations.BATTLE_AXE_FALLING : CentaurEntityAnimations.SPEAR_FALLING;
+		Animation firstHalf = this.pickAnimation(entity, CentaurEntityAnimations.CROSS_ATTACK, CentaurEntityAnimations.SPEAR_THROW);
+		Animation secondHalf = this.pickAnimation(entity, CentaurEntityAnimations.BATTLE_AXE_FALLING, CentaurEntityAnimations.SPEAR_FALLING);
 		AnimationUtils.updateAnimation(this, firstHalf, entity.firstHalfAction.getAnimationState(), animationProgress, 1.0f);
 		AnimationUtils.updateAnimation(this, secondHalf, entity.secondHalfAction.getAnimationState(), animationProgress, 1.0f);
 		if (!entity.firstHalfAction.isExecutingAction() && !entity.secondHalfAction.isExecutingAction()) {
-			if (AnimationUtils.isMoving(entity, limbDistance)) {
-				Animation moving;
-				if (entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR)) {
-					moving = !entity.isAttacking() ? CentaurEntityAnimations.BATTLE_AXE_GALLOPING : CentaurEntityAnimations.BATTLE_AXE_WALKING; // target might be null on client
-				} else {
-					moving = !entity.isAttacking() ? CentaurEntityAnimations.SPEAR_GALLOPING : CentaurEntityAnimations.SPEAR_WALKING;
-				}
-				AnimationUtils.updateAnimation(this, moving, entity.galloping, animationProgress, !entity.isAttacking() ? 2.0f : 1.0f);
+			if (AnimationUtils.isMoving(entity, limbDistance, 0.2f)) { // Is Running
+				Animation galloping = this.pickAnimation(entity, CentaurEntityAnimations.BATTLE_AXE_GALLOPING, CentaurEntityAnimations.SPEAR_GALLOPING);
+				AnimationUtils.updateAnimation(this, galloping, entity.moving, animationProgress, 2.0f);
 			}
-			else {
-				Animation idle;
-				if (entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR)) {
-					idle = CentaurEntityAnimations.BATTLE_AXE_IDLE;
-				} else {
-					idle = CentaurEntityAnimations.SPEAR_IDLE;
-				}
+			else if (AnimationUtils.isMoving(entity, limbDistance)) { // Is Walking
+				Animation walking = this.pickAnimation(entity, CentaurEntityAnimations.BATTLE_AXE_WALKING, CentaurEntityAnimations.SPEAR_WALKING);
+				AnimationUtils.updateAnimation(this, walking, entity.moving, animationProgress, 1.0f);
+			}
+			else { // Is Idling
+				Animation idle = this.pickAnimation(entity, CentaurEntityAnimations.BATTLE_AXE_IDLE, CentaurEntityAnimations.SPEAR_IDLE);
 				AnimationUtils.updateAnimation(this, idle, entity.breathing, animationProgress, 1.0f);
 			}
 		}

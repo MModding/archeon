@@ -7,6 +7,7 @@ import com.mmodding.archeon.blocks.CentaurLifeVaultBlock;
 import com.mmodding.archeon.init.ArcheonBlocks;
 import com.mmodding.archeon.init.ArcheonEntities;
 import com.mmodding.archeon.init.ArcheonItems;
+import com.mmodding.mmodding_lib.library.debug.WatcherProvider;
 import com.mmodding.mmodding_lib.library.entities.action.EntityAction;
 import com.mmodding.mmodding_lib.library.math.OrientedBlockPos;
 import com.mmodding.mmodding_lib.library.utils.MapUtils;
@@ -19,10 +20,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.RangedAttackMob;
-import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.entity.ai.goal.ProjectileAttackGoal;
-import net.minecraft.entity.ai.goal.TargetGoal;
+import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.boss.BossBar;
@@ -52,9 +50,10 @@ import org.apache.logging.log4j.util.TriConsumer;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class CentaurEntity extends HostileEntity implements RangedAttackMob {
+public class CentaurEntity extends HostileEntity implements RangedAttackMob, WatcherProvider {
 
 	private static final TrackedData<Integer> TIME_WITHOUT_TARGET = DataTracker.registerData(CentaurEntity.class, TrackedDataHandlerRegistry.INTEGER);
 
@@ -67,11 +66,12 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 	private final Goal secondHalfGoal;
 
 	public AnimationState breathing = new AnimationState();
-	public AnimationState galloping = new AnimationState();
+	public AnimationState moving = new AnimationState();
 
 	private BlockPos vaultPos = BlockPos.ORIGIN;
 
-	// Entity Cooldowns
+	// Cooldown used for the CentaurCrossAttackGoal. When combined with the priority system, it allows
+	// to put an interval between different centaur attacks, this interval being another entity goal.
 	private int attackCooldown;
 
 	public CentaurEntity(EntityType<? extends CentaurEntity> entityType, World world) {
@@ -96,6 +96,14 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 		this.vaultPos = vaultPos;
 	}
 
+	@Override
+	public Map<String, Function<PlayerEntity, Object>> watcher() {
+		Map<String, Function<PlayerEntity, Object>> map = new LinkedHashMap<>();
+		map.put("target", p -> this.getTarget());
+		map.put("averageVelocity", p -> (MathHelper.abs((float) this.getVelocity().x) + MathHelper.abs((float) this.getVelocity().z)) / 2f);
+		return map;
+	}
+
 	public static DefaultAttributeContainer.Builder createCentaurAttributes() {
 		return MobEntity.createMobAttributes()
 			.add(EntityAttributes.GENERIC_MAX_HEALTH, 130.0f)
@@ -108,7 +116,13 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
 	@Override
 	protected void initGoals() {
-		this.goalSelector.add(1, new CentaurMovementGoal(this));
+		if (this.getType().equals(ArcheonEntities.ARMORED_CENTAUR)) {
+			this.goalSelector.add(1, new WanderNearTargetGoal(this, 1.0f, 16.0f));
+			this.goalSelector.add(2, new CentaurMovementGoal(this));
+		}
+		else {
+			this.goalSelector.add(1, new CentaurMovementGoal(this));
+		}
 		this.targetSelector.add(0, new CentaurTargetGoal(this, true));
 	}
 
@@ -188,14 +202,16 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 		this.firstHalfAction.tick();
 		this.secondHalfAction.tick();
 		this.breathing.start(this.age);
-		this.galloping.start(this.age);
+		this.moving.start(this.age);
 	}
 
 	@Override
 	protected void mobTick() {
 		super.mobTick();
 
-		this.attackCooldown--;
+		if (this.attackCooldown > 0 ) {
+			this.attackCooldown--;
+		}
 
 		if (this.getTarget() == null && this.dataTracker.get(TIME_WITHOUT_TARGET) <= 200) {
 			this.dataTracker.set(TIME_WITHOUT_TARGET, this.dataTracker.get(TIME_WITHOUT_TARGET) + 1);
@@ -311,7 +327,8 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 
 		@Override
 		protected Box getSearchBox(double distance) {
-			return Box.of(Vec3d.ofCenter(this.centaur.vaultPos), 22.5, 22.5, 22.5);
+			Vec3d base = Vec3d.ofBottomCenter(this.centaur.vaultPos);
+			return new Box(base.add(-11.25, 0, -11.25), base.add(11.25, 22.5, 11.25));
 		}
 	}
 
@@ -327,8 +344,18 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob {
 		}
 
 		@Override
+		public boolean canStart() {
+			return this.centaur.attackCooldown == 0 && super.canStart();
+		}
+
+		@Override
+		public boolean shouldContinue() {
+			return this.centaur.attackCooldown == 0 && super.shouldContinue();
+		}
+
+		@Override
 		protected void attack(LivingEntity target, double squaredDistance) {
-			if (this.centaur.attackCooldown < 0 && squaredDistance <= this.getSquaredMaxAttackDistance(target)) {
+			if (squaredDistance <= this.getSquaredMaxAttackDistance(target)) {
 				this.centaur.attackCooldown = this.getTickCount(this.cooldownInTicks);
 				if (this.centaur.getWorld() instanceof ServerWorld) {
 					this.centaur.firstHalfAction.execute(() -> {
