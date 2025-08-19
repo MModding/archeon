@@ -99,11 +99,18 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob, Wat
 	}
 
 	@Override
-	public Map<String, Function<PlayerEntity, Object>> watcher() {
+	public Map<String, Function<PlayerEntity, Object>> valueWatcher() {
 		Map<String, Function<PlayerEntity, Object>> map = new LinkedHashMap<>();
 		map.put("target", p -> this.getTarget());
-		map.put("averageVelocity", p -> (MathHelper.abs((float) this.getVelocity().x) + MathHelper.abs((float) this.getVelocity().z)) / 2f);
-		map.put("squaredDistance", p -> p.squaredDistanceTo(this.getPos()));
+		map.put("average_velocity", p -> (MathHelper.abs((float) this.getVelocity().x) + MathHelper.abs((float) this.getVelocity().z)) / 2f);
+		map.put("distance", p -> p.distanceTo(this));
+		return map;
+	}
+
+	@Override
+	public Map<String, Function<PlayerEntity, Vec3d>> spaceWatcher() {
+		Map<String, Function<PlayerEntity, Vec3d>> map = new LinkedHashMap<>();
+		map.put("next_position", p -> this.nextPosition);
 		return map;
 	}
 
@@ -121,8 +128,8 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob, Wat
 	protected void initGoals() {
 		if (this.getType().equals(ArcheonEntities.ARMORED_CENTAUR)) {
 			this.goalSelector.add(1, new CentaurMovementGoal( // When there is a target, but that the attack cooldown is still up.
-				this, () -> Objects.requireNonNull(this.getTarget()).getBlockPos(),
-				4.5f, () -> this.getTarget() != null
+				this, () -> Objects.requireNonNull(this.getTarget()).getPos(),
+				3.33f, () -> this.getTarget() != null
 			));
 			this.goalSelector.add(2, new CentaurMovementGoal(this)); // When there is no target.
 		}
@@ -286,18 +293,23 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob, Wat
 		}
 	}
 
+	// Debug Purposes
+	private Vec3d nextPosition;
+
 	public static class CentaurMovementGoal extends Goal {
 
+		private static final Vec3d ORIGIN = Vec3d.ofBottomCenter(BlockPos.ORIGIN);
+
 		private final CentaurEntity centaur;
-		private final Supplier<BlockPos> center;
+		private final Supplier<Vec3d> center;
 		private final double radius;
 		private final BooleanSupplier requirements;
 
 		public CentaurMovementGoal(CentaurEntity centaur) {
-			this(centaur, () -> centaur.vaultPos, 13.0f, () -> true);
+			this(centaur, () -> Vec3d.ofBottomCenter(centaur.vaultPos), 10.0f, () -> true);
 		}
 
-		public CentaurMovementGoal(CentaurEntity centaur, Supplier<BlockPos> center, double radius, BooleanSupplier requirements) {
+		public CentaurMovementGoal(CentaurEntity centaur, Supplier<Vec3d> center, double radius, BooleanSupplier requirements) {
 			this.centaur = centaur;
 			this.center = center;
 			this.radius = radius;
@@ -308,8 +320,8 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob, Wat
 		@Override
 		public boolean canStart() {
 			if (this.requirements.getAsBoolean()) {
-				BlockPos pos = this.center.get();
-				return pos != null && pos != BlockPos.ORIGIN;
+				Vec3d pos = this.center.get();
+				return pos != null && pos != ORIGIN;
 			}
 			else {
 				return false;
@@ -319,8 +331,8 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob, Wat
 		@Override
 		public boolean shouldContinue() {
 			if (this.requirements.getAsBoolean()) {
-				BlockPos pos = this.center.get();
-				return pos != null && pos != BlockPos.ORIGIN;
+				Vec3d pos = this.center.get();
+				return pos != null && pos != ORIGIN;
 			}
 			else {
 				return false;
@@ -334,15 +346,15 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob, Wat
 
 		@Override
 		public void tick() {
-			double rate = this.radius * 3.46154;
-			double interval = 360.0 / rate;
-			int degree = (int) ((this.centaur.age % interval) * rate);
+			double speed = 0.765 / this.radius; // nice constant
+			double angle = this.centaur.age * speed;
 			if (this.centaur.getType().equals(ArcheonEntities.ARMORED_CENTAUR)) {
-				degree += 180;
+				angle += Math.PI / 2.0;
 			}
-			BlockPos pos = this.center.get();
-			double x = pos.getX() + this.radius * Math.cos(degree * (Math.PI / 180.0));
-			double z = pos.getZ() + this.radius * Math.sin(degree * (Math.PI / 180.0));
+			Vec3d pos = this.center.get();
+			double x = pos.getX() + this.radius * Math.cos(angle);
+			double z = pos.getZ() + this.radius * Math.sin(angle);
+			this.centaur.nextPosition = new Vec3d(x, this.centaur.getY() + 0.5, z);
 			this.centaur.getMoveControl().moveTo(x, this.centaur.getY(), z, 2.0f);
 		}
 	}
