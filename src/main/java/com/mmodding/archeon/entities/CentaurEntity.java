@@ -50,6 +50,7 @@ import org.apache.logging.log4j.util.TriConsumer;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
+import java.util.function.BooleanSupplier;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -118,8 +119,11 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob, Wat
 	@Override
 	protected void initGoals() {
 		if (this.getType().equals(ArcheonEntities.ARMORED_CENTAUR)) {
-			this.goalSelector.add(1, new WanderNearTargetGoal(this, 1.0f, 16.0f));
-			this.goalSelector.add(2, new CentaurMovementGoal(this));
+			this.goalSelector.add(1, new CentaurMovementGoal( // When there is a target, but that the attack cooldown is still up.
+				this, () -> Objects.requireNonNull(this.getTarget()).getBlockPos(),
+				4.5f, () -> this.getTarget() != null
+			));
+			this.goalSelector.add(2, new CentaurMovementGoal(this)); // When there is no target.
 		}
 		else {
 			this.goalSelector.add(1, new CentaurMovementGoal(this));
@@ -286,22 +290,40 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob, Wat
 		private final CentaurEntity centaur;
 		private final Supplier<BlockPos> center;
 		private final double radius;
+		private final BooleanSupplier requirements;
 
 		public CentaurMovementGoal(CentaurEntity centaur) {
-			this(centaur, () -> centaur.vaultPos, 13.0f);
+			this(centaur, () -> centaur.vaultPos, 13.0f, () -> true);
 		}
 
-		public CentaurMovementGoal(CentaurEntity centaur, Supplier<BlockPos> center, double radius) {
+		public CentaurMovementGoal(CentaurEntity centaur, Supplier<BlockPos> center, double radius, BooleanSupplier requirements) {
 			this.centaur = centaur;
 			this.center = center;
 			this.radius = radius;
+			this.requirements = requirements;
 			this.setControls(EnumSet.of(Control.MOVE, Control.LOOK));
 		}
 
 		@Override
 		public boolean canStart() {
-			BlockPos pos = this.center.get();
-			return pos != null && pos != BlockPos.ORIGIN;
+			if (this.requirements.getAsBoolean()) {
+				BlockPos pos = this.center.get();
+				return pos != null && pos != BlockPos.ORIGIN;
+			}
+			else {
+				return false;
+			}
+		}
+
+		@Override
+		public boolean shouldContinue() {
+			if (this.requirements.getAsBoolean()) {
+				BlockPos pos = this.center.get();
+				return pos != null && pos != BlockPos.ORIGIN;
+			}
+			else {
+				return false;
+			}
 		}
 
 		@Override
@@ -311,7 +333,12 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob, Wat
 
 		@Override
 		public void tick() {
-			int degree = (this.centaur.age % 90) * 4 + (this.centaur.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? 180 : 0);
+			double rate = 4 * 13.0f / this.radius;
+			double interval = 360.0f / rate;
+			int degree = (int) ((this.centaur.age % interval) * rate);
+			if (this.centaur.getType().equals(ArcheonEntities.ARMORED_CENTAUR)) {
+				degree += 180;
+			}
 			BlockPos pos = this.center.get();
 			double x = pos.getX() + this.radius * Math.cos(degree * (Math.PI / 180.0));
 			double z = pos.getZ() + this.radius * Math.sin(degree * (Math.PI / 180.0));
