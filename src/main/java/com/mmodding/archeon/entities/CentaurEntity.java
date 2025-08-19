@@ -103,6 +103,7 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob, Wat
 		Map<String, Function<PlayerEntity, Object>> map = new LinkedHashMap<>();
 		map.put("target", p -> this.getTarget());
 		map.put("averageVelocity", p -> (MathHelper.abs((float) this.getVelocity().x) + MathHelper.abs((float) this.getVelocity().z)) / 2f);
+		map.put("squaredDistance", p -> p.squaredDistanceTo(this.getPos()));
 		return map;
 	}
 
@@ -333,8 +334,8 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob, Wat
 
 		@Override
 		public void tick() {
-			double rate = 4 * 13.0f / this.radius;
-			double interval = 360.0f / rate;
+			double rate = this.radius * 3.46154;
+			double interval = 360.0 / rate;
 			int degree = (int) ((this.centaur.age % interval) * rate);
 			if (this.centaur.getType().equals(ArcheonEntities.ARMORED_CENTAUR)) {
 				degree += 180;
