@@ -52,6 +52,7 @@ import org.slf4j.LoggerFactory;
 import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class CentaurEntity extends HostileEntity implements RangedAttackMob, WatcherProvider {
 
@@ -283,23 +284,24 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob, Wat
 	public static class CentaurMovementGoal extends Goal {
 
 		private final CentaurEntity centaur;
+		private final Supplier<BlockPos> center;
+		private final double radius;
 
 		public CentaurMovementGoal(CentaurEntity centaur) {
+			this(centaur, () -> centaur.vaultPos, 13.0f);
+		}
+
+		public CentaurMovementGoal(CentaurEntity centaur, Supplier<BlockPos> center, double radius) {
 			this.centaur = centaur;
+			this.center = center;
+			this.radius = radius;
 			this.setControls(EnumSet.of(Control.MOVE, Control.LOOK));
 		}
 
 		@Override
 		public boolean canStart() {
-			if (this.centaur.getType().equals(ArcheonEntities.CENTAUR) && this.centaur.getHealth() <= this.centaur.getMaxHealth() / 2.0f) {
-				return false;
-			}
-			return this.centaur.vaultPos != BlockPos.ORIGIN && this.centaur.getTarget() == null;
-		}
-
-		@Override
-		public boolean shouldContinue() {
-			return this.centaur.getTarget() == null;
+			BlockPos pos = this.center.get();
+			return pos != null && pos != BlockPos.ORIGIN;
 		}
 
 		@Override
@@ -310,8 +312,9 @@ public class CentaurEntity extends HostileEntity implements RangedAttackMob, Wat
 		@Override
 		public void tick() {
 			int degree = (this.centaur.age % 90) * 4 + (this.centaur.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? 180 : 0);
-			double x = this.centaur.vaultPos.getX() + 13.0 * Math.cos(degree * (Math.PI / 180.0));
-			double z = this.centaur.vaultPos.getZ() + 13.0 * Math.sin(degree * (Math.PI / 180.0));
+			BlockPos pos = this.center.get();
+			double x = pos.getX() + this.radius * Math.cos(degree * (Math.PI / 180.0));
+			double z = pos.getZ() + this.radius * Math.sin(degree * (Math.PI / 180.0));
 			this.centaur.getMoveControl().moveTo(x, this.centaur.getY(), z, 2.0f);
 		}
 	}
