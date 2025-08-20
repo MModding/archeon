@@ -1,7 +1,9 @@
 package com.mmodding.archeon.blockentities;
 
 import com.mmodding.archeon.blocks.CentaurLifeVaultBlock;
-import com.mmodding.archeon.entities.CentaurEntity;
+import com.mmodding.archeon.entities.centaur.AbstractCentaurEntity;
+import com.mmodding.archeon.entities.centaur.ArmoredCentaurEntity;
+import com.mmodding.archeon.entities.centaur.CentaurEntity;
 import com.mmodding.archeon.init.ArcheonItems;
 import com.mmodding.archeon.init.ArcheonMiscellaneous;
 import com.mmodding.mmodding_lib.library.utils.WorldUtils;
@@ -19,33 +21,38 @@ import org.jetbrains.annotations.Nullable;
 public class CentaurLifeVaultBlockEntity extends BlockEntity {
 
 	@Nullable
-	private CentaurEntity armoredCentaurEntity = null;
+	private ArmoredCentaurEntity armoredCentaurEntity = null;
 
 	@Nullable
-	private CentaurEntity centaurEntity = null;
+	private AbstractCentaurEntity centaurEntity = null;
 
 	public CentaurLifeVaultBlockEntity(BlockPos pos, BlockState state) {
 		super(ArcheonBlockEntities.CENTAUR_LIFE_VAULT, pos, state);
 	}
 
-	public void initiate(ServerWorld world, BlockPos pos, BlockState state) {
+	public ArmoredCentaurEntity initArmoredCentaur(ServerWorld world, BlockPos pos) {
+		ArmoredCentaurEntity entity = new ArmoredCentaurEntity(world, pos);
+		entity.setPosition(Vec3d.ofCenter(pos.west(13)));
+		entity.setStackInHand(Hand.MAIN_HAND, ArcheonItems.CENTAUR_BATTLE_AXE.getDefaultStack());
+		entity.setupBossBar();
+		world.spawnEntity(entity);
+		return entity;
+	}
+
+	public CentaurEntity initCentaur(ServerWorld world, BlockPos pos) {
+		CentaurEntity entity = new CentaurEntity(world, pos);
+		entity.setPosition(Vec3d.ofCenter(pos.east(13)));
+		entity.setStackInHand(Hand.MAIN_HAND, ArcheonItems.CENTAUR_SPEAR.getDefaultStack());
+		entity.setupBossBar();
+		world.spawnEntity(entity);
+		return entity;
+	}
+
+	public void beginFight(ServerWorld world, BlockPos pos, BlockState state) {
 		world.setBlockState(pos, state.with(CentaurLifeVaultBlock.LIVES, CentaurLifeVaultBlock.Lives.FULL));
 		world.spawnParticles(ParticleTypes.SOUL_FIRE_FLAME, pos.getX() - 0.5, pos.getY() - 0.5, pos.getZ() - 0.5, 10, 1, 1, 1, 3.0f);
-
-		CentaurEntity armoredCentaurEntity = new CentaurEntity(world, pos, true);
-		armoredCentaurEntity.setPosition(Vec3d.ofCenter(pos.west(13)));
-		armoredCentaurEntity.setStackInHand(Hand.MAIN_HAND, ArcheonItems.CENTAUR_BATTLE_AXE.getDefaultStack());
-
-		CentaurEntity centaurEntity = new CentaurEntity(world, pos, false);
-		centaurEntity.setPosition(Vec3d.ofCenter(pos.east(13)));
-		centaurEntity.setStackInHand(Hand.MAIN_HAND, ArcheonItems.CENTAUR_SPEAR.getDefaultStack());
-
-		armoredCentaurEntity.setupBossBar();
-		centaurEntity.setupBossBar();
-		world.spawnEntity(armoredCentaurEntity);
-		world.spawnEntity(centaurEntity);
-		this.armoredCentaurEntity = armoredCentaurEntity;
-		this.centaurEntity = centaurEntity;
+		this.armoredCentaurEntity = this.initArmoredCentaur(world, pos);
+		this.centaurEntity = this.initCentaur(world, pos);
 	}
 
 	public static void tick(World world, BlockPos pos, BlockState state, CentaurLifeVaultBlockEntity blockEntity) {
@@ -104,15 +111,15 @@ public class CentaurLifeVaultBlockEntity extends BlockEntity {
 		}
 	}
 
-	public boolean hasMoreThanHalfItsLife(@Nullable CentaurEntity centaurEntity) {
+	public boolean hasMoreThanHalfItsLife(@Nullable AbstractCentaurEntity centaurEntity) {
 		return centaurEntity != null && !centaurEntity.isDead() && centaurEntity.getHealth() >= centaurEntity.getMaxHealth() / 2.0f;
 	}
 
-	public boolean hasLessThanHalfItsLife(@Nullable CentaurEntity centaurEntity) {
+	public boolean hasLessThanHalfItsLife(@Nullable AbstractCentaurEntity centaurEntity) {
 		return centaurEntity != null && !centaurEntity.isDead() && centaurEntity.getHealth() <= centaurEntity.getMaxHealth() / 2.0f;
 	}
 
-	public boolean isDead(@Nullable CentaurEntity centaurEntity) {
+	public boolean isDead(@Nullable AbstractCentaurEntity centaurEntity) {
 		return centaurEntity == null || centaurEntity.isDead();
 	}
 
@@ -153,7 +160,7 @@ public class CentaurLifeVaultBlockEntity extends BlockEntity {
 	public void readNbt(NbtCompound nbt) {
 		if (this.world instanceof ServerWorld serverWorld) {
 			if (nbt.contains("armored_centaur_uuid")) {
-				this.armoredCentaurEntity = (CentaurEntity) serverWorld.getEntity(nbt.getUuid("armored_centaur_uuid"));
+				this.armoredCentaurEntity = (ArmoredCentaurEntity) serverWorld.getEntity(nbt.getUuid("armored_centaur_uuid"));
 			}
 			if (nbt.contains("centaur_uuid")) {
 				this.centaurEntity = (CentaurEntity) serverWorld.getEntity(nbt.getUuid("centaur_uuid"));

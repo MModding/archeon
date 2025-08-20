@@ -2,6 +2,9 @@ package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.entities.*;
+import com.mmodding.archeon.entities.centaur.AbstractCentaurEntity;
+import com.mmodding.archeon.entities.centaur.ArmoredCentaurEntity;
+import com.mmodding.archeon.entities.centaur.CentaurEntity;
 import com.mmodding.archeon.entities.projectiles.LusonythArrowEntity;
 import com.mmodding.mmodding_lib.library.entities.CustomEntityType;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
@@ -107,11 +110,11 @@ public class ArcheonEntities implements ElementsInitializer {
 			.forceTrackedVelocityUpdates(true) // without that velocity is not updated properly, which fucks the animation system
 	);
 
-	public static final CustomEntityType<CentaurEntity> ARMORED_CENTAUR = CustomEntityType.createMob(
+	public static final CustomEntityType<ArmoredCentaurEntity> ARMORED_CENTAUR = CustomEntityType.createMob(
 		builder -> builder
-			.entityFactory(CentaurEntity::new)
+			.entityFactory(ArmoredCentaurEntity::new)
 			.spawnGroup(SpawnGroup.MONSTER)
-			.defaultAttributes(CentaurEntity::createCentaurAttributes)
+			.defaultAttributes(ArmoredCentaurEntity::createCentaurAttributes)
 			.dimensions(EntityDimensions.fixed(1.75f, 3.5f))
 			.trackRangeChunks(8)
 			.forceTrackedVelocityUpdates(true)

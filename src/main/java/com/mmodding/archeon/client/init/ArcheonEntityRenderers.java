@@ -1,6 +1,8 @@
 package com.mmodding.archeon.client.init;
 
 import com.mmodding.archeon.client.entities.renderers.*;
+import com.mmodding.archeon.client.entities.renderers.centaur.ArmoredCentaurEntityRenderer;
+import com.mmodding.archeon.client.entities.renderers.centaur.CentaurEntityRenderer;
 import com.mmodding.archeon.entities.AuroraCatalystEntity;
 import com.mmodding.archeon.entities.CentaurSpearEntity;
 import com.mmodding.archeon.init.ArcheonEntities;
@@ -22,7 +24,7 @@ public class ArcheonEntityRenderers implements ClientElementsInitializer {
 		EntityRendererRegistry.register(ArcheonEntities.DEER, DeerEntityRenderer::new);
 		EntityRendererRegistry.register(ArcheonEntities.MOURNCREEP, MourncreepEntityRenderer::new);
 		EntityRendererRegistry.register(ArcheonEntities.CENTAUR, CentaurEntityRenderer::new);
-		EntityRendererRegistry.register(ArcheonEntities.ARMORED_CENTAUR, CentaurEntityRenderer::new);
+		EntityRendererRegistry.register(ArcheonEntities.ARMORED_CENTAUR, ArmoredCentaurEntityRenderer::new);
 		EntityRendererRegistry.register(ArcheonEntities.LUSONYTH_ARROW, LusonythArrowEntityRenderer::new);
 		EntityRendererRegistry.register(ArcheonEntities.CENTAUR_SPEAR, SpearItemEntityRenderer<CentaurSpearEntity>::new);
 	}

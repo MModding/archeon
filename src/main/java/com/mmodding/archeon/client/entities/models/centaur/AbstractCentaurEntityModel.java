@@ -1,11 +1,7 @@
-package com.mmodding.archeon.client.entities.models;
+package com.mmodding.archeon.client.entities.models.centaur;
 
-import com.mmodding.archeon.client.entities.animations.CentaurEntityAnimations;
-import com.mmodding.archeon.entities.CentaurEntity;
-import com.mmodding.archeon.init.ArcheonEntities;
-import com.mmodding.mmodding_lib.library.client.utils.AnimationUtils;
+import com.mmodding.archeon.entities.centaur.AbstractCentaurEntity;
 import net.minecraft.client.model.*;
-import net.minecraft.client.render.animation.Animation;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.render.entity.model.ModelWithArms;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
@@ -14,7 +10,7 @@ import net.minecraft.util.Arm;
 
 // Originally Made with Blockbench 4.9.0
 @SuppressWarnings("FieldCanBeLocal")
-public class CentaurEntityModel extends SinglePartEntityModel<CentaurEntity> implements ModelWithArms {
+public abstract class AbstractCentaurEntityModel<T extends AbstractCentaurEntity> extends SinglePartEntityModel<T> implements ModelWithArms {
 
 	private final ModelPart root;
 	private final ModelPart bone;
@@ -34,7 +30,7 @@ public class CentaurEntityModel extends SinglePartEntityModel<CentaurEntity> imp
 	private final ModelPart rightBackLeg;
 	private final ModelPart rightBackFoot;
 
-	public CentaurEntityModel(ModelPart root) {
+	public AbstractCentaurEntityModel(ModelPart root) {
 		this.root = root;
 		this.bone = this.root.getChild(EntityModelPartNames.BONE);
 		this.top = this.bone.getChild("top");
@@ -112,33 +108,6 @@ public class CentaurEntityModel extends SinglePartEntityModel<CentaurEntity> imp
 			.uv(0, 57).cuboid(-2.5f, 0.0f, -2.5f, 5.0f, 1.0f, 5.0f, new Dilation(0.0f)), ModelTransform.pivot(0.0f, 7.5f, 0.0f));
 
 		return TexturedModelData.of(modelData, 128, 128);
-	}
-
-	private Animation pickAnimation(CentaurEntity entity, Animation armoredCentaurAnimation, Animation centaurAnimation) {
-		return entity.getType().equals(ArcheonEntities.ARMORED_CENTAUR) ? armoredCentaurAnimation : centaurAnimation;
-	}
-
-	@Override
-	public void setAngles(CentaurEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-		this.getPart().traverse().forEach(ModelPart::resetTransform);
-		Animation firstHalf = this.pickAnimation(entity, CentaurEntityAnimations.CROSS_ATTACK, CentaurEntityAnimations.SPEAR_THROW);
-		Animation secondHalf = this.pickAnimation(entity, CentaurEntityAnimations.BATTLE_AXE_FALLING, CentaurEntityAnimations.SPEAR_FALLING);
-		AnimationUtils.updateAnimation(this, firstHalf, entity.firstHalfAction.getAnimationState(), animationProgress, 1.0f);
-		AnimationUtils.updateAnimation(this, secondHalf, entity.secondHalfAction.getAnimationState(), animationProgress, 1.0f);
-		if (!entity.firstHalfAction.isExecutingAction() && !entity.secondHalfAction.isExecutingAction()) {
-			if (AnimationUtils.isMoving(entity, limbDistance, 0.2f)) { // Is Running
-				Animation galloping = this.pickAnimation(entity, CentaurEntityAnimations.BATTLE_AXE_GALLOPING, CentaurEntityAnimations.SPEAR_GALLOPING);
-				AnimationUtils.updateAnimation(this, galloping, entity.moving, animationProgress, 2.0f);
-			}
-			else if (AnimationUtils.isMoving(entity, limbDistance)) { // Is Walking
-				Animation walking = this.pickAnimation(entity, CentaurEntityAnimations.BATTLE_AXE_WALKING, CentaurEntityAnimations.SPEAR_WALKING);
-				AnimationUtils.updateAnimation(this, walking, entity.moving, animationProgress, 1.0f);
-			}
-			else { // Is Idling
-				Animation idle = this.pickAnimation(entity, CentaurEntityAnimations.BATTLE_AXE_IDLE, CentaurEntityAnimations.SPEAR_IDLE);
-				AnimationUtils.updateAnimation(this, idle, entity.breathing, animationProgress, 1.0f);
-			}
-		}
 	}
 
 	@Override

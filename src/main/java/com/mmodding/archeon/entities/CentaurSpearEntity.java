@@ -1,5 +1,6 @@
 package com.mmodding.archeon.entities;
 
+import com.mmodding.archeon.entities.centaur.AbstractCentaurEntity;
 import com.mmodding.archeon.init.ArcheonEntities;
 import com.mmodding.archeon.init.ArcheonItems;
 import com.mmodding.mmodding_lib.library.entities.projectiles.SpearEntity;
@@ -22,14 +23,14 @@ public class CentaurSpearEntity extends SpearEntity {
 
 	@Override
 	protected void onEntityHit(EntityHitResult entityHitResult) {
-		if (!(this.getOwner() instanceof CentaurEntity && entityHitResult.getEntity() instanceof CentaurEntity)) {
+		if (!(this.getOwner() instanceof AbstractCentaurEntity && entityHitResult.getEntity() instanceof AbstractCentaurEntity)) {
 			super.onEntityHit(entityHitResult);
 		}
 	}
 
 	@Override
 	protected void onBlockHit(BlockHitResult blockHitResult) {
-		if (!(this.getOwner() instanceof CentaurEntity)) {
+		if (!(this.getOwner() instanceof AbstractCentaurEntity)) {
 			super.onBlockHit(blockHitResult);
 		}
 		else {

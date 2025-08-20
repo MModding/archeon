@@ -2,6 +2,7 @@ package com.mmodding.archeon.client.init;
 
 import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.client.entities.models.*;
+import com.mmodding.archeon.client.entities.models.centaur.AbstractCentaurEntityModel;
 import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
@@ -32,6 +33,6 @@ public class ArcheonEntityModelLayers implements ClientElementsInitializer {
 		EntityModelLayerRegistry.registerModelLayer(MOURNCREEP_INNER_ARMOR, MourncreepEntityModel::getInnerArmorTexturedModelData);
 		EntityModelLayerRegistry.registerModelLayer(MOURNCREEP_OUTER_ARMOR, MourncreepEntityModel::getOuterArmorTexturedModelData);
 		EntityModelLayerRegistry.registerModelLayer(MOURNCREEP_HEAD, MourncreepEntityModel::getHeadTexturedModelData);
-		EntityModelLayerRegistry.registerModelLayer(CENTAUR, CentaurEntityModel::getTexturedModelData);
+		EntityModelLayerRegistry.registerModelLayer(CENTAUR, AbstractCentaurEntityModel::getTexturedModelData);
 	}
 }

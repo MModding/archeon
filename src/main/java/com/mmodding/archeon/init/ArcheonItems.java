@@ -63,7 +63,7 @@ public class ArcheonItems implements ElementsInitializer {
 			.itemUseOnBlock(context -> context.getWorld().getBlockEntity(context.getBlockPos(), ArcheonBlockEntities.CENTAUR_LIFE_VAULT).ifPresent(blockEntity -> {
 				if (context.getPlayer() != null) {
 					if (context.getWorld() instanceof ServerWorld world) {
-						blockEntity.initiate(world, context.getBlockPos(), world.getBlockState(context.getBlockPos()));
+						blockEntity.beginFight(world, context.getBlockPos(), world.getBlockState(context.getBlockPos()));
 					}
 					if (!context.getPlayer().isCreative()) context.getPlayer().getInventory().removeOne(context.getPlayer().getStackInHand(context.getHand()));
 				}
