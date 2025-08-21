@@ -55,7 +55,7 @@ public class ArmoredCentaurEntity extends AbstractCentaurEntity {
 	protected void initGoals() {
 		this.goalSelector.add(1, new CentaurMovementGoal( // When there is a target, but that the attack cooldown is still up.
 			this, () -> Objects.requireNonNull(this.getTarget()).getPos(),
-			3.33f, () -> this.getTarget() != null
+			3.33f, () -> this.getTarget() != null && !this.crossAttackAction.isExecutingAction() && !this.damageZoneAttackAction.isExecutingAction()
 		));
 		this.goalSelector.add(2, new CentaurMovementGoal(this, () -> this.getTarget() == null)); // When there is no target.
 		this.targetSelector.add(0, new CentaurTargetGoal(this, true));
