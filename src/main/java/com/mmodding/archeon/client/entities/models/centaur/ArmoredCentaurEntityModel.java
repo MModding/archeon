@@ -16,14 +16,14 @@ public class ArmoredCentaurEntityModel extends AbstractCentaurEntityModel<Armore
 		this.getPart().traverse().forEach(ModelPart::resetTransform);
 		AnimationUtils.updateAnimation(
 			this,
-			CentaurEntityAnimations.SPEAR_THROW,
+			CentaurEntityAnimations.CROSS_ATTACK,
 			entity.crossAttackAction.getAnimationState(),
 			animationProgress,
 			1.0f
 		);
 		AnimationUtils.updateAnimation(
 			this,
-			CentaurEntityAnimations.SPEAR_FALLING,
+			CentaurEntityAnimations.BATTLE_AXE_FALLING,
 			entity.damageZoneAttackAction.getAnimationState(),
 			animationProgress,
 			1.0f

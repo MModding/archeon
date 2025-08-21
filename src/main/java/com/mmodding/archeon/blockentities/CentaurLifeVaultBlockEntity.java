@@ -24,7 +24,7 @@ public class CentaurLifeVaultBlockEntity extends BlockEntity {
 	private ArmoredCentaurEntity armoredCentaurEntity = null;
 
 	@Nullable
-	private AbstractCentaurEntity centaurEntity = null;
+	private CentaurEntity centaurEntity = null;
 
 	public CentaurLifeVaultBlockEntity(BlockPos pos, BlockState state) {
 		super(ArcheonBlockEntities.CENTAUR_LIFE_VAULT, pos, state);

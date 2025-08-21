@@ -76,15 +76,20 @@ public class ArmoredCentaurEntity extends AbstractCentaurEntity {
 	}
 
 	@Override
+	public void tick() {
+		super.tick();
+
+		this.crossAttackAction.tick();
+		this.damageZoneAttackAction.tick();
+	}
+
+	@Override
 	protected void mobTick() {
 		super.mobTick();
 
 		if (this.attackCooldown > 0 ) {
 			this.attackCooldown--;
 		}
-
-		this.crossAttackAction.tick();
-		this.damageZoneAttackAction.tick();
 	}
 
 	public static class CentaurCrossAttackGoal extends MeleeAttackGoal {

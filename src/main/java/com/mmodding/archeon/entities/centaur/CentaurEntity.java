@@ -75,8 +75,8 @@ public class CentaurEntity extends AbstractCentaurEntity implements RangedAttack
 	}
 
 	@Override
-	protected void mobTick() {
-		super.mobTick();
+	public void tick() {
+		super.tick();
 
 		this.spearAttackAction.tick();
 		this.movingSpearAttackAction.tick();
