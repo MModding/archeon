@@ -327,7 +327,7 @@ public class ArcheonItems implements ElementsInitializer {
 			.hunger(5)
 			.saturationModifier(2.5f)
 			.alwaysEdible()
-			.statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 160, 1), 1.0f)
+			.statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 160, 0), 1.0f)
 			.statusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 0, 3), 1.0f)
 			.statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 160, 1), 1.0f)
 			.build()
