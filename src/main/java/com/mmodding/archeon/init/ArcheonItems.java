@@ -83,7 +83,7 @@ public class ArcheonItems implements ElementsInitializer {
 	}));
 
 	public static final CustomSpearItem CENTAUR_SPEAR = new CustomSpearItem(CentaurSpearEntity::new, new AdvancedItemSettings().maxCount(1).maxDamage(250).rarity(Rarity.EPIC).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
-	public static final CustomAxeItem CENTAUR_BATTLE_AXE = new CustomAxeItem(CentaurTool.INSTANCE, 6, -2.5f, new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final CustomAxeItem CENTAUR_BATTLE_AXE = new CustomAxeItem(CentaurTool.INSTANCE, 4, -2.5f, new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
 
 	public static final CustomSwordItem NECLANE_SWORD = new CustomSwordItem(ToolMaterials.WOOD, 3, -2.4f, new AdvancedItemSettings());
 	public static final CustomPickaxeItem NECLANE_PICKAXE = new CustomPickaxeItem(ToolMaterials.WOOD, 1, -2.8f, new AdvancedItemSettings());
@@ -252,7 +252,7 @@ public class ArcheonItems implements ElementsInitializer {
 			.saturationModifier(3.0f)
 			.alwaysEdible()
 			.snack()
-			.statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 1000), 1.0f)
+			.statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 200), 1.0f)
 			.build()
 	).drinkable().recipeRemainder(ArcheonItems.JAM_POT).itemFinishUsing(JAM_POT_USE));
 
@@ -262,7 +262,7 @@ public class ArcheonItems implements ElementsInitializer {
 			.saturationModifier(3.0f)
 			.alwaysEdible()
 			.snack()
-			.statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 1000, 1), 1.0f)
+			.statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 200, 1), 1.0f)
 			.build()
 	).drinkable().recipeRemainder(ArcheonItems.JAM_POT).itemFinishUsing(JAM_POT_USE));
 
@@ -272,8 +272,8 @@ public class ArcheonItems implements ElementsInitializer {
 			.saturationModifier(3.0f)
 			.alwaysEdible()
 			.snack()
-			.statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 1000, 1), 1.0f)
-			.statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 1000, 1), 1.0f)
+			.statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 200, 0), 1.0f)
+			.statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 200, 0), 1.0f)
 			.build()
 	).drinkable().recipeRemainder(ArcheonItems.JAM_POT).itemFinishUsing(JAM_POT_USE));
 

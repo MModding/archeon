@@ -56,7 +56,7 @@ public class CentaurEntity extends AbstractCentaurEntity implements RangedAttack
 
 	@Override
 	protected void initGoals() {
-		this.goalSelector.add(1, new CentaurMovementGoal(this, () -> this.getTarget() == null));
+		this.goalSelector.add(1, new CentaurMovementGoal(this, () -> this.getTarget() == null && this.isValidTimeWithoutTarget()));
 		this.targetSelector.add(0, new CentaurTargetGoal(this, true));
 	}
 
@@ -75,6 +75,11 @@ public class CentaurEntity extends AbstractCentaurEntity implements RangedAttack
 	}
 
 	@Override
+	protected int getMaxTimeWithoutTarget() {
+		return this.getHealth() < this.getMaxHealth() / 2.0f ? 1000 : 200;
+	}
+
+	@Override
 	public void tick() {
 		super.tick();
 
@@ -90,7 +95,7 @@ public class CentaurEntity extends AbstractCentaurEntity implements RangedAttack
 				double relativeY = target.getBodyY(0.4) - spear.getY();
 				double relativeZ = target.getZ() - this.getZ();
 				double length = Math.sqrt(Math.pow(relativeX, 2) + Math.pow(relativeZ, 2));
-				spear.setVelocity(relativeX, relativeY + length * 0.2f, relativeZ, 1.6f, 10 - serverWorld.getDifficulty().getId() * 3);
+				spear.setVelocity(relativeX, relativeY + length * 0.2f, relativeZ, 1.6f, 5 - serverWorld.getDifficulty().getId() * 2.5f);
 				this.playSound(SoundEvents.ITEM_TRIDENT_THROW, 1.0f, 1.0f / (this.getRandom().nextFloat() * 0.4f + 0.8f));
 				this.getWorld().spawnEntity(spear);
 			});

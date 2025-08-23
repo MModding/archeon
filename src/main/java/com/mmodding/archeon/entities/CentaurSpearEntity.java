@@ -37,4 +37,9 @@ public class CentaurSpearEntity extends SpearEntity {
 			this.discard();
 		}
 	}
+
+	@Override
+	public float getBaseDamage() {
+		return 4.0f;
+	}
 }

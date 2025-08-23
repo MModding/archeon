@@ -23,7 +23,6 @@ import net.minecraft.world.World;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Predicate;
 
 public class ArmoredCentaurEntity extends AbstractCentaurEntity {
 
@@ -73,6 +72,11 @@ public class ArmoredCentaurEntity extends AbstractCentaurEntity {
 				this.goalSelector.add(0, this.damageZoneAttackGoal);
 			}
 		}
+	}
+
+	@Override
+	protected int getMaxTimeWithoutTarget() {
+		return 200;
 	}
 
 	@Override
@@ -185,19 +189,20 @@ public class ArmoredCentaurEntity extends AbstractCentaurEntity {
 			return true;
 		}
 
+		private boolean canTeleportTo(Vec3d pos) {
+			BlockPos center = new BlockPos(pos);
+			return BlockPos.stream(center.add(-1, -1, -1), center.add(1, 1, 1))
+				.filter(currentPos -> this.centaur.getWorld().getBlockState(currentPos).isAir())
+				.count() == 27L;
+		}
+
 		@Override
 		public void tick() {
 			if (this.centaur.age % this.cooldownIntTicks == 0) {
 				LivingEntity target = this.centaur.getTarget();
 				assert target != null;
 				Vec3d teleportPosition = new Vec3d(target.getX(), target.getY() + 8.0, target.getZ());
-				Predicate<Vec3d> positionValidityChecker = (pos) -> {
-					BlockPos center = new BlockPos(pos);
-					return BlockPos.stream(center.add(-1, -1, -1), center.add(1, 1, 1))
-						.filter(currentPos -> this.centaur.getWorld().getBlockState(currentPos).isAir())
-						.count() == 27L;
-				};
-				while (!positionValidityChecker.test(teleportPosition) && teleportPosition.getY() > target.getY()) {
+				while (!this.canTeleportTo(teleportPosition) && teleportPosition.getY() > target.getY()) {
 					teleportPosition = new Vec3d(teleportPosition.getX(), teleportPosition.getY() - 1.0, teleportPosition.getZ());
 				}
 				this.centaur.teleport(teleportPosition.getX(), teleportPosition.getY(), teleportPosition.getZ());

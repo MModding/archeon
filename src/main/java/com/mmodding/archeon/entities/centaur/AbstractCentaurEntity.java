@@ -74,7 +74,7 @@ public abstract class AbstractCentaurEntity extends HostileEntity implements Wat
 
 	public static DefaultAttributeContainer.Builder createCentaurAttributes() {
 		return MobEntity.createMobAttributes()
-			.add(EntityAttributes.GENERIC_MAX_HEALTH, 130.0f)
+			.add(EntityAttributes.GENERIC_MAX_HEALTH, 200.0f)
 			.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0f)
 			.add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 1.0f)
 			.add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 3.0f)
@@ -83,6 +83,12 @@ public abstract class AbstractCentaurEntity extends HostileEntity implements Wat
 	}
 
 	protected abstract void updateGoals();
+
+	protected abstract int getMaxTimeWithoutTarget();
+
+	protected final boolean isValidTimeWithoutTarget() {
+		return this.dataTracker.get(AbstractCentaurEntity.TIME_WITHOUT_TARGET) >= this.getMaxTimeWithoutTarget();
+	}
 
 	@Override
 	protected void initDataTracker() {
@@ -153,14 +159,17 @@ public abstract class AbstractCentaurEntity extends HostileEntity implements Wat
 	protected void mobTick() {
 		super.mobTick();
 
-		if (this.getTarget() == null && this.dataTracker.get(TIME_WITHOUT_TARGET) <= 200) {
+		// So that you can go to the centaur's floor without resetting its life.
+		int maxTicksTimeWithoutTarget = this.getMaxTimeWithoutTarget();
+
+		if (this.getTarget() == null && this.dataTracker.get(TIME_WITHOUT_TARGET) <= maxTicksTimeWithoutTarget) {
 			this.dataTracker.set(TIME_WITHOUT_TARGET, this.dataTracker.get(TIME_WITHOUT_TARGET) + 1);
 		}
 		else if (this.getTarget() != null && this.dataTracker.get(TIME_WITHOUT_TARGET) != 0) {
 			this.dataTracker.set(TIME_WITHOUT_TARGET, 0);
 		}
 
-		if (this.dataTracker.get(TIME_WITHOUT_TARGET) == 200) {
+		if (this.dataTracker.get(TIME_WITHOUT_TARGET) == maxTicksTimeWithoutTarget) {
 			this.setHealth(this.getMaxHealth());
 			this.updateGoals();
 		}
