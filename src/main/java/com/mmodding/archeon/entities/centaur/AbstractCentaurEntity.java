@@ -93,7 +93,7 @@ public abstract class AbstractCentaurEntity extends HostileEntity implements Wat
 	@Override
 	protected void initDataTracker() {
 		super.initDataTracker();
-		this.dataTracker.startTracking(AbstractCentaurEntity.TIME_WITHOUT_TARGET, 0);
+		this.dataTracker.startTracking(AbstractCentaurEntity.TIME_WITHOUT_TARGET, 200);
 	}
 
 	@Override
