@@ -86,7 +86,7 @@ public abstract class AbstractCentaurEntity extends HostileEntity implements Wat
 
 	protected abstract int getMaxTimeWithoutTarget();
 
-	protected final boolean isValidTimeWithoutTarget() {
+	protected final boolean isInvalidTimeWithoutTarget() {
 		return this.dataTracker.get(AbstractCentaurEntity.TIME_WITHOUT_TARGET) >= this.getMaxTimeWithoutTarget();
 	}
 

@@ -56,7 +56,7 @@ public class CentaurEntity extends AbstractCentaurEntity implements RangedAttack
 
 	@Override
 	protected void initGoals() {
-		this.goalSelector.add(1, new CentaurMovementGoal(this, () -> this.getTarget() == null && this.isValidTimeWithoutTarget()));
+		this.goalSelector.add(1, new CentaurMovementGoal(this, () -> this.getTarget() == null && this.isInvalidTimeWithoutTarget()));
 		this.targetSelector.add(0, new CentaurTargetGoal(this, true));
 	}
 
