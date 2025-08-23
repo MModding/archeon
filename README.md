@@ -40,6 +40,8 @@ The dimension is accessible through the making of a portal, which can be built u
 
 ![QuestionMark Separator](https://github.com/MModding/art/blob/main/mods/archeon/separators/questionmark.png?raw=true)
 
+**You can join our [Discord server](https://mmodding.com/discord) to be part of the community and receives updates on our latest projects!**
+
 ## FAQ
 
 #### About Minecraft Version Supports
