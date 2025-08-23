@@ -14,21 +14,25 @@ public class ArmoredCentaurEntityModel extends AbstractCentaurEntityModel<Armore
 	@Override
 	public void setAngles(ArmoredCentaurEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
 		this.getPart().traverse().forEach(ModelPart::resetTransform);
-		AnimationUtils.updateAnimation(
-			this,
-			CentaurEntityAnimations.CROSS_ATTACK,
-			entity.crossAttackAction.getAnimationState(),
-			animationProgress,
-			1.0f
-		);
-		AnimationUtils.updateAnimation(
-			this,
-			CentaurEntityAnimations.BATTLE_AXE_FALLING,
-			entity.damageZoneAttackAction.getAnimationState(),
-			animationProgress,
-			1.0f
-		);
-		if (!entity.crossAttackAction.isExecutingAction() && !entity.damageZoneAttackAction.isExecutingAction()) {
+		if (entity.crossAttackAction.isExecutingAction()) {
+			AnimationUtils.updateAnimation(
+				this,
+				CentaurEntityAnimations.CROSS_ATTACK,
+				entity.crossAttackAction.getAnimationState(),
+				animationProgress,
+				1.0f
+			);
+		}
+		else if (entity.damageZoneAttackAction.isExecutingAction()) {
+			AnimationUtils.updateAnimation(
+				this,
+				CentaurEntityAnimations.BATTLE_AXE_FALLING,
+				entity.damageZoneAttackAction.getAnimationState(),
+				animationProgress,
+				1.0f
+			);
+		}
+		else {
 			if (AnimationUtils.isMoving(entity, limbDistance, 0.2f)) { // Is Running
 				AnimationUtils.updateAnimation(
 					this,
