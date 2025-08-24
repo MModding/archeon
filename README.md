@@ -36,7 +36,7 @@ The dimension is accessible through the making of a portal, which can be built u
 
 <img src="https://github.com/MModding/art/blob/main/mods/archeon/portal.png?raw=true" width="1024" alt="Archeon Portal">
 
-(Using [Complementary Shaders](https://www.complementary.dev/shaders) Shader in these screenshots.)
+(Using [Complementary Shaders](https://www.complementary.dev/shaders) in these screenshots.)
 
 ![QuestionMark Separator](https://github.com/MModding/art/blob/main/mods/archeon/separators/questionmark.png?raw=true)
 
