@@ -20,8 +20,6 @@ Support for MinecraftForge is not planned at all, but NeoForge support could be 
 
 ![Planet Separator](https://github.com/MModding/art/blob/main/mods/archeon/separators/planet.png?raw=true)
 
-<iframe width="1440" height="810" src="https://www.youtube.com/embed/HOjOrGGK9wQ" title="Archeon - Beta Release Trailer | Minecraft 1.19.2 Mod" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 ## Overview
 
 Archeon is a brand-new liveable dimension, which notably features:
