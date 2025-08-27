@@ -77,7 +77,7 @@ moment, but we're filling it as times goes on.
 
 #### About Rights
 
-**Q** - Can I publicly distribute **Project X** under my ModPack?\
+**Q** - Can I publicly distribute **Archeon** under my ModPack?\
 **A** - **Yes, of course.** As long you are not redistributing jar files directly, you are allowed to. (So by using standard redistributing ways in CurseForge packs or Modrinth packs).
 
 **Q** - Can I port this project to any Minecraft version/any modloading platform?\

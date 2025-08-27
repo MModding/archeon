@@ -70,7 +70,7 @@ mmodding {
 		addContributor("Contributors [Aerod (Additional Art); Tim Tim Rurkowski (Composer); Rotch Gwylt (Composer); Scarecrowman (Composer)]")
 		addContributor("Past [Aethyus (as Former Forge Version Developer trough MCreator); Mystoxi (Help on MCreator); Tenkite (Old Additional Art)]")
 		withContact {
-			it.homepage = "https://modrinth/mod/archeon"
+			it.homepage = "https://mmodding.com"
 			it.sources = "https://github.com/MModding/archeon"
 			it.issues = "https://github.com/MModding/archeon/issues"
 		}
@@ -85,8 +85,9 @@ mmodding {
 			it.javaVersion = ">=" + 17
 			it.minecraftVersion = "~" + libs.versions.minecraft.get()
 			it.fabricLoaderVersion = ">=" + libs.versions.fabric.loader.get()
-			// it.mmoddingLibraryVersion = ">=" + libs.versions.mmodding.get()
 			it.fabricApiVersion = ">=" + libs.versions.fabric.api.get()
+			it.addDependency("mmodding_lib", ">=" + libs.versions.mmodding.get() + "-")
+			// it.mmoddingLibraryVersion = ">=" + libs.versions.mmodding.get()
 		}
 		withCustom {
 			it.put("fluidlogged", "archeon.fluidlogged.json")
@@ -123,9 +124,11 @@ java {
 }
 
 // If you plan to use a different file for the license, don't forget to change the file name here!
-jar {
-	from('LICENSE.md') {
-		rename { "${it}_${archivesBaseName}" }
+["jar", "sourcesJar"].each {
+	tasks.named(it).configure {
+		from("LICENSE.md") {
+			rename { "${it}_${archivesBaseName}" }
+		}
 	}
 }
 
