@@ -1,6 +1,6 @@
 package com.mmodding.archeon.client.init;
 
-import com.mmodding.archeon.fluids.HotSpringWaterFluid;
+import com.mmodding.archeon.fluid.HotSpringWaterFluid;
 import com.mmodding.archeon.init.ArcheonBlocks;
 import com.mmodding.archeon.init.ArcheonFluids;
 import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;

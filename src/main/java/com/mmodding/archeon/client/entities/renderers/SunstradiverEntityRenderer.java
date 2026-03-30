@@ -3,7 +3,7 @@ package com.mmodding.archeon.client.entities.renderers;
 import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.client.entities.models.SunstradiverEntityModel;
 import com.mmodding.archeon.client.init.ArcheonEntityModelLayers;
-import com.mmodding.archeon.entities.SunstradiverEntity;
+import com.mmodding.archeon.entity.SunstradiverEntity;
 import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;

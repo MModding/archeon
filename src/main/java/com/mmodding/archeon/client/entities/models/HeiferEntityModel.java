@@ -1,6 +1,6 @@
 package com.mmodding.archeon.client.entities.models;
 
-import com.mmodding.archeon.entities.HeiferEntity;
+import com.mmodding.archeon.entity.HeiferEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.render.entity.model.QuadrupedEntityModel;

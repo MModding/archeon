@@ -2,7 +2,7 @@ package com.mmodding.archeon.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import com.mmodding.archeon.blocks.SouthWheatBlock;
+import com.mmodding.archeon.block.SouthWheatBlock;
 import com.mmodding.archeon.init.ArcheonBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.TallPlantBlock;

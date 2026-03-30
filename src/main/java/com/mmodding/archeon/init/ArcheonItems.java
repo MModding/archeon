@@ -1,16 +1,17 @@
 package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
-import com.mmodding.archeon.blockentities.ArcheonBlockEntities;
-import com.mmodding.archeon.buckets.CeramicBucketManager;
-import com.mmodding.archeon.buckets.WoodenBucketManager;
-import com.mmodding.archeon.entities.CentaurSpearEntity;
-import com.mmodding.archeon.entities.HeartOfNatureEntity;
-import com.mmodding.archeon.items.*;
-import com.mmodding.archeon.materials.armor.ApafloriteArmor;
-import com.mmodding.archeon.materials.armor.FaeliteArmor;
-import com.mmodding.archeon.materials.armor.LusonythArmor;
-import com.mmodding.archeon.materials.tool.*;
+import com.mmodding.archeon.block.entity.ArcheonBlockEntities;
+import com.mmodding.archeon.bucket.CeramicBucketManager;
+import com.mmodding.archeon.bucket.WoodenBucketManager;
+import com.mmodding.archeon.entity.CentaurSpearEntity;
+import com.mmodding.archeon.entity.HeartOfNatureEntity;
+import com.mmodding.archeon.item.*;
+import com.mmodding.archeon.material.armor.ApafloriteArmor;
+import com.mmodding.archeon.material.armor.FaeliteArmor;
+import com.mmodding.archeon.material.armor.LusonythArmor;
+import com.mmodding.archeon.material.tool.*;
+import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.mmodding_lib.library.fluids.buckets.CustomBucketItem;
 import com.mmodding.mmodding_lib.library.fluids.buckets.CustomMilkBucketItem;
 import com.mmodding.mmodding_lib.library.glint.DefaultGlintPacks;
@@ -56,7 +57,7 @@ public class ArcheonItems implements ElementsInitializer {
 		})
 	);
 
-	public static final CustomItem CENTAUR_LIFE_IGNITER = new CustomItem(
+	public static final Item CENTAUR_LIFE_IGNITER = new Item(
 		new AdvancedItemSettings()
 			.maxCount(1)
 			.rarity(Rarity.RARE)
@@ -70,7 +71,7 @@ public class ArcheonItems implements ElementsInitializer {
 			}))
 	);
 
-	public static final CustomItem POWER_KEY = new CustomItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE).itemUseOnBlock(context -> {
+	public static final Item POWER_KEY = new Item(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE).itemUseOnBlock(context -> {
 		BlockState state = context.getWorld().getBlockState(context.getBlockPos());
 		if (state.isOf(ArcheonBlocks.POWER_KEYSTONE) && context.getPlayer() != null) {
 			HeartOfNatureEntity heartOfNatureEntity = new HeartOfNatureEntity(ArcheonEntities.HEART_OF_NATURE, context.getWorld());
@@ -167,25 +168,25 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final AmuletOfNatureItem AMULET_OF_NATURE = new AmuletOfNatureItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC).descriptionLines(Text.translatable("item.archeon.amulet_of_nature.desc").formatted(Formatting.GRAY)));
 
-	public static final CustomItem MANUSCRIPT = new CustomItem(new AdvancedItemSettings());
+	public static final Item MANUSCRIPT = new Item(new AdvancedItemSettings());
 
-	public static final CustomItem APAFLORITE_GEMSTONE = new CustomItem(new AdvancedItemSettings());
+	public static final Item APAFLORITE_GEMSTONE = new Item(new AdvancedItemSettings());
 
-	public static final CustomItem EXYRIANE_SHARD = new CustomItem(new AdvancedItemSettings());
+	public static final Item EXYRIANE_SHARD = new Item(new AdvancedItemSettings());
 
-	public static final CustomItem RAW_FAELITE = new CustomItem(new AdvancedItemSettings());
-	public static final CustomItem FAELITE_INGOT = new CustomItem(new AdvancedItemSettings());
+	public static final Item RAW_FAELITE = new Item(new AdvancedItemSettings());
+	public static final Item FAELITE_INGOT = new Item(new AdvancedItemSettings());
 
-	public static final CustomItem RAW_LUSONYTH = new CustomItem(new AdvancedItemSettings());
-	public static final CustomItem LUSONYTH_INGOT = new CustomItem(new AdvancedItemSettings());
+	public static final Item RAW_LUSONYTH = new Item(new AdvancedItemSettings());
+	public static final Item LUSONYTH_INGOT = new Item(new AdvancedItemSettings());
 
-	public static final CustomItem PLANT_FIBER = new CustomItem(new AdvancedItemSettings());
+	public static final Item PLANT_FIBER = new Item(new AdvancedItemSettings());
 
-	public static final CustomItem MOSS_BALL = new CustomItem(new AdvancedItemSettings().food(1, 0.5f));
+	public static final Item MOSS_BALL = new Item(new AdvancedItemSettings().food(1, 0.5f));
 
-	public static final CustomItem BLUE_SHELL = new CustomItem(new AdvancedItemSettings());
-	public static final CustomItem PINK_SHELL = new CustomItem(new AdvancedItemSettings());
-	public static final CustomItem YELLOW_SHELL = new CustomItem(new AdvancedItemSettings());
+	public static final Item BLUE_SHELL = new Item(new AdvancedItemSettings());
+	public static final Item PINK_SHELL = new Item(new AdvancedItemSettings());
+	public static final Item YELLOW_SHELL = new Item(new AdvancedItemSettings());
 
 	public static final CustomBucketItem WOODEN_BUCKET = new CustomBucketItem(
 		Fluids.EMPTY, WoodenBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(16)
@@ -236,17 +237,17 @@ public class ArcheonItems implements ElementsInitializer {
 
 	public static final ItemFinishUsing GOBLET_USE = (stack, world, user) -> (stack.isEmpty() ? new ItemStack(ArcheonItems.GOBLET) : stack);
 
-	public static final CustomItem GOBLET_WATER = new CustomItem(new AdvancedItemSettings().maxCount(1)
+	public static final Item GOBLET_WATER = new Item(new AdvancedItemSettings().maxCount(1)
 		.food(0, 0.0f, false, true).drinkable().itemFinishUsing(GOBLET_USE));
 
-	public static final CustomItem GOBLET_BLOOD_ORANGE_JUICE = new CustomItem(new AdvancedItemSettings().maxCount(1)
+	public static final Item GOBLET_BLOOD_ORANGE_JUICE = new Item(new AdvancedItemSettings().maxCount(1)
 		.food(4, 0.5f).drinkable().itemFinishUsing(GOBLET_USE));
 
-	public static final CustomItem JAM_POT = new CustomItem(new AdvancedItemSettings());
+	public static final Item JAM_POT = new Item(new AdvancedItemSettings());
 
 	public static final ItemFinishUsing JAM_POT_USE = (stack, world, user) -> (stack.isEmpty() ? new ItemStack(ArcheonItems.JAM_POT) : stack);
 
-	public static final CustomItem ORANGE_LYCORIS_JAM_POT = new CustomItem(new AdvancedItemSettings().maxCount(1).food(
+	public static final Item ORANGE_LYCORIS_JAM_POT = new Item(new AdvancedItemSettings().maxCount(1).food(
 		new FoodComponent.Builder()
 			.hunger(15)
 			.saturationModifier(3.0f)
@@ -256,7 +257,7 @@ public class ArcheonItems implements ElementsInitializer {
 			.build()
 	).drinkable().recipeRemainder(ArcheonItems.JAM_POT).itemFinishUsing(JAM_POT_USE));
 
-	public static final CustomItem RED_LYCORIS_JAM_POT = new CustomItem(new AdvancedItemSettings().maxCount(1).food(
+	public static final Item RED_LYCORIS_JAM_POT = new Item(new AdvancedItemSettings().maxCount(1).food(
 		new FoodComponent.Builder()
 			.hunger(15)
 			.saturationModifier(3.0f)
@@ -266,7 +267,7 @@ public class ArcheonItems implements ElementsInitializer {
 			.build()
 	).drinkable().recipeRemainder(ArcheonItems.JAM_POT).itemFinishUsing(JAM_POT_USE));
 
-	public static final CustomItem PINK_LYCORIS_JAM_POT = new CustomItem(new AdvancedItemSettings().maxCount(1).food(
+	public static final Item PINK_LYCORIS_JAM_POT = new Item(new AdvancedItemSettings().maxCount(1).food(
 		new FoodComponent.Builder()
 			.hunger(15)
 			.saturationModifier(3.0f)
@@ -277,11 +278,11 @@ public class ArcheonItems implements ElementsInitializer {
 			.build()
 	).drinkable().recipeRemainder(ArcheonItems.JAM_POT).itemFinishUsing(JAM_POT_USE));
 
-	public static final CustomItem RED_LYCORIS_PETAL = new CustomItem(new AdvancedItemSettings().food(3, 0.2f));
+	public static final Item RED_LYCORIS_PETAL = new Item(new AdvancedItemSettings().food(3, 0.2f));
 
-	public static final CustomItem PINK_LYCORIS_PETAL = new CustomItem(new AdvancedItemSettings().food(3, 0.2f));
+	public static final Item PINK_LYCORIS_PETAL = new Item(new AdvancedItemSettings().food(3, 0.2f));
 
-	public static final CustomItem ORANGE_LYCORIS_PETAL = new CustomItem(new AdvancedItemSettings().food(3, 0.2f));
+	public static final Item ORANGE_LYCORIS_PETAL = new Item(new AdvancedItemSettings().food(3, 0.2f));
 
 	public static final LoreScrapItem LORE_SCRAP = new LoreScrapItem(new AdvancedItemSettings().maxCount(1));
 
@@ -300,29 +301,29 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomMusicDiscItem MUSIC_DISC_AIEL = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC),
 		new SoundEvent(Archeon.createId("music_disc.aiel")), 0, 0);
 
-	public static final CustomItem RECORD_FRAGMENT = new CustomItem(new AdvancedItemSettings().maxCount(16));
+	public static final Item RECORD_FRAGMENT = new Item(new AdvancedItemSettings().maxCount(16));
 
-	public static final CustomItem SALT = new CustomItem(new AdvancedItemSettings());
+	public static final Item SALT = new Item(new AdvancedItemSettings());
 
-	public static final CustomItem PEAKS_SNOW_PILE = new CustomItem(new AdvancedItemSettings());
+	public static final Item PEAKS_SNOW_PILE = new Item(new AdvancedItemSettings());
 
-	public static final CustomItem RAW_HEIFER = new CustomItem(new AdvancedItemSettings().food(2, 0.3f, true));
-	public static final CustomItem SALTED_HEIFER = new CustomItem(new AdvancedItemSettings().food(3, 0.9f, true));
-	public static final CustomItem COOKED_HEIFER = new CustomItem(new AdvancedItemSettings().food(4, 1.5f, true));
+	public static final Item RAW_HEIFER = new Item(new AdvancedItemSettings().food(2, 0.3f, true));
+	public static final Item SALTED_HEIFER = new Item(new AdvancedItemSettings().food(3, 0.9f, true));
+	public static final Item COOKED_HEIFER = new Item(new AdvancedItemSettings().food(4, 1.5f, true));
 
-	public static final CustomItem RAW_SUNSTRADIVER_CHOP = new CustomItem(new AdvancedItemSettings().food(2, 0.3f, true));
-	public static final CustomItem COOKED_SUNSTRADIVER_CHOP = new CustomItem(new AdvancedItemSettings().food(7, 1.0f, true));
+	public static final Item RAW_SUNSTRADIVER_CHOP = new Item(new AdvancedItemSettings().food(2, 0.3f, true));
+	public static final Item COOKED_SUNSTRADIVER_CHOP = new Item(new AdvancedItemSettings().food(7, 1.0f, true));
 
-	public static final CustomItem RAW_DEER = new CustomItem(new AdvancedItemSettings().food(3, 0.3f, true));
-	public static final CustomItem COOKED_DEER = new CustomItem(new AdvancedItemSettings().food(9, 1.0f, true));
+	public static final Item RAW_DEER = new Item(new AdvancedItemSettings().food(3, 0.3f, true));
+	public static final Item COOKED_DEER = new Item(new AdvancedItemSettings().food(9, 1.0f, true));
 
-	public static final CustomItem LYCORIS_JAM_PIE = new CustomItem(new AdvancedItemSettings().maxCount(1).food(6, 10.0f));
+	public static final Item LYCORIS_JAM_PIE = new Item(new AdvancedItemSettings().maxCount(1).food(6, 10.0f));
 
-	public static final CustomItem BLOOD_ORANGE = new CustomItem(new AdvancedItemSettings().food(1, 0.3f));
+	public static final Item BLOOD_ORANGE = new Item(new AdvancedItemSettings().food(1, 0.3f));
 
-	public static final CustomItem GRAPE = new CustomItem(new AdvancedItemSettings().food(1, 0.3f));
+	public static final Item GRAPE = new Item(new AdvancedItemSettings().food(1, 0.3f));
 
-	public static final CustomItem EXYRIANE_GRAPE = new CustomItem(new AdvancedItemSettings().food(
+	public static final Item EXYRIANE_GRAPE = new Item(new AdvancedItemSettings().food(
 		new FoodComponent.Builder()
 			.hunger(5)
 			.saturationModifier(2.5f)
@@ -333,21 +334,21 @@ public class ArcheonItems implements ElementsInitializer {
 			.build()
 	));
 
-	public static final CustomItem GROWING_NEAVE_BERRIES = new CustomItem(new AdvancedItemSettings().food(1, 0.3f));
+	public static final Item GROWING_NEAVE_BERRIES = new Item(new AdvancedItemSettings().food(1, 0.3f));
 
-	public static final CustomItem NEAVE_BERRIES = new CustomItem(new AdvancedItemSettings().food(3, 0.6f));
+	public static final Item NEAVE_BERRIES = new Item(new AdvancedItemSettings().food(3, 0.6f));
 
-	public static final CustomItem INK_BOTTLE = new CustomItem(new AdvancedItemSettings().maxCount(16));
+	public static final Item INK_BOTTLE = new Item(new AdvancedItemSettings().maxCount(16));
 
 	public static final PouchItem POUCH = new PouchItem(new AdvancedItemSettings().maxCount(1));
 
-	public static final CustomItem SUNSTRADIVER_FEATHER = new CustomItem(new AdvancedItemSettings());
+	public static final Item SUNSTRADIVER_FEATHER = new Item(new AdvancedItemSettings());
 
-	public static final CustomItem SNAIL_SHELL = new CustomItem(new AdvancedItemSettings());
+	public static final Item SNAIL_SHELL = new Item(new AdvancedItemSettings());
 
-	public static final CustomItem AURORA_CRYSTAL = new CustomItem(new AdvancedItemSettings().fireproof());
+	public static final Item AURORA_CRYSTAL = new Item(new AdvancedItemSettings().fireproof());
 
-	public static final CustomItem IMPRESSIVE_AURORA_CRYSTAL = new CustomItem(
+	public static final Item IMPRESSIVE_AURORA_CRYSTAL = new Item(
 		new AdvancedItemSettings()
 			.fireproof()
 			.nameFormattings(Formatting.GOLD)
@@ -357,9 +358,9 @@ public class ArcheonItems implements ElementsInitializer {
 			)
 	);
 
-	public static final CustomItem CENTAUR_HOOF = new CustomItem(new AdvancedItemSettings().fireproof());
+	public static final Item CENTAUR_HOOF = new Item(new AdvancedItemSettings().fireproof());
 
-	public static final CustomItem CENTAUR_HORSESHOE = new CustomItem(
+	public static final Item CENTAUR_HORSESHOE = new Item(
 		new AdvancedItemSettings()
 			.fireproof()
 			.nameFormattings(Formatting.GOLD)
@@ -377,8 +378,7 @@ public class ArcheonItems implements ElementsInitializer {
 	public static final CustomSpawnEggItem SUNSTRADIVER_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.SUNSTRADIVER, 16724787, 16764006, new AdvancedItemSettings());
 	public static final CustomSpawnEggItem HEIFER_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.HEIFER, 2298374, 3680013, new AdvancedItemSettings());
 
-	@Override
-	public void register() {
+	public static void register(AdvancedContainer mod) {
 		WAND_OF_NATURE.register(Archeon.createId("wand_of_nature"));
 		QOLM_PICK.register(Archeon.createId("qolm_pick"));
 		MASSACRE_DAGGER.register(Archeon.createId("massacre_dagger"));

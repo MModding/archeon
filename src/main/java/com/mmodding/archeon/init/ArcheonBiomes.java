@@ -4,7 +4,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.mmodding.archeon.Archeon;
-import com.mmodding.archeon.worldgen.biomes.ArcheonBiomesProvider;
+import com.mmodding.archeon.worldgen.biome.ArcheonBiomesProvider;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.utils.BiomeSourceUtils;
 import com.mmodding.mmodding_lib.library.utils.BiomeUtils;

@@ -1,7 +1,7 @@
 package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
-import com.mmodding.archeon.screenhandlers.PouchScreenHandler;
+import com.mmodding.archeon.screen.handler.PouchScreenHandler;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.screenhandlers.CustomScreenHandlerType;
 

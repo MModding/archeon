@@ -1,7 +1,7 @@
 package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
-import com.mmodding.archeon.blocks.BushLeavesBlock;
+import com.mmodding.archeon.block.BushLeavesBlock;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.utils.RegistrationUtils;
 import com.mmodding.mmodding_lib.library.utils.SurfaceRuleUtils;

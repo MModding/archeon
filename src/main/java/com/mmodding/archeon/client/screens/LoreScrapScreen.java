@@ -1,7 +1,7 @@
 package com.mmodding.archeon.client.screens;
 
 import com.mmodding.archeon.Archeon;
-import com.mmodding.archeon.items.LoreScrapItem;
+import com.mmodding.archeon.item.LoreScrapItem;
 import com.mmodding.mmodding_lib.library.colors.Color;
 import com.mmodding.mmodding_lib.library.utils.TextUtils;
 import com.mmodding.mmodding_lib.library.utils.TextureLocation;

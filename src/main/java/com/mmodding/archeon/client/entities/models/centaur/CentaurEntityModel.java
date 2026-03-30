@@ -1,7 +1,7 @@
 package com.mmodding.archeon.client.entities.models.centaur;
 
 import com.mmodding.archeon.client.entities.animations.CentaurEntityAnimations;
-import com.mmodding.archeon.entities.centaur.CentaurEntity;
+import com.mmodding.archeon.entity.centaur.CentaurEntity;
 import com.mmodding.mmodding_lib.library.client.utils.AnimationUtils;
 import net.minecraft.client.model.ModelPart;
 

@@ -1,7 +1,7 @@
 package com.mmodding.archeon.mixin;
 
-import com.mmodding.archeon.blocks.GoldenClayBlock;
-import com.mmodding.archeon.blocks.PeaksSnowyBlock;
+import com.mmodding.archeon.block.GoldenClayBlock;
+import com.mmodding.archeon.block.PeaksSnowyBlock;
 import com.mmodding.archeon.init.ArcheonBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

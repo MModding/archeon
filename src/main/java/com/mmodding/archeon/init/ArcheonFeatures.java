@@ -1,21 +1,21 @@
 package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
-import com.mmodding.archeon.blocks.LeavesCarpetBlock;
-import com.mmodding.archeon.blocks.SouthWheatBlock;
-import com.mmodding.archeon.blocks.VuxanciaLeavesBlock;
-import com.mmodding.archeon.worldgen.features.HollowCypressLogFeature;
-import com.mmodding.archeon.worldgen.features.MenhirFeature;
-import com.mmodding.archeon.worldgen.features.RockyFieldsRockFeature;
-import com.mmodding.archeon.worldgen.features.trees.decorators.HangingLeavesTreeDecorator;
-import com.mmodding.archeon.worldgen.features.trees.decorators.SporeRootcapTreeDecorator;
-import com.mmodding.archeon.worldgen.features.trees.foliage.CypressFoliagePlacer;
-import com.mmodding.archeon.worldgen.features.trees.foliage.NeclaneFoliagePlacer;
-import com.mmodding.archeon.worldgen.features.trees.foliage.PalmFoliagePlacer;
-import com.mmodding.archeon.worldgen.features.trees.foliage.VuxanciaFoliagePlacer;
-import com.mmodding.archeon.worldgen.features.trees.trunk.NeclaneTrunkPlacer;
-import com.mmodding.archeon.worldgen.features.trees.trunk.PalmTrunkPlacer;
-import com.mmodding.archeon.worldgen.features.trees.trunk.VuxanciaTrunkPlacer;
+import com.mmodding.archeon.block.LeavesCarpetBlock;
+import com.mmodding.archeon.block.SouthWheatBlock;
+import com.mmodding.archeon.block.VuxanciaLeavesBlock;
+import com.mmodding.archeon.worldgen.feature.HollowCypressLogFeature;
+import com.mmodding.archeon.worldgen.feature.MenhirFeature;
+import com.mmodding.archeon.worldgen.feature.RockyFieldsRockFeature;
+import com.mmodding.archeon.worldgen.feature.trees.decorators.HangingLeavesTreeDecorator;
+import com.mmodding.archeon.worldgen.feature.trees.decorators.SporeRootcapTreeDecorator;
+import com.mmodding.archeon.worldgen.feature.trees.foliage.CypressFoliagePlacer;
+import com.mmodding.archeon.worldgen.feature.trees.foliage.NeclaneFoliagePlacer;
+import com.mmodding.archeon.worldgen.feature.trees.foliage.PalmFoliagePlacer;
+import com.mmodding.archeon.worldgen.feature.trees.foliage.VuxanciaFoliagePlacer;
+import com.mmodding.archeon.worldgen.feature.trees.trunk.NeclaneTrunkPlacer;
+import com.mmodding.archeon.worldgen.feature.trees.trunk.PalmTrunkPlacer;
+import com.mmodding.archeon.worldgen.feature.trees.trunk.VuxanciaTrunkPlacer;
 import com.mmodding.mmodding_lib.library.blocks.CustomLayeredBlock;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import com.mmodding.mmodding_lib.library.utils.BiList;
@@ -177,7 +177,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		15,
 		Direction.DOWN,
 		12,
-		ArcheonTags.Blocks.SOIL,
+		ArcheonItemTags.Blocks.SOIL,
 		ArcheonBlocks.COBBLED_CHIASPEN.getDefaultState(),
 		Blocks.WATER.getDefaultState(),
 		BiList.of(
@@ -287,8 +287,8 @@ public class ArcheonFeatures implements ElementsInitializer {
 	public static final RuleTest PHOSNOR_SLATE = new BlockMatchRuleTest(ArcheonBlocks.PHOSNOR_SLATE);
 	public static final RuleTest DUNE_SAND = new BlockMatchRuleTest(ArcheonBlocks.DUNE_SAND);
 
-	public static final RuleTest CHIASPEN_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.CHIASPEN_ORES_REPLACEABLES);
-	public static final RuleTest PHOSNOR_SLATE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonTags.Blocks.PHOSNOR_SLATE_ORES_REPLACEABLES);
+	public static final RuleTest CHIASPEN_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonItemTags.Blocks.CHIASPEN_ORES_REPLACEABLES);
+	public static final RuleTest PHOSNOR_SLATE_ORES_REPLACEABLES = new TagMatchRuleTest(ArcheonItemTags.Blocks.PHOSNOR_SLATE_ORES_REPLACEABLES);
 
 	public static final CustomOreFeature ARTEMNITE_PATCH = new CustomOreFeature(
 		64, 8, 0, 120, List.of(OreFeatureConfig.createTarget(CHIASPEN, ArcheonBlocks.ARTEMNITE.getDefaultState()))
@@ -360,7 +360,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		5,
 		Direction.DOWN,
 		12,
-		ArcheonTags.Blocks.PHOSNOR_SLATE_ORES_REPLACEABLES,
+		ArcheonItemTags.Blocks.PHOSNOR_SLATE_ORES_REPLACEABLES,
 		ArcheonBlocks.GLOWSHROOM_MOSS_BLOCK.getDefaultState(),
 		ArcheonFluids.DASCIUM.getBlock().getDefaultState(),
 		ListUtils.biBuilder(
@@ -379,7 +379,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		5,
 		Direction.DOWN,
 		12,
-		ArcheonTags.Blocks.PHOSNOR_SLATE_ORES_REPLACEABLES,
+		ArcheonItemTags.Blocks.PHOSNOR_SLATE_ORES_REPLACEABLES,
 		ArcheonBlocks.GLOWSHROOM_MOSS_BLOCK.getDefaultState(),
 		ListUtils.biBuilder(
 			vegetation -> {
@@ -506,7 +506,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		125,
 		Direction.DOWN,
 		12,
-		ArcheonTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
+		ArcheonItemTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
 		ArcheonBlocks.GOLDEN_CLAY.getDefaultState(),
 		ListUtils.biBuilder(
 			vegetation -> {
@@ -533,7 +533,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		125,
 		Direction.DOWN,
 		12,
-		ArcheonTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
+		ArcheonItemTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
 		ArcheonBlocks.GOLDEN_CLAY.getDefaultState(),
 		ArcheonFluids.HOT_SPRING_WATER.getBlock().getDefaultState(),
 		ListUtils.biBuilder(
@@ -556,7 +556,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		125,
 		Direction.DOWN,
 		12,
-		ArcheonTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
+		ArcheonItemTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
 		ArcheonBlocks.ACHREAN_MOSS_BLOCK.getDefaultState(),
 		ListUtils.biBuilder(
 			vegetation -> {
@@ -590,7 +590,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 		12,
 		() -> ArcheonBlocks.ACHREAN_VINES,
 		() -> ArcheonBlocks.ACHREAN_MOSS_BLOCK,
-		ArcheonTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
+		ArcheonItemTags.Blocks.ACHREAN_MOSS_REPLACEABLES,
 		UniformIntProvider.create(1, 2),
 		0.0f,
 		5,
@@ -620,7 +620,7 @@ public class ArcheonFeatures implements ElementsInitializer {
 			count,
 			Direction.DOWN,
 			12,
-			ArcheonTags.Blocks.SOIL,
+			ArcheonItemTags.Blocks.SOIL,
 			ArcheonBlocks.WET_GRASS_BLOCK.getDefaultState(),
 			BiList.of(leaves.getDefaultState().with(VuxanciaLeavesBlock.PERSISTENT, true), 5, carpet.getDefaultState(), 25),
 			VerticalSurfaceType.FLOOR,

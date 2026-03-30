@@ -1,11 +1,10 @@
 package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
-import com.mmodding.archeon.entities.*;
-import com.mmodding.archeon.entities.centaur.AbstractCentaurEntity;
-import com.mmodding.archeon.entities.centaur.ArmoredCentaurEntity;
-import com.mmodding.archeon.entities.centaur.CentaurEntity;
-import com.mmodding.archeon.entities.projectiles.LusonythArrowEntity;
+import com.mmodding.archeon.entity.*;
+import com.mmodding.archeon.entity.centaur.ArmoredCentaurEntity;
+import com.mmodding.archeon.entity.centaur.CentaurEntity;
+import com.mmodding.archeon.entity.projectiles.LusonythArrowEntity;
 import com.mmodding.mmodding_lib.library.entities.CustomEntityType;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
 import net.minecraft.entity.EntityDimensions;

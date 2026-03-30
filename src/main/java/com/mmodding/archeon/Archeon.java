@@ -1,23 +1,20 @@
 package com.mmodding.archeon;
 
-import com.mmodding.archeon.blockentities.ArcheonBlockEntities;
+import com.mmodding.archeon.block.entity.ArcheonBlockEntities;
 import com.mmodding.archeon.init.*;
-import com.mmodding.mmodding_lib.library.base.AdvancedModContainer;
-import com.mmodding.mmodding_lib.library.base.MModdingModInitializer;
+import com.mmodding.library.core.api.AdvancedContainer;
+import com.mmodding.library.core.api.ExtendedModInitializer;
+import com.mmodding.library.core.api.management.ElementsManager;
 import com.mmodding.mmodding_lib.library.config.Config;
-import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Archeon implements ExtendedModInitializer {
 
-public class Archeon implements MModdingModInitializer {
-
-	public static final RegistryKey<World> WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, Archeon.createId("archeon"));
+	public static final RegistryKey<World> WORLD_KEY = RegistryKey.of(RegistryKeys.WORLD, Archeon.createId("archeon"));
 
 	@Nullable
 	@Override
@@ -26,30 +23,27 @@ public class Archeon implements MModdingModInitializer {
 	}
 
 	@Override
-	public List<ElementsInitializer> getElementsInitializers() {
-		List<ElementsInitializer> elementsInitializers = new ArrayList<>();
-		elementsInitializers.add(new ArcheonParticleTypes());
-		elementsInitializers.add(new ArcheonBlocks());
-		elementsInitializers.add(new ArcheonBlockEntities());
-		elementsInitializers.add(new ArcheonItems());
-		elementsInitializers.add(new ArcheonContentRegistries());
-		elementsInitializers.add(new ArcheonEnchantments());
-		elementsInitializers.add(new ArcheonFluids());
-		elementsInitializers.add(new ArcheonEvents());
-		elementsInitializers.add(new ArcheonItemGroups());
-		elementsInitializers.add(new ArcheonScreenHandlers());
-		elementsInitializers.add(new ArcheonNoiseRouter());
-		elementsInitializers.add(new ArcheonChunkGeneratorSettings());
-		elementsInitializers.add(new ArcheonBiomes());
-		elementsInitializers.add(new ArcheonFeatures());
-		elementsInitializers.add(new ArcheonEntities());
-		elementsInitializers.add(new ArcheonSoundEvents());
-		elementsInitializers.add(new ArcheonMiscellaneous());
-		return elementsInitializers;
+	public void setupManager(ElementsManager manager) {
+		manager.content(ArcheonParticleTypes::register);
+		manager.content(ArcheonBlocks::register);
+		manager.content(ArcheonBlockEntities::register);
+		manager.content(ArcheonItems::register);
+		manager.content(ArcheonContentRegistries::register);
+		manager.content(ArcheonEnchantments::register);
+		manager.content(ArcheonFluids::register);
+		manager.content(ArcheonEvents::register);
+		manager.content(ArcheonItemGroups::register);
+		manager.content(ArcheonScreenHandlers::register);
+		manager.content(ArcheonNoiseRouter::register);
+		manager.content(ArcheonChunkGeneratorSettings::register);
+		manager.content(ArcheonBiomes::register);
+		manager.content(ArcheonFeatures::register);
+		manager.content(ArcheonSoundEvents::register);
+		manager.content(ArcheonMiscellaneous::register);
 	}
 
 	@Override
-	public void onInitialize(AdvancedModContainer mod) {}
+	public void onInitialize(AdvancedContainer advancedContainer) {}
 
 	public static String id() {
 		return "archeon";

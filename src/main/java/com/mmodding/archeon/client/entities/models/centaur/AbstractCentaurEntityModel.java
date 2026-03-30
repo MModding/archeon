@@ -1,6 +1,6 @@
 package com.mmodding.archeon.client.entities.models.centaur;
 
-import com.mmodding.archeon.entities.centaur.AbstractCentaurEntity;
+import com.mmodding.archeon.entity.centaur.AbstractCentaurEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.render.entity.model.ModelWithArms;

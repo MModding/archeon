@@ -1,6 +1,6 @@
 package com.mmodding.archeon.client.init;
 
-import com.mmodding.archeon.fluids.DasciumFluid;
+import com.mmodding.archeon.fluid.DasciumFluid;
 import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.screen.PlayerScreenHandler;

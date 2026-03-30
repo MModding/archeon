@@ -1,6 +1,6 @@
 package com.mmodding.archeon.client.entities.models;
 
-import com.mmodding.archeon.entities.SunstradiverEntity;
+import com.mmodding.archeon.entity.SunstradiverEntity;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.EntityModel;

@@ -3,7 +3,7 @@ package com.mmodding.archeon.client.entities.renderers;
 import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.client.entities.models.HeartOfNatureEntityModel;
 import com.mmodding.archeon.client.init.ArcheonEntityModelLayers;
-import com.mmodding.archeon.entities.HeartOfNatureEntity;
+import com.mmodding.archeon.entity.HeartOfNatureEntity;
 import com.mmodding.mmodding_lib.library.client.render.entity.feature.GlowingFeatureRenderer;
 import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import net.minecraft.client.render.RenderLayer;

@@ -1,8 +1,8 @@
 package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
-import com.mmodding.archeon.enchantments.BloodySharpnessEnchantment;
-import com.mmodding.archeon.enchantments.EfficiencyOfTheQolmEnchantment;
+import com.mmodding.archeon.enchantment.BloodySharpnessEnchantment;
+import com.mmodding.archeon.enchantment.EfficiencyOfTheQolmEnchantment;
 import com.mmodding.mmodding_lib.library.enchantments.CustomEnchantment;
 import com.mmodding.mmodding_lib.library.enchantments.types.EnchantmentType;
 import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;

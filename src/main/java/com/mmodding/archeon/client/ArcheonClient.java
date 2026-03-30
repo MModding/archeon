@@ -6,7 +6,7 @@ import com.mmodding.archeon.client.screens.LoreScrapScreen;
 import com.mmodding.archeon.init.ArcheonItems;
 import com.mmodding.archeon.init.ArcheonMiscellaneous;
 import com.mmodding.archeon.init.ArcheonSoundEvents;
-import com.mmodding.archeon.items.LoreScrapItem;
+import com.mmodding.archeon.item.LoreScrapItem;
 import com.mmodding.mmodding_lib.library.base.AdvancedModContainer;
 import com.mmodding.mmodding_lib.library.base.MModdingClientModInitializer;
 import com.mmodding.mmodding_lib.library.client.advancements.AdvancementChallengeCompletionSoundCallback;

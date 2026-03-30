@@ -3,7 +3,7 @@ package com.mmodding.archeon.client.entities.renderers;
 import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.client.entities.models.MourncreepEntityModel;
 import com.mmodding.archeon.client.init.ArcheonEntityModelLayers;
-import com.mmodding.archeon.entities.MourncreepEntity;
+import com.mmodding.archeon.entity.MourncreepEntity;
 import com.mmodding.mmodding_lib.library.utils.TextureLocation;
 import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;

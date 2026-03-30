@@ -1,7 +1,7 @@
 package com.mmodding.archeon.client.entities.renderers.centaur;
 
 import com.mmodding.archeon.client.entities.models.centaur.AbstractCentaurEntityModel;
-import com.mmodding.archeon.entities.centaur.AbstractCentaurEntity;
+import com.mmodding.archeon.entity.centaur.AbstractCentaurEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;

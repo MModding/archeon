@@ -1,6 +1,6 @@
 package com.mmodding.archeon.client.entities.models;
 
-import com.mmodding.archeon.entities.SnailEntity;
+import com.mmodding.archeon.entity.SnailEntity;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.EntityModel;

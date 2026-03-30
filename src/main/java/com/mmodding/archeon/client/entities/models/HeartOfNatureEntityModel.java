@@ -1,6 +1,6 @@
 package com.mmodding.archeon.client.entities.models;
 
-import com.mmodding.archeon.entities.HeartOfNatureEntity;
+import com.mmodding.archeon.entity.HeartOfNatureEntity;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.EntityModel;

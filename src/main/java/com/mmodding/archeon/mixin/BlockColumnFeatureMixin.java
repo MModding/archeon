@@ -4,7 +4,7 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Share;
 import com.llamalad7.mixinextras.sugar.ref.LocalRef;
-import com.mmodding.archeon.blocks.XetulianSugarCaneBlock;
+import com.mmodding.archeon.block.XetulianSugarCaneBlock;
 import com.mmodding.archeon.init.ArcheonBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;

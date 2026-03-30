@@ -1,6 +1,6 @@
 package com.mmodding.archeon.client.entities.models;
 
-import com.mmodding.archeon.entities.MourncreepEntity;
+import com.mmodding.archeon.entity.MourncreepEntity;
 import net.minecraft.client.model.Dilation;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.model.TexturedModelData;

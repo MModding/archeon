@@ -1,6 +1,6 @@
 package com.mmodding.archeon.client.entities.models;
 
-import com.mmodding.archeon.entities.DeerEntity;
+import com.mmodding.archeon.entity.DeerEntity;
 import com.mmodding.mmodding_lib.library.client.utils.AnimationUtils;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;

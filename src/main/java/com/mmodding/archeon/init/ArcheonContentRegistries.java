@@ -34,7 +34,7 @@ public class ArcheonContentRegistries implements ElementsInitializer {
 	private void registerFuelElements() {
 		FuelRegistry.INSTANCE.add(ArcheonItems.EXYRIANE_SHARD, 1600);
 		FuelRegistry.INSTANCE.add(ArcheonBlocks.EXYRIANE_BLOCK.getItem(), 16000);
-		FuelRegistry.INSTANCE.add(ArcheonTags.Items.PLANKS, 300);
+		FuelRegistry.INSTANCE.add(ArcheonItemTags.Items.PLANKS, 300);
 		FuelRegistry.INSTANCE.add(ArcheonBlocks.PALM_LOG.getItem(), 300);
 		FuelRegistry.INSTANCE.add(ArcheonBlocks.NECLANE_LOG.getItem(), 300);
 		FuelRegistry.INSTANCE.add(ArcheonBlocks.CYPRESS_LOG.getItem(), 300);
