@@ -1,23 +1,23 @@
-package com.mmodding.archeon.worldgen.feature.trees.trunk;
+package com.mmodding.archeon.worldgen.feature.tree.trunk;
 
-import com.mmodding.archeon.init.ArcheonFeatures;
-import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomTrunkPlacer;
+import com.mmodding.archeon.init.ArcheonTreeParts;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.random.RandomGenerator;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.TestableWorld;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliage.FoliagePlacer;
+import net.minecraft.world.gen.trunk.TrunkPlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacerType;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
 
-public class PalmTrunkPlacer extends CustomTrunkPlacer {
+public class PalmTrunkPlacer extends TrunkPlacer {
 
 	public static final Codec<PalmTrunkPlacer> CODEC = RecordCodecBuilder.create(
 		instance -> fillTrunkPlacerFields(instance).apply(instance, PalmTrunkPlacer::new)
@@ -29,18 +29,18 @@ public class PalmTrunkPlacer extends CustomTrunkPlacer {
 
 	@Override
 	public TrunkPlacerType<PalmTrunkPlacer> getType() {
-		return ArcheonFeatures.PALM_TRUNK_PLACER;
+		return ArcheonTreeParts.PALM_TRUNK_PLACER;
 	}
 
 	@Override
-	public List<FoliagePlacer.TreeNode> generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, RandomGenerator random, int height, BlockPos startPos, TreeFeatureConfig config) {
+	public List<FoliagePlacer.TreeNode> generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, int height, BlockPos startPos, TreeFeatureConfig config) {
 
 		setToDirt(world, replacer, random, startPos.down(), config);
 
 		List<FoliagePlacer.TreeNode> nodes = new ArrayList<>();
 
 		for (int y = 0; y < 3; y++) {
-			this.method_35375(world, replacer, random, startPos.up(y), config);
+			this.getAndSetState(world, replacer, random, startPos.up(y), config);
 		}
 
 		int secondHeight = height != 7 ? 3 : 4;
@@ -50,7 +50,7 @@ public class PalmTrunkPlacer extends CustomTrunkPlacer {
 		BlockPos pos = startPos.up(3).offset(secondDirection);
 
 		for (int y = 0; y < secondHeight; y++) {
-			this.method_35375(world, replacer, random, pos.up(y), config);
+			this.getAndSetState(world, replacer, random, pos.up(y), config);
 		}
 
 		if (height > 7) {
@@ -69,7 +69,7 @@ public class PalmTrunkPlacer extends CustomTrunkPlacer {
 			BlockPos heightPos = pos.up(secondHeight).offset(thirdDirection);
 
 			for (int y = 0; y < thirdHeight; y++) {
-				this.method_35375(world, replacer, random, heightPos.up(y), config);
+				this.getAndSetState(world, replacer, random, heightPos.up(y), config);
 			}
 
 			nodes.add(new FoliagePlacer.TreeNode(heightPos.up(thirdHeight), 0, true));

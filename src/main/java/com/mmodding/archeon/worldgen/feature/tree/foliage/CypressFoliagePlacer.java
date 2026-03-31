@@ -1,8 +1,7 @@
-package com.mmodding.archeon.worldgen.features.trees.foliage;
+package com.mmodding.archeon.worldgen.feature.tree.foliage;
 
 import com.mmodding.archeon.init.ArcheonBlocks;
-import com.mmodding.archeon.init.ArcheonFeatures;
-import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomFoliagePlacer;
+import com.mmodding.archeon.init.ArcheonTreeParts;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.floats.FloatIntPair;
@@ -11,32 +10,32 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.IntProvider;
-import net.minecraft.util.random.RandomGenerator;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.TestableWorld;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
+import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BiConsumer;
 
-public class CypressFoliagePlacer extends CustomFoliagePlacer {
+public class CypressFoliagePlacer extends FoliagePlacer {
 
 	public static final Codec<CypressFoliagePlacer> CODEC = RecordCodecBuilder.create(
-		instance -> fillCustomFoliagePlacerFields(instance).apply(instance, CypressFoliagePlacer::new)
+		instance -> fillFoliagePlacerFields(instance).apply(instance, CypressFoliagePlacer::new)
 	);
 
-	public CypressFoliagePlacer(IntProvider radius, IntProvider offset, IntProvider foliageHeight) {
-		super(radius, offset, foliageHeight);
+	public CypressFoliagePlacer(IntProvider radius, IntProvider offset) {
+		super(radius, offset);
 	}
 
 	@Override
 	public FoliagePlacerType<?> getType() {
-		return ArcheonFeatures.CYPRESS_FOLIAGE_PLACER;
+		return ArcheonTreeParts.CYPRESS_FOLIAGE_PLACER;
 	}
 
 	@Override
-	protected void generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, RandomGenerator random, TreeFeatureConfig config, int trunkHeight, TreeNode node, int foliageHeight, int radius, int offset) {
+	protected void generate(TestableWorld world, BlockPlacer replacer, Random random, TreeFeatureConfig config, int trunkHeight, TreeNode node, int foliageHeight, int radius, int offset) {
 
 		boolean giant = trunkHeight > 18;
 
@@ -44,7 +43,7 @@ public class CypressFoliagePlacer extends CustomFoliagePlacer {
 		BlockPos centerPos = node.getCenter().down(trunkHeight - (giant ? 3 : 2));
 
 		// Randomizing Trunk Height to obtain Foliage Height
-		int height = trunkHeight + 1 + random.rangeClosed(2, 3);
+		int height = trunkHeight + 1 + random.nextBetweenExclusive(2, 3);
 
 		// Placing the middle foliage column
 		for (int i = 0; i < height; i++) {
@@ -105,12 +104,12 @@ public class CypressFoliagePlacer extends CustomFoliagePlacer {
 	}
 
 	@Override
-	public int getRandomHeight(RandomGenerator random, int trunkHeight, TreeFeatureConfig config) {
+	public int getRandomHeight(Random random, int trunkHeight, TreeFeatureConfig config) {
 		return 0;
 	}
 
 	@Override
-	protected boolean isInvalidForLeaves(RandomGenerator random, int dx, int y, int dz, int radius, boolean giantTrunk) {
+	protected boolean isInvalidForLeaves(Random random, int dx, int y, int dz, int radius, boolean giantTrunk) {
 		return false;
 	}
 }

@@ -1,9 +1,8 @@
-package com.mmodding.archeon.worldgen.feature.trees.foliage;
+package com.mmodding.archeon.worldgen.feature.tree.foliage;
 
 import com.mmodding.archeon.init.ArcheonBlocks;
-import com.mmodding.archeon.init.ArcheonFeatures;
-import com.mmodding.mmodding_lib.library.utils.RadiusUtils;
-import com.mmodding.mmodding_lib.library.worldgen.features.trees.CustomFoliagePlacer;
+import com.mmodding.archeon.init.ArcheonTreeParts;
+import com.mmodding.library.math.api.AreaUtil;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.BlockState;
@@ -14,34 +13,34 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.intprovider.IntProvider;
-import net.minecraft.util.random.RandomGenerator;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.TestableWorld;
 import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
+import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
 
-import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class NeclaneFoliagePlacer extends CustomFoliagePlacer {
+public class NeclaneFoliagePlacer extends FoliagePlacer {
 
 	public static final Codec<NeclaneFoliagePlacer> CODEC = RecordCodecBuilder.create(
-		instance -> fillCustomFoliagePlacerFields(instance).apply(instance, NeclaneFoliagePlacer::new)
+		instance -> fillFoliagePlacerFields(instance).apply(instance, NeclaneFoliagePlacer::new)
 	);
 
-	public NeclaneFoliagePlacer(IntProvider radius, IntProvider offset, IntProvider foliageHeight) {
-		super(radius, offset, foliageHeight);
+	public NeclaneFoliagePlacer(IntProvider radius, IntProvider offset) {
+		super(radius, offset);
 	}
 
 	@Override
 	public FoliagePlacerType<NeclaneFoliagePlacer> getType() {
-		return ArcheonFeatures.NECLANE_FOLIAGE_PLACER;
+		return ArcheonTreeParts.NECLANE_FOLIAGE_PLACER;
 	}
 
 	@Override
-	protected void generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, RandomGenerator random, TreeFeatureConfig config, int trunkHeight, TreeNode node, int foliageHeight, int radius, int offset) {
+	protected void generate(TestableWorld world, BlockPlacer replacer, Random random, TreeFeatureConfig config, int trunkHeight, TreeNode node, int foliageHeight, int radius, int offset) {
 
 		BlockPos centerPos = node.getCenter().up(3);
 
@@ -51,29 +50,29 @@ public class NeclaneFoliagePlacer extends CustomFoliagePlacer {
 			this.generateCrossAtDirection(world, replacer, random, config, centerPos, direction);
 		}
 
-		RadiusUtils.iterateFromCenterInSquare(centerPos, node.isGiantTrunk() ? 5 : 3, pos -> this.placeRandomlyFromCenterIfValid(world, replacer, random, config, pos, centerPos));
+		AreaUtil.iterateFromCenterInSquare(centerPos, node.isGiantTrunk() ? 5 : 3, pos -> this.placeRandomlyFromCenterIfValid(world, replacer, random, config, pos, centerPos));
 
-		RadiusUtils.iterateFromCenterInSquare(centerPos, node.isGiantTrunk() ? 5 : 3, pos -> this.applySmooth(world, replacer, random, config, pos));
+		AreaUtil.iterateFromCenterInSquare(centerPos, node.isGiantTrunk() ? 5 : 3, pos -> this.applySmooth(world, replacer, random, config, pos));
 	}
 
-	protected void placeNeclaneFoliage(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, RandomGenerator random, TreeFeatureConfig config, BlockPos pos) {
+	protected void placeNeclaneFoliage(TestableWorld world, BlockPlacer replacer, Random random, TreeFeatureConfig config, BlockPos pos) {
 		if (TreeFeature.canReplace(world, pos)) {
-			BlockState blockState = random.nextInt(5) != 0 ? config.foliageProvider.getBlockState(random, pos) : ArcheonBlocks.FLOWERED_NECLANE_LEAVES.getDefaultState();
+			BlockState blockState = random.nextInt(5) != 0 ? config.foliageProvider.get(random, pos) : ArcheonBlocks.FLOWERED_NECLANE_LEAVES.getDefaultState();
 			if (blockState.contains(Properties.WATERLOGGED)) {
 				blockState = blockState.with(Properties.WATERLOGGED, world.testFluidState(pos, state -> state.isEqualAndStill(Fluids.WATER)));
 			}
-			replacer.accept(pos, blockState);
+			replacer.placeBlock(pos, blockState);
 		}
 	}
 
-	protected void generateCrossAtDirection(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, RandomGenerator random, TreeFeatureConfig config, BlockPos pos, Direction direction) {
+	protected void generateCrossAtDirection(TestableWorld world, BlockPlacer replacer, Random random, TreeFeatureConfig config, BlockPos pos, Direction direction) {
 		Direction opposite = direction.getOpposite();
 		BlockPos crossPos = pos.offset(direction);
 		this.placeNeclaneFoliage(world, replacer, random, config, crossPos);
 		Direction.stream().filter(filter -> filter != direction && filter != opposite).forEach(crossDirection -> this.placeNeclaneFoliage(world, replacer, random, config, crossPos.offset(crossDirection)));
 	}
 
-	protected void placeRandomlyFromCenterIfValid(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, RandomGenerator random, TreeFeatureConfig config, BlockPos pos, BlockPos centerPos) {
+	protected void placeRandomlyFromCenterIfValid(TestableWorld world, BlockPlacer replacer, Random random, TreeFeatureConfig config, BlockPos pos, BlockPos centerPos) {
 		if (TreeFeature.canReplace(world, pos)) {
 			BlockPos subtractedPos = pos.subtract(centerPos);
 			int distanceX = MathHelper.abs(subtractedPos.getX());
@@ -97,9 +96,9 @@ public class NeclaneFoliagePlacer extends CustomFoliagePlacer {
 		}
 	}
 
-	protected void applySmooth(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, RandomGenerator random, TreeFeatureConfig config, BlockPos pos) {
+	protected void applySmooth(TestableWorld world, BlockPlacer replacer, Random random, TreeFeatureConfig config, BlockPos pos) {
 		if (TreeFeature.canReplace(world, pos)) {
-			Consumer<BlockPos> airSetter = airPos -> replacer.accept(airPos, Blocks.AIR.getDefaultState());
+			Consumer<BlockPos> airSetter = airPos -> replacer.placeBlock(airPos, Blocks.AIR.getDefaultState());
 
 			int leavesCounter = 0;
 			int airCounter = 0;
@@ -121,12 +120,12 @@ public class NeclaneFoliagePlacer extends CustomFoliagePlacer {
 	}
 
 	@Override
-	public int getRandomHeight(RandomGenerator random, int trunkHeight, TreeFeatureConfig config) {
+	public int getRandomHeight(Random random, int trunkHeight, TreeFeatureConfig config) {
 		return 0;
 	}
 
 	@Override
-	protected boolean isInvalidForLeaves(RandomGenerator random, int dx, int y, int dz, int radius, boolean giantTrunk) {
+	protected boolean isInvalidForLeaves(Random random, int dx, int y, int dz, int radius, boolean giantTrunk) {
 		return false;
 	}
 }
