@@ -16,6 +16,7 @@ import com.mmodding.archeon.worldgen.feature.tree.foliage.VuxanciaFoliagePlacer;
 import com.mmodding.archeon.worldgen.feature.tree.trunk.NeclaneTrunkPlacer;
 import com.mmodding.archeon.worldgen.feature.tree.trunk.PalmTrunkPlacer;
 import com.mmodding.archeon.worldgen.feature.tree.trunk.VuxanciaTrunkPlacer;
+import com.mmodding.library.block.api.catalog.GrowsDownPlantBlock;
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.worldgen.api.feature.FeaturePack;
 import com.mmodding.library.worldgen.api.feature.MModdingFeatures;
@@ -25,7 +26,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.registry.Registerable;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.entry.RegistryEntryList;
 import net.minecraft.state.property.Properties;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
@@ -37,10 +37,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.VerticalSurfaceType;
 import net.minecraft.util.math.floatprovider.ClampedNormalFloatProvider;
 import net.minecraft.util.math.floatprovider.UniformFloatProvider;
-import net.minecraft.util.math.intprovider.BiasedToBottomIntProvider;
-import net.minecraft.util.math.intprovider.ClampedNormalIntProvider;
-import net.minecraft.util.math.intprovider.ConstantIntProvider;
-import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.util.math.intprovider.*;
 import net.minecraft.util.math.noise.DoublePerlinNoiseSampler;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
@@ -49,6 +46,7 @@ import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.placementmodifier.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.stateprovider.NoiseBlockStateProvider;
+import net.minecraft.world.gen.stateprovider.RandomizedIntBlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
@@ -1063,6 +1061,191 @@ public class ArcheonFeaturePacks {
 			)
 		);
 
+	private static final FeaturePack<RandomBooleanFeatureConfig> ACHREAN_GOLDEN_CLAY = FeaturePack.of(Feature.RANDOM_BOOLEAN_SELECTOR)
+		.appendConfiguredFeature(
+			ArcheonConfiguredFeatures.ACHREAN_GOLDEN_CLAY,
+			new RandomBooleanFeatureConfig(
+				PlacedFeatures.createEntry(
+					Feature.VEGETATION_PATCH,
+					new VegetationPatchFeatureConfig(
+						ArcheonBlockTags.ACHREAN_MOSS_REPLACEABLES,
+						BlockStateProvider.of(ArcheonBlocks.GOLDEN_CLAY),
+						PlacedFeatures.createEntry(
+							Feature.SIMPLE_BLOCK,
+							new SimpleBlockFeatureConfig(
+								new WeightedBlockStateProvider(
+									DataPool.<BlockState>builder()
+										.add(achreanMossLayer(1), 50)
+										.add(achreanMossLayer(2), 35)
+										.add(achreanMossLayer(3), 30)
+										.add(achreanMossLayer(4), 25)
+										.add(achreanMossLayer(5), 20)
+										.add(achreanMossLayer(6), 15)
+										.add(achreanMossLayer(7), 10)
+										.add(achreanMossLayer(8), 5)
+								)
+							)
+						),
+						VerticalSurfaceType.FLOOR,
+						ConstantIntProvider.create(3),
+						0.8f,
+						2,
+						0.8f,
+						UniformIntProvider.create(4, 7),
+						0.7f
+					),
+					CountPlacementModifier.of(125),
+					SquarePlacementModifier.of(),
+					PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
+					BiomePlacementModifier.of()
+				),
+				PlacedFeatures.createEntry(
+					MModdingFeatures.ADVANCED_LIQUID_VEGETATION_PATCH,
+					new AdvancedLiquidVegetationPatchFeature.Config(
+						ArcheonBlockTags.ACHREAN_MOSS_REPLACEABLES,
+						BlockStateProvider.of(ArcheonBlocks.GOLDEN_CLAY),
+						BlockStateProvider.of(ArcheonBlocks.HOT_SPRING_WATER_STILL),
+						PlacedFeatures.createEntry(
+							Feature.SIMPLE_BLOCK,
+							new SimpleBlockFeatureConfig(
+								new WeightedBlockStateProvider(
+									DataPool.<BlockState>builder()
+										.add(ArcheonBlocks.SMALL_HOT_SPRING_LILY_PAD.getDefaultState(), 30)
+										.add(ArcheonBlocks.HOT_SPRING_LILY_PAD.getDefaultState(), 20)
+										.add(ArcheonBlocks.GIANT_LILY.getDefaultState(), 10)
+								)
+							)
+						),
+						VerticalSurfaceType.FLOOR,
+						ConstantIntProvider.create(3),
+						0.8f,
+						5,
+						0.1f,
+						UniformIntProvider.create(4, 7),
+						0.7f
+					),
+					CountPlacementModifier.of(125),
+					SquarePlacementModifier.of(),
+					PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
+					BiomePlacementModifier.of()
+				)
+			),
+			pack -> pack.appendPlacedFeature(
+				ArcheonPlacedFeatures.ACHREAN_GOLDEN_CLAY,
+				CountPlacementModifier.of(62),
+				SquarePlacementModifier.of(),
+				PlacedFeatures.BOTTOM_TO_TOP_RANGE,
+				EnvironmentScanPlacementModifier.of(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.IS_AIR, 12),
+				RandomOffsetPlacementModifier.vertically(ConstantIntProvider.create(1)),
+				BiomePlacementModifier.of()
+			)
+		);
+
+	private static final FeaturePack<VegetationPatchFeatureConfig> ACHREAN_MOSS_PATCH = FeaturePack.of(Feature.VEGETATION_PATCH)
+		.appendConfiguredFeature(
+			ArcheonConfiguredFeatures.ACHREAN_MOSS_PATCH,
+			new VegetationPatchFeatureConfig(
+				ArcheonBlockTags.ACHREAN_MOSS_REPLACEABLES,
+				BlockStateProvider.of(ArcheonBlocks.ACHREAN_MOSS),
+				PlacedFeatures.createEntry(
+					Feature.SIMPLE_BLOCK,
+					new SimpleBlockFeatureConfig(
+						new WeightedBlockStateProvider(
+							DataPool.<BlockState>builder()
+								.add(achreanMossLayer(1), 15)
+								.add(achreanMossLayer(2), 15)
+								.add(achreanMossLayer(3), 15)
+								.add(achreanMossLayer(4), 15)
+								.add(ArcheonBlocks.WET_GRASS.getDefaultState(), 5)
+								.add(ArcheonBlocks.TALL_WET_GRASS.getDefaultState(), 5)
+								.add(ArcheonBlocks.FLOWERED_WET_GRASS.getDefaultState(), 5)
+								.add(ArcheonBlocks.FLOWERED_TALL_WET_GRASS.getDefaultState(), 5)
+								.add(ArcheonBlocks.WET_FERN.getDefaultState(), 5)
+								.add(ArcheonBlocks.TALL_WET_FERN.getDefaultState(), 5)
+								.add(ArcheonBlocks.WET_GRASS_TUFFET.getDefaultState(), 5)
+								.add(ArcheonBlocks.BLUE_DOELDIA.getDefaultState(), 5)
+								.add(ArcheonBlocks.WHITE_DOELDIA.getDefaultState(), 5)
+								.add(ArcheonBlocks.PINK_DOELDIA.getDefaultState(), 5)
+								.add(ArcheonBlocks.YELLOW_DOELDIA.getDefaultState(), 5)
+						)
+					)
+				),
+				VerticalSurfaceType.FLOOR,
+				ConstantIntProvider.create(1),
+				0.0f,
+				5,
+				0.9f,
+				UniformIntProvider.create(4, 7),
+				0.3f
+			),
+			pack -> pack.appendPlacedFeature(
+				ArcheonPlacedFeatures.ACHREAN_MOSS_PATCH,
+				VegetationPlacedFeatures.modifiers(125)
+			)
+		)
+		.appendConfiguredFeature(
+			ArcheonConfiguredFeatures.ACHREAN_MOSS_CEILING,
+			new VegetationPatchFeatureConfig(
+				ArcheonBlockTags.ACHREAN_MOSS_REPLACEABLES,
+				BlockStateProvider.of(ArcheonBlocks.ACHREAN_MOSS_BLOCK),
+				PlacedFeatures.createEntry(
+					Feature.BLOCK_COLUMN,
+					new BlockColumnFeatureConfig(
+						List.of(
+							BlockColumnFeatureConfig.createLayer(
+								new WeightedListIntProvider(
+									DataPool.<IntProvider>builder()
+										.add(UniformIntProvider.create(0, 3), 5)
+										.add(UniformIntProvider.create(1, 7), 1)
+										.build()
+								),
+								new WeightedBlockStateProvider(
+									DataPool.<BlockState>builder()
+										.add(ArcheonBlocks.ACHREAN_VINES.getBody().getDefaultState(), 4)
+										.add(ArcheonBlocks.ACHREAN_VINES.withFruits(ArcheonBlocks.ACHREAN_VINES.getBody().getDefaultState()), 1)
+								)
+							),
+							BlockColumnFeatureConfig.createLayer(
+								ConstantIntProvider.create(1),
+								new RandomizedIntBlockStateProvider(
+									new WeightedBlockStateProvider(
+										DataPool.<BlockState>builder()
+											.add(ArcheonBlocks.ACHREAN_VINES.getHead().getDefaultState(), 4)
+											.add(ArcheonBlocks.ACHREAN_VINES.withFruits(ArcheonBlocks.ACHREAN_VINES.getHead().getDefaultState()), 1)
+									),
+									GrowsDownPlantBlock.Head.AGE,
+									UniformIntProvider.create(23, 25)
+								)
+							)
+						),
+						Direction.DOWN,
+						BlockPredicate.IS_AIR,
+						true
+					)
+				),
+				VerticalSurfaceType.CEILING,
+				UniformIntProvider.create(1, 2),
+				0.0f,
+				5,
+				0.08f,
+				UniformIntProvider.create(4, 7),
+				0.3f
+			),
+			pack -> pack.appendPlacedFeature(
+				ArcheonPlacedFeatures.ACHREAN_MOSS_CEILING,
+				CountPlacementModifier.of(125),
+				SquarePlacementModifier.of(),
+				PlacedFeatures.BOTTOM_TO_TOP_RANGE,
+				EnvironmentScanPlacementModifier.of(Direction.UP, BlockPredicate.solid(), BlockPredicate.IS_AIR, 12),
+				RandomOffsetPlacementModifier.vertically(ConstantIntProvider.create(-1)),
+				BiomePlacementModifier.of()
+			)
+		);
+
+	private static BlockState achreanMossLayer(int layer) {
+		return ArcheonBlocks.ACHREAN_MOSS.getDefaultState().with(Properties.LAYERS, layer);
+	}
+
 	private static RandomPatchFeatureConfig simpleRandomPatch(int tries, Block block) {
 		return ConfiguredFeatures.createRandomPatchFeatureConfig(tries, PlacedFeatures.createEntry(
 			Feature.SIMPLE_BLOCK,
@@ -1122,6 +1305,8 @@ public class ArcheonFeaturePacks {
 		CLUSTER.registerConfiguredFeatures(configuredFeatures);
 		SMALL.registerConfiguredFeatures(configuredFeatures);
 		LARGE.registerConfiguredFeatures(configuredFeatures);
+		ACHREAN_GOLDEN_CLAY.registerConfiguredFeatures(configuredFeatures);
+		ACHREAN_MOSS_PATCH.registerConfiguredFeatures(configuredFeatures);
 	}
 
 	public static void registerPlacedFeatures(AdvancedContainer mod, Registerable<PlacedFeature> placedFeatures) {
@@ -1146,5 +1331,7 @@ public class ArcheonFeaturePacks {
 		CLUSTER.registerPlacedFeatures(placedFeatures);
 		SMALL.registerPlacedFeatures(placedFeatures);
 		LARGE.registerPlacedFeatures(placedFeatures);
+		ACHREAN_GOLDEN_CLAY.registerPlacedFeatures(placedFeatures);
+		ACHREAN_MOSS_PATCH.registerPlacedFeatures(placedFeatures);
 	}
 }
