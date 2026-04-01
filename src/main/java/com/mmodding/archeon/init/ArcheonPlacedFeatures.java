@@ -7,6 +7,10 @@ import net.minecraft.world.gen.feature.PlacedFeature;
 
 public class ArcheonPlacedFeatures {
 
+	public static final RegistryKey<PlacedFeature> ROCKY_FIELDS_ROCK = of("rocky_fields_rock");
+	public static final RegistryKey<PlacedFeature> MENHIR = of("menhir");
+	public static final RegistryKey<PlacedFeature> HOLLOW_CYPRESS_LOG = of("hollow_cypress_log");
+
 	public static final RegistryKey<PlacedFeature> PALM_TREE = of("palm_tree");
 	public static final RegistryKey<PlacedFeature> NECLANE_TREE = of("neclane_tree");
 	public static final RegistryKey<PlacedFeature> ROCKY_FIELDS_NECLANE_TREE = of("rocky_fields_neclane_tree");
@@ -77,12 +81,12 @@ public class ArcheonPlacedFeatures {
 	public static final RegistryKey<PlacedFeature> GLOWSHROOMS = of("glowshrooms");
 
 	public static final RegistryKey<PlacedFeature> CRIADAN_CLUSTER = of("criadan_cluster");
+	public static final RegistryKey<PlacedFeature> SMALL_CRIADAN = of("small_criadan");
 	public static final RegistryKey<PlacedFeature> LARGE_CRIADAN = of("large_criadan");
-	public static final RegistryKey<PlacedFeature> POINTED_CRIADAN = of("pointed_criadan");
 
 	public static final RegistryKey<PlacedFeature> ANHYDRITE_CLUSTER = of("anhydrite_cluster");
+	public static final RegistryKey<PlacedFeature> SMALL_ANHYDRITE = of("small_anhydrite");
 	public static final RegistryKey<PlacedFeature> LARGE_ANHYDRITE = of("large_anhydrite");
-	public static final RegistryKey<PlacedFeature> POINTED_ANHYDRITE = of("pointed_anhydrite");
 
 	public static final RegistryKey<PlacedFeature> GOLDEN_CLAY_POOL = of("golden_clay_pool");
 	public static final RegistryKey<PlacedFeature> GOLDEN_CLAY_PATCH = of("golden_clay_patch");

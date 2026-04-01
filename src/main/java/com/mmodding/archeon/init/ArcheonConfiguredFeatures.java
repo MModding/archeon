@@ -7,6 +7,10 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 
 public class ArcheonConfiguredFeatures {
 
+	public static final RegistryKey<ConfiguredFeature<?, ?>> ROCKY_FIELDS_ROCK = of("rocky_fields_rock");
+	public static final RegistryKey<ConfiguredFeature<?, ?>> MENHIR = of("menhir");
+	public static final RegistryKey<ConfiguredFeature<?, ?>> HOLLOW_CYPRESS_LOG = of("hollow_cypress_log");
+
 	public static final RegistryKey<ConfiguredFeature<?, ?>> PALM_TREE = of("palm_tree");
 	public static final RegistryKey<ConfiguredFeature<?, ?>> NECLANE_TREE = of("neclane_tree");
 	public static final RegistryKey<ConfiguredFeature<?, ?>> CYPRESS_TREE = of("cypress_tree");
@@ -73,12 +77,12 @@ public class ArcheonConfiguredFeatures {
 	public static final RegistryKey<ConfiguredFeature<?, ?>> GLOWSHROOMS = of("glowshrooms");
 
 	public static final RegistryKey<ConfiguredFeature<?, ?>> CRIADAN_CLUSTER = of("criadan_cluster");
+	public static final RegistryKey<ConfiguredFeature<?, ?>> SMALL_CRIADAN = of("small_criadan");
 	public static final RegistryKey<ConfiguredFeature<?, ?>> LARGE_CRIADAN = of("large_criadan");
-	public static final RegistryKey<ConfiguredFeature<?, ?>> POINTED_CRIADAN = of("pointed_criadan");
 
 	public static final RegistryKey<ConfiguredFeature<?, ?>> ANHYDRITE_CLUSTER = of("anhydrite_cluster");
+	public static final RegistryKey<ConfiguredFeature<?, ?>> SMALL_ANHYDRITE = of("small_anhydrite");
 	public static final RegistryKey<ConfiguredFeature<?, ?>> LARGE_ANHYDRITE = of("large_anhydrite");
-	public static final RegistryKey<ConfiguredFeature<?, ?>> POINTED_ANHYDRITE = of("pointed_anhydrite");
 
 	public static final RegistryKey<ConfiguredFeature<?, ?>> GOLDEN_CLAY_POOL = of("golden_clay_pool");
 	public static final RegistryKey<ConfiguredFeature<?, ?>> GOLDEN_CLAY_PATCH = of("golden_clay_patch");
