@@ -72,8 +72,6 @@ public class ArcheonConfiguredFeatures {
 	public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_FAELITE = of("ore_faelite");
 	public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_LUSONYTH = of("ore_lusonyth");
 
-	public static final RegistryKey<ConfiguredFeature<?, ?>> GLOWSHROOMS_POOL = of("glowshrooms_pool");
-	public static final RegistryKey<ConfiguredFeature<?, ?>> GLOWSHROOMS_PATCH = of("glowshrooms_patch");
 	public static final RegistryKey<ConfiguredFeature<?, ?>> GLOWSHROOMS = of("glowshrooms");
 
 	public static final RegistryKey<ConfiguredFeature<?, ?>> CRIADAN_CLUSTER = of("criadan_cluster");
@@ -83,9 +81,6 @@ public class ArcheonConfiguredFeatures {
 	public static final RegistryKey<ConfiguredFeature<?, ?>> ANHYDRITE_CLUSTER = of("anhydrite_cluster");
 	public static final RegistryKey<ConfiguredFeature<?, ?>> SMALL_ANHYDRITE = of("small_anhydrite");
 	public static final RegistryKey<ConfiguredFeature<?, ?>> LARGE_ANHYDRITE = of("large_anhydrite");
-
-	public static final RegistryKey<ConfiguredFeature<?, ?>> GOLDEN_CLAY_POOL = of("golden_clay_pool");
-	public static final RegistryKey<ConfiguredFeature<?, ?>> GOLDEN_CLAY_PATCH = of("golden_clay_patch");
 
 	public static final RegistryKey<ConfiguredFeature<?, ?>> ACHREAN_MOSS_PATCH = of("archean_moss_patch");
 	public static final RegistryKey<ConfiguredFeature<?, ?>> ACHREAN_MOSS_CEILING = of("achrean_moss_ceiling");

@@ -800,7 +800,6 @@ public class ArcheonFeaturePacks {
 			)
 		);
 
-	// generation step -> vegetal decoration
 	private static final FeaturePack<LayeredFeature.Config> GLOWSHROOMS = FeaturePack.of(MModdingFeatures.LAYERED)
 		.appendConfiguredFeature(
 			ArcheonConfiguredFeatures.GLOWSHROOMS,
