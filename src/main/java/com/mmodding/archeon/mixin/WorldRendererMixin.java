@@ -22,14 +22,14 @@ public class WorldRendererMixin {
 
 	@WrapOperation(method = "renderSky", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/BufferBuilder;begin(Lcom/mojang/blaze3d/vertex/VertexFormat$DrawMode;Lcom/mojang/blaze3d/vertex/VertexFormat;)V", ordinal = 2))
 	private void cancelMoon(BufferBuilder instance, VertexFormat.DrawMode drawMode, VertexFormat format, Operation<Void> original) {
-		if (this.world != null && !this.world.getRegistryKey().equals(Archeon.WORLD_KEY)) {
+		if (this.world != null && !this.world.getRegistryKey().equals(Archeon.DIMENSION_KEY)) {
 			original.call(instance, drawMode, format);
 		}
 	}
 
 	@WrapOperation(method = "renderSky", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/BufferBuilder;vertex(Lnet/minecraft/util/math/Matrix4f;FFF)Lcom/mojang/blaze3d/vertex/VertexConsumer;", ordinal = 6))
 	private VertexConsumer cancelMoonFirst(BufferBuilder instance, Matrix4f matrix4f, float x, float y, float z, Operation<VertexConsumer> original) {
-		if (this.world != null && !this.world.getRegistryKey().equals(Archeon.WORLD_KEY)) {
+		if (this.world != null && !this.world.getRegistryKey().equals(Archeon.DIMENSION_KEY)) {
 			return original.call(instance, matrix4f, x, y, z);
 		}
 		else {
@@ -39,7 +39,7 @@ public class WorldRendererMixin {
 
 	@WrapOperation(method = "renderSky", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/BufferBuilder;vertex(Lnet/minecraft/util/math/Matrix4f;FFF)Lcom/mojang/blaze3d/vertex/VertexConsumer;", ordinal = 7))
 	private VertexConsumer cancelMoonSecond(BufferBuilder instance, Matrix4f matrix4f, float x, float y, float z, Operation<VertexConsumer> original) {
-		if (this.world != null && !this.world.getRegistryKey().equals(Archeon.WORLD_KEY)) {
+		if (this.world != null && !this.world.getRegistryKey().equals(Archeon.DIMENSION_KEY)) {
 			return original.call(instance, matrix4f, x, y, z);
 		}
 		else {
@@ -49,7 +49,7 @@ public class WorldRendererMixin {
 
 	@WrapOperation(method = "renderSky", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/BufferBuilder;vertex(Lnet/minecraft/util/math/Matrix4f;FFF)Lcom/mojang/blaze3d/vertex/VertexConsumer;", ordinal = 8))
 	private VertexConsumer cancelMoonThird(BufferBuilder instance, Matrix4f matrix4f, float x, float y, float z, Operation<VertexConsumer> original) {
-		if (this.world != null && !this.world.getRegistryKey().equals(Archeon.WORLD_KEY)) {
+		if (this.world != null && !this.world.getRegistryKey().equals(Archeon.DIMENSION_KEY)) {
 			return original.call(instance, matrix4f, x, y, z);
 		}
 		else {
@@ -59,7 +59,7 @@ public class WorldRendererMixin {
 
 	@WrapOperation(method = "renderSky", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/BufferBuilder;vertex(Lnet/minecraft/util/math/Matrix4f;FFF)Lcom/mojang/blaze3d/vertex/VertexConsumer;", ordinal = 9))
 	private VertexConsumer cancelMoonFourth(BufferBuilder instance, Matrix4f matrix4f, float x, float y, float z, Operation<VertexConsumer> original) {
-		if (this.world != null && !this.world.getRegistryKey().equals(Archeon.WORLD_KEY)) {
+		if (this.world != null && !this.world.getRegistryKey().equals(Archeon.DIMENSION_KEY)) {
 			return original.call(instance, matrix4f, x, y, z);
 		}
 		else {
@@ -86,7 +86,7 @@ public class WorldRendererMixin {
 
 	@WrapOperation(method = "renderSky", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/BufferBuilder;end()Lcom/mojang/blaze3d/vertex/BufferBuilder$RenderedBuffer;", ordinal = 2))
 	private BufferBuilder.RenderedBuffer cancelMoon(BufferBuilder instance, Operation<BufferBuilder.RenderedBuffer> original) {
-		if (this.world != null && !this.world.getRegistryKey().equals(Archeon.WORLD_KEY)) {
+		if (this.world != null && !this.world.getRegistryKey().equals(Archeon.DIMENSION_KEY)) {
 			return original.call(instance);
 		}
 		else {
@@ -96,7 +96,7 @@ public class WorldRendererMixin {
 
 	@WrapOperation(method = "renderSky", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/BufferRenderer;drawWithShader(Lcom/mojang/blaze3d/vertex/BufferBuilder$RenderedBuffer;)V", ordinal = 2))
 	private void cancelMoon(BufferBuilder.RenderedBuffer renderedBuffer, Operation<Void> original) {
-		if (this.world != null && !this.world.getRegistryKey().equals(Archeon.WORLD_KEY)) {
+		if (this.world != null && !this.world.getRegistryKey().equals(Archeon.DIMENSION_KEY)) {
 			original.call(renderedBuffer);
 		}
 	}

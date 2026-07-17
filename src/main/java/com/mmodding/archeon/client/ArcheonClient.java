@@ -2,7 +2,7 @@ package com.mmodding.archeon.client;
 
 import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.client.init.*;
-import com.mmodding.archeon.client.screens.LoreScrapScreen;
+import com.mmodding.archeon.client.screen.LoreScrapScreen;
 import com.mmodding.archeon.init.ArcheonItems;
 import com.mmodding.archeon.init.ArcheonMiscellaneous;
 import com.mmodding.archeon.init.ArcheonSoundEvents;
@@ -49,8 +49,8 @@ public class ArcheonClient implements MModdingClientModInitializer {
 
 	@Override
 	public void onInitializeClient(AdvancedModContainer mod) {
-		StellarObject.load(Archeon.createId("diethea"), new TextureLocation(Archeon.id(), "environment/diethea"), 32, 32);
-		StellarObject.load(Archeon.createId("napor"), new TextureLocation(Archeon.id(), "environment/napor"), 16, 16);
+		StellarObject.load(Archeon.createId("diethea"), new TextureLocation(Archeon.namespace(), "environment/diethea"), 32, 32);
+		StellarObject.load(Archeon.createId("napor"), new TextureLocation(Archeon.namespace(), "environment/napor"), 16, 16);
 		InventoryModels.REGISTRY.add(Archeon.createId("item/centaur_spear_inventory"));
 		InventoryModels.REGISTRY.add(Archeon.createId("item/centaur_battle_axe_inventory"));
 		InventoryModels.EVENT.register(stack -> {
@@ -70,7 +70,7 @@ public class ArcheonClient implements MModdingClientModInitializer {
 		});
 		AdvancementChallengeCompletionSoundCallback.EVENT.register(
 			(client, advancement, sound) ->
-			client.world != null && client.world.getRegistryKey().equals(Archeon.WORLD_KEY) ? ArcheonSoundEvents.ADVANCEMENT_CHALLENGE : sound
+			client.world != null && client.world.getRegistryKey().equals(Archeon.DIMENSION_KEY) ? ArcheonSoundEvents.ADVANCEMENT_CHALLENGE : sound
 		);
 		MusicTypeSelectionCallback.EVENT.register((client, original) -> {
 			if (client.player != null && client.player.isCloseToStructure(ArcheonMiscellaneous.PANOPTICON_KEY)) {
@@ -79,7 +79,7 @@ public class ArcheonClient implements MModdingClientModInitializer {
 			else if (client.player != null && client.player.isCloseToStructure(ArcheonMiscellaneous.ATMOSPHERE_TOWER_KEY)) {
 				return ArcheonMiscellaneous.ATMOSPHERE_TOWER;
 			}
-			else if (client.world != null && client.world.getRegistryKey().equals(Archeon.WORLD_KEY)) {
+			else if (client.world != null && client.world.getRegistryKey().equals(Archeon.DIMENSION_KEY)) {
 				/*
 				 * Values were selected based on https://minecraft.wiki/w/Daylight_cycle "24-hour Minecraft Day" information.
 				 * Time 12040: The internal sky-light Level begins to decrease.

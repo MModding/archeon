@@ -12,4 +12,6 @@ public class ArcheonBlockSetTypes {
 	public static final BlockSetType VUXANCIA = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).build(Archeon.createId("vuxancia"));
 	public static final BlockSetType NUME_WILLOW = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).build(Archeon.createId("nume_willow"));
 	public static final BlockSetType NYRETH = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).build(Archeon.createId("nyreth"));
+
+	public static final BlockSetType CERAMIC = BlockSetTypeBuilder.copyOf(BlockSetType.STONE).build(Archeon.createId("ceramic"));
 }

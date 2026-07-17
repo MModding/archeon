@@ -2,7 +2,6 @@ package com.mmodding.archeon.client.init;
 
 import com.mmodding.archeon.init.ArcheonBlocks;
 import com.mmodding.archeon.init.ArcheonFluids;
-import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
 
 public class ArcheonRenderLayers implements ClientElementsInitializer {
 

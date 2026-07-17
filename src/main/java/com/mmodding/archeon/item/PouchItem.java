@@ -24,7 +24,7 @@ public class PouchItem extends CustomItemWithInventory {
 
 	@Override
 	public Optional<TextureLocation> getOptionalTexture() {
-		return Optional.of(new TextureLocation(Archeon.id(), "gui/tooltip/pouch"));
+		return Optional.of(new TextureLocation(Archeon.namespace(), "gui/tooltip/pouch"));
 	}
 
 	@Override

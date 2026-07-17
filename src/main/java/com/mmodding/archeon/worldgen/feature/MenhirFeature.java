@@ -1,8 +1,5 @@
 package com.mmodding.archeon.worldgen.feature;
 
-import com.mmodding.archeon.init.ArcheonBlocks;
-import com.mmodding.archeon.init.ArcheonFeatures;
-import com.mmodding.mmodding_lib.library.worldgen.features.AdvancedFeature;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.Block;
@@ -11,69 +8,38 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.block.enums.BlockHalf;
 import net.minecraft.state.property.Properties;
-import net.minecraft.util.Holder;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.random.RandomGenerator;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
-import net.minecraft.world.gen.decorator.InSquarePlacementModifier;
-import net.minecraft.world.gen.decorator.RarityFilterPlacementModifier;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
-import net.minecraft.world.gen.feature.PlacedFeature;
-import net.minecraft.world.gen.feature.PlacementModifier;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.minecraft.world.gen.feature.util.PlacedFeatureUtil;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenhirFeature extends AdvancedFeature<MenhirFeature.Config> {
+public class MenhirFeature extends Feature<MenhirFeature.Config> {
 
 	public MenhirFeature(Codec<Config> configCodec) {
 		super(configCodec);
 	}
 
-	@Override
-	public ConfiguredFeature<Config, AdvancedFeature<Config>> getDefaultConfigured() {
-		return new ConfiguredFeature<>(ArcheonFeatures.MENHIR, new Config(
-			BlockStateProvider.of(ArcheonBlocks.CHIASPEN),
-			BlockStateProvider.of(ArcheonBlocks.CHISELED_CHIASPEN),
-			BlockStateProvider.of(ArcheonBlocks.CHIASPEN_BRICKS),
-			BlockStateProvider.of(ArcheonBlocks.CHIASPEN_BRICK_STAIRS),
-			BlockStateProvider.of(ArcheonBlocks.CHIASPEN_BRICK_SLAB),
-			BlockStateProvider.of(ArcheonBlocks.CHIASPEN_BRICK_WALL),
-			BlockStateProvider.of(ArcheonBlocks.CRACKED_CHIASPEN_BRICKS)
-		));
-	}
-
-	@Override
-	public PlacedFeature getDefaultPlaced() {
-
-		List<PlacementModifier> placementModifiers = new ArrayList<>();
-		placementModifiers.add(RarityFilterPlacementModifier.create(250));
-		placementModifiers.add(InSquarePlacementModifier.getInstance());
-		placementModifiers.add(PlacedFeatureUtil.OCEAN_FLOOR_WG_HEIGHTMAP);
-
-		return new PlacedFeature(Holder.createDirect(this.getDefaultConfigured()), placementModifiers);
-	}
-
 	public BlockState pickBlock(int maxHeight, BlockPos blockPickedPos, FeatureContext<Config> context) {
-
 		BlockPos originPos = context.getOrigin();
 		BlockPos basePos = originPos.down();
 		StructureWorldAccess world = context.getWorld();
-		RandomGenerator random = context.getRandom();
+		Random random = context.getRandom();
 		MenhirFeature.Config config = context.getConfig();
 
 		int subtractHeight = blockPickedPos.subtract(basePos).getY();
 		boolean isCenter = (blockPickedPos.subtract(basePos).getX() == 0) && (blockPickedPos.subtract(basePos).getZ() == 0);
 
-		BlockState wall = config.rockBrickWall.getBlockState(random, blockPickedPos);
+		BlockState wall = config.rockBrickWall().get(random, blockPickedPos);
 
 		boolean stairsHalfDefault = random.nextBoolean() || world.getBlockState(blockPickedPos.down()).isOf(wall.getBlock());
-		BlockState stairs = config.rockBrickStairs.getBlockState(random, blockPickedPos)
+		BlockState stairs = config.rockBrickStairs().get(random, blockPickedPos)
 			.with(HorizontalFacingBlock.FACING, Direction.Type.HORIZONTAL.random(random))
 			.with(Properties.BLOCK_HALF, stairsHalfDefault ? BlockHalf.BOTTOM : BlockHalf.TOP);
 
@@ -83,24 +49,23 @@ public class MenhirFeature extends AdvancedFeature<MenhirFeature.Config> {
 		}
 
 		List<BlockState> pickableBlocks = new ArrayList<>();
-		pickableBlocks.add(config.rock.getBlockState(random, blockPickedPos));
-		pickableBlocks.add(config.chiseledRock.getBlockState(random, blockPickedPos));
-		pickableBlocks.add(config.rockBricks.getBlockState(random, blockPickedPos));
+		pickableBlocks.add(config.rock().get(random, blockPickedPos));
+		pickableBlocks.add(config.chiseledRock().get(random, blockPickedPos));
+		pickableBlocks.add(config.rockBricks().get(random, blockPickedPos));
 		if (!isCenter) pickableBlocks.add(stairs);
-		if (subtractHeight == maxHeight) pickableBlocks.add(config.rockBrickSlab.getBlockState(random, blockPickedPos));
+		if (subtractHeight == maxHeight) pickableBlocks.add(config.rockBrickSlab().get(random, blockPickedPos));
 		if (subtractHeight >= maxHeight - 1 && !hasBottomStairsBelow) pickableBlocks.add(wall);
-		pickableBlocks.add(config.crackedRockBricks.getBlockState(random, blockPickedPos));
+		pickableBlocks.add(config.crackedRockBricks().get(random, blockPickedPos));
 
 		return pickableBlocks.get(random.nextInt(pickableBlocks.size()));
 	}
 
 	@Override
-	public boolean place(FeatureContext<Config> context) {
-
+	public boolean generate(FeatureContext<Config> context) {
 		BlockPos originPos = context.getOrigin();
 		BlockPos basePos = originPos.down();
 		StructureWorldAccess world = context.getWorld();
-		RandomGenerator random = context.getRandom();
+		Random random = context.getRandom();
 
 		if (world.getBlockState(basePos).isOf(Blocks.WATER)) {
 			return false;

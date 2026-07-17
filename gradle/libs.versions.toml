@@ -1,32 +1,26 @@
 [versions]
-java = "17"
-minecraft = "1.20.1"
+java = "25"
+minecraft = "26.1.1"
 fabric_loader = "0.18.4"
 
-# Mappings
-yarn_mappings = "1.20.1+build.10"
-
-fabric_api = "0.92.7+1.20.1"
-mmodding = "7c32df5051"
+fabric_api = "0.145.4+26.1.1"
+mmodding = "7b541b7f5c"
 
 # Optional Dependencies
 
-trinkets = "3.7.1"
+trinkets = "4.0.0-alpha.7+26.1"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
 fabric_loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric_loader" }
-
-# Mappings
-yarn_mappings = { module = "net.fabricmc:yarn", version.ref = "yarn_mappings" }
 
 fabric_api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
 mmodding = { module = "com.mmodding:mmodding-library", version.ref = "mmodding" }
 
 # Optional Dependencies
 
-trinkets = { module = "dev.emi:trinkets", version.ref = "trinkets" }
+trinkets = { module = "eu.pb4:trinkets", version.ref = "trinkets" }
 
 [plugins]
-fabric_loom = { id = "fabric-loom", version = "1.10-SNAPSHOT" }
-mmodding_gradle = { id = "com.mmodding.gradle", version = "0.1.0" }
+fabric_loom = { id = "net.fabricmc.fabric-loom", version = "1.16+" }
+mmodding_gradle = { id = "com.mmodding.gradle", version = "0.1.3" }

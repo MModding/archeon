@@ -1,22 +1,25 @@
 package com.mmodding.archeon.init;
 
-import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.fluid.DasciumFluid;
 import com.mmodding.archeon.fluid.HotSpringWaterFluid;
 import com.mmodding.library.core.api.AdvancedContainer;
-import com.mmodding.mmodding_lib.library.fluids.FluidGroup;
-import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Blocks;
+import net.minecraft.registry.Registries;
+import net.minecraft.state.property.Properties;
 
 public class ArcheonFluids {
 
-	public static final FluidGroup HOT_SPRING_WATER = new FluidGroup(HotSpringWaterFluid::new, FabricBlockSettings.copyOf(Blocks.WATER));
+	public static final HotSpringWaterFluid HOT_SPRING_WATER = new HotSpringWaterFluid(Properties.LEVEL_1_8, true);
+	public static final HotSpringWaterFluid FLOWING_HOT_SPRING_WATER = new HotSpringWaterFluid(Properties.LEVEL_1_8, false);
 
-	public static final FluidGroup DASCIUM = new FluidGroup(DasciumFluid::new, FabricBlockSettings.copyOf(Blocks.WATER));
+	public static final DasciumFluid DASCIUM = new DasciumFluid(Properties.LEVEL_1_8, true);
+	public static final DasciumFluid FLOWING_DASCIUM = new DasciumFluid(Properties.LEVEL_1_8, false);
 
 	public static void register(AdvancedContainer mod) {
-		HOT_SPRING_WATER.register(Archeon.createId("hot_spring_water"));
-		DASCIUM.register(Archeon.createId("dascium"));
+		mod.register(Registries.FLUID, factory -> {
+			factory.register("hot_spring_water", HOT_SPRING_WATER);
+			factory.register("flowing_hot_spring_water", FLOWING_HOT_SPRING_WATER);
+			factory.register("dascium", DASCIUM);
+			factory.register("flowing_dacsium", FLOWING_DASCIUM);
+		});
 	}
 }

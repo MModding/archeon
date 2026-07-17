@@ -3,8 +3,6 @@ package com.mmodding.archeon.entity;
 import com.mmodding.archeon.init.ArcheonEntities;
 import com.mmodding.archeon.init.ArcheonItems;
 import com.mmodding.archeon.init.ArcheonItemTags;
-import com.mmodding.mmodding_lib.library.entities.WingedAnimalEntity;
-import com.mmodding.mmodding_lib.library.entities.goals.FlyingAroundFarGoal;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Flutterer;

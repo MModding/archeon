@@ -1,8 +1,8 @@
 package com.mmodding.archeon.client.init;
 
-import com.mmodding.archeon.client.entities.renderers.*;
-import com.mmodding.archeon.client.entities.renderers.centaur.ArmoredCentaurEntityRenderer;
-import com.mmodding.archeon.client.entities.renderers.centaur.CentaurEntityRenderer;
+import com.mmodding.archeon.client.entity.renderer.*;
+import com.mmodding.archeon.client.entity.renderer.centaur.ArmoredCentaurEntityRenderer;
+import com.mmodding.archeon.client.entity.renderer.centaur.CentaurEntityRenderer;
 import com.mmodding.archeon.entity.AuroraCatalystEntity;
 import com.mmodding.archeon.entity.CentaurSpearEntity;
 import com.mmodding.archeon.init.ArcheonEntities;

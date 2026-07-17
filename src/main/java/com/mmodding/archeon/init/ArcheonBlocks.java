@@ -2,7 +2,9 @@ package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
 import com.mmodding.archeon.block.*;
+import com.mmodding.archeon.block.sapling.*;
 import com.mmodding.archeon.bootstrap.init.ArcheonCauldronBehaviors;
+import com.mmodding.library.block.api.BlockWithItem;
 import com.mmodding.library.block.api.catalog.*;
 import com.mmodding.library.block.api.catalog.transparent.TransparentSlabBlock;
 import com.mmodding.library.block.api.catalog.transparent.TransparentStairsBlock;
@@ -13,23 +15,34 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.block.PressurePlateBlock.ActivationRule;
+import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.PlaceableOnWaterItem;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.DyeColor;
+
+import java.util.Map;
 
 public class ArcheonBlocks {
+
+	public static final FluidBlock HOT_SPRING_WATER = new FluidBlock(ArcheonFluids.HOT_SPRING_WATER, FabricBlockSettings.copyOf(Blocks.WATER).mapColor(DyeColor.LIGHT_BLUE));
+	public static final FluidBlock DASCIUM = new FluidBlock(ArcheonFluids.DASCIUM, FabricBlockSettings.copyOf(Blocks.WATER).mapColor(DyeColor.YELLOW));
 
 	public static final AdvancedCauldronBlock HOT_SPRING_WATER_CAULDRON = new AdvancedCauldronBlock(
 		FabricBlockSettings.copyOf(Blocks.CAULDRON),
 		null,
-		ArcheonCauldronBehaviors.HOT_SPRING_WATER_BEHAVIOR
+		Map.of(
+			ArcheonItems.WOODEN_HOT_SPRING_WATER_BUCKET,
+			(state, world, pos, player, hand, stack) -> CauldronBehavior.fillCauldron(world, pos, player, hand, stack, )
+		)
 	).withItem();
 
-	public static final AdvancedCauldronBlock DASCIUM_CAULDRON = new CauldronBlock(
+	public static final AdvancedCauldronBlock DASCIUM_CAULDRON = new AdvancedCauldronBlock(
 		FabricBlockSettings.copyOf(Blocks.CAULDRON),
 		null,
 		ArcheonCauldronBehaviors.DASCIUM_BEHAVIOR
@@ -185,7 +198,7 @@ public class ArcheonBlocks {
 		FabricBlockSettings.copyOf(Blocks.POPPY).collidable(true)
 	).withItem(new FabricItemSettings(), PlaceableOnWaterItem::new);
 
-	public static final AchreanVinesBlock ACHREAN_VINES = new AchreanVinesBlock(
+	public static final GrowsDownPlantBlock ACHREAN_VINES = new AchreanVinesBlock(
 		FabricBlockSettings.copyOf(Blocks.POPPY)
 			.luminance(state -> state.get(AchreanVinesBlock.NEAVE_BERRIES) && state.get(AchreanVinesBlock.DONE) ? 14 : 0)
 			.sounds(BlockSoundGroup.CAVE_VINES),
@@ -193,7 +206,7 @@ public class ArcheonBlocks {
 		0.1f,
 		1,
 		BlockState::isAir
-	).withItem();
+	).configureHead(BlockWithItem::withItem);
 
 	public static final SimpleFernBlock WET_GRASS = new SimpleFernBlock(
 		floor -> floor.isIn(ArcheonBlockTags.SOIL) || floor.isOf(ArcheonBlocks.ACHREAN_MOSS_BLOCK),
@@ -301,28 +314,28 @@ public class ArcheonBlocks {
 
 	public static final PillarBlock PALM_WOOD = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)).withItem();
 	public static final PillarBlock PALM_LOG = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)).withItem();
-	public static final BlockRelatives PALM = BlockRelatives.createWood(Archeon.createId("palm"), ArcheonWoodTypes.PALM, settings -> settings.mapColor(MapColor.PALE_YELLOW));
+	public static final BlockRelatives PALM = BlockRelatives.createWood(Archeon.createId("palm"), ArcheonWoodSets.PALM, settings -> settings.mapColor(MapColor.PALE_YELLOW));
 
 	public static final PillarBlock NECLANE_WOOD = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)).withItem();
 	public static final PillarBlock NECLANE_LOG = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)).withItem();
-	public static final BlockRelatives NECLANE = BlockRelatives.createWood(Archeon.createId("neclane"), ArcheonWoodTypes.NECLANE, settings -> settings.mapColor(MapColor.ORANGE));
+	public static final BlockRelatives NECLANE = BlockRelatives.createWood(Archeon.createId("neclane"), ArcheonWoodSets.NECLANE, settings -> settings.mapColor(MapColor.ORANGE));
 
 	public static final PillarBlock CYPRESS_WOOD = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)).withItem();
 	public static final PillarBlock CYPRESS_LOG = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)).withItem();
 	public static final HollowCypressLogBlock HOLLOW_CYPRESS_LOG = new HollowCypressLogBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).nonOpaque()).withItem();
-	public static final BlockRelatives CYPRESS = BlockRelatives.createWood(Archeon.createId("cypress"), ArcheonWoodTypes.CYPRESS, settings -> settings);
+	public static final BlockRelatives CYPRESS = BlockRelatives.createWood(Archeon.createId("cypress"), ArcheonWoodSets.CYPRESS, settings -> settings);
 
 	public static final PillarBlock VUXANCIA_WOOD = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)).withItem();
 	public static final PillarBlock VUXANCIA_LOG = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)).withItem();
-	public static final BlockRelatives VUXANCIA = BlockRelatives.createWood(Archeon.createId("vuxancia"), ArcheonWoodTypes.VUXANCIA, settings -> settings);
+	public static final BlockRelatives VUXANCIA = BlockRelatives.createWood(Archeon.createId("vuxancia"), ArcheonWoodSets.VUXANCIA, settings -> settings);
 
 	public static final PillarBlock NUME_WILLOW_WOOD = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)).withItem();
 	public static final PillarBlock NUME_WILLOW_LOG = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)).withItem();
-	public static final BlockRelatives NUME_WILLOW = BlockRelatives.createWood(Archeon.createId("nume_willow"), ArcheonWoodTypes.NUME_WILLOW, settings -> settings);
+	public static final BlockRelatives NUME_WILLOW = BlockRelatives.createWood(Archeon.createId("nume_willow"), ArcheonWoodSets.NUME_WILLOW, settings -> settings);
 
 	public static final PillarBlock NYRETH_WOOD = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)).withItem();
 	public static final PillarBlock NYRETH_LOG = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)).withItem();
-	public static final BlockRelatives NYRETH = BlockRelatives.createWood(Archeon.createId("nyreth"), ArcheonWoodTypes.NYRETH, settings -> settings);
+	public static final BlockRelatives NYRETH = BlockRelatives.createWood(Archeon.createId("nyreth"), ArcheonWoodSets.NYRETH, settings -> settings);
 
 	public static final PeaksSnowyBlock CHIASPEN = new PeaksSnowyBlock(FabricBlockSettings.copyOf(Blocks.STONE)).withItem();
 	public static final StairsBlock CHIASPEN_STAIRS = new StairsBlock(CHIASPEN.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE)).withItem();
@@ -357,7 +370,7 @@ public class ArcheonBlocks {
 	public static final Block CRACKED_CHIASPEN_BRICKS = new Block(FabricBlockSettings.copyOf(Blocks.STONE)).withItem();
 
 	public static final PressurePlateBlock CHIASPEN_PRESSURE_PLATE = new PressurePlateBlock(ActivationRule.MOBS, FabricBlockSettings.copyOf(Blocks.STONE)).withItem();
-	public static final ButtonBlock.Stone CHIASPEN_BUTTON = new ButtonBlock.Stone(FabricBlockSettings.copyOf(Blocks.STONE)).withItem();
+	public static final ButtonBlock CHIASPEN_BUTTON = new ButtonBlock.Stone(FabricBlockSettings.copyOf(Blocks.STONE)).withItem();
 
 	public static final Block MOSSY_CHIASPEN_BRICKS = new Block(FabricBlockSettings.copyOf(Blocks.STONE)).withItem();
 	public static final StairsBlock MOSSY_CHIASPEN_BRICK_STAIRS = new StairsBlock(MOSSY_CHIASPEN_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE)).withItem();
@@ -550,15 +563,15 @@ public class ArcheonBlocks {
 	public static final LeavesBlock PALE_NYRETH_LEAVES = new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)).withItem();
 
 	public static final GrowsDownPlantBlock HANGING_PNEVENTIAL_VUXANCIA_LEAVES = new GrowsDownPlantBlock(FabricBlockSettings.copyOf(Blocks.POPPY),
-		false, 0.005f, 1, BlockState::isAir).withItem();
+		false, 0.005f, 1, BlockState::isAir).configureHead(GrowsDownPlantBlock.Head::withItem);
 	public static final GrowsDownPlantBlock HANGING_STREIAN_VUXANCIA_LEAVES = new GrowsDownPlantBlock(FabricBlockSettings.copyOf(Blocks.POPPY),
-		false, 0.005f, 1, BlockState::isAir).withItem();
+		false, 0.005f, 1, BlockState::isAir).configureHead(GrowsDownPlantBlock.Head::withItem);
 	public static final GrowsDownPlantBlock HANGING_ORIAN_VUXANCIA_LEAVES = new GrowsDownPlantBlock(FabricBlockSettings.copyOf(Blocks.POPPY),
-		false, 0.005f, 1, BlockState::isAir).withItem();
+		false, 0.005f, 1, BlockState::isAir).configureHead(GrowsDownPlantBlock.Head::withItem);
 	public static final GrowsDownPlantBlock HANGING_VALE_VUXANCIA_LEAVES = new GrowsDownPlantBlock(FabricBlockSettings.copyOf(Blocks.POPPY),
-		false, 0.005f, 1, BlockState::isAir).withItem();
+		false, 0.005f, 1, BlockState::isAir).configureHead(GrowsDownPlantBlock.Head::withItem);
 	public static final GrowsDownPlantBlock HANGING_ZIAL_VUXANCIA_LEAVES = new GrowsDownPlantBlock(FabricBlockSettings.copyOf(Blocks.POPPY),
-		false, 0.005f, 1, BlockState::isAir).withItem();
+		false, 0.005f, 1, BlockState::isAir).configureHead(GrowsDownPlantBlock.Head::withItem);
 
 	public static final FabricBlockSettings LEAVES_CARPET = FabricBlockSettings.copyOf(Blocks.GRASS).strength(0.2f);
 
@@ -582,50 +595,50 @@ public class ArcheonBlocks {
 	public static final Block NUME_WILLOW_BOOKSHELF = new Block(FabricBlockSettings.copyOf(Blocks.BOOKSHELF)).withItem();
 	public static final Block NYRETH_BOOKSHELF = new Block(FabricBlockSettings.copyOf(Blocks.BOOKSHELF)).withItem();
 
-	public static final SaplingBlock PALM_SAPLING = new SaplingBlock(
-		SaplingGeneratorUtils.of(() -> ArcheonFeatures.PALM_TREE),
+	public static final SimpleSaplingBlock PALM_SAPLING = new SimpleSaplingBlock(
+		new PalmSaplingGenerator(),
 		floor -> floor.isOf(ArcheonBlocks.DUNE_SAND),
 		FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)
 	).withItem();
 
-	public static final SaplingBlock NECLANE_SAPLING = new SaplingBlock(
-		SaplingGeneratorUtils.of(() -> ArcheonFeatures.NECLANE_TREE),
+	public static final SimpleSaplingBlock NECLANE_SAPLING = new SimpleSaplingBlock(
+		new NeclaneSaplingGenerator(),
 		floor -> floor.isIn(ArcheonBlockTags.SOIL),
 		FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)
 	).withItem();
 
-	public static final SaplingBlock CYPRESS_SAPLING = new SaplingBlock(
-		SaplingGeneratorUtils.of(() -> ArcheonFeatures.CYPRESS_TREE),
+	public static final SimpleSaplingBlock CYPRESS_SAPLING = new SimpleSaplingBlock(
+		new CypressSaplingGenerator(),
 		floor -> floor.isIn(ArcheonBlockTags.SOIL),
 		FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)
 	).withItem();
 
-	public static final SaplingBlock PNEVENTIAL_VUXANCIA_SAPLING = new SaplingBlock(
-		SaplingGeneratorUtils.of(() -> ArcheonFeatures.PNEVENTIAL_VUXANCIA_TREE),
+	public static final SimpleSaplingBlock PNEVENTIAL_VUXANCIA_SAPLING = new SimpleSaplingBlock(
+		new PneventialVuxanciaSaplingGenerator(),
 		floor -> floor.isIn(ArcheonBlockTags.SOIL),
 		FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)
 	).withItem();
 
-	public static final SaplingBlock STREIAN_VUXANCIA_SAPLING = new SaplingBlock(
-		SaplingGeneratorUtils.of(() -> ArcheonFeatures.STREIAN_VUXANCIA_TREE),
+	public static final SimpleSaplingBlock STREIAN_VUXANCIA_SAPLING = new SimpleSaplingBlock(
+		new StreianVuxanciaSaplingGenerator(),
 		floor -> floor.isIn(ArcheonBlockTags.SOIL),
 		FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)
 	).withItem();
 
-	public static final SaplingBlock ORIAN_VUXANCIA_SAPLING = new SaplingBlock(
-		SaplingGeneratorUtils.of(() -> ArcheonFeatures.ORIAN_VUXANCIA_TREE),
+	public static final SimpleSaplingBlock ORIAN_VUXANCIA_SAPLING = new SimpleSaplingBlock(
+		new OrianVuxanciaSaplingGenerator(),
 		floor -> floor.isIn(ArcheonBlockTags.SOIL),
 		FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)
 	).withItem();
 
-	public static final SaplingBlock VALE_VUXANCIA_SAPLING = new SaplingBlock(
-		SaplingGeneratorUtils.of(() -> ArcheonFeatures.VALE_VUXANCIA_TREE),
+	public static final SimpleSaplingBlock VALE_VUXANCIA_SAPLING = new SimpleSaplingBlock(
+		new ValeVuxanciaSaplingGenerator(),
 		floor -> floor.isIn(ArcheonBlockTags.SOIL),
 		FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)
 	).withItem();
 
-	public static final SaplingBlock ZIAL_VUXANCIA_SAPLING = new SaplingBlock(
-		SaplingGeneratorUtils.of(() -> ArcheonFeatures.ZIAL_VUXANCIA_TREE),
+	public static final SimpleSaplingBlock ZIAL_VUXANCIA_SAPLING = new SimpleSaplingBlock(
+		new ZialVuxanciaSaplingGenerator(),
 		floor -> floor.isIn(ArcheonBlockTags.SOIL),
 		FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)
 	).withItem();
@@ -640,15 +653,15 @@ public class ArcheonBlocks {
 	public static final WallBlock CERAMIC_BRICK_WALL = new WallBlock(FabricBlockSettings.copyOf(Blocks.BONE_BLOCK)).withItem();
 
 	public static final FenceBlock CERAMIC_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.BONE_BLOCK)).withItem();
-	public static final PressurePlateBlock CERAMIC_PRESSURE_PLATE = new PressurePlateBlock(ActivationRule.MOBS, FabricBlockSettings.copyOf(Blocks.BONE_BLOCK)).withItem();
-	public static final ButtonBlock.Stone CERAMIC_BUTTON = new ButtonBlock.Stone(FabricBlockSettings.copyOf(Blocks.BONE_BLOCK)).withItem();
+	public static final PressurePlateBlock CERAMIC_PRESSURE_PLATE = new PressurePlateBlock(ActivationRule.MOBS, FabricBlockSettings.copyOf(Blocks.BONE_BLOCK), ArcheonBlockSetTypes.CERAMIC).withItem();
+	public static final ButtonBlock CERAMIC_BUTTON = new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON).sounds(BlockSoundGroup.BONE), ArcheonBlockSetTypes.CERAMIC, 20, false).withItem();
 
 	public static final Block SHORESTONE = new Block(FabricBlockSettings.copyOf(Blocks.STONE)).withItem();
 	public static final StairsBlock SHORESTONE_STAIRS = new StairsBlock(SHORESTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE)).withItem();
 	public static final SlabBlock SHORESTONE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE)).withItem();
 	public static final WallBlock SHORESTONE_WALL = new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE)).withItem();
 
-	public static final PointedDripstoneBlock POINTED_CRIADAN = new PointedDripstoneBlock(ArcheonBlocks.CRIADAN, FabricBlockSettings.copyOf(Blocks.BASALT).dynamicBounds().offset(AbstractBlock.OffsetType.XZ)).withItem();
+	public static final AdvancedPointedDripstoneBlock POINTED_CRIADAN = new AdvancedPointedDripstoneBlock(() -> ArcheonBlocks.CRIADAN, FabricBlockSettings.copyOf(Blocks.BASALT).dynamicBounds().offset(AbstractBlock.OffsetType.XZ)).withItem();
 
 	public static final Block CRIADAN = new Block(FabricBlockSettings.copyOf(Blocks.BASALT)).withItem();
 	public static final StairsBlock CRIADAN_STAIRS = new StairsBlock(CRIADAN.getDefaultState(), FabricBlockSettings.copyOf(Blocks.BASALT)).withItem();
@@ -996,6 +1009,8 @@ public class ArcheonBlocks {
 
 	public static void register(AdvancedContainer mod) {
 		mod.register(Registries.BLOCK, factory -> {
+			factory.register("hot_spring_water", HOT_SPRING_WATER);
+			factory.register("dascium", DASCIUM);
 			factory.register("hot_spring_water_cauldron", HOT_SPRING_WATER_CAULDRON);
 			factory.register("dascium_cauldron", DASCIUM_CAULDRON);
 			factory.register("sunset_orchid", SUNSET_ORCHID);
@@ -1238,11 +1253,11 @@ public class ArcheonBlocks {
 			factory.register("nume_willow_leaves", NUME_WILLOW_LEAVES);
 			factory.register("nyreth_leaves", NYRETH_LEAVES);
 			factory.register("pale_nyreth_leaves", PALE_NYRETH_LEAVES);
-			factory.register("hanging_pnevential_vuxancia_leaves", HANGING_PNEVENTIAL_VUXANCIA_LEAVES);
-			factory.register("hanging_streian_vuxancia_leaves", HANGING_STREIAN_VUXANCIA_LEAVES);
-			factory.register("hanging_orian_vuxancia_leaves", HANGING_ORIAN_VUXANCIA_LEAVES);
-			factory.register("hanging_vale_vuxancia_leaves", HANGING_VALE_VUXANCIA_LEAVES);
-			factory.register("hanging_zial_vuxancia_leaves", HANGING_ZIAL_VUXANCIA_LEAVES);
+			HANGING_PNEVENTIAL_VUXANCIA_LEAVES.register(mod, "hanging_pnevential_vuxancia_leaves");
+			HANGING_STREIAN_VUXANCIA_LEAVES.register(mod, "hanging_streian_vuxancia_leaves");
+			HANGING_ORIAN_VUXANCIA_LEAVES.register(mod, "hanging_orian_vuxancia_leaves");
+			HANGING_VALE_VUXANCIA_LEAVES.register(mod, "hanging_vale_vuxancia_leaves");
+			HANGING_ZIAL_VUXANCIA_LEAVES.register(mod, "hanging_zial_vuxancia_leaves");
 			factory.register("pnevential_vuxancia_leaves_carpet", PNEVENTIAL_VUXANCIA_LEAVES_CARPET);
 			factory.register("streian_vuxancia_leaves_carpet", STREIAN_VUXANCIA_LEAVES_CARPET);
 			factory.register("orian_vuxancia_leaves_carpet", ORIAN_VUXANCIA_LEAVES_CARPET);

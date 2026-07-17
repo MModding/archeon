@@ -25,12 +25,12 @@ public class ArcheonEvents implements ElementsInitializer {
 	}
 
 	private static BlockState snowPlacementCallback(ServerWorld world, BlockPos pos, BlockState state) {
-		return world.getRegistryKey().equals(Archeon.WORLD_KEY) ? ArcheonBlocks.PEAKS_SNOW.getDefaultState() : null;
+		return world.getRegistryKey().equals(Archeon.DIMENSION_KEY) ? ArcheonBlocks.PEAKS_SNOW.getDefaultState() : null;
 	}
 
 	private static BlockState stoneGenerationCallback(WorldAccess access, BlockPos pos, BlockState blockState, Direction direction, FluidState fluidState) {
 		if (access instanceof World world) {
-			if (world.getRegistryKey() == Archeon.WORLD_KEY) {
+			if (world.getRegistryKey() == Archeon.DIMENSION_KEY) {
 				return ArcheonBlocks.CHIASPEN.getDefaultState();
 			}
 		}
@@ -38,21 +38,21 @@ public class ArcheonEvents implements ElementsInitializer {
 	}
 
 	private static Block cobblestoneGenerationCallback(World world, BlockPos pos, BlockState state, Direction direction, BlockPos offsetPos) {
-		if (world.getRegistryKey() == Archeon.WORLD_KEY) {
+		if (world.getRegistryKey() == Archeon.DIMENSION_KEY) {
 			return ArcheonBlocks.COBBLED_CHIASPEN;
 		}
 		return null;
 	}
 
 	private static Block obsidianGenerationCallback(World world, BlockPos pos, BlockState state, Direction direction, BlockPos offsetPos) {
-		if (world.getRegistryKey() == Archeon.WORLD_KEY) {
+		if (world.getRegistryKey() == Archeon.DIMENSION_KEY) {
 			return ArcheonBlocks.PHOSNOR_SLATE;
 		}
 		return null;
 	}
 
 	private static BlockState basaltGenerationCallback(World world, BlockPos pos, BlockState state, Direction direction, BlockPos offsetPos) {
-		if (world.getRegistryKey() == Archeon.WORLD_KEY) {
+		if (world.getRegistryKey() == Archeon.DIMENSION_KEY) {
 			return ArcheonBlocks.AKETITE.getDefaultState();
 		}
 		return null;

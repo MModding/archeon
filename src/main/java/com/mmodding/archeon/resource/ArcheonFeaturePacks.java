@@ -1307,30 +1307,4 @@ public class ArcheonFeaturePacks {
 		ACHREAN_GOLDEN_CLAY.registerConfiguredFeatures(configuredFeatures);
 		ACHREAN_MOSS_PATCH.registerConfiguredFeatures(configuredFeatures);
 	}
-
-	public static void registerPlacedFeatures(AdvancedContainer mod, Registerable<PlacedFeature> placedFeatures) {
-		ROCKY_FIELDS_ROCK.registerPlacedFeatures(placedFeatures);
-		MENHIR.registerPlacedFeatures(placedFeatures);
-		HOLLOW_CYPRESS_LOG.registerPlacedFeatures(placedFeatures);
-		PALM_TREE.registerPlacedFeatures(placedFeatures);
-		NECLANE_TREE.registerPlacedFeatures(placedFeatures);
-		CYPRESS_TREE.registerPlacedFeatures(placedFeatures);
-		VUXANCIA_TREE.registerPlacedFeatures(placedFeatures);
-		PATCH_VUXANCIA_LEAVES.registerPlacedFeatures(placedFeatures);
-		VUXANCIA_POUND.registerPlacedFeatures(placedFeatures);
-		PATCH_WET_GRASS.registerPlacedFeatures(placedFeatures);
-		PATCH_WET_FERN.registerPlacedFeatures(placedFeatures);
-		PATCH_GRASS_TUFFET.registerPlacedFeatures(placedFeatures);
-		PATCH_SOUTH_WHEAT.registerPlacedFeatures(placedFeatures);
-		PATCH_BUSH.registerPlacedFeatures(placedFeatures);
-		PEAKS_SNOW.registerPlacedFeatures(placedFeatures);
-		PATCH_FLOWER.registerPlacedFeatures(placedFeatures);
-		ORE.registerPlacedFeatures(placedFeatures);
-		GLOWSHROOMS.registerPlacedFeatures(placedFeatures);
-		CLUSTER.registerPlacedFeatures(placedFeatures);
-		SMALL.registerPlacedFeatures(placedFeatures);
-		LARGE.registerPlacedFeatures(placedFeatures);
-		ACHREAN_GOLDEN_CLAY.registerPlacedFeatures(placedFeatures);
-		ACHREAN_MOSS_PATCH.registerPlacedFeatures(placedFeatures);
-	}
 }

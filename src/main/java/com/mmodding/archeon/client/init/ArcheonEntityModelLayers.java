@@ -1,8 +1,8 @@
 package com.mmodding.archeon.client.init;
 
 import com.mmodding.archeon.Archeon;
-import com.mmodding.archeon.client.entities.models.*;
-import com.mmodding.archeon.client.entities.models.centaur.AbstractCentaurEntityModel;
+import com.mmodding.archeon.client.entity.model.*;
+import com.mmodding.archeon.client.entity.model.centaur.AbstractCentaurEntityModel;
 import com.mmodding.mmodding_lib.library.initializers.ClientElementsInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.render.entity.model.EntityModelLayer;

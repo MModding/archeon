@@ -1,61 +1,30 @@
 package com.mmodding.archeon.worldgen.feature;
 
 import com.mmodding.archeon.init.ArcheonBlocks;
-import com.mmodding.archeon.init.ArcheonFeatures;
-import com.mmodding.mmodding_lib.library.worldgen.features.AdvancedFeature;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.util.Holder;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.random.RandomGenerator;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
-import net.minecraft.world.gen.decorator.*;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
-import net.minecraft.world.gen.feature.PlacedFeature;
-import net.minecraft.world.gen.feature.PlacementModifier;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.minecraft.world.gen.feature.util.PlacedFeatureUtil;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class RockyFieldsRockFeature extends AdvancedFeature<RockyFieldsRockFeature.Config> {
+public class RockyFieldsRockFeature extends Feature<RockyFieldsRockFeature.Config> {
 
 	public RockyFieldsRockFeature(Codec<Config> configCodec) {
 		super(configCodec);
 	}
 
 	@Override
-	public ConfiguredFeature<Config, AdvancedFeature<Config>> getDefaultConfigured() {
-		return new ConfiguredFeature<>(ArcheonFeatures.ROCKY_FIELDS_ROCK, new Config(
-			BlockStateProvider.of(ArcheonBlocks.COBBLED_CHIASPEN),
-			BlockStateProvider.of(ArcheonBlocks.COBBLED_CHIASPEN_SLAB)
-		));
-	}
-
-	@Override
-	public PlacedFeature getDefaultPlaced() {
-
-		List<PlacementModifier> placementModifiers = new ArrayList<>();
-		placementModifiers.add(CountPlacementModifier.create(2));
-		placementModifiers.add(InSquarePlacementModifier.getInstance());
-		placementModifiers.add(PlacedFeatureUtil.MOTION_BLOCKING_HEIGHTMAP);
-		placementModifiers.add(BiomePlacementModifier.getInstance());
-
-		return new PlacedFeature(Holder.createDirect(this.getDefaultConfigured()), placementModifiers);
-	}
-
-	@Override
-	public boolean place(FeatureContext<Config> context) {
-
+	public boolean generate(FeatureContext<Config> context) {
 		BlockPos originPos = context.getOrigin();
 		BlockPos basePos = originPos.down();
 		StructureWorldAccess structureWorldAccess = context.getWorld();
-		RandomGenerator random = context.getRandom();
+		Random random = context.getRandom();
 		RockyFieldsRockFeature.Config config = context.getConfig();
 
 		BlockState baseState = structureWorldAccess.getBlockState(basePos);
@@ -90,7 +59,7 @@ public class RockyFieldsRockFeature extends AdvancedFeature<RockyFieldsRockFeatu
 				float probability = probabilityX + probabilityZ;
 
 				if (random.nextFloat() <= probability) {
-					structureWorldAccess.setBlockState(pos, config.rockBlock().getBlockState(random, pos), Block.NOTIFY_LISTENERS);
+					structureWorldAccess.setBlockState(pos, config.rockBlock().get(random, pos), Block.NOTIFY_LISTENERS);
 
 					int highSize = random.nextInt(2) + random.nextInt(2);
 
@@ -100,7 +69,7 @@ public class RockyFieldsRockFeature extends AdvancedFeature<RockyFieldsRockFeatu
 							boolean isTop = highPos.getY() == pos.getY() + highSize;
 							structureWorldAccess.setBlockState(
 								highPos,
-								(isSlab && isTop ? config.rockSlab().getBlockState(random, highPos) : config.rockBlock().getBlockState(random, highPos)),
+								(isSlab && isTop ? config.rockSlab().get(random, highPos) : config.rockBlock().get(random, highPos)),
 								Block.NOTIFY_LISTENERS
 							);
 						});

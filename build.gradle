@@ -6,16 +6,14 @@ plugins {
 	alias libs.plugins.mmodding.gradle
 }
 
-archivesBaseName = project.archives_base_name
 version = "${project.version}+${libs.versions.minecraft.get()}"
 group = project.maven_group
 
+base {
+	archivesName = project.archives_base_name
+}
+
 repositories {
-	// Add repositories to retrieve artifacts from in here.
-	// You should only use this when depending on other mods because
-	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
-	// for more information about repositories.
 	repositories {
 		maven {
 			name = "JitPack"
@@ -26,31 +24,28 @@ repositories {
 			url = "https://maven.quiltmc.org/repository/release"
 		}
 		maven {
-			name = "TerraformersMC"
-			url = "https://maven.terraformersmc.com"
-		}
-		maven {
-			name = "LadySnake"
-			url = "https://maven.ladysnake.org/releases"
+			name = "Nucleoid"
+			url = "https://maven.nucleoid.xyz/releases"
 		}
 	}
 }
 
 dependencies {
 	minecraft libs.minecraft
-	mappings variantOf(libs.yarn.mappings) { classifier 'v2' }
-	modImplementation libs.fabric.loader
+	implementation libs.fabric.loader
 
-	modImplementation libs.fabric.api
-	modImplementation libs.mmodding
+	implementation libs.fabric.api
+	implementation libs.mmodding
 
 	// Optional Dependencies
-	modImplementation libs.trinkets
+	implementation libs.trinkets
 }
 
 
 fabricApi {
-	configureDataGeneration()
+	configureDataGeneration() {
+		client = true
+	}
 }
 
 loom {
@@ -110,30 +105,24 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.encoding = 'UTF-8'
-	// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
-	it.options.release = 17
+	it.options.release = 25
 }
 
 java {
 	// Still required by IDEs such as Eclipse and Visual Studio Code
-	sourceCompatibility = JavaVersion.VERSION_17
-	targetCompatibility = JavaVersion.VERSION_17
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
 
 	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task if it is present.
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
-
-	// If this mod is going to be a library, then it should also generate Javadocs in order to aid with development.
-	// Uncomment this line to generate them.
-	// withJavadocJar()
 }
 
 // If you plan to use a different file for the license, don't forget to change the file name here!
 ["jar", "sourcesJar"].each {
 	tasks.named(it).configure {
 		from("LICENSE.md") {
-			rename { "${it}_${archivesBaseName}" }
+			rename { "${it}_${project.name}"}
 		}
 	}
 }

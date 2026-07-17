@@ -1,16 +1,8 @@
 package com.mmodding.archeon.init;
 
 import com.mmodding.archeon.Archeon;
-import net.minecraft.block.Block;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.world.biome.Biome;
 
 public class ArcheonBlockTags {
-
-	public static final TagKey<Biome> SURFACE_BIOMES = TagKey.of(RegistryKeys.BIOME, Archeon.createId("surface_biomes"));
-	public static final TagKey<Biome> CAVE_BIOMES = TagKey.of(RegistryKeys.BIOME, Archeon.createId("cave_biomes"));
-	public static final TagKey<Biome> TERRAIN_BIOMES = TagKey.of(RegistryKeys.BIOME, Archeon.createId("terrain_biomes"));
 
 	public static final TagKey<Block> SOIL = TagKey.of(RegistryKeys.BLOCK, Archeon.createId("equivalents/soil"));
 	public static final TagKey<Block> STONE = TagKey.of(RegistryKeys.BLOCK, Archeon.createId("equivalents/stone"));

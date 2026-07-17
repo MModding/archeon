@@ -1,6 +1,6 @@
 package com.mmodding.archeon.item;
 
-import com.mmodding.archeon.entity.projectiles.LusonythArrowEntity;
+import com.mmodding.archeon.entity.projectile.LusonythArrowEntity;
 import com.mmodding.mmodding_lib.library.items.CustomArrowItem;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;

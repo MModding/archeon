@@ -1,26 +1,19 @@
 package com.mmodding.archeon;
 
 import com.mmodding.archeon.block.entity.ArcheonBlockEntities;
+import com.mmodding.archeon.resource.ArcheonFeaturePacks;
 import com.mmodding.archeon.init.*;
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.core.api.ExtendedModInitializer;
 import com.mmodding.library.core.api.management.ElementsManager;
-import com.mmodding.mmodding_lib.library.config.Config;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.Level;
 
 public class Archeon implements ExtendedModInitializer {
 
-	public static final RegistryKey<World> WORLD_KEY = RegistryKey.of(RegistryKeys.WORLD, Archeon.createId("archeon"));
-
-	@Nullable
-	@Override
-	public Config getConfig() {
-		return new ArcheonConfig();
-	}
+	public static final ResourceKey<Level> DIMENSION_KEY = ResourceKey.create(Registries.DIMENSION, Archeon.createId("archeon"));
 
 	@Override
 	public void setupManager(ElementsManager manager) {
@@ -28,6 +21,7 @@ public class Archeon implements ExtendedModInitializer {
 		manager.content(ArcheonBlocks::register);
 		manager.content(ArcheonBlockEntities::register);
 		manager.content(ArcheonItems::register);
+		manager.content(ArcheonEntities::register);
 		manager.content(ArcheonContentRegistries::register);
 		manager.content(ArcheonEnchantments::register);
 		manager.content(ArcheonFluids::register);
@@ -37,19 +31,22 @@ public class Archeon implements ExtendedModInitializer {
 		manager.content(ArcheonNoiseRouter::register);
 		manager.content(ArcheonChunkGeneratorSettings::register);
 		manager.content(ArcheonBiomes::register);
-		manager.content(ArcheonFeatures::register);
 		manager.content(ArcheonSoundEvents::register);
 		manager.content(ArcheonMiscellaneous::register);
+		manager.content(ArcheonTreeParts::register);
+		manager.content(ArcheonFeatures::register);
+		manager.resource(ArcheonFeaturePacks::registerConfiguredFeatures);
+		manager.resource(ArcheonFeaturePacks::registerPlacedFeatures);
 	}
 
 	@Override
-	public void onInitialize(AdvancedContainer advancedContainer) {}
+	public void onInitialize(AdvancedContainer mod) {}
 
-	public static String id() {
+	public static String namespace() {
 		return "archeon";
 	}
 
 	public static Identifier createId(String path) {
-		return new Identifier(Archeon.id(), path);
+		return new Identifier(Archeon.namespace(), path);
 	}
 }

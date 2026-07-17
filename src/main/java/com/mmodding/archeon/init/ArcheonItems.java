@@ -12,43 +12,29 @@ import com.mmodding.archeon.material.armor.FaeliteArmor;
 import com.mmodding.archeon.material.armor.LusonythArmor;
 import com.mmodding.archeon.material.tool.*;
 import com.mmodding.library.core.api.AdvancedContainer;
-import com.mmodding.mmodding_lib.library.fluids.buckets.CustomBucketItem;
-import com.mmodding.mmodding_lib.library.fluids.buckets.CustomMilkBucketItem;
-import com.mmodding.mmodding_lib.library.glint.DefaultGlintPacks;
-import com.mmodding.mmodding_lib.library.initializers.ElementsInitializer;
-import com.mmodding.mmodding_lib.library.items.*;
-import com.mmodding.mmodding_lib.library.items.settings.AdvancedItemSettings;
-import com.mmodding.mmodding_lib.library.items.settings.ItemFinishUsing;
-import com.mmodding.mmodding_lib.library.portals.CustomPortalKeyItem;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.item.*;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.tag.FluidTags;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Rarity;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldEvents;
+import com.mmodding.library.item.api.catalog.FluidInteractableItem;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.FluidTags;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluids;
 
+import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class ArcheonItems implements ElementsInitializer {
+public class ArcheonItems {
 
-	public static final CustomPortalKeyItem WAND_OF_NATURE = new CustomPortalKeyItem(new AdvancedItemSettings().maxDamage(1), SoundEvents.ITEM_FLINTANDSTEEL_USE);
+	public static final PortalKeyItem WAND_OF_NATURE = new PortalKeyItem(new Item.Properties().maxDamage(1), SoundEvents.ITEM_FLINTANDSTEEL_USE);
 
-	public static final CustomPickaxeItem QOLM_PICK = new CustomPickaxeItem(QolmTool.INSTANCE, 1, -2.5f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.GREEN).fireproof());
+	public static final PickaxeItem QOLM_PICK = new PickaxeItem(QolmTool.INSTANCE, 1, -2.5f, new Item.Properties().glintPack(DefaultGlintPacks.GREEN).fireproof());
 
-	public static final CustomSwordItem MASSACRE_DAGGER = new CustomSwordItem(MassacreDaggerTool.INSTANCE, 3, -0.5f,
-		new AdvancedItemSettings().glintPack(DefaultGlintPacks.RED).fireproof().itemPostHit((stack, target, attacker) -> {
+	public static final SwordItem MASSACRE_DAGGER = new SwordItem(MassacreDaggerTool.INSTANCE, 3, -0.5f,
+		new Item.Properties().glintPack(DefaultGlintPacks.RED).fireproof().itemPostHit((stack, target, attacker) -> {
 			World world = target.getWorld();
 			world.syncWorldEvent(WorldEvents.BLOCK_BROKEN, target.getBlockPos(), Block.getRawIdFromState(Blocks.FIRE_CORAL_BLOCK.getDefaultState()));
 			target.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 60));
@@ -58,8 +44,8 @@ public class ArcheonItems implements ElementsInitializer {
 	);
 
 	public static final Item CENTAUR_LIFE_IGNITER = new Item(
-		new AdvancedItemSettings()
-			.maxCount(1)
+		new Item.Properties()
+			.stacksTo(1)
 			.rarity(Rarity.RARE)
 			.itemUseOnBlock(context -> context.getWorld().getBlockEntity(context.getBlockPos(), ArcheonBlockEntities.CENTAUR_LIFE_VAULT).ifPresent(blockEntity -> {
 				if (context.getPlayer() != null) {
@@ -71,7 +57,7 @@ public class ArcheonItems implements ElementsInitializer {
 			}))
 	);
 
-	public static final Item POWER_KEY = new Item(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE).itemUseOnBlock(context -> {
+	public static final Item POWER_KEY = new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE).itemUseOnBlock(context -> {
 		BlockState state = context.getWorld().getBlockState(context.getBlockPos());
 		if (state.isOf(ArcheonBlocks.POWER_KEYSTONE) && context.getPlayer() != null) {
 			HeartOfNatureEntity heartOfNatureEntity = new HeartOfNatureEntity(ArcheonEntities.HEART_OF_NATURE, context.getWorld());
@@ -83,171 +69,171 @@ public class ArcheonItems implements ElementsInitializer {
 		}
 	}));
 
-	public static final CustomSpearItem CENTAUR_SPEAR = new CustomSpearItem(CentaurSpearEntity::new, new AdvancedItemSettings().maxCount(1).maxDamage(250).rarity(Rarity.EPIC).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
-	public static final CustomAxeItem CENTAUR_BATTLE_AXE = new CustomAxeItem(CentaurTool.INSTANCE, 4, -2.5f, new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final SpearItem CENTAUR_SPEAR = new SpearItem(CentaurSpearEntity::new, new Item.Properties().stacksTo(1).maxDamage(250).rarity(Rarity.EPIC).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final AxeItem CENTAUR_BATTLE_AXE = new AxeItem(CentaurTool.INSTANCE, 4, -2.5f, new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
 
-	public static final CustomSwordItem NECLANE_SWORD = new CustomSwordItem(ToolMaterials.WOOD, 3, -2.4f, new AdvancedItemSettings());
-	public static final CustomPickaxeItem NECLANE_PICKAXE = new CustomPickaxeItem(ToolMaterials.WOOD, 1, -2.8f, new AdvancedItemSettings());
-	public static final CustomAxeItem NECLANE_AXE = new CustomAxeItem(ToolMaterials.WOOD, 6.0f, -3.2f, new AdvancedItemSettings());
-	public static final CustomShovelItem NECLANE_SHOVEL = new CustomShovelItem(ToolMaterials.WOOD, 1.5f, -3.0f, new AdvancedItemSettings());
-	public static final CustomHoeItem NECLANE_HOE = new CustomHoeItem(ToolMaterials.WOOD, 0, -3.0f, new AdvancedItemSettings());
+	public static final SwordItem NECLANE_SWORD = new SwordItem(ToolMaterials.WOOD, 3, -2.4f, new Item.Properties());
+	public static final PickaxeItem NECLANE_PICKAXE = new PickaxeItem(ToolMaterials.WOOD, 1, -2.8f, new Item.Properties());
+	public static final AxeItem NECLANE_AXE = new AxeItem(ToolMaterials.WOOD, 6.0f, -3.2f, new Item.Properties());
+	public static final ShovelItem NECLANE_SHOVEL = new ShovelItem(ToolMaterials.WOOD, 1.5f, -3.0f, new Item.Properties());
+	public static final HoeItem NECLANE_HOE = new HoeItem(ToolMaterials.WOOD, 0, -3.0f, new Item.Properties());
 
-	public static final CustomSwordItem CYPRESS_SWORD = new CustomSwordItem(ToolMaterials.WOOD, 3, -2.4f, new AdvancedItemSettings());
-	public static final CustomPickaxeItem CYPRESS_PICKAXE = new CustomPickaxeItem(ToolMaterials.WOOD, 1, -2.8f, new AdvancedItemSettings());
-	public static final CustomAxeItem CYPRESS_AXE = new CustomAxeItem(ToolMaterials.WOOD, 6.0f, -3.2f, new AdvancedItemSettings());
-	public static final CustomShovelItem CYPRESS_SHOVEL = new CustomShovelItem(ToolMaterials.WOOD, 1.5f, -3.0f, new AdvancedItemSettings());
-	public static final CustomHoeItem CYPRESS_HOE = new CustomHoeItem(ToolMaterials.WOOD, 0, -3.0f, new AdvancedItemSettings());
+	public static final SwordItem CYPRESS_SWORD = new SwordItem(ToolMaterials.WOOD, 3, -2.4f, new Item.Properties());
+	public static final PickaxeItem CYPRESS_PICKAXE = new PickaxeItem(ToolMaterials.WOOD, 1, -2.8f, new Item.Properties());
+	public static final AxeItem CYPRESS_AXE = new AxeItem(ToolMaterials.WOOD, 6.0f, -3.2f, new Item.Properties());
+	public static final ShovelItem CYPRESS_SHOVEL = new ShovelItem(ToolMaterials.WOOD, 1.5f, -3.0f, new Item.Properties());
+	public static final HoeItem CYPRESS_HOE = new HoeItem(ToolMaterials.WOOD, 0, -3.0f, new Item.Properties());
 
-	public static final CustomSwordItem VUXANCIA_SWORD = new CustomSwordItem(ToolMaterials.WOOD, 3, -2.4f, new AdvancedItemSettings());
-	public static final CustomPickaxeItem VUXANCIA_PICKAXE = new CustomPickaxeItem(ToolMaterials.WOOD, 1, -2.8f, new AdvancedItemSettings());
-	public static final CustomAxeItem VUXANCIA_AXE = new CustomAxeItem(ToolMaterials.WOOD, 6.0f, -3.2f, new AdvancedItemSettings());
-	public static final CustomShovelItem VUXANCIA_SHOVEL = new CustomShovelItem(ToolMaterials.WOOD, 1.5f, -3.0f, new AdvancedItemSettings());
-	public static final CustomHoeItem VUXANCIA_HOE = new CustomHoeItem(ToolMaterials.WOOD, 0, -3.0f, new AdvancedItemSettings());
+	public static final SwordItem VUXANCIA_SWORD = new SwordItem(ToolMaterials.WOOD, 3, -2.4f, new Item.Properties());
+	public static final PickaxeItem VUXANCIA_PICKAXE = new PickaxeItem(ToolMaterials.WOOD, 1, -2.8f, new Item.Properties());
+	public static final AxeItem VUXANCIA_AXE = new AxeItem(ToolMaterials.WOOD, 6.0f, -3.2f, new Item.Properties());
+	public static final ShovelItem VUXANCIA_SHOVEL = new ShovelItem(ToolMaterials.WOOD, 1.5f, -3.0f, new Item.Properties());
+	public static final HoeItem VUXANCIA_HOE = new HoeItem(ToolMaterials.WOOD, 0, -3.0f, new Item.Properties());
 
-	public static final CustomSwordItem CHIASPEN_SWORD = new CustomSwordItem(ToolMaterials.STONE, 3, -2.4f, new AdvancedItemSettings());
-	public static final CustomPickaxeItem CHIASPEN_PICKAXE = new CustomPickaxeItem(ToolMaterials.STONE, 1, -2.8f, new AdvancedItemSettings());
-	public static final CustomAxeItem CHIASPEN_AXE = new CustomAxeItem(ToolMaterials.STONE, 7.0f, -3.2f, new AdvancedItemSettings());
-	public static final CustomShovelItem CHIASPEN_SHOVEL = new CustomShovelItem(ToolMaterials.STONE, 1.5f, -3.0f, new AdvancedItemSettings());
-	public static final CustomHoeItem CHIASPEN_HOE = new CustomHoeItem(ToolMaterials.STONE, -1, -2.0f, new AdvancedItemSettings());
+	public static final SwordItem CHIASPEN_SWORD = new SwordItem(ToolMaterials.STONE, 3, -2.4f, new Item.Properties());
+	public static final PickaxeItem CHIASPEN_PICKAXE = new PickaxeItem(ToolMaterials.STONE, 1, -2.8f, new Item.Properties());
+	public static final AxeItem CHIASPEN_AXE = new AxeItem(ToolMaterials.STONE, 7.0f, -3.2f, new Item.Properties());
+	public static final ShovelItem CHIASPEN_SHOVEL = new ShovelItem(ToolMaterials.STONE, 1.5f, -3.0f, new Item.Properties());
+	public static final HoeItem CHIASPEN_HOE = new HoeItem(ToolMaterials.STONE, -1, -2.0f, new Item.Properties());
 
-	public static final CustomSwordItem APAFLORITE_SWORD = new CustomSwordItem(ApafloriteTool.INSTANCE, 3, -2.4f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
-	public static final CustomPickaxeItem APAFLORITE_PICKAXE = new CustomPickaxeItem(ApafloriteTool.INSTANCE, 1, -2.8f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
-	public static final CustomAxeItem APAFLORITE_AXE = new CustomAxeItem(ApafloriteTool.INSTANCE, 6.0F, -3.1f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
-	public static final CustomShovelItem APAFLORITE_SHOVEL = new CustomShovelItem(ApafloriteTool.INSTANCE, 1.5f, -3.0f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
-	public static final CustomHoeItem APAFLORITE_HOE = new CustomHoeItem(ApafloriteTool.INSTANCE, -2, -1.0f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
+	public static final SwordItem APAFLORITE_SWORD = new SwordItem(ApafloriteTool.INSTANCE, 3, -2.4f, new Item.Properties().glintPack(DefaultGlintPacks.PINK));
+	public static final PickaxeItem APAFLORITE_PICKAXE = new PickaxeItem(ApafloriteTool.INSTANCE, 1, -2.8f, new Item.Properties().glintPack(DefaultGlintPacks.PINK));
+	public static final AxeItem APAFLORITE_AXE = new AxeItem(ApafloriteTool.INSTANCE, 6.0F, -3.1f, new Item.Properties().glintPack(DefaultGlintPacks.PINK));
+	public static final ShovelItem APAFLORITE_SHOVEL = new ShovelItem(ApafloriteTool.INSTANCE, 1.5f, -3.0f, new Item.Properties().glintPack(DefaultGlintPacks.PINK));
+	public static final HoeItem APAFLORITE_HOE = new HoeItem(ApafloriteTool.INSTANCE, -2, -1.0f, new Item.Properties().glintPack(DefaultGlintPacks.PINK));
 
-	public static final CustomArmorItem APAFLORITE_HELMET = new CustomArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.HEAD, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
-	public static final CustomArmorItem APAFLORITE_CHESTPLATE = new CustomArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.CHEST, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
-	public static final CustomArmorItem APAFLORITE_LEGGINGS = new CustomArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.LEGS, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
-	public static final CustomArmorItem APAFLORITE_BOOTS = new CustomArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.FEET, new AdvancedItemSettings().glintPack(DefaultGlintPacks.PINK));
+	public static final ArmorItem APAFLORITE_HELMET = new ArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.HEAD, new Item.Properties().glintPack(DefaultGlintPacks.PINK));
+	public static final ArmorItem APAFLORITE_CHESTPLATE = new ArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.CHEST, new Item.Properties().glintPack(DefaultGlintPacks.PINK));
+	public static final ArmorItem APAFLORITE_LEGGINGS = new ArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.LEGS, new Item.Properties().glintPack(DefaultGlintPacks.PINK));
+	public static final ArmorItem APAFLORITE_BOOTS = new ArmorItem(ApafloriteArmor.INSTANCE, EquipmentSlot.FEET, new Item.Properties().glintPack(DefaultGlintPacks.PINK));
 
-	public static final CustomSwordItem FAELITE_SWORD = new CustomSwordItem(FaeliteTool.INSTANCE, 3, -2.4f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
-	public static final CustomPickaxeItem FAELITE_PICKAXE = new CustomPickaxeItem(FaeliteTool.INSTANCE, 1, -2.8f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
-	public static final CustomAxeItem FAELITE_AXE = new CustomAxeItem(FaeliteTool.INSTANCE, 5.0f, -3.0f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
-	public static final CustomShovelItem FAELITE_SHOVEL = new CustomShovelItem(FaeliteTool.INSTANCE, 1.5f, -3.0f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
-	public static final CustomHoeItem FAELITE_HOE = new CustomHoeItem(FaeliteTool.INSTANCE, -3, 0.0f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
+	public static final SwordItem FAELITE_SWORD = new SwordItem(FaeliteTool.INSTANCE, 3, -2.4f, new Item.Properties().glintPack(DefaultGlintPacks.ORANGE));
+	public static final PickaxeItem FAELITE_PICKAXE = new PickaxeItem(FaeliteTool.INSTANCE, 1, -2.8f, new Item.Properties().glintPack(DefaultGlintPacks.ORANGE));
+	public static final AxeItem FAELITE_AXE = new AxeItem(FaeliteTool.INSTANCE, 5.0f, -3.0f, new Item.Properties().glintPack(DefaultGlintPacks.ORANGE));
+	public static final ShovelItem FAELITE_SHOVEL = new ShovelItem(FaeliteTool.INSTANCE, 1.5f, -3.0f, new Item.Properties().glintPack(DefaultGlintPacks.ORANGE));
+	public static final HoeItem FAELITE_HOE = new HoeItem(FaeliteTool.INSTANCE, -3, 0.0f, new Item.Properties().glintPack(DefaultGlintPacks.ORANGE));
 
-	public static final CustomArmorItem FAELITE_HELMET = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.HEAD, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
-	public static final CustomArmorItem FAELITE_CHESTPLATE = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.CHEST, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
-	public static final CustomArmorItem FAELITE_LEGGINGS = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.LEGS, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
-	public static final CustomArmorItem FAELITE_BOOTS = new CustomArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.FEET, new AdvancedItemSettings().glintPack(DefaultGlintPacks.ORANGE));
+	public static final ArmorItem FAELITE_HELMET = new ArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.HEAD, new Item.Properties().glintPack(DefaultGlintPacks.ORANGE));
+	public static final ArmorItem FAELITE_CHESTPLATE = new ArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.CHEST, new Item.Properties().glintPack(DefaultGlintPacks.ORANGE));
+	public static final ArmorItem FAELITE_LEGGINGS = new ArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.LEGS, new Item.Properties().glintPack(DefaultGlintPacks.ORANGE));
+	public static final ArmorItem FAELITE_BOOTS = new ArmorItem(FaeliteArmor.INSTANCE, EquipmentSlot.FEET, new Item.Properties().glintPack(DefaultGlintPacks.ORANGE));
 
-	public static final CustomSwordItem LUSONYTH_SWORD = new CustomSwordItem(LusonythTool.INSTANCE, 3, -2.4f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
-	public static final CustomPickaxeItem LUSONYTH_PICKAXE = new CustomPickaxeItem(LusonythTool.INSTANCE, 1, -2.8f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
-	public static final CustomAxeItem LUSONYTH_AXE = new CustomAxeItem(LusonythTool.INSTANCE, 5.0f, -3.0f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
-	public static final CustomShovelItem LUSONYTH_SHOVEL = new CustomShovelItem(LusonythTool.INSTANCE, 1.5f, -3.0f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
-	public static final CustomHoeItem LUSONYTH_HOE = new CustomHoeItem(LusonythTool.INSTANCE, -4, 0.0f, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
+	public static final SwordItem LUSONYTH_SWORD = new SwordItem(LusonythTool.INSTANCE, 3, -2.4f, new Item.Properties().glintPack(DefaultGlintPacks.BLUE));
+	public static final PickaxeItem LUSONYTH_PICKAXE = new PickaxeItem(LusonythTool.INSTANCE, 1, -2.8f, new Item.Properties().glintPack(DefaultGlintPacks.BLUE));
+	public static final AxeItem LUSONYTH_AXE = new AxeItem(LusonythTool.INSTANCE, 5.0f, -3.0f, new Item.Properties().glintPack(DefaultGlintPacks.BLUE));
+	public static final ShovelItem LUSONYTH_SHOVEL = new ShovelItem(LusonythTool.INSTANCE, 1.5f, -3.0f, new Item.Properties().glintPack(DefaultGlintPacks.BLUE));
+	public static final HoeItem LUSONYTH_HOE = new HoeItem(LusonythTool.INSTANCE, -4, 0.0f, new Item.Properties().glintPack(DefaultGlintPacks.BLUE));
 
-	public static final CustomArmorItem LUSONYTH_HELMET = new CustomArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.HEAD, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
-	public static final CustomArmorItem LUSONYTH_CHESTPLATE = new CustomArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.CHEST, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
-	public static final CustomArmorItem LUSONYTH_LEGGINGS = new CustomArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.LEGS, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
-	public static final CustomArmorItem LUSONYTH_BOOTS = new CustomArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.FEET, new AdvancedItemSettings().glintPack(DefaultGlintPacks.BLUE));
+	public static final ArmorItem LUSONYTH_HELMET = new ArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.HEAD, new Item.Properties().glintPack(DefaultGlintPacks.BLUE));
+	public static final ArmorItem LUSONYTH_CHESTPLATE = new ArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.CHEST, new Item.Properties().glintPack(DefaultGlintPacks.BLUE));
+	public static final ArmorItem LUSONYTH_LEGGINGS = new ArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.LEGS, new Item.Properties().glintPack(DefaultGlintPacks.BLUE));
+	public static final ArmorItem LUSONYTH_BOOTS = new ArmorItem(LusonythArmor.INSTANCE, EquipmentSlot.FEET, new Item.Properties().glintPack(DefaultGlintPacks.BLUE));
 
 	public static final Predicate<ItemStack> CLEMENTIUM_BROKEN_STATE = stack -> stack.getNbt() == null || !stack.getNbt().contains("repair_rate") || stack.getNbt().getInt("repair_rate") < 3;
 
-	public static final CustomSwordItem CLEMENTIUM_SWORD = new CustomSwordItem(ClementiumTool.INSTANCE, 3, -2.4f, new AdvancedItemSettings().hasBrokenState(CLEMENTIUM_BROKEN_STATE).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
-	public static final CustomPickaxeItem CLEMENTIUM_PICKAXE = new CustomPickaxeItem(ClementiumTool.INSTANCE, 1, -2.8f, new AdvancedItemSettings().hasBrokenState(CLEMENTIUM_BROKEN_STATE).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
-	public static final CustomAxeItem CLEMENTIUM_AXE = new CustomAxeItem(ClementiumTool.INSTANCE, 5.0f, -3.0f, new AdvancedItemSettings().hasBrokenState(CLEMENTIUM_BROKEN_STATE).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
-	public static final CustomShovelItem CLEMENTIUM_SHOVEL = new CustomShovelItem(ClementiumTool.INSTANCE, 1.5f, -3.0f, new AdvancedItemSettings().hasBrokenState(CLEMENTIUM_BROKEN_STATE).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
-	public static final CustomHoeItem CLEMENTIUM_HOE = new CustomHoeItem(ClementiumTool.INSTANCE, -4, 0.0f, new AdvancedItemSettings().hasBrokenState(CLEMENTIUM_BROKEN_STATE).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final SwordItem CLEMENTIUM_SWORD = new SwordItem(ClementiumTool.INSTANCE, 3, -2.4f, new Item.Properties().hasBrokenState(CLEMENTIUM_BROKEN_STATE).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final PickaxeItem CLEMENTIUM_PICKAXE = new PickaxeItem(ClementiumTool.INSTANCE, 1, -2.8f, new Item.Properties().hasBrokenState(CLEMENTIUM_BROKEN_STATE).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final AxeItem CLEMENTIUM_AXE = new AxeItem(ClementiumTool.INSTANCE, 5.0f, -3.0f, new Item.Properties().hasBrokenState(CLEMENTIUM_BROKEN_STATE).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final ShovelItem CLEMENTIUM_SHOVEL = new ShovelItem(ClementiumTool.INSTANCE, 1.5f, -3.0f, new Item.Properties().hasBrokenState(CLEMENTIUM_BROKEN_STATE).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
+	public static final HoeItem CLEMENTIUM_HOE = new HoeItem(ClementiumTool.INSTANCE, -4, 0.0f, new Item.Properties().hasBrokenState(CLEMENTIUM_BROKEN_STATE).glintPack(DefaultGlintPacks.LIGHTENED_BROWN));
 
-	public static final FaeliteBowItem FAELITE_BOW = new FaeliteBowItem(new AdvancedItemSettings().maxCount(1).maxDamage(1561));
-	public static final CustomArrowItem LUSONYTH_ARROW = new LusonythArrowItem(new AdvancedItemSettings());
+	public static final FaeliteBowItem FAELITE_BOW = new FaeliteBowItem(new Item.Properties().stacksTo(1).maxDamage(1561));
+	public static final ArrowItem LUSONYTH_ARROW = new LusonythArrowItem(new Item.Properties());
 
-	public static final CustomFishingRodItem EXYRIANE_FISHING_ROD = new CustomFishingRodItem(new AdvancedItemSettings());
+	public static final FishingRodItem EXYRIANE_FISHING_ROD = new FishingRodItem(new Item.Properties());
 
-	public static final RingItem APAFLORITE_RING = new RingItem(RingItem::apafloriteRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
-	public static final RingItem FAELITE_RING = new RingItem(RingItem::faeliteRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
-	public static final RingItem LUSONYTH_RING = new RingItem(RingItem::lusonythRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
-	public static final RingItem CLEMENTIUM_RING = new RingItem(RingItem::clementiumRingModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.UNCOMMON));
-	public static final RingItem RING_OF_EDEN = new RingItem(RingItem::ringOfEdenModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE));
-	public static final RingItem RING_OF_WAHVEN = new RingItem(RingItem::ringOfWahvenModifiers, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE));
+	public static final RingItem APAFLORITE_RING = new RingItem(RingItem::apafloriteRingModifiers, new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
+	public static final RingItem FAELITE_RING = new RingItem(RingItem::faeliteRingModifiers, new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
+	public static final RingItem LUSONYTH_RING = new RingItem(RingItem::lusonythRingModifiers, new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
+	public static final RingItem CLEMENTIUM_RING = new RingItem(RingItem::clementiumRingModifiers, new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
+	public static final RingItem RING_OF_EDEN = new RingItem(RingItem::ringOfEdenModifiers, new Item.Properties().stacksTo(1).rarity(Rarity.RARE));
+	public static final RingItem RING_OF_WAHVEN = new RingItem(RingItem::ringOfWahvenModifiers, new Item.Properties().stacksTo(1).rarity(Rarity.RARE));
 
-	public static final CustomEnchantedBookItem MASSACRE_BOOK = new CustomEnchantedBookItem(ArcheonEnchantments.MASSACRE, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE).nameFormattings(Formatting.RED).glintPack(DefaultGlintPacks.LIGHTENED_RED));
-	public static final CustomEnchantedBookItem QOLM_BOOK = new CustomEnchantedBookItem(ArcheonEnchantments.QOLM, new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE).nameFormattings(Formatting.GREEN).glintPack(DefaultGlintPacks.LIGHTENED_GREEN));
+	public static final EnchantedBookItem MASSACRE_BOOK = new EnchantedBookItem(ArcheonEnchantments.MASSACRE, new Item.Properties().stacksTo(1).rarity(Rarity.RARE).nameFormattings(Formatting.RED).glintPack(DefaultGlintPacks.LIGHTENED_RED));
+	public static final EnchantedBookItem QOLM_BOOK = new EnchantedBookItem(ArcheonEnchantments.QOLM, new Item.Properties().stacksTo(1).rarity(Rarity.RARE).nameFormattings(Formatting.GREEN).glintPack(DefaultGlintPacks.LIGHTENED_GREEN));
 
-	public static final AmuletOfNatureItem AMULET_OF_NATURE = new AmuletOfNatureItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC).descriptionLines(Text.translatable("item.archeon.amulet_of_nature.desc").formatted(Formatting.GRAY)));
+	public static final AmuletOfNatureItem AMULET_OF_NATURE = new AmuletOfNatureItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).descriptionLines(Component.translatable("item.archeon.amulet_of_nature.desc").formatted(Formatting.GRAY)));
 
-	public static final Item MANUSCRIPT = new Item(new AdvancedItemSettings());
+	public static final Item MANUSCRIPT = new Item(new Item.Properties());
 
-	public static final Item APAFLORITE_GEMSTONE = new Item(new AdvancedItemSettings());
+	public static final Item APAFLORITE_GEMSTONE = new Item(new Item.Properties());
 
-	public static final Item EXYRIANE_SHARD = new Item(new AdvancedItemSettings());
+	public static final Item EXYRIANE_SHARD = new Item(new Item.Properties());
 
-	public static final Item RAW_FAELITE = new Item(new AdvancedItemSettings());
-	public static final Item FAELITE_INGOT = new Item(new AdvancedItemSettings());
+	public static final Item RAW_FAELITE = new Item(new Item.Properties());
+	public static final Item FAELITE_INGOT = new Item(new Item.Properties());
 
-	public static final Item RAW_LUSONYTH = new Item(new AdvancedItemSettings());
-	public static final Item LUSONYTH_INGOT = new Item(new AdvancedItemSettings());
+	public static final Item RAW_LUSONYTH = new Item(new Item.Properties());
+	public static final Item LUSONYTH_INGOT = new Item(new Item.Properties());
 
-	public static final Item PLANT_FIBER = new Item(new AdvancedItemSettings());
+	public static final Item PLANT_FIBER = new Item(new Item.Properties());
 
-	public static final Item MOSS_BALL = new Item(new AdvancedItemSettings().food(1, 0.5f));
+	public static final Item MOSS_BALL = new Item(new Item.Properties().food(1, 0.5f));
 
-	public static final Item BLUE_SHELL = new Item(new AdvancedItemSettings());
-	public static final Item PINK_SHELL = new Item(new AdvancedItemSettings());
-	public static final Item YELLOW_SHELL = new Item(new AdvancedItemSettings());
+	public static final Item BLUE_SHELL = new Item(new Item.Properties());
+	public static final Item PINK_SHELL = new Item(new Item.Properties());
+	public static final Item YELLOW_SHELL = new Item(new Item.Properties());
 
-	public static final CustomBucketItem WOODEN_BUCKET = new CustomBucketItem(
-		Fluids.EMPTY, WoodenBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(16)
+	public static final BucketItem WOODEN_BUCKET = new BucketItem(
+		Fluids.EMPTY, WoodenBucketManager.INSTANCE, new Item.Properties().stacksTo(16)
 	);
 
-	public static final CustomBucketItem WOODEN_WATER_BUCKET = new CustomBucketItem(
-		Fluids.WATER, WoodenBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	public static final BucketItem WOODEN_WATER_BUCKET = new BucketItem(
+		Fluids.WATER, WoodenBucketManager.INSTANCE, new Item.Properties().stacksTo(1)
 	);
 
-	public static final CustomMilkBucketItem WOODEN_MILK_BUCKET = new CustomMilkBucketItem(
-		WoodenBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	public static final MilkBucketItem WOODEN_MILK_BUCKET = new MilkBucketItem(
+		WoodenBucketManager.INSTANCE, new Item.Properties().stacksTo(1)
 	);
 
-	public static final CustomBucketItem WOODEN_HOT_SPRING_WATER_BUCKET = new CustomBucketItem(
-		ArcheonFluids.HOT_SPRING_WATER.getStill(), WoodenBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	public static final BucketItem WOODEN_HOT_SPRING_WATER_BUCKET = new BucketItem(
+		ArcheonFluids.HOT_SPRING_WATER.getStill(), WoodenBucketManager.INSTANCE, new Item.Properties().stacksTo(1)
 	);
 
-	public static final CustomBucketItem WOODEN_DASCIUM_BUCKET = new CustomBucketItem(
-		ArcheonFluids.DASCIUM.getStill(), WoodenBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	public static final BucketItem WOODEN_DASCIUM_BUCKET = new BucketItem(
+		ArcheonFluids.DASCIUM.getStill(), WoodenBucketManager.INSTANCE, new Item.Properties().stacksTo(1)
 	);
 
-	public static final CustomBucketItem CERAMIC_BUCKET = new CustomBucketItem(
-		Fluids.EMPTY, CeramicBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(16)
+	public static final BucketItem CERAMIC_BUCKET = new BucketItem(
+		Fluids.EMPTY, CeramicBucketManager.INSTANCE, new Item.Properties().stacksTo(16)
 	);
 
-	public static final CustomBucketItem CERAMIC_WATER_BUCKET = new CustomBucketItem(
-		Fluids.WATER, CeramicBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	public static final BucketItem CERAMIC_WATER_BUCKET = new BucketItem(
+		Fluids.WATER, CeramicBucketManager.INSTANCE, new Item.Properties().stacksTo(1)
 	);
 
-	public static final CustomBucketItem CERAMIC_LAVA_BUCKET = new CustomBucketItem(
-		Fluids.LAVA, CeramicBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	public static final BucketItem CERAMIC_LAVA_BUCKET = new BucketItem(
+		Fluids.LAVA, CeramicBucketManager.INSTANCE, new Item.Properties().stacksTo(1)
 	);
 
-	public static final CustomBucketItem CERAMIC_HOT_SPRING_WATER_BUCKET = new CustomBucketItem(
-		ArcheonFluids.HOT_SPRING_WATER.getStill(), CeramicBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	public static final BucketItem CERAMIC_HOT_SPRING_WATER_BUCKET = new BucketItem(
+		ArcheonFluids.HOT_SPRING_WATER.getStill(), CeramicBucketManager.INSTANCE, new Item.Properties().stacksTo(1)
 	);
 
-	public static final CustomBucketItem CERAMIC_DASCIUM_BUCKET = new CustomBucketItem(
-		ArcheonFluids.DASCIUM.getStill(), CeramicBucketManager.INSTANCE, new AdvancedItemSettings().maxCount(1)
+	public static final BucketItem CERAMIC_DASCIUM_BUCKET = new BucketItem(
+		ArcheonFluids.DASCIUM.getStill(), CeramicBucketManager.INSTANCE, new Item.Properties().stacksTo(1)
 	);
 
-	public static final CustomWallStandingBlockItem EXYRIANE_TORCH = new CustomWallStandingBlockItem(ArcheonBlocks.EXYRIANE_TORCH, ArcheonBlocks.WALL_EXYRIANE_TORCH, new AdvancedItemSettings());
+	public static final WallStandingBlockItem EXYRIANE_TORCH = new WallStandingBlockItem(ArcheonBlocks.EXYRIANE_TORCH, ArcheonBlocks.WALL_EXYRIANE_TORCH, new Item.Properties());
 
-	public static final CustomFluidInteractableItem GOBLET = new CustomFluidInteractableItem(
+	public static final FluidInteractableItem GOBLET = new FluidInteractableItem(
 		(stack, state, world, pos) -> state.isIn(FluidTags.WATER) ? ArcheonItems.GOBLET_WATER.getDefaultStack() : ItemStack.EMPTY,
-		new AdvancedItemSettings()
+		new Item.Properties()
 	);
 
 	public static final ItemFinishUsing GOBLET_USE = (stack, world, user) -> (stack.isEmpty() ? new ItemStack(ArcheonItems.GOBLET) : stack);
 
-	public static final Item GOBLET_WATER = new Item(new AdvancedItemSettings().maxCount(1)
+	public static final Item GOBLET_WATER = new Item(new Item.Properties().stacksTo(1)
 		.food(0, 0.0f, false, true).drinkable().itemFinishUsing(GOBLET_USE));
 
-	public static final Item GOBLET_BLOOD_ORANGE_JUICE = new Item(new AdvancedItemSettings().maxCount(1)
+	public static final Item GOBLET_BLOOD_ORANGE_JUICE = new Item(new Item.Properties().stacksTo(1)
 		.food(4, 0.5f).drinkable().itemFinishUsing(GOBLET_USE));
 
-	public static final Item JAM_POT = new Item(new AdvancedItemSettings());
+	public static final Item JAM_POT = new Item(new Item.Properties());
 
 	public static final ItemFinishUsing JAM_POT_USE = (stack, world, user) -> (stack.isEmpty() ? new ItemStack(ArcheonItems.JAM_POT) : stack);
 
-	public static final Item ORANGE_LYCORIS_JAM_POT = new Item(new AdvancedItemSettings().maxCount(1).food(
+	public static final Item ORANGE_LYCORIS_JAM_POT = new Item(new Item.Properties().stacksTo(1).food(
 		new FoodComponent.Builder()
 			.hunger(15)
 			.saturationModifier(3.0f)
@@ -257,7 +243,7 @@ public class ArcheonItems implements ElementsInitializer {
 			.build()
 	).drinkable().recipeRemainder(ArcheonItems.JAM_POT).itemFinishUsing(JAM_POT_USE));
 
-	public static final Item RED_LYCORIS_JAM_POT = new Item(new AdvancedItemSettings().maxCount(1).food(
+	public static final Item RED_LYCORIS_JAM_POT = new Item(new Item.Properties().stacksTo(1).food(
 		new FoodComponent.Builder()
 			.hunger(15)
 			.saturationModifier(3.0f)
@@ -267,7 +253,7 @@ public class ArcheonItems implements ElementsInitializer {
 			.build()
 	).drinkable().recipeRemainder(ArcheonItems.JAM_POT).itemFinishUsing(JAM_POT_USE));
 
-	public static final Item PINK_LYCORIS_JAM_POT = new Item(new AdvancedItemSettings().maxCount(1).food(
+	public static final Item PINK_LYCORIS_JAM_POT = new Item(new Item.Properties().stacksTo(1).food(
 		new FoodComponent.Builder()
 			.hunger(15)
 			.saturationModifier(3.0f)
@@ -278,52 +264,52 @@ public class ArcheonItems implements ElementsInitializer {
 			.build()
 	).drinkable().recipeRemainder(ArcheonItems.JAM_POT).itemFinishUsing(JAM_POT_USE));
 
-	public static final Item RED_LYCORIS_PETAL = new Item(new AdvancedItemSettings().food(3, 0.2f));
+	public static final Item RED_LYCORIS_PETAL = new Item(new Item.Properties().food(3, 0.2f));
 
-	public static final Item PINK_LYCORIS_PETAL = new Item(new AdvancedItemSettings().food(3, 0.2f));
+	public static final Item PINK_LYCORIS_PETAL = new Item(new Item.Properties().food(3, 0.2f));
 
-	public static final Item ORANGE_LYCORIS_PETAL = new Item(new AdvancedItemSettings().food(3, 0.2f));
+	public static final Item ORANGE_LYCORIS_PETAL = new Item(new Item.Properties().food(3, 0.2f));
 
-	public static final LoreScrapItem LORE_SCRAP = new LoreScrapItem(new AdvancedItemSettings().maxCount(1));
+	public static final LoreScrapItem LORE_SCRAP = new LoreScrapItem(new Item.Properties().stacksTo(1));
 
-	public static final CustomMusicDiscItem MUSIC_DISC_PE4K = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
+	public static final MusicDiscItem MUSIC_DISC_PE4K = new MusicDiscItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE),
 		new SoundEvent(Archeon.createId("music_disc.pe4k")), 0, 116);
 
-	public static final CustomMusicDiscItem MUSIC_DISC_GEOMETRIC_FALL = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
+	public static final MusicDiscItem MUSIC_DISC_GEOMETRIC_FALL = new MusicDiscItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE),
 		new SoundEvent(Archeon.createId("music_disc.geometric_fall")), 0, 74);
 
-	public static final CustomMusicDiscItem MUSIC_DISC_PARALLELIFY = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
+	public static final MusicDiscItem MUSIC_DISC_PARALLELIFY = new MusicDiscItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE),
 		new SoundEvent(Archeon.createId("music_disc.parallelify")), 0, 101);
 
-	public static final CustomMusicDiscItem MUSIC_DISC_GLAIVE = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.RARE),
+	public static final MusicDiscItem MUSIC_DISC_GLAIVE = new MusicDiscItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE),
 		new SoundEvent(Archeon.createId("music_disc.glaive")), 0, 176);
 
-	public static final CustomMusicDiscItem MUSIC_DISC_AIEL = new CustomMusicDiscItem(new AdvancedItemSettings().maxCount(1).rarity(Rarity.EPIC),
+	public static final MusicDiscItem MUSIC_DISC_AIEL = new MusicDiscItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC),
 		new SoundEvent(Archeon.createId("music_disc.aiel")), 0, 0);
 
-	public static final Item RECORD_FRAGMENT = new Item(new AdvancedItemSettings().maxCount(16));
+	public static final Item RECORD_FRAGMENT = new Item(new Item.Properties().stacksTo(16));
 
-	public static final Item SALT = new Item(new AdvancedItemSettings());
+	public static final Item SALT = new Item(new Item.Properties());
 
-	public static final Item PEAKS_SNOW_PILE = new Item(new AdvancedItemSettings());
+	public static final Item PEAKS_SNOW_PILE = new Item(new Item.Properties());
 
-	public static final Item RAW_HEIFER = new Item(new AdvancedItemSettings().food(2, 0.3f, true));
-	public static final Item SALTED_HEIFER = new Item(new AdvancedItemSettings().food(3, 0.9f, true));
-	public static final Item COOKED_HEIFER = new Item(new AdvancedItemSettings().food(4, 1.5f, true));
+	public static final Item RAW_HEIFER = new Item(new Item.Properties().food(2, 0.3f, true));
+	public static final Item SALTED_HEIFER = new Item(new Item.Properties().food(3, 0.9f, true));
+	public static final Item COOKED_HEIFER = new Item(new Item.Properties().food(4, 1.5f, true));
 
-	public static final Item RAW_SUNSTRADIVER_CHOP = new Item(new AdvancedItemSettings().food(2, 0.3f, true));
-	public static final Item COOKED_SUNSTRADIVER_CHOP = new Item(new AdvancedItemSettings().food(7, 1.0f, true));
+	public static final Item RAW_SUNSTRADIVER_CHOP = new Item(new Item.Properties().food(2, 0.3f, true));
+	public static final Item COOKED_SUNSTRADIVER_CHOP = new Item(new Item.Properties().food(7, 1.0f, true));
 
-	public static final Item RAW_DEER = new Item(new AdvancedItemSettings().food(3, 0.3f, true));
-	public static final Item COOKED_DEER = new Item(new AdvancedItemSettings().food(9, 1.0f, true));
+	public static final Item RAW_DEER = new Item(new Item.Properties().food(3, 0.3f, true));
+	public static final Item COOKED_DEER = new Item(new Item.Properties().food(9, 1.0f, true));
 
-	public static final Item LYCORIS_JAM_PIE = new Item(new AdvancedItemSettings().maxCount(1).food(6, 10.0f));
+	public static final Item LYCORIS_JAM_PIE = new Item(new Item.Properties().stacksTo(1).food(6, 10.0f));
 
-	public static final Item BLOOD_ORANGE = new Item(new AdvancedItemSettings().food(1, 0.3f));
+	public static final Item BLOOD_ORANGE = new Item(new Item.Properties().food(1, 0.3f));
 
-	public static final Item GRAPE = new Item(new AdvancedItemSettings().food(1, 0.3f));
+	public static final Item GRAPE = new Item(new Item.Properties().food(1, 0.3f));
 
-	public static final Item EXYRIANE_GRAPE = new Item(new AdvancedItemSettings().food(
+	public static final Item EXYRIANE_GRAPE = new Item(new Item.Properties().food(
 		new FoodComponent.Builder()
 			.hunger(5)
 			.saturationModifier(2.5f)
@@ -334,191 +320,58 @@ public class ArcheonItems implements ElementsInitializer {
 			.build()
 	));
 
-	public static final Item GROWING_NEAVE_BERRIES = new Item(new AdvancedItemSettings().food(1, 0.3f));
+	public static final Item GROWING_NEAVE_BERRIES = new Item(new Item.Properties().food(1, 0.3f));
 
-	public static final Item NEAVE_BERRIES = new Item(new AdvancedItemSettings().food(3, 0.6f));
+	public static final Item NEAVE_BERRIES = new Item(new Item.Properties().food(3, 0.6f));
 
-	public static final Item INK_BOTTLE = new Item(new AdvancedItemSettings().maxCount(16));
+	public static final Item INK_BOTTLE = new Item(new Item.Properties().stacksTo(16));
 
-	public static final PouchItem POUCH = new PouchItem(new AdvancedItemSettings().maxCount(1));
+	public static final PouchItem POUCH = new PouchItem(new Item.Properties().stacksTo(1));
 
-	public static final Item SUNSTRADIVER_FEATHER = new Item(new AdvancedItemSettings());
+	public static final Item SUNSTRADIVER_FEATHER = new Item(new Item.Properties());
 
-	public static final Item SNAIL_SHELL = new Item(new AdvancedItemSettings());
+	public static final Item SNAIL_SHELL = new Item(new Item.Properties());
 
-	public static final Item AURORA_CRYSTAL = new Item(new AdvancedItemSettings().fireproof());
+	public static final Item AURORA_CRYSTAL = new Item(new Item.Properties().fireproof());
 
 	public static final Item IMPRESSIVE_AURORA_CRYSTAL = new Item(
-		new AdvancedItemSettings()
+		new Item.Properties()
 			.fireproof()
 			.nameFormattings(Formatting.GOLD)
 			.descriptionLines(
-				Text.translatable("item.archeon.impressive_aurora_crystal.desc").formatted(Formatting.GRAY),
-				Text.translatable("interaction.archeon.amulet_of_nature").formatted(Formatting.GRAY)
+				Component.translatable("item.archeon.impressive_aurora_crystal.desc").formatted(Formatting.GRAY),
+				Component.translatable("interaction.archeon.amulet_of_nature").formatted(Formatting.GRAY)
 			)
 	);
 
-	public static final Item CENTAUR_HOOF = new Item(new AdvancedItemSettings().fireproof());
+	public static final Item CENTAUR_HOOF = new Item(new Item.Properties().fireproof());
 
 	public static final Item CENTAUR_HORSESHOE = new Item(
-		new AdvancedItemSettings()
+		new Item.Properties()
 			.fireproof()
 			.nameFormattings(Formatting.GOLD)
 			.descriptionLines(
-				Text.translatable("item.archeon.centaur_horseshoe.desc").formatted(Formatting.GRAY),
-				Text.translatable("interaction.archeon.amulet_of_nature").formatted(Formatting.GRAY)
+				Component.translatable("item.archeon.centaur_horseshoe.desc").formatted(Formatting.GRAY),
+				Component.translatable("interaction.archeon.amulet_of_nature").formatted(Formatting.GRAY)
 			)
 	);
 
-	public static final CustomSpawnEggItem AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.AURORA_CATALYST, 4380648, 3876673, new AdvancedItemSettings());
-	public static final CustomSpawnEggItem POISONOUS_AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.POISONOUS_AURORA_CATALYST, 2881287, 6633076, new AdvancedItemSettings());
-	public static final CustomSpawnEggItem EXPLOSIVE_AURORA_CATALYST_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.EXPLOSIVE_AURORA_CATALYST, 12279738, 6967084, new AdvancedItemSettings());
-	public static final CustomSpawnEggItem MOURNCREEP_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.MOURNCREEP, 6380368, 5267794, new AdvancedItemSettings());
-	public static final CustomSpawnEggItem SNAIL_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.SNAIL, 9198398, 14794633, new AdvancedItemSettings());
-	public static final CustomSpawnEggItem SUNSTRADIVER_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.SUNSTRADIVER, 16724787, 16764006, new AdvancedItemSettings());
-	public static final CustomSpawnEggItem HEIFER_SPAWN_EGG = new CustomSpawnEggItem(ArcheonEntities.HEIFER, 2298374, 3680013, new AdvancedItemSettings());
+	public static final SpawnEggItem AURORA_CATALYST_SPAWN_EGG = new SpawnEggItem(ArcheonEntities.AURORA_CATALYST, 4380648, 3876673, new Item.Properties());
+	public static final SpawnEggItem POISONOUS_AURORA_CATALYST_SPAWN_EGG = new SpawnEggItem(ArcheonEntities.POISONOUS_AURORA_CATALYST, 2881287, 6633076, new Item.Properties());
+	public static final SpawnEggItem EXPLOSIVE_AURORA_CATALYST_SPAWN_EGG = new SpawnEggItem(ArcheonEntities.EXPLOSIVE_AURORA_CATALYST, 12279738, 6967084, new Item.Properties());
+	public static final SpawnEggItem MOURNCREEP_SPAWN_EGG = new SpawnEggItem(ArcheonEntities.MOURNCREEP, 6380368, 5267794, new Item.Properties());
+	public static final SpawnEggItem SNAIL_SPAWN_EGG = new SpawnEggItem(ArcheonEntities.SNAIL, 9198398, 14794633, new Item.Properties());
+	public static final SpawnEggItem SUNSTRADIVER_SPAWN_EGG = new SpawnEggItem(ArcheonEntities.SUNSTRADIVER, 16724787, 16764006, new Item.Properties());
+	public static final SpawnEggItem HEIFER_SPAWN_EGG = new SpawnEggItem(ArcheonEntities.HEIFER, 2298374, 3680013, new Item.Properties());
 
-	public static void register(AdvancedContainer mod) {
-		WAND_OF_NATURE.register(Archeon.createId("wand_of_nature"));
-		QOLM_PICK.register(Archeon.createId("qolm_pick"));
-		MASSACRE_DAGGER.register(Archeon.createId("massacre_dagger"));
-		CENTAUR_LIFE_IGNITER.register(Archeon.createId("centaur_life_igniter"));
-		POWER_KEY.register(Archeon.createId("power_key"));
-		CENTAUR_SPEAR.register(Archeon.createId("centaur_spear"));
-		CENTAUR_BATTLE_AXE.register(Archeon.createId("centaur_battle_axe"));
-		NECLANE_SWORD.register(Archeon.createId("neclane_sword"));
-		NECLANE_PICKAXE.register(Archeon.createId("neclane_pickaxe"));
-		NECLANE_AXE.register(Archeon.createId("neclane_axe"));
-		NECLANE_SHOVEL.register(Archeon.createId("neclane_shovel"));
-		NECLANE_HOE.register(Archeon.createId("neclane_hoe"));
-		CYPRESS_SWORD.register(Archeon.createId("cypress_sword"));
-		CYPRESS_PICKAXE.register(Archeon.createId("cypress_pickaxe"));
-		CYPRESS_AXE.register(Archeon.createId("cypress_axe"));
-		CYPRESS_SHOVEL.register(Archeon.createId("cypress_shovel"));
-		CYPRESS_HOE.register(Archeon.createId("cypress_hoe"));
-		VUXANCIA_SWORD.register(Archeon.createId("vuxancia_sword"));
-		VUXANCIA_PICKAXE.register(Archeon.createId("vuxancia_pickaxe"));
-		VUXANCIA_AXE.register(Archeon.createId("vuxancia_axe"));
-		VUXANCIA_SHOVEL.register(Archeon.createId("vuxancia_shovel"));
-		VUXANCIA_HOE.register(Archeon.createId("vuxancia_hoe"));
-		CHIASPEN_SWORD.register(Archeon.createId("chiaspen_sword"));
-		CHIASPEN_PICKAXE.register(Archeon.createId("chiaspen_pickaxe"));
-		CHIASPEN_AXE.register(Archeon.createId("chiaspen_axe"));
-		CHIASPEN_SHOVEL.register(Archeon.createId("chiaspen_shovel"));
-		CHIASPEN_HOE.register(Archeon.createId("chiaspen_hoe"));
-		APAFLORITE_SWORD.register(Archeon.createId("apaflorite_sword"));
-		APAFLORITE_PICKAXE.register(Archeon.createId("apaflorite_pickaxe"));
-		APAFLORITE_AXE.register(Archeon.createId("apaflorite_axe"));
-		APAFLORITE_SHOVEL.register(Archeon.createId("apaflorite_shovel"));
-		APAFLORITE_HOE.register(Archeon.createId("apaflorite_hoe"));
-		APAFLORITE_HELMET.register(Archeon.createId("apaflorite_helmet"));
-		APAFLORITE_CHESTPLATE.register(Archeon.createId("apaflorite_chestplate"));
-		APAFLORITE_LEGGINGS.register(Archeon.createId("apaflorite_leggings"));
-		APAFLORITE_BOOTS.register(Archeon.createId("apaflorite_boots"));
-		FAELITE_SWORD.register(Archeon.createId("faelite_sword"));
-		FAELITE_PICKAXE.register(Archeon.createId("faelite_pickaxe"));
-		FAELITE_AXE.register(Archeon.createId("faelite_axe"));
-		FAELITE_SHOVEL.register(Archeon.createId("faelite_shovel"));
-		FAELITE_HOE.register(Archeon.createId("faelite_hoe"));
-		FAELITE_HELMET.register(Archeon.createId("faelite_helmet"));
-		FAELITE_CHESTPLATE.register(Archeon.createId("faelite_chestplate"));
-		FAELITE_LEGGINGS.register(Archeon.createId("faelite_leggings"));
-		FAELITE_BOOTS.register(Archeon.createId("faelite_boots"));
-		LUSONYTH_SWORD.register(Archeon.createId("lusonyth_sword"));
-		LUSONYTH_PICKAXE.register(Archeon.createId("lusonyth_pickaxe"));
-		LUSONYTH_AXE.register(Archeon.createId("lusonyth_axe"));
-		LUSONYTH_SHOVEL.register(Archeon.createId("lusonyth_shovel"));
-		LUSONYTH_HOE.register(Archeon.createId("lusonyth_hoe"));
-		LUSONYTH_HELMET.register(Archeon.createId("lusonyth_helmet"));
-		LUSONYTH_CHESTPLATE.register(Archeon.createId("lusonyth_chestplate"));
-		LUSONYTH_LEGGINGS.register(Archeon.createId("lusonyth_leggings"));
-		LUSONYTH_BOOTS.register(Archeon.createId("lusonyth_boots"));
-		CLEMENTIUM_SWORD.register(Archeon.createId("clementium_sword"));
-		CLEMENTIUM_PICKAXE.register(Archeon.createId("clementium_pickaxe"));
-		CLEMENTIUM_AXE.register(Archeon.createId("clementium_axe"));
-		CLEMENTIUM_SHOVEL.register(Archeon.createId("clementium_shovel"));
-		CLEMENTIUM_HOE.register(Archeon.createId("clementium_hoe"));
-		FAELITE_BOW.register(Archeon.createId("faelite_bow"));
-		LUSONYTH_ARROW.register(Archeon.createId("lusonyth_arrow"));
-		EXYRIANE_FISHING_ROD.register(Archeon.createId("exyriane_fishing_rod"));
-		APAFLORITE_RING.register(Archeon.createId("apaflorite_ring"));
-		FAELITE_RING.register(Archeon.createId("faelite_ring"));
-		LUSONYTH_RING.register(Archeon.createId("lusonyth_ring"));
-		CLEMENTIUM_RING.register(Archeon.createId("clementium_ring"));
-		RING_OF_EDEN.register(Archeon.createId("ring_of_eden"));
-		RING_OF_WAHVEN.register(Archeon.createId("ring_of_wahven"));
-		MASSACRE_BOOK.register(Archeon.createId("massacre_book"));
-		QOLM_BOOK.register(Archeon.createId("qolm_book"));
-		AMULET_OF_NATURE.register(Archeon.createId("amulet_of_nature"));
-		MANUSCRIPT.register(Archeon.createId("manuscript"));
-		APAFLORITE_GEMSTONE.register(Archeon.createId("apaflorite_gemstone"));
-		EXYRIANE_SHARD.register(Archeon.createId("exyriane_shard"));
-		RAW_FAELITE.register(Archeon.createId("raw_faelite"));
-		FAELITE_INGOT.register(Archeon.createId("faelite_ingot"));
-		RAW_LUSONYTH.register(Archeon.createId("raw_lusonyth"));
-		LUSONYTH_INGOT.register(Archeon.createId("lusonyth_ingot"));
-		PLANT_FIBER.register(Archeon.createId("plant_fiber"));
-		MOSS_BALL.register(Archeon.createId("moss_ball"));
-		BLUE_SHELL.register(Archeon.createId("blue_shell"));
-		PINK_SHELL.register(Archeon.createId("pink_shell"));
-		YELLOW_SHELL.register(Archeon.createId("yellow_shell"));
-		WOODEN_BUCKET.register(Archeon.createId("wooden_bucket"));
-		WOODEN_WATER_BUCKET.register(Archeon.createId("wooden_water_bucket"));
-		WOODEN_MILK_BUCKET.register(Archeon.createId("wooden_milk_bucket"));
-		WOODEN_HOT_SPRING_WATER_BUCKET.register(Archeon.createId("wooden_hot_spring_water_bucket"));
-		WOODEN_DASCIUM_BUCKET.register(Archeon.createId("wooden_dascium_bucket"));
-		CERAMIC_BUCKET.register(Archeon.createId("ceramic_bucket"));
-		CERAMIC_WATER_BUCKET.register(Archeon.createId("ceramic_water_bucket"));
-		CERAMIC_LAVA_BUCKET.register(Archeon.createId("ceramic_lava_bucket"));
-		CERAMIC_HOT_SPRING_WATER_BUCKET.register(Archeon.createId("ceramic_hot_spring_water_bucket"));
-		CERAMIC_DASCIUM_BUCKET.register(Archeon.createId("ceramic_dascium_bucket"));
-		EXYRIANE_TORCH.register(Archeon.createId("exyriane_torch"));
-		GOBLET.register(Archeon.createId("goblet"));
-		GOBLET_WATER.register(Archeon.createId("goblet_water"));
-		GOBLET_BLOOD_ORANGE_JUICE.register(Archeon.createId("goblet_blood_orange_juice"));
-		JAM_POT.register(Archeon.createId("jam_pot"));
-		ORANGE_LYCORIS_JAM_POT.register(Archeon.createId("orange_lycoris_jam_pot"));
-		RED_LYCORIS_JAM_POT.register(Archeon.createId("red_lycoris_jam_pot"));
-		PINK_LYCORIS_JAM_POT.register(Archeon.createId("pink_lycoris_jam_pot"));
-		ORANGE_LYCORIS_PETAL.register(Archeon.createId("orange_lycoris_petal"));
-		RED_LYCORIS_PETAL.register(Archeon.createId("red_lycoris_petal"));
-		PINK_LYCORIS_PETAL.register(Archeon.createId("pink_lycoris_petal"));
-		LORE_SCRAP.register(Archeon.createId("lore_scrap"));
-		MUSIC_DISC_PE4K.register(Archeon.createId("music_disc_pe4k"));
-		MUSIC_DISC_GEOMETRIC_FALL.register(Archeon.createId("music_disc_geometric_fall"));
-		MUSIC_DISC_PARALLELIFY.register(Archeon.createId("music_disc_parallelify"));
-		MUSIC_DISC_GLAIVE.register(Archeon.createId("music_disc_glaive"));
-		MUSIC_DISC_AIEL.register(Archeon.createId("music_disc_aiel"));
-		RECORD_FRAGMENT.register(Archeon.createId("record_fragment"));
-		SALT.register(Archeon.createId("salt"));
-		PEAKS_SNOW_PILE.register(Archeon.createId("peaks_snow_pile"));
-		RAW_HEIFER.register(Archeon.createId("raw_heifer"));
-		SALTED_HEIFER.register(Archeon.createId("salted_heifer"));
-		COOKED_HEIFER.register(Archeon.createId("cooked_heifer"));
-		RAW_SUNSTRADIVER_CHOP.register(Archeon.createId("raw_sunstradiver_chop"));
-		COOKED_SUNSTRADIVER_CHOP.register(Archeon.createId("cooked_sunstradiver_chop"));
-		RAW_DEER.register(Archeon.createId("raw_deer"));
-		COOKED_DEER.register(Archeon.createId("cooked_deer"));
-		LYCORIS_JAM_PIE.register(Archeon.createId("lycoris_jam_pie"));
-		BLOOD_ORANGE.register(Archeon.createId("blood_orange"));
-		GRAPE.register(Archeon.createId("grape"));
-		EXYRIANE_GRAPE.register(Archeon.createId("exyriane_grape"));
-		GROWING_NEAVE_BERRIES.register(Archeon.createId("growing_neave_berries"));
-		NEAVE_BERRIES.register(Archeon.createId("neave_berries"));
-		INK_BOTTLE.register(Archeon.createId("ink_bottle"));
-		POUCH.register(Archeon.createId("pouch"));
-		SUNSTRADIVER_FEATHER.register(Archeon.createId("sunstradiver_feather"));
-		SNAIL_SHELL.register(Archeon.createId("snail_shell"));
-		AURORA_CRYSTAL.register(Archeon.createId("aurora_crystal"));
-		IMPRESSIVE_AURORA_CRYSTAL.register(Archeon.createId("impressive_aurora_crystal"));
-		CENTAUR_HOOF.register(Archeon.createId("centaur_hoof"));
-		CENTAUR_HORSESHOE.register(Archeon.createId("centaur_horseshoe"));
-		AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("aurora_catalyst_spawn_egg"));
-		POISONOUS_AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("poisonous_aurora_catalyst_spawn_egg"));
-		EXPLOSIVE_AURORA_CATALYST_SPAWN_EGG.register(Archeon.createId("explosive_aurora_catalyst_spawn_egg"));
-		MOURNCREEP_SPAWN_EGG.register(Archeon.createId("mourncreep_spawn_egg"));
-		SNAIL_SPAWN_EGG.register(Archeon.createId("snail_spawn_egg"));
-		SUNSTRADIVER_SPAWN_EGG.register(Archeon.createId("sunstradiver_spawn_egg"));
-		HEIFER_SPAWN_EGG.register(Archeon.createId("heifer_spawn_egg"));
+	private static Item register(String path, Item.Properties properties) {
+		return register(path, Item::new, properties);
 	}
+
+	private static Item register(String path, Function<Item.Properties, Item> factory, Item.Properties properties) {
+		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Archeon.createId(path));
+		return Items.registerItem(key, factory, properties);
+	}
+
+	public static void register(AdvancedContainer mod) {}
 }
